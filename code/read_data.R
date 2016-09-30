@@ -8,7 +8,9 @@ library(data.table)
 library(dplyr)
 library(ggmap)
 
-setwd("/Users/kimlarsen/Documents/Code/nba_ranks/rawdata")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/distance_between.R")
+
+setwd("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
 
 ## Read the raw data
 read_player_data <- function(season, first_labels, suffix){
@@ -44,7 +46,7 @@ s2 <- read_player_data("NBA-2013-2014", c("SEASON", "DATE", "PLAYER FULL NAME", 
 s3 <- read_player_data("NBA-2014-2015", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 3)
 s4 <- read_player_data("NBA-2015-2016", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 4)
 
-setwd("/Users/kimlarsen/Documents/Code/nba_ranks/cleandata")
+setwd("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata")
 
 ## Add some indicators
 f <- rbind.data.frame(s1, s2, s3, s4) %>%
@@ -54,7 +56,7 @@ f <- rbind.data.frame(s1, s2, s3, s4) %>%
             season=ifelse(playoffs==0, as.numeric(substr(DATA_SET, 1, 4)), as.numeric(substr(DATA_SET, 1, 4))-1), 
             playoff_minutes=playoffs*minutes,
             playoff_points=playoffs*points,
-            DATE=as.Date(f$DATE, format="%m/%d/%Y"),
+            DATE=as.Date(DATE, format="%m/%d/%Y"),
             quarter=quarter(DATE), 
             row_id=row_number())
 

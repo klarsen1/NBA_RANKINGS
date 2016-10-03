@@ -83,9 +83,10 @@ future_schedule <- data.frame(cbind(home, road)) %>% filter(DATE>max_date) %>%
          future_game=1,
          OWN_TEAM=ifelse(r>0.5, home_team, road_team),
          OPP_TEAM=ifelse(OWN_TEAM==home_team, road_team, home_team),
-         VENUE_R_H=ifelse(OWN_TEAM==home_team, 'H', 'R'), ###### FIX
-         DATA_SET="2-16-2017 Regular Season") %>%
-  select(DATE, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATA_SET, future_game)
+         VENUE_R_H=ifelse(OWN_TEAM==home_team, 'H', 'R'), 
+         DATA_SET="2016-2017 Regular Season", 
+         PLAYER_FULL_NAME="BLANK") %>%
+  select(DATE, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATA_SET, future_game, PLAYER_FULL_NAME)
   
 f <- bind_rows(f, future_schedule) %>%
   replace(is.na(.), 0)
@@ -145,13 +146,15 @@ game_win <- group_by(team_win, game_id, DATE, future_game) %>%
 
 ## Create a game level summary file to be saved
 future_flipped <- filter(team_win, future_game==1) %>%
-  mutate(VENUE_R_H2=ifelse(VENUE_R_H=='H', 'T', ifelse(VENUE_R_H=='T', 'H')),
+  mutate(VENUE_R_H2=ifelse(VENUE_R_H=='H', 'R', 'H'),
          OWN_TEAM2=OPP_TEAM, 
          OPP_TEAM2=OWN_TEAM) %>%
   select(-OPP_TEAM, -OWN_TEAM) %>%
   rename(OPP_TEAM=OPP_TEAM2, 
-         OWN_TEAM=OWN_TEAM2)
+         OWN_TEAM=OWN_TEAM2,
+         VENUE_R_H=VENUE_R_H2)
   
+team_win <- bind_rows(team_win, future_flipped) %>% arrange(DATE, game_id)
 
 split <- split(team_win, team_win$game_id)
 game_scores <- data.frame(rbindlist(lapply(split, function(x) spread(select(x, game_id, VENUE_R_H, OWN_TEAM), VENUE_R_H, OWN_TEAM))), stringsAsFactors = FALSE) %>%
@@ -229,6 +232,8 @@ f <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs), by=c("gam
             road_points=road_team*points,
             share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes),
             home_team_selected = as.numeric(home_team_name==selected_team)) %>%
-     dplyr::select(-VENUE_R_H, -TOT)
+     dplyr::select(-VENUE_R_H, -TOT) %>% arrange(DATE, game_id)
 
 saveRDS(f, "BOX_SCORES.RDA")
+
+rm(list = ls())

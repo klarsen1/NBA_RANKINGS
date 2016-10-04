@@ -159,10 +159,11 @@ team_win <- bind_rows(team_win, future_flipped) %>% arrange(DATE, game_id)
 split <- split(team_win, team_win$game_id)
 game_scores <- data.frame(rbindlist(lapply(split, function(x) spread(select(x, game_id, VENUE_R_H, OWN_TEAM), VENUE_R_H, OWN_TEAM))), stringsAsFactors = FALSE) %>%
                    inner_join(select(game_pts, -max_game_points, -future_game), by="game_id") %>%
-                   inner_join(select(game_win, -future_game), by="game_id") %>%
+                   inner_join(game_win, by="game_id") %>%
                    mutate(selected_team=ifelse(r==1, H, R), 
-                          opposing_team=ifelse(r==1, R, H)) %>% 
-                   select(-r) %>%
+                          opposing_team=ifelse(r==1, R, H), 
+                          selected_team_win=ifelse(future_game==1, -1, selected_team_win)) %>% 
+                   select(-r, -future_game) %>%
                    rename(home_team_name=H, road_team_name=R)
 saveRDS(game_scores, "GAME_SCORES.RDA")
 
@@ -183,7 +184,8 @@ travel_data <- list()
 for (i in 1:nrow(city_lat_long)){
   travel_data[[i]] <- get_travel_dist(city_lat_long[i,]$OWN_TEAM)
 }
-travel_data <- data.frame(rbindlist(travel_data)) %>% distinct(game_id, .keep_all=TRUE)
+travel_data <- data.frame(rbindlist(travel_data)) %>% distinct(game_id, .keep_all=TRUE) %>%
+  select(game_id, travel)
 
 get_rest_days <- function(id){
 
@@ -220,7 +222,7 @@ rest_days <- data.frame(rbindlist(rest_days)) %>%
   select(game_id, rest_differential)
 
 ## Create the fill box score file
-f <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs), by=c("game_id", "OWN_TEAM")) %>%
+final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_TEAM, -future_game), by=c("game_id", "OWN_TEAM")) %>%
      inner_join(select(game_scores, -DATE, -playoffs), by="game_id") %>%
      inner_join(travel_data, by="game_id") %>%
      inner_join(rest_days, by="game_id") %>%
@@ -231,9 +233,10 @@ f <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs), by=c("gam
             home_points=home_team*points, 
             road_points=road_team*points,
             share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes),
-            home_team_selected = as.numeric(home_team_name==selected_team)) %>%
+            home_team_selected = as.numeric(home_team_name==selected_team),
+            win=ifelse(future_game==1, -1, win)) %>%
      dplyr::select(-VENUE_R_H, -TOT) %>% arrange(DATE, game_id)
 
-saveRDS(f, "BOX_SCORES.RDA")
+saveRDS(final, "BOX_SCORES.RDA")
 
 rm(list = ls())

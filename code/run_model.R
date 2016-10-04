@@ -61,14 +61,6 @@ for (i in start_index:length(dates)){
       thisday[,paste0("share_minutes_cluster_", j)] <- thisday$share_of_minutes_signed * as.numeric(thisday$Cluster==j)
     }
 
-    rfdata <- dplyr::select(rfdata, selected_team, selected_team_win, starts_with("share_minutes_cluster_"), home_team_selected, game_id, travel, days_since_last_game) %>%
-      group_by(game_id, selected_team) %>%
-      summarise_each(funs(sum)) %>%
-      mutate(selected_team_win=as.numeric(selected_team_win>0), 
-             home_team_selected=as.numeric(home_team_selected>0)) %>%
-      ungroup() %>% 
-      left_join(win_perc, by="selected_team") %>%
-      replace(is.na(.), 0)
 
     thisday <- dplyr::select(thisday, selected_team, selected_team_win, starts_with("share_minutes_cluster_"), home_team_selected, travel, days_since_last_game, game_id) %>%
       group_by(game_id, selected_team) %>%

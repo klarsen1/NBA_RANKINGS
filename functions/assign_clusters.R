@@ -1,4 +1,4 @@
-assign_clusters <- function(centroids, data){
+assign_clusters <- function(centroids, data, cutoff){
 
   means <- group_by(data, PLAYER_FULL_NAME) %>%
   summarise(assists=mean(assists),
@@ -22,8 +22,6 @@ assign_clusters <- function(centroids, data){
   replace(is.na(.), 0) %>%
   select(-threepoint_attempts, -freethrow_attempts, -fieldgoal_attempts, -points)
 
-  avg_minutes <- select(means, PLAYER_FULL_NAME, minutes)
-
   scrubs <- filter(means, minutes<=cutoff) %>% mutate(Cluster=0) %>% select(PLAYER_FULL_NAME, Cluster)
   means_no_scrubs <- filter(means, minutes>cutoff) %>% select(-PLAYER_FULL_NAME, -minutes)
   names <- subset(means, minutes>cutoff)$PLAYER_FULL_NAME
@@ -35,24 +33,15 @@ assign_clusters <- function(centroids, data){
     return(which.min(cluster.dist)[1])
   }
   
+  print(names(scaled))
   clusters <- data.frame(cbind(apply(scaled, 1, closest.cluster), names), stringsAsFactors = FALSE)
   names(clusters) <- c("Cluster", "PLAYER_FULL_NAME")
+
+  print("here")
+  
   
   clusters$Cluster <- as.numeric(clusters$Cluster)
-  clusters <- rbind.data.frame(clusters, scrubs)
-  clusters <- inner_join(clusters, avg_minutes, by="PLAYER_FULL_NAME")
-  active <- filter(box_scores, DATE==dates[i]) %>% select(PLAYER_FULL_NAME)
-  clusters <- inner_join(clusters, active, by="PLAYER_FULL_NAME")
+  clusters <- bind_rows(clusters, scrubs)
 
-   ### Find a team for each player
-  team_members <- thisdata %>% group_by(PLAYER_FULL_NAME, selected_team) %>%
-    summarise(minutes=sum(minutes)) %>%
-    mutate(rank=rank(-minutes)) %>%
-    filter(rank==1) %>%
-    select(PLAYER_FULL_NAME, selected_team) %>%
-    distinct() %>%
-    ungroup()
-
-  clusters <- inner_join(clusters, team_members, by="PLAYER_FULL_NAME") 
   return(clusters)
 }

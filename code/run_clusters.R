@@ -4,9 +4,8 @@ cutoff <- 8 # minutes per game. if a player plays less than this amount, he is e
 nclus <- 25 # number of archetypes
 
 ### Read the raw data
-setwd("/Users/kimlarsen/Documents/Code/nba_rankings/cleandata")
+setwd("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata")
 box_scores <- readRDS("BOX_SCORES.RDA")
-game_scores <- readRDS("GAME_SCORES.RDA")
 
 ### Get means for centroids
 means <- box_scores %>%
@@ -40,14 +39,8 @@ standardized <- scale(means_no_scrubs[,sapply(means_no_scrubs, is.numeric)])
 
 
 #### Get the final centroids
-setwd("/Users/kimlarsen/Documents/Code/nba_rankings/centroids")
+setwd("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/centroids")
 set.seed(2015)
 km <- kmeans(standardized, centers=nclus, nstart=25)
-centroids <- km$centers
 
-#### Save the cluster solution to a CSV
-production_centroids <- data.frame(cbind(means_no_scrubs, km$cluster), stringsAsFactors = FALSE) %>%
-  rename(Cluster = km.cluster) %>%
-  arrange(Cluster, PLAYER_FULL_NAME)
-
-saveRDS(production_centroids, "centroids.RDA")
+saveRDS(km$centers, "centroids.RDA")

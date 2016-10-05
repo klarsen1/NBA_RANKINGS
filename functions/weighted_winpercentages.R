@@ -1,10 +1,10 @@
 weighted_winpercentages <- function(data){
 
-  win_perc_opposing <- group_by(thisdata, opposing_team) %>% 
+  win_perc_opposing <- group_by(data, opposing_team) %>% 
     summarise(win_opposing=mean(as.numeric(selected_team_win==0))) %>%
     ungroup()
 
-  win_perc1 <- group_by(thisdata, selected_team) %>% 
+  win_perc1 <- group_by(data, selected_team) %>% 
     inner_join(win_perc_opposing, by="opposing_team") %>%
     mutate(w=selected_team_win*win_opposing) %>%
     summarise(n=sum(w), d=sum(win_opposing)) %>%
@@ -16,12 +16,12 @@ weighted_winpercentages <- function(data){
   rm(win_perc_opposing)
 
   ### Get weighted win percentages for the opposing team
-  win_perc_opposing <- thisdata %>% group_by(selected_team) %>% 
+  win_perc_opposing <- group_by(data, selected_team) %>% 
     summarise(win_opposing=mean(selected_team_win)) %>%
     ungroup() %>%
     rename(opposing_team=selected_team)
 
-  win_perc2 <- thisdata %>% group_by(opposing_team) %>% 
+  win_perc2 <- group_by(data, opposing_team) %>% 
     inner_join(win_perc_opposing, by="opposing_team") %>%
     mutate(w=as.numeric(selected_team_win==0)*win_opposing) %>%
     summarise(n=sum(w), d=sum(win_opposing)) %>%

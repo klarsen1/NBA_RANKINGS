@@ -1,6 +1,6 @@
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/get_surplus_variables.R")
 
-predict_game <- function(X, b, history, win_perc, id, date, runs=100){
+predict_game <- function(b, history, win_perc, id, date, runs=100){
 
   thisgame <- subset(box_scores, game_id==id)   
   team1 <- thisgame$home_team_name
@@ -35,19 +35,15 @@ predict_game <- function(X, b, history, win_perc, id, date, runs=100){
   samples <- list()
   for (j in 1:runs){
     df <- mutate(dist_active, 
+                 game_id=id,
                  share_of_minutes=rnorm(1, m_share_of_minutes, s_share_of_minutes), 
                  share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes)) %>%
     
-    df <- get_surplus_variables(df)
-    
-    collapsed <- dplyr::select(df, selected_team, starts_with("share_minutes_cluster_"), home_team_selected) %>%
-      summarise_each(funs(sum)) %>%
-      mutate(home_team_selected=as.numeric(home_team_selected>0), 
-             game_id=id) %>%
+    x <- get_surplus_variables(df) %>%
       left_join(win_perc, by="selected_team") %>%
-      left_join(select(thisgame, DATE, game_id, travel, rest_differential, home_team_name, road_team_name, selected_team), by="game_id")
+      left_join(select(thisgame, DATE, game_id, travel, rest_differential, home_team_name, road_team_name), by="game_id")
     
-    samples[[i]] <- df
+    samples[[i]] <- x
   }
   
   samplesdf <- data.frame(rbindlist(samples))
@@ -65,9 +61,4 @@ predict_game <- function(X, b, history, win_perc, id, date, runs=100){
   return(data.frame(prediction))
   
 }
-
-x = data.frame(c(1, 2, 3))
-y=c(1, 1, 1)
-f <- as.formula(y~ .)
-X = model.matrix(f, x)
 

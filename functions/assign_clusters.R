@@ -33,13 +33,9 @@ assign_clusters <- function(centroids, data, cutoff){
     return(which.min(cluster.dist)[1])
   }
   
-  print(names(scaled))
   clusters <- data.frame(cbind(apply(scaled, 1, closest.cluster), names), stringsAsFactors = FALSE)
   names(clusters) <- c("Cluster", "PLAYER_FULL_NAME")
 
-  print("here")
-  
-  
   clusters$Cluster <- as.numeric(clusters$Cluster)
   clusters <- bind_rows(clusters, scrubs)
 

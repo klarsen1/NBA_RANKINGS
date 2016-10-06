@@ -12,6 +12,7 @@ source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/auc.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/assign_clusters.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/weighted_winpercentages.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/predict_game.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/get_surplus_variables.R")
 
 ### Global settings
 cutoff <- 8 # minutes per game. if a player plays less than this amount, he is excluded
@@ -30,12 +31,12 @@ box_scores <- subset(box_scores, DATE<=end_date)
 dates <- sort(unique(box_scores$DATE))
 datemap <- data.frame(cbind(dates, row_number(dates), box_scores$future_game))
 names(datemap) <- c("DATE", "ROW", "future_game")
-start_index <- subset(datemap, DATE==start_date)$ROW
+start_index <- subset(datemap, DATE==start_date)$ROW[1]
 
 scores <- list()
 counter <- 1
   
-for (i in start_index:length(dates)){
+for (i in start_index:nrow(datemap)){
   
   ### Make sure we only use real data
   max_real_date <- max(subset(datemap, future_game==0)$ROW)
@@ -46,7 +47,7 @@ for (i in start_index:length(dates)){
   
   centroids <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/centroids/centroids.RDA")
   clusters <- assign_clusters(centroids, inwindow, cutoff)
-    
+  
   ### Get weighted win percentages for the selected team
   win_perc <- weighted_winpercentages(filter(inwindow, DATE>dates[j-streak]))
   
@@ -56,22 +57,26 @@ for (i in start_index:length(dates)){
   ### Get rest and travel by game_id
   rest_and_travel <- select(inwindow, game_id, travel, rest_differential) %>% 
     distinct(game_id, .keep_all=TRUE)
-  
+
   ### Estimate the model
   x <- get_surplus_variables(inwindow)  %>%
     inner_join(win_perc, by="selected_team") %>%
-    inner_join(rest_and_travel, by="game_id")
+    inner_join(rest_and_travel, by="game_id") %>%
+    select(-game_id, -selected_team)
 
   Y <- x$selected_team_win
+  x$selected_team_win <- NULL
+
   X <- model.matrix(as.formula(Y ~ .), x)
   model <- cv.glmnet(y=Y, x=X, family="binomial", alpha=alpha, parallel=FALSE, nfolds=10)
+  c <- as.matrix(coef(model, s=model$lambda.1se))
   
   ### Score the games
   thisday <- dplyr::filter(box_scores, DATE==dates[i]) 
   games <- unique(thisday$game_id)
 
   for (d in 1:length(games)){
-    scores[[counter]] <- predict_game(c, inwindow, win_perc, games[d], dates[i], 100)
+    scores[[counter]] <- predict_game(c, inwindow, win_perc, games[d], dates[i], 100, thisday)
     counter <- counter + 1
   }
 }

@@ -85,8 +85,9 @@ future_schedule <- data.frame(cbind(home, road)) %>% filter(DATE>max_date) %>%
          OPP_TEAM=ifelse(OWN_TEAM==home_team, road_team, home_team),
          VENUE_R_H=ifelse(OWN_TEAM==home_team, 'H', 'R'), 
          DATA_SET="2016-2017 Regular Season", 
+         season=2016,
          PLAYER_FULL_NAME="BLANK") %>%
-  select(DATE, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATA_SET, future_game, PLAYER_FULL_NAME)
+  select(DATE, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATA_SET, future_game, PLAYER_FULL_NAME, season)
   
 f <- bind_rows(f, future_schedule) %>%
   replace(is.na(.), 0)
@@ -162,7 +163,7 @@ game_scores <- data.frame(rbindlist(lapply(split, function(x) spread(select(x, g
                    inner_join(game_win, by="game_id") %>%
                    mutate(selected_team=ifelse(r==1, H, R), 
                           opposing_team=ifelse(r==1, R, H), 
-                          selected_team_win=ifelse(future_game==1, -1, selected_team_win)) %>% 
+                          selected_team_win=ifelse(future_game==1, NA, selected_team_win)) %>% 
                    select(-r, -future_game) %>%
                    rename(home_team_name=H, road_team_name=R)
 saveRDS(game_scores, "GAME_SCORES.RDA")
@@ -221,6 +222,8 @@ rest_days <- data.frame(rbindlist(rest_days)) %>%
   mutate(rest_differential=selected_team_rest-opposing_team_rest) %>%
   select(game_id, rest_differential)
 
+dateindex <- distinct(f, DATE) %>% mutate(DATE_INDEX=row_number())
+
 ## Create the fill box score file
 final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_TEAM, -future_game), by=c("game_id", "OWN_TEAM")) %>%
      inner_join(select(game_scores, -DATE, -playoffs), by="game_id") %>%
@@ -234,8 +237,10 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
             road_points=road_team*points,
             share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes),
             home_team_selected = as.numeric(home_team_name==selected_team),
-            win=ifelse(future_game==1, -1, win)) %>%
-     dplyr::select(-VENUE_R_H, -TOT) %>% arrange(DATE, game_id)
+            win=ifelse(future_game==1, NA, win)) %>%
+     dplyr::select(-VENUE_R_H, -TOT) %>% arrange(DATE, game_id) %>%
+     inner_join(dateindex, by="DATE") %>%
+     ungroup()
 
 saveRDS(final, "BOX_SCORES.RDA")
 

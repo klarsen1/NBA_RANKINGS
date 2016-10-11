@@ -4,6 +4,9 @@ library(readxl)
 library(data.table)
 library(glmnet)
 library(tidyr)
+library(parallel)
+library(foreach)
+library(doParallel)
 
 
 box_scores <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA")
@@ -13,6 +16,7 @@ source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/assign_clusters.R
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/weighted_winpercentages.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/predict_game.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/get_surplus_variables.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/reporting.R")
 
 ### Global settings
 cutoff <- 8 # minutes per game. if a player plays less than this amount, he is excluded
@@ -43,17 +47,13 @@ datemap <- select(box_scores, DATE, DATE_INDEX, future_game, season) %>% distinc
 ignore_season_prior_to <- 2014
 start_index <- subset(datemap, DATE==start_date)$DATE_INDEX
 end_index <- subset(datemap, DATE==end_date)$DATE_INDEX
-#end_index <- start_index+5
+end_index <- start_index+5
 
 
 ### Assign clusters to the historical data and calculate rolling win percentages
 centroids <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/centroids/centroids.RDA")
-box_scores_plus_list <- list()
-counter <- 1
-for (i in min(subset(datemap, season==ignore_season_prior_to)$DATE_INDEX):max(subset(datemap, future_game==0)$DATE_INDEX)){
+loop_result <- foreach(i=min(subset(datemap, season==ignore_season_prior_to)$DATE_INDEX):max(subset(datemap, future_game==0)$DATE_INDEX)) %dopar% {
   
-  print(paste0("Assigning clusters to DATE = ", datemap[i, "DATE"]))
-
   ### Data inside the window  
   inwindow <- filter(box_scores, DATE_INDEX<datemap[i, "DATE_INDEX"] & DATE_INDEX>datemap[i-cluster_window, "DATE_INDEX"])
   thisdate <- filter(box_scores, DATE_INDEX==datemap[i, "DATE_INDEX"])
@@ -72,10 +72,9 @@ for (i in min(subset(datemap, season==ignore_season_prior_to)$DATE_INDEX):max(su
     f$win_perc_delta <- 0
   }
   
-  box_scores_plus_list[[counter]] <- f
-  counter <- counter + 1
+  return(f)
 }
-box_scores_plus <- data.frame(rbindlist(box_scores_plus_list))
+box_scores_plus <- data.frame(rbindlist(loop_result))
 
 ### Number of clusters
 nclus <- max(box_scores_plus$Cluster)
@@ -141,6 +140,7 @@ for (i in start_index:end_index){
 output <- data.frame(rbindlist(scores))
 models <- data.frame(rbindlist(model_details))
 
-print(paste0("C: ", AUC(output$selected_team_win, output$prob_selected_team_win)[1]))
-print(paste0("C: ", AUC(output$selected_team_win, output$prob_of_probs)[1]))
+print(paste0("C: ", AUC(output$selected_team_win, output$prob_selected_team_win_d)[1]))
+print(paste0("C: ", AUC(output$selected_team_win, output$prob_selected_team_win_b)[1]))
 
+report(output)

@@ -47,7 +47,7 @@ datemap <- select(box_scores, DATE, DATE_INDEX, future_game, season) %>% distinc
 ignore_season_prior_to <- 2014
 start_index <- subset(datemap, DATE==start_date)$DATE_INDEX
 end_index <- subset(datemap, DATE==end_date)$DATE_INDEX
-end_index <- start_index+5
+#end_index <- start_index+5
 
 
 ### Assign clusters to the historical data and calculate rolling win percentages

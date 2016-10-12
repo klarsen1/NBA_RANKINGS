@@ -132,7 +132,7 @@ for (i in start_index:end_index){
   games <- unique(thisday$game_id)
 
   for (d in 1:length(games)){
-    scores[[counter]] <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[j-playing_time_window, "DATE_INDEX"]), win_perc, games[d], datemap[i, "DATE"], sims, subset(thisday, game_id==games[d]), nclus)
+    scores[[counter]] <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[j-playing_time_window, "DATE_INDEX"]), win_perc, games[d], datemap[i, "DATE"], sims, subset(thisday, game_id==games[d]), nclus, prior=0.50, posterior=0.55)
     counter <- counter + 1
   }
 }
@@ -142,5 +142,15 @@ models <- data.frame(rbindlist(model_details))
 
 print(paste0("C: ", AUC(output$selected_team_win, output$prob_selected_team_win_d)[1]))
 print(paste0("C: ", AUC(output$selected_team_win, output$prob_selected_team_win_b)[1]))
+cor(output$prob_selected_team_win_b, output$prob_selected_team_win_d)
 
-report(output)
+mean(output$prob_selected_team_win_b)
+mean(output$prob_selected_team_win_d)
+mean(output$selected_team_win)
+
+report(output, 2)
+
+output <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/first_successful_sim.RDA")
+#saveRDS(output, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/first_successful_sim.RDA")
+# 0.687457329904138
+# 0.6739852700491

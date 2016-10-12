@@ -7,6 +7,9 @@ library(reshape2)
 library(data.table)
 library(dplyr)
 library(ggmap)
+library(parallel)
+library(foreach)
+library(doParallel)
 
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/distance_between.R")
 
@@ -213,12 +216,11 @@ get_rest_days <- function(id){
 }
 
 
-rest_days <- list()
 ids <- unique(game_scores$game_id)
-for (i in 1:length(ids)){
-  rest_days[[i]] <- get_rest_days(ids[i])
+loop_result <- foreach(i=1:length(ids)) %dopar% {
+  return(get_rest_days(ids[i]))
 }
-rest_days <- data.frame(rbindlist(rest_days)) %>% 
+rest_days <- data.frame(rbindlist(loop_result)) %>% 
   mutate(rest_differential=selected_team_rest-opposing_team_rest) %>%
   select(game_id, rest_differential)
 

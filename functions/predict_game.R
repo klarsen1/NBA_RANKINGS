@@ -1,5 +1,5 @@
 
-predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, nclus){
+predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, nclus, prior=0.50, posterior=0.55){
 
   thisgame <- tobescored[1,]
   thisseason <- thisgame$season
@@ -80,10 +80,12 @@ predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, n
     samplesdf <- data.frame(cbind(x, select(thisgame, DATE, travel, rest_differential, home_team_name, road_team_name, home_team_points, road_team_points, opposing_team), row.names=NULL), stringsAsFactors = FALSE)
   }
 
+  offset <- log((1-prior)*posterior / (prior*(1-posterior)))
+
   x <- select(samplesdf, -game_id, -DATE, -home_team_name, -road_team_name, -selected_team, -selected_team_win, -home_team_points, -road_team_points, -opposing_team)
   f <- as.formula(~.)
   X <- model.matrix(f, x)
-  prob_win <- 1/(1+exp(-X%*%b[-1]))
+  prob_win <- 1/(1+exp(-X%*%b[-1] + offset))
   
   samplesdf$prob_win <- prob_win
   samplesdf$d_prob_selected_team_win <- ifelse(samplesdf$prob_win>.5, 1.0, 0.0)

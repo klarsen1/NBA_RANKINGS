@@ -27,6 +27,7 @@ cluster_window <- 91
 alpha <- 0 # for elastic net
 sims <- 1
 ignore_winstreaks <- 0
+save_results <- 1
 
 ### Start the forecast date and end dates
 start_date <- min(subset(box_scores, season==2015)$DATE)
@@ -132,7 +133,7 @@ for (i in start_index:end_index){
   games <- unique(thisday$game_id)
 
   for (d in 1:length(games)){
-    scores[[counter]] <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[j-playing_time_window, "DATE_INDEX"]), win_perc, games[d], datemap[i, "DATE"], sims, subset(thisday, game_id==games[d]), nclus, prior=0.50, posterior=0.55)
+    scores[[counter]] <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[j-playing_time_window, "DATE_INDEX"]), win_perc, games[d], datemap[i, "DATE"], sims, subset(thisday, game_id==games[d]), nclus, 0.50, 0.55, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
     counter <- counter + 1
   }
 }
@@ -148,9 +149,14 @@ mean(output$prob_selected_team_win_b)
 mean(output$prob_selected_team_win_d)
 mean(output$selected_team_win)
 
-report(output, 2)
+if (save_results==1){
+  ranks <- report(output, 2) %>% select(team, games, pred_win_rate) 
+  details <- mutate(output, 
+                    d=as.numeric(prob_selected_team_win_b>0.5),
+                    road_team_win=ifelse(selected_team==road_team_name, d, 1-d), 
+                    home_team_win=1-road_team_win) %>%
+    select(home_team_name, road_team_name, road_team_win, home_team_win)
+  write.csv(ranks, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/rankings_",Sys.Date(), ".csv"))
+  write.csv(details, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/game_level_details_",Sys.Date(), ".csv"))
+}
 
-output <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/first_successful_sim.RDA")
-#saveRDS(output, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/first_successful_sim.RDA")
-# 0.687457329904138
-# 0.6739852700491

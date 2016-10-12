@@ -1,5 +1,5 @@
 
-predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, nclus, prior=0.50, posterior=0.55){
+predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, nclus, prior, posterior, dir){
 
   thisgame <- tobescored[1,]
   thisseason <- thisgame$season
@@ -12,7 +12,7 @@ predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, n
   print(paste0("Date = ", date))
   
   ### Read the overrides
-  overrides <- data.frame(read_excel("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/overrides.xlsx", sheet=1))
+  overrides <- data.frame(read_excel(paste0(dir, "overrides.xlsx"), sheet=1))
 
   ### First get the average minutes and standard deviations for each player
   dist <- filter(history, (OWN_TEAM==team1 | OWN_TEAM==team2)) %>%

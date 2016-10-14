@@ -80,8 +80,10 @@ predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, n
     samplesdf <- data.frame(cbind(x, select(thisgame, DATE, travel, rest_differential, home_team_name, road_team_name, home_team_points, road_team_points, opposing_team), row.names=NULL), stringsAsFactors = FALSE)
   }
 
+  ### Offset to apply prior for the intercept
   offset <- log((1-prior)*posterior / (prior*(1-posterior)))
 
+  ### Score the model
   x <- select(samplesdf, -game_id, -DATE, -home_team_name, -road_team_name, -selected_team, -selected_team_win, -home_team_points, -road_team_points, -opposing_team)
   f <- as.formula(~.)
   X <- model.matrix(f, x)

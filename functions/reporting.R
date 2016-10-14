@@ -1,11 +1,6 @@
-report <- function(scores, type=1){
+report <- function(scores, predvar){
 
-  ### Pick the type of score
-  if (type==1){
-    scores$pred <- scores$prob_selected_team_win_d
-  } else{
-    scores$pred <- scores$prob_selected_team_win_b
-  }
+  scores$pred <- scores[,predvar]
   
   ### Summarize team performances -- have to do this twice because the data was collapsed into matchups
   summary1 <- group_by(scores, selected_team) %>%

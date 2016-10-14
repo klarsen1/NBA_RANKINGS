@@ -7,7 +7,8 @@ get_surplus_variables <- function(data, nclus){
     group_by(game_id, selected_team) %>%
     summarise_each(funs(sum)) %>%
     mutate(home_team_selected=as.numeric(home_team_selected>0), 
-           selected_team_win=as.numeric(selected_team_win>0)) %>%
+           selected_team_win=as.numeric(selected_team_win>0),
+           win_perc_delta=mean(win_perc_delta)) %>%
     ungroup()
            
   return(df)

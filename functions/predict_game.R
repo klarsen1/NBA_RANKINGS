@@ -61,10 +61,11 @@ predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, n
         group_by(OWN_TEAM) %>%
         mutate(share_of_minutes=share_of_minutes/sum(share_of_minutes),
                share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes)) %>%
-        ungroup()
+        ungroup() %>%
+        left_join(win_perc, by="selected_team") %>%
+        replace(is.na(.), 0)
         
-      x <- get_surplus_variables(df, nclus) %>%
-        left_join(win_perc, by="selected_team")
+      x <- get_surplus_variables(df, nclus)
 
       return(data.frame(cbind(x, select(thisgame, DATE, travel, rest_differential, home_team_name, road_team_name, home_team_points, road_team_points, opposing_team), row.names=NULL), stringsAsFactors = FALSE))
     }
@@ -73,10 +74,11 @@ predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, n
     df <- group_by(dist_active, OWN_TEAM) %>%
       mutate(share_of_minutes=m_share_of_minutes/sum(m_share_of_minutes),
              share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, m_share_of_minutes, -m_share_of_minutes)) %>%
-      ungroup()
+      ungroup() %>%
+      left_join(win_perc, by="selected_team") %>%
+      replace(is.na(.), 0)
     
-    x <- get_surplus_variables(df, nclus) %>%
-       left_join(win_perc, by="selected_team")
+    x <- get_surplus_variables(df, nclus)
     samplesdf <- data.frame(cbind(x, select(thisgame, DATE, travel, rest_differential, home_team_name, road_team_name, home_team_points, road_team_points, opposing_team), row.names=NULL), stringsAsFactors = FALSE)
   }
 

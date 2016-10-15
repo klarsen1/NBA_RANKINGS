@@ -117,7 +117,7 @@ for (i in start_index:end_index){
        select(-game_id, -selected_team)
 
      Y <- x$selected_team_win
-       x$selected_team_win <- NULL
+     x$selected_team_win <- NULL
 
      X <- model.matrix(as.formula(Y ~ .), x)
      model <- cv.glmnet(y=Y, x=X, family="binomial", alpha=alpha, parallel=FALSE, nfolds=10)
@@ -134,8 +134,8 @@ for (i in start_index:end_index){
      modelupdates <- modelupdates+1
      
      ## Get the latest win percentages
-     thisseason <- filter(inwindow, DATE=max(DATE)) %>% distinct(season)
-     win_perc <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason)
+     thisseason <- filter(inwindow, DATE==max(DATE))
+     win_perc <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason[1,"season"])
      
   }
   

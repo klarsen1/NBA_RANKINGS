@@ -44,11 +44,11 @@ weighted_winpercentages <- function(data, s){
       rename(w_winrate_opposing_team=w_win_rate) %>%
       mutate(early_season=as.numeric(n1<9), 
              win_perc_delta=ifelse(early_season==1, 0, w_winrate_selected_team-w_winrate_opposing_team)) %>%
-      select(selected_team, early_season, w_winrate_selected_team, w_winrate_opposing_team, winrate_selected_team, winrate_opposing_team, win_perc_delta, n1, n2)
+      select(selected_team, winrate_selected_team, winrate_opposing_team, wins_selected_team, wins_opposing_team, n1, n2, early_season)  
     return(df4)
   } else{
     t <- distinct(data, selected_team) %>%
-      mutate(early_season=1, w_winrate_selected_team=0, w_winrate_opposing_team=0, winrate_selected_team=0, winrate_opposing_team=0, win_perc_delta=0, n1=0, n2=0)
+      mutate(winrate_selected_team=0, winrate_opposing_team=0, wins_selected_team=0, wins_opposing_team=0, n1=0, n2=0, early_season=1)
     return(data.frame(t))
   }
 }

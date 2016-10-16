@@ -51,8 +51,10 @@ end_index <- subset(datemap, DATE==end_date)$DATE_INDEX
 
 ### Assign clusters to the historical data and calculate rolling win percentages
 centroids <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/centroids/centroids.RDA")
-loop_result <- foreach(i=min(subset(datemap, season==ignore_season_prior_to)$DATE_INDEX):max(subset(datemap, future_game==0)$DATE_INDEX)) %dopar% {
-  
+s <- min(subset(datemap, season==ignore_season_prior_to)$DATE_INDEX)
+e <-max(subset(datemap, future_game==0)$DATE_INDEX) 
+loop_result <- foreach(i=s:e) %dopar% {
+
   ### Data inside the window  
   inwindow <- filter(box_scores, DATE_INDEX<datemap[i, "DATE_INDEX"] & DATE_INDEX>datemap[i-cluster_window, "DATE_INDEX"])
   thisdate <- filter(box_scores, DATE_INDEX==datemap[i, "DATE_INDEX"])
@@ -61,6 +63,7 @@ loop_result <- foreach(i=min(subset(datemap, season==ignore_season_prior_to)$DAT
   win_perc <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason)
 
   clusters <- assign_clusters(centroids, inwindow, cutoff)
+
   
   ### Join against win percentages and clusters  
   f <- inner_join(thisdate, select(clusters, PLAYER_FULL_NAME, Cluster), by="PLAYER_FULL_NAME") %>%
@@ -74,6 +77,7 @@ loop_result <- foreach(i=min(subset(datemap, season==ignore_season_prior_to)$DAT
   
   return(f)
 }
+
 box_scores_plus <- data.frame(rbindlist(loop_result))
 
 ## Save clusters

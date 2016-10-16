@@ -1,6 +1,7 @@
 weighted_winpercentages <- function(data, s){
 
-  df <- subset(data, season==s) %>% distinct(game_id, .keep_all=TRUE)
+  df <- subset(data, season==s) %>% distinct(game_id, .keep_all=TRUE) %>%
+    select(selected_team, opposing_team, selected_team_win)
   
   if (nrow(df)>0){
     all_teams <- distinct(data, OWN_TEAM)
@@ -10,19 +11,18 @@ weighted_winpercentages <- function(data, s){
       winrate <- filter(df, selected_team==t | opposing_team==t) %>%
         ungroup() %>%
         mutate(win=ifelse(selected_team==t, selected_team_win, 1-selected_team_win)) %>%
-        summarise(win_rate=mean(win), wins=sum(win), n=n()) %>%
+        summarise(win_rate=mean(win), n=n()) %>%
         mutate(opposing_team=t, 
                selected_team=t)
       winrates[[k]] <- winrate
     }
-    winratesdf <- data.frame(rbindlist(winrates), stringsAsFactors=FALSE)
+    winratesdf1 <- data.frame(rbindlist(winrates), stringsAsFactors=FALSE)
     
-    df1 <- inner_join(df, select(winratesdf, win_rate, wins, selected_team, n), by="selected_team") %>%
-      rename(winrate_selected_team=win_rate, n1=n, wins_selected_team=wins)
-    df2 <- inner_join(df1, select(winratesdf, win_rate, wins, opposing_team, n), by="opposing_team") %>%
-      rename(winrate_opposing_team=win_rate, n2=n, wins_opposing_team=wins) %>%
-    select(selected_team, selected_team_win, opposing_team, winrate_selected_team, winrate_opposing_team, wins_selected_team, wins_opposing_team, n1, n2)  
-    rm(winratesdf)
+    df1 <- inner_join(df, select(winratesdf1, win_rate, selected_team), by="selected_team") %>%
+      rename(winrate_selected_team=win_rate)
+    df2 <- inner_join(df1, select(winratesdf1, win_rate, opposing_team), by="opposing_team") %>%
+      rename(winrate_opposing_team=win_rate) %>%
+    select(selected_team, selected_team_win, opposing_team, winrate_selected_team, winrate_opposing_team)  
     rm(winrates)
 
     winrates <- list()
@@ -32,23 +32,20 @@ weighted_winpercentages <- function(data, s){
         ungroup() %>%
         mutate(win=ifelse(selected_team==t, selected_team_win*winrate_opposing_team, (1-selected_team_win)*winrate_selected_team)) %>%
         summarise(w_win_rate=mean(win)) %>%
-        mutate(opposing_team=t, 
-               selected_team=t)
+        mutate(selected_team=t)
       winrates[[k]] <- winrate
     }
-    winratesdf <- data.frame(rbindlist(winrates), stringsAsFactors=FALSE)
-
-    df3 <- inner_join(df2, select(winratesdf, w_win_rate, selected_team), by="selected_team") %>%
-      rename(w_winrate_selected_team=w_win_rate)
-    df4 <- inner_join(df3, select(winratesdf, w_win_rate, opposing_team), by="opposing_team") %>%
-      rename(w_winrate_opposing_team=w_win_rate) %>%
-      mutate(early_season=as.numeric(n1<9), 
-             win_perc_delta=ifelse(early_season==1, 0, w_winrate_selected_team-w_winrate_opposing_team)) %>%
-      select(selected_team, winrate_selected_team, winrate_opposing_team, wins_selected_team, wins_opposing_team, n1, n2, early_season)  
-    return(df4)
+    winratesdf2 <- data.frame(rbindlist(winrates), stringsAsFactors=FALSE) %>%
+      inner_join(winratesdf1, by="selected_team") %>%
+      mutate(early_season=as.numeric(n<9),
+             win_rate=win_rate*as.numeric(early_season==0), 
+             w_win_rate=w_win_rate*as.numeric(early_season==0)) %>%
+      select(selected_team, opposing_team, win_rate, w_win_rate, early_season)
+    
+    return(winratesdf2)
   } else{
     t <- distinct(data, selected_team) %>%
-      mutate(winrate_selected_team=0, winrate_opposing_team=0, wins_selected_team=0, wins_opposing_team=0, n1=0, n2=0, early_season=1)
+      mutate(win_rate=0, w_win_rate=0, early_season=1, opposing_team=selected_team)
     return(data.frame(t))
   }
 }

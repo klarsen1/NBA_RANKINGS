@@ -53,6 +53,8 @@ end_index <- subset(datemap, DATE==end_date)$DATE_INDEX
 centroids <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/centroids/centroids.RDA")
 s <- min(subset(datemap, season==ignore_season_prior_to)$DATE_INDEX)
 e <-max(subset(datemap, future_game==0)$DATE_INDEX) 
+ncore <- detectCores()-1
+registerDoParallel(ncore)
 loop_result <- foreach(i=s:e) %dopar% {
 
   ### Data inside the window  
@@ -60,19 +62,24 @@ loop_result <- foreach(i=s:e) %dopar% {
   thisdate <- filter(box_scores, DATE_INDEX==datemap[i, "DATE_INDEX"])
   thisseason <- thisdate[1,"season"]
 
-  win_perc <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason)
+  win_perc <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason) %>%
+    select(-win_rate)
 
   clusters <- assign_clusters(centroids, inwindow, cutoff)
 
   
   ### Join against win percentages and clusters  
   f <- inner_join(thisdate, select(clusters, PLAYER_FULL_NAME, Cluster), by="PLAYER_FULL_NAME") %>%
-       left_join(win_perc, by="selected_team") %>%
+       left_join(select(win_perc, -opposing_team), by="selected_team") %>%
+       rename(winrate_selected_team=w_win_rate) %>%
+       left_join(select(win_perc, -early_season, -selected_team), by="opposing_team") %>%
+       rename(winrate_opposing_team=w_win_rate) %>%
        replace(is.na(.), 0) %>%
        ungroup()
   
   if (ignore_winstreaks==1){
-    f$win_perc_delta <- 0
+    f$winrate_opposing_team <- 0
+    f$winrate_selected_team <- 0
   }
   
   return(f)
@@ -139,7 +146,8 @@ for (i in start_index:end_index){
      
      ## Get the latest win percentages
      thisseason <- filter(inwindow, DATE==max(DATE))
-     win_perc <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason[1,"season"])
+     win_perc <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason[1,"season"]) %>%
+       select(-win_rate)
      
   }
   

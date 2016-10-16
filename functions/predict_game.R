@@ -40,6 +40,7 @@ predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, n
     mutate(player=row_number(),
            game_id=id, 
            selected_team=selected, 
+           opposing_team=ifelse(selected_team==team1, team2, team1),
            home_team_selected=as.numeric(selected_team==team1), 
            selected_team_win=w) %>%
     filter(player<14) %>%
@@ -62,7 +63,11 @@ predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, n
         mutate(share_of_minutes=share_of_minutes/sum(share_of_minutes),
                share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes)) %>%
         ungroup() %>%
-        left_join(win_perc, by="selected_team") %>%
+        left_join(select(win_perc, -opposing_team), by="selected_team") %>%
+        rename(winrate_selected_team=w_win_rate) %>%
+        left_join(select(win_perc, -early_season, -selected_team), by="opposing_team") %>%
+        rename(winrate_opposing_team=w_win_rate) %>%
+        select(-opposing_team) %>%
         replace(is.na(.), 0)
         
       x <- get_surplus_variables(df, nclus)
@@ -75,7 +80,11 @@ predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, n
       mutate(share_of_minutes=m_share_of_minutes/sum(m_share_of_minutes),
              share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, m_share_of_minutes, -m_share_of_minutes)) %>%
       ungroup() %>%
-      left_join(win_perc, by="selected_team") %>%
+      left_join(select(win_perc, -opposing_team), by="selected_team") %>%
+      rename(winrate_selected_team=w_win_rate) %>%
+      left_join(select(win_perc, -early_season, -selected_team), by="opposing_team") %>%
+      rename(winrate_opposing_team=w_win_rate) %>%
+      select(-opposing_team) %>%
       replace(is.na(.), 0)
     
     x <- get_surplus_variables(df, nclus)

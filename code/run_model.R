@@ -172,8 +172,9 @@ if (save_results==1){
   t <- mutate(output, d=as.numeric(prob_selected_team_win_b>0.5))
   ranks <- report(t, "d") %>% select(team, games, pred_win_rate) 
   details <- mutate(t, road_team_win=ifelse(selected_team==road_team_name, d, 1-d), 
-                    home_team_win=1-road_team_win) %>%
-             select(home_team_name, road_team_name, road_team_win, home_team_win)
+                    home_team_win=1-road_team_win, 
+                    predicted_winner=ifelse(road_team_win==1, road_team_name, home_team_name)) %>%
+             select(home_team_name, road_team_name, road_team_win, home_team_win, predicted_winner)
   write.csv(ranks, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/rankings_",Sys.Date(), ".csv"))
   write.csv(details, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/game_level_predictions_",Sys.Date(), ".csv"))
   write.csv(clusters_and_players, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/modeldetails/cluster_details_",Sys.Date(), ".csv"))

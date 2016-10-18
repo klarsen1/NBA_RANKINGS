@@ -102,6 +102,7 @@ modelupdates <- 1
 index <- 1
 scores <- list()
 model_details <- list()
+model_parts <- list()
 for (i in start_index:end_index){
   
   ### Make sure we only use real data
@@ -156,13 +157,16 @@ for (i in start_index:end_index){
   games <- unique(thisday$game_id)
   
   for (d in 1:length(games)){
-    scores[[counter]] <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[j-playing_time_window, "DATE_INDEX"]), win_perc, games[d], datemap[i, "DATE"], sims, subset(thisday, game_id==games[d]), nclus, 0.50, 0.55, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
+    pred <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[j-playing_time_window, "DATE_INDEX"]), win_perc, games[d], datemap[i, "DATE"], sims, subset(thisday, game_id==games[d]), nclus, 0.50, 0.55, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
+    scores[[counter]] <- pred[[1]]
+    model_parts[[counter]] <- pred[[2]] 
     counter <- counter + 1
   }
 }
 
 output <- data.frame(rbindlist(scores), stringsAsFactors = FALSE)
 models <- data.frame(rbindlist(model_details), stringsAsFactors = FALSE)
+parts <- data.frame(rbindlist(model_parts), stringsAsFactors = FALSE)
 
 if (save_results==1){
   t <- mutate(output, d=as.numeric(prob_selected_team_win_b>0.5))
@@ -174,4 +178,5 @@ if (save_results==1){
   write.csv(details, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/game_level_predictions_",Sys.Date(), ".csv"))
   write.csv(clusters_and_players, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/modeldetails/cluster_details_",Sys.Date(), ".csv"))
   write.csv(models, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/modeldetails/coefficients_", Sys.Date(), ".csv"))
+  write.csv(parts, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/modeldetails/score_decomp_", Sys.Date(), ".csv"))
 }

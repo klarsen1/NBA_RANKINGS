@@ -24,7 +24,7 @@ read_player_data <- function(season, first_labels, suffix){
   attr(data, "variable.labels") <- labels
   n <- gsub("_$", "", gsub("__", "_", gsub(".", "_", names(data), fixed=T)))
   names(data) <- n
-  data <- data %>% rename( 
+  data <- rename(data, 
                  points=PTS, 
                  assists=A,
                  offensive_rebounds=OR,
@@ -200,17 +200,33 @@ get_rest_days <- function(id){
     arrange(DATE) %>%
     mutate(days_since_last_game=DATE-lag(DATE), 
            start_of_season=ifelse(days_since_last_game>14 | is.na(days_since_last_game)==TRUE, 1, 0),
-           selected_team_rest=ifelse(start_of_season==1, 0, days_since_last_game)) %>%
+           selected_team_rest=ifelse(start_of_season==1, 0, days_since_last_game),
+           selected_team_last_city=ifelse(start_of_season==1, selected, lag(home_team_name)), 
+           OWN_TEAM=home_team_name) %>%
+    inner_join(city_lat_long, by="OWN_TEAM") %>%
+    rename(lat1=lat, lon1=lon) %>%
+    mutate(OWN_TEAM=selected_team_last_city) %>%
+    inner_join(city_lat_long, by="OWN_TEAM") %>%
+    rename(lat2=lat, lon2=lon) %>%
+    mutate(selected_team_travel=abs(distance_between(lon1,lat1,lon2,lat2))) %>%
     filter(game_id==id) %>%
-    select(selected_team_rest)
+    select(selected_team_rest, selected_team_last_city, selected_team_travel)
   
   df2 <- subset(game_scores, home_team_name==opposing | road_team_name==opposing) %>% 
     arrange(DATE) %>%
     mutate(days_since_last_game=DATE-lag(DATE), 
            start_of_season=ifelse(days_since_last_game>14 | is.na(days_since_last_game)==TRUE, 1, 0),
-           opposing_team_rest=ifelse(start_of_season==1, 0, days_since_last_game)) %>%
+           opposing_team_rest=ifelse(start_of_season==1, 0, days_since_last_game),
+           opposing_team_last_city=ifelse(start_of_season==1, opposing, lag(home_team_name)),
+           OWN_TEAM=home_team_name) %>%
+    inner_join(city_lat_long, by="OWN_TEAM") %>%
+    rename(lat1=lat, lon1=lon) %>%
+    mutate(OWN_TEAM=opposing_team_last_city) %>%
+    inner_join(city_lat_long, by="OWN_TEAM") %>%
+    rename(lat2=lat, lon2=lon) %>%
+    mutate(opposing_team_travel=abs(distance_between(lon1,lat1,lon2,lat2))) %>%
     filter(game_id==id) %>%
-    select(opposing_team_rest, game_id)
+    select(opposing_team_rest, opposing_team_last_city, game_id, opposing_team_travel)
 
   return(data.frame(cbind(df1, df2)))
 }
@@ -221,15 +237,16 @@ loop_result <- foreach(i=1:length(ids)) %dopar% {
   return(get_rest_days(ids[i]))
 }
 rest_days <- data.frame(rbindlist(loop_result)) %>% 
-  mutate(rest_differential=selected_team_rest-opposing_team_rest) %>%
-  select(game_id, rest_differential)
+  mutate(rest_differential=selected_team_rest-opposing_team_rest, 
+         travel_differential=opposing_team_travel-selected_team_travel) %>%
+  select(game_id, rest_differential, travel_differential, opposing_team_travel, selected_team_travel, selected_team_last_city, opposing_team_last_city)
 
 dateindex <- distinct(f, DATE) %>% mutate(DATE_INDEX=row_number())
 
 ## Create the fill box score file
 final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_TEAM, -future_game), by=c("game_id", "OWN_TEAM")) %>%
      inner_join(select(game_scores, -DATE, -playoffs), by="game_id") %>%
-     inner_join(travel_data, by="game_id") %>%
+     #inner_join(travel_data, by="game_id") %>%
      inner_join(rest_days, by="game_id") %>%
      mutate(share_of_minutes=minutes/total_minutes, 
             share_of_playoff_minutes=ifelse(total_playoff_minutes>0, playoff_minutes/total_playoff_minutes, 0),

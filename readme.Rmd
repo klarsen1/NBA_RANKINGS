@@ -1,0 +1,28 @@
+---
+title: "readme"
+output: html_document
+---
+
+# Elastic NBA Team Rankings
+
+## Introduction
+
+During the last NBA season I wrote a couple of posts about the Golden State Warriors. The posts investigated whether the champion season was a fluke and if any teams had a legitimate chance of beating Golden State in the playoffs during their second season. Results indicated that the first championship was indeed deserved, and that the Spurs and Cavaliers would be serious obstacles for Golden State in their quest for the second title - despite the impressive record in the regular season. 
+
+Both posts utilized a statistical win-prediction model, based on player archetypes to answer these questions. This model has since been extended to be a bonafied forecasting model - the previous versions was designed for "what if" scenarios - and can hence be used to answer a broader set of questions. Specifically, since this is a game-level model, the predictions can be used to create future team rankings and predict playoff outcomes.
+
+The purpose of this post is to briefly describe the model, share the futured model-based rankings for this season, and show how to access the predictions
+
+## How it Works
+
+The Elastic NBA Team Rankings is a dynamic ranking algorithm that is purely based on statistical modeling techniques commonly used across most industries. No qualitative data or judgment is used to decide the ranks; the only human judgment applied is the underlying mental model behind the algorithm.
+
+The model is based on three-step procedure.
+
+1. Group players into 25 *archetypes* using (k-means) clustering based on box-score stats. 
+2. Fit a regularized logistic regression model to predict win/loss for a given game. The variables in the model include: surplus/deficit of minutes allocated to the different archetypes, home game indicator, rest days, miles traveled for road teams, and a trailing win-percentage that is 
+
+
+## Including Plots
+
+You can also embed plots, for example:

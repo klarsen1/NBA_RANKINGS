@@ -100,6 +100,7 @@ predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, n
   X <- model.matrix(f, x)
   prob_win <- 1/(1+exp(-X%*%b[-1] + offset))
   d <- data.frame(cbind(X*c[-1], distinct(select(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team), game_id, .keep_all=TRUE)), stringsAsFactors = FALSE)
+  d$X.Intercept. <- NULL
   samplesdf$prob_win <- prob_win
   samplesdf$d_prob_selected_team_win <- ifelse(samplesdf$prob_win>.5, 1.0, 0.0)
   

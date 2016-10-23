@@ -120,7 +120,7 @@ for (i in start_index:end_index){
   if (counter==1 | i <= j){
   
      ### Get rest and travel by game_id
-     rest_and_travel <- select(inwindow, game_id, travel, rest_differential) %>% 
+     rest_and_travel <- select(inwindow, game_id, travel_differential, rest_differential) %>% 
        distinct(game_id, .keep_all=TRUE)
 
      ### Estimate the model

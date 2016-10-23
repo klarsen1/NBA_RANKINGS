@@ -72,7 +72,7 @@ predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, n
         
       x <- get_surplus_variables(df, nclus)
 
-      return(data.frame(cbind(x, select(thisgame, DATE, travel, rest_differential, home_team_name, road_team_name, home_team_points, road_team_points, opposing_team), row.names=NULL), stringsAsFactors = FALSE))
+      return(data.frame(cbind(x, select(thisgame, DATE, travel_differential, rest_differential, home_team_name, road_team_name, home_team_points, road_team_points, opposing_team), row.names=NULL), stringsAsFactors = FALSE))
     }
     samplesdf <- data.frame(rbindlist(loop_result))
   } else{

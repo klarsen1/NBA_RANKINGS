@@ -208,7 +208,7 @@ get_rest_days <- function(id){
     mutate(OWN_TEAM=selected_team_last_city) %>%
     inner_join(city_lat_long, by="OWN_TEAM") %>%
     rename(lat2=lat, lon2=lon) %>%
-    mutate(selected_team_travel=abs(distance_between(lon1,lat1,lon2,lat2))) %>%
+    mutate(selected_team_travel=ifelse(selected_team_rest>2 & home_team_name==selected, 0, abs(distance_between(lon1,lat1,lon2,lat2)))) %>%
     filter(game_id==id) %>%
     select(selected_team_rest, selected_team_last_city, selected_team_travel)
   
@@ -224,7 +224,7 @@ get_rest_days <- function(id){
     mutate(OWN_TEAM=opposing_team_last_city) %>%
     inner_join(city_lat_long, by="OWN_TEAM") %>%
     rename(lat2=lat, lon2=lon) %>%
-    mutate(opposing_team_travel=abs(distance_between(lon1,lat1,lon2,lat2))) %>%
+    mutate(opposing_team_travel=ifelse(opposing_team_rest>2 & home_team_name==opposing, 0, abs(distance_between(lon1,lat1,lon2,lat2)))) %>%
     filter(game_id==id) %>%
     select(opposing_team_rest, opposing_team_last_city, game_id, opposing_team_travel)
 

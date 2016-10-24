@@ -88,7 +88,7 @@ predict_game <- function(b, history, win_perc, id, date, runs=100, tobescored, n
       replace(is.na(.), 0)
     
     x <- get_surplus_variables(df, nclus)
-    samplesdf <- data.frame(cbind(x, select(thisgame, DATE, travel, rest_differential, home_team_name, road_team_name, home_team_points, road_team_points, opposing_team), row.names=NULL), stringsAsFactors = FALSE)
+    samplesdf <- data.frame(cbind(x, select(thisgame, DATE, travel_differential, rest_differential, home_team_name, road_team_name, home_team_points, road_team_points, opposing_team), row.names=NULL), stringsAsFactors = FALSE)
   }
 
   ### Offset to apply prior for the intercept

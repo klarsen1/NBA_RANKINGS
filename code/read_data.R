@@ -171,26 +171,6 @@ game_scores <- data.frame(rbindlist(lapply(split, function(x) spread(select(x, g
                    rename(home_team_name=H, road_team_name=R)
 saveRDS(game_scores, "GAME_SCORES.RDA")
 
-get_travel_dist <- function(team){
-  df <- subset(game_scores, selected_team==team) %>%
-    mutate(OWN_TEAM=selected_team) %>%
-    inner_join(city_lat_long, by="OWN_TEAM") %>%
-    rename(lat1=lat, lon1=lon) %>%
-    mutate(OWN_TEAM=opposing_team) %>%
-    inner_join(city_lat_long, by="OWN_TEAM") %>%
-    rename(lat2=lat, lon2=lon) %>%
-    mutate(travel=ifelse(selected_team==home_team_name, -distance_between(lon1,lat1,lon2,lat2), distance_between(lon1,lat1,lon2,lat2))) %>%
-    select(game_id, travel)
-  return(df)
-}
-
-travel_data <- list()
-for (i in 1:nrow(city_lat_long)){
-  travel_data[[i]] <- get_travel_dist(city_lat_long[i,]$OWN_TEAM)
-}
-travel_data <- data.frame(rbindlist(travel_data)) %>% distinct(game_id, .keep_all=TRUE) %>%
-  select(game_id, travel)
-
 get_rest_days <- function(id){
 
   selected <- subset(game_scores, game_id==id)$selected_team
@@ -239,14 +219,13 @@ loop_result <- foreach(i=1:length(ids)) %dopar% {
 rest_days <- data.frame(rbindlist(loop_result)) %>% 
   mutate(rest_differential=selected_team_rest-opposing_team_rest, 
          travel_differential=opposing_team_travel-selected_team_travel) %>%
-  select(game_id, rest_differential, travel_differential, opposing_team_travel, selected_team_travel, selected_team_last_city, opposing_team_last_city)
+  select(game_id, rest_differential, travel_differential, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, selected_team_last_city, opposing_team_last_city)
 
 dateindex <- distinct(f, DATE) %>% mutate(DATE_INDEX=row_number())
 
 ## Create the fill box score file
 final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_TEAM, -future_game), by=c("game_id", "OWN_TEAM")) %>%
      inner_join(select(game_scores, -DATE, -playoffs), by="game_id") %>%
-     #inner_join(travel_data, by="game_id") %>%
      inner_join(rest_days, by="game_id") %>%
      mutate(share_of_minutes=minutes/total_minutes, 
             share_of_playoff_minutes=ifelse(total_playoff_minutes>0, playoff_minutes/total_playoff_minutes, 0),

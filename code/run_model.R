@@ -120,7 +120,7 @@ for (i in start_index:end_index){
   if (counter==1 | i <= j){
   
      ### Get rest and travel by game_id
-     rest_and_travel <- select(inwindow, game_id, travel_differential, rest_differential) %>% 
+     rest_and_travel <- select(inwindow, game_id, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest) %>% 
        distinct(game_id, .keep_all=TRUE)
 
      ### Estimate the model
@@ -168,9 +168,9 @@ output <- data.frame(rbindlist(scores), stringsAsFactors = FALSE)
 models <- data.frame(rbindlist(model_details), stringsAsFactors = FALSE)
 parts <- data.frame(rbindlist(model_parts), stringsAsFactors = FALSE)
 
-if (save_results==1){
+  conf <- read_excel("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/Conferences.xlsx")
   t <- mutate(output, d=as.numeric(prob_selected_team_win_d>0.5))
-  ranks <- report(t, "d") %>% select(team, games, pred_win_rate) 
+  ranks <- report(t, "d") %>% select(team, games, pred_win_rate) %>% left_join(conf, by="team")
   details <- mutate(t, road_team_predicted_win=ifelse(selected_team==road_team_name, d, 1-d), 
                     home_team_predicted_win=1-road_team_predicted_win, 
                     predicted_winner=ifelse(road_team_predicted_win==1, road_team_name, home_team_name),
@@ -181,4 +181,6 @@ if (save_results==1){
   write.csv(clusters_and_players, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/modeldetails/cluster_details_",Sys.Date(), ".csv"))
   write.csv(models, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/modeldetails/coefficients_", Sys.Date(), ".csv"))
   write.csv(parts, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/modeldetails/score_decomp_", Sys.Date(), ".csv"))
-}
+
+  
+  

@@ -10,6 +10,8 @@ library(doParallel)
 
 
 box_scores <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA")
+conferences <- read_excel("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/Conferences.xlsx")
+
 
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/auc.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/assign_clusters.R")
@@ -17,6 +19,7 @@ source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/weighted_winperce
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/predict_game.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/get_surplus_variables.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/reporting.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/sim_playoffs.R")
 
 ### Global settings
 cutoff <- 8 # minutes per game. if a player plays less than this amount, he is excluded
@@ -25,7 +28,7 @@ winstreak_window <- 91 # number of days used to calculate the weighted win %
 playing_time_window <- 91 # number of days used to estimate average playing time
 cluster_window <- 91 # number of days used for cluster assignment
 alpha <- 0 # for elastic net
-sims <- 1 # number of random normal draws used when playing games
+sims <- 0 # number of random normal draws used when playing games
 ignore_winstreaks <- 0 # if equal to 1, win % are ignored in the model
 save_results <- 1 # set to 1 if you want to save the results
 
@@ -157,32 +160,29 @@ for (i in start_index:end_index){
   games <- unique(thisday$game_id)
   
   for (d in 1:length(games)){
-    pred <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[j-playing_time_window, "DATE_INDEX"]), win_perc, games[d], datemap[i, "DATE"], sims, subset(thisday, game_id==games[d]), nclus, 0.50, 0.55, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
+    pred <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[j-playing_time_window, "DATE_INDEX"]), win_perc, games[d], sims, subset(thisday, game_id==games[d]), nclus, 0.50, 0.55, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
     scores[[counter]] <- pred[[1]]
     model_parts[[counter]] <- pred[[2]] 
     counter <- counter + 1
   }
 }
 
-output <- data.frame(rbindlist(scores), stringsAsFactors = FALSE)
+game_level <- data.frame(rbindlist(scores), stringsAsFactors = FALSE) %>% 
+  mutate(d=ifelse(is.na(selected_team_win), as.numeric(prob_selected_team_win_d>0.5), selected_team_win)) 
+ranks <- report(game_level, "d") %>%
+  left_join(conferences, by="team") %>%
+  select(team, games, pred_win_rate, conference)
 models <- data.frame(rbindlist(model_details), stringsAsFactors = FALSE)
 parts <- data.frame(rbindlist(model_parts), stringsAsFactors = FALSE)
 
-conf <- read_excel("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/Conferences.xlsx")
-t <- mutate(output, d=as.numeric(prob_selected_team_win_d>0.5))
-ranks <- report(t, "d") %>% select(team, games, pred_win_rate) %>% left_join(conf, by="team")
-details <- mutate(t, d_road_team_predicted_win=ifelse(selected_team==road_team_name, d, 1-d), 
-                  d_home_team_predicted_win=1-d_road_team_predicted_win, 
-                  predicted_winner=ifelse(d_road_team_predicted_win==1, road_team_name, home_team_name),
-                  actual_winner=ifelse(is.na(selected_team_win), "NA", ifelse(selected_team_win==1, selected_team, opposing_team)),
-                  home_team_prob_win=ifelse(selected_team==home_team_name, prob_selected_team_win_d, 1-prob_selected_team_win_d), 
-                  road_team_prob_win=1-home_team_prob_win) %>%
-          select(DATE, home_team_name, road_team_name, d_road_team_predicted_win, road_team_prob_win, d_home_team_predicted_win, home_team_prob_win, predicted_winner, actual_winner)
-write.csv(ranks, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/rankings_",Sys.Date(), ".csv"))
-write.csv(details, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/game_level_predictions_",Sys.Date(), ".csv"))
-write.csv(clusters_and_players, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/modeldetails/cluster_details_",Sys.Date(), ".csv"))
-write.csv(models, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/modeldetails/coefficients_", Sys.Date(), ".csv"))
-write.csv(parts, paste0("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/modeldetails/score_decomp_", Sys.Date(), ".csv"))
+##### Run the playoffs
+inwindow <- filter(box_scores_plus, DATE_INDEX<datemap[end_index, "DATE_INDEX"] & DATE_INDEX>datemap[end_index-estimation_window, "DATE_INDEX"]) 
+thisseason <- filter(inwindow, DATE==max(DATE))
+win_perc <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[end_index-winstreak_window, "DATE_INDEX"]), thisseason[1,"season"]) %>%
+  select(-win_rate)
 
+playoffs <- sim_playoff(ranks, inwindow, playing_time_window, win_perc, datemap, sims, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS", c, end_index, thisseason[1,"season"])
+
+save_results("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/")
   
   

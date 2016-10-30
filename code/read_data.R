@@ -50,7 +50,7 @@ s4 <- read_player_data("NBA-2015-2016", c("SEASON", "DATE", "PLAYER FULL NAME", 
 s5 <- read_player_data("NBA-2016-2017", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 5)
 
 ## Add some indicators
-f <- rbind.data.frame(s1, s2, s3, s4) %>%
+f <- rbind.data.frame(s1, s2, s3, s4, s5) %>%
      mutate(home_team=as.numeric(VENUE_R_H=='H'), 
             road_team=as.numeric(VENUE_R_H=='R'), 
             playoffs=as.numeric(substr(DATA_SET, 6, 13)=="Playoffs"),

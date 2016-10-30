@@ -197,6 +197,6 @@ title_chances <- data.frame(rbindlist(loop_result)) %>% group_by(winner) %>%
   select(-n)
 
 ### Save results
-save_results("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/")
+#save_results("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/")
   
   

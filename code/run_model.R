@@ -10,7 +10,7 @@ library(doParallel)
 
 
 box_scores <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA")
-conferences <- read_excel("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/Conferences.xlsx")
+conferences <- read.csv("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/Conferences.csv", stringsAsFactors = FALSE)
 
 
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/auc.R")
@@ -175,14 +175,28 @@ ranks <- report(game_level, "d") %>%
 models <- data.frame(rbindlist(model_details), stringsAsFactors = FALSE)
 parts <- data.frame(rbindlist(model_parts), stringsAsFactors = FALSE)
 
+
 ##### Run the playoffs
 inwindow <- filter(box_scores_plus, DATE_INDEX<datemap[end_index, "DATE_INDEX"] & DATE_INDEX>datemap[end_index-estimation_window, "DATE_INDEX"]) 
 thisseason <- filter(inwindow, DATE==max(DATE))
 win_perc <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[end_index-winstreak_window, "DATE_INDEX"]), thisseason[1,"season"]) %>%
   select(-win_rate)
 
-playoffs <- sim_playoff(ranks, inwindow, playing_time_window, win_perc, datemap, sims, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS", c, end_index, thisseason[1,"season"])
 
+ncore <- detectCores()-1
+registerDoParallel(ncore)
+loop_result <- foreach(p=1:100) %dopar% {
+   playoffs <- sim_playoff(ranks, inwindow, playing_time_window, win_perc, datemap, 1, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS", c, end_index, thisseason[1,"season"])
+   winner <- subset(playoffs[[1]], status=="W")$team
+   return(data.frame(p, winner))
+}
+
+title_chances <- data.frame(rbindlist(loop_result)) %>% group_by(winner) %>%
+  summarise(n=n()) %>%
+  mutate(prob_win_title=n/100) %>%
+  select(-n)
+
+### Save results
 save_results("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/")
   
   

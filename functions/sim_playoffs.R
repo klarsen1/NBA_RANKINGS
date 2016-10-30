@@ -27,7 +27,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc, datemap,
   
   
   ### Read the playoff tree
-  tree <- data.frame(read_excel(paste0(root, "/rawdata/playofftree.xlsx")))
+  tree <- data.frame(read.csv(paste0(root, "/rawdata/playofftree.csv"), stringsAsFactors = FALSE))
   
   ### Get the qualifying teams
   qualifiers <- group_by(ranks, conference) %>% arrange(-pred_win_rate) %>%
@@ -42,7 +42,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc, datemap,
   counter <- 1
   
   for (i in 1:rounds){
-    print(paste0("Round = ", i))
+    #print(paste0("Round = ", i))
     matchups <- subset(tree, round==i)
     n <- max(matchups$series)
     DATE <- max(inwindow$DATE) + i
@@ -57,7 +57,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc, datemap,
         home_team <- h$team
         road_team <- r$team
       }
-      print(paste0(home_team, " versus ", road_team))
+      #print(paste0(home_team, " versus ", road_team))
       selected_team <- home_team
       opposing_team <- road_team
       w1 <- 0
@@ -83,7 +83,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc, datemap,
            loser <- home_team
          }
          games <- games+1
-         print(paste0("game ", games))
+         #print(paste0("game ", games))
          result <- data.frame(matrix(nrow=1, ncol=6))
          names(result) <- c("round", "game", "home_team", "road_team", "prob_home_team_win", "prob_road_team_win")
          result$round <- i

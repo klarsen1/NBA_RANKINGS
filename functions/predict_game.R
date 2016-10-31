@@ -1,3 +1,19 @@
+prep_for_scoring <- function(data){
+  d <- group_by(data, OWN_TEAM) %>%
+    mutate(share_of_minutes=share_of_minutes/sum(share_of_minutes),
+           share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes)) %>%
+    ungroup() %>%
+    left_join(select(win_perc, -opposing_team), by="selected_team") %>%
+    rename(winrate_early_season_selected_team=win_rate_early_season, 
+           winrate_season_selected_team=win_rate_season) %>%
+    left_join(select(win_perc, -first_game, -selected_team), by="opposing_team") %>%
+    rename(winrate_early_season_opposing_team=win_rate_early_season, 
+           winrate_season_opposing_team=win_rate_season) %>%
+    select(-opposing_team) %>%
+    replace(is.na(.), 0)
+  return(d)
+}
+
 
 predict_game <- function(b, history, win_perc, id, runs, tobescored, nclus, prior, posterior, dir){
 
@@ -48,60 +64,25 @@ predict_game <- function(b, history, win_perc, id, runs, tobescored, nclus, prio
     select(-player, -DATE_INDEX) %>%
     ungroup()
 
-  samples <- list()
-  
   sim_share_of_minutes <- function(x){
     x$share_of_minutes=min(max(rnorm(1, x$m_share_of_minutes, x$s_share_of_minutes), 0), 1)
     return(x)
   }
   if (runs==0){
-    df <- group_by(dist_active, OWN_TEAM) %>%
-      mutate(share_of_minutes=m_share_of_minutes/sum(m_share_of_minutes),
-             share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, m_share_of_minutes, -m_share_of_minutes)) %>%
-      ungroup() %>%
-      left_join(select(win_perc, -opposing_team), by="selected_team") %>%
-      rename(winrate_selected_team=w_win_rate) %>%
-      left_join(select(win_perc, -early_season, -selected_team), by="opposing_team") %>%
-      rename(winrate_opposing_team=w_win_rate) %>%
-      select(-opposing_team) %>%
-      replace(is.na(.), 0)
-    
+    dist_active$share_of_minutes <- dist_active$m_share_of_minutes
+    df <- prep_for_scoring(dist_active)
     x <- get_surplus_variables(df, nclus)
     samplesdf <- data.frame(cbind(x, select(thisgame, DATE, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest, home_team_name, road_team_name, opposing_team), row.names=NULL), stringsAsFactors = FALSE)
   } else if (runs==1){
-      df <- data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes))) %>%
-        group_by(OWN_TEAM) %>%
-        mutate(share_of_minutes=share_of_minutes/sum(share_of_minutes),
-               share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes)) %>%
-        ungroup() %>%
-        left_join(select(win_perc, -opposing_team), by="selected_team") %>%
-        rename(winrate_selected_team=w_win_rate) %>%
-        left_join(select(win_perc, -early_season, -selected_team), by="opposing_team") %>%
-        rename(winrate_opposing_team=w_win_rate) %>%
-        select(-opposing_team) %>%
-        replace(is.na(.), 0)
-      
-      x <- get_surplus_variables(df, nclus)
-      
-      samplesdf <- data.frame(cbind(x, select(thisgame, DATE, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest, home_team_name, road_team_name, opposing_team), row.names=NULL), stringsAsFactors = FALSE)
+    df <- prep_for_scoring(data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes))))  
+    x <- get_surplus_variables(df, nclus)
+    samplesdf <- data.frame(cbind(x, select(thisgame, DATE, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest, home_team_name, road_team_name, opposing_team), row.names=NULL), stringsAsFactors = FALSE)
   } else{
     ncore <- detectCores()-1
     registerDoParallel(ncore)
     loop_result <- foreach(j=1:runs) %dopar% {
-      df <- data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes))) %>%
-        group_by(OWN_TEAM) %>%
-        mutate(share_of_minutes=share_of_minutes/sum(share_of_minutes),
-               share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes)) %>%
-        ungroup() %>%
-        left_join(select(win_perc, -opposing_team), by="selected_team") %>%
-        rename(winrate_selected_team=w_win_rate) %>%
-        left_join(select(win_perc, -early_season, -selected_team), by="opposing_team") %>%
-        rename(winrate_opposing_team=w_win_rate) %>%
-        select(-opposing_team) %>%
-        replace(is.na(.), 0)
-        
+      df <- prep_for_scoring(data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes))))
       x <- get_surplus_variables(df, nclus)
-
       return(data.frame(cbind(x, select(thisgame, DATE, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest, home_team_name, road_team_name, opposing_team), row.names=NULL), stringsAsFactors = FALSE))
     }
     samplesdf <- data.frame(rbindlist(loop_result))
@@ -120,10 +101,12 @@ predict_game <- function(b, history, win_perc, id, runs, tobescored, nclus, prio
   samplesdf$prob_win <- prob_win
   samplesdf$d_prob_selected_team_win <- ifelse(samplesdf$prob_win>.5, 1.0, 0.0)
   
-  prediction <- group_by(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team, selected_team_win) %>%
+  prediction <- group_by(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team) %>%
     summarise(prob_selected_team_win_d=mean(as.numeric(prob_win)),
               prob_selected_team_win_b=mean(as.numeric(d_prob_selected_team_win))) %>%
     ungroup()
+  
+  prediction$selected_team_win <- w
   
   return(list(data.frame(prediction), d))
 }

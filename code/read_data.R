@@ -47,10 +47,12 @@ s1 <- read_player_data("NBA-2012-2013", c("SEASON", "DATE", "PLAYER FULL NAME", 
 s2 <- read_player_data("NBA-2013-2014", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 2)
 s3 <- read_player_data("NBA-2014-2015", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 3)
 s4 <- read_player_data("NBA-2015-2016", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 4)
-s5 <- read_player_data("NBA-2016-2017", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 5)
+s5 <- read_player_data("NBA-2016-2017", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 5) 
+  
 
 ## Add some indicators
 f <- rbind.data.frame(s1, s2, s3, s4, s5) %>%
+     filter(is.na(DATA_SET)==FALSE) %>%
      mutate(home_team=as.numeric(VENUE_R_H=='H'), 
             road_team=as.numeric(VENUE_R_H=='R'), 
             playoffs=as.numeric(substr(DATA_SET, 6, 13)=="Playoffs"),
@@ -59,9 +61,14 @@ f <- rbind.data.frame(s1, s2, s3, s4, s5) %>%
             playoff_points=playoffs*points,
             DATE=as.Date(DATE, format="%m/%d/%Y"),
             quarter=quarter(DATE),
-            future_game=0)
+            future_game=0,
+            OWN_TEAM=ifelse(OWN_TEAM=="LA", "LA Clippers", OWN_TEAM),
+            OPP_TEAM=ifelse(OPP_TEAM=="LA", "LA Clippers", OPP_TEAM))
 
 max_date <- max(f$DATE)
+
+## Get the altitudes
+altitudes <- data.frame(read.csv("altitudes.csv", stringsAsFactors = FALSE))
 
 ## Read the schedule
 schedule <- data.frame(read_excel("schedule.xlsx", sheet=1))
@@ -177,6 +184,8 @@ get_rest_days <- function(id){
   selected <- subset(game_scores, game_id==id)$selected_team
   opposing <- subset(game_scores, game_id==id)$opposing_team
   
+  t <- rename(altitudes, OWN_TEAM=team, selected_team_altitude=altitude)
+  
   df1 <- subset(game_scores, home_team_name==selected | road_team_name==selected) %>% 
     arrange(DATE) %>%
     mutate(days_since_last_game=DATE-lag(DATE), 
@@ -191,7 +200,10 @@ get_rest_days <- function(id){
     rename(lat2=lat, lon2=lon) %>%
     mutate(selected_team_travel=ifelse(selected_team_rest>2 & home_team_name==selected, 0, abs(distance_between(lon1,lat1,lon2,lat2)))) %>%
     filter(game_id==id) %>%
-    select(selected_team_rest, selected_team_last_city, selected_team_travel)
+    left_join(t, by="OWN_TEAM") %>%
+    select(selected_team_rest, selected_team_last_city, selected_team_travel, selected_team_altitude)
+ 
+  t <- rename(altitudes, OWN_TEAM=team, opposing_team_altitude=altitude)
   
   df2 <- subset(game_scores, home_team_name==opposing | road_team_name==opposing) %>% 
     arrange(DATE) %>%
@@ -207,7 +219,8 @@ get_rest_days <- function(id){
     rename(lat2=lat, lon2=lon) %>%
     mutate(opposing_team_travel=ifelse(opposing_team_rest>2 & home_team_name==opposing, 0, abs(distance_between(lon1,lat1,lon2,lat2)))) %>%
     filter(game_id==id) %>%
-    select(opposing_team_rest, opposing_team_last_city, game_id, opposing_team_travel)
+    left_join(t, by="OWN_TEAM") %>%
+    select(opposing_team_rest, opposing_team_last_city, game_id, opposing_team_travel, opposing_team_altitude)
 
   return(data.frame(cbind(df1, df2)))
 }
@@ -220,7 +233,7 @@ loop_result <- foreach(i=1:length(ids)) %dopar% {
 rest_days <- data.frame(rbindlist(loop_result)) %>% 
   mutate(rest_differential=selected_team_rest-opposing_team_rest, 
          travel_differential=opposing_team_travel-selected_team_travel) %>%
-  select(game_id, rest_differential, travel_differential, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, selected_team_last_city, opposing_team_last_city)
+  select(game_id, rest_differential, travel_differential, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, selected_team_last_city, opposing_team_last_city, selected_team_altitude, opposing_team_altitude)
 
 dateindex <- distinct(f, DATE) %>% mutate(DATE_INDEX=row_number())
 

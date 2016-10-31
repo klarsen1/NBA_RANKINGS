@@ -38,14 +38,16 @@ weighted_winpercentages <- function(data, s){
     winratesdf2 <- data.frame(rbindlist(winrates), stringsAsFactors=FALSE) %>%
       inner_join(winratesdf1, by="selected_team") %>%
       mutate(early_season=as.numeric(n<9),
-             win_rate=win_rate*as.numeric(early_season==0), 
-             w_win_rate=w_win_rate*as.numeric(early_season==0)) %>%
-      select(selected_team, opposing_team, win_rate, w_win_rate, early_season)
+             win_rate_early_season=win_rate*as.numeric(early_season==1),
+             win_rate_season=win_rate*as.numeric(early_season==0),
+             w_win_rate=w_win_rate*as.numeric(early_season==0),
+             first_game=0) %>%
+      select(selected_team, opposing_team, win_rate_early_season, win_rate_season, first_game)
     
     return(winratesdf2)
   } else{
     t <- distinct(data, selected_team) %>%
-      mutate(win_rate=0, w_win_rate=0, early_season=1, opposing_team=selected_team)
+      mutate(win_rate_early_season=0, win_rate_season=0, opposing_team=selected_team, first_game=1)
     return(data.frame(t))
   }
 }

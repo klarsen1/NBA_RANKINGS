@@ -1,24 +1,15 @@
-prep_for_scoring <- function(data){
+prep_for_scoring <- function(data, win_perc1, win_perc2){
   d1 <- group_by(data, OWN_TEAM) %>%
     mutate(share_of_minutes=share_of_minutes/sum(share_of_minutes),
            share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes)) %>%
     ungroup() 
   
   d2 <- attach_win_perc(d1, win_perc1, win_perc2)
-  %>%
-    left_join(select(win_perc, -opposing_team), by="selected_team") %>%
-    rename(winrate_early_season_selected_team=win_rate_early_season, 
-           winrate_season_selected_team=win_rate_season) %>%
-    left_join(select(win_perc, -first_game, -selected_team), by="opposing_team") %>%
-    rename(winrate_early_season_opposing_team=win_rate_early_season, 
-           winrate_season_opposing_team=win_rate_season) %>%
-    select(-opposing_team) %>%
-    replace(is.na(.), 0)
   return(d)
 }
 
 
-predict_game <- function(b, history, win_perc, id, runs, tobescored, nclus, prior, posterior, dir){
+predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored, nclus, prior, posterior, dir){
 
   thisgame <- tobescored[1,]
   date <- thisgame$DATE
@@ -73,18 +64,18 @@ predict_game <- function(b, history, win_perc, id, runs, tobescored, nclus, prio
   }
   if (runs==0){
     dist_active$share_of_minutes <- dist_active$m_share_of_minutes
-    df <- prep_for_scoring(dist_active)
+    df <- prep_for_scoring(dist_active, win_perc1, win_perc)
     x <- get_surplus_variables(df, nclus)
     samplesdf <- data.frame(cbind(x, select(thisgame, DATE, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest, home_team_name, road_team_name, opposing_team), row.names=NULL), stringsAsFactors = FALSE)
   } else if (runs==1){
-    df <- prep_for_scoring(data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes))))  
+    df <- prep_for_scoring(data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes))), win_perc1, win_perc)  
     x <- get_surplus_variables(df, nclus)
     samplesdf <- data.frame(cbind(x, select(thisgame, DATE, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest, home_team_name, road_team_name, opposing_team), row.names=NULL), stringsAsFactors = FALSE)
   } else{
     ncore <- detectCores()-1
     registerDoParallel(ncore)
     loop_result <- foreach(j=1:runs) %dopar% {
-      df <- prep_for_scoring(data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes))))
+      df <- prep_for_scoring(data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes))), win_perc1, win_perc)
       x <- get_surplus_variables(df, nclus)
       return(data.frame(cbind(x, select(thisgame, DATE, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest, home_team_name, road_team_name, opposing_team), row.names=NULL), stringsAsFactors = FALSE))
     }

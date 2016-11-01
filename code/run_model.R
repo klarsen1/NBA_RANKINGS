@@ -146,7 +146,8 @@ for (i in start_index:end_index){
      
      ## Get the latest win percentages
      thisseason <- filter(inwindow, DATE==max(DATE))
-     win_perc <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason[1,"season"])
+     win_perc1 <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason[1,"season"])
+     win_perc2 <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-floor(winstreak_window/3), "DATE_INDEX"]), thisseason[1,"season"])
      
   }
   
@@ -155,7 +156,7 @@ for (i in start_index:end_index){
   games <- unique(thisday$game_id)
   
   for (d in 1:length(games)){
-    pred <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[j-playing_time_window, "DATE_INDEX"]), win_perc, games[d], sims, subset(thisday, game_id==games[d]), nclus, 0.50, 0.55, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
+    pred <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[j-playing_time_window, "DATE_INDEX"]), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, 0.50, 0.55, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
     scores[[counter]] <- pred[[1]]
     model_parts[[counter]] <- pred[[2]] 
     counter <- counter + 1

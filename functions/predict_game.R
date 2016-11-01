@@ -1,8 +1,11 @@
 prep_for_scoring <- function(data){
-  d <- group_by(data, OWN_TEAM) %>%
+  d1 <- group_by(data, OWN_TEAM) %>%
     mutate(share_of_minutes=share_of_minutes/sum(share_of_minutes),
            share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes)) %>%
-    ungroup() %>%
+    ungroup() 
+  
+  d2 <- attach_win_perc(d1, win_perc1, win_perc2)
+  %>%
     left_join(select(win_perc, -opposing_team), by="selected_team") %>%
     rename(winrate_early_season_selected_team=win_rate_early_season, 
            winrate_season_selected_team=win_rate_season) %>%

@@ -20,6 +20,7 @@ source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/predict_game.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/get_surplus_variables.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/reporting.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/sim_playoffs.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/attach_win_perc.R")
 
 ### Global settings
 cutoff <- 8 # minutes per game. if a player plays less than this amount, he is excluded
@@ -64,22 +65,15 @@ loop_result <- foreach(i=s:e) %dopar% {
   thisdate <- filter(box_scores, DATE_INDEX==datemap[i, "DATE_INDEX"])
   thisseason <- thisdate[1,"season"]
 
-  win_perc <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason)
-
+  win_perc1 <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason)
+  win_perc2 <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-floor(winstreak_window/3), "DATE_INDEX"]), thisseason)
+  
   clusters <- assign_clusters(centroids, inwindow, cutoff)
 
   
   ### Join against win percentages and clusters  
-  f <- inner_join(thisdate, select(clusters, PLAYER_FULL_NAME, Cluster), by="PLAYER_FULL_NAME") %>%
-       left_join(select(win_perc, -opposing_team), by="selected_team") %>%
-       rename(winrate_early_season_selected_team=win_rate_early_season, 
-              winrate_season_selected_team=win_rate_season) %>%
-       left_join(select(win_perc, -first_game, -selected_team), by="opposing_team") %>%
-       rename(winrate_early_season_opposing_team=win_rate_early_season, 
-              winrate_season_opposing_team=win_rate_season) %>%
-       replace(is.na(.), 0) %>%
-       ungroup()
-  
+  f <- attach_win_perc(inner_join(thisdate, select(clusters, PLAYER_FULL_NAME, Cluster), by="PLAYER_FULL_NAME"), win_perc1, win_perc2)
+
   if (ignore_winstreaks==1){
     f$winrate_early_season_opposing_team <- 0
     f$winrate_season_opposing_team <- 0
@@ -87,7 +81,7 @@ loop_result <- foreach(i=s:e) %dopar% {
     f$winrate_season_selected_team <- 0
   }
   
-  return(f)
+  return(f2)
 }
 
 box_scores_plus <- data.frame(rbindlist(loop_result))

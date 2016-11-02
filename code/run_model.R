@@ -83,10 +83,12 @@ loop_result <- foreach(i=s:e) %dopar% {
   if (ignore_winstreaks==1){
     f$winrate_early_season_opposing_team <- 0
     f$winrate_season_opposing_team <- 0
+    f$winrate_season_opposing_team_s <- 0
     f$winrate_early_season_selected_team <- 0
     f$winrate_season_selected_team <- 0
-    f$win_rate_trend_opposing_team <- 0
-    f$win_rate_trend_selected_team <- 0
+    f$winrate_season_selected_team_s <- 0
+    #f$win_rate_trend_opposing_team <- 0
+    #f$win_rate_trend_selected_team <- 0
   }
   
   return(f)

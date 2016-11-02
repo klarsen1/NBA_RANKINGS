@@ -15,17 +15,19 @@ conferences <- read.csv("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/Co
 
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/auc.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/assign_clusters.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/weighted_winpercentages.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/winpercentages.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/predict_game.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/get_surplus_variables.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/reporting.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/sim_playoffs.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/attach_win_perc.R")
 
+
 ### Global settings
 cutoff <- 8 # minutes per game. if a player plays less than this amount, he is excluded
 estimation_window <- 360 # number of days used to estimate the model
-winstreak_window <- 91 # number of days used to calculate the weighted win %
+winstreak_window <- 91 # number of days used to calculate the weighted win %, for the short term effect
+winstreak_window_s <- 31 # number of days used to calculate the weighted win %
 playing_time_window <- 91 # number of days used to estimate average playing time
 cluster_window <- 91 # number of days used for cluster assignment
 alpha <- 0 # for elastic net
@@ -34,7 +36,7 @@ ignore_winstreaks <- 0 # if equal to 1, win % are ignored in the model
 save_results <- 1 # set to 1 if you want to save the results
 
 ### When to start and end the forecasts
-start_date <- min(subset(box_scores, season==2015)$DATE)
+start_date <- min(subset(box_scores, season==2015)$DATE)+7
 end_date <- max(subset(box_scores, season==2015)$DATE)
 
 ### Cut off the box scores
@@ -59,29 +61,35 @@ e <-max(subset(datemap, future_game==0)$DATE_INDEX)
 ncore <- detectCores()-1
 registerDoParallel(ncore)
 loop_result <- foreach(i=s:e) %dopar% {
+#for (i in s:e){
 
+  #print(datemap[i, "DATE"])
   ### Data inside the window  
   inwindow <- filter(box_scores, DATE_INDEX<datemap[i, "DATE_INDEX"] & DATE_INDEX>datemap[i-cluster_window, "DATE_INDEX"])
   thisdate <- filter(box_scores, DATE_INDEX==datemap[i, "DATE_INDEX"])
   thisseason <- thisdate[1,"season"]
 
-  win_perc1 <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason)
-  win_perc2 <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-floor(winstreak_window/3), "DATE_INDEX"]), thisseason)
+  win_perc1 <- winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason)
+  win_perc2 <- winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window_s, "DATE_INDEX"]), thisseason)
   
   clusters <- assign_clusters(centroids, inwindow, cutoff)
 
   
   ### Join against win percentages and clusters  
-  f <- attach_win_perc(inner_join(thisdate, select(clusters, PLAYER_FULL_NAME, Cluster), by="PLAYER_FULL_NAME"), win_perc1, win_perc2)
+  t <- inner_join(thisdate, select(clusters, PLAYER_FULL_NAME, Cluster), by="PLAYER_FULL_NAME")
+  print(names(t))
+  f <- attach_win_perc(t, win_perc1, win_perc2)
 
   if (ignore_winstreaks==1){
     f$winrate_early_season_opposing_team <- 0
     f$winrate_season_opposing_team <- 0
     f$winrate_early_season_selected_team <- 0
     f$winrate_season_selected_team <- 0
+    f$win_rate_trend_opposing_team <- 0
+    f$win_rate_trend_selected_team <- 0
   }
   
-  return(f2)
+  return(f)
 }
 
 box_scores_plus <- data.frame(rbindlist(loop_result))
@@ -146,8 +154,8 @@ for (i in start_index:end_index){
      
      ## Get the latest win percentages
      thisseason <- filter(inwindow, DATE==max(DATE))
-     win_perc1 <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason[1,"season"])
-     win_perc2 <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[i-floor(winstreak_window/3), "DATE_INDEX"]), thisseason[1,"season"])
+     win_perc1 <- winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason[1,"season"])
+     win_perc2 <- winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window_s, "DATE_INDEX"]), thisseason[1,"season"])
      
   }
   
@@ -180,10 +188,16 @@ details <- mutate(game_level, d_road_team_predicted_win=ifelse(selected_team==ro
   select(DATE, home_team_name, road_team_name, d_road_team_predicted_win, road_team_prob_win, d_home_team_predicted_win, home_team_prob_win, predicted_winner, actual_winner)
 
 
+
+
+
+
+
+
 ##### Run the playoffs
 inwindow <- filter(box_scores_plus, DATE_INDEX<datemap[end_index, "DATE_INDEX"] & DATE_INDEX>datemap[end_index-estimation_window, "DATE_INDEX"]) 
 thisseason <- filter(inwindow, DATE==max(DATE))
-win_perc <- weighted_winpercentages(filter(inwindow, DATE_INDEX>datemap[end_index-winstreak_window, "DATE_INDEX"]), thisseason[1,"season"])
+win_perc <- winpercentages(filter(inwindow, DATE_INDEX>datemap[end_index-winstreak_window, "DATE_INDEX"]), thisseason[1,"season"])
 
 
 ncore <- detectCores()-1

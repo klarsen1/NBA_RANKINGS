@@ -5,13 +5,16 @@ attach_win_perc <- function(data, w1, w2){
   left_join(select(w1, -first_game, -selected_team), by="opposing_team") %>%
   rename(winrate_early_season_opposing_team=win_rate_early_season, 
          winrate_season_opposing_team=win_rate_season) %>%
-  left_join(data, select(w2, -first_game, -opposing_team), by="selected_team") %>%
+  left_join(select(w2, -first_game, -opposing_team), by="selected_team") %>%
   rename(winrate_early_season_selected_team_s=win_rate_early_season, 
          winrate_season_selected_team_s=win_rate_season) %>%
   left_join(select(w2, -first_game, -selected_team), by="opposing_team") %>%
   rename(winrate_early_season_opposing_team_s=win_rate_early_season, 
          winrate_season_opposing_team_s=win_rate_season) %>%
+  mutate(win_rate_trend_opposing_team=ifelse(winrate_season_opposing_team>0, winrate_season_opposing_team_s/winrate_season_opposing_team, 0), 
+         win_rate_trend_selected_team=ifelse(winrate_season_selected_team>0, winrate_season_selected_team_s/winrate_season_selected_team, 0)) %>%
   replace(is.na(.), 0) %>%
+  select(-winrate_early_season_opposing_team_s, -winrate_early_season_selected_team_s, -win_rate_trend_opposing_team, -win_rate_trend_selected_team) %>%
   ungroup()
   return(d)
 }

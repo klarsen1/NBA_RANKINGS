@@ -22,7 +22,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   #print(paste0("Date = ", date))
   
   ### Read the overrides
-  overrides <- data.frame(read.csv(paste0(dir, "overrides.csv"), stringsAsFactors = FALSE))
+  overrides <- data.frame(read.csv(paste0(dir, "overrides.csv"), stringsAsFactors = FALSE, header = TRUE))
 
   ### First get the average minutes and standard deviations for each player
   dist <- filter(history, (OWN_TEAM==team1 | OWN_TEAM==team2)) %>%
@@ -40,7 +40,15 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     select(-NEW_TEAM, -OVERRIDE_DATE)
     
   ## Infer active rosters
-  dist_active <- filter(history_override, OWN_TEAM %in% c(team1,team2) & season==thisseason) %>%
+  if (nrow(filter(history_override, OWN_TEAM %in% c(team1,team2) & season==thisseason))==0){
+    d_current_roster <- 0
+    thisseason2 <- thisseason-1
+  } else{
+    d_current_roster <- 1
+    thisseason2 <- thisseason
+  }
+  
+  dist_active <- filter(history_override, OWN_TEAM %in% c(team1,team2) & season==thisseason2) %>%
     group_by(PLAYER_FULL_NAME) %>%
     filter(DATE==max(DATE)) %>%
     inner_join(dist, by="PLAYER_FULL_NAME") %>%
@@ -97,6 +105,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   prediction <- group_by(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team) %>%
     summarise(prob_selected_team_win_d=mean(as.numeric(prob_win)),
               prob_selected_team_win_b=mean(as.numeric(d_prob_selected_team_win))) %>%
+    mutate(current_roster=d_current_roster) %>%
     ungroup()
   
   prediction$selected_team_win <- w

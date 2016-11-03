@@ -36,8 +36,8 @@ ignore_winstreaks <- 0 # if equal to 1, win % are ignored in the model
 save_results <- 1 # set to 1 if you want to save the results
 
 ### When to start and end the forecasts
-start_date <- min(subset(box_scores, season==2015)$DATE)+7
-end_date <- max(subset(box_scores, season==2015)$DATE)
+start_date <- min(subset(box_scores, season==2016)$DATE)
+end_date <- max(subset(box_scores, season==2016)$DATE)
 
 ### Cut off the box scores
 box_scores <- subset(box_scores, DATE<=end_date)

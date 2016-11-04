@@ -208,7 +208,7 @@ win_perc2 <- winpercentages(filter(inwindow, DATE_INDEX>datemap[max_real_date-wi
 ncore <- detectCores()-1
 registerDoParallel(ncore)
 loop_result <- foreach(p=1:100) %dopar% {
-   playoffs <- sim_playoff(ranks, inwindow, playing_time_window, win_perc1, winperc2, datemap, 1, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS", c, end_index, thisseason[1,"season"])
+   playoffs <- sim_playoff(ranks, inwindow, playing_time_window, win_perc1, winperc2, datemap, 1, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS", c, end_index, thisseason)
    winner <- subset(playoffs[[1]], status=="W")$team
    return(data.frame(p, winner))
 }

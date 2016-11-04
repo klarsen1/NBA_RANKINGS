@@ -112,10 +112,10 @@ index <- 1
 scores <- list()
 model_details <- list()
 model_parts <- list()
+max_real_date <- max(subset(box_scores_plus, future_game==0)$DATE_INDEX)
 for (i in start_index:end_index){
   
   ### Make sure we only use real data
-  max_real_date <- max(subset(datemap, future_game==0)$DATE_INDEX)
   j <- min(max_real_date, i)
 
   ### Check the dates
@@ -175,18 +175,20 @@ for (i in start_index:end_index){
 
 ### Manipulate the output
 game_level <- data.frame(rbindlist(scores), stringsAsFactors = FALSE) %>% 
-  mutate(d=ifelse(is.na(selected_team_win), as.numeric(prob_selected_team_win_d>0.5), selected_team_win)) 
+  mutate(d=ifelse(current_roster_used==0, selected_team_win, ifelse(is.na(selected_team_win), as.numeric(prob_selected_team_win_d>0.5), selected_team_win)),
+         prob_selected_team_win_d=ifelse(current_roster_used==0, NA, prob_selected_team_win_d)) 
 ranks <- report(game_level, "d") %>%
   left_join(conferences, by="team") %>%
   select(team, games, pred_win_rate, conference)
 models <- data.frame(rbindlist(model_details), stringsAsFactors = FALSE)
 parts <- data.frame(rbindlist(model_parts), stringsAsFactors = FALSE)
-details <- mutate(game_level, d_road_team_predicted_win=ifelse(selected_team==road_team_name, d, 1-d), 
-                  d_home_team_predicted_win=1-d_road_team_predicted_win, 
-                  predicted_winner=ifelse(d_road_team_predicted_win==1, road_team_name, home_team_name),
+details <- mutate(game_level, 
+                  d_road_team_predicted_win=ifelse(is.na(d), NA, ifelse(selected_team==road_team_name, d, 1-d)), 
+                  d_home_team_predicted_win=ifelse(is.na(d), NA, 1-d_road_team_predicted_win), 
+                  predicted_winner=ifelse(is.na(d), "NA", ifelse(d_road_team_predicted_win==1, road_team_name, home_team_name)),
                   actual_winner=ifelse(is.na(selected_team_win), "NA", ifelse(selected_team_win==1, selected_team, opposing_team)),
-                  home_team_prob_win=ifelse(selected_team==home_team_name, prob_selected_team_win_d, 1-prob_selected_team_win_d), 
-                  road_team_prob_win=1-home_team_prob_win) %>%
+                  home_team_prob_win=ifelse(is.na(d), NA, ifelse(selected_team==home_team_name, prob_selected_team_win_d, 1-prob_selected_team_win_d)), 
+                  road_team_prob_win=ifelse(is.na(d), NA, 1-home_team_prob_win)) %>%
   select(DATE, home_team_name, road_team_name, d_road_team_predicted_win, road_team_prob_win, d_home_team_predicted_win, home_team_prob_win, predicted_winner, actual_winner)
 
 
@@ -197,15 +199,16 @@ details <- mutate(game_level, d_road_team_predicted_win=ifelse(selected_team==ro
 
 
 ##### Run the playoffs
-inwindow <- filter(box_scores_plus, DATE_INDEX<datemap[end_index, "DATE_INDEX"] & DATE_INDEX>datemap[end_index-estimation_window, "DATE_INDEX"]) 
-thisseason <- filter(inwindow, DATE==max(DATE))
-win_perc <- winpercentages(filter(inwindow, DATE_INDEX>datemap[end_index-winstreak_window, "DATE_INDEX"]), thisseason[1,"season"])
+inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date & DATE_INDEX>datemap[max_real_date-estimation_window, "DATE_INDEX"]) 
+thisseason <- filter(inwindow, DATE==max(DATE))[1,"season"]
+win_perc1 <- winpercentages(filter(inwindow, DATE_INDEX>datemap[max_real_date-winstreak_window, "DATE_INDEX"]), thisseason)
+win_perc2 <- winpercentages(filter(inwindow, DATE_INDEX>datemap[max_real_date-winstreak_window_s, "DATE_INDEX"]), thisseason)
 
 
 ncore <- detectCores()-1
 registerDoParallel(ncore)
 loop_result <- foreach(p=1:100) %dopar% {
-   playoffs <- sim_playoff(ranks, inwindow, playing_time_window, win_perc, datemap, 1, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS", c, end_index, thisseason[1,"season"])
+   playoffs <- sim_playoff(ranks, inwindow, playing_time_window, win_perc1, winperc2, datemap, 1, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS", c, end_index, thisseason[1,"season"])
    winner <- subset(playoffs[[1]], status=="W")$team
    return(data.frame(p, winner))
 }

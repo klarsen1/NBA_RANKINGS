@@ -254,6 +254,38 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
      inner_join(dateindex, by="DATE") %>%
      ungroup()
 
+
+## Check previous matchups
+games <- unique(final$game_id)
+loop_result <- foreach(i=1:length(games)) %dopar% {
+  t <- subset(final, game_id==games[i])[1,]
+  selected <- t$selected_team
+  opposing <- t$opposing_team
+  date <- t$DATE
+  s <- t$season
+  
+  matchups <- filter(final, selected_team %in% c(selected, opposing) & opposing_team %in% c(selected, opposing)) %>%
+    filter(season==s & DATE<date) %>%
+    distinct(game_id, .keep_all=TRUE) %>%
+    select(-game_id)
+  
+  if (nrow(matchups)==0){
+    df <- data.frame(0, 0, games[i])
+    names(df) <- c("selected_team_matchup_wins", "opposing_team_matchup_wins", "game_id")
+  } else{
+    df <- mutate(matchups, 
+                 w1=ifelse(selected_team==selected, selected_team_win, 1-selected_team_win), 
+                 w2=1-w1) %>%
+          summarise(selected_team_matchup_wins=sum(w1), opposing_team_matchup_wins=sum(w2)) %>%
+          mutate(game_id=games[i])
+  }
+  return(df)
+}
+
+prev_matchups <- data.frame(rbindlist(loop_result)) %>% replace(is.na(.), 0)
+
+final <- inner_join(final, prev_matchups, by="game_id")
+
 saveRDS(final, "BOX_SCORES.RDA")
 
 rm(list = ls())

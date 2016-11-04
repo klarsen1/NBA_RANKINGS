@@ -19,9 +19,9 @@ get_surplus_variables <- function(data, nclus){
            winrate_season_opposing_team_s=winrate_season_opposing_team_s/n, 
            #win_rate_trend_opposing_team=win_rate_trend_opposing_team/n,
            #win_rate_trend_selected_team=win_rate_trend_selected_team/n,
-           first_game=as.numeric(first_game>0), 
-           selected_team_matchup_wins=selected_team_matchup_wins/n, 
-           opposing_team_matchup_wins=opposing_team_matchup_wins/n) %>%
+           selected_team_matchup_wins=selected_team_matchup_wins/n,
+           opposing_team_matchup_wins=opposing_team_matchup_wins/n,
+           first_game=as.numeric(first_game>0)) %>%
     select(-n) %>%
     ungroup()
            

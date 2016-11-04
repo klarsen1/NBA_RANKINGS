@@ -73,18 +73,18 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     dist_active$share_of_minutes <- dist_active$m_share_of_minutes
     df <- prep_for_scoring(dist_active, win_perc1, win_perc2)
     x <- get_surplus_variables(df, nclus)
-    samplesdf <- data.frame(cbind(x, select(thisgame, DATE, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest, home_team_name, road_team_name, opposing_team), row.names=NULL), stringsAsFactors = FALSE)
+    samplesdf <- data.frame(cbind(x, select(thisgame, DATE, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest, home_team_name, road_team_name, opposing_team, selected_team_matchup_wins, opposing_team_matchup_wins), row.names=NULL), stringsAsFactors = FALSE)
   } else if (runs==1){
     df <- prep_for_scoring(data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes))), win_perc1, win_perc2)  
     x <- get_surplus_variables(df, nclus)
-    samplesdf <- data.frame(cbind(x, select(thisgame, DATE, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest, home_team_name, road_team_name, opposing_team), row.names=NULL), stringsAsFactors = FALSE)
+    samplesdf <- data.frame(cbind(x, select(thisgame, DATE, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest, home_team_name, road_team_name, opposing_team, selected_team_matchup_wins, opposing_team_matchup_wins), row.names=NULL), stringsAsFactors = FALSE)
   } else{
     ncore <- detectCores()-1
     registerDoParallel(ncore)
     loop_result <- foreach(j=1:runs) %dopar% {
       df <- prep_for_scoring(data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes))), win_perc1, win_perc2)
       x <- get_surplus_variables(df, nclus)
-      return(data.frame(cbind(x, select(thisgame, DATE, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest, home_team_name, road_team_name, opposing_team), row.names=NULL), stringsAsFactors = FALSE))
+      return(data.frame(cbind(x, select(thisgame, DATE, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest, home_team_name, road_team_name, opposing_team, selected_team_matchup_wins, opposing_team_matchup_wins), row.names=NULL), stringsAsFactors = FALSE))
     }
     samplesdf <- data.frame(rbindlist(loop_result))
   } 

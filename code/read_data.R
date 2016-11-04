@@ -230,7 +230,7 @@ ids <- unique(game_scores$game_id)
 loop_result <- foreach(i=1:length(ids)) %dopar% {
   return(get_rest_days(ids[i]))
 }
-rest_days <- data.frame(rbindlist(loop_result)) %>% 
+rest_days <- data.frame(rbindlist(loop_result), stringsAsFactors = FALSE) %>% 
   mutate(rest_differential=selected_team_rest-opposing_team_rest, 
          travel_differential=opposing_team_travel-selected_team_travel) %>%
   select(game_id, rest_differential, travel_differential, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, selected_team_last_city, opposing_team_last_city, selected_team_altitude, opposing_team_altitude)
@@ -270,19 +270,20 @@ loop_result <- foreach(i=1:length(games)) %dopar% {
     select(-game_id)
   
   if (nrow(matchups)==0){
-    df <- data.frame(0, 0, games[i])
+    df <- data.frame(0, 0, as.character(games[i]))
     names(df) <- c("selected_team_matchup_wins", "opposing_team_matchup_wins", "game_id")
   } else{
     df <- mutate(matchups, 
                  w1=ifelse(selected_team==selected, selected_team_win, 1-selected_team_win), 
                  w2=1-w1) %>%
           summarise(selected_team_matchup_wins=sum(w1), opposing_team_matchup_wins=sum(w2)) %>%
-          mutate(game_id=games[i])
+          mutate(game_id=as.character(games[i]))
   }
   return(df)
 }
 
-prev_matchups <- data.frame(rbindlist(loop_result)) %>% replace(is.na(.), 0)
+prev_matchups <- data.frame(rbindlist(loop_result), stringsAsFactors=FALSE) %>% replace(is.na(.), 0)
+prev_matchups$game_id <- as.character(prev_matchups$game_id)
 
 final <- inner_join(final, prev_matchups, by="game_id")
 

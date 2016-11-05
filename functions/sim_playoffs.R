@@ -1,6 +1,6 @@
-create_fake_entry <- function(game, date, selected_team, opposing_team, thisseason){
-  thisday <- data.frame(matrix(nrow=1, ncol=11))
-  names(thisday) <- c("DATE", "opposing_team_travel", "selected_team_travel", "opposing_team_rest", "selected_team_rest", "home_team_name", "road_team_name", "opposing_team", "selected_team", "selected_team_win", "season")
+create_fake_entry <- function(game, date, selected_team, opposing_team, thisseason, matchup1, matchup2){
+  thisday <- data.frame(matrix(nrow=1, ncol=13))
+  names(thisday) <- c("DATE", "opposing_team_travel", "selected_team_travel", "opposing_team_rest", "selected_team_rest", "home_team_name", "road_team_name", "opposing_team", "selected_team", "selected_team_win", "season", "selected_team_matchup_wins", "opposing_team_matchup_wins")
   thisday$DATE <- date
   thisday$opposing_team_travel <- 0
   thisday$selected_team_travel <- 0
@@ -14,7 +14,11 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
   thisday$home_team_selected <- 1
   thisday$home_team_name <- selected_team
   thisday$road_team_name <- opposing_team
+  thisday$selected_team_matchup_wins <- matchup1
+  thisday$opposing_team_matchup_wins <- matchup2
   if (game %in% c(3,4,6)) {
+    thisday$selected_team_matchup_wins <- matchup2
+    thisday$opposing_team_matchup_wins <- matchup1
     thisday$home_team_selected <- 0
     thisday$road_team_name <- selected_team
     thisday$home_team_name <- opposing_team
@@ -23,7 +27,7 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
 }
 
 
-sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc, datemap, sims, root, c, end_index, thisseason){
+sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_perc2, datemap, sims, root, c, end_index, thisseason){
   
   
   ### Read the playoff tree
@@ -57,9 +61,27 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc, datemap,
         home_team <- h$team
         road_team <- r$team
       }
-      #print(paste0(home_team, " versus ", road_team))
-      selected_team <- home_team
-      opposing_team <- road_team
+      selected <- home_team
+      opposing <- road_team
+      last_matchup <- filter(inwindow, selected_team %in% c(selected, opposing) & opposing_team %in% c(selected, opposing) & season==thisseason) %>%
+         ungroup() %>%
+         filter(DATE==max(DATE)) %>%
+         select(selected_team, opposing_team, selected_team_matchup_wins, opposing_team_matchup_wins, selected_team_win) %>%
+         distinct(selected_team, .keep_all=TRUE)
+
+      if (nrow(last_matchup)>0){
+        if (last_matchup$selected_team == selected){
+           matchup1 <- last_matchup$selected_team_matchup_wins + last_matchup$selected_team_win
+           matchup2 <- last_matchup$opposing_team_matchup_wins + as.numeric(last_matchup$selected_team_win==0)
+        } else{
+           matchup2 <- last_matchup$selected_team_matchup_wins + last_matchup$selected_team_win
+           matchup1 <- last_matchup$opposing_team_matchup_wins + as.numeric(last_matchup$selected_team_win==0)
+        }
+      } else{
+        matchup1 <- 0
+        matchup2 <- 0
+      }
+      
       w1 <- 0
       w2 <- 0
       winner_declared=FALSE
@@ -67,8 +89,8 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc, datemap,
       loser <- "NONE"
       games=0
       while(games<7 & winner_declared==FALSE){
-         thisday <- create_fake_entry(games+1, DATE, selected_team, opposing_team, thisseason)
-         pred <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[end_index-playing_time_window, "DATE_INDEX"]), win_perc, "NA", sims, thisday, nclus, 0.50, 0.55, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
+         thisday <- create_fake_entry(games+1, DATE, selected, opposing, thisseason, matchup1, matchup2)
+         pred <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[end_index-playing_time_window, "DATE_INDEX"]), win_perc1, win_perc2, "NA", sims, thisday, nclus, 0.50, 0.55, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
          if (pred[[1]]$prob_selected_team_win_d>0.5) 
            w1 <- w1 + 1
          else 

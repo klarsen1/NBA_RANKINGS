@@ -192,14 +192,8 @@ details <- mutate(game_level,
   select(DATE, home_team_name, road_team_name, d_road_team_predicted_win, road_team_prob_win, d_home_team_predicted_win, home_team_prob_win, predicted_winner, actual_winner)
 
 
-
-
-
-
-
-
 ##### Run the playoffs
-inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date & DATE_INDEX>datemap[max_real_date-estimation_window, "DATE_INDEX"]) 
+inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date) 
 thisseason <- filter(inwindow, DATE==max(DATE))[1,"season"]
 win_perc1 <- winpercentages(filter(inwindow, DATE_INDEX>datemap[max_real_date-winstreak_window, "DATE_INDEX"]), thisseason)
 win_perc2 <- winpercentages(filter(inwindow, DATE_INDEX>datemap[max_real_date-winstreak_window_s, "DATE_INDEX"]), thisseason)
@@ -208,7 +202,7 @@ win_perc2 <- winpercentages(filter(inwindow, DATE_INDEX>datemap[max_real_date-wi
 ncore <- detectCores()-1
 registerDoParallel(ncore)
 loop_result <- foreach(p=1:100) %dopar% {
-   playoffs <- sim_playoff(ranks, inwindow, playing_time_window, win_perc1, winperc2, datemap, 1, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS", c, end_index, thisseason)
+   playoffs <- sim_playoff(ranks, inwindow, playing_time_window, win_perc1, win_perc2, datemap, 1, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason)
    winner <- subset(playoffs[[1]], status=="W")$team
    return(data.frame(p, winner))
 }

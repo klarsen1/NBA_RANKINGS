@@ -56,7 +56,10 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     inner_join(dist, by="PLAYER_FULL_NAME") %>%
     select(PLAYER_FULL_NAME, OWN_TEAM, m_share_of_minutes, s_share_of_minutes, Cluster, DATE_INDEX) %>%
     group_by(OWN_TEAM) %>%
-    arrange(OWN_TEAM, -DATE_INDEX, -m_share_of_minutes) %>%
+    mutate(rank_minutes=percent_rank(m_share_of_minutes), 
+           rank_time=percent_rank(DATE_INDEX), 
+           likelihood_to_play=rank_minutes + rank_time) %>%
+    arrange(OWN_TEAM, -likelihood_to_play) %>%
     mutate(player=row_number(),
            game_id=id, 
            selected_team=selected, 

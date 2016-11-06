@@ -17,8 +17,6 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
   thisday$selected_team_matchup_wins <- matchup1
   thisday$opposing_team_matchup_wins <- matchup2
   if (game %in% c(3,4,6)) {
-    thisday$selected_team_matchup_wins <- matchup2
-    thisday$opposing_team_matchup_wins <- matchup1
     thisday$home_team_selected <- 0
     thisday$road_team_name <- selected_team
     thisday$home_team_name <- opposing_team
@@ -27,7 +25,7 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
 }
 
 
-sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_perc2, datemap, sims, root, c, end_index, thisseason){
+sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_perc2, datemap, sims, root, c, end_index, thisseason, last_date_in_season){
   
   
   ### Read the playoff tree

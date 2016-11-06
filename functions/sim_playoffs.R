@@ -75,6 +75,9 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
            matchup2 <- last_matchup$selected_team_matchup_wins + last_matchup$selected_team_win
            matchup1 <- last_matchup$opposing_team_matchup_wins + as.numeric(last_matchup$selected_team_win==0)
         }
+        total_matchups <- matchup1+matchup2
+        matchup1 <- matchup1/total_matchups
+        matchup2 <- matchup2/total_matchups
       } else{
         matchup1 <- 0
         matchup2 <- 0

@@ -277,7 +277,11 @@ loop_result <- foreach(i=1:length(games)) %dopar% {
                  w1=ifelse(selected_team==selected, selected_team_win, 1-selected_team_win), 
                  w2=1-w1) %>%
           summarise(selected_team_matchup_wins=sum(w1), opposing_team_matchup_wins=sum(w2)) %>%
-          mutate(game_id=as.character(games[i]))
+          mutate(t=selected_team_matchup_wins+opposing_team_matchup_wins,
+                 selected_team_matchup_wins=selected_team_matchup_wins/t,
+                 opposing_team_matchup_wins=opposing_team_matchup_wins/t,
+                 game_id=as.character(games[i])) %>%
+          select(-t)
   }
   return(df)
 }

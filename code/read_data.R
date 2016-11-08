@@ -15,6 +15,9 @@ source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/distance_between.
 
 setwd("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
 
+ncore <- detectCores()-1
+registerDoParallel(ncore)
+
 
 ## Read the raw data
 read_player_data <- function(season, first_labels, suffix){
@@ -113,7 +116,7 @@ f$game_id <- paste0(f$DATE, vapply(stri_split_boundaries(f$cat, type = "characte
 f$cat <- NULL
 
 ## Team/game level points
-team_pts <- group_by(f, game_id, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATE, future_game) %>%
+team_pts <- group_by(f, game_id, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATE, future_game, season) %>%
             summarise(total_playoff_minutes=sum(minutes*playoffs),
                       total_playoff_points=sum(points*playoffs),
                       total_minutes=sum(minutes), 
@@ -122,12 +125,13 @@ team_pts <- group_by(f, game_id, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATE, future_gam
             ungroup()
 
 ## Game level points
-game_pts <- group_by(team_pts, game_id, future_game) %>%
+game_pts <- group_by(team_pts, game_id, future_game, season) %>%
             mutate(home_team_points=total_points*(VENUE_R_H=='H'), 
                    road_team_points=total_points*(VENUE_R_H=='R')) %>%
             summarise(max_game_points=max(total_points), 
                       home_team_points=sum(home_team_points), 
-                      road_team_points=sum(road_team_points)) 
+                      road_team_points=sum(road_team_points)) %>%
+            ungroup()
 
 ## Random indicator to choose the selected team
 game_pts$r <- as.numeric(rbinom(nrow(game_pts), 1, 0.5)>0.5)
@@ -150,7 +154,7 @@ names(city_lat_long) <- c("lon","lat","OWN_TEAM")
 
 
 ## Create win indicators at the game level
-game_win <- group_by(team_win, game_id, DATE, future_game) %>%
+game_win <- group_by(team_win, game_id, DATE, future_game, season) %>%
             mutate(selected_team_win=ifelse(r==1, win*(VENUE_R_H=='H'), win*(VENUE_R_H=='R'))) %>%
             summarise(selected_team_win=max(selected_team_win),
                       playoffs=max(playoffs)) %>%
@@ -170,7 +174,7 @@ team_win <- bind_rows(team_win, future_flipped) %>% arrange(DATE, game_id)
 
 split <- split(team_win, team_win$game_id)
 game_scores <- data.frame(rbindlist(lapply(split, function(x) spread(select(x, game_id, VENUE_R_H, OWN_TEAM), VENUE_R_H, OWN_TEAM))), stringsAsFactors = FALSE) %>%
-                   inner_join(select(game_pts, -max_game_points, -future_game), by="game_id") %>%
+                   inner_join(select(game_pts, -max_game_points, -future_game, -season), by="game_id") %>%
                    inner_join(game_win, by="game_id") %>%
                    mutate(selected_team=ifelse(r==1, H, R), 
                           opposing_team=ifelse(r==1, R, H), 
@@ -237,10 +241,75 @@ rest_days <- data.frame(rbindlist(loop_result), stringsAsFactors = FALSE) %>%
 
 dateindex <- distinct(f, DATE) %>% mutate(DATE_INDEX=row_number())
 
+
+games_last_week <- function(id){
+  game <- filter(game_scores, game_id==id)
+  t1 <- game$selected_team
+  t2 <- game$opposing_team
+  date <- game$DATE
+  s <- game$season
+  
+  lastweek <- filter(game_scores, DATE<date & DATE>date-8 & season==s) %>%
+    filter(selected_team==t1 | opposing_team==t2) %>%
+    summarise(selected_team_games_prior_7d=sum(as.numeric(selected_team==t1 | opposing_team==t1)), 
+              opposing_team_games_prior_7d=sum(as.numeric(selected_team==t2 | opposing_team==t2))) %>%
+    mutate(game_id=as.character(id), 
+           selected_team_games_prior_7d=selected_team_games_prior_7d/7.0, 
+           opposing_team_games_prior_7d=opposing_team_games_prior_7d/7.0)
+  if (nrow(lastweek)>0){
+    return(lastweek)
+  } else{
+    df <- data.frame(id, 0, 0)
+    names(df) <- c("game_id", "")
+    return(lastweek)
+  }
+}
+
+loop_result <- foreach(i=1:length(ids)) %dopar% {
+  return(games_last_week(ids[i]))
+}
+
+trailing_games <- data.frame(rbindlist(loop_result), stringsAsFactors = FALSE)
+
+## Check previous matchups
+games <- unique(game_scores$game_id)
+loop_result <- foreach(i=1:length(games)) %dopar% {
+  t <- subset(game_scores, game_id==games[i])
+  selected <- t$selected_team
+  opposing <- t$opposing_team
+  date <- t$DATE
+  s <- t$season
+  
+  matchups <- filter(game_scores, selected_team %in% c(selected, opposing) & opposing_team %in% c(selected, opposing)) %>%
+    filter(season==s & DATE<date) %>%
+    select(-game_id)
+  
+  if (nrow(matchups)==0){
+    df <- data.frame(0, 0, as.character(games[i]))
+    names(df) <- c("selected_team_matchup_wins", "opposing_team_matchup_wins", "game_id")
+  } else{
+    df <- mutate(matchups, 
+                 w1=ifelse(selected_team==selected, selected_team_win, 1-selected_team_win), 
+                 w2=1-w1) %>%
+      summarise(selected_team_matchup_wins=sum(w1), opposing_team_matchup_wins=sum(w2)) %>%
+      mutate(t=selected_team_matchup_wins+opposing_team_matchup_wins,
+             selected_team_matchup_wins=selected_team_matchup_wins/t,
+             opposing_team_matchup_wins=opposing_team_matchup_wins/t,
+             game_id=as.character(games[i])) %>%
+      select(-t)
+  }
+  return(df)
+}
+
+prev_matchups <- data.frame(rbindlist(loop_result), stringsAsFactors=FALSE) %>% replace(is.na(.), 0)
+prev_matchups$game_id <- as.character(prev_matchups$game_id)
+
 ## Create the fill box score file
 final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_TEAM, -future_game), by=c("game_id", "OWN_TEAM")) %>%
-     inner_join(select(game_scores, -DATE, -playoffs), by="game_id") %>%
+     inner_join(select(game_scores, -DATE, -playoffs, -season), by="game_id") %>%
      inner_join(rest_days, by="game_id") %>%
+     inner_join(trailing_games, by="game_id") %>%
+     inner_join(prev_matchups, by="game_id") %>%
      mutate(share_of_minutes=minutes/total_minutes, 
             share_of_playoff_minutes=ifelse(total_playoff_minutes>0, playoff_minutes/total_playoff_minutes, 0),
             share_of_playoff_points=ifelse(total_playoff_points>0, playoff_points/total_playoff_points, 0),
@@ -254,42 +323,6 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
      inner_join(dateindex, by="DATE") %>%
      ungroup()
 
-
-## Check previous matchups
-games <- unique(final$game_id)
-loop_result <- foreach(i=1:length(games)) %dopar% {
-  t <- subset(final, game_id==games[i])[1,]
-  selected <- t$selected_team
-  opposing <- t$opposing_team
-  date <- t$DATE
-  s <- t$season
-  
-  matchups <- filter(final, selected_team %in% c(selected, opposing) & opposing_team %in% c(selected, opposing)) %>%
-    filter(season==s & DATE<date) %>%
-    distinct(game_id, .keep_all=TRUE) %>%
-    select(-game_id)
-  
-  if (nrow(matchups)==0){
-    df <- data.frame(0, 0, as.character(games[i]))
-    names(df) <- c("selected_team_matchup_wins", "opposing_team_matchup_wins", "game_id")
-  } else{
-    df <- mutate(matchups, 
-                 w1=ifelse(selected_team==selected, selected_team_win, 1-selected_team_win), 
-                 w2=1-w1) %>%
-          summarise(selected_team_matchup_wins=sum(w1), opposing_team_matchup_wins=sum(w2)) %>%
-          mutate(t=selected_team_matchup_wins+opposing_team_matchup_wins,
-                 selected_team_matchup_wins=selected_team_matchup_wins/t,
-                 opposing_team_matchup_wins=opposing_team_matchup_wins/t,
-                 game_id=as.character(games[i])) %>%
-          select(-t)
-  }
-  return(df)
-}
-
-prev_matchups <- data.frame(rbindlist(loop_result), stringsAsFactors=FALSE) %>% replace(is.na(.), 0)
-prev_matchups$game_id <- as.character(prev_matchups$game_id)
-
-final <- inner_join(final, prev_matchups, by="game_id")
 
 saveRDS(final, "BOX_SCORES.RDA")
 

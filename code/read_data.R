@@ -241,7 +241,6 @@ rest_days <- data.frame(rbindlist(loop_result), stringsAsFactors = FALSE) %>%
 
 dateindex <- distinct(f, DATE) %>% mutate(DATE_INDEX=row_number())
 
-
 games_last_week <- function(id){
   game <- filter(game_scores, game_id==id)
   t1 <- game$selected_team
@@ -249,20 +248,30 @@ games_last_week <- function(id){
   date <- game$DATE
   s <- game$season
   
-  lastweek <- filter(game_scores, DATE<date & DATE>date-8 & season==s) %>%
-    filter(selected_team==t1 | opposing_team==t2) %>%
-    summarise(selected_team_games_prior_7d=sum(as.numeric(selected_team==t1 | opposing_team==t1)), 
-              opposing_team_games_prior_7d=sum(as.numeric(selected_team==t2 | opposing_team==t2))) %>%
-    mutate(game_id=as.character(id), 
-           selected_team_games_prior_7d=selected_team_games_prior_7d/7.0, 
-           opposing_team_games_prior_7d=opposing_team_games_prior_7d/7.0)
-  if (nrow(lastweek)>0){
-    return(lastweek)
+  team1 <- filter(game_scores, DATE<date & DATE>date-6 & season==s) %>%
+    filter(selected_team==t1 | opposing_team==t1) %>%
+    arrange(DATE) %>%
+    ungroup() %>%
+    mutate(back2back=as.numeric(DATE-lag(DATE)==1)) %>%
+    replace(is.na(.), 0) %>%
+    summarise(back2back=sum(back2back))
+    
+  team2 <- filter(game_scores, DATE<date & DATE>date-6 & season==s) %>%
+    filter(selected_team==t2 | opposing_team==t2) %>%
+    arrange(DATE) %>%
+    ungroup() %>%
+    mutate(back2back=as.numeric(DATE-lag(DATE)==1)) %>%
+    replace(is.na(.), 0) %>%
+    summarise(back2back=sum(back2back))
+
+  if (nrow(team1)>0 & nrow(team2)){
+    df <- data.frame(cbind(id, team1$back2back, team2$back2back))
   } else{
-    df <- data.frame(id, 0, 0)
-    names(df) <- c("game_id", "")
-    return(lastweek)
+    df <- data.frame(cbind(id, 0, 0))
   }
+  names(df) <- c("game_id", "selected_team_games_prior_7d", "opposing_team_games_prior_7d")
+  df$game_id <- as.character(df$game_id)
+  return(df)
 }
 
 loop_result <- foreach(i=1:length(ids)) %dopar% {
@@ -305,7 +314,7 @@ prev_matchups <- data.frame(rbindlist(loop_result), stringsAsFactors=FALSE) %>% 
 prev_matchups$game_id <- as.character(prev_matchups$game_id)
 
 ## Create the fill box score file
-final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_TEAM, -future_game), by=c("game_id", "OWN_TEAM")) %>%
+final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_TEAM, -future_game, -season), by=c("game_id", "OWN_TEAM")) %>%
      inner_join(select(game_scores, -DATE, -playoffs, -season), by="game_id") %>%
      inner_join(rest_days, by="game_id") %>%
      inner_join(trailing_games, by="game_id") %>%

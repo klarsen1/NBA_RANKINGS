@@ -9,3 +9,6 @@ print(paste0("C: ", AUC(t$selected_team_win, t$prob_selected_team_win_d)[1]))
 print(paste0("C: ", AUC(t$selected_team_win, t$prob_selected_team_win_b)[1]))
 cor(game_level$prob_selected_team_win_b, game_level$prob_selected_team_win_d)
 
+#playoffs, 0.10, 0.730336958637354
+#playoffs, 0.25, 0.731457305755071
+#

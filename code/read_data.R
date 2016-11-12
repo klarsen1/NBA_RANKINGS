@@ -211,7 +211,7 @@ get_rest_days <- function(id){
   
   df2 <- subset(game_scores, home_team_name==opposing | road_team_name==opposing) %>% 
     arrange(DATE) %>%
-    mutate(days_since_last_game=DATE-lag(DATE), 
+    mutate(days_since_last_game=as.numeric(DATE-lag(DATE)), 
            start_of_season=ifelse(days_since_last_game>14 | is.na(days_since_last_game)==TRUE, 1, 0),
            opposing_team_rest=ifelse(start_of_season==1, 0, days_since_last_game),
            opposing_team_last_city=ifelse(start_of_season==1, opposing, lag(home_team_name)),
@@ -239,7 +239,7 @@ rest_days <- data.frame(rbindlist(loop_result), stringsAsFactors = FALSE) %>%
          travel_differential=opposing_team_travel-selected_team_travel) %>%
   select(game_id, rest_differential, travel_differential, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, selected_team_last_city, opposing_team_last_city, selected_team_altitude, opposing_team_altitude)
 
-dateindex <- distinct(f, DATE) %>% mutate(DATE_INDEX=row_number())
+#dateindex <- distinct(f, DATE) %>% mutate(DATE_INDEX=row_number())
 
 games_last_week <- function(id){
   game <- filter(game_scores, game_id==id)
@@ -329,7 +329,7 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
             home_team_selected = as.numeric(home_team_name==selected_team),
             win=ifelse(future_game==1, NA, win)) %>%
      dplyr::select(-VENUE_R_H, -TOT) %>% arrange(DATE, game_id) %>%
-     inner_join(dateindex, by="DATE") %>%
+     #inner_join(dateindex, by="DATE") %>%
      ungroup()
 
 

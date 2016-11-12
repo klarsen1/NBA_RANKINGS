@@ -26,7 +26,7 @@ The Elastic NBA Team Rankings is a dynamic ranking algorithm that is purely base
 
 The model is based on three-step procedure.
 
-1. Group players into 25 *archetypes* using (k-means) clustering based on box-score stats. The archetype definitions (centroids) were formed using data prior to the 2016-2017 season; players are matched to the cluster based on their historical performance leading up to a given game. Note that from a technical perspective, the goal of the clustering algorithm is to maximize similarity of players (in terms of offensive and defensive stats) *within* clusters, while minimizing differences *between* clusters.
+1. Group players into 25 *archetypes* using (k-means) clustering based on box-score stats. The archetype definitions were created using data prior to the 2016-2017 season; players are matched to the cluster based on their historical performance leading up to a given game. Note that from a technical perspective, the goal of the clustering algorithm is to maximize similarity of players (in terms of offensive and defensive stats) *within* clusters, while minimizing differences *between* clusters.
 2. For every future game of the 2016-2017 season, predict the winner of a given game, based on the team archetypes, home team advantage, rest days, miles traveled, as well as in-season previous matchup outcomes and win-percentages.
 3. Rank teams based on the predicted future win rate.
 
@@ -36,10 +36,19 @@ The model used to predict the winner of a given game is a statistical model that
 The model is re-estimated every single day and contains the following variables:
 
 *  Surpluses and deficits of minutes allocated to the different archetypes. For example, if a team's lineup has more players on the court of archetype 1 than its opponent, it'll have a surplus of minutes allocated to that archetype, and vice versa for deficits. These variables basically compare the "DNAs" of the rosters.
-* Short term and long term trailing winning percentages. Short term is 30 days and long term is 60 days.
-* Previous matchup outcomes. 
+* Short term and long term trailing winning percentages. Short term is 30 days and long term is 60 days. The winning percentages are interacted with time, which results in the model assigning less importance to win-streaks early in the season.
+* Previous matchup outcomes. For example, let's say Golden State is playing the Clippers and the two teams have played eachother earlier in the season. This variable captures the outcomes of those two games. A team is more likely to win if it beat its opponent in the past.
+* Distances traveled prior to the game. Traveling the day before games usually translates into weaker performances, holding everything else constant.
+* Rest days prior to games. Obviously, more rest of beneficial during the long NBA season.
+* Home team advantage.
 
+## How Are Players Assigned to Archetypes?
 
+The outcome of the k-means clustering routine used create the archetypes is a set of *centroids*. Players are assigned to archetypes by matching their offensive and defensive box score statistics to closest centroids using a simple Euclidian distance. A decay funtion was applied such that more recent games receive a larger weight. On top of that, games played in the previous season are discounted by a factor of 4.
+
+## Predicting Allocation of Minutes for Future Games
+
+In order to calculate the deficit and surplus variables referenced above, we must
 
 
 

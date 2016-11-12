@@ -7,20 +7,42 @@ output: html_document
 
 ## Introduction
 
-During the last NBA season I wrote a couple of posts about the Golden State Warriors. The posts investigated whether the champion season was a fluke and if any teams had a legitimate chance of beating Golden State in the playoffs during their second season. Results indicated that the first championship was indeed deserved, and that the Spurs and Cavaliers would be serious obstacles for Golden State in their quest for the second title - despite the impressive record in the regular season. 
+After the 2016 presidential election, most people will probably argue that the world does not need another prediction model. It is fair to say that the incorrect predictions amplified the level of relief or disblief people felt on November 9. In other words, the statistical models may have changed how we experienced the outcome of the election.
 
-Both posts utilized a statistical win-prediction model, based on player archetypes to answer these questions. This model has since been extended to be a bonafied forecasting model - the previous versions was designed for "what if" scenarios - and can hence be used to answer a broader set of questions. Specifically, since this is a game-level model, the predictions can be used to create future team rankings and predict playoff outcomes.
+So does this mean that we should turn our backs on models? No, we just need to revise our expectations.
 
-The purpose of this post is to briefly describe the model, share the futured model-based rankings for this season, and show how to access the predictions
+Almost 40 years ago, George Box reminded us that a statistical model can never *exactly* represent the real world -- although some models can be useful *approximations* of the real world. We need to remember this when we deal with models: forecasting models cannot -- and do not try to -- predict the unexpected. The election models were wrong because the polls were wrong. 
 
-## How it Works
+I would go as far as to say that models are merely complex "calculation machines" that combine the information we have today with trends, cycles and seasonality to produce a prediction. But we need these machines because it's useful to forecast what might happen in the future given what we know today -- as long as we realize exactly what we're looking at. Models boil many moving parts and disparate pieces of information down to a simple benchmark for the future.
+
+Now, what does this have to do with the NBA? Basketball is a perfect example of a structured world with lots of information about what is happening today and lots of uncertainty around the future. If a team looks great on paper and is winning games, it'll likely do well in the future. But team chemistry, injuries, coaching changes, trades etc. can curtial success very quickly. Thus, any prediction is simply a benchmark for future success. 
+
+This post discusses a new approach to predicting the outcome of NBA games. The model is fully data driven and certainly falls in the category of a "calculation machine." It's also wrong, but hopefully also useful.
+
+
+# How it Works
 
 The Elastic NBA Team Rankings is a dynamic ranking algorithm that is purely based on statistical modeling techniques commonly used across most industries. No qualitative data or judgment is used to decide the ranks; the only human judgment applied is the underlying mental model behind the algorithm.
 
 The model is based on three-step procedure.
 
-1. Group players into 25 *archetypes* using (k-means) clustering based on box-score stats. 
-2. Fit a regularized logistic regression model to predict win/loss for a given game. The variables in the model include: surplus/deficit of minutes allocated to the different archetypes, home game indicator, rest days, miles traveled for road teams, and a trailing win-percentage that is 
+1. Group players into 25 *archetypes* using (k-means) clustering based on box-score stats. The archetype definitions (centroids) were formed using data prior to the 2016-2017 season; players are matched to the cluster based on their historical performance leading up to a given game. Note that from a technical perspective, the goal of the clustering algorithm is to maximize similarity of players (in terms of offensive and defensive stats) *within* clusters, while minimizing differences *between* clusters.
+2. For every future game of the 2016-2017 season, predict the winner of a given game, based on the team archetypes, home team advantage, rest days, miles traveled, as well as in-season previous matchup outcomes and win-percentages.
+3. Rank teams based on the predicted future win rate.
+
+## Some Notes on the Model Used in Step 2
+The model used to predict the winner of a given game is a statistical model that is estimated based on the most recent 365 "game days." Hence, the relative weights of the various drivers -- for example, the importance of different archetypes versus win percentages -- are purely based on the relationship detected from the data. For the stats-minded readers, the model is a logistic regression with an L1 penalty (lasso) to reduce the chance of overfitting (this worked best in back-testing).
+
+The model is re-estimated every single day and contains the following variables:
+
+*  Surpluses and deficits of minutes allocated to the different archetypes. For example, if a team's lineup has more players on the court of archetype 1 than its opponent, it'll have a surplus of minutes allocated to that archetype, and vice versa for deficits. These variables basically compare the "DNAs" of the rosters.
+* Short term and long term trailing winning percentages. Short term is 30 days and long term is 60 days.
+* Previous matchup outcomes. 
+
+
+
+
+
 
 
 ## Including Plots

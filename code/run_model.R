@@ -8,6 +8,18 @@ library(parallel)
 library(foreach)
 library(doParallel)
 
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/auc.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/assign_clusters.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/winpercentages.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/predict_game.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/get_surplus_variables.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/reporting.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/sim_playoffs.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/attach_win_perc.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/manipulate_and_save_output.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/save_results.R")
+
+
 
 ## Read the box scores
 box_scores <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA") 
@@ -26,16 +38,6 @@ box_scores <- inner_join(box_scores, select(datemap, DATE, DATE_INDEX), by="DATE
 
 ## Get model variables
 model_variables <- read.csv("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/modeldetails/model_variables.csv", stringsAsFactors = FALSE)
-
-
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/auc.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/assign_clusters.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/winpercentages.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/predict_game.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/get_surplus_variables.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/reporting.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/sim_playoffs.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/attach_win_perc.R")
 
 
 ### Global settings
@@ -73,33 +75,35 @@ e <-max(subset(datemap, future_game==0)$DATE_INDEX)
 ncore <- detectCores()-1
 registerDoParallel(ncore)
 loop_result <- foreach(i=s:e) %dopar% {
-#for (i in s:e){
 
-  #print(datemap[i, "DATE"])
-  ### Data inside the window  
+  ### Get the data inside the window  
   thisseason <- datemap[i, "season"]
   inwindow <- filter(box_scores, DATE_INDEX<datemap[i, "DATE_INDEX"] & DATE_INDEX>datemap[i-cluster_window, "DATE_INDEX"])
   thisdate <- filter(box_scores, DATE_INDEX==datemap[i, "DATE_INDEX"])
   thisseason <- thisdate[1,"season"]
 
+  ## Get the win percentages
   win_perc1 <- winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window, "DATE_INDEX"]), thisseason)
   win_perc2 <- winpercentages(filter(inwindow, DATE_INDEX>datemap[i-winstreak_window_s, "DATE_INDEX"]), thisseason)
   
+  ## Assign clusters
   clusters <- assign_clusters(centroids, inwindow, cutoff, thisseason)
 
-  
-  ### Join against win percentages and clusters  
+  ### Join
   t <- inner_join(thisdate, select(clusters, PLAYER_FULL_NAME, Cluster), by="PLAYER_FULL_NAME")
   f <- attach_win_perc(t, win_perc1, win_perc2)
 
   if (ignore_winstreaks==1){
-    f$winrate_early_season_opposing_team <- 0
     f$winrate_season_opposing_team <- 0
     f$winrate_season_opposing_team_s <- 0
     f$winrate_early_season_selected_team <- 0
+    f$winrate_early_season_opposing_team <- 0
     f$winrate_season_selected_team <- 0
     f$winrate_season_selected_team_s <- 0
   }
+  
+  rm(win_perc1)
+  rm(win_perc2)
   
   return(f)
 }
@@ -108,7 +112,7 @@ box_scores_plus <- data.frame(rbindlist(loop_result))
 
 ## Save clusters
 clusters_and_players <- 
-  select(box_scores_plus, DATE, PLAYER_FULL_NAME, Cluster, points, assists, offensive_rebounds, defensive_rebounds, turnovers, threepointers_made, threepoint_attempts, steals, minutes, fieldgoal_attempts, fieldgoals_made, freethrow_attempts, freethrows_made, fouls, blocks) %>%
+  select(box_scores_plus, DATE, PLAYER_FULL_NAME, Cluster, points, assists, offensive_rebounds, defensive_rebounds, turnovers, threepointers_made, threepoint_attempts, steals, minutes, fieldgoal_attempts, fieldgoals_made, freethrow_attempts, freethrows_made, fouls, blocks, season) %>%
   ungroup() %>%
   filter(season==max(season)) %>%
   distinct(PLAYER_FULL_NAME, .keep_all=TRUE) %>%
@@ -181,28 +185,11 @@ for (i in start_index:end_index){
     model_parts[[counter]] <- pred[[2]] 
     counter <- counter + 1
   }
-  
-  rm(win_perc1)
-  rm(win_perc2)
 }
 
 ### Manipulate the output
-game_level <- data.frame(rbindlist(scores), stringsAsFactors = FALSE) %>% 
-  mutate(d_pred_selected_team_win=ifelse(current_roster_used==0, selected_team_win, ifelse(is.na(selected_team_win), as.numeric(prob_selected_team_win_d>0.5), selected_team_win)),
-         prob_selected_team_win=ifelse(current_roster_used==0, selected_team_win, ifelse(is.na(selected_team_win), prob_selected_team_win_d, selected_team_win)))
-ranks <- report(game_level, "d_pred_selected_team_win") %>%
-  left_join(conferences, by="team") %>%
-  select(team, games_season, games_played, pred_win_rate, ytd_win_rate, conference, division)
-models <- data.frame(rbindlist(model_details), stringsAsFactors = FALSE)
-parts <- data.frame(rbindlist(model_parts), stringsAsFactors = FALSE)
-details <- mutate(game_level, 
-                  d_road_team_predicted_win=ifelse(is.na(d_pred_selected_team_win), NA, ifelse(selected_team==road_team_name, d_pred_selected_team_win, 1-d_pred_selected_team_win)), 
-                  d_home_team_predicted_win=ifelse(is.na(d_pred_selected_team_win), NA, 1-d_road_team_predicted_win), 
-                  predicted_winner=ifelse(is.na(d_pred_selected_team_win), "NA", ifelse(d_road_team_predicted_win==1, road_team_name, home_team_name)),
-                  actual_winner=ifelse(is.na(selected_team_win), "NA", ifelse(selected_team_win==1, selected_team, opposing_team)),
-                  home_team_prob_win=ifelse(is.na(d_pred_selected_team_win), NA, ifelse(selected_team==home_team_name, prob_selected_team_win_d, 1-prob_selected_team_win_d)), 
-                  road_team_prob_win=ifelse(is.na(d_pred_selected_team_win), NA, 1-home_team_prob_win)) %>%
-  select(DATE, home_team_name, road_team_name, road_team_prob_win, home_team_prob_win, predicted_winner, actual_winner)
+results <- manipulate_and_save_output(clusters_and_players, scores, game_level, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1)
+
 
 
 ##### Run the playoffs
@@ -225,7 +212,4 @@ title_chances <- data.frame(rbindlist(loop_result)) %>% group_by(winner) %>%
   mutate(prob_win_title=n/100) %>%
   select(-n)
 
-### Save results
-#save_results("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/")
-  
   

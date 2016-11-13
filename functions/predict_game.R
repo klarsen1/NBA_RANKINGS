@@ -29,11 +29,10 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   ### First get the average minutes and standard deviations for each player
   dist <- filter(history, (OWN_TEAM==team1 | OWN_TEAM==team2)) %>%
     group_by(PLAYER_FULL_NAME) %>%
-    summarise(n=sum(share_of_minutes*DATE_INDEX),
-              d=sum(DATE_INDEX),
-              m_share_of_minutes=mean(share_of_minutes),
+    mutate(gap=DATE_INDEX-min(DATE_INDEX)+1,
+           weight=ifelse(season==thisseason, 1.0, 0.25)) %>%
+    summarise(m_share_of_minutes=weighted.mean(share_of_minutes, weight),
               s_share_of_minutes=sd(share_of_minutes)) %>%
-    select(-n, -d) %>%
     replace(is.na(.), 0)
   
   ## Apply the overrides

@@ -46,8 +46,8 @@ ignore_winstreaks <- 0 # if equal to 1, win % are ignored in the model
 save_results <- 1 # set to 1 if you want to save the results
 
 ### When to start and end the forecasts
-start_date <- min(subset(box_scores, season==2016)$DATE)
-end_date <- max(subset(box_scores, season==2016)$DATE)
+start_date <- min(subset(box_scores, season==2015)$DATE)
+end_date <- max(subset(box_scores, season==2015)$DATE)
 
 ### Cut off the box scores
 box_scores <- subset(box_scores, DATE<=end_date)
@@ -94,8 +94,6 @@ loop_result <- foreach(i=s:e) %dopar% {
     f$winrate_early_season_selected_team <- 0
     f$winrate_season_selected_team <- 0
     f$winrate_season_selected_team_s <- 0
-    #f$win_rate_trend_opposing_team <- 0
-    #f$win_rate_trend_selected_team <- 0
   }
   
   return(f)
@@ -188,7 +186,7 @@ game_level <- data.frame(rbindlist(scores), stringsAsFactors = FALSE) %>%
          prob_selected_team_win_d=ifelse(current_roster_used==0, NA, prob_selected_team_win_d)) 
 ranks <- report(game_level, "d") %>%
   left_join(conferences, by="team") %>%
-  select(team, games, games_played, pred_win_rate, ytd_win_rate, conference)
+  select(team, games_season, games_played, pred_win_rate, ytd_win_rate, conference)
 models <- data.frame(rbindlist(model_details), stringsAsFactors = FALSE)
 parts <- data.frame(rbindlist(model_parts), stringsAsFactors = FALSE)
 details <- mutate(game_level, 

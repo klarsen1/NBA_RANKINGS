@@ -62,7 +62,9 @@ In terms of predicting the number of minutes each person will play, a 90-day tra
 ## Model Rankings for the 2016-2017 Season
 
 ```{r, echo=TRUE, results='asis', fig.width=5, fig.height=5}
-rankings <- read.csv("https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-13.csv", header=TRUE, stringsAsFactors = FALSE)
+ranking <- 
+bb_rankings <- read.csv("https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-13.csv", header=TRUE, stringsAsFactors = FALSE) %>%
+  mutate(rank_blackbox=min_rank(pred_win_rate))
 knitr::kable(rankings)
 ```
 

@@ -1,13 +1,3 @@
-prep_for_scoring <- function(data, win_perc1, win_perc2){
-  d1 <- group_by(data, OWN_TEAM) %>%
-    mutate(share_of_minutes=share_of_minutes/sum(share_of_minutes),
-           share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes)) %>%
-    ungroup() 
-  d2 <- attach_win_perc(d1, win_perc1, win_perc2)
-  return(d2)
-}
-
-
 predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored, nclus, prior, posterior, dir, model_variables){
 
   thisgame <- tobescored[1,]

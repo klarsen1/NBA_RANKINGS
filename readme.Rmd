@@ -54,8 +54,12 @@ The outcome of the k-means clustering routine used create the archetypes is a se
 
 In order to calculate the deficit and surplus variables referenced above, it's necessary to predict which players will be playing in a given game and how many minutes each player will play. Currently, a recency/frequency approach is used to guess who will suit up for a given team. Basically, the 13 players that are played most frequently and recently for a given team will ve added to the roster.
 
-In terms of predicting the number of minutes each person will play, a 90-day trailing window is used (excluding the offseason). Games played during the prior season are discounted by a factor of 4.
+In terms of predicting the number of minutes each person will play, a 90-day trailing average is used (excluding the offseason). Games played during the prior season are discounted by a factor of 4.
 
+## Calling the Games
+
+
+## Model Rankings for the 2016-2017 Season
 
 
 

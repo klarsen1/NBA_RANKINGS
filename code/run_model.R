@@ -9,8 +9,10 @@ library(foreach)
 library(doParallel)
 
 
+## Read the box scores
 box_scores <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA") 
-# %>% filter(playoffs==0)
+
+## Get the conferences
 conferences <- read.csv("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/Conferences.csv", stringsAsFactors = FALSE)
 
 
@@ -49,8 +51,8 @@ ignore_winstreaks <- 0 # if equal to 1, win % are ignored in the model
 save_results <- 1 # set to 1 if you want to save the results
 
 ### When to start and end the forecasts
-start_date <- min(subset(box_scores, season==2015)$DATE)
-end_date <- max(subset(box_scores, season==2015)$DATE)
+start_date <- min(subset(box_scores, season==2016)$DATE)
+end_date <- max(subset(box_scores, season==2016)$DATE)
 
 ### Cut off the box scores
 box_scores <- subset(box_scores, DATE<=end_date)
@@ -186,21 +188,21 @@ for (i in start_index:end_index){
 
 ### Manipulate the output
 game_level <- data.frame(rbindlist(scores), stringsAsFactors = FALSE) %>% 
-  mutate(d=ifelse(current_roster_used==0, selected_team_win, ifelse(is.na(selected_team_win), as.numeric(prob_selected_team_win_d>0.5), selected_team_win)),
-         prob_selected_team_win_d=ifelse(current_roster_used==0, NA, prob_selected_team_win_d)) 
-ranks <- report(game_level, "d") %>%
+  mutate(d_pred_selected_team_win=ifelse(current_roster_used==0, selected_team_win, ifelse(is.na(selected_team_win), as.numeric(prob_selected_team_win_d>0.5), selected_team_win)),
+         prob_selected_team_win=ifelse(current_roster_used==0, selected_team_win, ifelse(is.na(selected_team_win), prob_selected_team_win_d, selected_team_win)))
+ranks <- report(game_level, "d_pred_selected_team_win") %>%
   left_join(conferences, by="team") %>%
-  select(team, games_season, games_played, pred_win_rate, ytd_win_rate, conference)
+  select(team, games_season, games_played, pred_win_rate, ytd_win_rate, conference, division)
 models <- data.frame(rbindlist(model_details), stringsAsFactors = FALSE)
 parts <- data.frame(rbindlist(model_parts), stringsAsFactors = FALSE)
 details <- mutate(game_level, 
-                  d_road_team_predicted_win=ifelse(is.na(d), NA, ifelse(selected_team==road_team_name, d, 1-d)), 
-                  d_home_team_predicted_win=ifelse(is.na(d), NA, 1-d_road_team_predicted_win), 
-                  predicted_winner=ifelse(is.na(d), "NA", ifelse(d_road_team_predicted_win==1, road_team_name, home_team_name)),
+                  d_road_team_predicted_win=ifelse(is.na(d_pred_selected_team_win), NA, ifelse(selected_team==road_team_name, d_pred_selected_team_win, 1-d_pred_selected_team_win)), 
+                  d_home_team_predicted_win=ifelse(is.na(d_pred_selected_team_win), NA, 1-d_road_team_predicted_win), 
+                  predicted_winner=ifelse(is.na(d_pred_selected_team_win), "NA", ifelse(d_road_team_predicted_win==1, road_team_name, home_team_name)),
                   actual_winner=ifelse(is.na(selected_team_win), "NA", ifelse(selected_team_win==1, selected_team, opposing_team)),
-                  home_team_prob_win=ifelse(is.na(d), NA, ifelse(selected_team==home_team_name, prob_selected_team_win_d, 1-prob_selected_team_win_d)), 
-                  road_team_prob_win=ifelse(is.na(d), NA, 1-home_team_prob_win)) %>%
-  select(DATE, home_team_name, road_team_name, d_road_team_predicted_win, road_team_prob_win, d_home_team_predicted_win, home_team_prob_win, predicted_winner, actual_winner)
+                  home_team_prob_win=ifelse(is.na(d_pred_selected_team_win), NA, ifelse(selected_team==home_team_name, prob_selected_team_win_d, 1-prob_selected_team_win_d)), 
+                  road_team_prob_win=ifelse(is.na(d_pred_selected_team_win), NA, 1-home_team_prob_win)) %>%
+  select(DATE, home_team_name, road_team_name, road_team_prob_win, home_team_prob_win, predicted_winner, actual_winner)
 
 
 ##### Run the playoffs

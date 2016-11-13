@@ -22,6 +22,9 @@ datemap <- select(box_scores, DATE, future_game, season) %>%
 
 box_scores <- inner_join(box_scores, select(datemap, DATE, DATE_INDEX), by="DATE")
 
+## Get model variables
+model_variables <- read.csv("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/modeldetails/model_variables.csv", stringsAsFactors = FALSE)
+
 
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/auc.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/assign_clusters.R")
@@ -135,23 +138,21 @@ for (i in start_index:end_index){
   ### Estimate the model unless we have run out of historical data
   if (counter==1 | i <= j){
   
-     ### Get rest and travel by game_id
-     rest_and_travel <- select(inwindow, game_id, opposing_team_travel, selected_team_travel, opposing_team_rest, selected_team_rest) %>% 
-       distinct(game_id, .keep_all=TRUE)
-
-     ### Estimate the model
+     ### Get game_id level data
+     game_data <- distinct(inwindow, game_id, .keep_all=TRUE)
+    
+     ### Combine the data
      x <- get_surplus_variables(inwindow, nclus)  %>%
-       inner_join(rest_and_travel, by="game_id") %>%
-       select(-game_id, -selected_team)
+       inner_join(game_data, by="game_id")
 
+     ## Estimate the model
      Y <- x$selected_team_win
-     x$selected_team_win <- NULL
-
+     x <- x[,names(x) %in% unique(model_variables$Variable)]
      X <- model.matrix(as.formula(Y ~ .), x)
      model <- cv.glmnet(y=Y, x=X, family="binomial", alpha=alpha, parallel=FALSE, nfolds=10)
      c <- as.matrix(coef(model, s=model$lambda.1se))
      p <- prob_win <- 1/(1+exp(-X%*%c[-1]))
-     
+
      ## Save model details
      details <- cbind.data.frame(sapply(row.names(c), as.character), sapply(c, as.numeric), stringsAsFactors = FALSE)
      names(details) <- c("Variable", "Coeff")
@@ -165,7 +166,7 @@ for (i in start_index:end_index){
      thisseason <- filter(inwindow, DATE==max(DATE))[1,"season"]
      win_perc1 <- winpercentages(filter(inwindow, DATE_INDEX>j-winstreak_window), thisseason)
      win_perc2 <- winpercentages(filter(inwindow, DATE_INDEX>j-winstreak_window_s), thisseason)
-     
+
   }
   
   ### Predict game outcomes
@@ -173,11 +174,14 @@ for (i in start_index:end_index){
   games <- unique(thisday$game_id)
   
   for (d in 1:length(games)){
-    pred <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[j-playing_time_window, "DATE_INDEX"]), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, 0.50, 0.50, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
+    pred <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[j-playing_time_window, "DATE_INDEX"]), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, 0.50, 0.50, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables)
     scores[[counter]] <- pred[[1]]
     model_parts[[counter]] <- pred[[2]] 
     counter <- counter + 1
   }
+  
+  rm(win_perc1)
+  rm(win_perc2)
 }
 
 ### Manipulate the output

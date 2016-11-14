@@ -53,8 +53,8 @@ ignore_winstreaks <- 0 # if equal to 1, win % are ignored in the model
 save_results <- 1 # set to 1 if you want to save the results
 
 ### When to start and end the forecasts
-start_date <- min(subset(box_scores, season==2016)$DATE)
-end_date <- max(subset(box_scores, season==2016)$DATE)
+start_date <- min(subset(box_scores, season==2015)$DATE)
+end_date <- max(subset(box_scores, season==2015 & playoffs==0)$DATE)
 
 ### Cut off the box scores
 box_scores <- subset(box_scores, DATE<=end_date)
@@ -188,7 +188,7 @@ for (i in start_index:end_index){
 }
 
 ### Manipulate the output
-results <- manipulate_and_save_output(clusters_and_players, scores, game_level, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1)
+results <- manipulate_and_save_output(clusters_and_players, scores, game_level, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 1, 0)
 
 
 

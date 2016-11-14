@@ -323,10 +323,12 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
             share_of_playoff_minutes=ifelse(total_playoff_minutes>0, playoff_minutes/total_playoff_minutes, 0),
             share_of_playoff_points=ifelse(total_playoff_points>0, playoff_points/total_playoff_points, 0),
             share_of_points=points/total_points,
-            home_points=home_team*points, 
-            road_points=road_team*points,
+            #home_points=home_team*points, 
+            #road_points=road_team*points,
             share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes),
             home_team_selected = as.numeric(home_team_name==selected_team),
+            selected_team_points=ifelse(home_team_selected==1, home_team_points, road_team_points),
+            opposing_team_points=ifelse(home_team_selected==0, home_team_points, road_team_points),
             win=ifelse(future_game==1, NA, win)) %>%
      dplyr::select(-VENUE_R_H, -TOT) %>% arrange(DATE, game_id) %>%
      #inner_join(dateindex, by="DATE") %>%

@@ -9,15 +9,16 @@ output: html_document
 
 After the 2016 presidential election, most people would probably agree that the world does not need another statistical prediction model. The election models misled us and added to the element of shock and surprise -- on both sides of the political spectrum.
 
-Does this mean that we should we turn our backs on forecasting models? No, we just need to revise our expectations. George Box once reminded us that statistical models are, at best, useful *approximations* of the real world. With the recent hype around data science and money balling this point is often forgotten. 
+Does this mean that we should we turn our backs on forecasting models? No, we just need to revise our expectations. George Box once reminded us that statistical models are, at best, useful *approximations* of the real world. With the recent hype around data science and "money balling"" this point is often forgotten. 
+So what *should* we expect from a statistical model? A good statistical model should be underpinned by a solid, yet simplified, representation of how the world works. Predictions are created by combining a multitude of inputs and assumptions with observed trends and correlations. This helps us interpret the all the moving parts and disparate data sources that affect a given outcome, which is valuable in its own right. However, if the inputs are bad even a good model is wrong. If the unthinkable happens, the model wouldn't have predicted it unless unthinkable assumptions were made.
 
-So what *can* we expect from a statistical model? A good statistical should be underpinned by a solid mental model of how the world works. Moreover, we can count of models to combine a multitude of inputs with observed trends and correlations to produce a single benchmark for the future. This helps is interpret what's happening
+Now, what does this have to do with the NBA? Basketball is a perfect example of a structured world with lots of information about what is happening today and plenty of uncertainty around the future. If a team looks great on paper and is winning games, it'll likely do well in the future. But team chemistry, injuries, coaching changes, trades etc. can curtial success very quickly. Thus, any model-based prediction can only be viewed as a benchmark for future success. 
 
-If the inputs are bad -- such as incorrect polls -- the model is wrong. If the unthinkable happens, the model wouldn't have predicted it unless unthinkable assumptions were made.
+This post discusses a new, data driven approach to predicting the outcome of NBA games that uses techniques freuently used across many industries. I've been sharing insigts from this model in prior posts about the Golden State Warriors and thought it was time to share some broader results. I have no doubt the model is wrong, but hopefully it's useful.
 
-Now, what does this have to do with the NBA? Basketball is a perfect example of a structured world with lots of information about what is happening today and lots of uncertainty around the future. If a team looks great on paper and is winning games, it'll likely do well in the future. But team chemistry, injuries, coaching changes, trades etc. can curtial success very quickly. Thus, any model-based prediction can only be viewed simply a benchmark for future success. 
+# High Level Summary
 
-This post discusses a new approach to predicting the outcome of NBA games. I've been sharing insigts from this model in prior posts about the Golden State Warriors and thohght it was time to share some broader results. I have no doubt the modes is wrong, but hopefully it's useful.
+The team rankings produced by this model agree with other popular ratings -- specifically, FiveThirtyEight and the ESPN Power Ratings -- on the "tail teams" -- i.e., the top teams and the bottom teams.
 
 
 # How it Works
@@ -45,8 +46,7 @@ The model used to predict the winner of a given game is a statistical model that
 The model is re-estimated every single day and contains the following variables:
 
 *  Surplus/deficit of minutes allocated to the different archetypes. For example, if a team's lineup has more players on the court of archetype 1 than its opponent, it'll have a surplus of minutes allocated to that archetype, and vice versa for deficits. These variables basically compare the "DNAs" of the rosters.
-* Short term and long term trailing winning percentages. Short term is 30 days and long term is 60 days. The winning percentages are interacted with time, which results in the model assigning less importance to win-streaks early in the season.
-* Rolling overall relative point differential against opponents for the previous 90 days. This measures consistency and relative win-margin. For example, it's theoretically possible to have a winning record and also have an overall point deficit if the team suffered some big losses. Conversely, a team can have a convincing winning record but only win games by thin margins.
+* Trailing 90 day winning percentages. The model assigns less importance to win-streaks early in the season. Moreover, the model assigns higher importance to wins where the opponent has a high [CARMELO](http://fivethirtyeight.com/features/how-our-2015-16-nba-predictions-work/) score.
 * Previous matchup outcomes. For example, let's say Golden State is playing the Clippers and the two teams have played eachother earlier in the season. This variable captures the outcomes of those two games. A team is more likely to win if it beat its opponent in the past.
 * Distances traveled prior to the game. Traveling the day before games usually translates into weaker performances, holding everything else constant.
 * Rest days prior to games. Obviously, more rest of beneficial during the long NBA season.
@@ -97,23 +97,34 @@ The table shows that the Elastic Rankings seem to agree with the popular ratings
 
 But what about Atlanta? The Elastic Rankings places Atlanta much higher on the list than both FiveThirtyEight and the ESPN Power Rankings. To understand why we can compare underlying parts of the model across teams and see where Atlanta stands out.
 
+For this analysis, I aggregated the model variables into three overall groups:
+
+* Roster variables -- archetype allocation deficits/surpluses. These are the variables that start with "share_minutes_cluster." Each variable captures the differences in minutes allocated to a given archetype. 
+* Performance -- e.g., win rates, point differentials
+* Circumstances -- e.g., travel, rest, home court advantage
+
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(tidyr)
 library(dplyr)
 library(knitr)
 
 f <- 
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2016-11-13.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2016-11-16.csv"
 
 center <- function(x){return(x-mean(x))}
-decomps <- read.csv(f, stringsAsFactors = FALSE) %>% select(-DATE) %>% 
-  mutate(roster=rowSums(.[1:26]))
+decomps <- read.csv(f, stringsAsFactors = FALSE) %>% 
+  select(selected_team, roster, circimstances, performance) %>%
+  mutate(total=roster+circimstance+performance) %>%
+  arrange(total) %>%
+  select(-total) %>%
+  group_by(selected_team) %>%
+  summarise_each(funs(mean)) %>%
+  ungroup() %>%
+  mutate_each(funs(center), which(sapply(., is.numeric))) 
 
-  mutate_each(funs(center), which(sapply(., is.numeric))) %>%
-  replace(is.na(.), 0) %>%
-  filter(selected_team=="Atlanta") %>%
-  summarise_each(funs(mean), which(sapply(., is.numeric)))
-
+  forplot <- dcast(decomps, selected_team ~ value.var=c(roster))
+  ggplot(data.m, aes(selected_team, value)) +   
+  geom_bar(aes(fill = variable), position = "dodge", stat="identity")
 
 ```
 

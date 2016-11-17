@@ -1,3 +1,5 @@
+library(dplyr)
+
 ### Settings
 cutoff_season <- 2016 ## for example, 2015 cuts off the 2015-2016 season and later seasons
 cutoff <- 8 # minutes per game. if a player plays less than this amount, he is excluded

@@ -10,6 +10,52 @@ library(ggmap)
 library(parallel)
 library(foreach)
 library(doParallel)
+library(rvest)
+
+ft8 <- read_html("http://projects.fivethirtyeight.com/2017-nba-predictions/") %>%
+  html_nodes("#standings-table") %>% html_table(fill=TRUE)
+ft8df <- data.frame(rbindlist(ft8))
+team <- gsub("[0-9, -]", "", ft8df[4:nrow(ft8df),"V5"])
+elo <- ft8df[4:nrow(ft8df),"V1"]
+carm_elo <- ft8df[4:nrow(ft8df),"V2"]
+team[team=="ers"] <- "Philadelphia"
+team[team=="Hornets"] <- "Charlotte"
+team[team=="Clippers"] <- "LA Clippers"
+team[team=="Cavaliers"] <- "Cleveland"
+team[team=="Warriors"] <- "Golden State"
+team[team=="Spurs"] <- "San Antonio"
+team[team=="Raptors"] <- "Toronto"
+team[team=="Jazz"] <- "Utah"
+team[team=="Thunder"] <- "Oklahoma City"
+team[team=="TrailBlazers"] <- "Portland"
+team[team=="Rockets"] <- "Houston"
+team[team=="Pelicans"] <- "New Orleans"
+team[team=="Celtics"] <- "Boston"
+team[team=="Timberwolves"] <- "Minnesota"
+team[team=="Bulls"] <- "Chicago"
+team[team=="Hawks"] <- "Atlanta"
+team[team=="Pistons"] <- "Detroit"
+team[team=="Nuggets"] <- "Denver"
+team[team=="Mavericks"] <- "Dallas"
+team[team=="Wizards"] <- "Washington"
+team[team=="Lakers"] <- "LA Lakers"
+team[team=="Kings"] <- "Sacramento"
+team[team=="Knicks"] <- "New York"
+team[team=="Grizzlies"] <- "Memphis"
+team[team=="Pacers"] <- "Indiana"
+team[team=="Bucks"] <- "Milwaukee"
+team[team=="Magic"] <- "Orlando"
+team[team=="Heat"] <- "Miami"
+team[team=="Suns"] <- "Phoenix"
+team[team=="Nets"] <- "Brooklyn"
+
+fivethirtyeight <- data.frame(cbind(team, elo, carm_elo), stringsAsFactors = FALSE) %>%
+  mutate(selected_team=as.character(team), opposing_team=as.character(team), 
+         elo=elo, carm_elo=carm_elo) %>%
+  select(-team)
+fivethirtyeight$elo <- as.numeric(fivethirtyeight$elo)
+fivethirtyeight$carm_elo <- as.numeric(fivethirtyeight$carm_elo)
+
 
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/distance_between.R")
 
@@ -141,11 +187,13 @@ team_win <- inner_join(team_pts, select(game_pts, game_id, max_game_points, r), 
             mutate(win=as.numeric(total_points==max_game_points)) %>%
             select(-max_game_points)
 
-city_names <- distinct(team_win, OWN_TEAM) %>% 
-  mutate(OWN_TEAM_NAME=ifelse(OWN_TEAM=="Golden State", "Oakland", OWN_TEAM), 
+city_names <- distinct(team_win, OWN_TEAM) %>% mutate(OWN_TEAM_NAME=OWN_TEAM) %>%
+  mutate(OWN_TEAM_NAME=ifelse(OWN_TEAM_NAME=="Golden State", "Oakland", OWN_TEAM_NAME), 
+         OWN_TEAM_NAME=ifelse(OWN_TEAM_NAME=="Minnesota", "Minneapolis", OWN_TEAM_NAME),
          OWN_TEAM_NAME=ifelse(OWN_TEAM_NAME=="LA Clippers", "Los Angeles", OWN_TEAM_NAME), 
          OWN_TEAM_NAME=ifelse(OWN_TEAM_NAME=="Indiana", "Indianapolis", OWN_TEAM_NAME), 
          OWN_TEAM_NAME=ifelse(OWN_TEAM_NAME=="LA Lakers", "Los Angeles", OWN_TEAM_NAME), 
+         OWN_TEAM_NAME=ifelse(OWN_TEAM_NAME=="Washington", "Washington, DC", OWN_TEAM_NAME), 
          OWN_TEAM_NAME=ifelse(OWN_TEAM_NAME=="Utah", "Salt Lake City", OWN_TEAM_NAME)) %>%
   arrange(OWN_TEAM_NAME)
 
@@ -180,7 +228,9 @@ game_scores <- data.frame(rbindlist(lapply(split, function(x) spread(select(x, g
                           opposing_team=ifelse(r==1, R, H), 
                           selected_team_win=ifelse(future_game==1, NA, selected_team_win)) %>% 
                    select(-r, -future_game) %>%
-                   rename(home_team_name=H, road_team_name=R)
+                   rename(home_team_name=H, road_team_name=R) %>%
+  ungroup()
+
 saveRDS(game_scores, "GAME_SCORES.RDA")
 
 get_rest_days <- function(id){
@@ -313,6 +363,8 @@ loop_result <- foreach(i=1:length(games)) %dopar% {
 prev_matchups <- data.frame(rbindlist(loop_result), stringsAsFactors=FALSE) %>% replace(is.na(.), 0)
 prev_matchups$game_id <- as.character(prev_matchups$game_id)
 
+
+
 ## Create the fill box score file
 final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_TEAM, -future_game, -season), by=c("game_id", "OWN_TEAM")) %>%
      inner_join(select(game_scores, -DATE, -playoffs, -season), by="game_id") %>%
@@ -332,9 +384,14 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
             win=ifelse(future_game==1, NA, win)) %>%
      dplyr::select(-VENUE_R_H, -TOT) %>% arrange(DATE, game_id) %>%
      #inner_join(dateindex, by="DATE") %>%
+     left_join(select(fivethirtyeight, -opposing_team), by="selected_team") %>%
+     rename(elo_selected_team=elo, carm_elo_selected_team=carm_elo) %>%
+     left_join(select(fivethirtyeight, -selected_team), by="opposing_team") %>%
+     rename(elo_opposing_team=elo, carm_elo_opposing_team=carm_elo) %>%
      ungroup()
 
-
 saveRDS(final, "BOX_SCORES.RDA")
+
+write.csv(fivethirtyeight, paste0("FiveThirtyEight_", Sys.Date(), ".csv"), row.names = FALSE)
 
 rm(list = ls())

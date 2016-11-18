@@ -149,10 +149,11 @@ Last, but not least, let's take a look at San Antonio and the Timberwolves -- tw
 
 The model was used to predict all games from 2015-11-17 to the end the 2015-2016 season, using only information available as of 2015-11-16. 
 
-The game level accuracy was 66.3% -- i.e., the model predicted the correct winnder in 66.3% of cases. 
+The game level accuracy was 67% -- i.e., the model predicted the correct winner in 67% of cases. 
 
-The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.726.
+The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.736.
 
+The predicted team rankings were also in line with the actual rankings:
 
 
 ### Long Term Forecasting

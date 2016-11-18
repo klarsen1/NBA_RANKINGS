@@ -60,6 +60,7 @@ current_season <- max(box_scores$season)
 
 ### When to start and end the forecasts
 start_date <- min(subset(box_scores, season==2015)$DATE)
+start_date <- as.Date('2015-11-17')
 end_date <- max(subset(box_scores, season==2015 & playoffs==0)$DATE)
 
 ### Cut off the box scores
@@ -199,5 +200,5 @@ for (i in start_index:end_index){
 #results <- manipulate_and_save_output(clusters_and_players, scores, game_level, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1)
 results <- manipulate_and_save_output(clusters_and_players, scores, game_level, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 1, 0)
 
-#write.csv(select(filter(results[[1]], current_roster_used==1), -current_roster_used), "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/game_level_validation_2015.csv")
-#write.csv(results[[2]], "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/ranking_validation_2015.csv")
+write.csv(select(filter(results[[1]], current_roster_used==1), -current_roster_used), "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/game_level_validation_2015.csv")
+write.csv(results[[2]], "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/ranking_validation_2015.csv")

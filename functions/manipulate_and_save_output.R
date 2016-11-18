@@ -28,7 +28,7 @@ manipulate_and_save_output <- function(clusters_and_players, scores, game_level,
     game_level <- data.frame(rbindlist(scores), stringsAsFactors = FALSE) %>% 
       mutate(prob_selected_team_win=ifelse(current_roster_used==0, NA, prob_selected_team_win_d), 
              d_pred_selected_team_win=ifelse(current_roster_used==0, NA, as.numeric(prob_selected_team_win>0.5)))
-    ranks <- report(game_level, "d_pred_selected_team_win")
+    ranks <- report(filter(game_level, current_roster_used==1), "d_pred_selected_team_win")
     models <- data.frame(rbindlist(model_details), stringsAsFactors = FALSE)
     return(list(game_level, ranks, models))
   }

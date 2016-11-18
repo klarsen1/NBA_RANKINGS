@@ -18,7 +18,7 @@ This post discusses a new, data driven approach to predicting the outcome of NBA
 
 # High Level Summary
 
-The team rankings produced by this model agree with other popular ratings -- specifically, FiveThirtyEight and the ESPN Power Ratings -- on the "tail teams" -- i.e., the top teams and the bottom teams.
+The team rankings produced by this model mainly agree with other prediction models (such as FiveThirtyEight) on the "tail teams" -- i.e., the teams that should be considered front runners and the teams that will win very few games this season. 
 
 
 # How it Works
@@ -79,29 +79,34 @@ library(tidyr)
 library(dplyr)
 library(knitr)
 
-f1 <- "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rawdata/external_rankings.csv"
-f2 <- "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-13.csv"
+f1 <- 
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/cleandata/FiveThirtyEight_2016-11-16.csv"
+f2 <- 
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-16.csv"
 
-popular_rankings <- read.csv(f1)
+ft8_rankings <- read.csv(f1) %>% rename(team=selected_team)
 
 all_rankings <- read.csv(f2) %>%
-  inner_join(popular_rankings, by="team") %>%
-  mutate(blackbox=min_rank(-pred_win_rate)) %>%
-  select(team, conference, division, blackbox, ESPN, FiveThirtyEight) %>%
-  arrange(blackbox)
+  inner_join(ft8_rankings, by="team") %>%
+  mutate(elastic_ranking=min_rank(-pred_win_rate), 
+         FiveThirtyEight=min_rank(-carm_elo)) %>%
+  select(team, conference, division, elastic_ranking, FiveThirtyEight) %>%
+  arrange(elastic_ranking)
+
+#cor(all_rankings$FiveThirtyEight, all_rankings$elastic_ranking)
   
 kable(all_rankings)
 ```
 
-The table shows that the Elastic Rankings seem to agree with the popular ratings on the "tail teams." For example, all rankings agree that Golden State, the Clippers and San Antonio will have strong seasons, and that Philadelphia and Brooklyn are going to end up at the bottom.
+The table shows that the Elastic Rankings seem to agree with FiveThirtyEight on the "tail teams." For example, all rankings agree that Golden State and Cleveland will have strong seasons, and that Philadelphia and New Orleans are going to end up at the bottom.
 
-But what about Atlanta? The Elastic Rankings places Atlanta much higher on the list than both FiveThirtyEight and the ESPN Power Rankings. To understand why we can compare underlying parts of the model across teams and see where Atlanta stands out.
+But what about Atlanta? As the table shows, the Elastic Rankings places Atlanta much higher on the list than FiveThirtyEight. To understand why the model is doing this, we can utilize the fact that this is an additive model and decompose the predictions into three parts:
 
-For this analysis, I aggregated the model variables into three overall groups:
-
-* Roster variables -- archetype allocation deficits/surpluses. These are the variables that start with "share_minutes_cluster." Each variable captures the differences in minutes allocated to a given archetype. 
+* Roster -- archetype allocation deficits/surpluses. These are the variables that start with "share_minutes_cluster." Each variable captures the differences in minutes allocated to a given archetype. This is meant to reflect the quality of the roster, on paper.
 * Performance -- e.g., win rates, point differentials
 * Circumstances -- e.g., travel, rest, home court advantage
+
+For each group, the underlyiing predictors were multiplied by their respective coefficients and then aggregated to get the contributions to the predicted probabilities. The code below shows how to do that:
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(tidyr)
@@ -112,22 +117,33 @@ f <-
   "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2016-11-16.csv"
 
 center <- function(x){return(x-mean(x))}
-decomps <- read.csv(f, stringsAsFactors = FALSE) %>% 
-  select(selected_team, roster, circimstances, performance) %>%
-  mutate(total=roster+circimstance+performance) %>%
-  arrange(total) %>%
-  select(-total) %>%
+read.csv(f, stringsAsFactors = FALSE) %>% 
+  select(selected_team, roster, circumstances, performance) %>%
   group_by(selected_team) %>%
-  summarise_each(funs(mean)) %>%
+  summarise_each(funs(mean)) %>% ## get averages across games by team
   ungroup() %>%
-  mutate_each(funs(center), which(sapply(., is.numeric))) 
-
-  forplot <- dcast(decomps, selected_team ~ value.var=c(roster))
-  ggplot(data.m, aes(selected_team, value)) +   
-  geom_bar(aes(fill = variable), position = "dodge", stat="identity")
+  mutate_each(funs(center), which(sapply(., is.numeric))) %>% ## standardize across teams
+  gather(modelpart, value, roster:performance) %>% ## transpose
+  rename(team=selected_team) %>%
+  ggplot(aes(team, value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
+  xlab("") + ylab("") + theme(legend.title = element_blank())
 
 ```
 
+The bars show the contribution from each part of the model. As expected, cirumstances do not affect the overall prediction for the season as most teams have similarly taxing travel and rest schedules. It does, however, show very different contributions from performance (weighted winning percentage) and roster (surplus of important archetypes).
+
+First, let's take a look at Atlanta. The model think that Atlata's roster is average. Howwever, Atlanta has been winning lately, and even beat Cleveland, and thus we get a positive contribution from this (recall that the wins are weighted by the opponents [CARMELO](http://projects.fivethirtyeight.com/2017-nba-predictions/) rating). It's worth noting that the model does not assign as much importance to performance early in the season, but this was still sufficient to get a high ranking. 
+
+Next, let's look at Cleveland and Golden State. The model ranks these two teams at the top both in terms of rosters and performance. In fact, my playoff simulations have these two teams meeting again in the finals and going to seven games. More on that in a later post.
+
+Last, but not least, let's take a look at San Antonio and the Timberwolves -- two teams that are viewed very differently by the model. According to the model, San Antonio has been overperforming. It does not like how the roster looks on paper, yet performance has been strong this season. This could be due to strong coaching, "corporate knowledge" (as Gregg Popovich calls it) and team chemistry -- factors that the roster component of the model does not capture. Minnesota, on the other hand, is  underperforming according to the model. The roster rated highly, but they're still under 50%. Is this due to the inexperience of the team? 
+
+# Backtesting
 
 
-## Decoding the Results
+
+# How to Get the Predictions
+
+Game level predictions will be saved each Monday in this github repo: 
+
+

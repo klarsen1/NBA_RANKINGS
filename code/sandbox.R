@@ -1,15 +1,22 @@
-t <- subset(results[[1]], current_roster_used==1)
+t <- subset(results[[1]], current_roster_used==1) %>%
+  mutate(match=as.numeric(selected_team_win==d_pred_selected_team_win), 
+         first_half=as.numeric(DATE<'2016-02-01')) %>%
+  group_by(first_half)
 
+summarise(t, match=mean(match))
 
 mean(t$prob_selected_team_win_b)
 mean(t$prob_selected_team_win_d)
 mean(t$selected_team_win)
+mean(t$match)
 
 print(paste0("C: ", AUC(t$selected_team_win, t$prob_selected_team_win_d)[1]))
 
-print(paste0("C: ", AUC(t$selected_team_win, t$prob_selected_team_win_b)[1]))
+tt <- subset(t, first_half==1)
+print(paste0("C: ", AUC(tt$selected_team_win, tt$prob_selected_team_win_d)[1]))
 
-#playoffs, 0.10, 0.730336958637354
-#playoffs, 0.25, 0.731457305755071
-#0.707811159001788
-#
+ttt <- subset(t, first_half==0)
+print(paste0("C: ", AUC(ttt$selected_team_win, ttt$prob_selected_team_win_d)[1]))
+
+
+

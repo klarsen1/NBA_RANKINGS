@@ -18,8 +18,14 @@ This post discusses a new, data driven approach to predicting the outcome of NBA
 
 # High Level Summary
 
-The team rankings produced by this model mainly agree with other prediction models (such as FiveThirtyEight) on the "tail teams" -- i.e., the teams that should be considered front runners and the teams that will win very few games this season. 
+The team rankings produced by this model mainly agree with other prediction models (such as FiveThirtyEight) on the "tail teams" -- i.e., the teams that should be considered front runners and the teams that will win very few games this season. However, there are some interesting differences. For example, the Elastic Ranking model is bullish on Atlanta, but not optimistic about Utah's chances.
 
+All rankings and scores can be found in [this github repo](https://github.com/klarsen1/NBA_RANKINGS). The easiest way to extract the data is to directly read the [raw files](https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails). This is demonstrated in the examples below.
+
+There are two main file of interest:
+
+* game_level_predictions_2016-MM-DD.csv. These files contain predictions for each future game.
+* rankings_2016-MM-DD.csv. Team rankings and predicted win rates.
 
 # How it Works
 
@@ -28,7 +34,7 @@ The Elastic NBA Team Rankings is a dynamic ranking algorithm that is purely base
 At a high level, the model depends on three overall factors:
 
 * Previous performance
-* The team "DNA" as measured by the roster composition of "player archetypes"
+* How the team looks on paper. This is measured by the roster composition of "player archetypes."
 * Circumstances -- e.g., traveling, rest days, home court advantage
 
 ## More Detailed Description
@@ -45,7 +51,7 @@ The model used to predict the winner of a given game is a statistical model that
 
 The model is re-estimated every single day and contains the following variables:
 
-*  Surplus/deficit of minutes allocated to the different archetypes. For example, if a team's lineup has more players on the court of archetype 1 than its opponent, it'll have a surplus of minutes allocated to that archetype, and vice versa for deficits. These variables basically compare the "DNAs" of the rosters.
+*  Roster composition. Surplus/deficit of minutes allocated to the different archetypes. For example, if a team's lineup has more players on the court of archetype 1 than its opponent, it'll have a surplus of minutes allocated to that archetype, and vice versa for deficits.
 * Trailing 90 day winning percentages. The model assigns less importance to win-streaks early in the season. Moreover, the model assigns higher importance to wins where the opponent has a high [CARMELO](http://fivethirtyeight.com/features/how-our-2015-16-nba-predictions-work/) score.
 * Previous matchup outcomes. For example, let's say Golden State is playing the Clippers and the two teams have played eachother earlier in the season. This variable captures the outcomes of those two games. A team is more likely to win if it beat its opponent in the past.
 * Distances traveled prior to the game. Traveling the day before games usually translates into weaker performances, holding everything else constant.
@@ -80,9 +86,9 @@ library(dplyr)
 library(knitr)
 
 f1 <- 
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/cleandata/FiveThirtyEight_2016-11-16.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/cleandata/FiveThirtyEight_2016-11-17.csv"
 f2 <- 
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-16.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-17.csv"
 
 ft8_rankings <- read.csv(f1) %>% rename(team=selected_team)
 
@@ -106,12 +112,13 @@ But what about Atlanta? As the table shows, the Elastic Rankings places Atlanta 
 * Performance -- e.g., win rates, point differentials
 * Circumstances -- e.g., travel, rest, home court advantage
 
-For each group, the underlyiing predictors were multiplied by their respective coefficients and then aggregated to get the contributions to the predicted probabilities. The code below shows how to do that:
+For each group, the underlying predictors were multiplied by their respective coefficients and then aggregated to get the contributions to the predicted probabilities. The CSV file called score_decomp_2016_MM_DD contains this information. The code below shows how to use this file:
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(tidyr)
 library(dplyr)
 library(knitr)
+library(ggplot2)
 
 f <- 
   "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2016-11-16.csv"
@@ -140,10 +147,22 @@ Last, but not least, let's take a look at San Antonio and the Timberwolves -- tw
 
 # Backtesting
 
+The model was used to predict all games from 2015-11-17 to the end the 2015-2016 season, using only information available as of 2015-11-16. 
+
+The game level accuracy was 66.3% -- i.e., the model predicted the correct winnder in 66.3% of cases. 
+
+The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.726.
 
 
-# How to Get the Predictions
 
-Game level predictions will be saved each Monday in this github repo: 
+### Long Term Forecasting
+
+
+
+
+
+
+
+
 
 

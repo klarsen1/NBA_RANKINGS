@@ -11,10 +11,16 @@ library(parallel)
 library(foreach)
 library(doParallel)
 library(rvest)
+library(stringr)
 
 ft8 <- read_html("http://projects.fivethirtyeight.com/2017-nba-predictions/") %>%
   html_nodes("#standings-table") %>% html_table(fill=TRUE)
 ft8df <- data.frame(rbindlist(ft8))
+
+wins <- as.numeric(str_split_fixed(ft8df[4:nrow(ft8df),"Avg..Simulated.SeasonAvg..Simulation"], "-", 2)[,1])
+losses <- as.numeric(str_split_fixed(ft8df[4:nrow(ft8df),"Avg..Simulated.SeasonAvg..Simulation"], "-", 2)[,2])
+
+
 team <- gsub("[0-9, -]", "", ft8df[4:nrow(ft8df),"V5"])
 elo <- ft8df[4:nrow(ft8df),"V1"]
 carm_elo <- ft8df[4:nrow(ft8df),"V2"]
@@ -49,13 +55,13 @@ team[team=="Heat"] <- "Miami"
 team[team=="Suns"] <- "Phoenix"
 team[team=="Nets"] <- "Brooklyn"
 
-fivethirtyeight <- data.frame(cbind(team, elo, carm_elo), stringsAsFactors = FALSE) %>%
+fivethirtyeight <- data.frame(team, elo=as.numeric(elo), carm_elo=as.numeric(carm_elo), 
+                              wins_538=as.numeric(wins), 
+                              losses_538=as.numeric(losses)) %>%
   mutate(selected_team=as.character(team), opposing_team=as.character(team), 
-         elo=elo, carm_elo=carm_elo) %>%
+         elo=elo, carm_elo=carm_elo, 
+         pred_win_rate_538=wins_538/(wins_538+losses_538)) %>%
   select(-team)
-
-fivethirtyeight$elo <- as.numeric(fivethirtyeight$elo)
-fivethirtyeight$carm_elo <- as.numeric(fivethirtyeight$carm_elo)
 
 
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/distance_between.R")

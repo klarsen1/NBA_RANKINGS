@@ -1,31 +1,31 @@
-"elo","carm_elo","selected_team","opposing_team"
-1709,1794,"Golden State","Golden State"
-1701,1668,"Cleveland","Cleveland"
-1669,1667,"LA Clippers","LA Clippers"
-1694,1658,"San Antonio","San Antonio"
-1598,1620,"Toronto","Toronto"
-1553,1590,"Utah","Utah"
-1638,1583,"Oklahoma City","Oklahoma City"
-1543,1576,"Chicago","Chicago"
-1559,1569,"Houston","Houston"
-1579,1568,"Charlotte","Charlotte"
-1516,1533,"Boston","Boston"
-1448,1533,"Minnesota","Minnesota"
-1596,1520,"Atlanta","Atlanta"
-1512,1514,"Portland","Portland"
-1508,1495,"Detroit","Detroit"
-1477,1483,"Memphis","Memphis"
-1443,1471,"Denver","Denver"
-1422,1442,"New York","New York"
-1478,1442,"Washington","Washington"
-1416,1434,"LA Lakers","LA Lakers"
-1425,1428,"Sacramento","Sacramento"
-1444,1425,"Dallas","Dallas"
-1411,1420,"Orlando","Orlando"
-1471,1418,"Indiana","Indiana"
-1536,1413,"Miami","Miami"
-1422,1407,"Milwaukee","Milwaukee"
-1370,1405,"New Orleans","New Orleans"
-1384,1394,"Phoenix","Phoenix"
-1358,1342,"Brooklyn","Brooklyn"
-1264,1332,"Philadelphia","Philadelphia"
+"elo","carm_elo","wins_538","losses_538","selected_team","opposing_team","pred_win_rate_538"
+1709,1794,66,16,"Golden State","Golden State",0.804878048780488
+1701,1668,59,23,"Cleveland","Cleveland",0.719512195121951
+1669,1667,58,24,"LA Clippers","LA Clippers",0.707317073170732
+1694,1658,57,25,"San Antonio","San Antonio",0.695121951219512
+1598,1620,54,28,"Toronto","Toronto",0.658536585365854
+1553,1590,50,32,"Utah","Utah",0.609756097560976
+1638,1583,48,34,"Oklahoma City","Oklahoma City",0.585365853658537
+1543,1576,50,32,"Chicago","Chicago",0.609756097560976
+1559,1569,47,35,"Houston","Houston",0.573170731707317
+1579,1568,50,32,"Charlotte","Charlotte",0.609756097560976
+1516,1533,44,38,"Boston","Boston",0.536585365853659
+1448,1533,41,41,"Minnesota","Minnesota",0.5
+1596,1520,46,36,"Atlanta","Atlanta",0.560975609756098
+1512,1514,41,41,"Portland","Portland",0.5
+1508,1495,41,41,"Detroit","Detroit",0.5
+1477,1483,39,43,"Memphis","Memphis",0.475609756097561
+1443,1471,38,44,"Denver","Denver",0.463414634146341
+1422,1442,35,47,"New York","New York",0.426829268292683
+1478,1442,34,48,"Washington","Washington",0.414634146341463
+1416,1434,35,47,"LA Lakers","LA Lakers",0.426829268292683
+1425,1428,31,51,"Sacramento","Sacramento",0.378048780487805
+1444,1425,31,51,"Dallas","Dallas",0.378048780487805
+1411,1420,33,49,"Orlando","Orlando",0.402439024390244
+1471,1418,33,49,"Indiana","Indiana",0.402439024390244
+1536,1413,31,51,"Miami","Miami",0.378048780487805
+1422,1407,32,50,"Milwaukee","Milwaukee",0.390243902439024
+1370,1405,28,54,"New Orleans","New Orleans",0.341463414634146
+1384,1394,29,53,"Phoenix","Phoenix",0.353658536585366
+1358,1342,26,56,"Brooklyn","Brooklyn",0.317073170731707
+1264,1332,23,59,"Philadelphia","Philadelphia",0.280487804878049

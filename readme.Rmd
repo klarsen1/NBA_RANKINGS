@@ -51,7 +51,7 @@ The model used to predict the winner of a given game is a statistical model that
 
 The model is re-estimated every single day and contains the following variables:
 
-*  Roster composition. Surplus/deficit of minutes allocated to the different archetypes. For example, if a team's lineup has more players on the court of archetype 1 than its opponent, it'll have a surplus of minutes allocated to that archetype, and vice versa for deficits.
+*  Roster composition. Surplus/deficit of minutes allocated to the different archetypes. For example, if a team's lineup has more players on the court of archetype 1 than its opponent, it'll have a surplus of minutes allocated to that archetype, and vice versa.
 * Trailing 90 day winning percentages. The model assigns less importance to win-streaks early in the season. Moreover, the model assigns higher importance to wins where the opponent has a high [CARMELO](http://fivethirtyeight.com/features/how-our-2015-16-nba-predictions-work/) score.
 * Previous matchup outcomes. For example, let's say Golden State is playing the Clippers and the two teams have played eachother earlier in the season. This variable captures the outcomes of those two games. A team is more likely to win if it beat its opponent in the past.
 * Distances traveled prior to the game. Traveling the day before games usually translates into weaker performances, holding everything else constant.
@@ -60,23 +60,17 @@ The model is re-estimated every single day and contains the following variables:
 
 ### More Details on the Archetype Surplus/Deficit Variables
 ####Team 1:
-\\( X_1 =   \text{% of minutes allocated to cluster 1} \\)
-
-\\( \vdots \\)
-
-\\( X_{25} = \text{% of minutes allocated to cluster 25} \\)
+For a given game, \\( X_1 = \\)  % of minutes allocated to cluster 1, \\( X_{2} = \\)  % of minutes allocated to cluster 2, etc.
 
   
 ####Team 2:
-\\( Z_1 =   \text{% of minutes allocated to cluster 1} \\)
-
-\\( \vdots \\)
-
-\\( Z_{25} = \text{% of minutes allocated to cluster 25} \\)
+For a given game, \\( Z_1 = \\)  % of minutes allocated to cluster 1, \\( Z_{2} = \\)  % of minutes allocated to cluster 2, etc.
 
 From these variables we construct the “delta variables” given by
  
-$$ D_{1} = X_{1} – Z_{1}, D_{2} = X_{2} – Z_{2}, \ldots, D_{25} = X_{25} – Z_{25} $$.
+\\( D_{1} = X_{1} – Z_{1}, D_{2} = X_{2} – Z_{2} \\), etc.
+
+These variable are then directly entered into the logistic regression model (labeled as share_minutes_cluster_XX). The regression model then chooses the importance of each archetype. Hence, for team 1 to have a strong roster compared team 2 -- according to the model -- it must have a surplus of minutes allocated to archetypes with large and positive coefficients, and vice versa for archetypes with negative coefficients.
 
 
 ### How Are Players Assigned to Archetypes?
@@ -113,16 +107,16 @@ library(dplyr)
 library(knitr)
 
 f1 <- 
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rawdata/FiveThirtyEight_2016-11-17.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rawdata/FiveThirtyEight_2016-11-19.csv"
 f2 <- 
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-17.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-19.csv"
 
 ft8_rankings <- read.csv(f1) %>% rename(team=selected_team)
 
 all_rankings <- read.csv(f2) %>%
   inner_join(ft8_rankings, by="team") %>%
   mutate(elastic_ranking=min_rank(-pred_season_win_rate), 
-         FiveThirtyEight=min_rank(-carm_elo)) %>%
+         FiveThirtyEight=min_rank(-pred_win_rate_538)) %>%
   select(team, conference, division, elastic_ranking, FiveThirtyEight) %>%
   arrange(elastic_ranking)
 
@@ -198,7 +192,8 @@ kable(rankings)
 ### Dealing With Injuries and Trades
 As mentioned previously, the model depends on rosters *and* previous performance. If a team executes a major mid-season trade, the roster component will react immediately, while the performance component will be slower to react. There are a number of ways around this, but currently no special treatment is being applied at this point.
 
-### Measurement of Team Chemistry
+### Player Interaction
+The model currently does not cap
 
 
 

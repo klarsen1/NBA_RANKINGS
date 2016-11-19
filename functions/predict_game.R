@@ -26,7 +26,10 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   ## Apply the overrides
   if (use_current_rosters==1){
      history_override <- inner_join(select(history, -OWN_TEAM), rosters, by="PLAYER_FULL_NAME")
+  } else{
+     history_override <- history
   }
+  
   #history_override <- left_join(history, overrides, by="PLAYER_FULL_NAME") %>%
   #  mutate(OWN_TEAM=ifelse(is.na(NEW_TEAM)==FALSE & DATE>=as.Date(OVERRIDE_DATE, format="%m/%d/%Y"), NEW_TEAM, OWN_TEAM)) %>%
   #  select(-NEW_TEAM, -OVERRIDE_DATE)

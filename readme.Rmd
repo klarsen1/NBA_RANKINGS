@@ -58,6 +58,27 @@ The model is re-estimated every single day and contains the following variables:
 * Rest days prior to games. Obviously, more rest of beneficial during the long NBA season.
 * Home team advantage.
 
+### More Details on the Archetype Surplus/Deficit Variables
+####Team 1:
+\\( X_1 =   \text{% of minutes allocated to cluster 1} \\)
+
+\\( \vdots \\)
+
+\\( X_{25} = \text{% of minutes allocated to cluster 25} \\)
+
+  
+####Team 2:
+\\( Z_1 =   \text{% of minutes allocated to cluster 1} \\)
+
+\\( \vdots \\)
+
+\\( Z_{25} = \text{% of minutes allocated to cluster 25} \\)
+
+From these variables we construct the “delta variables” given by
+ 
+$$ D_{1} = X_{1} – Z_{1}, D_{2} = X_{2} – Z_{2}, \ldots, D_{25} = X_{25} – Z_{25} $$.
+
+
 ### How Are Players Assigned to Archetypes?
 
 The outcome of the k-means clustering routine used create the archetypes is a set of *centroids*. Players are assigned to archetypes by matching their offensive and defensive box score statistics to closest centroids using a simple Euclidian distance. A decay funtion was applied such that more recent games receive a larger weight. On top of that, games played in the previous season are discounted by a factor of 4.
@@ -84,7 +105,7 @@ The rankings file stored github repo has three key columns:
 
 * ytd_win_rate -- this is the year-to-date win rate for the season.
 * pred_win_rate -- this is the predicted win rate for future games.
-* pred_season_win_rate -- this combines the predicted games with the games that have been played.
+* pred_season_win_rate -- this combines the predicted games with the games that have been played. This is the statistic I'm using to rank teams in the example below.
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(tidyr)

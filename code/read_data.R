@@ -76,6 +76,7 @@ rosters <- data.frame(
   PLAYER_FULL_NAME = players,
   NBAstuffer.Initials = teams)
 rosters$NBAstuffer.Initials <- as.character(rosters$NBAstuffer.Initials)
+PLAYER_FULL_NAME <- as.character(rosters$PLAYER_FULL_NAME)
 
 team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
   select(City, NBAstuffer.Initials) %>% distinct(NBAstuffer.Initials, .keep_all=TRUE)

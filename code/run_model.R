@@ -68,7 +68,7 @@ end_date <- max(subset(box_scores, season==2016 & playoffs==0)$DATE)
 box_scores <- subset(box_scores, DATE<=end_date)
 
 ### If we want to trick the model to backcast, edit the future_game indicator by filling in the xs
-box_scores <- mutate(box_scores, future_game = ifelse(DATE>as.Date('2015-11-17'), 1, 0))
+#box_scores <- mutate(box_scores, future_game = ifelse(DATE>as.Date('2015-11-17'), 1, 0))
 
 ### specify start and end points
 ignore_season_prior_to <- 2013
@@ -136,7 +136,7 @@ for (i in start_index:end_index){
   j <- min(max_real_date, i)
   
   ## Are current rosters used to pick teams
-  c <- use_current_rosters
+  cr <- use_current_rosters
   
   ### Check the dates
   print(subset(datemap, DATE_INDEX==i)$DATE)
@@ -177,7 +177,7 @@ for (i in start_index:end_index){
      w <- weighted_win_rates 
      if (thisseason != current_season){
        w <-0 
-       c <- 0
+       cr <- 0
      }
      if (w==1){
        print("Using weights")
@@ -194,7 +194,7 @@ for (i in start_index:end_index){
   games <- unique(thisday$game_id)
 
   for (d in 1:length(games)){
-    pred <- predict_game(c, filter(inwindow, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, 0.50, 0.50, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, c)
+    pred <- predict_game(c, filter(inwindow, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, 0.50, 0.50, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, cr)
     scores[[counter]] <- pred[[1]]
     model_parts[[counter]] <- pred[[2]] 
     counter <- counter + 1

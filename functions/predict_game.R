@@ -1,4 +1,4 @@
-predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored, nclus, prior, posterior, dir, model_variables, use_current_rosters=0){
+predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored, nclus, prior, posterior, dir, model_variables, use_current_rosters){
 
   thisgame <- tobescored[1,]
   date <- thisgame$DATE
@@ -11,7 +11,6 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   w2 <- thisgame$opposing_team_matchup_wins
   
   ### Read the overrides
-  #overrides <- data.frame(read.csv(paste0(dir, "overrides.csv"), stringsAsFactors = FALSE, header = TRUE))
   rosters <- data.frame(read.csv(paste0(dir, "current_rosters.csv"), stringsAsFactors = FALSE))
 
   ### First get the average minutes and standard deviations for each player

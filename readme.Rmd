@@ -146,7 +146,7 @@ library(knitr)
 library(ggplot2)
 
 f <- 
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2016-11-16.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2016-11-19.csv"
 
 center <- function(x){return(x-mean(x))}
 read.csv(f, stringsAsFactors = FALSE) %>% 

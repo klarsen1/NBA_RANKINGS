@@ -1,4 +1,4 @@
-predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored, nclus, prior, posterior, dir, model_variables){
+predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored, nclus, prior, posterior, dir, model_variables, use_current_rosters=0){
 
   thisgame <- tobescored[1,]
   date <- thisgame$DATE
@@ -11,7 +11,8 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   w2 <- thisgame$opposing_team_matchup_wins
   
   ### Read the overrides
-  overrides <- data.frame(read.csv(paste0(dir, "overrides.csv"), stringsAsFactors = FALSE, header = TRUE))
+  #overrides <- data.frame(read.csv(paste0(dir, "overrides.csv"), stringsAsFactors = FALSE, header = TRUE))
+  rosters <- data.frame(read.csv(paste0(dir, "current_rosters.csv"), stringsAsFactors = FALSE))
 
   ### First get the average minutes and standard deviations for each player
   dist <- filter(history, (OWN_TEAM==team1 | OWN_TEAM==team2)) %>%
@@ -23,9 +24,12 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     replace(is.na(.), 0)
   
   ## Apply the overrides
-  history_override <- left_join(history, overrides, by="PLAYER_FULL_NAME") %>%
-    mutate(OWN_TEAM=ifelse(is.na(NEW_TEAM)==FALSE & DATE>=as.Date(OVERRIDE_DATE, format="%m/%d/%Y"), NEW_TEAM, OWN_TEAM)) %>%
-    select(-NEW_TEAM, -OVERRIDE_DATE)
+  if (use_current_rosters==1){
+     history_override <- inner_join(select(history, -OWN_TEAM), rosters, by="PLAYER_FULL_NAME")
+  }
+  #history_override <- left_join(history, overrides, by="PLAYER_FULL_NAME") %>%
+  #  mutate(OWN_TEAM=ifelse(is.na(NEW_TEAM)==FALSE & DATE>=as.Date(OVERRIDE_DATE, format="%m/%d/%Y"), NEW_TEAM, OWN_TEAM)) %>%
+  #  select(-NEW_TEAM, -OVERRIDE_DATE)
     
   ## Infer active rosters
   if (nrow(filter(history_override, OWN_TEAM==team1 & season==thisseason))==0 | nrow(filter(history_override, OWN_TEAM==team2 & season==thisseason))==0){

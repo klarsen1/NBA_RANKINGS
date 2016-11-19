@@ -5,7 +5,7 @@ manipulate_and_save_output <- function(clusters_and_players, scores, game_level,
            prob_selected_team_win=ifelse(current_roster_used==0, selected_team_win, ifelse(is.na(selected_team_win), prob_selected_team_win_d, selected_team_win)))
      ranks <- report(game_level, "d_pred_selected_team_win") %>%
        left_join(conferences, by="team") %>%
-       select(team, games_season, games_played, pred_win_rate, ytd_win_rate, conference, division)
+       select(team, games_season, games_played, pred_season_win_rate, ytd_win_rate, pred_win_rate, conference, division)
      models <- data.frame(rbindlist(model_details), stringsAsFactors = FALSE)
      parts <- data.frame(rbindlist(model_parts), stringsAsFactors = FALSE)
      details <- mutate(game_level, 

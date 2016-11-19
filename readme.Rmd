@@ -78,7 +78,13 @@ For simulation playoffs I have been using the simulation approach. This will be 
 
 # Model Rankings for the 2016-2017 Season
 
-All model rankings and results are stored in [this github repo](https://github.com/klarsen1/NBA_RANKINGS). The code below shows how to extract the current rankings. For comparison, I'm also pulling in the [FiveThirtyEight predictions](http://projects.fivethirtyeight.com/2017-nba-predictions/) and the [ESPN Power Rankings](http://www.espn.com/nba/powerrankings) (both from 11/13/2016).
+All model rankings and results are stored in [this github repo](https://github.com/klarsen1/NBA_RANKINGS). The code below shows how to extract the current rankings. For comparison, I'm also pulling in the [FiveThirtyEight predictions](http://projects.fivethirtyeight.com/2017-nba-predictions/) for comparison.
+
+The rankings file stored github repo has three key columns:
+
+* ytd_win_rate -- this is the year-to-date win rate for the season.
+* pred_win_rate -- this is the predicted win rate for future games.
+* pred_season_win_rate -- this combines the predicted games with the games that have been played.
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(tidyr)
@@ -86,7 +92,7 @@ library(dplyr)
 library(knitr)
 
 f1 <- 
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/cleandata/FiveThirtyEight_2016-11-17.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rawdata/FiveThirtyEight_2016-11-17.csv"
 f2 <- 
   "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-17.csv"
 
@@ -94,13 +100,11 @@ ft8_rankings <- read.csv(f1) %>% rename(team=selected_team)
 
 all_rankings <- read.csv(f2) %>%
   inner_join(ft8_rankings, by="team") %>%
-  mutate(elastic_ranking=min_rank(-pred_win_rate), 
+  mutate(elastic_ranking=min_rank(-pred_season_win_rate), 
          FiveThirtyEight=min_rank(-carm_elo)) %>%
   select(team, conference, division, elastic_ranking, FiveThirtyEight) %>%
   arrange(elastic_ranking)
 
-#cor(all_rankings$FiveThirtyEight, all_rankings$elastic_ranking)
-  
 kable(all_rankings)
 ```
 
@@ -147,20 +151,33 @@ Last, but not least, let's take a look at San Antonio and the Timberwolves -- tw
 
 # Backtesting
 
-The model was used to predict all games from 2015-11-17 to the end the 2015-2016 season, using only information available as of 2015-11-16. 
+The model was used to predict all games from 2015-11-17 to the end the 2015-2016 season, using only information available as of 2015-11-16. Most teams played 71 games during this period.
 
 The game level accuracy was 67% -- i.e., the model predicted the correct winner in 67% of cases. 
 
 The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.736.
 
-The predicted team rankings were also in line with the actual rankings:
+The predicted team rankings were also in line with the actual team rankings (correlation is 75%), except for some interesting misses like the Chicago Bulls (actual ranking #14, predicted #4). Note that this table only covers the games played during the 2015-2016 season after 2015-11-16.
 
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(knitr)
 
-### Long Term Forecasting
+f <- 
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/ranking_validation_2015.csv"
 
+rankings <- read.csv(f) %>% select(team, rank_actual, rank_pred) %>% arrange(-rank_pred)
 
+kable(rankings)
 
+```
 
+# Next Steps
+
+### Dealing With Injuries and Trades
+As mentioned previously, the model depends on rosters *and* previous performance. If a team executes a major mid-season trade, the roster component will react immediately, while the performance component will be slower to react. There are a number of ways around this, but currently no special treatment is being applied at this point.
+
+### Measurement of Team Chemistry
 
 
 

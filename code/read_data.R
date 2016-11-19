@@ -53,6 +53,7 @@ fivethirtyeight <- data.frame(cbind(team, elo, carm_elo), stringsAsFactors = FAL
   mutate(selected_team=as.character(team), opposing_team=as.character(team), 
          elo=elo, carm_elo=carm_elo) %>%
   select(-team)
+
 fivethirtyeight$elo <- as.numeric(fivethirtyeight$elo)
 fivethirtyeight$carm_elo <- as.numeric(fivethirtyeight$carm_elo)
 
@@ -60,6 +61,34 @@ fivethirtyeight$carm_elo <- as.numeric(fivethirtyeight$carm_elo)
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/distance_between.R")
 
 setwd("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
+
+stats_page <- read_html("http://www.nbastuffer.com/2016-2017_NBA_Regular_Season_Player_Stats.html")
+
+players <- stats_page %>%
+  html_nodes("tbody#PLAYER tr td:nth-child(2)") %>%
+  html_text()
+
+teams <- stats_page %>%
+  html_nodes("tbody#PLAYER tr td:nth-child(3)") %>%
+  html_text()
+
+rosters <- data.frame(
+  PLAYER_FULL_NAME = players,
+  NBAstuffer.Initials = teams)
+rosters$NBAstuffer.Initials <- as.character(rosters$NBAstuffer.Initials)
+
+team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
+  select(City, NBAstuffer.Initials) %>% distinct(NBAstuffer.Initials, .keep_all=TRUE)
+
+rosters <- inner_join(rosters, team_map, by="NBAstuffer.Initials") %>%
+  rename(OWN_TEAM=City) %>%
+  select(OWN_TEAM, PLAYER_FULL_NAME) %>%
+  arrange(OWN_TEAM, PLAYER_FULL_NAME)
+
+write.csv(rosters, "./current_rosters.csv", row.names = FALSE)
+write.csv(rosters, paste0("./rosters_", Sys.Date(), ".csv"), row.names = FALSE)
+write.csv(fivethirtyeight, paste0("FiveThirtyEight_", Sys.Date(), ".csv"), row.names = FALSE)
+
 
 ncore <- detectCores()-1
 registerDoParallel(ncore)
@@ -121,8 +150,6 @@ altitudes <- data.frame(read.csv("altitudes.csv", stringsAsFactors = FALSE))
 
 ## Read the schedule
 schedule <- data.frame(read_excel("schedule.xlsx", sheet=1))
-team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
-  select(City, NBAstuffer.Initials) %>% distinct(NBAstuffer.Initials, .keep_all=TRUE)
 
 home <- rename(schedule, NBAstuffer.Initials=HOME) %>% 
   inner_join(team_map, by="NBAstuffer.Initials") %>%
@@ -391,7 +418,5 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
      ungroup()
 
 saveRDS(final, "BOX_SCORES.RDA")
-
-write.csv(fivethirtyeight, paste0("FiveThirtyEight_", Sys.Date(), ".csv"), row.names = FALSE)
 
 rm(list = ls())

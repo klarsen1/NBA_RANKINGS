@@ -168,13 +168,13 @@ Last, but not least, let's take a look at San Antonio and the Timberwolves -- tw
  
 # Backtesting
  
-The model was used to predict all games from 2015-11-17 to the end the 2015-2016 season, using only information available as of 2015-11-16. Most teams played 71 games during this period.
+The model was used to predict all games from 2015-11-17 to the end the 2015-2016 season, using only information available as of 2015-11-16 (including model coefficients). Most teams played 71 games during this period.
  
 The game level accuracy was 67% -- i.e., the model predicted the correct winner in 67% of cases.
  
 The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.736.
  
-The predicted team rankings were also in line with the actual team rankings (correlation is 75%), except for some interesting misses like the Chicago Bulls (actual ranking #14, predicted #4). Note that this table only covers the games played during the 2015-2016 season after 2015-11-16.
+The predicted team rankings were also in line with the actual team rankings (correlation is 75%), except for some interesting misses like the Chicago Bulls (actual ranking #14, predicted #4). Note that this table only covers the games played during the 2015-2016 season after the date of 2015-11-16.
  
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(dplyr)
@@ -188,6 +188,32 @@ rankings <- read.csv(f) %>% select(team, rank_actual, rank_pred) %>% arrange(ran
 kable(rankings)
  
 ```
+
+Checking the game-level predictions. Note that the model is most accurate for the "tail teams" -- which is to be expected:
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+library(dplyr)
+library(knitr)
+source("https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/functions/auc.R") 
+
+f <-
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/game_level_validation_2015.csv"
+
+game_level <- read.csv(f, stringsAsFactors = FALSE)
+ 
+hits <- mutate(gamel_level, match=as.numeric(selected_team_win==d_pred_selected_team_win)) %>%
+  mutate(overall_match_percent=mean(match)) %>%
+  rename(team=selected_team) %>%
+  group_by(team) %>%
+  summarise(team_match_percent=mean(match), 
+            overall_match_percent=mean(overall_match_percent))
+
+print(paste0("AUROC = ", AUC(game_level$selected_team_win, game_level$prob_selected_team_win_d)[1]))
+
+kable(hits)
+ 
+```
+
  
 # Future Development
  

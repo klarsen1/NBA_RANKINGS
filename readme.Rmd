@@ -6,24 +6,28 @@ output: html_document
 
 # Introduction
  
-After the 2016 presidential election, most people would probably agree that the world does not need another statistical prediction model. The election models got it wrong (although Nate Silver got pretty close) and that likely added to the element of shock and surprise -- on both sides of the political spectrum.
+After the 2016 presidential election, most people would probably agree that the world does not need another statistical prediction model. The election models were wrong (although Nate Silver got pretty close) and that likely added to the element of shock and surprise -- on both sides of the political spectrum.
  
-Does this mean that we should we turn our backs on forecasting models? No, we just need to revise our expectations. George Box once reminded us that statistical models are, at best, useful *approximations* of the real world. With the recent hype around data science and "money balling" this point is often overlooked.
+So does this mean that we should we turn our backs on forecasting models? No, we just need to revise our expectations. George Box once reminded us that statistical models are, at best, useful *approximations* of the real world. With the recent hype around data science and "money balling" this point is often overlooked.
 
 What *should* we then expect from a statistical model? A statistical model should help us process the many moving parts that often affect a given outcome -- such as an election -- by providing a single prediction for the future. The human mind cannot evaluate the multitude of inputs, assumptions, trends and correlations that go into making a forecast, and that makes models an invaluable asset in so many settings. However, if the inputs are bad even a good model is going to be wrong. Moreover, no model predicts the unthinkable it unless unthinkable assumptions are made.
  
-So what does this have to do with the NBA? Basketball is a perfect example of a structured world with lots of information about what is happening today and plenty of uncertainty around the future. If a team looks great on paper and is winning games, it'll likely do well in the future. But injuries, coaching changes, trades etc. can curtail success very quickly. Thus, any model-based prediction can only be viewed as a benchmark for future success. This post discusses a new and completely data driven approach to predicting the outcome of NBA games that uses techniques frequently used across many industries. I've been sharing insights from this model in prior posts about the Golden State Warriors and thought it was time to share some broader results. I have no doubt the model is wrong, but hopefully it's useful.
+You may wonder how this has to do with the NBA? Basketball is a perfect example of a structured world with lots of information about what is happening today and plenty of uncertainty around the future. If a team looks great on paper and is winning games, it'll likely do well in the future. But injuries, coaching changes, trades etc. can curtail success very quickly. Thus, any model-based prediction can only be viewed as a benchmark for future success. This post discusses a new and completely data driven approach to predicting the outcome of NBA games that uses techniques frequently used across many industries. I've been sharing insights from this model in prior posts about the Golden State Warriors and thought it was time to share some broader results. I have no doubt the model is wrong, but hopefully it's useful.
  
 # High Level Summary
  
-The team rankings produced by this model mainly agree with other prediction models (such as FiveThirtyEight) -- at least when it comes to identifying the strong teams and the weak teams. There are some interesting differences, however, which will be discussed later. Back testing for the 2015-2016 season showed promising results, although I have not done any historical benchmark testing against other models. Time will be the judge.
+The team rankings produced by this model mainly agree with other prediction models (such as FiveThirtyEight) -- at least when it comes to identifying the strong teams and the weak teams (the "tail teams"). There are some interesting differences, however, which we can analyze using a model-decomposition approach. Examples of how to do this will be covered later in this document.
+
+Back testing for the 2015-2016 season showed promising results, although I have not done any historical benchmark testing against other models. Time will be the judge.
 
 All rankings and scores can be found in [this github repo](https://github.com/klarsen1/NBA_RANKINGS). The easiest way to extract the data is to directly read the [raw files](https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails). This is demonstrated in the examples below.
  
 There are two main file of interest:
  
-* game_level_predictions_2016-MM-DD.csv. These files contain predictions for each future game.
-* rankings_2016-MM-DD.csv. Team rankings and predicted win rates.
+* game_level_predictions_2016-MM-DD.csv -- Game-level predictions for each future game.
+* rankings_2016-MM-DD.csv -- team rankings and predicted win rates.
+
+In addition, the [modeldetails directory](https://github.com/klarsen1/NBA_RANKINGS/tree/master/modeldetails) has detailed information on the underlying mechanics of the model.
  
 # How the Model Works
  
@@ -185,7 +189,7 @@ kable(rankings)
  
 ```
  
-# Next Steps
+# Future Development
  
 ### Dealing With Injuries and Trades
 As mentioned previously, the model depends on rosters *and* previous performance. If a team executes a major mid-season trade, the roster component will react immediately, while the performance component will be slower to react. There are a number of ways around this, but currently no special treatment is being applied at this point.
@@ -194,6 +198,6 @@ As mentioned previously, the model depends on rosters *and* previous performance
 The model currently does not capture any interaction between the archetypes. I have tested basic interaction terms, but that did not help much. More work is needed here.
  
 ### Schedule-independent Team Rankings
-Currently, the model ranks teams by predicting win rates. This means that the rankings implicitly favor teams that play in weaker divisions. A future development could be to have two rankings: one that predicts the win rate given the current schedule (this is what the model is currently doing), and one that normalizes for schedule differences.
+Currently, the model ranks teams by predicting win rates. This means that, holding everything else constant, the rankings implicitly favor teams that play in weaker divisions. A future development could be to have two rankings: one that predicts the win rate given the current schedule (this is what the model is currently doing), and one that normalizes for schedule differences.
 
 

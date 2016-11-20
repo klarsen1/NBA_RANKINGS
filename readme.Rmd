@@ -1,22 +1,22 @@
 ---
-title: "Elastic NBA Team Rankings"
+title: "I'd Rather Predict NBA Games Than Elections -- A New Statistical Approach"
 output: html_document
 ---
  
 
-# Prelude -- What Should We Expect From Predictive Models?
+# Does the World Really Need Another Statistical Prediction Model?
+
+When Donald Trump won the 2016 presidential election, Democrats were shocked, Republicans were shocked. The Nate Silvers of the world took some heat because the election models were wrong (although Nate Silver himself got pretty close). Most people would probably agree that the world does not need another statistical prediction model.
  
-After the 2016 presidential election, most people would probably agree that the world does not need another statistical prediction model. The election models were wrong (although Nate Silver got pretty close) and that likely added to the element of shock and surprise -- on both sides of the political spectrum.
- 
-So does this mean that we should we turn our backs on forecasting models? No, we just need to revise our expectations. George Box once reminded us that statistical models are, at best, useful *approximations* of the real world. With the recent hype around data science and "money balling" this point is often overlooked.
+So, should we turn our backs on forecasting models? No, we just need to revise our expectations. George Box once reminded us that statistical models are, at best, useful *approximations* of the real world. With the recent hype around data science and "money balling" this point is often overlooked.
 
 What *should* we then expect from a statistical model? A statistical model should help us process the many moving parts that often affect a given outcome -- such as an election -- by providing a single prediction for the future. It does this by combining the multitude of inputs, assumptions, trends and correlations with a simplified representation of how the world works. The human mind cannot do this and that is what makes models so valuable. However, if the inputs are bad even a good model is going to be wrong. Moreover, no model predicts the unthinkable it unless unthinkable assumptions are made.
  
 # Forecasting and Basketball 
 
-In many ways, basketball is a perfect case study for forecasting. The outcome of future games are affected by many different factors; the team's current performance, momentum, the strength of the roster compared to its opponents, as well as the travel schedule. If a team looks great on paper and it's winning games it'll likely do well in the future. But injuries, coaching changes, trades etc. can curtail success very quickly. Thus, any model-based prediction can only be viewed as a benchmark for future success -- i.e., setting expectations is key
+So what does this have to do with basketball? In many ways, basketball is a perfect case study for forecasting. The outcome of future games are affected by many different factors; a team's current performance, momentum, the strength of its roster compared to its opponents, as well as the travel schedule. If a team looks great on paper and it's winning games, it'll likely do well in the future. But injuries, coaching changes, trades etc. can curtail success very quickly. Thus, any model-based prediction can only be viewed as a benchmark for future success -- i.e., setting expectations is key
 
-This post discusses a new and data driven approach to predicting the outcome of NBA games. The model uses techniques frequently used across various industries to predict bankruptcy, fraud or customer buying behavior. While it's certain that the model is wrong -- all models are -- I'm hoping that it will also be useful.
+This post discusses a new and data driven approach to predicting the outcome of NBA games. The model is based on techniques frequently used across various industries to predict bankruptcy, fraud or customer buying behavior. While it's certain that the model is wrong -- all models are -- I'm hoping that it will also be useful.
 
 # High Level Summary 
 

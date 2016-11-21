@@ -6,7 +6,7 @@ output: html_document
 
 # Does the World Really Need Another Statistical Prediction Model?
 
-When Donald Trump won the 2016 presidential election, Democrats were shocked. Heck, even Republicans were shocked. The election models were wrong and the Nate Silvers of the world took some heat for that (although Nate Silver himself got pretty close). After this, a lot of people would probably agree that the world doesn't need another statistical prediction model.
+When Donald Trump won the 2016 presidential election, Democrats were shocked. Heck, even Republicans were shocked. The prediction models didn't see it coming and the Nate Silvers of the world took some heat for that (although Nate Silver himself got pretty close). After this, a lot of people would probably agree that the world doesn't need another statistical prediction model.
  
 So, should we turn our backs on forecasting models? No, we just need to revise our expectations. George Box once reminded us that statistical models are, at best, useful *approximations* of the real world. With the recent hype around data science and "money balling" this point is often overlooked.
 
@@ -174,13 +174,13 @@ Last, but not least, let's take a look at San Antonio and the Timberwolves -- tw
  
 # Backtesting
  
-The model was used to predict all games from 2015-11-20 to the end the 2015-2016 season, using only information available as of 2015-11-19 (including model coefficients). This is roughly a five month forecast window (the season ends in April). Most teams played around 70 games during this period. I picked this date because the latest model-run for this post was 2016-11-20. 
+The model was used to predict all games from 2015-11-20 to the end the 2015-2016 season, using only information available as of 2015-11-19 (including model coefficients). This is roughly a five month forecast window (the season ends in April); most teams played around 70 games during this period. I picked this date because the latest model-run for this post was 2016-11-20. 
  
 The game level accuracy for the entire period was 64.5% -- i.e., the model predicted the correct winner for 64.5% of games.
  
 The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.725.
  
-The predicted team rankings were also in line with the actual team rankings (correlation is 75%), except for some interesting misses like the Chicago Bulls (actual ranking #14, predicted #4). Note that this table only covers the games played during the 2015-2016 season after the date of 2015-11-16.
+The code below compares the actual rankings to the predicted rankings (note that this table only covers the games played after 2015-11-19):
  
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(dplyr)
@@ -189,13 +189,17 @@ library(knitr)
 f <-
   "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/ranking_validation_2015.csv"
  
-rankings <- read.csv(f) %>% select(team, rank_actual, rank_pred) %>% arrange(rank_pred)
- 
+rankings <- read.csv(f) %>% select(team, rank_actual, rank_pred) %>%
+  mutate(diff=abs(rank_pred-rank_actual)) %>%
+  arrange(rank_pred)
+
 kable(rankings)
  
 ```
 
-Checking the game-level predictions. Note that the model is most accurate for the "tail teams" -- which is to be expected. The chart below shows the game-level accuracy for each team after subtracting 50% (the accuracy of a random draw).
+The predicted team rankings were also in line with the actual team rankings (correlation is 66%), except for some significant misses like the Chicago Bulls, Denver and Portland. There might be good reasons why the model misjudged these teams so early in the season (for example, Chicago has been injury plagued). More investigation is needed here.
+
+Next, let's check the game-level predictions for this period. The chart below shows the game-level accuracy for each team. The vertical lines show the overall match rate as well as the match rate we would get from a random draw (50%):
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(dplyr)
@@ -214,19 +218,18 @@ mutate(game_level, match=as.numeric(selected_team_win==d_pred_selected_team_win)
   mutate(overall_match_percent=mean(match)) %>%
   rename(team=selected_team) %>%
   group_by(team) %>%
-  summarise(team_match_percent=mean(match)-0.5) %>%
+  summarise(team_match_percent=mean(match)) %>%
   ggplot(aes(team, team_match_percent)) + geom_bar(stat="identity") + coord_flip() +
-  xlab("Accuracy - 50%") + ylab("") + theme(legend.title = element_blank()) + 
-  geom_hline(yintercept = match_rate-0.5 , linetype=2) + 
+  xlab("Accuracy") + ylab("") + theme(legend.title = element_blank()) + 
+  geom_hline(yintercept = c(0.5, match_rate), linetype=2) + 
   scale_y_continuous(labels = scales::percent)
 
 print(paste0("AUROC = ", AUC(game_level$selected_team_win, game_level$prob_selected_team_win_d)[1]))
 
-kable(hits)
- 
 ```
 
- 
+Note that the model is most accurate for the "tail teams" such as Golden State and Philadelphia, which is to be expected. There are a some teams where the model completely missed the mark -- e.g., Chicago. In the defense of the model, these predictions were only made 11 games into the season.
+
 # Future Development
  
 ## Dealing With Injuries and Trades

@@ -20,6 +20,8 @@ attach_win_perc <- function(data, w1, w2){
   rename(winrate_early_season_opposing_team_s=win_rate_early_season, 
          winrate_season_opposing_team_s=win_rate_season) %>%
   replace(is.na(.), 0) %>%
+  mutate(win_trend_opposing=ifelse(winrate_season_opposing_team>0, winrate_season_opposing_team_s/winrate_season_opposing_team,1), 
+         win_trend_selected=ifelse(winrate_season_selected_team>0, winrate_season_selected_team_s/winrate_season_selected_team, 1)) %>%  
   select(-winrate_early_season_opposing_team_s, -winrate_early_season_selected_team_s) %>%
   ungroup()
   return(d)

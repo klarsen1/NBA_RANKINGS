@@ -6,7 +6,7 @@ output: html_document
 
 # Does the World Really Need Another Statistical Prediction Model?
 
-When Donald Trump won the 2016 presidential election, Democrats were shocked. Heck, even Republicans were shocked. The prediction models didn't see it coming and the Nate Silvers of the world took some heat for that (although Nate Silver himself got pretty close). After this, a lot of people would probably agree that the world doesn't need another statistical prediction model.
+When Donald Trump won the 2016 presidential election, both sides of the political spectrum were shocked. The prediction models didn't see it coming and the Nate Silvers of the world took some heat for that (although Nate Silver himself got pretty close). After this, a lot of people would probably agree that the world doesn't need another statistical prediction model.
  
 So, should we turn our backs on forecasting models? No, we just need to revise our expectations. George Box once reminded us that statistical models are, at best, useful *approximations* of the real world. With the recent hype around data science and "money balling" this point is often overlooked.
 
@@ -196,7 +196,7 @@ ranks <- read.csv(f) %>% select(team, rank_actual, rank_pred) %>%
 
 ggplot(ranks, aes(x=rank_pred, y=rank_actual)) +
   xlab("Predicted Rank") + ylab("Actual Rank") +
-  geom_smooth(method='lm') + 
+  geom_smooth(method='lm', se=FALSE) + 
   geom_text(aes(label=team), hjust=0, vjust=0, size=2) + 
   geom_point(color="green", size=3) +
   geom_point(data=filter(ranks, diff>10), colour="red", size=3) 

@@ -185,16 +185,21 @@ The code below compares the actual rankings to the predicted rankings (note that
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(dplyr)
 library(knitr)
+library(ggplot2)
  
 f <-
   "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/ranking_validation_2015.csv"
  
-rankings <- read.csv(f) %>% select(team, rank_actual, rank_pred) %>%
+ranks <- read.csv(f) %>% select(team, rank_actual, rank_pred) %>%
   mutate(diff=abs(rank_pred-rank_actual)) %>%
-  arrange(rank_pred)
+  arrange(rank_pred) 
 
-kable(rankings)
- 
+ggplot(ranks, aes(x=rank_pred, y=rank_actual)) +
+  xlab("Predicted Rank") + ylab("Actual Rank") +
+  geom_smooth(method='lm') + 
+  geom_text(aes(label=team), hjust=0, vjust=0, size=2) + 
+  geom_point(color="green", size=3) +
+  geom_point(data=filter(ranks, diff>10), colour="red", size=3) 
 ```
 
 The predicted team rankings were also in line with the actual team rankings (correlation is 66%), except for some significant misses like the Chicago Bulls, Denver and Portland. There might be good reasons why the model misjudged these teams so early in the season (for example, Chicago has been injury plagued). More investigation is needed here.

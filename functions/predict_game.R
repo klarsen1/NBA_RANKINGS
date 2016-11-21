@@ -35,10 +35,10 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     
   ## Infer active rosters
   if (nrow(filter(history_override, OWN_TEAM==team1 & season==thisseason))==0 | nrow(filter(history_override, OWN_TEAM==team2 & season==thisseason))==0){
-    d_current_roster <- 0
+    d_current_season_data_available <- 0
     thisseason2 <- thisseason-1
   } else{
-    d_current_roster <- 1
+    d_current_season_data_available <- 1
     thisseason2 <- thisseason
   }
   
@@ -110,7 +110,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   prediction <- group_by(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team) %>%
     summarise(prob_selected_team_win_d=mean(as.numeric(prob_win)),
               prob_selected_team_win_b=mean(as.numeric(d_prob_selected_team_win))) %>%
-    mutate(current_roster_used=d_current_roster) %>%
+    mutate(current_season_data_used=d_current_season_data_available) %>%
     ungroup()
   
   prediction$selected_team_win <- w

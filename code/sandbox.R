@@ -1,4 +1,4 @@
-t <- subset(results[[1]], current_roster_used==1) %>%
+t <- subset(results[[1]], current_season_data_used==1 & is.na(selected_team_win)==FALSE) %>%
   mutate(match=as.numeric(selected_team_win==d_pred_selected_team_win), 
          first_half=as.numeric(DATE<'2016-02-01')) %>%
   group_by(first_half)
@@ -9,6 +9,7 @@ mean(t$prob_selected_team_win_b)
 mean(t$prob_selected_team_win_d)
 mean(t$selected_team_win)
 mean(t$match)
+mean(t$d_pred_selected_team_win)
 
 print(paste0("C: ", AUC(t$selected_team_win, t$prob_selected_team_win_d)[1]))
 

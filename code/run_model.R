@@ -184,12 +184,24 @@ for (i in start_index:end_index){
 
   }
   
+  posterior <- 0.5
+  prior <- 0.5
+  if (i==max_real_date){
+    ytd_scores <- data.frame(rbindlist(scores)) %>% 
+      filter(current_season_data_used==1 & is.na(prob_selected_team_win_d)==FALSE & is.na(selected_team_win)==FALSE)
+    posterior=mean(ytd_scores$prob_selected_team_win_d)
+    prior=mean(ytd_scores$selected_team_win)
+    print(posterior)
+    print(prior)
+    rm(ytd_scores)
+  }
+  
   ### Predict game outcomes
   thisday <- filter(box_scores, DATE_INDEX==i) 
   games <- unique(thisday$game_id)
 
   for (d in 1:length(games)){
-    pred <- predict_game(c, filter(inwindow, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, 0.50, 0.50, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, cr)
+    pred <- predict_game(c, filter(inwindow, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, prior, posterior, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, cr)
     scores[[counter]] <- pred[[1]]
     model_parts[[counter]] <- pred[[2]] 
     counter <- counter + 1
@@ -197,4 +209,5 @@ for (i in start_index:end_index){
 }
 
 ### Manipulate and save the output
-results <- manipulate_and_save_output(clusters_and_players, scores, game_level, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1)
+results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1)
+#results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 0)

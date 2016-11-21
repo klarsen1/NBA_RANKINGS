@@ -5,7 +5,8 @@ report <- function(scores, predvar){
   scores <- mutate(scores,
                    game_played=ifelse(is.na(selected_team_win), 0, 1),
                    future_game=ifelse(is.na(selected_team_win), 1, 0),
-                   selected_team_win=ifelse(is.na(selected_team_win), 0, selected_team_win)) %>%
+                   selected_team_win=ifelse(is.na(selected_team_win), 0, selected_team_win), 
+                   pred=ifelse(is.na(selected_team_win)==FALSE, selected_team_win, pred) %>%
     replace(is.na(.), 0)
   
   ### Summarize team performances -- have to do this twice because the data was collapsed into matchups

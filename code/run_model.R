@@ -64,7 +64,9 @@ start_date <- min(subset(box_scores, season==2016)$DATE)
 end_date <- max(subset(box_scores, season==2016 & playoffs==0)$DATE)
 
 ### Cut off the box scores
-box_scores <- subset(box_scores, DATE<=end_date)
+box_scores <- subset(box_scores, DATE<=end_date) %>%
+  ungroup() %>%
+  mutate(fb=ifelse(season==max(season), 1, 0))
 
 ### specify start and end points
 ignore_season_prior_to <- 2013
@@ -84,7 +86,6 @@ loop_result <- foreach(i=s:e) %dopar% {
   inwindow <- filter(box_scores, DATE_INDEX<i & DATE_INDEX>i-cluster_window)
   thisdate <- filter(box_scores, DATE_INDEX==i)
   thisseason <- thisdate[1,"season"]
-  print(nrow(inwindow))
 
   ## Get the win percentages
   win_perc1 <- winpercentages(filter(inwindow, DATE_INDEX>i-winstreak_window), thisseason, 0)

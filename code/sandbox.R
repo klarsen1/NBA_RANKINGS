@@ -5,7 +5,6 @@ t <- subset(results[[1]], current_season_data_used==1 & is.na(selected_team_win)
 
 summarise(t, match=mean(match))
 
-mean(t$prob_selected_team_win_b)
 mean(t$prob_selected_team_win_d)
 mean(t$selected_team_win)
 mean(t$match)
@@ -19,5 +18,12 @@ print(paste0("C: ", AUC(tt$selected_team_win, tt$prob_selected_team_win_d)[1]))
 ttt <- subset(t, first_half==0)
 print(paste0("C: ", AUC(ttt$selected_team_win, ttt$prob_selected_team_win_d)[1]))
 
+tttt <- subset(results[[1]], is.na(selected_team_win)==TRUE)
+mean(tttt$prob_selected_team_win_d)
+mean(tttt$prob_selected_team_win_d>0.5)
+mean(tttt$d_pred_selected_team_win)
+
+mean(t$match)
+mean(t$d_pred_selected_team_win)
 
 

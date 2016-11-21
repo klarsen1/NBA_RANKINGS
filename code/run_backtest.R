@@ -60,12 +60,15 @@ use_current_rosters <- 0
 current_season <- max(box_scores$season)
 
 ### When to start and end the forecasts
-#start_date <- min(subset(box_scores, season==2015)$DATE)
-start_date <- as.Date('2015-11-20')
+start_date <- min(subset(box_scores, season==2015)$DATE)
+#start_date <- as.Date('2015-11-20')
 end_date <- max(subset(box_scores, season==2015 & playoffs==0)$DATE)
 
 ### Cut off the box scores
-box_scores <- subset(box_scores, DATE<=end_date)
+box_scores <- subset(box_scores, DATE<=end_date) %>%
+  ungroup() %>%
+  mutate(fb=ifelse(season==max(season), 1, 0))
+
 
 ### If we want to trick the model to backcast, edit the future_game indicator by filling in the xs
 box_scores <- mutate(box_scores, future_game = ifelse(DATE>=as.Date('2015-11-20'), 1, 0))
@@ -188,12 +191,25 @@ for (i in start_index:end_index){
 
   }
   
+  posterior <- 0.5
+  prior <- 0.5
+  if (i==max_real_date){
+    ytd_scores <- data.frame(rbindlist(scores)) %>% 
+      filter(current_season_data_used==1 & is.na(prob_selected_team_win_d)==FALSE & is.na(selected_team_win)==FALSE)
+    posterior=mean(ytd_scores$prob_selected_team_win_d)
+    prior=mean(ytd_scores$selected_team_win)
+    print(posterior)
+    print(prior)
+    rm(ytd_scores)
+  }
+  
+  
   ### Predict game outcomes
   thisday <- filter(box_scores, DATE_INDEX==i) 
   games <- unique(thisday$game_id)
 
   for (d in 1:length(games)){
-    pred <- predict_game(c, filter(inwindow, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, 0.5071225, 0.453952, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, cr)
+    pred <- predict_game(c, filter(inwindow, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, prior, posterior, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, cr)
     scores[[counter]] <- pred[[1]]
     model_parts[[counter]] <- pred[[2]] 
     counter <- counter + 1
@@ -203,5 +219,5 @@ for (i in start_index:end_index){
 ### Manipulate the output
 results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 1, 0)
 
-write.csv(select(filter(results[[1]], current_season_data_used==1), -current_season_data_used), "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/game_level_validation_2015.csv")
+write.csv(select(filter(results[[1]], future_game==1), -current_season_data_used), "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/game_level_validation_2015.csv")
 write.csv(results[[2]], "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/ranking_validation_2015.csv")

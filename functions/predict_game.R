@@ -9,7 +9,9 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   w <- thisgame$selected_team_win
   w1 <- thisgame$selected_team_matchup_wins
   w2 <- thisgame$opposing_team_matchup_wins
-  
+  floating_base <- thisgame$fb
+  future <- thisgame$future_game
+
   ### Read the overrides
   rosters <- data.frame(read.csv(paste0(dir, "current_rosters.csv"), stringsAsFactors = FALSE))
 
@@ -59,7 +61,8 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
            home_team_selected=as.numeric(selected_team==team1), 
            selected_team_win=w,
            selected_team_matchup_wins=w1, 
-           opposing_team_matchup_wins=w2) %>%
+           opposing_team_matchup_wins=w2,
+           fb=floating_base) %>%
     filter(player<14) %>%
     select(-player, -DATE_INDEX) %>%
     ungroup()
@@ -110,7 +113,8 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   prediction <- group_by(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team) %>%
     summarise(prob_selected_team_win_d=mean(as.numeric(prob_win)),
               prob_selected_team_win_b=mean(as.numeric(d_prob_selected_team_win))) %>%
-    mutate(current_season_data_used=d_current_season_data_available) %>%
+    mutate(current_season_data_used=d_current_season_data_available,
+           future_game=future) %>%
     ungroup()
   
   prediction$selected_team_win <- w

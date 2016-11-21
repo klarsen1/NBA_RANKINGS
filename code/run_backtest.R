@@ -56,15 +56,19 @@ alpha <- 0 # for elastic net
 sims <- 0 # number of random normal draws used when playing games
 save_results <- 1 # set to 1 if you want to save the results
 weighted_win_rates <- 1
-use_current_rosters <- 1
+use_current_rosters <- 0
 current_season <- max(box_scores$season)
 
 ### When to start and end the forecasts
-start_date <- min(subset(box_scores, season==2016)$DATE)
-end_date <- max(subset(box_scores, season==2016 & playoffs==0)$DATE)
+#start_date <- min(subset(box_scores, season==2015)$DATE)
+start_date <- as.Date('2015-11-20')
+end_date <- max(subset(box_scores, season==2015 & playoffs==0)$DATE)
 
 ### Cut off the box scores
 box_scores <- subset(box_scores, DATE<=end_date)
+
+### If we want to trick the model to backcast, edit the future_game indicator by filling in the xs
+box_scores <- mutate(box_scores, future_game = ifelse(DATE>=as.Date('2015-11-20'), 1, 0))
 
 ### specify start and end points
 ignore_season_prior_to <- 2013
@@ -153,6 +157,7 @@ for (i in start_index:end_index){
      Y <- x$selected_team_win
      x <- x[,names(x) %in% unique(model_variables$Variable)]
      X <- model.matrix(as.formula(Y ~ .), x)
+     set.seed(2015)
      model <- cv.glmnet(y=Y, x=X, family="binomial", alpha=alpha, parallel=FALSE, nfolds=10)
      c <- as.matrix(coef(model, s=model$lambda.1se))
      p <- prob_win <- 1/(1+exp(-X%*%c[-1]))
@@ -188,7 +193,7 @@ for (i in start_index:end_index){
   games <- unique(thisday$game_id)
 
   for (d in 1:length(games)){
-    pred <- predict_game(c, filter(inwindow, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, 0.50, 0.50, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, cr)
+    pred <- predict_game(c, filter(inwindow, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, 0.5071225, 0.453952, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, cr)
     scores[[counter]] <- pred[[1]]
     model_parts[[counter]] <- pred[[2]] 
     counter <- counter + 1
@@ -196,8 +201,7 @@ for (i in start_index:end_index){
 }
 
 ### Manipulate the output
-results <- manipulate_and_save_output(clusters_and_players, scores, game_level, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1)
-#results <- manipulate_and_save_output(clusters_and_players, scores, game_level, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 0)
+results <- manipulate_and_save_output(clusters_and_players, scores, game_level, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 1, 0)
 
-#write.csv(select(filter(results[[1]], current_roster_used==1), -current_roster_used), "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/game_level_validation_2015.csv")
-#write.csv(results[[2]], "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/ranking_validation_2015.csv")
+write.csv(select(filter(results[[1]], current_roster_used==1), -current_roster_used), "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/game_level_validation_2015.csv")
+write.csv(results[[2]], "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/ranking_validation_2015.csv")

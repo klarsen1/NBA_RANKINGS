@@ -6,7 +6,7 @@ output: html_document
 
 # Does the World Really Need Another Statistical Prediction Model?
 
-When Donald Trump won the 2016 presidential election, Democrats were shocked, Republicans were shocked. The Nate Silvers of the world took some heat because the election models were wrong (although Nate Silver himself got pretty close). Most people would probably agree that the world does not need another statistical prediction model.
+When Donald Trump won the 2016 presidential election, Democrats were shocked. Heck, even Republicans were shocked. The election models were wrong and the Nate Silvers of the world took some heat for that (although Nate Silver himself got pretty close). After this, a lot of people would probably agree that the world doesn't need another statistical prediction model.
  
 So, should we turn our backs on forecasting models? No, we just need to revise our expectations. George Box once reminded us that statistical models are, at best, useful *approximations* of the real world. With the recent hype around data science and "money balling" this point is often overlooked.
 
@@ -14,7 +14,7 @@ What *should* we then expect from a statistical model? A statistical model shoul
  
 # Forecasting and Basketball 
 
-So what does this have to do with basketball? In many ways, basketball is a perfect case study for forecasting. The outcome of future games are affected by many different factors; a team's current performance, momentum, the strength of its roster compared to its opponents', as well as the travel schedule. If a team looks great on paper and it's winning games, it'll likely do well in the future. But factors like injuries, coaching changes, and trades can curtail success very quickly. Thus, any model-based prediction is only accurate until something happens that is unaccounted for in the model.
+So what does this have to do with basketball? In many ways, basketball is a perfect case study for forecasting. The outcome of future games are affected by many different factors; a team's current performance, momentum, the strength of its roster compared to its opponents, as well as the travel schedule. If a team looks great on paper and it's winning games, it'll likely do well in the future. But factors like injuries, coaching changes, and trades can curtail success very quickly. Thus, any model-based prediction is only accurate until something happens that is unaccounted for in the model.
 
 This post discusses a new data-driven approach to predicting the outcome of NBA games. I call this the *Elastic NBA Rankings*. If you love statistics and basketball, then this is the post for you. 
 
@@ -34,7 +34,7 @@ The team rankings produced by this model mainly agree with other prediction mode
 
 Back testing for the 2015-2016 season showed promising results (see more details below), although I have not done any historical benchmark testing against other models. Time will be the judge.
 
-## What Does the Model Do?
+## What Does the Model Actually Predict?
 
 The model predicts the outcome of future NBA games for the current season. It does not predict the points scored, only the probability of a given team winning.
 
@@ -174,11 +174,11 @@ Last, but not least, let's take a look at San Antonio and the Timberwolves -- tw
  
 # Backtesting
  
-The model was used to predict all games from 2015-11-17 to the end the 2015-2016 season, using only information available as of 2015-11-16 (including model coefficients). Most teams played 71 games during this period.
+The model was used to predict all games from 2015-11-20 to the end the 2015-2016 season, using only information available as of 2015-11-19 (including model coefficients). This is roughly a five month forecast window (the season ends in April). Most teams played around 70 games during this period. I picked this date because the latest model-run for this post was 2016-11-20. 
  
-The game level accuracy was 67% -- i.e., the model predicted the correct winner in 67% of cases.
+The game level accuracy for the entire period was 64.5% -- i.e., the model predicted the correct winner for 64.5% of games.
  
-The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.736.
+The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.725.
  
 The predicted team rankings were also in line with the actual team rankings (correlation is 75%), except for some interesting misses like the Chicago Bulls (actual ranking #14, predicted #4). Note that this table only covers the games played during the 2015-2016 season after the date of 2015-11-16.
  
@@ -195,11 +195,12 @@ kable(rankings)
  
 ```
 
-Checking the game-level predictions. Note that the model is most accurate for the "tail teams" -- which is to be expected. The chart below shows the game-level accuracies after subtracting 0.5 which is the accuracy of a random draw.
+Checking the game-level predictions. Note that the model is most accurate for the "tail teams" -- which is to be expected. The chart below shows the game-level accuracy for each team after subtracting 50% (the accuracy of a random draw).
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(dplyr)
 library(knitr)
+library(scales)
 source("https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/functions/auc.R") 
 
 f <-
@@ -215,8 +216,9 @@ mutate(game_level, match=as.numeric(selected_team_win==d_pred_selected_team_win)
   group_by(team) %>%
   summarise(team_match_percent=mean(match)-0.5) %>%
   ggplot(aes(team, team_match_percent)) + geom_bar(stat="identity") + coord_flip() +
-  xlab("") + ylab("") + theme(legend.title = element_blank()) + 
-  geom_hline(yintercept = match_rate-0.5 , linetype=2)
+  xlab("Accuracy - 50%") + ylab("") + theme(legend.title = element_blank()) + 
+  geom_hline(yintercept = match_rate-0.5 , linetype=2) + 
+  scale_y_continuous(labels = scales::percent)
 
 print(paste0("AUROC = ", AUC(game_level$selected_team_win, game_level$prob_selected_team_win_d)[1]))
 

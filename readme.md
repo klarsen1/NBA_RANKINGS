@@ -79,6 +79,49 @@ The model is re-estimated every single day and contains the following variables:
 
 For a given match-up, the following variables are created:
 
+<table style="width:99%;">
+<colgroup>
+<col width="22%" />
+<col width="27%" />
+<col width="29%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Archetype</th>
+<th align="left">Team 1 Allocation</th>
+<th align="left">Team 2 Allocation</th>
+<th align="right">Coefficient</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Archetype 1</td>
+<td align="left">0.10</td>
+<td align="left">0.15</td>
+<td align="right"></td>
+</tr>
+<tr class="even">
+<td align="left">Archetype 2</td>
+<td align="left">0.05</td>
+<td align="left">0.05</td>
+<td align="right"></td>
+</tr>
+<tr class="odd">
+<td align="left">.</td>
+<td align="left">.</td>
+<td align="left"></td>
+<td align="right">.</td>
+</tr>
+<tr class="even">
+<td align="left">Arcyetype 25</td>
+<td align="left">0.06</td>
+<td align="left">0.03</td>
+<td align="right">2.5</td>
+</tr>
+</tbody>
+</table>
+
 ##### Team 1:
 
 X\_1 = % of minutes allocated to cluster 1, X\_2 = % of minutes allocated to cluster 2, etc.

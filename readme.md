@@ -78,15 +78,15 @@ The model is re-estimated every single day and contains the following variables:
 More Details on the Archetype Surplus/Deficit Variables
 -------------------------------------------------------
 
-For a given game, the model does the following calculations:
+For a given match-up, the following variables are created:
 
 ##### Team 1:
 
-X~1 = % of minutes allocated to cluster 1, X2 = % of minutes allocated to cluster 2, etc.
+X\_1 = % of minutes allocated to cluster 1, X\_2 = % of minutes allocated to cluster 2, etc.
 
 ##### Team 2:
 
-Z1 = % of minutes allocated to cluster 1, Z2 = % of minutes allocated to cluster 2, etc.
+Z\_1 = % of minutes allocated to cluster 1, Z\_2 = % of minutes allocated to cluster 2, etc.
 
 From these variables we construct the “delta variables” between team 1 and team 2:
 

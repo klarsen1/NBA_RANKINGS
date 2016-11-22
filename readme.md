@@ -259,7 +259,7 @@ ggplot(ranks, aes(x=rank_pred, y=rank_actual)) +
 
 ![](readme_files/figure-markdown_github/unnamed-chunk-3-1.png)
 
-The predicted team rankings were also in line with the actual team rankings (correlation is 66%), except for some significant misses like the Chicago Bulls, Denver and Portland. There might be good reasons why the model misjudged these teams so early in the season (for example, Chicago has been injury plagued). More investigation is needed here.
+The predicted team rankings were also in line with the actual team rankings (correlation is 66%), except for some significant misses like the Chicago Bulls, Denver and Portland. There might be good reasons why the model misjudged these teams given the fact that these predictions were made only 11 games into the season.
 
 Next, let's check the game-level predictions for this period. The chart below shows the game-level accuracy for each team. The vertical lines show the overall match rate (64.7%) as well as the match rate we would get from a random draw (50%):
 
@@ -298,7 +298,7 @@ print(paste0("AUROC = ", AUC(game_level$selected_team_win, game_level$prob_selec
 
     ## [1] "AUROC = 0.725354145468453"
 
-Note that the model is most accurate for the "tail teams" such as Golden State and Philadelphia, which is to be expected. There are a some teams where the model completely missed the mark -- e.g., Chicago. In the defense of the model, these predictions were only made 11 games into the season.
+Note that the model is most accurate for the "tail teams" such as Golden State and Philadelphia, which is to be expected. There are a some teams where the model completely missed the mark -- such as Boston or Portland, but overall is the model is doing fairly well considering length of the forecast window.
 
 Future Development
 ==================

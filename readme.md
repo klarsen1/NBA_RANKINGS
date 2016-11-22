@@ -128,7 +128,7 @@ For a given match-up, the following variables are created (made-up example)
 </tbody>
 </table>
 
-These difference-variables are then directly entered into the logistic regression model (labeled as share\_minutes\_cluster\_XX in the coefficient files). The regression model then estimates the importance of each archetype -- i.e., the *coefficients* shown in the right-most column. Hence, for team 1's roster to be considered strong, compared to team 2, it must have a surplus of minutes allocated to archetypes with large and positive coefficients, and vice versa for archetypes with negative coefficients.
+These difference-variables are then directly entered into the logistic regression model (labeled as share\_minutes\_cluster\_XX in the regression model). The regression model then estimates the importance of each archetype -- i.e., the *coefficients* shown in the right-most column. Hence, for team 1's roster to be considered strong, compared to team 2, it must have a surplus of minutes allocated to archetypes with large and positive coefficients, and vice versa for archetypes with negative coefficients.
 
 ### How Are Players Assigned to Archetypes?
 

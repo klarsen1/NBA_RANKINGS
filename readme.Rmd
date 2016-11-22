@@ -145,7 +145,7 @@ But what about Atlanta? The elastic model ranks Atlanta fourth in terms of overa
 * Performance -- e.g., win percentages, previous match-ups.
 * Circumstances -- e.g., travel, rest, home-count advantage
  
-For the stats-oriented readers, here's how this works: the underlying predictive variables were multiplied by their respective coefficients, and then aggregated to get the group contributions to the predicted log-odds. The CSV file called score_decomp_2016_MM_DD contains this information. The code below shows how to use this file:
+Here's how this works: the underlying predictive variables were multiplied by their respective coefficients, and then aggregated to get the group contributions to the predicted log-odds. The CSV file called score_decomp_2016_MM_DD contains this information. The code below shows how to use this file:
  
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(tidyr)

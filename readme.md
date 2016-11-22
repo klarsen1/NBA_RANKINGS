@@ -134,7 +134,7 @@ ft8_rankings <- read.csv(f1) %>% rename(team=selected_team)
  
 all_rankings <- read.csv(f2) %>%
   inner_join(ft8_rankings, by="team") %>%
-  mutate(elastic_ranking=min_rank(-pred_season_win_rate),
+  mutate(elastic_ranking=min_rank(-season_win_rate),
          FiveThirtyEight=min_rank(-pred_win_rate_538)) %>%
   select(team, conference, division, elastic_ranking, FiveThirtyEight) %>%
   arrange(elastic_ranking)
@@ -145,30 +145,30 @@ kable(all_rankings)
 | team          | conference | division  |  elastic\_ranking|  FiveThirtyEight|
 |:--------------|:-----------|:----------|-----------------:|----------------:|
 | Cleveland     | East       | Central   |                 1|                2|
-| Golden State  | West       | Pacific   |                 1|                1|
+| Golden State  | West       | Pacific   |                 2|                1|
 | LA Clippers   | West       | Pacific   |                 3|                2|
 | Atlanta       | East       | Southeast |                 4|               12|
-| Houston       | West       | Southwest |                 5|                6|
-| Chicago       | East       | Central   |                 6|                6|
-| San Antonio   | West       | Southwest |                 6|                4|
+| Chicago       | East       | Central   |                 5|                6|
+| Houston       | West       | Southwest |                 6|                6|
+| San Antonio   | West       | Southwest |                 7|                4|
 | Portland      | West       | Northwest |                 8|               13|
 | Oklahoma City | West       | Northwest |                 9|                9|
 | Toronto       | East       | Atlantic  |                10|                5|
-| Boston        | East       | Atlantic  |                11|               11|
 | Charlotte     | East       | Southeast |                11|                9|
+| Boston        | East       | Atlantic  |                12|               11|
 | Utah          | West       | Northwest |                13|                6|
 | LA Lakers     | West       | Pacific   |                14|               19|
 | Memphis       | West       | Southwest |                15|               13|
-| Indiana       | East       | Central   |                16|               21|
-| Milwaukee     | East       | Central   |                17|               23|
-| Orlando       | East       | Southeast |                17|               20|
-| Denver        | West       | Northwest |                19|               17|
-| Detroit       | East       | Central   |                20|               15|
-| Minnesota     | West       | Northwest |                21|               16|
-| New York      | East       | Atlantic  |                22|               18|
+| Milwaukee     | East       | Central   |                16|               23|
+| Denver        | West       | Northwest |                17|               17|
+| Indiana       | East       | Central   |                18|               21|
+| Detroit       | East       | Central   |                19|               15|
+| Orlando       | East       | Southeast |                20|               20|
+| New York      | East       | Atlantic  |                21|               18|
+| Minnesota     | West       | Northwest |                22|               16|
 | Sacramento    | West       | Pacific   |                23|               25|
+| Brooklyn      | East       | Atlantic  |                24|               29|
 | Washington    | East       | Southeast |                24|               21|
-| Brooklyn      | East       | Atlantic  |                25|               29|
 | Phoenix       | West       | Pacific   |                26|               28|
 | New Orleans   | West       | Southwest |                27|               27|
 | Miami         | East       | Southeast |                28|               23|
@@ -284,7 +284,7 @@ mutate(game_level, match=as.numeric(selected_team_win==d_pred_selected_team_win)
 print(paste0("AUROC = ", AUC(game_level$selected_team_win, game_level$prob_selected_team_win_d)[1]))
 ```
 
-    ## [1] "AUROC = 0.725236878757045"
+    ## [1] "AUROC = 0.725354145468453"
 
 Note that the model is most accurate for the "tail teams" such as Golden State and Philadelphia, which is to be expected. There are a some teams where the model completely missed the mark -- e.g., Chicago. In the defense of the model, these predictions were only made 11 games into the season.
 

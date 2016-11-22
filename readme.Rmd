@@ -1,8 +1,8 @@
 ---
 title: "I'd Rather Predict NBA Games Than Elections -- A New Statistical Approach"
-output: html_document
-  #md_document:
-  #  variant: markdown_github
+output:
+  md_document:
+    variant: markdown_github
 ---
  
 

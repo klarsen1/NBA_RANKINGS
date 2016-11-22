@@ -79,13 +79,13 @@ The model is re-estimated every single day and contains the following variables:
 
 For a given match-up, the following variables are created (made-up example)
 
-<table style="width:118%;">
+<table style="width:136%;">
 <colgroup>
 <col width="22%" />
 <col width="27%" />
 <col width="29%" />
 <col width="19%" />
-<col width="19%" />
+<col width="37%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -93,7 +93,7 @@ For a given match-up, the following variables are created (made-up example)
 <th align="left">Team 1 Allocation</th>
 <th align="left">Team 2 Allocation</th>
 <th align="left">Difference</th>
-<th align="left">Coefficient</th>
+<th align="left">Coefficient (importance)</th>
 </tr>
 </thead>
 <tbody>

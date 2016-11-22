@@ -101,7 +101,7 @@ In order to calculate the deficit and surplus variables referenced above, it's n
 ## Deciding the Winner of a Game
 The current implementation uses the estimated probabilities from the regularized logistic regression model to pick the winner of a given game. If the estimated probability of a given team winning exceeds 50%, then that team is declared the winner.
  
-I've also been playing around with a simulation approach where each game is "played"" 1000 times, varying the distribution of minutes across archetypes in each iteration. For the season rankings, this did not alter the overall conclusion, although it did provide a better measure of prediction uncertainties.
+I've also been playing around with a simulation approach where each game is "played"" 1000 times, varying the distribution of minutes across archetypes in each iteration. For the overall season rankings this did not alter the overall conclusion, although it did provide a better measure of prediction uncertainties. For example, for the 2015 validation, the model predicted that Golden State would have won *all* its games (see example below). A simulation approach would have done a better job incorporating uncertainty.
  
 For simulation playoffs I have been using the simulation approach. This will be covered in another post.
  

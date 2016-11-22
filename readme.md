@@ -99,15 +99,15 @@ For a given match-up, the following variables are created (made-up example)
 <tbody>
 <tr class="odd">
 <td align="left">Archetype 1</td>
-<td align="left">0.10</td>
-<td align="left">0.15</td>
+<td align="left">10%</td>
+<td align="left">15%</td>
 <td align="left">-0.05</td>
 <td align="left">-2</td>
 </tr>
 <tr class="even">
 <td align="left">Archetype 2</td>
-<td align="left">0.05</td>
-<td align="left">0.05</td>
+<td align="left">5%</td>
+<td align="left">5%</td>
 <td align="left">0</td>
 <td align="left">-1.5</td>
 </tr>
@@ -119,28 +119,16 @@ For a given match-up, the following variables are created (made-up example)
 <td align="left">.</td>
 </tr>
 <tr class="even">
-<td align="left">Arcyetype 25</td>
-<td align="left">0.1</td>
-<td align="left">0.05</td>
+<td align="left">Archetype 25</td>
+<td align="left">10%</td>
+<td align="left">5%</td>
 <td align="left">0.04</td>
 <td align="left">2.5</td>
 </tr>
 </tbody>
 </table>
 
-##### Team 1:
-
-X\_1 = % of minutes allocated to cluster 1, X\_2 = % of minutes allocated to cluster 2, etc.
-
-##### Team 2:
-
-Z\_1 = % of minutes allocated to cluster 1, Z\_2 = % of minutes allocated to cluster 2, etc.
-
-From these variables we construct the “delta variables” between team 1 and team 2:
-
-D\_1 = X\_1 – Z\_1, D\_2 = X\_2 – Z\_2, etc.
-
-These variables are then directly entered into the logistic regression model (labeled as share\_minutes\_cluster\_XX in the coefficient files). The regression model then estimates the importance of each archetype. Hence, for team 1's roster to be considered strong, compared to team 2, it must have a surplus of minutes allocated to archetypes with large and positive coefficients, and vice versa for archetypes with negative coefficients.
+These difference-variables are then directly entered into the logistic regression model (labeled as share\_minutes\_cluster\_XX in the coefficient files). The regression model then estimates the importance of each archetype. Hence, for team 1's roster to be considered strong, compared to team 2, it must have a surplus of minutes allocated to archetypes with large and positive coefficients, and vice versa for archetypes with negative coefficients.
 
 ### How Are Players Assigned to Archetypes?
 
@@ -154,9 +142,9 @@ In order to calculate the deficit and surplus variables referenced above, it's n
 
 The current implementation uses the estimated probabilities from the regularized logistic regression model to pick the winner of a given game. If the estimated probability of a given team winning exceeds 50%, then that team is declared the winner.
 
-I've also been playing around with a simulation approach where each game is "played"" 1000 times, varying the distribution of minutes across archetypes in each iteration. For the overall season rankings this did not alter the overall conclusion, although it did provide a better measure of prediction uncertainties. For example, for the 2015 validation, the model predicted that Golden State would have won *all* its games (see example below). A simulation approach would have done a better job incorporating uncertainty.
+I've also been playing around with a simulation approach where each game is "re-played" 1000 times, varying the distribution of minutes across archetypes in each iteration. For the overall aggregate rankings this did not alter the overall conclusion, although it did provide a better measure of prediction uncertainties. For example, for the 2015 validation, the model predicted that Golden State would have won *all* its games (see example below). A simulation approach would have done a better job incorporating uncertainty, and so I might still end up going with that.
 
-For simulation playoffs I have been using the simulation approach. This will be covered in another post.
+For simulation playoffs I have been using the simulation approach due to the uncertainty introduced by the hierarchical playoff tree. This will be covered in another post.
 
 Model Rankings for the 2016-2017 Season
 ---------------------------------------

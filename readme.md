@@ -82,11 +82,11 @@ For a given game, the model does the following calculations:
 
 ##### Team 1:
 
-X\_1 = % of minutes allocated to cluster 1, X\_2 = % of minutes allocated to cluster 2, etc.
+X~1 = % of minutes allocated to cluster 1, X2 = % of minutes allocated to cluster 2, etc.
 
 ##### Team 2:
 
-Z\_1 = % of minutes allocated to cluster 1, Z\_2 = % of minutes allocated to cluster 2, etc.
+Z1 = % of minutes allocated to cluster 1, Z2 = % of minutes allocated to cluster 2, etc.
 
 From these variables we construct the “delta variables” between team 1 and team 2:
 

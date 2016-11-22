@@ -231,7 +231,7 @@ mutate(game_level, match=as.numeric(selected_team_win==d_pred_selected_team_win)
   group_by(team) %>%
   summarise(team_match_percent=mean(match)) %>%
   ggplot(aes(team, team_match_percent)) + geom_bar(stat="identity") + coord_flip() +
-  xlab("Accuracy") + ylab("") + theme(legend.title = element_blank()) + 
+  xlab("") + ylab("Accuracy") + theme(legend.title = element_blank()) + 
   geom_hline(yintercept = c(0.5, overall_match_rate), linetype=2) + 
   scale_y_continuous(labels = scales::percent)
 

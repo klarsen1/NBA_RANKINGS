@@ -1,5 +1,5 @@
 ---
-title: "I'd Rather Predict NBA Games Than Elections -- A New Statistical Approach"
+title: "I'd Rather Predict NBA Games Than Elections -- A Different Statistical Approach"
 output:
   md_document:
     variant: markdown_github
@@ -41,7 +41,11 @@ Back testing for the 2015-2016 season showed promising results (see more details
 The model predicts the outcome of future NBA games for the current season. It does not predict the points scored, only the probability of a given team winning.
 
 ## Where to Find the Model Predictions
-All rankings and scores can be found in [this github repo](https://github.com/klarsen1/NBA_RANKINGS). The easiest way to extract the data is to directly read the [raw files](https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails).There are two main files of interest:
+All rankings and scores can be found in [this github repo](https://github.com/klarsen1/NBA_RANKINGS). The easiest way to extract the data is to directly read the [raw files](https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails).
+
+The predictions will be updated weekly with a new time-stamp. 
+
+There are two main files of interest:
  
 * game_level_predictions_2016-MM-DD.csv -- Game-level predictions for each future game.
 * rankings_2016-MM-DD.csv -- team rankings and predicted win rates.
@@ -178,7 +182,7 @@ Last, but not least, let's take a look at San Antonio and the Timberwolves -- tw
  
 The model was used to predict all games from 2015-11-20 to the end the 2015-2016 season, using only information available as of 2015-11-19 (including model coefficients). This is roughly a five month forecast window (the season ends in April); most teams played around 70 games during this period. I picked this date because the latest model-run for this post was 2016-11-20. 
  
-The game level accuracy for the entire period was 64.3% -- i.e., the model predicted the correct winner for 64.3% of games.
+The game level accuracy for the entire period was 64.7% -- i.e., the model predicted the correct winner for 64.3% of games.
  
 The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.725.
  

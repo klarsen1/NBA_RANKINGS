@@ -219,5 +219,5 @@ for (i in start_index:end_index){
 ### Manipulate the output
 results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 1, 0)
 
-write.csv(select(filter(results[[1]], future_game==1), -current_season_data_used), "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/game_level_validation_2015.csv")
-write.csv(results[[2]], "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/ranking_validation_2015.csv")
+write.csv(select(filter(results[[1]], future_game==1), -current_season_data_used), "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/game_level_validation_2015.csv", row.names = FALSE)
+write.csv(results[[2]], "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/ranking_validation_2015.csv", row.names = FALSE)

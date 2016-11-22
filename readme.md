@@ -77,13 +77,14 @@ The model is re-estimated every single day and contains the following variables:
 
 ### More Details on the Archetype Surplus/Deficit Variables
 
-For a given match-up, the following variables are created:
+For a given match-up, the following variables are created (made-up example)
 
-<table style="width:99%;">
+<table style="width:118%;">
 <colgroup>
 <col width="22%" />
 <col width="27%" />
 <col width="29%" />
+<col width="19%" />
 <col width="19%" />
 </colgroup>
 <thead>
@@ -91,7 +92,8 @@ For a given match-up, the following variables are created:
 <th align="left">Archetype</th>
 <th align="left">Team 1 Allocation</th>
 <th align="left">Team 2 Allocation</th>
-<th align="right">Coefficient</th>
+<th align="left">Difference</th>
+<th align="left">Coefficient</th>
 </tr>
 </thead>
 <tbody>
@@ -99,25 +101,29 @@ For a given match-up, the following variables are created:
 <td align="left">Archetype 1</td>
 <td align="left">0.10</td>
 <td align="left">0.15</td>
-<td align="right"></td>
+<td align="left">-0.05</td>
+<td align="left">-2</td>
 </tr>
 <tr class="even">
 <td align="left">Archetype 2</td>
 <td align="left">0.05</td>
 <td align="left">0.05</td>
-<td align="right"></td>
+<td align="left">0</td>
+<td align="left">-1.5</td>
 </tr>
 <tr class="odd">
 <td align="left">.</td>
 <td align="left">.</td>
-<td align="left"></td>
-<td align="right">.</td>
+<td align="left">.</td>
+<td align="left">.</td>
+<td align="left">.</td>
 </tr>
 <tr class="even">
 <td align="left">Arcyetype 25</td>
-<td align="left">0.06</td>
-<td align="left">0.03</td>
-<td align="right">2.5</td>
+<td align="left">0.1</td>
+<td align="left">0.05</td>
+<td align="left">0.04</td>
+<td align="left">2.5</td>
 </tr>
 </tbody>
 </table>

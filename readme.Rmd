@@ -75,14 +75,14 @@ The model is re-estimated every single day and contains the following variables:
 * Home team advantage.
  
 ### More Details on the Archetype Surplus/Deficit Variables
-For a given match-up, the following variables are created:
+For a given match-up, the following variables are created (made-up example)
 
-| Archetype     | Team 1 Allocation | Team 2 Allocation  |  Coefficient| 
-|:--------------|:------------------|:-------------------|------------:|
-| Archetype 1   | 0.10              | 0.15  |            |  -2         |
-| Archetype 2   | 0.05              | 0.05|              |  -1         |
-| .             | .                 |                    |  .          |
-| Arcyetype 25  | 0.06              | 0.03               |  2.5        |
+| Archetype     | Team 1 Allocation | Team 2 Allocation  |  Difference | Coefficient | 
+|:--------------|:------------------|:-------------------|:------------|:------------|
+| Archetype 1   | 0.10              | 0.15               |  -0.05      | -2          |
+| Archetype 2   | 0.05              | 0.05               |  0          | -1.5        |
+| .             | .                 | .                  |  .          | .           |
+| Arcyetype 25  | 0.1               | 0.05               |  0.04       | 2.5         |
 
 #####Team 1:
 X_1 =  % of minutes allocated to cluster 1, X_2 = % of minutes allocated to cluster 2, etc.

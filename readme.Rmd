@@ -8,7 +8,7 @@ output:
 
 # Does the World Really Need Another Statistical Prediction Model?
 
-When Donald Trump won the 2016 presidential election, both sides of the political spectrum were surprised. The prediction models didn't see it coming and the Nate Silvers of the world took some heat for that (although Nate Silver himself got pretty close). After this, a lot of people would probably agree that the world doesn't need another statistical prediction model.
+When Donald Trump won the 2016 presidential election, both sides of the political spectrum were surprised. The prediction models didn't see it coming and the Nate Silvers of the world took some heat for that (although Nate Silver himself got pretty close). After this, a lot of people will probably agree that the world doesn't need another statistical prediction model.
  
 So, should we turn our backs on forecasting models? No, we just need to revise our expectations. George Box once reminded us that statistical models are, at best, useful *approximations* of the real world. With the recent hype around data science and "money balling" this point is often overlooked.
 
@@ -182,7 +182,7 @@ Last, but not least, let's take a look at San Antonio and the Timberwolves -- tw
  
 The model was used to predict all games from 2015-11-20 to the end the 2015-2016 season, using only information available as of 2015-11-19 (including model coefficients). This is roughly a five month forecast window (the season ends in April); most teams played around 70 games during this period. I picked this date because the latest model-run for this post was 2016-11-20. 
  
-The game level accuracy for the entire period was 64.7% -- i.e., the model predicted the correct winner for 64.3% of games.
+The game level accuracy for the entire period was 64.7% -- i.e., the model predicted the correct winner for 64.7% of games.
  
 The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.725.
  

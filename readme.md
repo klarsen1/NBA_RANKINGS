@@ -1,5 +1,8 @@
+I'd Rather Predict NBA Games Than Elections -- A New Statistical Approach
+=========================================================================
+
 Does the World Really Need Another Statistical Prediction Model?
-================================================================
+----------------------------------------------------------------
 
 When Donald Trump won the 2016 presidential election, both sides of the political spectrum were surprised. The prediction models didn't see it coming and the Nate Silvers of the world took some heat for that (although Nate Silver himself got pretty close). After this, a lot of people would probably agree that the world doesn't need another statistical prediction model.
 
@@ -8,7 +11,7 @@ So, should we turn our backs on forecasting models? No, we just need to revise o
 What *should* we then expect from a statistical model? A statistical model should help us process the many moving parts that often affect a given outcome -- such as an election -- by providing a single prediction for the future. It does this by combining the multitude of inputs, assumptions, trends and correlations with a simplified representation of how the world works. The human mind cannot do this and that is what makes models so valuable. However, if the inputs are bad even a good model is going to be wrong. Moreover, no model predicts the unthinkable unless unthinkable assumptions are made.
 
 Forecasting and Basketball
-==========================
+--------------------------
 
 So what does this have to do with basketball? In many ways, basketball is a perfect case study for forecasting. The outcome of future games are affected by many different factors; a team's current performance, momentum, the strength of its roster compared to its opponents, as well as the travel schedule. If a team looks great on paper and it's winning games, it'll likely do well in the future. But factors like injuries, coaching changes, and trades can curtail success very quickly. Thus, any model-based prediction is only accurate until something happens that is unaccounted for in the model.
 
@@ -17,7 +20,7 @@ This post discusses a new data-driven approach to predicting the outcome of NBA 
 The model is based on techniques frequently used across various industries to predict bankruptcy, fraud or customer buying behavior. While it's certain that the model is wrong -- all models are -- I'm hoping that it will also be useful.
 
 Summary -- What You Need to Know About the Elastic NBA Rankings
-===============================================================
+---------------------------------------------------------------
 
 The Elastic NBA Team Rankings is a dynamic ranking algorithm that is purely based on statistical modeling techniques commonly used across most industries. No qualitative data or judgment is used to decide the ranks or the importance of different variables; the only human judgment applied is the underlying framework behind the algorithm.
 
@@ -31,13 +34,11 @@ The team rankings produced by this model mainly agree with other prediction mode
 
 Back testing for the 2015-2016 season showed promising results (see more details below), although I have not done any historical benchmark testing against other models. Time will be the judge.
 
-What Does the Model Actually Predict?
--------------------------------------
+### What Does the Model Actually Predict?
 
 The model predicts the outcome of future NBA games for the current season. It does not predict the points scored, only the probability of a given team winning.
 
-Where to Find the Model Predictions
------------------------------------
+### Where to Find the Model Predictions
 
 All rankings and scores can be found in [this github repo](https://github.com/klarsen1/NBA_RANKINGS). The easiest way to extract the data is to directly read the [raw files](https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails).
 
@@ -51,7 +52,7 @@ There are two main files of interest:
 In addition, the [modeldetails directory](https://github.com/klarsen1/NBA_RANKINGS/tree/master/modeldetails) has detailed information on the underlying mechanics of the model. See more details below on how to use this data.
 
 How the Model Works
-===================
+-------------------
 
 The model is based on a three-step procedure:
 
@@ -61,8 +62,7 @@ The model is based on a three-step procedure:
 
 Why is the model called "Elastic NBA Rankings?" There are two reasons for this: first, the model automatically adapts as the season progresses. Second, the regularization technique used to fit the logistic regression model is a special case of the [Elastic Net](https://en.wikipedia.org/wiki/Elastic_net_regularization).
 
-Some Notes on the Model Used in Step 2
---------------------------------------
+### Some Notes on the Model Used in Step 2
 
 The model used to predict the winner of a given game is a statistical model that is estimated based on the most recent three seasons. Hence, the relative importance (weights) of the various drivers -- for example, the importance of roster features versus win percentages -- are purely based on the relationship detected from the data. For the stats-minded readers, the model is a logistic regression with an L1 penalty (lasso) to reduce the chance of over-fitting (this worked best in back-testing). V-fold cross-validation was used to choose the penalty parameter.
 
@@ -75,8 +75,7 @@ The model is re-estimated every single day and contains the following variables:
 -   Rest days prior to games -- more rest is beneficial during the long NBA season.
 -   Home team advantage.
 
-More Details on the Archetype Surplus/Deficit Variables
--------------------------------------------------------
+### More Details on the Archetype Surplus/Deficit Variables
 
 For a given match-up, the following variables are created:
 
@@ -94,18 +93,15 @@ D\_1 = X\_1 – Z\_1, D\_2 = X\_2 – Z\_2, etc.
 
 These variables are then directly entered into the logistic regression model (labeled as share\_minutes\_cluster\_XX in the coefficient files). The regression model then estimates the importance of each archetype. Hence, for team 1's roster to be considered strong, compared to team 2, it must have a surplus of minutes allocated to archetypes with large and positive coefficients, and vice versa for archetypes with negative coefficients.
 
-How Are Players Assigned to Archetypes?
----------------------------------------
+### How Are Players Assigned to Archetypes?
 
 The outcome of the [k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering) routine is a set of *centroids* where each centroid represents the box score profile of an archetype. Players are assigned to archetypes by matching their offensive and defensive box score statistics to closest centroids using the Euclidean distance, and hence can switch archetypes at any given time. A decay function was applied such that more recent games receive a larger weight. In addition, games played in the previous season are discounted by a factor of 4 (before the coefficients are estimated).
 
-Predicting Allocation of Minutes for Future Games
--------------------------------------------------
+### Predicting Allocation of Minutes for Future Games
 
 In order to calculate the deficit and surplus variables referenced above, it's necessary to predict how many minutes each player will play. Currently, a 90-day trailing average is used (excluding the off-season). Games played during the prior season are discounted by a factor of 4 (before the coefficients are estimated).
 
-Deciding the Winner of a Game
------------------------------
+### Deciding the Winner of a Game
 
 The current implementation uses the estimated probabilities from the regularized logistic regression model to pick the winner of a given game. If the estimated probability of a given team winning exceeds 50%, then that team is declared the winner.
 
@@ -114,7 +110,7 @@ I've also been playing around with a simulation approach where each game is "pla
 For simulation playoffs I have been using the simulation approach. This will be covered in another post.
 
 Model Rankings for the 2016-2017 Season
-=======================================
+---------------------------------------
 
 All model rankings and results are stored in [this github repo](https://github.com/klarsen1/NBA_RANKINGS). The code below shows how to extract the current rankings and compare to the [FiveThirtyEight win/loss predictions](http://projects.fivethirtyeight.com/2017-nba-predictions/). The folks at FiveThirtyEight do amazing work and so this seems like a good sanity check.
 
@@ -183,7 +179,7 @@ The table shows that the elastic rankings generally agree with FiveThirtyEight -
 
 But what about Atlanta? The elastic model ranks Atlanta fourth in terms of overall win percentage, while FiveThirtyEight ranks Atlanta at number 12 (as of 2016-11-20). To understand why the elastic model is doing this, we can decompose the predictions into three parts:
 
--   Roster -- archetype allocation deficits/surpluses. These are the variables labeled "share\_minutes\_cluster\_XX" described above. This group reflects the quality of the roster.
+-   Roster -- archetype allocation deficits/surpluses. These are the variables labeled "share\_minutes\_cluster\_XX" described above. This group of variables reflects the quality of the roster.
 -   Performance -- e.g., win percentages, previous match-ups.
 -   Circumstances -- e.g., travel, rest, home-count advantage
 
@@ -222,7 +218,7 @@ Next, let's look at Cleveland and Golden State. The model ranks these two teams 
 Last, but not least, let's take a look at San Antonio and the Timberwolves -- two teams that are viewed very differently by the model. According to the model, San Antonio has been over-performing. The model does not like how the roster looks on paper, yet performance has been strong so far. This could be due to strong coaching, "corporate knowledge" (as Gregg Popovich calls it) and team chemistry -- factors that the roster component of the model does not capture. Minnesota, on the other hand, is under-performing according to the model; the roster is rated highly compared to its opponents, but the team is not performing well. This could be due to inexperience.
 
 Backtesting
-===========
+-----------
 
 The model was used to predict all games from 2015-11-20 to the end the 2015-2016 season, using only information available as of 2015-11-19 (including model coefficients). This is roughly a five month forecast window (the season ends in April); most teams played around 70 games during this period. I picked this date because the latest model-run for this post was 2016-11-20.
 
@@ -301,19 +297,16 @@ print(paste0("AUROC = ", AUC(game_level$selected_team_win, game_level$prob_selec
 Note that the model is most accurate for the "tail teams" such as Golden State and Philadelphia, which is to be expected. There are a some teams where the model completely missed the mark -- such as Boston or Portland, but overall is the model is doing fairly well considering length of the forecast window.
 
 Future Development
-==================
+------------------
 
-Dealing With Injuries and Trades
---------------------------------
+### Dealing With Injuries and Trades
 
 As mentioned previously, the model depends on rosters *and* previous performance. If a team executes a major mid-season trade, the roster component will react immediately, while the performance component will be slower to react. There are a number of ways around this, but currently no special treatment is being applied at this point.
 
-Player Interaction
-------------------
+### Player Interaction
 
 The model currently does not capture any interaction between the archetypes. I have tested basic interaction terms, but that did not help much. More work is needed here.
 
-Schedule-independent Team Rankings
-----------------------------------
+### Schedule-independent Team Rankings
 
 Currently, the model ranks teams by predicting win rates. This means that, holding everything else constant, the rankings implicitly favor teams that play in weaker divisions. A future development could be to have two rankings: one that predicts the win rate given the current schedule (this is what the model is currently doing), and one that normalizes for schedule differences.

@@ -74,14 +74,14 @@ The model is re-estimated every single day and contains the following variables:
 For a given game, the model does the following calculations:
 
 #####Team 1:
-\\( X_1 = \\)  % of minutes allocated to cluster 1, \\( X_{2} = \\)  % of minutes allocated to cluster 2, etc.
+X_1 =  % of minutes allocated to cluster 1, X_2 = % of minutes allocated to cluster 2, etc.
  
 #####Team 2:
-\\( Z_1 = \\)  % of minutes allocated to cluster 1, \\( Z_{2} = \\)  % of minutes allocated to cluster 2, etc.
+Z_1 =  % of minutes allocated to cluster 1, Z_2 = % of minutes allocated to cluster 2, etc.
  
 From these variables we construct the “delta variables” given by
  
-\\( D_{1} = X_{1} – Z_{1}, D_{2} = X_{2} – Z_{2} \\), etc.
+D_1 = X_1 – Z_1, D_2 = X_2 – Z_2, etc.
  
 These variables are then directly entered into the logistic regression model (labeled as share_minutes_cluster_XX). The regression model then estimates the importance of each archetype. Hence, for team 1's roster to be considered strong, compared to team 2, it must have a surplus of minutes allocated to archetypes with large and positive coefficients, and vice versa for archetypes with negative coefficients.
  

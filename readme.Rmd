@@ -18,7 +18,7 @@ What *should* we then expect from a statistical model? A statistical model shoul
 
 So what does this have to do with basketball? In many ways, basketball is a perfect case study for forecasting. The outcome of future games are affected by many different factors; a team's current performance, momentum, the strength of its roster compared to its opponents, as well as the travel schedule. If a team looks great on paper and it's winning games, it'll likely do well in the future. But factors like injuries, coaching changes, and trades can curtail success very quickly. Thus, any model-based prediction is only accurate until something happens that is unaccounted for in the model.
 
-This post discusses a new data-driven approach to predicting the outcome of NBA games. I call this the *Elastic NBA Rankings*. If you love statistics and basketball, then this is the post for you. 
+This post discusses a new data-driven approach to predicting the outcome of NBA games. I call this the *Elastic NBA Rankings*. If you love statistics, R *and* basketball, then this is the post for you. 
 
 The model is based on techniques frequently used across various industries to predict bankruptcy, fraud or customer buying behavior. While it's certain that the model is wrong -- all models are -- I'm hoping that it will also be useful.
 
@@ -192,20 +192,25 @@ The code below compares the actual rankings to the predicted rankings (note that
 library(dplyr)
 library(knitr)
 library(ggplot2)
- 
+library(ggrepel) ## downloaded from github
+
 f <-
   "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/ranking_validation_2015.csv"
  
 ranks <- read.csv(f) %>% select(team, rank_actual, rank_pred) %>%
-  mutate(diff=abs(rank_pred-rank_actual)) %>%
+  mutate(diff=abs(rank_pred-rank_actual), 
+         misslvl=ifelse(diff>10, 1, ifelse(diff<5, 2, 3))) %>%
   arrange(rank_pred) 
 
 ggplot(ranks, aes(x=rank_pred, y=rank_actual)) +
   xlab("Predicted Rank") + ylab("Actual Rank") +
+  geom_point(aes(rank_pred, rank_actual), size = 2, color = 'black') +
   geom_smooth(method='lm') + 
-  geom_text(aes(label=team), hjust=0, vjust=1, size=2) + 
-  geom_point(color="green", size=3) +
-  geom_point(data=filter(ranks, diff>10), colour="red", size=3) 
+  geom_label_repel(aes(rank_pred, rank_actual, fill = factor(misslvl), label = team),
+                  fontface = 'bold', color = 'white', size=2,
+                  box.padding = unit(0.35, "lines"),
+                  point.padding = unit(0.5, "lines")) + 
+  theme(legend.title = element_blank()) + theme(legend.position="none")
 ```
 
 The predicted team rankings were also in line with the actual team rankings (correlation is 66%), except for some significant misses like the Chicago Bulls, Denver and Portland. There might be good reasons why the model misjudged these teams so early in the season (for example, Chicago has been injury plagued). More investigation is needed here.
@@ -232,7 +237,8 @@ mutate(game_level, match=as.numeric(selected_team_win==d_pred_selected_team_win)
   summarise(team_match_percent=mean(match)) %>%
   ggplot(aes(team, team_match_percent)) + geom_bar(stat="identity") + coord_flip() +
   xlab("") + ylab("Accuracy") + theme(legend.title = element_blank()) + 
-  geom_hline(yintercept = c(0.5, overall_match_rate), linetype=2) + 
+  geom_hline(yintercept = overall_match_rate, linetype=2, color='black') +
+  geom_hline(yintercept = .5, linetype=2, color='grey') +
   scale_y_continuous(labels = scales::percent)
 
 print(paste0("AUROC = ", AUC(game_level$selected_team_win, game_level$prob_selected_team_win_d)[1]))

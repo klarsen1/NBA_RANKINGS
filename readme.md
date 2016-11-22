@@ -12,7 +12,7 @@ Forecasting and Basketball
 
 So what does this have to do with basketball? In many ways, basketball is a perfect case study for forecasting. The outcome of future games are affected by many different factors; a team's current performance, momentum, the strength of its roster compared to its opponents, as well as the travel schedule. If a team looks great on paper and it's winning games, it'll likely do well in the future. But factors like injuries, coaching changes, and trades can curtail success very quickly. Thus, any model-based prediction is only accurate until something happens that is unaccounted for in the model.
 
-This post discusses a new data-driven approach to predicting the outcome of NBA games. I call this the *Elastic NBA Rankings*. If you love statistics and basketball, then this is the post for you.
+This post discusses a new data-driven approach to predicting the outcome of NBA games. I call this the *Elastic NBA Rankings*. If you love statistics, R *and* basketball, then this is the post for you.
 
 The model is based on techniques frequently used across various industries to predict bankruptcy, fraud or customer buying behavior. While it's certain that the model is wrong -- all models are -- I'm hoping that it will also be useful.
 
@@ -39,7 +39,11 @@ The model predicts the outcome of future NBA games for the current season. It do
 Where to Find the Model Predictions
 -----------------------------------
 
-All rankings and scores can be found in [this github repo](https://github.com/klarsen1/NBA_RANKINGS). The easiest way to extract the data is to directly read the [raw files](https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails).There are two main files of interest:
+All rankings and scores can be found in [this github repo](https://github.com/klarsen1/NBA_RANKINGS). The easiest way to extract the data is to directly read the [raw files](https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails).
+
+The predictions will be updated weekly with a new time-stamp.
+
+There are two main files of interest:
 
 -   game\_level\_predictions\_2016-MM-DD.csv -- Game-level predictions for each future game.
 -   rankings\_2016-MM-DD.csv -- team rankings and predicted win rates.
@@ -84,11 +88,11 @@ X\_1 = % of minutes allocated to cluster 1, X\_2 = % of minutes allocated to clu
 
 Z\_1 = % of minutes allocated to cluster 1, Z\_2 = % of minutes allocated to cluster 2, etc.
 
-From these variables we construct the “delta variables” given by
+From these variables we construct the “delta variables” between team 1 and team 2:
 
 D\_1 = X\_1 – Z\_1, D\_2 = X\_2 – Z\_2, etc.
 
-These variables are then directly entered into the logistic regression model (labeled as share\_minutes\_cluster\_XX). The regression model then estimates the importance of each archetype. Hence, for team 1's roster to be considered strong, compared to team 2, it must have a surplus of minutes allocated to archetypes with large and positive coefficients, and vice versa for archetypes with negative coefficients.
+These variables are then directly entered into the logistic regression model (labeled as share\_minutes\_cluster\_XX in the coefficient files). The regression model then estimates the importance of each archetype. Hence, for team 1's roster to be considered strong, compared to team 2, it must have a surplus of minutes allocated to archetypes with large and positive coefficients, and vice versa for archetypes with negative coefficients.
 
 How Are Players Assigned to Archetypes?
 ---------------------------------------
@@ -105,7 +109,7 @@ Deciding the Winner of a Game
 
 The current implementation uses the estimated probabilities from the regularized logistic regression model to pick the winner of a given game. If the estimated probability of a given team winning exceeds 50%, then that team is declared the winner.
 
-I've also been playing around with a simulation approach where each game is "played"" 1000 times, varying the distribution of minutes across archetypes in each iteration. For the season rankings, this did not alter the overall conclusion, although it did provide a better measure of prediction uncertainties.
+I've also been playing around with a simulation approach where each game is "played"" 1000 times, varying the distribution of minutes across archetypes in each iteration. For the overall season rankings this did not alter the overall conclusion, although it did provide a better measure of prediction uncertainties. For example, for the 2015 validation, the model predicted that Golden State would have won *all* its games (see example below). A simulation approach would have done a better job incorporating uncertainty.
 
 For simulation playoffs I have been using the simulation approach. This will be covered in another post.
 
@@ -183,7 +187,7 @@ But what about Atlanta? The elastic model ranks Atlanta fourth in terms of overa
 -   Performance -- e.g., win percentages, previous match-ups.
 -   Circumstances -- e.g., travel, rest, home-count advantage
 
-For the stats-oriented readers, here's how this works: the underlying predictive variables were multiplied by their respective coefficients, and then aggregated to get the group contributions to the predicted log-odds. The CSV file called score\_decomp\_2016\_MM\_DD contains this information. The code below shows how to use this file:
+Here's how this works: the underlying predictive variables were multiplied by their respective coefficients, and then aggregated to get the group contributions to the predicted log-odds. The CSV file called score\_decomp\_2016\_MM\_DD contains this information. The code below shows how to use this file:
 
 ``` r
 library(tidyr)
@@ -222,7 +226,7 @@ Backtesting
 
 The model was used to predict all games from 2015-11-20 to the end the 2015-2016 season, using only information available as of 2015-11-19 (including model coefficients). This is roughly a five month forecast window (the season ends in April); most teams played around 70 games during this period. I picked this date because the latest model-run for this post was 2016-11-20.
 
-The game level accuracy for the entire period was 64.3% -- i.e., the model predicted the correct winner for 64.3% of games.
+The game level accuracy for the entire period was 64.7% -- i.e., the model predicted the correct winner for 64.7% of games.
 
 The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.725.
 
@@ -232,27 +236,32 @@ The code below compares the actual rankings to the predicted rankings (note that
 library(dplyr)
 library(knitr)
 library(ggplot2)
- 
+library(ggrepel) ## downloaded from github
+
 f <-
   "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/ranking_validation_2015.csv"
  
 ranks <- read.csv(f) %>% select(team, rank_actual, rank_pred) %>%
-  mutate(diff=abs(rank_pred-rank_actual)) %>%
+  mutate(diff=abs(rank_pred-rank_actual), 
+         misslvl=ifelse(diff>10, 1, ifelse(diff<5, 2, 3))) %>%
   arrange(rank_pred) 
 
 ggplot(ranks, aes(x=rank_pred, y=rank_actual)) +
   xlab("Predicted Rank") + ylab("Actual Rank") +
+  geom_point(aes(rank_pred, rank_actual), size = 2, color = 'black') +
   geom_smooth(method='lm') + 
-  geom_text(aes(label=team), hjust=0, vjust=1, size=2) + 
-  geom_point(color="green", size=3) +
-  geom_point(data=filter(ranks, diff>10), colour="red", size=3) 
+  geom_label_repel(aes(rank_pred, rank_actual, fill = factor(misslvl), label = team),
+                  fontface = 'bold', color = 'white', size=2,
+                  box.padding = unit(0.35, "lines"),
+                  point.padding = unit(0.5, "lines")) + 
+  theme(legend.title = element_blank()) + theme(legend.position="none")
 ```
 
 ![](readme_files/figure-markdown_github/unnamed-chunk-3-1.png)
 
 The predicted team rankings were also in line with the actual team rankings (correlation is 66%), except for some significant misses like the Chicago Bulls, Denver and Portland. There might be good reasons why the model misjudged these teams so early in the season (for example, Chicago has been injury plagued). More investigation is needed here.
 
-Next, let's check the game-level predictions for this period. The chart below shows the game-level accuracy for each team. The vertical lines show the overall match rate as well as the match rate we would get from a random draw (50%):
+Next, let's check the game-level predictions for this period. The chart below shows the game-level accuracy for each team. The vertical lines show the overall match rate (64.7%) as well as the match rate we would get from a random draw (50%):
 
 ``` r
 library(dplyr)
@@ -273,8 +282,9 @@ mutate(game_level, match=as.numeric(selected_team_win==d_pred_selected_team_win)
   group_by(team) %>%
   summarise(team_match_percent=mean(match)) %>%
   ggplot(aes(team, team_match_percent)) + geom_bar(stat="identity") + coord_flip() +
-  xlab("Accuracy") + ylab("") + theme(legend.title = element_blank()) + 
-  geom_hline(yintercept = c(0.5, overall_match_rate), linetype=2) + 
+  xlab("") + ylab("Accuracy") + theme(legend.title = element_blank()) + 
+  geom_hline(yintercept = overall_match_rate, linetype=2, color='black') +
+  geom_hline(yintercept = .5, linetype=2, color='grey') +
   scale_y_continuous(labels = scales::percent)
 ```
 

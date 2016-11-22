@@ -77,14 +77,14 @@ The model is re-estimated every single day and contains the following variables:
 ### More Details on the Archetype Surplus/Deficit Variables
 For a given match-up, the following variables are created (made-up example)
 
-| Archetype     | Team 1 Allocation | Team 2 Allocation  |  Difference | Coefficient | 
-|:--------------|:------------------|:-------------------|:------------|:------------|
-| Archetype 1   | 10%               | 15%                |  -0.05      | -2          |
-| Archetype 2   | 5%                | 5%                 |  0          | -1.5        |
-| .             | .                 | .                  |  .          | .           |
-| Archetype 25  | 10%               | 5%                 |  0.04       | 2.5         |
+| Archetype     | Team 1 Allocation | Team 2 Allocation  |  Difference | Coefficient (importance) | 
+|:--------------|:------------------|:-------------------|:------------|:-------------------------|
+| Archetype 1   | 10%               | 15%                |  -0.05      | -2                       |
+| Archetype 2   | 5%                | 5%                 |  0          | -1.5                     |
+| .             | .                 | .                  |  .          | .                        |
+| Archetype 25  | 10%               | 5%                 |  0.04       | 2.5                      |
 
-These difference-variables are then directly entered into the logistic regression model (labeled as share_minutes_cluster_XX in the coefficient files). The regression model then estimates the importance of each archetype. Hence, for team 1's roster to be considered strong, compared to team 2, it must have a surplus of minutes allocated to archetypes with large and positive coefficients, and vice versa for archetypes with negative coefficients.
+These difference-variables are then directly entered into the logistic regression model (labeled as share_minutes_cluster_XX in the coefficient files). The regression model then estimates the importance of each archetype -- i.e., the *coefficients* shown in the right-most column. Hence, for team 1's roster to be considered strong, compared to team 2, it must have a surplus of minutes allocated to archetypes with large and positive coefficients, and vice versa for archetypes with negative coefficients.
  
  
 ### How Are Players Assigned to Archetypes?

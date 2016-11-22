@@ -83,11 +83,11 @@ X_1 =  % of minutes allocated to cluster 1, X_2 = % of minutes allocated to clus
 #####Team 2:
 Z_1 =  % of minutes allocated to cluster 1, Z_2 = % of minutes allocated to cluster 2, etc.
  
-From these variables we construct the “delta variables” given by
+From these variables we construct the “delta variables” between team 1 and team 2:
  
 D_1 = X_1 – Z_1, D_2 = X_2 – Z_2, etc.
  
-These variables are then directly entered into the logistic regression model (labeled as share_minutes_cluster_XX). The regression model then estimates the importance of each archetype. Hence, for team 1's roster to be considered strong, compared to team 2, it must have a surplus of minutes allocated to archetypes with large and positive coefficients, and vice versa for archetypes with negative coefficients.
+These variables are then directly entered into the logistic regression model (labeled as share_minutes_cluster_XX in the coefficient files). The regression model then estimates the importance of each archetype. Hence, for team 1's roster to be considered strong, compared to team 2, it must have a surplus of minutes allocated to archetypes with large and positive coefficients, and vice versa for archetypes with negative coefficients.
  
  
 ## How Are Players Assigned to Archetypes?

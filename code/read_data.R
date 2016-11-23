@@ -91,7 +91,8 @@ injuries <- data.frame(
   injury_status = statuses,
   injury_date = dates, 
   stringsAsFactors = FALSE
-) %>% distinct(PLAYER_FULL_NAME, .keep_all=TRUE)
+) %>% arrange(PLAYER_FULL_NAME, desc(injury_date)) %>% 
+  distinct(PLAYER_FULL_NAME, .keep_all=TRUE)
 
 ## Current rosters
 
@@ -109,8 +110,6 @@ rosters <- data.frame(
   PLAYER_FULL_NAME = players,
   NBAstuffer.Initials = teams, 
   stringsAsFactors = FALSE)
-#rosters$NBAstuffer.Initials <- as.character(rosters$NBAstuffer.Initials)
-#PLAYER_FULL_NAME <- as.character(rosters$PLAYER_FULL_NAME)
 
 team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
   select(City, NBAstuffer.Initials) %>% distinct(NBAstuffer.Initials, .keep_all=TRUE)
@@ -118,7 +117,8 @@ team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>%
 rosters <- inner_join(rosters, team_map, by="NBAstuffer.Initials") %>%
   rename(OWN_TEAM=City) %>%
   select(OWN_TEAM, PLAYER_FULL_NAME) %>%
-  arrange(OWN_TEAM, PLAYER_FULL_NAME)
+  arrange(OWN_TEAM, PLAYER_FULL_NAME) %>%
+  left_join(injuries, by="PLAYER_FULL_NAME")
 
 
 ## Save scraped data
@@ -127,7 +127,7 @@ write.csv(rosters, "current_rosters.csv", row.names = FALSE)
 write.csv(rosters, paste0("rosters_", Sys.Date(), ".csv"), row.names = FALSE)
 write.csv(fivethirtyeight, paste0("FiveThirtyEight_", Sys.Date(), ".csv"), row.names = FALSE)
 write.csv(injuries, paste0("injuries_", Sys.Date(), ".csv"), row.names = FALSE)
-write.csv(injuries, "injuries_current", row.names = FALSE)
+write.csv(injuries, "injuries_current.csv", row.names = FALSE)
 
 
 ## Register cores
@@ -452,10 +452,11 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
             win=ifelse(future_game==1, NA, win)) %>%
      dplyr::select(-VENUE_R_H, -TOT) %>% arrange(DATE, game_id) %>%
      #inner_join(dateindex, by="DATE") %>%
-     left_join(select(fivethirtyeight, -opposing_team), by="selected_team") %>%
+     left_join(select(fivethirtyeight, elo, carm_elo, selected_team), by="selected_team") %>%
      rename(elo_selected_team=elo, carm_elo_selected_team=carm_elo) %>%
-     left_join(select(fivethirtyeight, -selected_team), by="opposing_team") %>%
+     left_join(select(fivethirtyeight, elo, carm_elo, opposing_team), by="opposing_team") %>%
      rename(elo_opposing_team=elo, carm_elo_opposing_team=carm_elo) %>%
+     left_join(injuries, by="PLAYER_FULL_NAME") %>%
      ungroup()
 
 saveRDS(final, "BOX_SCORES.RDA")

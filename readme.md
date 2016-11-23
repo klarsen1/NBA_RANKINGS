@@ -40,16 +40,18 @@ The model predicts the outcome of future NBA games for the current season. It do
 
 ### Where to Find the Model Predictions
 
-All rankings and scores can be found in [this github repo](https://github.com/klarsen1/NBA_RANKINGS). The easiest way to extract the model details is to directly read the raw files: <https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails>. See R examples below.
+All rankings and scores can be found in [this github repo](https://github.com/klarsen1/NBA_RANKINGS).
+
+The easiest way to read the predictions with, for example, R is to directly read the raw CSV files: <https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings> (see R examples below).
 
 The predictions will be updated weekly with a new time-stamp.
 
 There are two main files of interest:
 
--   game\_level\_predictions\_2016-MM-DD.csv -- Game-level predictions for each future game.
--   rankings\_2016-MM-DD.csv -- team rankings and predicted win rates.
+-   game\_level\_predictions\_YYYY-MM-DD.csv -- Game-level predictions for each future game.
+-   rankings\_YYYY-MM-DD.csv -- team rankings and predicted win rates.
 
-In addition, the [modeldetails directory](https://github.com/klarsen1/NBA_RANKINGS/tree/master/modeldetails) has detailed information on the underlying mechanics of the model. See more details below on how to use this data.
+In addition, the [modeldetails directory](https://github.com/klarsen1/NBA_RANKINGS/tree/master/modeldetails) has information on the underlying details of the model. See more details below on how to use this data.
 
 How the Model Works
 -------------------

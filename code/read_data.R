@@ -13,13 +13,16 @@ library(doParallel)
 library(rvest)
 library(stringr)
 
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/distance_between.R")
+
+
+### Read 538 data
 ft8 <- read_html("http://projects.fivethirtyeight.com/2017-nba-predictions/") %>%
   html_nodes("#standings-table") %>% html_table(fill=TRUE)
 ft8df <- data.frame(rbindlist(ft8))
 
 wins <- as.numeric(str_split_fixed(ft8df[4:nrow(ft8df),"Avg..Simulated.SeasonAvg..Simulation"], "-", 2)[,1])
 losses <- as.numeric(str_split_fixed(ft8df[4:nrow(ft8df),"Avg..Simulated.SeasonAvg..Simulation"], "-", 2)[,2])
-
 
 team <- gsub("[0-9, -]", "", ft8df[4:nrow(ft8df),"V5"])
 elo <- ft8df[4:nrow(ft8df),"V1"]
@@ -57,16 +60,40 @@ team[team=="Nets"] <- "Brooklyn"
 
 fivethirtyeight <- data.frame(team, elo=as.numeric(elo), carm_elo=as.numeric(carm_elo), 
                               wins_538=as.numeric(wins), 
-                              losses_538=as.numeric(losses)) %>%
+                              losses_538=as.numeric(losses), stringsAsFactors = FALSE) %>%
   mutate(selected_team=as.character(team), opposing_team=as.character(team), 
          elo=elo, carm_elo=carm_elo, 
          pred_win_rate_538=wins_538/(wins_538+losses_538)) %>%
   select(-team)
 
 
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/distance_between.R")
 
 setwd("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
+
+### Injury status
+
+source_injuries <- read_html("http://espn.go.com/nba/injuries")
+
+players <- source_injuries %>%
+  html_nodes('table tr.oddrow a, table tr.evenrow a') %>%
+  html_text()
+
+statuses <- source_injuries %>%
+  html_nodes('table tr.oddrow td:nth-child(2), table tr.evenrow  td:nth-child(2)') %>%
+  html_text()
+
+dates <- source_injuries %>%
+  html_nodes('table tr.oddrow td:nth-child(3), table tr.evenrow  td:nth-child(3)') %>%
+  html_text()
+
+injuries <- data.frame(
+  PLAYER_FULL_NAME = players,
+  injury_status = statuses,
+  injury_date = dates, 
+  stringsAsFactors = FALSE
+) %>% distinct(PLAYER_FULL_NAME, .keep_all=TRUE)
+
+## Current rosters
 
 stats_page <- read_html("http://www.nbastuffer.com/2016-2017_NBA_Regular_Season_Player_Stats.html")
 
@@ -80,9 +107,10 @@ teams <- stats_page %>%
 
 rosters <- data.frame(
   PLAYER_FULL_NAME = players,
-  NBAstuffer.Initials = teams)
-rosters$NBAstuffer.Initials <- as.character(rosters$NBAstuffer.Initials)
-PLAYER_FULL_NAME <- as.character(rosters$PLAYER_FULL_NAME)
+  NBAstuffer.Initials = teams, 
+  stringsAsFactors = FALSE)
+#rosters$NBAstuffer.Initials <- as.character(rosters$NBAstuffer.Initials)
+#PLAYER_FULL_NAME <- as.character(rosters$PLAYER_FULL_NAME)
 
 team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
   select(City, NBAstuffer.Initials) %>% distinct(NBAstuffer.Initials, .keep_all=TRUE)
@@ -92,11 +120,17 @@ rosters <- inner_join(rosters, team_map, by="NBAstuffer.Initials") %>%
   select(OWN_TEAM, PLAYER_FULL_NAME) %>%
   arrange(OWN_TEAM, PLAYER_FULL_NAME)
 
-write.csv(rosters, "./current_rosters.csv", row.names = FALSE)
-write.csv(rosters, paste0("./rosters_", Sys.Date(), ".csv"), row.names = FALSE)
+
+## Save scraped data
+
+write.csv(rosters, "current_rosters.csv", row.names = FALSE)
+write.csv(rosters, paste0("rosters_", Sys.Date(), ".csv"), row.names = FALSE)
 write.csv(fivethirtyeight, paste0("FiveThirtyEight_", Sys.Date(), ".csv"), row.names = FALSE)
+write.csv(injuries, paste0("injuries_", Sys.Date(), ".csv"), row.names = FALSE)
+write.csv(injuries, "injuries_current", row.names = FALSE)
 
 
+## Register cores
 ncore <- detectCores()-1
 registerDoParallel(ncore)
 

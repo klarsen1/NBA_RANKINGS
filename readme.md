@@ -40,7 +40,7 @@ The model predicts the outcome of future NBA games for the current season. It do
 
 ### Where to Find the Model Predictions
 
-All rankings and scores can be found in [this github repo](https://github.com/klarsen1/NBA_RANKINGS). The easiest way to extract the data is to directly read the [raw files](https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails).
+All rankings and scores can be found in [this github repo](https://github.com/klarsen1/NBA_RANKINGS). The easiest way to extract the model details is to directly read the raw files: <https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails>.
 
 The predictions will be updated weekly with a new time-stamp.
 

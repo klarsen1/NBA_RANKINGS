@@ -21,7 +21,13 @@ manipulate_and_save_output <- function(clusters_and_players, scores, model_parts
                     actual_winner=ifelse(is.na(selected_team_win), "NA", ifelse(selected_team_win==1, selected_team, opposing_team)),
                     home_team_prob_win=ifelse(is.na(d_pred_selected_team_win), NA, ifelse(selected_team==home_team_name, prob_selected_team_win_d, 1-prob_selected_team_win_d)), 
                     road_team_prob_win=ifelse(is.na(d_pred_selected_team_win), NA, 1-home_team_prob_win)) %>%
-    select(DATE, home_team_name, road_team_name, road_team_prob_win, home_team_prob_win, predicted_winner, actual_winner, current_season_data_used)
+       mutate(predicted_winner=ifelse(future_game==0, "NA", predicted_winner), 
+              d_road_team_predicted_win=ifelse(future_game==0, NA, d_road_team_predicted_win), 
+              d_home_team_predicted_win=ifelse(future_game==0, NA, d_home_team_predicted_win), 
+              home_team_prob_win=ifelse(future_game==0, NA, home_team_prob_win),
+              road_team_prob_win=ifelse(future_game==0, NA, road_team_prob_win)) %>%
+    select(DATE, home_team_name, road_team_name, road_team_prob_win, home_team_prob_win, predicted_winner, actual_winner, current_season_data_used, future_game)
+       
     if (save==1){
       write.csv(ranks, paste0(root, "/rankings/rankings_",Date, ".csv"), row.names = FALSE)
       write.csv(details, paste0(root,"/rankings/game_level_predictions_",Date, ".csv"), row.names = FALSE)

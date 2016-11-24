@@ -24,6 +24,9 @@ source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/save_results.R")
 ## Read the box scores
 box_scores <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA") 
 
+box_scores <- mutate(box_scores, future_game = ifelse(DATE>=as.Date('2016-11-20'), 1, 0))
+
+
 ## Get the conferences
 conferences <- read.csv("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/Conferences.csv", stringsAsFactors = FALSE)
 

@@ -102,10 +102,11 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   X <- model.matrix(f, x)
   prob_win <- 1/(1+exp(-X%*%b[-1] + offset))
   d <- data.frame(cbind(X*c[-1], distinct(select(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team), game_id, .keep_all=TRUE)), stringsAsFactors = FALSE) %>%
-    select(-X.Intercept.) %>%
-    mutate(roster=rowSums(.[1:26]), 
-           circumstances=rowSums(.[27:30]),
-           performance=rowSums(.[31:36]))
+    select(-X.Intercept.) 
+
+  d$roster <- rowSums(select(d, starts_with("share_minutes_cluster")))
+  d$circumstaces <- rowSums(select(d, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, home_team_selected))
+  d$performance <- rowSums(select(d, selected_team_matchup_wins, opposing_team_matchup_wins, winrate_season_selected_team, winrate_season_selected_team_adj, winrate_season_opposing_team, winrate_season_opposing_team_adj))
   
   samplesdf$prob_win <- prob_win
   samplesdf$d_prob_selected_team_win <- ifelse(samplesdf$prob_win>.5, 1.0, 0.0)

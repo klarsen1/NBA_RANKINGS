@@ -333,7 +333,7 @@ print(paste0("AUROC = ", AUC(game_level$selected_team_win, game_level$prob_selec
 
     ## [1] "AUROC = 0.744458919137388"
 
-Note that the model is most accurate for the "tail teams" such as Golden State and Philadelphia, which is to be expected. There are a some teams where the model completely missed the mark -- such as Boston or Portland, but overall is the model is doing fairly well considering length of the forecast window.
+Note that the model is most accurate for the "tail teams" such as Golden State and Philadelphia, which is to be expected. There are a some teams where the model completely missed the mark -- such as Chicago and Washington -- but overall is the model is doing fairly well considering length of the forecast window.
 
 Future Development
 ------------------

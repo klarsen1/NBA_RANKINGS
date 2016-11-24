@@ -214,7 +214,7 @@ ggplot(ranks, aes(x=rank_pred, y=rank_actual)) +
 
 The predicted team rankings were also in line with the actual team rankings, except for some significant misses like the Chicago Bulls, Denver and Portland. There might be good reasons why the model misjudged these teams given the fact that these predictions were made only 11 games into the season. More investigation needed here.
 
-Next, let's check the *game-level* match-rates for the predictions. The chart below shows the game-level accuracy for each team. The vertical lines show the overall match rate (64.7%) as well as the match rate we would get from a random draw (50%):
+Next, let's check the *game-level* match-rates for the predictions. The chart below shows the game-level accuracy for each team. The vertical lines show the overall match rate (65.8%) as well as the match rate we would get from a random draw (50%):
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(dplyr)

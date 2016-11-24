@@ -131,6 +131,8 @@ scores <- list()
 model_details <- list()
 model_parts <- list()
 max_real_date <- max(subset(box_scores_plus, future_game==0)$DATE_INDEX)
+posterior <- 0.5
+prior <- 0.5
 for (i in start_index:end_index){
   
   ### Make sure we only use real data
@@ -191,8 +193,6 @@ for (i in start_index:end_index){
 
   }
   
-  posterior <- 0.5
-  prior <- 0.5
   if (i==max_real_date){
     ytd_scores <- data.frame(rbindlist(scores)) %>% 
       filter(current_season_data_used==1 & is.na(prob_selected_team_win_d)==FALSE & is.na(selected_team_win)==FALSE)
@@ -217,7 +217,7 @@ for (i in start_index:end_index){
 }
 
 ### Manipulate the output
-results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 1, 0)
+results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 1, 0, NA)
 
 write.csv(select(filter(results[[1]], future_game==1), -current_season_data_used), "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/game_level_validation_2015.csv", row.names = FALSE)
 write.csv(results[[2]], "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rankings/ranking_validation_2015.csv", row.names = FALSE)

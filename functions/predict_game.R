@@ -105,7 +105,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     select(-X.Intercept.) 
 
   d$roster <- rowSums(select(d, starts_with("share_minutes_cluster")))
-  d$circumstaces <- rowSums(select(d, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, home_team_selected))
+  d$circumstances <- rowSums(select(d, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, home_team_selected))
   d$performance <- rowSums(select(d, selected_team_matchup_wins, opposing_team_matchup_wins, winrate_season_selected_team, winrate_season_selected_team_adj, winrate_season_opposing_team, winrate_season_opposing_team_adj))
   
   samplesdf$prob_win <- prob_win

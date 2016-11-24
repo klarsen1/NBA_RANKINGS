@@ -24,7 +24,7 @@ source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/save_results.R")
 ## Read the box scores
 box_scores <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA") 
 
-box_scores <- mutate(box_scores, future_game = ifelse(DATE>=as.Date('2016-11-20'), 1, 0))
+#box_scores <- mutate(box_scores, future_game = ifelse(DATE>=as.Date('2016-11-20'), 1, 0))
 
 
 ## Get the conferences
@@ -128,6 +128,8 @@ scores <- list()
 model_details <- list()
 model_parts <- list()
 max_real_date <- max(subset(box_scores_plus, future_game==0)$DATE_INDEX)
+posterior <- 0.5 ## average probability of winning a game if all is perfect
+prior <- 0.5 ## expected average probability of winning a game
 for (i in start_index:end_index){
   
   ### Make sure we only use real data
@@ -188,18 +190,14 @@ for (i in start_index:end_index){
 
   }
   
-  posterior <- 0.5
-  prior <- 0.5
   if (i==max_real_date){
     ytd_scores <- data.frame(rbindlist(scores)) %>% 
       filter(current_season_data_used==1 & is.na(prob_selected_team_win_d)==FALSE & is.na(selected_team_win)==FALSE)
     posterior=mean(ytd_scores$prob_selected_team_win_d)
     prior=mean(ytd_scores$selected_team_win)
-    print(posterior)
-    print(prior)
     rm(ytd_scores)
   }
-  
+
   ### Predict game outcomes
   thisday <- filter(box_scores, DATE_INDEX==i) 
   games <- unique(thisday$game_id)
@@ -213,5 +211,6 @@ for (i in start_index:end_index){
 }
 
 ### Manipulate and save the output
-results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1)
+#results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1, as.Date("2016-11-20"))
 #results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 0)
+results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1, NA)

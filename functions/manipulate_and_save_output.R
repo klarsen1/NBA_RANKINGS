@@ -1,4 +1,9 @@
-manipulate_and_save_output <- function(clusters_and_players, scores, model_parts, model_details, root, back_test, save){
+manipulate_and_save_output <- function(clusters_and_players, scores, model_parts, model_details, root, back_test, save, overwrite_date=NA){
+  
+  Date <- Sys.Date()
+  if (is.na(overwrite_date)==FALSE){
+    Date <- overwrite_date
+  } 
   if (back_test==0){
      game_level <- data.frame(rbindlist(scores), stringsAsFactors = FALSE) %>% 
        select(-prob_selected_team_win_b) %>%
@@ -18,11 +23,11 @@ manipulate_and_save_output <- function(clusters_and_players, scores, model_parts
                     road_team_prob_win=ifelse(is.na(d_pred_selected_team_win), NA, 1-home_team_prob_win)) %>%
     select(DATE, home_team_name, road_team_name, road_team_prob_win, home_team_prob_win, predicted_winner, actual_winner, current_season_data_used)
     if (save==1){
-      write.csv(ranks, paste0(root, "/rankings/rankings_",Sys.Date(), ".csv"), row.names = FALSE)
-      write.csv(details, paste0(root,"/rankings/game_level_predictions_",Sys.Date(), ".csv"), row.names = FALSE)
-      write.csv(clusters_and_players, paste0(root, "/modeldetails/cluster_details_",Sys.Date(), ".csv"), row.names = FALSE)
-      write.csv(models, paste0(root, "/modeldetails/coefficients_", Sys.Date(), ".csv"), row.names = FALSE)
-      write.csv(parts, paste0(root, "/modeldetails/score_decomp_", Sys.Date(), ".csv"), row.names = FALSE)
+      write.csv(ranks, paste0(root, "/rankings/rankings_",Date, ".csv"), row.names = FALSE)
+      write.csv(details, paste0(root,"/rankings/game_level_predictions_",Date, ".csv"), row.names = FALSE)
+      write.csv(clusters_and_players, paste0(root, "/modeldetails/cluster_details_",Date, ".csv"), row.names = FALSE)
+      write.csv(models, paste0(root, "/modeldetails/coefficients_", Date, ".csv"), row.names = FALSE)
+      write.csv(parts, paste0(root, "/modeldetails/score_decomp_", Date, ".csv"), row.names = FALSE)
     }
     return(list(game_level, ranks, models, details))
   } else{

@@ -24,7 +24,8 @@ source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/save_results.R")
 ## Read the box scores
 box_scores <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA") 
 
-#box_scores <- mutate(box_scores, future_game = ifelse(DATE>=as.Date('2016-11-20'), 1, 0))
+box_scores <- mutate(box_scores, future_game = ifelse(DATE>=as.Date('2016-11-20'), 1, 0), 
+                                 selected_team_win=ifelse(DATE>=as.Date('2016-11-20'), NA, selected_team_win))
 
 
 ## Get the conferences
@@ -211,6 +212,6 @@ for (i in start_index:end_index){
 }
 
 ### Manipulate and save the output
-#results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1, as.Date("2016-11-20"))
+results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1, as.Date("2016-11-20"))
 #results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 0)
-results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1, NA)
+#results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1, NA)

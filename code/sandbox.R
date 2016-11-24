@@ -27,3 +27,9 @@ mean(t$match)
 mean(t$d_pred_selected_team_win)
 
 
+#box_scores <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores_2016-11-22.RDA") 
+
+#box_scores <- mutate(box_scores, future_game = ifelse(DATE>=as.Date('2016-11-20'), 1, 0), 
+#                                 selected_team_win=ifelse(DATE>=as.Date('2016-11-20'), NA, selected_team_win))
+
+

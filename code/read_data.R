@@ -461,15 +461,3 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
 
 saveRDS(final, paste0("BOX_SCORES_", Sys.Date(), ".RDA"))
 saveRDS(final, "BOX_SCORES.RDA")
-
-fff <- select(final, -elo_selected_team, -carm_elo_selected_team, -elo_opposing_team, -carm_elo_opposing_team)
-fivethirtyeight <- read.csv("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/FiveThirtyEight_2016-11-22.csv", stringsAsFactors = FALSE)
-
-ffff <- left_join(fff, select(fivethirtyeight, elo, carm_elo, selected_team), by="selected_team") %>%
-  rename(elo_selected_team=elo, carm_elo_selected_team=carm_elo) %>%
-  left_join(select(fivethirtyeight, elo, carm_elo, opposing_team), by="opposing_team") %>%
-  rename(elo_opposing_team=elo, carm_elo_opposing_team=carm_elo)
-  
-saveRDS(ffff, paste0("BOX_SCORES_", "2016-11-22", ".RDA"))
-
-rm(list = ls())

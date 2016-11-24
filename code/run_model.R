@@ -88,8 +88,12 @@ loop_result <- foreach(i=s:e) %dopar% {
   thisseason <- thisdate[1,"season"]
 
   ## Get the win percentages
-  win_perc1 <- winpercentages(filter(inwindow, DATE_INDEX>i-winstreak_window), thisseason, 0)
-  win_perc2 <- winpercentages(filter(inwindow, DATE_INDEX>i-winstreak_window_s), thisseason, 0)
+  w <- weighted_win_rates 
+  if (thisseason != current_season){
+    w <-0 
+  }
+  win_perc1 <- winpercentages(filter(inwindow, DATE_INDEX>i-winstreak_window), thisseason, w)
+  win_perc2 <- winpercentages(filter(inwindow, DATE_INDEX>i-winstreak_window_s), thisseason, w)
   
   ## Assign clusters
   clusters <- assign_clusters(centroids, inwindow, cutoff, thisseason)

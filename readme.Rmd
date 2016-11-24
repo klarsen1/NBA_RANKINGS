@@ -183,7 +183,7 @@ The model was used to predict all games from 2015-11-20 to the end the 2015-2016
  
 The game level accuracy for the entire period was 64.7% -- i.e., the model predicted the correct winner for 64.7% of games.
  
-The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.725.
+The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.744.
  
 The code below compares the actual rankings to the predicted rankings (note that this table only covers the games played after 2015-11-19):
  

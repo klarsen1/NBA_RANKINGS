@@ -188,30 +188,30 @@ kable(all_rankings)
 | LA Clippers   | West       | Pacific   |                 3|                2|
 | Atlanta       | East       | Southeast |                 4|               12|
 | Chicago       | East       | Central   |                 5|                6|
-| Houston       | West       | Southwest |                 6|                6|
-| San Antonio   | West       | Southwest |                 7|                4|
-| Portland      | West       | Northwest |                 8|               13|
-| Oklahoma City | West       | Northwest |                 9|                9|
-| Toronto       | East       | Atlantic  |                10|                5|
+| Toronto       | East       | Atlantic  |                 6|                5|
+| Portland      | West       | Northwest |                 7|               13|
+| San Antonio   | West       | Southwest |                 8|                4|
+| Houston       | West       | Southwest |                 9|                6|
+| Oklahoma City | West       | Northwest |                10|                9|
+| Boston        | East       | Atlantic  |                11|               11|
 | Charlotte     | East       | Southeast |                11|                9|
-| Boston        | East       | Atlantic  |                12|               11|
 | Utah          | West       | Northwest |                13|                6|
-| LA Lakers     | West       | Pacific   |                14|               19|
-| Memphis       | West       | Southwest |                15|               13|
-| Milwaukee     | East       | Central   |                16|               23|
-| Denver        | West       | Northwest |                17|               17|
-| Indiana       | East       | Central   |                18|               21|
+| Memphis       | West       | Southwest |                14|               13|
+| LA Lakers     | West       | Pacific   |                15|               19|
+| Denver        | West       | Northwest |                16|               17|
+| Orlando       | East       | Southeast |                16|               20|
+| Minnesota     | West       | Northwest |                18|               16|
 | Detroit       | East       | Central   |                19|               15|
-| Orlando       | East       | Southeast |                20|               20|
-| New York      | East       | Atlantic  |                21|               18|
-| Minnesota     | West       | Northwest |                22|               16|
+| Indiana       | East       | Central   |                19|               21|
+| Milwaukee     | East       | Central   |                19|               23|
+| New York      | East       | Atlantic  |                22|               18|
 | Sacramento    | West       | Pacific   |                23|               25|
 | Brooklyn      | East       | Atlantic  |                24|               29|
-| Washington    | East       | Southeast |                24|               21|
-| Phoenix       | West       | Pacific   |                26|               28|
+| Phoenix       | West       | Pacific   |                25|               28|
+| Washington    | East       | Southeast |                25|               21|
+| Dallas        | West       | Southwest |                27|               26|
+| Miami         | East       | Southeast |                27|               23|
 | New Orleans   | West       | Southwest |                27|               27|
-| Miami         | East       | Southeast |                28|               23|
-| Dallas        | West       | Southwest |                29|               26|
 | Philadelphia  | East       | Atlantic  |                30|               30|
 
 The table shows that the elastic rankings generally agree with FiveThirtyEight -- at least when it comes to the "tail teams." For example, all rankings agree that Golden State, Cleveland and the Clippers will have strong seasons, while Philadelphia and New Orleans will struggle to win games.
@@ -263,7 +263,7 @@ The model was used to predict all games from 2015-11-20 to the end the 2015-2016
 
 The game level accuracy for the entire period was 64.7% -- i.e., the model predicted the correct winner for 64.7% of games.
 
-The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.725.
+The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.744.
 
 The code below compares the actual rankings to the predicted rankings (note that this table only covers the games played after 2015-11-19):
 
@@ -296,7 +296,7 @@ ggplot(ranks, aes(x=rank_pred, y=rank_actual)) +
 
 The predicted team rankings were also in line with the actual team rankings, except for some significant misses like the Chicago Bulls, Denver and Portland. There might be good reasons why the model misjudged these teams given the fact that these predictions were made only 11 games into the season. More investigation needed here.
 
-Next, let's check the *game-level* match-rates for the predictions. The chart below shows the game-level accuracy for each team. The vertical lines show the overall match rate (64.7%) as well as the match rate we would get from a random draw (50%):
+Next, let's check the *game-level* match-rates for the predictions. The chart below shows the game-level accuracy for each team. The vertical lines show the overall match rate (65.8%) as well as the match rate we would get from a random draw (50%):
 
 ``` r
 library(dplyr)
@@ -331,7 +331,7 @@ mutate(game_level, match=as.numeric(selected_team_win==d_pred_selected_team_win)
 print(paste0("AUROC = ", AUC(game_level$selected_team_win, game_level$prob_selected_team_win_d)[1]))
 ```
 
-    ## [1] "AUROC = 0.725354145468453"
+    ## [1] "AUROC = 0.744458919137388"
 
 Note that the model is most accurate for the "tail teams" such as Golden State and Philadelphia, which is to be expected. There are a some teams where the model completely missed the mark -- such as Boston or Portland, but overall is the model is doing fairly well considering length of the forecast window.
 

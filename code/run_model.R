@@ -22,10 +22,12 @@ source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/save_results.R")
 
 
 ## Read the box scores
-box_scores <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA") 
+#box_scores <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA") 
 
-#box_scores <- mutate(box_scores, future_game = ifelse(DATE>=as.Date('2016-11-20'), 1, 0), 
-#                                 selected_team_win=ifelse(DATE>=as.Date('2016-11-20'), NA, selected_team_win))
+box_scores <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores_2016-11-22.RDA") 
+
+box_scores <- mutate(box_scores, future_game = ifelse(DATE>=as.Date('2016-11-20'), 1, 0), 
+                                 selected_team_win=ifelse(DATE>=as.Date('2016-11-20'), NA, selected_team_win))
 
 
 ## Get the conferences

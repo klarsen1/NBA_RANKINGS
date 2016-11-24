@@ -186,15 +186,15 @@ kable(all_rankings)
 | Cleveland     | East       | Central   |                 1|                2|
 | Golden State  | West       | Pacific   |                 2|                1|
 | LA Clippers   | West       | Pacific   |                 3|                2|
-| Atlanta       | East       | Southeast |                 4|               12|
-| Chicago       | East       | Central   |                 5|                6|
-| Toronto       | East       | Atlantic  |                 6|                5|
+| Chicago       | East       | Central   |                 4|                6|
+| Atlanta       | East       | Southeast |                 5|               12|
+| Toronto       | East       | Atlantic  |                 5|                5|
 | Portland      | West       | Northwest |                 7|               13|
 | San Antonio   | West       | Southwest |                 8|                4|
 | Houston       | West       | Southwest |                 9|                6|
+| Boston        | East       | Atlantic  |                10|               11|
 | Oklahoma City | West       | Northwest |                10|                9|
-| Boston        | East       | Atlantic  |                11|               11|
-| Charlotte     | East       | Southeast |                11|                9|
+| Charlotte     | East       | Southeast |                12|                9|
 | Utah          | West       | Northwest |                13|                6|
 | Memphis       | West       | Southwest |                14|               13|
 | LA Lakers     | West       | Pacific   |                15|               19|

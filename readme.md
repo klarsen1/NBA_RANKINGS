@@ -261,9 +261,9 @@ Backtesting
 
 The model was used to predict all games from 2015-11-20 to the end the 2015-2016 season, using only information available as of 2015-11-19 (including model coefficients). This is roughly a five month forecast window (the season ends in April); most teams played around 70 games during this period. I picked this date because the latest model-run for this post was 2016-11-20.
 
-The game level accuracy for the entire period was 64.7% -- i.e., the model predicted the correct winner for 64.7% of games.
+The game level accuracy (using 50% as the probability cutoff) for the entire period was 64.7% -- i.e., the model predicted the correct winner for 64.7% of games.
 
-The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) was 0.744.
+The [area under the ROC curve](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) -- when comparing the estimated probabilities to the win/loss indicators -- was 0.744.
 
 The code below compares the actual rankings to the predicted rankings (note that this table only covers the games played after 2015-11-19):
 

@@ -118,6 +118,8 @@ Note that the rankings file stored github repo has three key columns:
 library(tidyr)
 library(dplyr)
 library(knitr)
+library(ggrepel) ## downloaded from github
+
  
 f1 <-
   "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rawdata/FiveThirtyEight_2016-11-20.csv"
@@ -129,11 +131,23 @@ ft8_rankings <- read.csv(f1) %>% rename(team=selected_team)
 all_rankings <- read.csv(f2) %>%
   inner_join(ft8_rankings, by="team") %>%
   mutate(elastic_ranking=min_rank(-season_win_rate),
-         FiveThirtyEight=min_rank(-pred_win_rate_538)) %>%
-  select(team, conference, division, elastic_ranking, FiveThirtyEight) %>%
+         FiveThirtyEight=min_rank(-pred_win_rate_538),
+         absdiff=ifelse(abs(elastic_ranking-FiveThirtyEight)>5, 1, 0)) %>%
+  select(team, conference, division, elastic_ranking, FiveThirtyEight, absdiff) %>%
   arrange(elastic_ranking)
  
 kable(all_rankings)
+
+ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
+  xlab("Elastic Ranking") + ylab("FiveThirtyEight") +
+  geom_point(size = 2, color = 'black') +
+  geom_smooth(method='lm') + 
+  geom_label_repel(aes(elastic_ranking, FiveThirtyEight, label = team, fill=factor(absdiff)),
+                  fontface = 'bold', color = 'white', size=2,
+                  box.padding = unit(0.35, "lines"),
+                  point.padding = unit(0.5, "lines")) + 
+  theme(legend.title = element_blank()) + theme(legend.position="none")
+
 ```
  
 The table shows that the elastic rankings generally agree with FiveThirtyEight -- at least when it comes to the "tail teams." For example, all rankings agree that Golden State, Cleveland and the Clippers will have strong seasons, while Philadelphia and New Orleans will struggle to win games.
@@ -151,7 +165,7 @@ library(tidyr)
 library(dplyr)
 library(knitr)
 library(ggplot2)
- 
+
 f <-
   "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2016-11-20.csv"
  
@@ -203,7 +217,7 @@ ranks <- read.csv(f) %>% select(team, rank_actual, rank_pred) %>%
 
 ggplot(ranks, aes(x=rank_pred, y=rank_actual)) +
   xlab("Predicted Rank") + ylab("Actual Rank") +
-  geom_point(aes(rank_pred, rank_actual), size = 2, color = 'black') +
+  geom_point(size = 2, color = 'black') +
   geom_smooth(method='lm') + 
   geom_label_repel(aes(rank_pred, rank_actual, fill = factor(misslvl), label = team),
                   fontface = 'bold', color = 'white', size=2,

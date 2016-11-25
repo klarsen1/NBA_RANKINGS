@@ -55,7 +55,7 @@ cluster_window <- 91 # number of days used for cluster assignment
 alpha <- 0 # for elastic net
 sims <- 0 # number of random normal draws used when playing games
 save_results <- 1 # set to 1 if you want to save the results
-weighted_win_rates <- 1
+weighted_win_rates <- 0
 use_current_rosters <- 0
 current_season <- max(box_scores$season)
 

@@ -20,7 +20,6 @@ source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/manipulate_and_sa
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/save_results.R")
 
 
-
 ## Read the box scores
 box_scores <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA") 
 

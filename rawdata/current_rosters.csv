@@ -10,7 +10,7 @@
 "Atlanta","Paul Millsap",NA,NA
 "Atlanta","Ryan Kelly",NA,NA
 "Atlanta","Taurean Prince",NA,NA
-"Atlanta","Thabo Sefolosha","Day-To-Day","Nov 21"
+"Atlanta","Thabo Sefolosha",NA,NA
 "Atlanta","Tim Hardaway Jr.",NA,NA
 "Boston","Al Horford",NA,NA
 "Boston","Amir Johnson",NA,NA
@@ -33,21 +33,21 @@
 "Brooklyn","Chris McCullough",NA,NA
 "Brooklyn","Greivis Vasquez",NA,NA
 "Brooklyn","Isaiah Whitehead",NA,NA
-"Brooklyn","Jeremy Lin","Out","Nov 23"
+"Brooklyn","Jeremy Lin","Out","Nov 25"
 "Brooklyn","Joe Harris",NA,NA
 "Brooklyn","Justin Hamilton",NA,NA
 "Brooklyn","Luis Scola",NA,NA
 "Brooklyn","Randy Foye",NA,NA
-"Brooklyn","Rondae Hollis-Jefferson","Day-To-Day","Nov 23"
+"Brooklyn","Rondae Hollis-Jefferson","Day-To-Day","Nov 25"
 "Brooklyn","Sean Kilpatrick",NA,NA
 "Brooklyn","Trevor Booker",NA,NA
 "Brooklyn","Yogi Ferrell",NA,NA
-"Charlotte","Cody Zeller","Out","Nov 24"
+"Charlotte","Cody Zeller","Out","Nov 25"
 "Charlotte","Frank Kaminsky",NA,NA
 "Charlotte","Jeremy Lamb","Out","Nov 23"
 "Charlotte","Kemba Walker",NA,NA
 "Charlotte","Marco Belinelli",NA,NA
-"Charlotte","Marvin Williams",NA,NA
+"Charlotte","Marvin Williams","Day-To-Day","Nov 25"
 "Charlotte","Michael Kidd-Gilchrist",NA,NA
 "Charlotte","Nicolas Batum",NA,NA
 "Charlotte","Ramon Sessions",NA,NA
@@ -57,18 +57,18 @@
 "Chicago","Bobby Portis",NA,NA
 "Chicago","Cristiano Felicio",NA,NA
 "Chicago","Denzel Valentine",NA,NA
-"Chicago","Doug McDermott","Out","Nov 22"
-"Chicago","Dwyane Wade","Day-To-Day","Nov 20"
+"Chicago","Doug McDermott","Out","Nov 25"
+"Chicago","Dwyane Wade",NA,NA
 "Chicago","Isaiah Canaan",NA,NA
 "Chicago","Jerian Grant",NA,NA
 "Chicago","Jimmy Butler",NA,NA
-"Chicago","Michael Carter-Williams",NA,NA
+"Chicago","Michael Carter-Williams","Out","Nov 25"
 "Chicago","Nikola Mirotic",NA,NA
-"Chicago","Paul Zipser","Day-To-Day","Nov 22"
-"Chicago","Rajon Rondo","Day-To-Day","Nov 20"
+"Chicago","Paul Zipser","Out","Nov 25"
+"Chicago","Rajon Rondo",NA,NA
 "Chicago","Robin Lopez",NA,NA
 "Chicago","Taj Gibson",NA,NA
-"Cleveland","Channing Frye",NA,NA
+"Cleveland","Channing Frye","Day-To-Day","Nov 25"
 "Cleveland","Chris Andersen",NA,NA
 "Cleveland","DeAndre Liggins",NA,NA
 "Cleveland","Iman Shumpert",NA,NA
@@ -82,7 +82,7 @@
 "Cleveland","Richard Jefferson",NA,NA
 "Cleveland","Tristan Thompson",NA,NA
 "Dallas","Andrew Bogut","Day-To-Day","Nov 23"
-"Dallas","Deron Williams","Day-To-Day","Nov 23"
+"Dallas","Deron Williams","Day-To-Day","Nov 25"
 "Dallas","Dirk Nowitzki","Out","Nov 24"
 "Dallas","Dorian Finney-Smith",NA,NA
 "Dallas","Dwight Powell",NA,NA
@@ -96,7 +96,7 @@
 "Dallas","Seth Curry",NA,NA
 "Dallas","Wesley Matthews",NA,NA
 "Denver","Alonzo Gee",NA,NA
-"Denver","Danilo Gallinari","Day-To-Day","Nov 24"
+"Denver","Danilo Gallinari","Day-To-Day","Nov 25"
 "Denver","Darrell Arthur","Out","Nov 23"
 "Denver","Emmanuel Mudiay",NA,NA
 "Denver","Gary Harris","Out","Nov 23"
@@ -107,7 +107,7 @@
 "Denver","Kenneth Faried",NA,NA
 "Denver","Malik Beasley",NA,NA
 "Denver","Nikola Jokic",NA,NA
-"Denver","Will Barton","Out","Nov 20"
+"Denver","Will Barton","Day-To-Day","Nov 25"
 "Denver","Wilson Chandler",NA,NA
 "Detroit","Andre Drummond",NA,NA
 "Detroit","Aron Baynes",NA,NA
@@ -118,14 +118,14 @@
 "Detroit","Jon Leuer",NA,NA
 "Detroit","Kentavious Caldwell-Pope",NA,NA
 "Detroit","Marcus Morris",NA,NA
-"Detroit","Reggie Bullock","Day-To-Day","Nov 23"
-"Detroit","Stanley Johnson",NA,NA
+"Detroit","Reggie Bullock","Out","Nov 25"
+"Detroit","Stanley Johnson","Out","Nov 25"
 "Detroit","Tobias Harris",NA,NA
 "Golden State","Anderson Varejao",NA,NA
 "Golden State","Andre Iguodala",NA,NA
 "Golden State","David West",NA,NA
-"Golden State","Draymond Green","Day-To-Day","Nov 24"
-"Golden State","Ian Clark",NA,NA
+"Golden State","Draymond Green","Day-To-Day","Nov 26"
+"Golden State","Ian Clark","Day-To-Day","Nov 26"
 "Golden State","James Michael McAdoo",NA,NA
 "Golden State","JaVale McGee",NA,NA
 "Golden State","Kevin Durant",NA,NA
@@ -152,13 +152,13 @@
 "Indiana","CJ Miles",NA,NA
 "Indiana","Georges Niang",NA,NA
 "Indiana","Glenn Robinson",NA,NA
-"Indiana","Jeff Teague","Day-To-Day","Nov 21"
+"Indiana","Jeff Teague",NA,NA
 "Indiana","Joe Young","Day-To-Day","Nov 23"
-"Indiana","Kevin Seraphin","Day-To-Day","Nov 24"
+"Indiana","Kevin Seraphin","Out","Nov 25"
 "Indiana","Lavoy Allen",NA,NA
 "Indiana","Monta Ellis",NA,NA
 "Indiana","Myles Turner","Day-To-Day","Nov 23"
-"Indiana","Paul George","Out","Nov 24"
+"Indiana","Paul George","Out","Nov 25"
 "Indiana","Rakeem Christmas",NA,NA
 "Indiana","Rodney Stuckey",NA,NA
 "Indiana","Thaddeus Young",NA,NA
@@ -174,23 +174,23 @@
 "LA Clippers","Marreese Speights",NA,NA
 "LA Clippers","Paul Pierce",NA,NA
 "LA Clippers","Raymond Felton",NA,NA
-"LA Clippers","Wesley Johnson","Out","Nov 21"
+"LA Clippers","Wesley Johnson",NA,NA
 "LA Lakers","Brandon Ingram",NA,NA
 "LA Lakers","D'Angelo Russell","Out","Nov 23"
 "LA Lakers","Ivica Zubac",NA,NA
 "LA Lakers","Jordan Clarkson",NA,NA
 "LA Lakers","Jose Calderon",NA,NA
-"LA Lakers","Julius Randle","Day-To-Day","Nov 23"
+"LA Lakers","Julius Randle","Day-To-Day","Nov 25"
 "LA Lakers","Larry Nance Jr.",NA,NA
 "LA Lakers","Lou Williams",NA,NA
 "LA Lakers","Luol Deng",NA,NA
 "LA Lakers","Marcelo Huertas",NA,NA
-"LA Lakers","Metta World Peace",NA,NA
-"LA Lakers","Nick Young",NA,NA
+"LA Lakers","Nick Young","Day-To-Day","Nov 25"
 "LA Lakers","Tarik Black",NA,NA
+"LA Lakers","Thomas Robinson",NA,NA
 "LA Lakers","Timofey Mozgov",NA,NA
 "Memphis","Andrew Harrison",NA,NA
-"Memphis","Chandler Parsons","Out","Nov 20"
+"Memphis","Chandler Parsons",NA,NA
 "Memphis","Deyonta Davis",NA,NA
 "Memphis","James Ennis","Out","Nov 22"
 "Memphis","JaMychal Green",NA,NA
@@ -202,10 +202,10 @@
 "Memphis","Troy Williams",NA,NA
 "Memphis","Vince Carter",NA,NA
 "Memphis","Wade Baldwin",NA,NA
-"Memphis","Zach Randolph",NA,NA
+"Memphis","Zach Randolph","Day-To-Day","Nov 25"
 "Miami","Derrick Williams",NA,NA
-"Miami","Dion Waiters","Day-To-Day","Nov 24"
-"Miami","Goran Dragic","Day-To-Day","Nov 24"
+"Miami","Dion Waiters","Day-To-Day","Nov 25"
+"Miami","Goran Dragic","Day-To-Day","Nov 25"
 "Miami","Hassan Whiteside",NA,NA
 "Miami","James Johnson",NA,NA
 "Miami","Josh McRoberts",NA,NA
@@ -215,7 +215,7 @@
 "Miami","Rodney McGruder",NA,NA
 "Miami","Tyler Johnson",NA,NA
 "Miami","Udonis Haslem",NA,NA
-"Miami","Willie Reed","Day-To-Day","Nov 22"
+"Miami","Willie Reed","Out","Nov 26"
 "Milwaukee","Giannis Antetokounmpo",NA,NA
 "Milwaukee","Greg Monroe",NA,NA
 "Milwaukee","Jabari Parker",NA,NA
@@ -230,7 +230,7 @@
 "Milwaukee","Tony Snell",NA,NA
 "Minnesota","Adreian Payne",NA,NA
 "Minnesota","Andrew Wiggins",NA,NA
-"Minnesota","Brandon Rush","Out","Nov 21"
+"Minnesota","Brandon Rush",NA,NA
 "Minnesota","Cole Aldrich",NA,NA
 "Minnesota","Gorgui Dieng",NA,NA
 "Minnesota","Jordan Hill",NA,NA
@@ -246,7 +246,7 @@
 "New Orleans","Archie Goodwin",NA,NA
 "New Orleans","Buddy Hield",NA,NA
 "New Orleans","Cheick Diallo",NA,NA
-"New Orleans","Dante Cunningham","Day-To-Day","Nov 23"
+"New Orleans","Dante Cunningham","Out","Nov 24"
 "New Orleans","E'Twaun Moore",NA,NA
 "New Orleans","Jrue Holiday",NA,NA
 "New Orleans","Lance Stephenson",NA,NA
@@ -274,12 +274,12 @@
 "Oklahoma City","Anthony Morrow",NA,NA
 "Oklahoma City","Domantas Sabonis",NA,NA
 "Oklahoma City","Enes Kanter",NA,NA
-"Oklahoma City","Ersan Ilyasova","Day-To-Day","Nov 21"
+"Oklahoma City","Ersan Ilyasova",NA,NA
 "Oklahoma City","Jerami Grant",NA,NA
 "Oklahoma City","Joffrey Lauvergne",NA,NA
 "Oklahoma City","Kyle Singler",NA,NA
 "Oklahoma City","Russell Westbrook",NA,NA
-"Oklahoma City","Semaj Christon","Day-To-Day","Nov 21"
+"Oklahoma City","Semaj Christon",NA,NA
 "Oklahoma City","Steven Adams",NA,NA
 "Oklahoma City","Victor Oladipo",NA,NA
 "Orlando","Aaron Gordon",NA,NA
@@ -297,12 +297,12 @@
 "Orlando","Serge Ibaka",NA,NA
 "Orlando","Stephen Zimmerman",NA,NA
 "Philadelphia","Dario Saric",NA,NA
-"Philadelphia","Ersan Ilyasova","Day-To-Day","Nov 21"
-"Philadelphia","Gerald Henderson","Day-To-Day","Nov 23"
+"Philadelphia","Ersan Ilyasova",NA,NA
+"Philadelphia","Gerald Henderson","Day-To-Day","Nov 25"
 "Philadelphia","Hollis Thompson",NA,NA
 "Philadelphia","Jahlil Okafor",NA,NA
 "Philadelphia","Jerami Grant",NA,NA
-"Philadelphia","Joel Embiid","Day-To-Day","Nov 24"
+"Philadelphia","Joel Embiid","Day-To-Day","Nov 25"
 "Philadelphia","Nik Stauskas",NA,NA
 "Philadelphia","Richaun Holmes","Day-To-Day","Nov 23"
 "Philadelphia","Robert Covington",NA,NA
@@ -312,7 +312,7 @@
 "Phoenix","Alan Williams",NA,NA
 "Phoenix","Alex Len",NA,NA
 "Phoenix","Brandon Knight",NA,NA
-"Phoenix","Devin Booker","Day-To-Day","Nov 21"
+"Phoenix","Devin Booker",NA,NA
 "Phoenix","Dragan Bender",NA,NA
 "Phoenix","Eric Bledsoe",NA,NA
 "Phoenix","Jared Dudley",NA,NA
@@ -321,7 +321,7 @@
 "Phoenix","PJ Tucker",NA,NA
 "Phoenix","TJ Warren","Out","Nov 23"
 "Phoenix","Tyler Ulis",NA,NA
-"Phoenix","Tyson Chandler","Day-To-Day","Nov 22"
+"Phoenix","Tyson Chandler","Out","Nov 25"
 "Portland","Al-Farouq Aminu",NA,NA
 "Portland","Allen Crabbe",NA,NA
 "Portland","CJ McCollum",NA,NA
@@ -354,19 +354,19 @@
 "San Antonio","Danny Green",NA,NA
 "San Antonio","David Lee",NA,NA
 "San Antonio","Davis Bertans",NA,NA
-"San Antonio","Dewayne Dedmon","Out","Nov 22"
+"San Antonio","Dewayne Dedmon","Out","Nov 25"
 "San Antonio","Jonathon Simmons",NA,NA
 "San Antonio","Kawhi Leonard",NA,NA
 "San Antonio","Kyle Anderson",NA,NA
-"San Antonio","LaMarcus Aldridge","Day-To-Day","Nov 21"
+"San Antonio","LaMarcus Aldridge",NA,NA
 "San Antonio","Manu Ginobili",NA,NA
-"San Antonio","Nicolas Laprovittola","Day-To-Day","Nov 21"
+"San Antonio","Nicolas Laprovittola",NA,NA
 "San Antonio","Patty Mills",NA,NA
 "San Antonio","Pau Gasol",NA,NA
-"San Antonio","Tony Parker","Day-To-Day","Nov 21"
+"San Antonio","Tony Parker",NA,NA
 "Toronto","Cory Joseph",NA,NA
 "Toronto","DeMar DeRozan",NA,NA
-"Toronto","DeMarre Carroll","Day-To-Day","Nov 21"
+"Toronto","DeMarre Carroll",NA,NA
 "Toronto","Jakob Poeltl",NA,NA
 "Toronto","Jonas Valanciunas",NA,NA
 "Toronto","Kyle Lowry",NA,NA

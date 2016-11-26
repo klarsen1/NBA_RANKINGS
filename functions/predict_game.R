@@ -1,4 +1,4 @@
-predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored, nclus, prior, posterior, dir, model_variables, use_current_rosters){
+predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored, nclus, prior, posterior, dir, model_variables, use_current_rosters, offsets_by_team){
 
   thisgame <- tobescored[1,]
   date <- thisgame$DATE
@@ -100,7 +100,9 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   x <- samplesdf[,names(samplesdf) %in% unique(model_variables$Variable)]
   f <- as.formula(~.)
   X <- model.matrix(f, x)
-  prob_win <- 1/(1+exp(-X%*%b[-1] + offset))
+  #prob_win <- 1/(1+exp(-X%*%b[-1] + offset))
+  XtB <- X%*%b[-1]
+  samplesdf$xb <- as.numeric(XtB)
   d <- data.frame(cbind(X*c[-1], distinct(select(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team), game_id, .keep_all=TRUE)), stringsAsFactors = FALSE) %>%
     select(-X.Intercept.) 
 
@@ -108,7 +110,23 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   d$circumstances <- rowSums(select(d, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, home_team_selected))
   d$performance <- rowSums(select(d, selected_team_matchup_wins, opposing_team_matchup_wins, winrate_season_selected_team, winrate_season_selected_team_adj, winrate_season_opposing_team, winrate_season_opposing_team_adj))
   
-  samplesdf$prob_win <- prob_win
+  if (is.null(offsets_by_team)==FALSE){
+    if (nrow(offsets_by_team)>0){
+      print("here1")
+      samplesdf <- left_join(samplesdf, offsets_by_team, by="selected_team") %>%
+        replace(is.na(.), 0)
+      print(summary(samplesdf))
+      samplesdf$prob_win=1/(1+exp(-samplesdf$xb + samplesdf$teamoffset))
+    } else{
+      samplesdf$offset <- offset
+      samplesdf$prob_win=1/(1+exp(-samplesdf$xb + samplesdf$offset))
+    }
+  } else{
+    samplesdf$offset <- offset
+    samplesdf$prob_win=1/(1+exp(-samplesdf$xb + samplesdf$offset))
+  }
+  
+  #samplesdf$prob_win <- prob_win
   samplesdf$d_prob_selected_team_win <- ifelse(samplesdf$prob_win>.5, 1.0, 0.0)
   
   prediction <- group_by(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team) %>%

@@ -58,6 +58,7 @@ save_results <- 1 # set to 1 if you want to save the results
 weighted_win_rates <- 1
 use_current_rosters <- 1
 current_season <- max(box_scores$season)
+adjust_intercept_by_team <- 0
 
 ### When to start and end the forecasts
 start_date <- min(subset(box_scores, season==2016)$DATE)
@@ -163,7 +164,7 @@ for (i in start_index:end_index){
      set.seed(2015)
      model <- cv.glmnet(y=Y, x=X, family="binomial", alpha=alpha, parallel=FALSE, nfolds=10)
      c <- as.matrix(coef(model, s=model$lambda.1se))
-     p <- prob_win <- 1/(1+exp(-X%*%c[-1]))
+     p <- 1/(1+exp(-X%*%c[-1]))
 
      ## Save model details
      details <- cbind.data.frame(sapply(row.names(c), as.character), sapply(c, as.numeric), stringsAsFactors = FALSE)
@@ -191,11 +192,21 @@ for (i in start_index:end_index){
 
   }
   
+  offsets_by_team <- NULL
   if (i==max_real_date){
     ytd_scores <- data.frame(rbindlist(scores)) %>% 
       filter(current_season_data_used==1 & is.na(prob_selected_team_win_d)==FALSE & is.na(selected_team_win)==FALSE)
     posterior=mean(ytd_scores$prob_selected_team_win_d)
     prior=mean(ytd_scores$selected_team_win)
+    
+    if (adjust_intercept_by_team==1){
+      offsets_by_team_ <- group_by(ytd_scores, selected_team) %>%
+      summarise(posterior=mean(prob_selected_team_win_d),
+                prior=mean(selected_team_win)) %>%
+      mutate(teamoffset=log((1-prior)*posterior / (prior*(1-posterior)))) %>%
+      select(teamoffset, selected_team) %>%
+      ungroup()
+    }
     rm(ytd_scores)
   }
 
@@ -204,7 +215,7 @@ for (i in start_index:end_index){
   games <- unique(thisday$game_id)
 
   for (d in 1:length(games)){
-    pred <- predict_game(c, filter(inwindow, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, prior, posterior, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, cr)
+    pred <- predict_game(c, filter(inwindow, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, prior, posterior, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, cr, offsets_by_team)
     scores[[counter]] <- pred[[1]]
     model_parts[[counter]] <- pred[[2]] 
     counter <- counter + 1

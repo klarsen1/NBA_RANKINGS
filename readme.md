@@ -30,7 +30,7 @@ At a high level, the model depends on three overall factors:
 -   How the team looks on paper. This is measured by the roster composition of "player archetypes."
 -   Circumstances -- e.g., traveling, rest days, home-court advantage.
 
-The team rankings produced by this model mainly agree with other prediction models (such as FiveThirtyEight) -- at least when it comes to identifying the strong teams and the weak teams (the "tail teams"). There are some interesting differences, such as different rankings of the Atlanta Hawks, which I will analyze later in this post.
+The team rankings produced by this model mainly agree with other prediction models (such as FiveThirtyEight) -- at least when it comes to identifying the strong teams and the weak teams (the "tail teams"). There are some interesting differences, such as different rankings of the Portland Trailblazers, which I will analyze later in this post.
 
 Back testing for the 2015-2016 season showed promising results (see more details below), although I have not done any historical benchmark testing against other models. Time will be the judge.
 
@@ -233,7 +233,7 @@ ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
 
 The table shows that the elastic rankings generally agree with FiveThirtyEight -- at least when it comes to the "tail teams." For example, all rankings agree that Golden State, Cleveland and the Clippers will have strong seasons, while Philadelphia and New Orleans will struggle to win games.
 
-But what about Atlanta? The elastic model ranks Atlanta ninth in terms of overall win percentage, while FiveThirtyEight ranks Atlanta at number 12 (as of 2016-11-27). To understand why the elastic model is doing this, we can decompose the predictions into three parts:
+But what about Portland? The elastic model ranks Portland seventh in terms of season win percentage, while FiveThirtyEight ranks Portland at number 13 (as of 2016-11-27). To understand why the elastic model is doing this, we can decompose the predictions into three parts:
 
 -   Roster -- archetype allocation deficits/surpluses. These are the variables labeled "share\_minutes\_cluster\_XX" described above. This group of variables reflects the quality of the roster.
 -   Performance -- e.g., win percentages, previous match-ups.
@@ -267,7 +267,7 @@ read.csv(f, stringsAsFactors = FALSE) %>%
 
 The bars show the contribution from each part of the model. As expected, circumstances do not affect the overall prediction for the entire season as most teams have similarly taxing schedules. However, contributions from performance (weighted winning percentages) and roster (surplus of important archetypes) vary considerably.
 
-First, let's take a look at Atlanta: the model thinks that Atlanta’s roster is just above average (relative to its opponents). However, Atlanta has been winning a high percentage of their games lately -- they even beat Cleveland -- and thus we get a significant positive contribution from this (recall that the wins are weighted by the opponents [CARM-ELO](http://projects.fivethirtyeight.com/2017-nba-predictions/) rating). This essentially means that if Atlanta stops winning, the elastic model is going to downgrade Atlanta since the favorable view is mainly based on the performance and not its roster.
+First, let's take a look at Portland: the model likes Portland because it thinks its roster is strong relative to its opponents' -- although the performance has not been stellar (recall that the wins are weighted by the opponents [CARM-ELO](http://projects.fivethirtyeight.com/2017-nba-predictions/) rating).
 
 Next, let's look at Cleveland and Golden State. The model ranks these two teams at the top, both in terms of rosters and performance. In fact, my playoff simulations have these two teams meeting again in the finals and going to seven games (more on that in a later post).
 
@@ -369,4 +369,4 @@ Currently, the model ranks teams by predicting win rates. This means that, holdi
 
 ### Uncertainty
 
-As stated above, the model uses a deterministic approach to decide the winner. If the win-probability estimated by the logistic regression model exceeds 50% for a given team, that team is chosen as the winner. As a result, the model can be somewhat extreme in its predictions. For example, the model believes that Golden State will win almost every future game -- when in reality they'l' likely lose some unexpected games. Having a better sense of uncertainty would could create more realistic win rate predictions for tail teams.
+As stated above, the model uses a deterministic approach to decide the winner. If the win-probability estimated by the logistic regression model exceeds 50% for a given team, that team is chosen as the winner. As a result, the model can be somewhat extreme in its predictions. For example, the model believes that Golden State will win almost every future game -- when in reality they'll' likely lose some unexpected games. Having a better sense of uncertainty would could create more realistic win rate predictions for tail teams.

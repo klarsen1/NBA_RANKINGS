@@ -2,5 +2,5 @@
 ----------
 
 -   Ran model for Sunday, 2016-11-27
--   New feature: removing injured players and capturing dates players are expected to return from injury.
+-   New feature: removing injured players and capturing dates players are expected to return from injury. If the return date is not available -- e.g., due to game-day decision -- I hold the player out for one day.
 -   Fixed bug that caused forecasts (not back-casts) to miss the data from the last actual game day.

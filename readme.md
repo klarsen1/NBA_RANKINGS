@@ -177,45 +177,45 @@ all_rankings <- read.csv(f2) %>%
   inner_join(ft8_rankings, by="team") %>%
   mutate(elastic_ranking=min_rank(-season_win_rate),
          FiveThirtyEight=min_rank(-pred_win_rate_538),
-         absdiff=ifelse(abs(elastic_ranking-FiveThirtyEight)>5, 0, 1)) %>%
+         absdiff=ifelse(abs(elastic_ranking-FiveThirtyEight)>4, 0, 1)) %>%
   select(team, conference, division, elastic_ranking, FiveThirtyEight, absdiff) %>%
   arrange(elastic_ranking)
  
-kable(all_rankings)
+kable(select(all_rankings, elastic_ranking, FiveThirtyEight))
 ```
 
-| team          | conference | division  |  elastic\_ranking|  FiveThirtyEight|  absdiff|
-|:--------------|:-----------|:----------|-----------------:|----------------:|--------:|
-| Cleveland     | East       | Central   |                 1|                2|        1|
-| Golden State  | West       | Pacific   |                 2|                1|        1|
-| LA Clippers   | West       | Pacific   |                 3|                4|        1|
-| San Antonio   | West       | Southwest |                 4|                2|        1|
-| Chicago       | East       | Central   |                 5|                6|        1|
-| Houston       | West       | Southwest |                 5|                7|        1|
-| Toronto       | East       | Atlantic  |                 7|                5|        1|
-| Portland      | West       | Northwest |                 8|               14|        0|
-| Atlanta       | East       | Southeast |                 9|               12|        1|
-| Memphis       | West       | Southwest |                10|               12|        1|
-| Boston        | East       | Atlantic  |                11|                9|        1|
-| Minnesota     | West       | Northwest |                12|               18|        0|
-| Oklahoma City | West       | Northwest |                13|               10|        1|
-| Charlotte     | East       | Southeast |                14|               11|        1|
-| Indiana       | East       | Central   |                15|               19|        1|
-| Utah          | West       | Northwest |                15|                7|        0|
-| Detroit       | East       | Central   |                17|               15|        1|
-| Denver        | West       | Northwest |                18|               16|        1|
-| Milwaukee     | East       | Central   |                18|               23|        1|
-| LA Lakers     | West       | Pacific   |                20|               19|        1|
-| New York      | East       | Atlantic  |                20|               17|        1|
-| Sacramento    | West       | Pacific   |                22|               23|        1|
-| New Orleans   | West       | Southwest |                23|               22|        1|
-| Washington    | East       | Southeast |                24|               19|        1|
-| Phoenix       | West       | Pacific   |                25|               28|        1|
-| Miami         | East       | Southeast |                26|               23|        1|
-| Philadelphia  | East       | Atlantic  |                27|               29|        1|
-| Orlando       | East       | Southeast |                28|               26|        1|
-| Brooklyn      | East       | Atlantic  |                29|               29|        1|
-| Dallas        | West       | Southwest |                30|               27|        1|
+|  elastic\_ranking|  FiveThirtyEight|
+|-----------------:|----------------:|
+|                 1|                2|
+|                 2|                1|
+|                 3|                4|
+|                 4|                2|
+|                 5|                6|
+|                 5|                7|
+|                 7|                5|
+|                 8|               14|
+|                 9|               12|
+|                10|               12|
+|                11|                9|
+|                12|               18|
+|                13|               10|
+|                14|               11|
+|                15|               19|
+|                15|                7|
+|                17|               15|
+|                18|               16|
+|                18|               23|
+|                20|               19|
+|                20|               17|
+|                22|               23|
+|                23|               22|
+|                24|               19|
+|                25|               28|
+|                26|               23|
+|                27|               29|
+|                28|               26|
+|                29|               29|
+|                30|               27|
 
 ``` r
 ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +

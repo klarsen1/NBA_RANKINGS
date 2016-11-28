@@ -132,11 +132,11 @@ all_rankings <- read.csv(f2) %>%
   inner_join(ft8_rankings, by="team") %>%
   mutate(elastic_ranking=min_rank(-season_win_rate),
          FiveThirtyEight=min_rank(-pred_win_rate_538),
-         absdiff=ifelse(abs(elastic_ranking-FiveThirtyEight)>5, 0, 1)) %>%
+         absdiff=ifelse(abs(elastic_ranking-FiveThirtyEight)>4, 0, 1)) %>%
   select(team, conference, division, elastic_ranking, FiveThirtyEight, absdiff) %>%
   arrange(elastic_ranking)
  
-kable(all_rankings)
+kable(select(all_rankings, elastic_ranking, FiveThirtyEight))
 
 ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
   xlab("Elastic Ranking") + ylab("FiveThirtyEight") +

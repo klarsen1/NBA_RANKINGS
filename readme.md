@@ -166,56 +166,51 @@ library(knitr)
 library(ggrepel) ## downloaded from github
 
  
-f1 <-
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rawdata/FiveThirtyEight_2016-11-27.csv"
-f2 <-
+f <-
   "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-27.csv"
  
-ft8_rankings <- read.csv(f1) %>% rename(team=selected_team)
- 
-all_rankings <- read.csv(f2) %>%
-  inner_join(ft8_rankings, by="team") %>%
+all_rankings <- read.csv(f) %>%
   mutate(elastic_ranking=min_rank(-season_win_rate),
          FiveThirtyEight=min_rank(-pred_win_rate_538),
          absdiff=ifelse(abs(elastic_ranking-FiveThirtyEight)>4, 0, 1)) %>%
   select(team, conference, division, elastic_ranking, FiveThirtyEight, absdiff) %>%
   arrange(elastic_ranking)
  
-kable(select(all_rankings, team, elastic_ranking, FiveThirtyEight))
+kable(select(all_rankings, conference, division, team, elastic_ranking, FiveThirtyEight))
 ```
 
-| team          |  elastic\_ranking|  FiveThirtyEight|
-|:--------------|-----------------:|----------------:|
-| Cleveland     |                 1|                2|
-| Golden State  |                 2|                1|
-| LA Clippers   |                 3|                4|
-| San Antonio   |                 4|                2|
-| Chicago       |                 5|                6|
-| Houston       |                 5|                7|
-| Toronto       |                 7|                5|
-| Portland      |                 8|               14|
-| Atlanta       |                 9|               12|
-| Memphis       |                10|               12|
-| Boston        |                11|                9|
-| Minnesota     |                12|               18|
-| Oklahoma City |                13|               10|
-| Charlotte     |                14|               11|
-| Indiana       |                15|               19|
-| Utah          |                15|                7|
-| Detroit       |                17|               15|
-| Denver        |                18|               16|
-| Milwaukee     |                18|               23|
-| LA Lakers     |                20|               19|
-| New York      |                20|               17|
-| Sacramento    |                22|               23|
-| New Orleans   |                23|               22|
-| Washington    |                24|               19|
-| Phoenix       |                25|               28|
-| Miami         |                26|               23|
-| Philadelphia  |                27|               29|
-| Orlando       |                28|               26|
-| Brooklyn      |                29|               29|
-| Dallas        |                30|               27|
+| conference | division  | team          |  elastic\_ranking|  FiveThirtyEight|
+|:-----------|:----------|:--------------|-----------------:|----------------:|
+| East       | Central   | Cleveland     |                 1|                2|
+| West       | Pacific   | Golden State  |                 2|                1|
+| West       | Pacific   | LA Clippers   |                 3|                4|
+| West       | Southwest | San Antonio   |                 4|                2|
+| East       | Central   | Chicago       |                 5|                6|
+| West       | Southwest | Houston       |                 5|                6|
+| East       | Atlantic  | Toronto       |                 7|                5|
+| West       | Northwest | Portland      |                 8|               15|
+| East       | Southeast | Atlanta       |                 9|               13|
+| West       | Southwest | Memphis       |                10|               12|
+| East       | Atlantic  | Boston        |                11|                9|
+| West       | Northwest | Minnesota     |                12|               18|
+| West       | Northwest | Oklahoma City |                13|               10|
+| East       | Southeast | Charlotte     |                14|               11|
+| East       | Central   | Indiana       |                15|               18|
+| West       | Northwest | Utah          |                15|                8|
+| East       | Central   | Detroit       |                17|               13|
+| West       | Northwest | Denver        |                18|               15|
+| East       | Central   | Milwaukee     |                18|               23|
+| West       | Pacific   | LA Lakers     |                20|               20|
+| East       | Atlantic  | New York      |                20|               17|
+| West       | Pacific   | Sacramento    |                22|               21|
+| West       | Southwest | New Orleans   |                23|               24|
+| East       | Southeast | Washington    |                24|               21|
+| West       | Pacific   | Phoenix       |                25|               28|
+| East       | Southeast | Miami         |                26|               24|
+| East       | Atlantic  | Philadelphia  |                27|               29|
+| East       | Southeast | Orlando       |                28|               26|
+| East       | Atlantic  | Brooklyn      |                29|               30|
+| West       | Southwest | Dallas        |                30|               26|
 
 ``` r
 ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +

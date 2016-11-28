@@ -16,6 +16,35 @@ library(stringr)
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/distance_between.R")
 
 
+cbs_injuries <- read_html("http://www.cbssports.com/nba/injuries/daily")
+
+PLAYER_FULL_NAME <- cbs_injuries %>% html_nodes("tr.row1 td:nth-child(3), tr.row2 td:nth-child(3)") %>% html_text()
+
+return_notes <- cbs_injuries %>% html_nodes("tr.row1 td:nth-child(6), tr.row2 td:nth-child(6)") %>% html_text()
+
+daily_injuries <- data.frame(PLAYER_FULL_NAME, 
+                             return_notes, 
+                             stringsAsFactors = FALSE) %>%
+                             mutate(clean_note=gsub("Expected to be out until at least ", "", return_notes))
+
+convert_to_date <- function(data){
+  if (data$clean_note=="Game Time Decision"){
+    data$return_date <- Sys.Date() + 1
+  } else if (data$clean_note=="Out for the season"){
+    data$return_date <- as.Date("2017-10-25")
+  } else{
+    data$return_date <- as.Date(data$clean_note, format="%b %d")
+  }
+  if (data$return_date<Sys.Date()){
+    data$return_date <- data$return_date + 365
+  }
+  return(data)
+}
+
+daily_injuries <- data.frame(rbindlist(lapply(split(daily_injuries, daily_injuries$PLAYER_FULL_NAME), convert_to_date)), stringsAsFactors = FALSE) %>%
+  select(PLAYER_FULL_NAME, return_date) %>% distinct(PLAYER_FULL_NAME, .keep_all=TRUE)
+
+
 ### Read 538 data
 ft8 <- read_html("http://projects.fivethirtyeight.com/2017-nba-predictions/") %>%
   html_nodes("#standings-table") %>% html_table(fill=TRUE)
@@ -92,7 +121,11 @@ injuries <- data.frame(
   injury_date = dates, 
   stringsAsFactors = FALSE
 ) %>% arrange(PLAYER_FULL_NAME, desc(injury_date)) %>% 
-  distinct(PLAYER_FULL_NAME, .keep_all=TRUE)
+  distinct(PLAYER_FULL_NAME, .keep_all=TRUE) %>%
+  left_join(daily_injuries, by="PLAYER_FULL_NAME") %>%
+  mutate(injury_scrape_date=Sys.Date())
+
+injuries[is.na(injuries$return_date),"return_date"] <- Sys.Date()+1
 
 ## Current rosters
 
@@ -131,7 +164,7 @@ write.csv(injuries, "injuries_current.csv", row.names = FALSE)
 
 
 ## Register cores
-ncore <- detectCores()-1
+ncore <- detectCores()-2
 registerDoParallel(ncore)
 
 
@@ -383,12 +416,14 @@ games_last_week <- function(id){
     summarise(back2back=sum(back2back))
 
   if (nrow(team1)>0 & nrow(team2)){
-    df <- data.frame(cbind(id, team1$back2back, team2$back2back))
+    df <- data.frame(cbind(id, team1$back2back, team2$back2back), stringsAsFactors = FALSE)
   } else{
-    df <- data.frame(cbind(id, 0, 0))
+    df <- data.frame(cbind(id, 0, 0), stringsAsFactors = FALSE)
   }
   names(df) <- c("game_id", "selected_team_games_prior_7d", "opposing_team_games_prior_7d")
   df$game_id <- as.character(df$game_id)
+  df$selected_team_games_prior_7d <- as.numeric(df$selected_team_games_prior_7d)
+  df$opposing_team_games_prior_7d <- as.numeric(df$opposing_team_games_prior_7d)
   return(df)
 }
 
@@ -443,15 +478,12 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
             share_of_playoff_minutes=ifelse(total_playoff_minutes>0, playoff_minutes/total_playoff_minutes, 0),
             share_of_playoff_points=ifelse(total_playoff_points>0, playoff_points/total_playoff_points, 0),
             share_of_points=points/total_points,
-            #home_points=home_team*points, 
-            #road_points=road_team*points,
             share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes),
             home_team_selected = as.numeric(home_team_name==selected_team),
             selected_team_points=ifelse(home_team_selected==1, home_team_points, road_team_points),
             opposing_team_points=ifelse(home_team_selected==0, home_team_points, road_team_points),
             win=ifelse(future_game==1, NA, win)) %>%
      dplyr::select(-VENUE_R_H, -TOT) %>% arrange(DATE, game_id) %>%
-     #inner_join(dateindex, by="DATE") %>%
      left_join(select(fivethirtyeight, elo, carm_elo, selected_team), by="selected_team") %>%
      rename(elo_selected_team=elo, carm_elo_selected_team=carm_elo) %>%
      left_join(select(fivethirtyeight, elo, carm_elo, opposing_team), by="opposing_team") %>%

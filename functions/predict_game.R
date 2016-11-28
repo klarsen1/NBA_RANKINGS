@@ -112,7 +112,6 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   
   if (is.null(offsets_by_team)==FALSE){
     if (nrow(offsets_by_team)>0){
-      print("here1")
       samplesdf <- left_join(samplesdf, offsets_by_team, by="selected_team") %>%
         replace(is.na(.), 0)
       print(summary(samplesdf))

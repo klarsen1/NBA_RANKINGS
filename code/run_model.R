@@ -78,9 +78,10 @@ end_index <- subset(datemap, DATE==end_date)$DATE_INDEX
 centroids <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/centroids/centroids.RDA")
 s <- min(subset(datemap, season==ignore_season_prior_to)$DATE_INDEX)
 e <-max(subset(datemap, future_game==0)$DATE_INDEX) 
-ncore <- detectCores()-1
+ncore <- detectCores()-2
 registerDoParallel(ncore)
 loop_result <- foreach(i=s:e) %dopar% {
+  #for (i in s:e){
   ### Get the data inside the window  
   thisseason <- datemap[i, "season"]
   inwindow <- filter(box_scores, DATE_INDEX<i & DATE_INDEX>i-cluster_window)
@@ -101,7 +102,7 @@ loop_result <- foreach(i=s:e) %dopar% {
   ### Join
   t <- inner_join(thisdate, select(clusters, PLAYER_FULL_NAME, Cluster), by="PLAYER_FULL_NAME")
   f <- attach_win_perc(t, win_perc1, win_perc2)
-  
+
   rm(win_perc1)
   rm(win_perc2)
   
@@ -131,13 +132,14 @@ model_parts <- list()
 max_real_date <- max(subset(box_scores_plus, future_game==0)$DATE_INDEX)
 posterior <- 0.5 ## average probability of winning a game if all is perfect
 prior <- 0.5 ## expected average probability of winning a game
+cr <- 0 ## current rosters
 for (i in start_index:end_index){
+  
+  ### ELO weight indicator
+  w <- weighted_win_rates ## ELO weights
   
   ### Make sure we only use real data
   j <- min(max_real_date, i)
-  
-  ## Are current rosters used to pick teams
-  cr <- use_current_rosters
   
   ### Check the dates
   print(subset(datemap, DATE_INDEX==i)$DATE)
@@ -147,7 +149,7 @@ for (i in start_index:end_index){
   inwindow <- filter(box_scores_plus, DATE_INDEX<j & DATE_INDEX>j-estimation_window) 
   
   ### Estimate the model unless we have run out of historical data
-  if (counter==1 | i <= j){
+  if (counter==1 | i <= max_real_date){
   
      ### Get game_id level data
      game_data <- distinct(inwindow, game_id, .keep_all=TRUE)
@@ -176,23 +178,20 @@ for (i in start_index:end_index){
      
      ## Get the latest win percentages
      thisseason <- filter(inwindow, DATE==max(DATE))[1,"season"]
-     w <- weighted_win_rates 
      if (thisseason != current_season){
        w <-0 
-       cr <- 0
      }
-     if (w==1){
-       print("Using weights")
-     } else{
-       print("Not using weights")
-     }
-     win_perc1 <- winpercentages(filter(inwindow, DATE_INDEX>j-winstreak_window), thisseason, w)
-     win_perc2 <- winpercentages(filter(inwindow, DATE_INDEX>j-winstreak_window_s), thisseason, w)
-
+     inwindow <- filter(inwindow, DATE_INDEX>j-max(winstreak_window, playing_time_window))
+     win_perc1 <- winpercentages(inwindow, thisseason, w)
+     win_perc2 <- winpercentages(inwindow, thisseason, w)
   }
   
+  ### Special case for the last observed day
   offsets_by_team <- NULL
   if (i==max_real_date){
+    if (thisseason==current_season){
+       cr <- use_current_rosters
+    }
     ytd_scores <- data.frame(rbindlist(scores)) %>% 
       filter(current_season_data_used==1 & is.na(prob_selected_team_win_d)==FALSE & is.na(selected_team_win)==FALSE)
     posterior=mean(ytd_scores$prob_selected_team_win_d)
@@ -207,18 +206,44 @@ for (i in start_index:end_index){
       ungroup()
     }
     rm(ytd_scores)
+    
+    ### Get the latest data for forecasting
+    inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date & DATE_INDEX>max_real_date-playing_time_window+1)
+    win_perc1 <- winpercentages(inwindow, thisseason, w)
+    win_perc2 <- winpercentages(inwindow, thisseason, w)
+    
   }
 
   ### Predict game outcomes
   thisday <- filter(box_scores, DATE_INDEX==i) 
   games <- unique(thisday$game_id)
-
+  thisdate <- max(thisday$DATE)
+  
+  inwindow_active <- mutate(inwindow,
+    today=as.Date(thisdate),                        
+    injured=ifelse(is.na(injury_status), 0, ifelse(today>=injury_scrape_date & today<return_date, 1, 0))
+  )
+  injured_players <- unique(subset(inwindow_active, injured==1)$PLAYER_FULL_NAME)
+  if (length(injured_players)>0){
+    print(paste0("Injuries: ", injured_players))
+    inwindow_active <- filter(inwindow_active, injured==0)
+  }
+  
+  if (w==1){
+    print("Using CARM-ELO weights")
+  }      
+  if (cr==1){
+    print("Using current scraped rosters")
+  }
+  
   for (d in 1:length(games)){
-    pred <- predict_game(c, filter(inwindow, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, prior, posterior, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, cr, offsets_by_team)
+    pred <- predict_game(c, filter(inwindow_active, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, prior, posterior, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, cr, offsets_by_team)
     scores[[counter]] <- pred[[1]]
     model_parts[[counter]] <- pred[[2]] 
     counter <- counter + 1
   }
+  rm(inwindow_active)
+  rm(inwindow)
 }
 
 ### Manipulate and save the output

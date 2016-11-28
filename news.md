@@ -1,0 +1,6 @@
+2016-11-27
+----------
+
+-   Ran model for Sunday, 2016-11-27
+-   New feature: removing injured players and capturing dates players are expected to return from injury.
+-   Fixed bug that caused forecasts (not back-casts) to miss the data from the last actual game day.

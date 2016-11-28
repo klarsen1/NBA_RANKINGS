@@ -122,9 +122,9 @@ library(ggrepel) ## downloaded from github
 
  
 f1 <-
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rawdata/FiveThirtyEight_2016-11-24.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rawdata/FiveThirtyEight_2016-11-27.csv"
 f2 <-
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-24.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-27.csv"
  
 ft8_rankings <- read.csv(f1) %>% rename(team=selected_team)
  
@@ -152,7 +152,7 @@ ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
  
 The table shows that the elastic rankings generally agree with FiveThirtyEight -- at least when it comes to the "tail teams." For example, all rankings agree that Golden State, Cleveland and the Clippers will have strong seasons, while Philadelphia and New Orleans will struggle to win games.
  
-But what about Atlanta? The elastic model ranks Atlanta fifth in terms of overall win percentage, while FiveThirtyEight ranks Atlanta at number 12 (as of 2016-11-24). To understand why the elastic model is doing this, we can decompose the predictions into three parts:
+But what about Atlanta? The elastic model ranks Atlanta ninth in terms of overall win percentage, while FiveThirtyEight ranks Atlanta at number 12 (as of 2016-11-27). To understand why the elastic model is doing this, we can decompose the predictions into three parts:
  
 * Roster -- archetype allocation deficits/surpluses. These are the variables labeled "share_minutes_cluster_XX" described above. This group of variables reflects the quality of the roster.
 * Performance -- e.g., win percentages, previous match-ups.
@@ -167,7 +167,7 @@ library(knitr)
 library(ggplot2)
 
 f <-
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2016-11-24.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2016-11-27.csv"
  
 center <- function(x){return(x-median(x))}
 read.csv(f, stringsAsFactors = FALSE) %>%

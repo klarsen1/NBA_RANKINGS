@@ -167,9 +167,9 @@ library(ggrepel) ## downloaded from github
 
  
 f1 <-
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rawdata/FiveThirtyEight_2016-11-20.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rawdata/FiveThirtyEight_2016-11-27.csv"
 f2 <-
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-20.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-27.csv"
  
 ft8_rankings <- read.csv(f1) %>% rename(team=selected_team)
  
@@ -177,7 +177,7 @@ all_rankings <- read.csv(f2) %>%
   inner_join(ft8_rankings, by="team") %>%
   mutate(elastic_ranking=min_rank(-season_win_rate),
          FiveThirtyEight=min_rank(-pred_win_rate_538),
-         absdiff=ifelse(abs(elastic_ranking-FiveThirtyEight)>5, 1, 0)) %>%
+         absdiff=ifelse(abs(elastic_ranking-FiveThirtyEight)>5, 0, 1)) %>%
   select(team, conference, division, elastic_ranking, FiveThirtyEight, absdiff) %>%
   arrange(elastic_ranking)
  
@@ -186,36 +186,36 @@ kable(all_rankings)
 
 | team          | conference | division  |  elastic\_ranking|  FiveThirtyEight|  absdiff|
 |:--------------|:-----------|:----------|-----------------:|----------------:|--------:|
-| Cleveland     | East       | Central   |                 1|                2|        0|
-| Golden State  | West       | Pacific   |                 2|                1|        0|
-| LA Clippers   | West       | Pacific   |                 3|                2|        0|
-| Atlanta       | East       | Southeast |                 4|               12|        1|
-| Chicago       | East       | Central   |                 4|                6|        0|
-| Toronto       | East       | Atlantic  |                 6|                5|        0|
-| Portland      | West       | Northwest |                 7|               13|        1|
-| San Antonio   | West       | Southwest |                 8|                4|        0|
-| Houston       | West       | Southwest |                 9|                6|        0|
-| Boston        | East       | Atlantic  |                10|               11|        0|
-| Oklahoma City | West       | Northwest |                10|                9|        0|
-| Charlotte     | East       | Southeast |                12|                9|        0|
-| Utah          | West       | Northwest |                13|                6|        1|
-| Memphis       | West       | Southwest |                14|               13|        0|
-| LA Lakers     | West       | Pacific   |                15|               19|        0|
-| Denver        | West       | Northwest |                16|               17|        0|
-| Orlando       | East       | Southeast |                16|               20|        0|
-| Minnesota     | West       | Northwest |                18|               16|        0|
-| Detroit       | East       | Central   |                19|               15|        0|
-| Indiana       | East       | Central   |                19|               21|        0|
-| Milwaukee     | East       | Central   |                19|               23|        0|
-| New York      | East       | Atlantic  |                22|               18|        0|
-| Sacramento    | West       | Pacific   |                23|               25|        0|
-| Brooklyn      | East       | Atlantic  |                24|               29|        0|
-| Phoenix       | West       | Pacific   |                25|               28|        0|
-| Washington    | East       | Southeast |                25|               21|        0|
-| Dallas        | West       | Southwest |                27|               26|        0|
-| Miami         | East       | Southeast |                27|               23|        0|
-| New Orleans   | West       | Southwest |                27|               27|        0|
-| Philadelphia  | East       | Atlantic  |                30|               30|        0|
+| Cleveland     | East       | Central   |                 1|                2|        1|
+| Golden State  | West       | Pacific   |                 2|                1|        1|
+| LA Clippers   | West       | Pacific   |                 3|                4|        1|
+| San Antonio   | West       | Southwest |                 4|                2|        1|
+| Chicago       | East       | Central   |                 5|                6|        1|
+| Houston       | West       | Southwest |                 5|                7|        1|
+| Toronto       | East       | Atlantic  |                 7|                5|        1|
+| Portland      | West       | Northwest |                 8|               14|        0|
+| Atlanta       | East       | Southeast |                 9|               12|        1|
+| Memphis       | West       | Southwest |                10|               12|        1|
+| Boston        | East       | Atlantic  |                11|                9|        1|
+| Minnesota     | West       | Northwest |                12|               18|        0|
+| Oklahoma City | West       | Northwest |                13|               10|        1|
+| Charlotte     | East       | Southeast |                14|               11|        1|
+| Indiana       | East       | Central   |                15|               19|        1|
+| Utah          | West       | Northwest |                15|                7|        0|
+| Detroit       | East       | Central   |                17|               15|        1|
+| Denver        | West       | Northwest |                18|               16|        1|
+| Milwaukee     | East       | Central   |                18|               23|        1|
+| LA Lakers     | West       | Pacific   |                20|               19|        1|
+| New York      | East       | Atlantic  |                20|               17|        1|
+| Sacramento    | West       | Pacific   |                22|               23|        1|
+| New Orleans   | West       | Southwest |                23|               22|        1|
+| Washington    | East       | Southeast |                24|               19|        1|
+| Phoenix       | West       | Pacific   |                25|               28|        1|
+| Miami         | East       | Southeast |                26|               23|        1|
+| Philadelphia  | East       | Atlantic  |                27|               29|        1|
+| Orlando       | East       | Southeast |                28|               26|        1|
+| Brooklyn      | East       | Atlantic  |                29|               29|        1|
+| Dallas        | West       | Southwest |                30|               27|        1|
 
 ``` r
 ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
@@ -233,7 +233,7 @@ ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
 
 The table shows that the elastic rankings generally agree with FiveThirtyEight -- at least when it comes to the "tail teams." For example, all rankings agree that Golden State, Cleveland and the Clippers will have strong seasons, while Philadelphia and New Orleans will struggle to win games.
 
-But what about Atlanta? The elastic model ranks Atlanta fifth in terms of overall win percentage, while FiveThirtyEight ranks Atlanta at number 12 (as of 2016-11-20). To understand why the elastic model is doing this, we can decompose the predictions into three parts:
+But what about Atlanta? The elastic model ranks Atlanta ninth in terms of overall win percentage, while FiveThirtyEight ranks Atlanta at number 12 (as of 2016-11-27). To understand why the elastic model is doing this, we can decompose the predictions into three parts:
 
 -   Roster -- archetype allocation deficits/surpluses. These are the variables labeled "share\_minutes\_cluster\_XX" described above. This group of variables reflects the quality of the roster.
 -   Performance -- e.g., win percentages, previous match-ups.
@@ -248,7 +248,7 @@ library(knitr)
 library(ggplot2)
 
 f <-
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2016-11-20.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2016-11-27.csv"
  
 center <- function(x){return(x-median(x))}
 read.csv(f, stringsAsFactors = FALSE) %>%
@@ -276,7 +276,7 @@ Last, but not least, let's take a look at San Antonio and the Timberwolves -- tw
 Backtesting
 -----------
 
-The model was used to predict all games from 2015-11-20 to the end the 2015-2016 season, using only information available as of 2015-11-19 (including model coefficients). This is roughly a five month forecast window (the season ends in April); most teams played around 70 games during this period. I picked this date because the latest model-run for this post was 2016-11-20.
+The model was used to predict all games from 2015-11-20 to the end the 2015-2016 season, using only information available as of 2015-11-19 (including model coefficients). This is roughly a five month forecast window (the season ends in April); most teams played around 70 games during this period.
 
 The game level accuracy (using 50% as the probability cutoff to declare winners) for the entire period was 65.8% -- i.e., the model predicted the correct winner for 65.8% of games.
 
@@ -366,3 +366,7 @@ The model currently does not capture any interaction between the archetypes. I h
 ### Schedule-independent Team Rankings
 
 Currently, the model ranks teams by predicting win rates. This means that, holding everything else constant, the rankings implicitly favor teams that play in weaker divisions. A future development could be to have two rankings: one that predicts the win rate given the current schedule (this is what the model is currently doing), and one that normalizes for schedule differences.
+
+### Uncertainty
+
+As stated above, the model uses a deterministic approach to decide the winner. If the win-probability estimated by the logistic regression model exceeds 50% for a given team, that team is chosen as the winner. As a result, the model can be somewhat extreme in its predictions. For example, the model believes that Golden State will win almost every future game -- when in reality they'l' likely lose some unexpected games. Having a better sense of uncertainty would could create more realistic win rate predictions for tail teams.

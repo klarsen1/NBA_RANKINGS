@@ -181,41 +181,41 @@ all_rankings <- read.csv(f2) %>%
   select(team, conference, division, elastic_ranking, FiveThirtyEight, absdiff) %>%
   arrange(elastic_ranking)
  
-kable(select(all_rankings, elastic_ranking, FiveThirtyEight))
+kable(select(all_rankings, team, elastic_ranking, FiveThirtyEight))
 ```
 
-|  elastic\_ranking|  FiveThirtyEight|
-|-----------------:|----------------:|
-|                 1|                2|
-|                 2|                1|
-|                 3|                4|
-|                 4|                2|
-|                 5|                6|
-|                 5|                7|
-|                 7|                5|
-|                 8|               14|
-|                 9|               12|
-|                10|               12|
-|                11|                9|
-|                12|               18|
-|                13|               10|
-|                14|               11|
-|                15|               19|
-|                15|                7|
-|                17|               15|
-|                18|               16|
-|                18|               23|
-|                20|               19|
-|                20|               17|
-|                22|               23|
-|                23|               22|
-|                24|               19|
-|                25|               28|
-|                26|               23|
-|                27|               29|
-|                28|               26|
-|                29|               29|
-|                30|               27|
+| team          |  elastic\_ranking|  FiveThirtyEight|
+|:--------------|-----------------:|----------------:|
+| Cleveland     |                 1|                2|
+| Golden State  |                 2|                1|
+| LA Clippers   |                 3|                4|
+| San Antonio   |                 4|                2|
+| Chicago       |                 5|                6|
+| Houston       |                 5|                7|
+| Toronto       |                 7|                5|
+| Portland      |                 8|               14|
+| Atlanta       |                 9|               12|
+| Memphis       |                10|               12|
+| Boston        |                11|                9|
+| Minnesota     |                12|               18|
+| Oklahoma City |                13|               10|
+| Charlotte     |                14|               11|
+| Indiana       |                15|               19|
+| Utah          |                15|                7|
+| Detroit       |                17|               15|
+| Denver        |                18|               16|
+| Milwaukee     |                18|               23|
+| LA Lakers     |                20|               19|
+| New York      |                20|               17|
+| Sacramento    |                22|               23|
+| New Orleans   |                23|               22|
+| Washington    |                24|               19|
+| Phoenix       |                25|               28|
+| Miami         |                26|               23|
+| Philadelphia  |                27|               29|
+| Orlando       |                28|               26|
+| Brooklyn      |                29|               29|
+| Dallas        |                30|               27|
 
 ``` r
 ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +

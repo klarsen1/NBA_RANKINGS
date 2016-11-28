@@ -136,7 +136,7 @@ all_rankings <- read.csv(f2) %>%
   select(team, conference, division, elastic_ranking, FiveThirtyEight, absdiff) %>%
   arrange(elastic_ranking)
  
-kable(select(all_rankings, elastic_ranking, FiveThirtyEight))
+kable(select(all_rankings, team, elastic_ranking, FiveThirtyEight))
 
 ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
   xlab("Elastic Ranking") + ylab("FiveThirtyEight") +

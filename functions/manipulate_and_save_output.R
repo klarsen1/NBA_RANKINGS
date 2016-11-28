@@ -5,13 +5,19 @@ manipulate_and_save_output <- function(clusters_and_players, scores, model_parts
     Date <- overwrite_date
   } 
   if (back_test==0){
+    
+     ft8 <- read.csv(paste0(root, "/rawdata/FiveThirtyEight_current.csv"), stringsAsFactors = FALSE) %>%
+       rename(team=selected_team) %>%
+       select(team, pred_win_rate_538)
+     
      game_level <- data.frame(rbindlist(scores), stringsAsFactors = FALSE) %>% 
        select(-prob_selected_team_win_b) %>%
        mutate(d_pred_selected_team_win=ifelse(current_season_data_used==0, NA, as.numeric(prob_selected_team_win_d>0.5)),
            prob_selected_team_win=ifelse(current_season_data_used==0, NA, prob_selected_team_win_d))
      ranks <- report(game_level, "d_pred_selected_team_win") %>%
        left_join(conferences, by="team") %>%
-       select(team, games_season, games_played, games_future, season_win_rate, ytd_win_rate, future_win_rate, conference, division)
+       select(team, games_season, games_played, games_future, season_win_rate, ytd_win_rate, future_win_rate, conference, division) %>%
+       left_join(ft8, by="team")
      models <- data.frame(rbindlist(model_details), stringsAsFactors = FALSE)
      parts <- data.frame(rbindlist(model_parts), stringsAsFactors = FALSE)
      details <- mutate(game_level, 

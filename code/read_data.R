@@ -161,6 +161,7 @@ write.csv(rosters, paste0("rosters_", Sys.Date(), ".csv"), row.names = FALSE)
 write.csv(fivethirtyeight, paste0("FiveThirtyEight_", Sys.Date(), ".csv"), row.names = FALSE)
 write.csv(injuries, paste0("injuries_", Sys.Date(), ".csv"), row.names = FALSE)
 write.csv(injuries, "injuries_current.csv", row.names = FALSE)
+write.csv(fivethirtyeight, paste0("FiveThirtyEight_current.csv"), row.names = FALSE)
 
 
 ## Register cores

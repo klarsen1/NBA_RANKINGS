@@ -262,7 +262,7 @@ read.csv(f, stringsAsFactors = FALSE) %>%
 
 The bars show the contribution from each part of the model. As expected, circumstances do not affect the overall prediction for the entire season as most teams have similarly taxing schedules. However, contributions from performance (weighted winning percentages) and roster (surplus of important archetypes) vary considerably.
 
-First, let's take a look at Portland: the model likes Portland because it thinks its roster is strong relative to its opponents' -- although the performance has not been stellar (recall that the wins are weighted by the opponents [CARM-ELO](http://projects.fivethirtyeight.com/2017-nba-predictions/) rating).
+First, let's take a look at Portland: the model likes Portland's chances because it thinks its roster is strong relative to its opponents' rosters -- although performance has not been stellar so far.
 
 Next, let's look at Cleveland and Golden State. The model ranks these two teams at the top, both in terms of rosters and performance. In fact, my playoff simulations have these two teams meeting again in the finals and going to seven games (more on that in a later post).
 

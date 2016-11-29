@@ -329,7 +329,7 @@ mutate(game_level, match=as.numeric(selected_team_win==d_pred_selected_team_win)
   group_by(team) %>%
   summarise(team_match_percent=mean(match)) %>%
   mutate(miss=ifelse(team_match_percent<.5, "1. <50%", 
-                     ifelse(team_match_percent<.75, "2. 50-70%", "3. >70%"))) %>%
+                     ifelse(team_match_percent<.75, "2. 50-75%", "3. >75%"))) %>%
   ggplot(aes(team, team_match_percent, fill=factor(miss))) + geom_bar(stat="identity") + coord_flip() +
   xlab("") + ylab("Accuracy") + theme(legend.title = element_blank()) + 
   geom_hline(yintercept = overall_match_rate, linetype=2, color='black') +

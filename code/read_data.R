@@ -46,16 +46,12 @@ daily_injuries <- data.frame(rbindlist(lapply(split(daily_injuries, daily_injuri
 
 
 ### Read 538 data
-ft8 <- read_html("http://projects.fivethirtyeight.com/2017-nba-predictions/") %>%
-  html_nodes("#standings-table") %>% html_table(fill=TRUE)
-ft8df <- data.frame(rbindlist(ft8))
-
-wins <- as.numeric(str_split_fixed(ft8df[4:nrow(ft8df),"Avg..Simulated.SeasonAvg..Simulation"], "-", 2)[,1])
-losses <- as.numeric(str_split_fixed(ft8df[4:nrow(ft8df),"Avg..Simulated.SeasonAvg..Simulation"], "-", 2)[,2])
-
-team <- gsub("[0-9, -]", "", ft8df[4:nrow(ft8df),"V5"])
-elo <- ft8df[4:nrow(ft8df),"V1"]
-carm_elo <- ft8df[4:nrow(ft8df),"V2"]
+ft8 <- read_html("http://projects.fivethirtyeight.com/2017-nba-predictions/")
+team <- ft8 %>% html_nodes("tbody tr td.team a") %>% html_text() %>% gsub("[0-9, -]", "", .)
+wins <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('-[0-9]+','', .) 
+losses <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('[0-9]+-','', .)
+elo <- ft8 %>% html_nodes("tbody tr td.elo.original") %>% html_text()
+carm_elo <- ft8 %>% html_nodes("tbody tr td.carmelo") %>% html_text()
 team[team=="ers"] <- "Philadelphia"
 team[team=="Hornets"] <- "Charlotte"
 team[team=="Clippers"] <- "LA Clippers"
@@ -86,10 +82,11 @@ team[team=="Magic"] <- "Orlando"
 team[team=="Heat"] <- "Miami"
 team[team=="Suns"] <- "Phoenix"
 team[team=="Nets"] <- "Brooklyn"
-
-fivethirtyeight <- data.frame(team, elo=as.numeric(elo), carm_elo=as.numeric(carm_elo), 
+fivethirtyeight <- data.frame(team, elo=as.numeric(elo), 
+                              carm_elo=as.numeric(carm_elo), 
                               wins_538=as.numeric(wins), 
-                              losses_538=as.numeric(losses), stringsAsFactors = FALSE) %>%
+                              losses_538=as.numeric(losses), 
+                              stringsAsFactors = FALSE) %>%
   mutate(selected_team=as.character(team), opposing_team=as.character(team), 
          elo=elo, carm_elo=carm_elo, 
          pred_win_rate_538=wins_538/(wins_538+losses_538)) %>%

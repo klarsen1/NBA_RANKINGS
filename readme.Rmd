@@ -261,7 +261,7 @@ Note that the model is most accurate for the "tail teams" such as Golden State a
  
 ### Dealing With Injuries and Trades
 
-As mentioned previously, the model depends on rosters *and* previous performance. If a team executes a major mid-season trade, the roster component will react immediately while the performance component will be slower to react (based on a 90 day window). There are a number of ways around this, but currently no special treatment is being applied.
+As mentioned previously, the model depends on rosters *and* previous performance. If a team executes a major mid-season trade, the roster component will react immediately (I scrape the injury list and return dates daily) while the performance component will be slower to react (based on a 90 day window). There are a number of ways around this, but currently no special treatment is being applied.
 
 ### Player Interaction
 

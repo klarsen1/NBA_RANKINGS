@@ -13,7 +13,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   future <- thisgame$future_game
 
   ### Read the overrides
-  rosters <- data.frame(read.csv(paste0(dir, "current_rosters.csv"), stringsAsFactors = FALSE))
+  rosters <- data.frame(read.csv(paste0(dir, "rosters_current.csv"), stringsAsFactors = FALSE))
 
   ### First get the average minutes and standard deviations for each player
   dist <- filter(history, (OWN_TEAM==team1 | OWN_TEAM==team2)) %>%
@@ -31,10 +31,6 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
      history_override <- history
   }
   
-  #history_override <- left_join(history, overrides, by="PLAYER_FULL_NAME") %>%
-  #  mutate(OWN_TEAM=ifelse(is.na(NEW_TEAM)==FALSE & DATE>=as.Date(OVERRIDE_DATE, format="%m/%d/%Y"), NEW_TEAM, OWN_TEAM)) %>%
-  #  select(-NEW_TEAM, -OVERRIDE_DATE)
-    
   ## Infer active rosters
   if (nrow(filter(history_override, OWN_TEAM==team1 & season==thisseason))==0 | nrow(filter(history_override, OWN_TEAM==team2 & season==thisseason))==0){
     d_current_season_data_available <- 0

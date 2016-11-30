@@ -15,37 +15,15 @@ library(stringr)
 
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/distance_between.R")
 
+setwd("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
 
-cbs_injuries <- read_html("http://www.cbssports.com/nba/injuries/daily")
-
-PLAYER_FULL_NAME <- cbs_injuries %>% html_nodes("tr.row1 td:nth-child(3), tr.row2 td:nth-child(3)") %>% html_text()
-
-return_notes <- cbs_injuries %>% html_nodes("tr.row1 td:nth-child(6), tr.row2 td:nth-child(6)") %>% html_text()
-
-daily_injuries <- data.frame(PLAYER_FULL_NAME, 
-                             return_notes, 
-                             stringsAsFactors = FALSE) %>%
-                             mutate(clean_note=gsub("Expected to be out until at least ", "", return_notes))
-
-convert_to_date <- function(data){
-  if (data$clean_note=="Game Time Decision"){
-    data$return_date <- Sys.Date() + 1
-  } else if (data$clean_note=="Out for the season"){
-    data$return_date <- as.Date("2017-10-25")
-  } else{
-    data$return_date <- as.Date(data$clean_note, format="%b %d")
-  }
-  if (data$return_date<Sys.Date()){
-    data$return_date <- data$return_date + 365
-  }
-  return(data)
-}
-
-daily_injuries <- data.frame(rbindlist(lapply(split(daily_injuries, daily_injuries$PLAYER_FULL_NAME), convert_to_date)), stringsAsFactors = FALSE) %>%
-  select(PLAYER_FULL_NAME, return_date) %>% distinct(PLAYER_FULL_NAME, .keep_all=TRUE)
+team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
+  distinct(Team, .keep_all=TRUE) %>% select(City, NBAstuffer.Initials, Team) %>%
+  filter(!(Team %in% c("Charlotte Bobcats", "New Orleans Hornets")))
+  
 
 
-### Read 538 data
+### 538 data
 ft8 <- read_html("http://projects.fivethirtyeight.com/2017-nba-predictions/")
 team <- ft8 %>% html_nodes("tbody tr td.team a") %>% html_text() %>% gsub("[0-9, -]", "", .)
 wins <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('-[0-9]+','', .) 
@@ -93,11 +71,37 @@ fivethirtyeight <- data.frame(team, elo=as.numeric(elo),
   select(-team)
 
 
+### Injury return dates from CBS
+cbs_injuries <- read_html("http://www.cbssports.com/nba/injuries/daily")
 
-setwd("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
+PLAYER_FULL_NAME <- cbs_injuries %>% html_nodes("tr.row1 td:nth-child(3), tr.row2 td:nth-child(3)") %>% html_text()
 
-### Injury status
+return_notes <- cbs_injuries %>% html_nodes("tr.row1 td:nth-child(6), tr.row2 td:nth-child(6)") %>% html_text()
 
+daily_injuries <- data.frame(PLAYER_FULL_NAME, 
+                             return_notes, 
+                             stringsAsFactors = FALSE) %>%
+  mutate(clean_note=gsub("Expected to be out until at least ", "", return_notes))
+
+convert_to_date <- function(data){
+  if (data$clean_note=="Game Time Decision"){
+    data$return_date <- Sys.Date() + 1
+  } else if (data$clean_note=="Out for the season"){
+    data$return_date <- as.Date("2017-10-25")
+  } else{
+    data$return_date <- as.Date(data$clean_note, format="%b %d")
+  }
+  if (data$return_date<Sys.Date()){
+    data$return_date <- data$return_date + 365
+  }
+  return(data)
+}
+
+daily_injuries <- data.frame(rbindlist(lapply(split(daily_injuries, daily_injuries$PLAYER_FULL_NAME), convert_to_date)), stringsAsFactors = FALSE) %>%
+  select(PLAYER_FULL_NAME, return_date) %>% distinct(PLAYER_FULL_NAME, .keep_all=TRUE)
+
+
+### Injury status from ESPN
 source_injuries <- read_html("http://espn.go.com/nba/injuries")
 
 players <- source_injuries %>%
@@ -120,45 +124,53 @@ injuries <- data.frame(
 ) %>% arrange(PLAYER_FULL_NAME, desc(injury_date)) %>% 
   distinct(PLAYER_FULL_NAME, .keep_all=TRUE) %>%
   left_join(daily_injuries, by="PLAYER_FULL_NAME") %>%
+  distinct(PLAYER_FULL_NAME, .keep_all=TRUE) %>%
   mutate(injury_scrape_date=Sys.Date())
 
 injuries[is.na(injuries$return_date),"return_date"] <- Sys.Date()+1
 
-## Current rosters
 
-stats_page <- read_html("http://www.nbastuffer.com/2016-2017_NBA_Regular_Season_Player_Stats.html")
+### Get the current rosters
+team_pages <- read_html("http://www.espn.com/nba/teams") %>%
+  html_nodes("ul.medium-logos span a:nth-child(3)") %>% html_attr("href")
 
-players <- stats_page %>%
-  html_nodes("tbody#PLAYER tr td:nth-child(2)") %>%
-  html_text()
+rosters <- lapply(team_pages, function (team_link) {
+  team_link <- paste0('http://www.espn.com', team_link)
+  team_roster <- read_html(team_link)
+  
+  team_name <- team_roster %>% html_nodes("h2.logo b") %>% html_text()
+  team_name[team_name=="LA Clippers"] <- "Los Angeles Clippers"
+  team_name[team_name=="Portland Trail Blazers"] <- "Portland Trailblazers"
+  
+  
+  data <- sapply(1:8, function(col) {
+    team_roster %>% html_nodes(paste0("tr.evenrow > td:nth-child(",col,"), tr.oddrow > td:nth-child(",col,")")) %>% html_text()
+  })
+  data <- data.frame(data, stringsAsFactors = FALSE)
+  colnames(data) <- c('Number','PLAYER_FULL_NAME','Position','Age','Height','Weight','College','Salary')
+  data$Team <- team_name
+  data$Age <- as.numeric(data$Age)
+  data$Weight <- as.numeric(data$Weight)
+  data$Salary <- as.numeric(gsub(',','',gsub('\\$', '', data$Salary)))
+  data
+})
 
-teams <- stats_page %>%
-  html_nodes("tbody#PLAYER tr td:nth-child(3)") %>%
-  html_text()
-
-rosters <- data.frame(
-  PLAYER_FULL_NAME = players,
-  NBAstuffer.Initials = teams, 
-  stringsAsFactors = FALSE)
-
-team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
-  select(City, NBAstuffer.Initials) %>% distinct(NBAstuffer.Initials, .keep_all=TRUE)
-
-rosters <- inner_join(rosters, team_map, by="NBAstuffer.Initials") %>%
+all_rosters <- bind_rows(lapply(rosters, function(x) as.data.frame(x))) %>%
+  left_join(team_map, by="Team") %>%
   rename(OWN_TEAM=City) %>%
-  select(OWN_TEAM, PLAYER_FULL_NAME) %>%
-  arrange(OWN_TEAM, PLAYER_FULL_NAME) %>%
-  left_join(injuries, by="PLAYER_FULL_NAME")
+  select(PLAYER_FULL_NAME, OWN_TEAM, Position, Age, Height, Weight, Salary, Team) %>%
+  arrange(PLAYER_FULL_NAME, OWN_TEAM) %>%
+  left_join(injuries, by="PLAYER_FULL_NAME") %>%
+  distinct(PLAYER_FULL_NAME, .keep_all=TRUE)
 
 
 ## Save scraped data
-
-write.csv(rosters, "current_rosters.csv", row.names = FALSE)
-write.csv(rosters, paste0("rosters_", Sys.Date(), ".csv"), row.names = FALSE)
+write.csv(all_rosters, "rosters_current.csv", row.names = FALSE)
+write.csv(all_rosters, paste0("rosters_", Sys.Date(), ".csv"), row.names = FALSE)
 write.csv(fivethirtyeight, paste0("FiveThirtyEight_", Sys.Date(), ".csv"), row.names = FALSE)
+write.csv(fivethirtyeight, paste0("FiveThirtyEight_current.csv"), row.names = FALSE)
 write.csv(injuries, paste0("injuries_", Sys.Date(), ".csv"), row.names = FALSE)
 write.csv(injuries, "injuries_current.csv", row.names = FALSE)
-write.csv(fivethirtyeight, paste0("FiveThirtyEight_current.csv"), row.names = FALSE)
 
 
 ## Register cores
@@ -388,8 +400,6 @@ rest_days <- data.frame(rbindlist(loop_result), stringsAsFactors = FALSE) %>%
          travel_differential=opposing_team_travel-selected_team_travel) %>%
   select(game_id, rest_differential, travel_differential, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, selected_team_last_city, opposing_team_last_city, selected_team_altitude, opposing_team_altitude)
 
-#dateindex <- distinct(f, DATE) %>% mutate(DATE_INDEX=row_number())
-
 games_last_week <- function(id){
   game <- filter(game_scores, game_id==id)
   t1 <- game$selected_team
@@ -491,3 +501,5 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
 
 saveRDS(final, paste0("BOX_SCORES_", Sys.Date(), ".RDA"))
 saveRDS(final, "BOX_SCORES.RDA")
+
+rm(list=ls())

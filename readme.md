@@ -30,7 +30,7 @@ At a high level, the model depends on three overall factors:
 -   How the team looks on paper. This is measured by the roster composition of "player archetypes."
 -   Circumstances -- e.g., traveling, rest days, home-court advantage.
 
-The team rankings produced by this model mainly agree with other prediction models (such as FiveThirtyEight) -- at least when it comes to identifying the strong teams and the weak teams (the "tail teams"). There are some interesting differences, such as different rankings of the Portland Trailblazers, which I will analyze later in this post.
+The team rankings produced by this model mainly agree with other prediction models (such as FiveThirtyEight) -- at least when it comes to identifying the strong teams and the weak teams (the "tail teams"). There are some interesting differences, such as different rankings of the Portland Trail Blazers, which I will analyze later in this post.
 
 Back testing for the 2015-2016 season showed promising results (see more details below), although I have not done any historical benchmark testing against other models. Time will be the judge.
 

@@ -13,6 +13,7 @@ winpercentages <- function(data, s, use_weights){
       t <- all_teams[k,"OWN_TEAM"]
       if (use_weights==1){
         df <- mutate(df, weight=ifelse(selected_team==t, carm_elo_opposing_team, carm_elo_selected_team))
+        #print("--- Using CARM-ELO weights")
       }  else{
         df$weight <- 1
       }

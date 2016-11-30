@@ -27,6 +27,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   ## Apply the overrides
   if (use_current_rosters==1){
      history_override <- inner_join(select(history, -OWN_TEAM), rosters, by="PLAYER_FULL_NAME")
+     #print("-- Using current scraped rosters")
   } else{
      history_override <- history
   }

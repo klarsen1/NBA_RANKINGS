@@ -113,10 +113,9 @@ box_scores_plus <- data.frame(rbindlist(loop_result))
 
 ## Save clusters
 clusters_and_players <- 
-  select(box_scores_plus, DATE, PLAYER_FULL_NAME, Cluster, points, assists, offensive_rebounds, defensive_rebounds, turnovers, threepointers_made, threepoint_attempts, steals, minutes, fieldgoal_attempts, fieldgoals_made, freethrow_attempts, freethrows_made, fouls, blocks, season) %>%
+  select(box_scores_plus, DATE, PLAYER_FULL_NAME, Cluster) %>%
   ungroup() %>%
   filter(season==max(season)) %>%
-  distinct(PLAYER_FULL_NAME, .keep_all=TRUE) %>%
   arrange(Cluster, PLAYER_FULL_NAME, DATE)
 
 ### Number of clusters

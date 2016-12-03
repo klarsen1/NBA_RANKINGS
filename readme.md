@@ -1,5 +1,5 @@
-I'd Rather Predict Basketball Games Than Elections -- Elastic NBA Rankings
-==========================================================================
+Elastic NBA Rankings
+====================
 
 Does the World Really Need Another Statistical Prediction Model?
 ----------------------------------------------------------------

@@ -113,7 +113,7 @@ box_scores_plus <- data.frame(rbindlist(loop_result))
 
 ## Save clusters
 clusters_and_players <- 
-  select(box_scores_plus, DATE, PLAYER_FULL_NAME, Cluster) %>%
+  select(box_scores_plus, DATE, PLAYER_FULL_NAME, Cluster, season) %>%
   ungroup() %>%
   filter(season==max(season)) %>%
   arrange(Cluster, PLAYER_FULL_NAME, DATE)

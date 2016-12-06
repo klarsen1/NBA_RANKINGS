@@ -66,7 +66,7 @@ Why is the model called "Elastic NBA Rankings?" There are two reasons for this: 
 
 ### Some Notes on the Model Used in Step 2
 
-The model used to predict the winner of a given game is a statistical model that is estimated based on the most recent three seasons. Hence, the relative importance (weights) of the various drivers -- for example, the importance of roster features versus win percentages -- are purely based on the relationships detected from the data. For the stats-minded readers, the model is a regularized logistic regression using [glmnet](https://cran.r-project.org/web/packages/glmnet/glmnet.pdf) (this worked best in back-testing). V-fold cross-validation was used to choose the penalty parameter.
+The model used to predict the winner of a given game is a statistical model that is estimated based on the most recent three seasons. Hence, the relative importance (weights) of the various drivers -- for example, the importance of roster features versus win percentages -- are purely based on the relationships detected from the data. For the stats-minded readers, the model is a regularized logistic regression using [glmnet](https://cran.r-project.org/web/packages/glmnet/glmnet.pdf) (this worked best in back-testing). V-fold cross-validation was used to choose the penalty parameters.
 
 The model is re-estimated every single day and contains the following variables:
 

@@ -364,4 +364,4 @@ Currently, the model ranks teams by predicting win rates. This means that, holdi
 
 ### Uncertainty
 
-As stated above, the model uses a deterministic approach to decide the winner. If the win-probability estimated by the logistic regression model exceeds 50% for a given team, that team is chosen as the winner. As a result, the model can be somewhat extreme in its predictions. For example, the model believes that Golden State will win almost every future game -- when in reality they'll' likely lose some unexpected games. Having a better sense of uncertainty would could create more realistic win rate predictions for tail teams.
+As stated above, the model uses a deterministic approach to decide the winner. If the win-probability estimated by the logistic regression model exceeds 50% for a given team, that team is chosen as the winner. As a result, the model can be somewhat extreme in its predictions. For example, the model believes that Golden State will win almost every future game -- when in reality they'll likely lose some unexpected games. Having a better sense of uncertainty would could create more realistic win rate predictions for tail teams.

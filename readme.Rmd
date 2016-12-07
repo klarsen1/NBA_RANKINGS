@@ -272,6 +272,6 @@ The model currently does not capture any interaction between the archetypes. I h
 Currently, the model ranks teams by predicting win rates. This means that, holding everything else constant, the rankings implicitly favor teams that play in weaker divisions. A future development could be to have two rankings: one that predicts the win rate given the current schedule (this is what the model is currently doing), and one that normalizes for schedule differences.
 
 ### Uncertainty
-As stated above, the model uses a deterministic approach to decide the winner. If the win-probability estimated by the logistic regression model exceeds 50% for a given team, that team is chosen as the winner. As a result, the model can be somewhat extreme in its predictions. For example, the model believes that Golden State will win almost every future game -- when in reality they'll' likely lose some unexpected games. Having a better sense of uncertainty would could create more realistic win rate predictions for tail teams.  
+As stated above, the model uses a deterministic approach to decide the winner. If the win-probability estimated by the logistic regression model exceeds 50% for a given team, that team is chosen as the winner. As a result, the model can be somewhat extreme in its predictions. For example, the model believes that Golden State will win almost every future game -- when in reality they'll likely lose some unexpected games. Having a better sense of uncertainty would could create more realistic win rate predictions for tail teams.  
 
 

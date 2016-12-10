@@ -433,13 +433,24 @@ games_last_week <- function(id){
   df$selected_team_games_prior_7d <- as.numeric(df$selected_team_games_prior_7d)
   df$opposing_team_games_prior_7d <- as.numeric(df$opposing_team_games_prior_7d)
   
-  if (game$home_team_name==t1){
-    df$days_since_last_home_game_selected <- 0
-    df$days_since_last_home_game_opposing <- 
-      game$DATE - max(subset(game_scores, home_team_name==t2 & DATE<game$DATE)$DATE)
+  tt <- subset(game_scores, home_team_name==t1 & DATE<=game$DATE)
+  if (nrow(tt)>0){
+    t1_last_home_game <- max(tt$DATE)
+    df$days_on_road_selected_team <- as.numeric(game$DATE - t1_last_home_game)
   } else{
-    df$days_since_last_home_game_opposing <- 0
+    df$days_on_road_selected_team <- 0
   }
+  rm(tt)
+  ttt <- subset(game_scores, home_team_name==t2 & DATE<=game$DATE)
+  if (nrow(ttt)>0){
+    t2_last_home_game <- max(ttt$DATE)
+    df$days_on_road_opposing_team <- as.numeric(game$DATE - t2_last_home_game)
+  } else{
+    df$days_on_road_opposing_team <- 0
+  }
+  rm(tt)
+  rm(ttt)
+  
   return(df)
 }
 

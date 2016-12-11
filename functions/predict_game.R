@@ -11,6 +11,9 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   w2 <- thisgame$opposing_team_matchup_wins
   floating_base <- thisgame$fb
   future <- thisgame$future_game
+  days_on_road1 <- thisgame$days_on_road_selected_team
+  days_on_road2 <- thisgame$days_on_road_opposing_team
+    
 
   ### Read the overrides
   rosters <- data.frame(read.csv(paste0(dir, "rosters_current.csv"), stringsAsFactors = FALSE))
@@ -59,6 +62,8 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
            selected_team_win=w,
            selected_team_matchup_wins=w1, 
            opposing_team_matchup_wins=w2,
+           days_on_road_selected_team=days_on_road1,
+           days_on_road_opposing_team=days_on_road2,
            fb=floating_base) %>%
     filter(player<14) %>%
     select(-player, -DATE_INDEX) %>%

@@ -10,3 +10,9 @@
 
 -   Ran the model with data up till 2016-12-03.
 -   Cleveland fell in the rankings (to number 5), while Houston, Clippers, San Antonio and Golden State are looking strong.
+
+2016-12-11
+----------
+
+-   Ran the model with data up till 2016-12-10.
+-   Houston and Toronto made big gains in the rankings.

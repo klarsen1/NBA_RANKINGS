@@ -1,18 +1,24 @@
 2016-11-27
 ----------
 
--   Ran the model with data up till 2016-11-26.
+-   Ran the model with data through 2016-11-26.
 -   New feature: removing injured players and capturing dates players are expected to return from injury. If the return date is not available -- e.g., due to game-day decision -- I hold the player out for one day.
 -   Fixed bug that caused forecasts (not back-casts) to miss the data from the last actual game day.
 
 2016-12-04
 ----------
 
--   Ran the model with data up till 2016-12-03.
+-   Ran the model with data through 2016-12-03.
 -   Cleveland fell in the rankings (to number 5), while Houston, Clippers, San Antonio and Golden State are looking strong.
 
 2016-12-11
 ----------
 
--   Ran the model with data up till 2016-12-10.
+-   Ran the model with data through 2016-12-10.
 -   Houston and Toronto made big gains in the rankings.
+
+2016-12-18
+----------
+
+-   Ran the model with data through 2016-12-17
+-   Golden State and Houston are still looking strong, with Golden State being the clear favorite. Interestingly, the Clippers fell below Utah, Memphis and Toronto to number 7 overall. FiveThirtyEight has the Clippers tied with Toronto at number 5.

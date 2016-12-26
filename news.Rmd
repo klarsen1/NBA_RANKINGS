@@ -24,3 +24,8 @@ output:
 
 * Ran the model with data through 2016-12-17
 * Golden State and Houston are still looking strong, with Golden State being the clear favorite. Interestingly, the Clippers fell below Utah, Memphis and Toronto to number 7 overall. FiveThirtyEight has the Clippers tied with Toronto at number 5.
+
+## 2016-12-25
+
+* Ran the model with data through 2016-12-24
+* Golden State still on top. Cleveland and San Antonio tied at number 2. Houston and Toronto right behind.

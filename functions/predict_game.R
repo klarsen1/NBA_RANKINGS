@@ -116,7 +116,6 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     if (nrow(offsets_by_team)>0){
       samplesdf <- left_join(samplesdf, offsets_by_team, by="selected_team") %>%
         replace(is.na(.), 0)
-      print(summary(samplesdf))
       samplesdf$prob_win=1/(1+exp(-samplesdf$xb + samplesdf$teamoffset))
     } else{
       samplesdf$offset <- offset

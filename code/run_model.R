@@ -18,6 +18,7 @@ source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/sim_playoffs.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/attach_win_perc.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/manipulate_and_save_output.R")
 source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/save_results.R")
+source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/get_team_offsets.R")
 
 
 ## Read the box scores
@@ -197,12 +198,7 @@ for (i in start_index:end_index){
     prior=mean(ytd_scores$selected_team_win)
     
     if (adjust_intercept_by_team==1){
-      offsets_by_team_ <- group_by(ytd_scores, selected_team) %>%
-      summarise(posterior=mean(prob_selected_team_win_d),
-                prior=mean(selected_team_win)) %>%
-      mutate(teamoffset=log((1-prior)*posterior / (prior*(1-posterior)))) %>%
-      select(teamoffset, selected_team) %>%
-      ungroup()
+      offsets_by_team <- get_team_offsets(ytd_scores)
     }
     rm(ytd_scores)
     

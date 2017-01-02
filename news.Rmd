@@ -29,3 +29,8 @@ output:
 
 * Ran the model with data through 2016-12-24
 * Golden State still on top. Cleveland and San Antonio tied at number 2. Houston and Toronto right behind.
+
+## 2017-01-01
+
+* Ran the model with data through 2016-12-31
+* A shocking development: Golden State dropped to number three overall! Could it be because they have not done that well against elite teams do far?

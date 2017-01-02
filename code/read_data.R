@@ -123,12 +123,12 @@ injuries <- data.frame(
   stringsAsFactors = FALSE
 ) %>% arrange(PLAYER_FULL_NAME, desc(injury_date)) %>% 
   distinct(PLAYER_FULL_NAME, .keep_all=TRUE) %>%
-  left_join(daily_injuries, by="PLAYER_FULL_NAME") %>%
+  full_join(daily_injuries, by="PLAYER_FULL_NAME") %>%
   distinct(PLAYER_FULL_NAME, .keep_all=TRUE) %>%
   mutate(injury_scrape_date=Sys.Date())
 
 injuries[is.na(injuries$return_date),"return_date"] <- Sys.Date()+1
-
+injuries[is.na(injuries$injury_status),"injury_status"] <- "Out"
 
 ### Get the current rosters
 team_pages <- read_html("http://www.espn.com/nba/teams") %>%

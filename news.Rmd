@@ -34,3 +34,8 @@ output:
 
 * Ran the model with data through 2016-12-31
 * A shocking development: Golden State dropped to number three overall! Could it be because they have not done that well against elite teams do far?
+
+## 2017-01-08
+
+* Ran the model with data through 2017-01-07
+* Golden State is still number three overall! Cleveland remains number 1 despite JR Smith being injured.

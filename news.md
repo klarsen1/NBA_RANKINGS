@@ -40,3 +40,8 @@
 
 -   Ran the model with data through 2017-01-07
 -   Golden State is still number three overall! Cleveland remains number 1 despite JR Smith being injured.
+
+2017-01-16
+----------
+
+-   Golden State back on top!

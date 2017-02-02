@@ -1,9 +1,9 @@
 "PLAYER_FULL_NAME","OWN_TEAM","Position","Age","Height","Weight","Salary","Team","injury_status","injury_date","return_date","injury_scrape_date"
 "A.J. Hammons","Dallas","C",24,"7-0",260,650000,"Dallas Mavericks",NA,NA,NA,NA
-"Aaron Brooks","Indiana","PG",32,"6-0",161,2700000,"Indiana Pacers",NA,NA,NA,NA
-"Aaron Gordon","Orlando","PF",21,"6-9",220,4351320,"Orlando Magic","Day-To-Day","Jan 30",2017-02-01,2017-01-31
+"Aaron Brooks","Indiana","PG",32,"6-0",161,2700000,"Indiana Pacers","Day-To-Day","Jan 26",2017-01-31,2017-01-30
+"Aaron Gordon","Orlando","PF",21,"6-9",220,4351320,"Orlando Magic",NA,NA,NA,NA
 "Adreian Payne","Minnesota","PF",25,"6-10",237,2022240,"Minnesota Timberwolves",NA,NA,NA,NA
-"Al Horford","Boston","C",30,"6-10",245,26540100,"Boston Celtics","Day-To-Day","Jan 28",2017-02-01,2017-01-31
+"Al Horford","Boston","C",30,"6-10",245,26540100,"Boston Celtics","Day-To-Day","Jan 28",2017-01-31,2017-01-30
 "Al Jefferson","Indiana","C",32,"6-10",289,10314532,"Indiana Pacers",NA,NA,NA,NA
 "Al-Farouq Aminu","Portland","SF",26,"6-9",220,7680965,"Portland Trailblazers",NA,NA,NA,NA
 "Alan Anderson","LA Clippers","SG",34,"6-6",220,980431,"Los Angeles Clippers",NA,NA,NA,NA
@@ -18,20 +18,20 @@
 "Andre Drummond","Detroit","C",23,"6-11",279,22116750,"Detroit Pistons",NA,NA,NA,NA
 "Andre Iguodala","Golden State","SF",33,"6-6",215,11131368,"Golden State Warriors",NA,NA,NA,NA
 "Andre Roberson","Oklahoma City","SF",25,"6-7",210,2183072,"Oklahoma City Thunder",NA,NA,NA,NA
-"Andrew Bogut","Dallas","C",32,"7-0",260,11027027,"Dallas Mavericks","Day-To-Day","Jan 30",2017-02-01,2017-01-31
+"Andrew Bogut","Dallas","C",32,"7-0",260,11027027,"Dallas Mavericks","Day-To-Day","Jan 30",2017-01-31,2017-01-30
 "Andrew Harrison","Memphis","PG",22,"6-6",213,945000,"Memphis Grizzlies",NA,NA,NA,NA
 "Andrew Nicholson","Washington","PF",27,"6-9",250,6088993,"Washington Wizards",NA,NA,NA,NA
 "Andrew Wiggins","Minnesota","SF",21,"6-8",199,6006600,"Minnesota Timberwolves",NA,NA,NA,NA
 "Anthony Brown","Orlando","SF",24,"6-7",211,57672,"Orlando Magic",NA,NA,NA,NA
-"Anthony Davis","New Orleans","PF",23,"6-11",253,22116750,"New Orleans Pelicans","Day-To-Day","Jan 27",2017-02-01,2017-01-31
+"Anthony Davis","New Orleans","PF",23,"6-11",253,22116750,"New Orleans Pelicans","Day-To-Day","Jan 27",2017-01-31,2017-01-30
 "Anthony Morrow","Oklahoma City","SG",31,"6-5",210,3488000,"Oklahoma City Thunder",NA,NA,NA,NA
 "Anthony Tolliver","Sacramento","PF",31,"6-8",240,8000000,"Sacramento Kings",NA,NA,NA,NA
 "Aron Baynes","Detroit","C",30,"6-10",260,6500000,"Detroit Pistons",NA,NA,NA,NA
 "Arron Afflalo","Sacramento","SG",31,"6-5",210,12500000,"Sacramento Kings",NA,NA,NA,NA
 "Austin Rivers","LA Clippers","PG",24,"6-4",200,11000000,"Los Angeles Clippers",NA,NA,NA,NA
-"Avery Bradley","Boston","SG",26,"6-2",180,8269663,"Boston Celtics","Out","Jan 31",2017-02-01,2017-01-31
+"Avery Bradley","Boston","SG",26,"6-2",180,8269663,"Boston Celtics","Out",NA,2017-01-31,2017-01-30
 "Ben McLemore","Sacramento","SG",23,"6-5",195,4008882,"Sacramento Kings",NA,NA,NA,NA
-"Ben Simmons","Philadelphia","SF",20,"6-10",240,5903160,"Philadelphia 76ers","Out",NA,2017-02-24,2017-01-31
+"Ben Simmons","Philadelphia","SF",20,"6-10",240,5903160,"Philadelphia 76ers","Out",NA,2017-02-24,2017-01-30
 "Beno Udrih","Detroit","PG",34,"6-3",205,980431,"Detroit Pistons",NA,NA,NA,NA
 "Bismack Biyombo","Orlando","C",24,"6-9",255,17000000,"Orlando Magic",NA,NA,NA,NA
 "Blake Griffin","LA Clippers","PF",27,"6-10",251,20140839,"Los Angeles Clippers",NA,NA,NA,NA
@@ -41,15 +41,15 @@
 "Bojan Bogdanovic","Brooklyn","SG",27,"6-8",225,3573020,"Brooklyn Nets",NA,NA,NA,NA
 "Boris Diaw","Utah","C",34,"6-8",250,7000000,"Utah Jazz",NA,NA,NA,NA
 "Bradley Beal","Washington","SG",23,"6-5",207,22116750,"Washington Wizards",NA,NA,NA,NA
-"Brandan Wright","Memphis","PF",29,"6-10",210,5709880,"Memphis Grizzlies","Out","Jan 30",2017-02-01,2017-01-31
+"Brandan Wright","Memphis","PF",29,"6-10",210,5709880,"Memphis Grizzlies","Out","Jan 29",2017-01-31,2017-01-30
 "Brandon Bass","LA Clippers","PF",31,"6-8",250,980431,"Los Angeles Clippers",NA,NA,NA,NA
 "Brandon Ingram","LA Lakers","SF",19,"6-9",190,5281680,"Los Angeles Lakers",NA,NA,NA,NA
 "Brandon Jennings","New York","PG",27,"6-1",170,5000000,"New York Knicks",NA,NA,NA,NA
 "Brandon Knight","Phoenix","PG",25,"6-3",195,12606250,"Phoenix Suns",NA,NA,NA,NA
 "Brandon Rush","Minnesota","SG",31,"6-6",225,3500000,"Minnesota Timberwolves",NA,NA,NA,NA
 "Brian Roberts","Charlotte","PG",31,"6-1",173,980431,"Charlotte Hornets",NA,NA,NA,NA
-"Brice Johnson","LA Clippers","F",22,"6-10",230,1273920,"Los Angeles Clippers","Out",NA,2017-02-08,2017-01-31
-"Brook Lopez","Brooklyn","C",28,"7-0",268,21165675,"Brooklyn Nets","Day-To-Day","Jan 27",2017-02-01,2017-01-31
+"Brice Johnson","LA Clippers","F",22,"6-10",230,1273920,"Los Angeles Clippers","Out",NA,2017-02-08,2017-01-30
+"Brook Lopez","Brooklyn","C",28,"7-0",268,21165675,"Brooklyn Nets","Day-To-Day","Jan 27",2017-01-31,2017-01-30
 "Bruno Caboclo","Toronto","SF",21,"6-9",205,1589640,"Toronto Raptors",NA,NA,NA,NA
 "Bryn Forbes","San Antonio","SG",23,"6-3",190,543471,"San Antonio Spurs",NA,NA,NA,NA
 "Buddy Hield","New Orleans","SG",23,"6-4",214,3517200,"New Orleans Pelicans",NA,NA,NA,NA
@@ -57,35 +57,35 @@
 "C.J. Miles","Indiana","SF",29,"6-6",225,4583450,"Indiana Pacers",NA,NA,NA,NA
 "C.J. Watson","Orlando","PG",32,"6-2",175,5000000,"Orlando Magic",NA,NA,NA,NA
 "Cameron Payne","Oklahoma City","PG",22,"6-3",185,2112480,"Oklahoma City Thunder",NA,NA,NA,NA
-"Caris LeVert","Brooklyn","SG",22,"6-7",203,1562280,"Brooklyn Nets","Day-To-Day","Jan 27",2017-02-01,2017-01-31
+"Caris LeVert","Brooklyn","SG",22,"6-7",203,1562280,"Brooklyn Nets","Day-To-Day","Jan 27",2017-01-31,2017-01-30
 "Carmelo Anthony","New York","SF",32,"6-8",240,24559380,"New York Knicks",NA,NA,NA,NA
-"Chandler Parsons","Memphis","SF",28,"6-10",230,22116750,"Memphis Grizzlies","Day-To-Day","Jan 28",2017-02-01,2017-01-31
+"Chandler Parsons","Memphis","SF",28,"6-10",230,22116750,"Memphis Grizzlies","Day-To-Day","Jan 28",2017-01-31,2017-01-30
 "Channing Frye","Cleveland","PF",33,"6-11",255,7806971,"Cleveland Cavaliers",NA,NA,NA,NA
 "Chasson Randle","Philadelphia","PG",23,"6-2",185,63938,"Philadelphia 76ers",NA,NA,NA,NA
 "Cheick Diallo","New Orleans","PF",20,"6-9",220,543471,"New Orleans Pelicans",NA,NA,NA,NA
 "Chinanu Onuaku","Houston","PF",20,"6-10",245,543471,"Houston Rockets",NA,NA,NA,NA
-"Chris Andersen","Cleveland","PF",38,"6-10",245,980431,"Cleveland Cavaliers","Out",NA,2017-10-25,2017-01-31
-"Chris Bosh","Miami","PF",32,"6-11",235,23741060,"Miami Heat","Out",NA,2017-10-25,2017-01-31
+"Chris Andersen","Cleveland","PF",38,"6-10",245,980431,"Cleveland Cavaliers","Out",NA,2017-10-25,2017-01-30
+"Chris Bosh","Miami","PF",32,"6-11",235,23741060,"Miami Heat","Out",NA,2017-10-25,2017-01-30
 "Chris McCullough","Brooklyn","PF",21,"6-9",215,1191480,"Brooklyn Nets",NA,NA,NA,NA
-"Chris Paul","LA Clippers","PG",31,"6-0",175,22868827,"Los Angeles Clippers","Out",NA,2017-03-01,2017-01-31
+"Chris Paul","LA Clippers","PG",31,"6-0",175,22868827,"Los Angeles Clippers","Out",NA,2017-03-01,2017-01-30
 "Christian Wood","Charlotte","PF",21,"6-11",220,874636,"Charlotte Hornets",NA,NA,NA,NA
 "CJ Wilcox","Orlando","SG",26,"6-5",195,1209600,"Orlando Magic",NA,NA,NA,NA
 "Clint Capela","Houston","C",22,"6-10",240,1296240,"Houston Rockets",NA,NA,NA,NA
-"Cody Zeller","Charlotte","C",24,"7-0",240,5318313,"Charlotte Hornets","Out","Jan 31",2017-02-01,2017-01-31
+"Cody Zeller","Charlotte","C",24,"7-0",240,5318313,"Charlotte Hornets","Out","Jan 29",2017-01-31,2017-01-30
 "Cole Aldrich","Minnesota","C",28,"6-11",250,7643979,"Minnesota Timberwolves",NA,NA,NA,NA
 "Corey Brewer","Houston","SF",30,"6-9",186,7612172,"Houston Rockets",NA,NA,NA,NA
 "Cory Joseph","Toronto","PG",25,"6-3",190,7315000,"Toronto Raptors",NA,NA,NA,NA
 "Courtney Lee","New York","SG",31,"6-5",200,11242000,"New York Knicks",NA,NA,NA,NA
 "Cristiano Felicio","Chicago","PF",24,"6-9",266,874636,"Chicago Bulls",NA,NA,NA,NA
-"D.J. Augustin","Orlando","PG",29,"6-0",183,7250000,"Orlando Magic","Day-To-Day","Jan 27",2017-02-01,2017-01-31
-"D'Angelo Russell","LA Lakers","PG",20,"6-5",195,5332800,"Los Angeles Lakers","Out","Jan 31",2017-02-01,2017-01-31
+"D.J. Augustin","Orlando","PG",29,"6-0",183,7250000,"Orlando Magic","Day-To-Day","Jan 27",2017-01-31,2017-01-30
+"D'Angelo Russell","LA Lakers","PG",20,"6-5",195,5332800,"Los Angeles Lakers","Out","Jan 30",2017-01-31,2017-01-30
 "Damian Jones","Golden State","C",21,"7-0",245,1171560,"Golden State Warriors",NA,NA,NA,NA
 "Damian Lillard","Portland","PG",26,"6-3",195,24328425,"Portland Trailblazers",NA,NA,NA,NA
 "Damjan Rudez","Orlando","SF",30,"6-10",228,980431,"Orlando Magic",NA,NA,NA,NA
 "Daniel Ochefu","Washington","PF",23,"6-11",245,543471,"Washington Wizards",NA,NA,NA,NA
 "Danilo Gallinari","Denver","SF",28,"6-10",225,15050000,"Denver Nuggets",NA,NA,NA,NA
 "Danny Green","San Antonio","SG",29,"6-6",215,10000000,"San Antonio Spurs",NA,NA,NA,NA
-"Dante Cunningham","New Orleans","PF",29,"6-8",230,2978250,"New Orleans Pelicans","Day-To-Day","Jan 29",2017-02-01,2017-01-31
+"Dante Cunningham","New Orleans","PF",29,"6-8",230,2978250,"New Orleans Pelicans","Day-To-Day","Jan 29",2017-01-31,2017-01-30
 "Dante Exum","Utah","PG",21,"6-6",190,3940320,"Utah Jazz",NA,NA,NA,NA
 "Danuel House Jr.","Washington","PF",23,"6-7",215,543471,"Washington Wizards",NA,NA,NA,NA
 "Dario Saric","Philadelphia","PF",22,"6-10",223,2318280,"Philadelphia 76ers",NA,NA,NA,NA
@@ -93,28 +93,28 @@
 "Darren Collison","Sacramento","PG",29,"6-0",175,5229454,"Sacramento Kings",NA,NA,NA,NA
 "Darrun Hilliard","Detroit","SG",23,"6-6",205,874636,"Detroit Pistons",NA,NA,NA,NA
 "David Lee","San Antonio","PF",33,"6-9",245,1551659,"San Antonio Spurs",NA,NA,NA,NA
-"David West","Golden State","PF",36,"6-9",250,980431,"Golden State Warriors","Out","Jan 29",2017-02-01,2017-01-31
+"David West","Golden State","PF",36,"6-9",250,980431,"Golden State Warriors","Out","Jan 29",2017-01-31,2017-01-30
 "Davis Bertans","San Antonio","SF",24,"6-10",210,543471,"San Antonio Spurs",NA,NA,NA,NA
 "DeAndre Bembry","Atlanta","SF",22,"6-6",210,1499760,"Atlanta Hawks",NA,NA,NA,NA
 "DeAndre Jordan","LA Clippers","C",28,"6-11",265,21165675,"Los Angeles Clippers",NA,NA,NA,NA
 "DeAndre Liggins","Cleveland","SG",28,"6-6",209,1015696,"Cleveland Cavaliers",NA,NA,NA,NA
 "Dejounte Murray","San Antonio","PG",20,"6-5",170,1180080,"San Antonio Spurs",NA,NA,NA,NA
-"Delon Wright","Toronto","PG",24,"6-5",190,1577280,"Toronto Raptors","Out","Jan 29",2017-02-01,2017-01-31
-"DeMar DeRozan","Toronto","SG",27,"6-7",220,26540100,"Toronto Raptors","Out","Jan 29",2017-02-01,2017-01-31
+"Delon Wright","Toronto","PG",24,"6-5",190,1577280,"Toronto Raptors","Out","Jan 29",2017-01-31,2017-01-30
+"DeMar DeRozan","Toronto","SG",27,"6-7",220,26540100,"Toronto Raptors","Out","Jan 29",2017-01-31,2017-01-30
 "DeMarcus Cousins","Sacramento","PF",26,"6-11",270,16957900,"Sacramento Kings",NA,NA,NA,NA
 "DeMarre Carroll","Toronto","SF",30,"6-8",212,14200000,"Toronto Raptors",NA,NA,NA,NA
-"Demetrius Jackson","Boston","PG",22,"6-1",201,1450000,"Boston Celtics",NA,NA,NA,NA
+"Demetrius Jackson","Boston","PG",22,"6-1",201,1450000,"Boston Celtics","Out","Jan 26",2017-01-31,2017-01-30
 "Dennis Schroder","Atlanta","PG",23,"6-1",172,2708582,"Atlanta Hawks",NA,NA,NA,NA
 "Denzel Valentine","Chicago","SG",23,"6-6",212,2092200,"Chicago Bulls",NA,NA,NA,NA
-"Deron Williams","Dallas","PG",32,"6-3",200,9000000,"Dallas Mavericks","Out","Jan 29",2017-02-01,2017-01-31
-"Derrick Favors","Utah","PF",25,"6-10",265,11050000,"Utah Jazz","Out",NA,2017-02-01,2017-01-31
+"Deron Williams","Dallas","PG",32,"6-3",200,9000000,"Dallas Mavericks","Out","Jan 29",2017-02-01,2017-01-30
+"Derrick Favors","Utah","PF",25,"6-10",265,11050000,"Utah Jazz","Out",NA,2017-01-31,2017-01-30
 "Derrick Jones Jr.","Phoenix","SF",19,"6-7",190,543471,"Phoenix Suns",NA,NA,NA,NA
-"Derrick Rose","New York","PG",28,"6-3",190,21323252,"New York Knicks","Day-To-Day","Jan 31",2017-02-04,2017-01-31
+"Derrick Rose","New York","PG",28,"6-3",190,21323252,"New York Knicks","Day-To-Day","Jan 29",2017-01-31,2017-01-30
 "Derrick Williams","Miami","PF",25,"6-8",240,4598000,"Miami Heat",NA,NA,NA,NA
 "Devin Booker","Phoenix","SG",20,"6-6",206,2223600,"Phoenix Suns",NA,NA,NA,NA
 "Devin Harris","Dallas","PG",33,"6-3",185,4227996,"Dallas Mavericks",NA,NA,NA,NA
 "Dewayne Dedmon","San Antonio","C",27,"7-0",245,2898000,"San Antonio Spurs",NA,NA,NA,NA
-"Deyonta Davis","Memphis","PF",20,"6-10",240,1369299,"Memphis Grizzlies","Day-To-Day","Jan 28",2017-02-01,2017-01-31
+"Deyonta Davis","Memphis","PF",20,"6-10",240,1369299,"Memphis Grizzlies","Day-To-Day","Jan 28",2017-01-31,2017-01-30
 "Diamond Stone","LA Clippers","C",19,"6-11",255,543471,"Los Angeles Clippers",NA,NA,NA,NA
 "Dion Waiters","Miami","SG",25,"6-4",220,2898000,"Miami Heat",NA,NA,NA,NA
 "Dirk Nowitzki","Dallas","PF",38,"7-0",245,25000000,"Dallas Mavericks",NA,NA,NA,NA
@@ -122,22 +122,22 @@
 "Donatas Motiejunas","New Orleans","PF",26,"7-0",222,576724,"New Orleans Pelicans",NA,NA,NA,NA
 "Dorian Finney-Smith","Dallas","SF",23,"6-8",220,543471,"Dallas Mavericks",NA,NA,NA,NA
 "Doug McDermott","Chicago","SF",25,"6-8",219,2483040,"Chicago Bulls",NA,NA,NA,NA
-"Dragan Bender","Phoenix","PF",19,"7-1",225,4276320,"Phoenix Suns","Out","Jan 30",2017-02-01,2017-01-31
+"Dragan Bender","Phoenix","PF",19,"7-1",225,4276320,"Phoenix Suns","Out","Jan 29",2017-01-31,2017-01-30
 "Draymond Green","Golden State","PF",26,"6-7",230,15330435,"Golden State Warriors",NA,NA,NA,NA
 "Dwight Howard","Atlanta","C",31,"6-11",265,23180275,"Atlanta Hawks",NA,NA,NA,NA
 "Dwight Powell","Dallas","PF",25,"6-11",240,8375000,"Dallas Mavericks",NA,NA,NA,NA
 "Dwyane Wade","Chicago","SG",35,"6-4",220,23200000,"Chicago Bulls",NA,NA,NA,NA
 "E'Twaun Moore","New Orleans","SG",27,"6-4",191,8081363,"New Orleans Pelicans",NA,NA,NA,NA
-"Ed Davis","Portland","PF",27,"6-10",245,6666667,"Portland Trailblazers","Out","Jan 30",2017-02-03,2017-01-31
+"Ed Davis","Portland","PF",27,"6-10",245,6666667,"Portland Trailblazers","Out","Jan 30",2017-02-03,2017-01-30
 "Elfrid Payton","Orlando","PG",22,"6-4",185,2613600,"Orlando Magic",NA,NA,NA,NA
-"Emmanuel Mudiay","Denver","PG",20,"6-5",200,3241800,"Denver Nuggets","Out","Jan 30",2017-02-01,2017-01-31
-"Enes Kanter","Oklahoma City","C",24,"6-11",245,17145838,"Oklahoma City Thunder","Out","Jan 27",2017-03-08,2017-01-31
+"Emmanuel Mudiay","Denver","PG",20,"6-5",200,3241800,"Denver Nuggets","Out","Jan 30",2017-02-01,2017-01-30
+"Enes Kanter","Oklahoma City","C",24,"6-11",245,17145838,"Oklahoma City Thunder","Out","Jan 27",2017-03-08,2017-01-30
 "Eric Bledsoe","Phoenix","PG",27,"6-1",205,14000000,"Phoenix Suns",NA,NA,NA,NA
-"Eric Gordon","Houston","SG",28,"6-4",215,12385364,"Houston Rockets","Day-To-Day","Jan 27",2017-02-01,2017-01-31
+"Eric Gordon","Houston","SG",28,"6-4",215,12385364,"Houston Rockets","Day-To-Day","Jan 27",2017-01-31,2017-01-30
 "Ersan Ilyasova","Philadelphia","PF",29,"6-10",235,8400000,"Philadelphia 76ers",NA,NA,NA,NA
-"Evan Fournier","Orlando","SG",24,"6-7",205,17000000,"Orlando Magic","Out","Jan 30",2017-02-01,2017-01-31
+"Evan Fournier","Orlando","SG",24,"6-7",205,17000000,"Orlando Magic","Out","Jan 30",2017-01-31,2017-01-30
 "Evan Turner","Portland","SG",28,"6-7",220,16393443,"Portland Trailblazers",NA,NA,NA,NA
-"Festus Ezeli","Portland","C",27,"6-11",265,7400000,"Portland Trailblazers","Out",NA,2017-07-01,2017-01-31
+"Festus Ezeli","Portland","C",27,"6-11",265,7400000,"Portland Trailblazers","Out",NA,2017-07-01,2017-01-30
 "Frank Kaminsky III","Charlotte","C",23,"7-0",240,2730000,"Charlotte Hornets",NA,NA,NA,NA
 "Fred VanVleet","Toronto","PG",22,"6-0",195,543471,"Toronto Raptors",NA,NA,NA,NA
 "Garrett Temple","Sacramento","SG",30,"6-6",195,8000000,"Sacramento Kings",NA,NA,NA,NA
@@ -155,26 +155,26 @@
 "Gorgui Dieng","Minnesota","PF",27,"6-11",240,2348783,"Minnesota Timberwolves",NA,NA,NA,NA
 "Greg Monroe","Milwaukee","C",26,"6-11",265,17145838,"Milwaukee Bucks",NA,NA,NA,NA
 "Harrison Barnes","Dallas","SF",24,"6-8",225,22116750,"Dallas Mavericks",NA,NA,NA,NA
-"Hassan Whiteside","Miami","C",27,"7-0",265,22116750,"Miami Heat","Day-To-Day","Jan 28",2017-02-01,2017-01-31
+"Hassan Whiteside","Miami","C",27,"7-0",265,22116750,"Miami Heat","Day-To-Day","Jan 28",2017-01-31,2017-01-30
 "Henry Ellenson","Detroit","PF",20,"6-11",245,1704120,"Detroit Pistons",NA,NA,NA,NA
 "Ian Clark","Golden State","SG",25,"6-3",175,980431,"Golden State Warriors",NA,NA,NA,NA
-"Ian Mahinmi","Washington","C",30,"6-11",262,15944154,"Washington Wizards","Out","Jan 31",2017-02-15,2017-01-31
+"Ian Mahinmi","Washington","C",30,"6-11",262,15944154,"Washington Wizards","Out",NA,2017-02-15,2017-01-30
 "Iman Shumpert","Cleveland","SG",26,"6-5",220,9662922,"Cleveland Cavaliers",NA,NA,NA,NA
 "Isaiah Canaan","Chicago","PG",25,"6-0",201,1015696,"Chicago Bulls",NA,NA,NA,NA
 "Isaiah Thomas","Boston","PG",27,"5-9",185,6587132,"Boston Celtics",NA,NA,NA,NA
 "Isaiah Whitehead","Brooklyn","PG",21,"6-4",213,1074145,"Brooklyn Nets",NA,NA,NA,NA
 "Ish Smith","Detroit","PG",28,"6-0",175,6000000,"Detroit Pistons",NA,NA,NA,NA
 "Ivica Zubac","LA Lakers","C",19,"7-1",240,1034956,"Los Angeles Lakers",NA,NA,NA,NA
-"J.J. Barea","Dallas","PG",32,"6-0",185,4096950,"Dallas Mavericks","Out",NA,2017-02-24,2017-01-31
+"J.J. Barea","Dallas","PG",32,"6-0",185,4096950,"Dallas Mavericks","Out",NA,2017-02-24,2017-01-30
 "J.J. Redick","LA Clippers","SG",32,"6-4",190,7377500,"Los Angeles Clippers",NA,NA,NA,NA
-"J.R. Smith","Cleveland","SG",31,"6-6",225,12800000,"Cleveland Cavaliers","Out",NA,2017-04-01,2017-01-31
+"J.R. Smith","Cleveland","SG",31,"6-6",225,12800000,"Cleveland Cavaliers","Out",NA,2017-04-01,2017-01-30
 "Jabari Parker","Milwaukee","PF",21,"6-8",250,5374320,"Milwaukee Bucks",NA,NA,NA,NA
 "Jae Crowder","Boston","SF",26,"6-6",235,6286408,"Boston Celtics",NA,NA,NA,NA
-"Jahlil Okafor","Philadelphia","C",21,"6-11",275,4788840,"Philadelphia 76ers","Day-To-Day","Jan 29",2017-02-01,2017-01-31
+"Jahlil Okafor","Philadelphia","C",21,"6-11",275,4788840,"Philadelphia 76ers","Day-To-Day","Jan 29",2017-01-31,2017-01-30
 "Jake Layman","Portland","SF",22,"6-9",210,600000,"Portland Trailblazers",NA,NA,NA,NA
 "Jakob Poeltl","Toronto","C",21,"7-0",230,2703960,"Toronto Raptors",NA,NA,NA,NA
 "Jamal Crawford","LA Clippers","SG",36,"6-5",195,13253012,"Los Angeles Clippers",NA,NA,NA,NA
-"Jamal Murray","Denver","SG",19,"6-4",207,3210840,"Denver Nuggets","Day-To-Day","Jan 30",2017-02-01,2017-01-31
+"Jamal Murray","Denver","SG",19,"6-4",207,3210840,"Denver Nuggets","Day-To-Day","Jan 30",2017-01-31,2017-01-30
 "Jameer Nelson","Denver","PG",34,"6-0",190,4540525,"Denver Nuggets",NA,NA,NA,NA
 "James Ennis","Memphis","SF",26,"6-7",210,2898000,"Memphis Grizzlies",NA,NA,NA,NA
 "James Harden","Houston","SG",27,"6-5",220,26540100,"Houston Rockets",NA,NA,NA,NA
@@ -182,7 +182,7 @@
 "James Jones","Cleveland","SG",36,"6-8",218,980431,"Cleveland Cavaliers",NA,NA,NA,NA
 "James Michael McAdoo","Golden State","SF",24,"6-9",240,980431,"Golden State Warriors",NA,NA,NA,NA
 "James Young","Boston","SG",21,"6-6",215,1825200,"Boston Celtics",NA,NA,NA,NA
-"JaMychal Green","Memphis","PF",26,"6-9",227,980431,"Memphis Grizzlies","Day-To-Day","Jan 29",2017-02-01,2017-01-31
+"JaMychal Green","Memphis","PF",26,"6-9",227,980431,"Memphis Grizzlies","Day-To-Day","Jan 29",2017-01-31,2017-01-30
 "Jared Dudley","Phoenix","SF",31,"6-7",225,10470000,"Phoenix Suns",NA,NA,NA,NA
 "Jared Sullinger","Toronto","C",24,"6-9",260,5628000,"Toronto Raptors",NA,NA,NA,NA
 "Jarell Martin","Memphis","PF",22,"6-10",239,1286160,"Memphis Grizzlies",NA,NA,NA,NA
@@ -194,20 +194,20 @@
 "Jeff Teague","Indiana","PG",28,"6-2",186,8800000,"Indiana Pacers",NA,NA,NA,NA
 "Jeff Withey","Utah","C",26,"7-0",231,1015696,"Utah Jazz",NA,NA,NA,NA
 "Jerami Grant","Oklahoma City","SF",22,"6-9",210,980431,"Oklahoma City Thunder",NA,NA,NA,NA
-"Jeremy Lamb","Charlotte","SG",24,"6-5",185,6511628,"Charlotte Hornets","Day-To-Day","Jan 30",2017-02-01,2017-01-31
-"Jeremy Lin","Brooklyn","PG",28,"6-3",200,11483254,"Brooklyn Nets","Out",NA,2017-02-15,2017-01-31
+"Jeremy Lamb","Charlotte","SG",24,"6-5",185,6511628,"Charlotte Hornets","Day-To-Day","Jan 28",2017-01-31,2017-01-30
+"Jeremy Lin","Brooklyn","PG",28,"6-3",200,11483254,"Brooklyn Nets","Out",NA,2017-02-15,2017-01-30
 "Jerian Grant","Chicago","PG",24,"6-4",198,1643040,"Chicago Bulls",NA,NA,NA,NA
-"Jerryd Bayless","Philadelphia","PG",28,"6-3",200,9424084,"Philadelphia 76ers","Out",NA,2017-10-25,2017-01-31
+"Jerryd Bayless","Philadelphia","PG",28,"6-3",200,9424084,"Philadelphia 76ers","Out",NA,2017-10-25,2017-01-30
 "Jimmy Butler","Chicago","SF",27,"6-7",231,17552209,"Chicago Bulls",NA,NA,NA,NA
 "Joakim Noah","New York","C",31,"6-11",230,17000000,"New York Knicks",NA,NA,NA,NA
-"Jodie Meeks","Orlando","SG",29,"6-4",210,6540000,"Orlando Magic","Out",NA,2017-03-01,2017-01-31
-"Joe Harris","Brooklyn","SF",25,"6-6",219,980431,"Brooklyn Nets","Out","Jan 29",2017-02-01,2017-01-31
+"Jodie Meeks","Orlando","SG",29,"6-4",210,6540000,"Orlando Magic","Out",NA,2017-03-01,2017-01-30
+"Joe Harris","Brooklyn","SF",25,"6-6",219,980431,"Brooklyn Nets","Out","Jan 29",2017-02-01,2017-01-30
 "Joe Ingles","Utah","SF",29,"6-8",226,2150000,"Utah Jazz",NA,NA,NA,NA
 "Joe Johnson","Utah","SF",35,"6-7",240,11000000,"Utah Jazz",NA,NA,NA,NA
 "Joe Young","Indiana","PG",24,"6-2",180,1052342,"Indiana Pacers",NA,NA,NA,NA
 "Joel Anthony","San Antonio","C",34,"6-9",245,2500000,"San Antonio Spurs",NA,NA,NA,NA
 "Joel Bolomboy","Utah","PF",23,"6-9",235,600000,"Utah Jazz",NA,NA,NA,NA
-"Joel Embiid","Philadelphia","C",22,"7-0",250,4826160,"Philadelphia 76ers","Out","Jan 30",2017-02-04,2017-01-31
+"Joel Embiid","Philadelphia","C",22,"7-0",250,4826160,"Philadelphia 76ers","Out","Jan 30",2017-02-04,2017-01-30
 "Joffrey Lauvergne","Oklahoma City","C",25,"6-11",220,1709719,"Oklahoma City Thunder",NA,NA,NA,NA
 "John Henson","Milwaukee","C",26,"6-11",229,12517606,"Milwaukee Bucks",NA,NA,NA,NA
 "John Wall","Washington","PG",26,"6-4",210,16957900,"Washington Wizards",NA,NA,NA,NA
@@ -215,38 +215,38 @@
 "Jon Leuer","Detroit","PF",27,"6-10",228,10991957,"Detroit Pistons",NA,NA,NA,NA
 "Jonas Jerebko","Boston","PF",29,"6-10",231,5000000,"Boston Celtics",NA,NA,NA,NA
 "Jonas Valanciunas","Toronto","C",24,"7-0",255,14382023,"Toronto Raptors",NA,NA,NA,NA
-"Jonathon Simmons","San Antonio","SG",27,"6-6",195,874636,"San Antonio Spurs","Out","Jan 31",2017-02-01,2017-01-31
+"Jonathon Simmons","San Antonio","SG",27,"6-6",195,874636,"San Antonio Spurs","Out","Jan 30",2017-01-31,2017-01-30
 "Jordan Clarkson","LA Lakers","PG",24,"6-5",194,12500000,"Los Angeles Lakers",NA,NA,NA,NA
 "Jordan Hill","Minnesota","PF",29,"6-10",240,4000000,"Minnesota Timberwolves",NA,NA,NA,NA
 "Jordan McRae","Cleveland","SG",25,"6-5",179,874636,"Cleveland Cavaliers",NA,NA,NA,NA
 "Jordan Mickey","Boston","PF",22,"6-8",235,1223653,"Boston Celtics",NA,NA,NA,NA
 "Jose Calderon","LA Lakers","PG",35,"6-3",200,7708427,"Los Angeles Lakers",NA,NA,NA,NA
 "Josh Huestis","Oklahoma City","SF",25,"6-7",230,1191480,"Oklahoma City Thunder",NA,NA,NA,NA
-"Josh McRoberts","Miami","PF",29,"6-10",240,5782450,"Miami Heat","Out",NA,2017-03-01,2017-01-31
-"Josh Richardson","Miami","SG",23,"6-6",200,874636,"Miami Heat","Out","Jan 28",2017-02-15,2017-01-31
+"Josh McRoberts","Miami","PF",29,"6-10",240,5782450,"Miami Heat","Out",NA,2017-03-01,2017-01-30
+"Josh Richardson","Miami","SG",23,"6-6",200,874636,"Miami Heat","Out","Jan 28",2017-02-15,2017-01-30
 "Jrue Holiday","New Orleans","PG",26,"6-4",205,11286518,"New Orleans Pelicans",NA,NA,NA,NA
 "Juancho Hernangomez","Denver","PF",21,"6-9",230,1987440,"Denver Nuggets",NA,NA,NA,NA
-"Julius Randle","LA Lakers","PF",22,"6-9",250,3267120,"Los Angeles Lakers","Day-To-Day","Jan 30",2017-02-02,2017-01-31
+"Julius Randle","LA Lakers","PF",22,"6-9",250,3267120,"Los Angeles Lakers","Day-To-Day","Jan 30",2017-01-31,2017-01-30
 "Justin Anderson","Dallas","SG",23,"6-6",228,1514160,"Dallas Mavericks",NA,NA,NA,NA
 "Justin Hamilton","Brooklyn","C",26,"7-0",255,3000000,"Brooklyn Nets",NA,NA,NA,NA
 "Justin Holiday","New York","SG",27,"6-6",185,1015696,"New York Knicks",NA,NA,NA,NA
-"Justise Winslow","Miami","SF",20,"6-7",225,2593440,"Miami Heat","Out",NA,2017-10-25,2017-01-31
+"Justise Winslow","Miami","SF",20,"6-7",225,2593440,"Miami Heat","Out",NA,2017-10-25,2017-01-30
 "Jusuf Nurkic","Denver","C",22,"7-0",280,1921320,"Denver Nuggets",NA,NA,NA,NA
 "K.J. McDaniels","Houston","SG",23,"6-6",205,3333333,"Houston Rockets",NA,NA,NA,NA
 "Karl-Anthony Towns","Minnesota","C",21,"7-0",244,5960160,"Minnesota Timberwolves",NA,NA,NA,NA
-"Kawhi Leonard","San Antonio","SF",25,"6-7",230,17638063,"San Antonio Spurs",NA,NA,NA,NA
+"Kawhi Leonard","San Antonio","SF",25,"6-7",230,17638063,"San Antonio Spurs","Day-To-Day","Jan 26",2017-01-31,2017-01-30
 "Kay Felder","Cleveland","PG",21,"5-9",176,543471,"Cleveland Cavaliers",NA,NA,NA,NA
 "Kelly Olynyk","Boston","C",25,"7-0",238,3094014,"Boston Celtics",NA,NA,NA,NA
 "Kelly Oubre Jr.","Washington","SF",21,"6-7",205,2006640,"Washington Wizards",NA,NA,NA,NA
 "Kemba Walker","Charlotte","PG",26,"6-1",184,12000000,"Charlotte Hornets",NA,NA,NA,NA
-"Kenneth Faried","Denver","PF",27,"6-8",228,12078652,"Denver Nuggets","Day-To-Day","Jan 30",2017-02-01,2017-01-31
+"Kenneth Faried","Denver","PF",27,"6-8",228,12078652,"Denver Nuggets","Day-To-Day","Jan 30",2017-01-31,2017-01-30
 "Kent Bazemore","Atlanta","SF",27,"6-5",201,15730338,"Atlanta Hawks",NA,NA,NA,NA
 "Kentavious Caldwell-Pope","Detroit","SG",23,"6-5",205,3678319,"Detroit Pistons",NA,NA,NA,NA
 "Kevin Durant","Golden State","SF",28,"6-9",240,26540100,"Golden State Warriors",NA,NA,NA,NA
-"Kevin Love","Cleveland","PF",28,"6-10",251,21165675,"Cleveland Cavaliers","Day-To-Day","Jan 30",2017-02-04,2017-01-31
-"Kevin Seraphin","Indiana","C",27,"6-10",278,1800000,"Indiana Pacers","Out","Jan 31",2017-02-01,2017-01-31
+"Kevin Love","Cleveland","PF",28,"6-10",251,21165675,"Cleveland Cavaliers","Day-To-Day","Jan 30",2017-02-01,2017-01-30
+"Kevin Seraphin","Indiana","C",27,"6-10",278,1800000,"Indiana Pacers","Out","Jan 30",2017-01-31,2017-01-30
 "Kevon Looney","Golden State","SF",20,"6-9",220,1182840,"Golden State Warriors",NA,NA,NA,NA
-"Khris Middleton","Milwaukee","SG",25,"6-8",234,15200000,"Milwaukee Bucks","Out",NA,2017-02-13,2017-01-31
+"Khris Middleton","Milwaukee","SG",25,"6-8",234,15200000,"Milwaukee Bucks","Out",NA,2017-02-13,2017-01-30
 "Klay Thompson","Golden State","SG",26,"6-7",215,16663575,"Golden State Warriors",NA,NA,NA,NA
 "Kosta Koufos","Sacramento","C",27,"7-0",265,8046500,"Sacramento Kings",NA,NA,NA,NA
 "Kris Dunn","Minnesota","PG",22,"6-4",205,3872520,"Minnesota Timberwolves",NA,NA,NA,NA
@@ -261,7 +261,7 @@
 "Kyrie Irving","Cleveland","PG",24,"6-3",193,17638063,"Cleveland Cavaliers",NA,NA,NA,NA
 "Lamar Patterson","Atlanta","SG",25,"6-5",225,874636,"Atlanta Hawks",NA,NA,NA,NA
 "LaMarcus Aldridge","San Antonio","PF",31,"6-11",260,20575005,"San Antonio Spurs",NA,NA,NA,NA
-"Lance Thomas","New York","SF",28,"6-8",235,6191000,"New York Knicks","Out","Jan 29",2017-02-04,2017-01-31
+"Lance Thomas","New York","SF",28,"6-8",235,6191000,"New York Knicks","Out","Jan 29",2017-02-04,2017-01-30
 "Langston Galloway","New Orleans","SG",25,"6-2",200,5200000,"New Orleans Pelicans",NA,NA,NA,NA
 "Larry Nance Jr.","LA Lakers","PF",24,"6-9",230,1207680,"Los Angeles Lakers",NA,NA,NA,NA
 "Lavoy Allen","Indiana","PF",27,"6-9",260,4000000,"Indiana Pacers",NA,NA,NA,NA
@@ -271,7 +271,7 @@
 "Luc Mbah a Moute","LA Clippers","PF",30,"6-8",230,2203000,"Los Angeles Clippers",NA,NA,NA,NA
 "Lucas Nogueira","Toronto","C",24,"7-0",220,1921320,"Toronto Raptors",NA,NA,NA,NA
 "Luis Scola","Brooklyn","PF",36,"6-9",241,5500000,"Brooklyn Nets",NA,NA,NA,NA
-"Luke Babbitt","Miami","SF",27,"6-9",225,1227286,"Miami Heat","Day-To-Day","Jan 31",2017-02-01,2017-01-31
+"Luke Babbitt","Miami","SF",27,"6-9",225,1227286,"Miami Heat",NA,NA,NA,NA
 "Luol Deng","LA Lakers","SF",31,"6-9",220,18000000,"Los Angeles Lakers",NA,NA,NA,NA
 "Malachi Richardson","Sacramento","SG",21,"6-6",205,1439800,"Sacramento Kings",NA,NA,NA,NA
 "Malcolm Brogdon","Milwaukee","SG",24,"6-5",215,925000,"Milwaukee Bucks",NA,NA,NA,NA
@@ -294,23 +294,24 @@
 "Mason Plumlee","Portland","C",26,"6-11",255,2328530,"Portland Trailblazers",NA,NA,NA,NA
 "Matt Barnes","Sacramento","SF",36,"6-7",226,6125000,"Sacramento Kings",NA,NA,NA,NA
 "Matthew Dellavedova","Milwaukee","PG",26,"6-4",198,9607500,"Milwaukee Bucks",NA,NA,NA,NA
-"Maurice Harkless","Portland","SF",23,"6-9",220,8988765,"Portland Trailblazers","Day-To-Day","Jan 28",2017-02-01,2017-01-31
-"Maurice Ndour","New York","SF",24,"6-9",200,543471,"New York Knicks",NA,NA,NA,NA
+"Maurice Daly Ndour","New York","SF",24,"6-9",200,543471,"New York Knicks",NA,NA,NA,NA
+"Maurice Harkless","Portland","SF",23,"6-9",220,8988765,"Portland Trailblazers","Day-To-Day","Jan 28",2017-01-31,2017-01-30
 "Metta World Peace","LA Lakers","SF",37,"6-7",260,980431,"Los Angeles Lakers",NA,NA,NA,NA
 "Meyers Leonard","Portland","PF",24,"7-1",255,9213483,"Portland Trailblazers",NA,NA,NA,NA
 "Michael Beasley","Milwaukee","SF",28,"6-10",235,1403611,"Milwaukee Bucks",NA,NA,NA,NA
 "Michael Carter-Williams","Chicago","PG",25,"6-6",190,3183526,"Chicago Bulls",NA,NA,NA,NA
-"Michael Gbinije","Detroit","SG",24,"6-7",200,650000,"Detroit Pistons","Out","Jan 27",2017-02-01,2017-01-31
+"Michael Gbinije","Detroit","SG",24,"6-7",200,650000,"Detroit Pistons","Out","Jan 27",2017-01-31,2017-01-30
 "Michael Kidd-Gilchrist","Charlotte","SF",23,"6-7",232,13000000,"Charlotte Hornets",NA,NA,NA,NA
 "Mike Conley","Memphis","PG",29,"6-1",175,26540100,"Memphis Grizzlies",NA,NA,NA,NA
 "Mike Dunleavy","Atlanta","SG",36,"6-9",230,4837500,"Atlanta Hawks",NA,NA,NA,NA
 "Mike Miller","Denver","SG",36,"6-8",218,3500000,"Denver Nuggets",NA,NA,NA,NA
-"Mike Muscala","Atlanta","PF",25,"6-11",240,1015696,"Atlanta Hawks","Day-To-Day","Jan 28",2017-02-01,2017-01-31
+"Mike Muscala","Atlanta","PF",25,"6-11",240,1015696,"Atlanta Hawks","Day-To-Day","Jan 28",2017-01-31,2017-01-30
 "Mike Scott","Atlanta","PF",28,"6-8",237,3333334,"Atlanta Hawks",NA,NA,NA,NA
 "Miles Plumlee","Milwaukee","C",28,"6-11",249,12500000,"Milwaukee Bucks",NA,NA,NA,NA
 "Mindaugas Kuzminskas","New York","SF",27,"6-9",215,2898000,"New York Knicks",NA,NA,NA,NA
 "Mirza Teletovic","Milwaukee","PF",31,"6-9",245,10500000,"Milwaukee Bucks",NA,NA,NA,NA
-"Monta Ellis","Indiana","SG",31,"6-3",185,10763500,"Indiana Pacers",NA,NA,NA,NA
+"Mo Williams","Denver","PG",34,"6-1",198,2194500,"Denver Nuggets",NA,NA,NA,NA
+"Monta Ellis","Indiana","SG",31,"6-3",185,10763500,"Indiana Pacers","Day-To-Day","Jan 26",2017-01-31,2017-01-30
 "Montrezl Harrell","Houston","PF",23,"6-8",240,1045000,"Houston Rockets",NA,NA,NA,NA
 "Myles Turner","Indiana","C",20,"6-11",243,2463840,"Indiana Pacers",NA,NA,NA,NA
 "Nemanja Bjelica","Minnesota","PF",28,"6-10",225,3800000,"Minnesota Timberwolves",NA,NA,NA,NA
@@ -321,15 +322,15 @@
 "Nicolas Batum","Charlotte","SG",28,"6-8",200,20869566,"Charlotte Hornets",NA,NA,NA,NA
 "Nicolas Brussino","Dallas","SF",23,"6-8",215,543471,"Dallas Mavericks",NA,NA,NA,NA
 "Nik Stauskas","Philadelphia","SG",23,"6-6",205,2993040,"Philadelphia 76ers",NA,NA,NA,NA
-"Nikola Jokic","Denver","PF",21,"6-10",250,1358500,"Denver Nuggets","Day-To-Day","Jan 30",2017-02-01,2017-01-31
+"Nikola Jokic","Denver","PF",21,"6-10",250,1358500,"Denver Nuggets","Day-To-Day","Jan 30",2017-02-01,2017-01-30
 "Nikola Mirotic","Chicago","PF",25,"6-10",238,5782450,"Chicago Bulls",NA,NA,NA,NA
-"Nikola Pekovic","Minnesota","C",31,"6-11",307,12100000,"Minnesota Timberwolves","Out",NA,2017-10-25,2017-01-31
+"Nikola Pekovic","Minnesota","C",31,"6-11",307,12100000,"Minnesota Timberwolves","Out",NA,2017-10-25,2017-01-30
 "Nikola Vucevic","Orlando","C",26,"7-0",260,11750000,"Orlando Magic",NA,NA,NA,NA
 "Noah Vonleh","Portland","PF",21,"6-9",245,2751360,"Portland Trailblazers",NA,NA,NA,NA
 "Norman Powell","Toronto","SG",23,"6-4",215,874636,"Toronto Raptors",NA,NA,NA,NA
 "Okaro White","Miami","PF",24,"6-8",204,31969,"Miami Heat",NA,NA,NA,NA
 "Omer Asik","New Orleans","C",30,"7-0",255,9904494,"New Orleans Pelicans",NA,NA,NA,NA
-"Omri Casspi","Sacramento","SF",28,"6-9",225,2936814,"Sacramento Kings","Out","Jan 30",2017-02-06,2017-01-31
+"Omri Casspi","Sacramento","SF",28,"6-9",225,2936814,"Sacramento Kings","Out","Jan 26",2017-01-31,2017-01-30
 "Otto Porter Jr.","Washington","SF",23,"6-8",198,5893981,"Washington Wizards",NA,NA,NA,NA
 "P.J. Tucker","Phoenix","SF",31,"6-6",245,5300000,"Phoenix Suns",NA,NA,NA,NA
 "Pascal Siakam","Toronto","PF",22,"6-9",230,1196040,"Toronto Raptors",NA,NA,NA,NA
@@ -338,16 +339,16 @@
 "Patrick McCaw","Golden State","PG",21,"6-7",185,543471,"Golden State Warriors",NA,NA,NA,NA
 "Patrick Patterson","Toronto","PF",27,"6-9",235,6050000,"Toronto Raptors",NA,NA,NA,NA
 "Patty Mills","San Antonio","PG",28,"6-0",185,3578948,"San Antonio Spurs",NA,NA,NA,NA
-"Pau Gasol","San Antonio","C",36,"7-0",250,15500000,"San Antonio Spurs","Out",NA,2017-02-15,2017-01-31
+"Pau Gasol","San Antonio","C",36,"7-0",250,15500000,"San Antonio Spurs","Out",NA,2017-02-15,2017-01-30
 "Paul George","Indiana","SF",26,"6-9",220,18314532,"Indiana Pacers",NA,NA,NA,NA
 "Paul Millsap","Atlanta","PF",31,"6-8",246,20072033,"Atlanta Hawks",NA,NA,NA,NA
 "Paul Pierce","LA Clippers","SF",39,"6-7",235,3527920,"Los Angeles Clippers",NA,NA,NA,NA
 "Paul Zipser","Chicago","SF",22,"6-8",210,750000,"Chicago Bulls",NA,NA,NA,NA
-"Pierre Jackson","Dallas","PG",25,"5-10",180,31969,"Dallas Mavericks",NA,NA,NA,NA
+"Pierre Jackson","Dallas","PG",25,"5-10",180,31969,"Dallas Mavericks","Day-To-Day","Jan 26",2017-01-31,2017-01-30
 "Quincy Acy","Brooklyn","SF",26,"6-7",240,115344,"Brooklyn Nets",NA,NA,NA,NA
-"Quincy Pondexter","New Orleans","SG",28,"6-7",225,3617978,"New Orleans Pelicans","Out",NA,2017-04-01,2017-01-31
+"Quincy Pondexter","New Orleans","SG",28,"6-7",225,3617978,"New Orleans Pelicans","Out",NA,2017-04-01,2017-01-30
 "Rajon Rondo","Chicago","PG",30,"6-1",186,14000000,"Chicago Bulls",NA,NA,NA,NA
-"Rakeem Christmas","Indiana","PF",25,"6-9",250,1052342,"Indiana Pacers","Day-To-Day","Jan 31",2017-02-01,2017-01-31
+"Rakeem Christmas","Indiana","PF",25,"6-9",250,1052342,"Indiana Pacers",NA,NA,NA,NA
 "Ramon Sessions","Charlotte","PG",30,"6-3",190,6000000,"Charlotte Hornets",NA,NA,NA,NA
 "Randy Foye","Brooklyn","SG",33,"6-4",218,2500000,"Brooklyn Nets",NA,NA,NA,NA
 "Rashad Vaughn","Milwaukee","SG",20,"6-6",202,1811040,"Milwaukee Bucks",NA,NA,NA,NA
@@ -362,12 +363,12 @@
 "Robin Lopez","Chicago","C",28,"7-0",255,13219250,"Chicago Bulls",NA,NA,NA,NA
 "Rodney Hood","Utah","SG",24,"6-8",206,1406520,"Utah Jazz",NA,NA,NA,NA
 "Rodney McGruder","Miami","SG",25,"6-4",205,543471,"Miami Heat",NA,NA,NA,NA
-"Rodney Stuckey","Indiana","PG",30,"6-5",205,7000000,"Indiana Pacers","Out","Jan 31",2017-02-01,2017-01-31
+"Rodney Stuckey","Indiana","PG",30,"6-5",205,7000000,"Indiana Pacers","Out","Jan 29",2017-01-31,2017-01-30
 "Ron Baker","New York","SG",23,"6-4",220,543471,"New York Knicks",NA,NA,NA,NA
-"Rondae Hollis-Jefferson","Brooklyn","SF",22,"6-7",214,1395600,"Brooklyn Nets","Day-To-Day","Jan 29",2017-02-01,2017-01-31
+"Rondae Hollis-Jefferson","Brooklyn","SF",22,"6-7",214,1395600,"Brooklyn Nets","Day-To-Day","Jan 29",2017-01-31,2017-01-30
 "Ronnie Price","Phoenix","PG",33,"6-2",190,2557545,"Phoenix Suns",NA,NA,NA,NA
 "Roy Hibbert","Charlotte","C",30,"7-2",270,5000000,"Charlotte Hornets",NA,NA,NA,NA
-"Rudy Gay","Sacramento","SF",30,"6-8",230,13333333,"Sacramento Kings","Out","Jan 27",2017-10-25,2017-01-31
+"Rudy Gay","Sacramento","SF",30,"6-8",230,13333333,"Sacramento Kings","Out","Jan 27",2017-10-25,2017-01-30
 "Rudy Gobert","Utah","C",24,"7-1",245,2121288,"Utah Jazz",NA,NA,NA,NA
 "Russell Westbrook","Oklahoma City","PG",28,"6-3",200,26540100,"Oklahoma City Thunder",NA,NA,NA,NA
 "Ryan Anderson","Houston","PF",28,"6-10",240,18735364,"Houston Rockets",NA,NA,NA,NA
@@ -389,44 +390,44 @@
 "Spencer Dinwiddie","Brooklyn","PG",23,"6-6",200,726672,"Brooklyn Nets",NA,NA,NA,NA
 "Spencer Hawes","Charlotte","PF",28,"7-1",245,6348759,"Charlotte Hornets",NA,NA,NA,NA
 "Stanley Johnson","Detroit","SF",20,"6-7",245,2969880,"Detroit Pistons",NA,NA,NA,NA
-"Stephen Curry","Golden State","PG",28,"6-3",190,12112359,"Golden State Warriors","Day-To-Day","Jan 29",2017-02-01,2017-01-31
+"Stephen Curry","Golden State","PG",28,"6-3",190,12112359,"Golden State Warriors","Day-To-Day","Jan 29",2017-01-31,2017-01-30
 "Stephen Zimmerman","Orlando","C",20,"7-0",240,950000,"Orlando Magic",NA,NA,NA,NA
 "Steve Novak","Milwaukee","SF",33,"6-10",225,980431,"Milwaukee Bucks",NA,NA,NA,NA
 "Steven Adams","Oklahoma City","C",23,"7-0",255,3140517,"Oklahoma City Thunder",NA,NA,NA,NA
-"Taj Gibson","Chicago","PF",31,"6-9",236,8950000,"Chicago Bulls","Day-To-Day","Jan 31",2017-02-01,2017-01-31
+"T.J. McConnell","Philadelphia","PG",24,"6-2",200,874636,"Philadelphia 76ers",NA,NA,NA,NA
+"Taj Gibson","Chicago","PF",31,"6-9",236,8950000,"Chicago Bulls","Day-To-Day","Jan 29",2017-01-31,2017-01-30
 "Tarik Black","LA Lakers","C",25,"6-9",250,6191000,"Los Angeles Lakers",NA,NA,NA,NA
 "Taurean Prince","Atlanta","SF",22,"6-8",220,2318280,"Atlanta Hawks",NA,NA,NA,NA
 "Terrence Jones","New Orleans","PF",25,"6-9",255,980431,"New Orleans Pelicans",NA,NA,NA,NA
 "Terrence Ross","Toronto","SF",25,"6-7",195,10000000,"Toronto Raptors",NA,NA,NA,NA
 "Terry Rozier","Boston","PG",22,"6-2",190,1906440,"Boston Celtics",NA,NA,NA,NA
-"Thabo Sefolosha","Atlanta","SF",32,"6-7",220,3850000,"Atlanta Hawks","Day-To-Day","Jan 28",2017-02-01,2017-01-31
+"Thabo Sefolosha","Atlanta","SF",32,"6-7",220,3850000,"Atlanta Hawks","Day-To-Day","Jan 28",2017-01-31,2017-01-30
 "Thaddeus Young","Indiana","PF",28,"6-8",221,14153652,"Indiana Pacers",NA,NA,NA,NA
 "Thomas Robinson","LA Lakers","PF",25,"6-10",237,980431,"Los Angeles Lakers",NA,NA,NA,NA
 "Thon Maker","Milwaukee","PF",19,"7-1",223,2568600,"Milwaukee Bucks",NA,NA,NA,NA
-"Tiago Splitter","Atlanta","C",32,"6-11",245,9506250,"Atlanta Hawks","Out","Jan 28",2017-02-15,2017-01-31
+"Tiago Splitter","Atlanta","C",32,"6-11",245,9506250,"Atlanta Hawks","Out","Jan 28",2017-02-15,2017-01-30
 "Tim Frazier","New Orleans","PG",26,"6-1",170,2090000,"New Orleans Pelicans",NA,NA,NA,NA
 "Tim Hardaway Jr.","Atlanta","SG",24,"6-6",205,2281605,"Atlanta Hawks",NA,NA,NA,NA
-"Tim Quarterman","Portland","SG",22,"6-6",190,543471,"Portland Trailblazers",NA,NA,NA,NA
+"Tim Quarterman","Portland","SG",22,"6-6",190,543471,"Portland Trailblazers","Day-To-Day","Jan 26",2017-01-31,2017-01-30
 "Timofey Mozgov","LA Lakers","C",30,"7-1",275,16000000,"Los Angeles Lakers",NA,NA,NA,NA
 "Timothe Luwawu-Cabarrot","Philadelphia","SG",21,"6-6",205,1326960,"Philadelphia 76ers",NA,NA,NA,NA
-"TJ McConnell","Philadelphia","PG",24,"6-2",200,874636,"Philadelphia 76ers",NA,NA,NA,NA
 "TJ Warren","Phoenix","SF",23,"6-8",225,2128920,"Phoenix Suns",NA,NA,NA,NA
 "Tobias Harris","Detroit","SF",24,"6-9",235,17200000,"Detroit Pistons",NA,NA,NA,NA
 "Tomas Satoransky","Washington","SG",25,"6-7",210,2870813,"Washington Wizards",NA,NA,NA,NA
-"Toney Douglas","Memphis","PG",30,"6-2",195,743974,"Memphis Grizzlies",NA,NA,NA,NA
 "Tony Allen","Memphis","SG",35,"6-4",213,5505618,"Memphis Grizzlies",NA,NA,NA,NA
-"Tony Parker","San Antonio","PG",34,"6-2",185,14445313,"San Antonio Spurs","Out","Jan 27",2017-02-01,2017-01-31
+"Tony Parker","San Antonio","PG",34,"6-2",185,14445313,"San Antonio Spurs","Out","Jan 27",2017-01-31,2017-01-30
 "Tony Snell","Milwaukee","SG",25,"6-7",217,2368327,"Milwaukee Bucks",NA,NA,NA,NA
 "Treveon Graham","Charlotte","SG",23,"6-6",226,543471,"Charlotte Hornets",NA,NA,NA,NA
 "Trevor Ariza","Houston","SF",31,"6-8",215,7806971,"Houston Rockets",NA,NA,NA,NA
-"Trevor Booker","Brooklyn","PF",29,"6-8",228,9250000,"Brooklyn Nets","Day-To-Day","Jan 28",2017-02-01,2017-01-31
+"Trevor Booker","Brooklyn","PF",29,"6-8",228,9250000,"Brooklyn Nets","Day-To-Day","Jan 28",2017-01-31,2017-01-30
 "Trey Burke","Washington","PG",24,"6-1",191,3386598,"Washington Wizards",NA,NA,NA,NA
 "Trey Lyles","Utah","PF",21,"6-10",234,2340600,"Utah Jazz",NA,NA,NA,NA
 "Tristan Thompson","Cleveland","C",25,"6-9",238,15330435,"Cleveland Cavaliers",NA,NA,NA,NA
-"Troy Daniels","Memphis","SG",25,"6-4",205,3332940,"Memphis Grizzlies","Out","Jan 28",2017-02-01,2017-01-31
+"Troy Daniels","Memphis","SG",25,"6-4",205,3332940,"Memphis Grizzlies","Out","Jan 28",2017-01-31,2017-01-30
+"Troy Williams","Memphis","SF",22,"6-7",210,543471,"Memphis Grizzlies",NA,NA,NA,NA
 "Ty Lawson","Sacramento","PG",29,"5-11",195,980431,"Sacramento Kings",NA,NA,NA,NA
 "Tyler Ennis","Houston","PG",22,"6-3",194,1733880,"Houston Rockets",NA,NA,NA,NA
-"Tyler Johnson","Miami","SG",24,"6-4",186,5628000,"Miami Heat","Out","Jan 30",2017-02-01,2017-01-31
+"Tyler Johnson","Miami","SG",24,"6-4",186,5628000,"Miami Heat","Out","Jan 30",2017-01-31,2017-01-30
 "Tyler Ulis","Phoenix","PG",21,"5-10",150,918369,"Phoenix Suns",NA,NA,NA,NA
 "Tyler Zeller","Boston","C",27,"7-0",253,8000000,"Boston Celtics",NA,NA,NA,NA
 "Tyreke Evans","New Orleans","SG",27,"6-6",220,10203755,"New Orleans Pelicans",NA,NA,NA,NA
@@ -438,12 +439,12 @@
 "Wade Baldwin IV","Memphis","PG",20,"6-4",202,1793760,"Memphis Grizzlies",NA,NA,NA,NA
 "Wayne Ellington","Miami","SG",29,"6-4",200,6000000,"Miami Heat",NA,NA,NA,NA
 "Wesley Johnson","LA Clippers","SF",29,"6-7",215,5628000,"Los Angeles Clippers",NA,NA,NA,NA
-"Wesley Matthews","Dallas","SG",30,"6-5",220,17145838,"Dallas Mavericks","Day-To-Day","Jan 29",2017-02-01,2017-01-31
+"Wesley Matthews","Dallas","SG",30,"6-5",220,17145838,"Dallas Mavericks","Day-To-Day","Jan 29",2017-01-31,2017-01-30
 "Will Barton","Denver","SG",26,"6-6",175,3533333,"Denver Nuggets",NA,NA,NA,NA
 "Willie Cauley-Stein","Sacramento","C",23,"7-0",240,3551160,"Sacramento Kings",NA,NA,NA,NA
 "Willie Reed","Miami","PF",26,"6-10",220,1015696,"Miami Heat",NA,NA,NA,NA
 "Willy Hernangomez","New York","C",22,"6-11",240,1350000,"New York Knicks",NA,NA,NA,NA
-"Wilson Chandler","Denver","SF",29,"6-8",225,11233146,"Denver Nuggets","Day-To-Day","Jan 30",2017-02-01,2017-01-31
+"Wilson Chandler","Denver","SF",29,"6-8",225,11233146,"Denver Nuggets","Day-To-Day","Jan 30",2017-01-31,2017-01-30
 "Yogi Ferrell","Dallas","PG",23,"6-0",180,495518,"Dallas Mavericks",NA,NA,NA,NA
 "Zach LaVine","Minnesota","PG",21,"6-5",185,2240880,"Minnesota Timberwolves",NA,NA,NA,NA
 "Zach Randolph","Memphis","PF",35,"6-9",260,10361445,"Memphis Grizzlies",NA,NA,NA,NA

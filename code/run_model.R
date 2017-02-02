@@ -41,6 +41,8 @@ datemap <- select(box_scores, DATE, future_game, season) %>%
 
 box_scores <- inner_join(box_scores, select(datemap, DATE, DATE_INDEX, season_day, season_day_std), by="DATE")
 
+#box_scores <- mutate(box_scores, future_game = ifelse(DATE>=as.Date('2017-01-22'), 1, 0))
+
 ## Get model variables
 model_variables <- read.csv("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/modeldetails/model_variables.csv", stringsAsFactors = FALSE)
 

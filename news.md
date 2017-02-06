@@ -50,3 +50,8 @@
 ----------
 
 -   Golden State still on top
+
+2017-02-05
+----------
+
+-   The model basically thinks that Golden State can't lose.

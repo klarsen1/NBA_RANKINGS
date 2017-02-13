@@ -55,3 +55,8 @@
 ----------
 
 -   The model basically thinks that Golden State can't lose.
+
+2017-02-12
+----------
+
+-   The model basically thinks that Golden State can't lose.

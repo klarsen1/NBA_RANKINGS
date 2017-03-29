@@ -3,7 +3,6 @@ library(dplyr)
 library(readxl)
 library(stringi)
 library(tidyr)
-library(reshape2)
 library(data.table)
 library(dplyr)
 library(ggmap)
@@ -13,9 +12,9 @@ library(doParallel)
 library(rvest)
 library(stringr)
 
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/distance_between.R")
+source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/distance_between.R")
 
-setwd("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
+setwd("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/")
 
 team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
   distinct(Team, .keep_all=TRUE) %>% select(City, NBAstuffer.Initials, Team) %>%
@@ -264,7 +263,7 @@ f <- bind_rows(f, future_schedule) %>%
   replace(is.na(.), 0)
   
 
-setwd("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata")
+setwd("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/cleandata")
 
 ## Create an ID
 f$cat <- paste0(f$OWN_TEAM, f$OPP_TEAM)

@@ -1,88 +1,82 @@
 "PLAYER_FULL_NAME","injury_status","injury_date","return_date","injury_scrape_date"
-"Aaron Gordon","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Alex Len","Out","Feb 10",2017-02-14,2017-02-13
-"Alexis Ajinca","Day-To-Day","Feb 10",2017-02-14,2017-02-13
-"Andrew Bogut","Out","Feb 9",2017-02-24,2017-02-13
-"Buddy Hield","Day-To-Day","Feb 12",2017-02-14,2017-02-13
-"Chandler Parsons","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Cody Zeller","Out","Feb 9",2017-02-14,2017-02-13
-"Danilo Gallinari","Out","Feb 12",2017-02-15,2017-02-13
-"Darrell Arthur","Day-To-Day","Feb 12",2017-02-14,2017-02-13
-"David West","Out","Feb 9",2017-02-15,2017-02-13
-"DeAndre Liggins","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Delon Wright","Out","Feb 10",2017-02-14,2017-02-13
-"Deron Williams","Out","Feb 9",2017-02-14,2017-02-13
-"Dion Waiters","Out","Feb 12",2017-02-14,2017-02-13
-"Dwyane Wade","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"E'Twaun Moore","Day-To-Day","Feb 12",2017-02-14,2017-02-13
-"Emmanuel Mudiay","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Eric Bledsoe","Day-To-Day","Feb 11",2017-02-14,2017-02-13
-"Eric Gordon","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Ersan Ilyasova","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Gary Harris","Day-To-Day","Feb 12",2017-02-14,2017-02-13
-"George Hill","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Iman Shumpert","Out","Feb 12",2017-02-14,2017-02-13
-"Isaiah Canaan","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"J.R. Smith","Out","Feb 11",2017-04-01,2017-02-13
-"Jabari Parker","Out","Feb 9",2017-10-25,2017-02-13
-"Jae Crowder","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Jahlil Okafor","Day-To-Day","Feb 12",2017-02-15,2017-02-13
-"JaVale McGee","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Jaylen Brown","Day-To-Day","Feb 11",2017-02-14,2017-02-13
-"Jimmy Butler","Out","Feb 9",2017-02-14,2017-02-13
-"Joakim Noah","Out","Feb 11",2017-02-14,2017-02-13
-"Joel Embiid","Out","Feb 12",2017-02-24,2017-02-13
-"Jonathon Simmons","Day-To-Day","Feb 12",2017-02-14,2017-02-13
-"Josh Richardson","Out","Feb 12",2017-02-15,2017-02-13
-"K.J. McDaniels","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Kenneth Faried","Day-To-Day","Feb 9",2017-02-15,2017-02-13
-"Kevin Love","Day-To-Day","Feb 9",2017-02-15,2017-02-13
-"Khris Middleton","Day-To-Day","Feb 10",2017-02-14,2017-02-13
-"Kris Dunn","Out","Feb 9",2017-02-14,2017-02-13
-"Kyrie Irving","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Lance Thomas","Out","Feb 11",2017-02-14,2017-02-13
-"LeBron James","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Mason Plumlee","Day-To-Day","Feb 12",2017-02-15,2017-02-13
-"Nene Hilario","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Nikola Mirotic","Day-To-Day","Feb 12",2017-02-14,2017-02-13
-"Omri Casspi","Out","Feb 9",2017-02-14,2017-02-13
-"Patrick Patterson","Out","Feb 9",2017-02-14,2017-02-13
-"Pau Gasol","Out","Feb 10",2017-02-24,2017-02-13
-"Paul Zipser","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Quincy Acy","Day-To-Day","Feb 9",2017-02-15,2017-02-13
-"Richaun Holmes","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Terrence Jones","Day-To-Day","Feb 12",2017-02-14,2017-02-13
-"Thabo Sefolosha","Out","Feb 12",2017-02-14,2017-02-13
-"Thaddeus Young","Out","Feb 9",2017-02-14,2017-02-13
-"Tiago Splitter","Out","Feb 9",2017-02-24,2017-02-13
-"Ty Lawson","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Tyreke Evans","Day-To-Day","Feb 9",2017-02-14,2017-02-13
-"Tyson Chandler","Day-To-Day","Feb 11",2017-02-14,2017-02-13
-"Wilson Chandler","Day-To-Day","Feb 12",2017-02-14,2017-02-13
-"Zach Randolph","Day-To-Day","Feb 10",2017-02-14,2017-02-13
-"Zaza Pachulia","Out","Feb 9",2017-02-23,2017-02-13
-"Adreian Payne","Out",NA,2017-03-01,2017-02-13
-"Avery Bradley","Out",NA,2017-02-15,2017-02-13
-"Ben Simmons","Out",NA,2017-02-24,2017-02-13
-"Brice Johnson","Out",NA,2017-02-24,2017-02-13
-"C.J. Wilcox","Out",NA,2017-03-01,2017-02-13
-"Chris Andersen","Out",NA,2017-10-25,2017-02-13
-"Chris Bosh","Out",NA,2017-10-25,2017-02-13
-"Chris Paul","Out",NA,2017-03-01,2017-02-13
-"Dragan Bender","Out",NA,2017-03-09,2017-02-13
-"Enes Kanter","Out",NA,2017-03-08,2017-02-13
-"Evan Turner","Out",NA,2017-03-15,2017-02-13
-"Festus Ezeli","Out",NA,2017-07-01,2017-02-13
-"Garrett Temple","Out",NA,2017-02-25,2017-02-13
-"J.J. Barea","Out",NA,2017-02-24,2017-02-13
-"Jeremy Lin","Out",NA,2017-02-24,2017-02-13
-"Jerryd Bayless","Out",NA,2017-10-25,2017-02-13
-"Jodie Meeks","Out",NA,2017-03-01,2017-02-13
-"Josh McRoberts","Out",NA,2017-03-01,2017-02-13
-"Justise Winslow","Out",NA,2017-10-25,2017-02-13
-"Nikola Pekovic","Out",NA,2017-10-25,2017-02-13
-"Quincy Pondexter","Out",NA,2017-04-01,2017-02-13
-"Ramon Sessions","Out",NA,2017-03-15,2017-02-13
-"Rodney Hood","Out",NA,2017-02-24,2017-02-13
-"Rudy Gay","Out",NA,2017-10-25,2017-02-13
-"Zach LaVine","Out",NA,2017-10-25,2017-02-13
+"Aaron Gordon","Day-To-Day","Mar 24",2017-03-29,2017-03-28
+"Al Jefferson","Out","Mar 27",2017-03-31,2017-03-28
+"Anthony Tolliver","Day-To-Day","Mar 24",2017-03-29,2017-03-28
+"Arron Afflalo","Day-To-Day","Mar 27",2017-03-29,2017-03-28
+"Avery Bradley","Day-To-Day","Mar 26",2017-03-29,2017-03-28
+"Bojan Bogdanovic","Day-To-Day","Mar 25",2017-03-29,2017-03-28
+"Brandon Ingram","Day-To-Day","Mar 27",2017-03-29,2017-03-28
+"Carmelo Anthony","Day-To-Day","Mar 25",2017-03-29,2017-03-28
+"Cristiano Felicio","Out","Mar 26",2017-03-29,2017-03-28
+"Danilo Gallinari","Out","Mar 24",2017-03-29,2017-03-28
+"Danny Green","Day-To-Day","Mar 25",2017-03-29,2017-03-28
+"Darren Collison","Day-To-Day","Mar 24",2017-03-29,2017-03-28
+"DeMarcus Cousins","Day-To-Day","Mar 27",2017-03-29,2017-03-28
+"DeMarre Carroll","Day-To-Day","Mar 27",2017-03-29,2017-03-28
+"Derrick Rose","Day-To-Day","Mar 25",2017-03-29,2017-03-28
+"Diamond Stone","Out","Mar 26",2017-03-29,2017-03-28
+"Dion Waiters","Out","Mar 25",2017-03-31,2017-03-28
+"Dragan Bender","Out","Mar 26",2017-04-05,2017-03-28
+"Hassan Whiteside","Day-To-Day","Mar 25",2017-03-29,2017-03-28
+"Iman Shumpert","Day-To-Day","Mar 27",2017-03-29,2017-03-28
+"Jahlil Okafor","Day-To-Day","Mar 26",2017-03-29,2017-03-28
+"Jeff Green","Out","Mar 27",2017-03-29,2017-03-28
+"JJ Redick","Day-To-Day","Mar 26",2017-03-29,2017-03-28
+"Joakim Noah","Out","Mar 25",2017-10-25,2017-03-28
+"Joe Harris","Out","Mar 27",2017-03-30,2017-03-28
+"Joel Embiid","Out","Mar 24",2017-10-25,2017-03-28
+"John Henson","Out","Mar 25",2017-04-02,2017-03-28
+"John Wall","Day-To-Day","Mar 24",2017-03-29,2017-03-28
+"Kenneth Faried","Day-To-Day","Mar 24",2017-03-29,2017-03-28
+"Kent Bazemore","Out","Mar 27",2017-03-29,2017-03-28
+"Kevin Durant","Out","Mar 26",2017-04-05,2017-03-28
+"Kosta Koufos","Day-To-Day","Mar 26",2017-03-29,2017-03-28
+"Kyle Korver","Out","Mar 28",2017-04-02,2017-03-28
+"Lance Thomas","Out","Mar 27",2017-03-29,2017-03-28
+"Leandro Barbosa","Day-To-Day","Mar 26",2017-03-29,2017-03-28
+"LeBron James","Day-To-Day","Mar 25",2017-03-29,2017-03-28
+"Malachi Richardson","Out","Mar 26",2017-10-25,2017-03-28
+"Marc Gasol","Day-To-Day","Mar 27",2017-03-29,2017-03-28
+"Michael Gbinije","Day-To-Day","Mar 24",2017-03-29,2017-03-28
+"Miles Plumlee","Out","Mar 26",2017-03-29,2017-03-28
+"Omer Asik","Out","Mar 24",2017-10-25,2017-03-28
+"Paul Millsap","Out","Mar 27",2017-04-02,2017-03-28
+"Quincy Pondexter","Out","Mar 24",2017-10-25,2017-03-28
+"Ramon Sessions","Out","Mar 26",2017-03-29,2017-03-28
+"Reggie Bullock","Day-To-Day","Mar 27",2017-03-29,2017-03-28
+"Reggie Jackson","Day-To-Day","Mar 27",2017-03-29,2017-03-28
+"Rodney Stuckey","Day-To-Day","Mar 27",2017-03-29,2017-03-28
+"Rondae Hollis-Jefferson","Day-To-Day","Mar 26",2017-03-29,2017-03-28
+"Ronnie Price","Out","Mar 26",2017-03-29,2017-03-28
+"Ryan Anderson","Out","Mar 26",2017-04-09,2017-03-28
+"Sean Kilpatrick","Out","Mar 27",2017-03-29,2017-03-28
+"Seth Curry","Day-To-Day","Mar 27",2017-03-29,2017-03-28
+"Thabo Sefolosha","Day-To-Day","Mar 27",2017-03-29,2017-03-28
+"Tiago Splitter","Out","Mar 27",2017-03-29,2017-03-28
+"Ty Lawson","Day-To-Day","Mar 26",2017-03-29,2017-03-28
+"Tyreke Evans","Day-To-Day","Mar 27",2017-03-29,2017-03-28
+"Alec Burks","Out",NA,2017-03-29,2017-03-28
+"Ben Simmons","Out",NA,2017-10-25,2017-03-28
+"Brandon Knight","Out",NA,2017-10-25,2017-03-28
+"Chandler Parsons","Out",NA,2017-10-25,2017-03-28
+"Chris Bosh","Out",NA,2017-10-25,2017-03-28
+"Dejounte Murray","Out",NA,2017-04-02,2017-03-28
+"Derrick Favors","Out",NA,2017-03-29,2017-03-28
+"Dwyane Wade","Out",NA,2017-05-01,2017-03-28
+"Ed Davis","Out",NA,2017-10-25,2017-03-28
+"Eric Bledsoe","Out",NA,2017-10-25,2017-03-28
+"Festus Ezeli","Out",NA,2017-10-25,2017-03-28
+"Glenn Robinson III","Out",NA,2017-04-08,2017-03-28
+"Gordon Hayward","Out",NA,2017-03-29,2017-03-28
+"Jabari Parker","Out",NA,2017-10-25,2017-03-28
+"Jerryd Bayless","Out",NA,2017-10-25,2017-03-28
+"Johnny O'Bryant","Out",NA,2017-03-29,2017-03-28
+"Josh McRoberts","Out",NA,2017-04-01,2017-03-28
+"Justise Winslow","Out",NA,2017-10-25,2017-03-28
+"Kyle Lowry","Out",NA,2017-04-01,2017-03-28
+"Michael Beasley","Out",NA,2017-04-01,2017-03-28
+"Nemanja Bjelica","Out",NA,2017-10-25,2017-03-28
+"Nikola Pekovic","Out",NA,2017-10-25,2017-03-28
+"Rudy Gay","Out",NA,2017-10-25,2017-03-28
+"Tyson Chandler","Out",NA,2017-10-25,2017-03-28
+"Zach LaVine","Out",NA,2017-10-25,2017-03-28

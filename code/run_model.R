@@ -8,24 +8,24 @@ library(parallel)
 library(foreach)
 library(doParallel)
 
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/auc.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/assign_clusters.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/winpercentages.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/predict_game.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/get_surplus_variables.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/reporting.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/sim_playoffs.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/attach_win_perc.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/manipulate_and_save_output.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/save_results.R")
-source("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/functions/get_team_offsets.R")
+source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/auc.R")
+source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/assign_clusters.R")
+source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/winpercentages.R")
+source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/predict_game.R")
+source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/get_surplus_variables.R")
+source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/reporting.R")
+source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/sim_playoffs.R")
+source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/attach_win_perc.R")
+source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/manipulate_and_save_output.R")
+source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/save_results.R")
+source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/get_team_offsets.R")
 
 
 ## Read the box scores
-box_scores <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA") 
+box_scores <- readRDS("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA") 
 
 ## Get the conferences
-conferences <- read.csv("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/Conferences.csv", stringsAsFactors = FALSE)
+conferences <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/Conferences.csv", stringsAsFactors = FALSE)
 
 
 ### Create a date-index
@@ -44,7 +44,7 @@ box_scores <- inner_join(box_scores, select(datemap, DATE, DATE_INDEX, season_da
 #box_scores <- mutate(box_scores, future_game = ifelse(DATE>=as.Date('2017-02-11'), 1, 0))
 
 ## Get model variables
-model_variables <- read.csv("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/modeldetails/model_variables.csv", stringsAsFactors = FALSE)
+model_variables <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/modeldetails/model_variables.csv", stringsAsFactors = FALSE)
 
 
 ### Global settings
@@ -78,7 +78,7 @@ end_index <- subset(datemap, DATE==end_date)$DATE_INDEX
 
 
 ### Assign clusters to the historical data and calculate rolling win percentages
-centroids <- readRDS("/Users/kimlarsen/Documents/Code/NBA_RANKINGS/centroids/centroids.RDA")
+centroids <- readRDS("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/centroids/centroids.RDA")
 s <- min(subset(datemap, season==ignore_season_prior_to)$DATE_INDEX)
 e <-max(subset(datemap, future_game==0)$DATE_INDEX) 
 ncore <- detectCores()-2
@@ -185,7 +185,7 @@ for (i in start_index:end_index){
      }
      inwindow <- filter(inwindow, DATE_INDEX>j-max(winstreak_window, playing_time_window))
      win_perc1 <- winpercentages(inwindow, thisseason, w)
-     win_perc2 <- winpercentages(inwindow, thisseason, w)
+     win_perc2 <- win_perc1
   }
   
   ### Special case for the last observed day
@@ -234,7 +234,7 @@ for (i in start_index:end_index){
   }
   
   for (d in 1:length(games)){
-    pred <- predict_game(c, filter(inwindow_active, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, prior, posterior, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, cr, offsets_by_team)
+    pred <- predict_game(c, filter(inwindow_active, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, prior, posterior, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, cr, offsets_by_team)
     scores[[counter]] <- pred[[1]]
     model_parts[[counter]] <- pred[[2]] 
     counter <- counter + 1
@@ -244,6 +244,6 @@ for (i in start_index:end_index){
 }
 
 ### Manipulate and save the output
-#results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1, as.Date("2016-11-20"))
-#results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 0)
-results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/", 0, 1, NA)
+#results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/", 0, 1, as.Date("2016-11-20"))
+#results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/", 0, 0)
+results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/", 0, 1, NA)

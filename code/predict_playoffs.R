@@ -1,16 +1,27 @@
 ##### Run the playoffs
 ## Need to run the season first using run_model.R
 
-inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date) 
-thisseason <- filter(inwindow, DATE==max(DATE))[1,"season"]
-win_perc1 <- winpercentages(filter(inwindow, DATE_INDEX>datemap[max_real_date-winstreak_window, "DATE_INDEX"]), thisseason)
-win_perc2 <- winpercentages(filter(inwindow, DATE_INDEX>datemap[max_real_date-winstreak_window_s, "DATE_INDEX"]), thisseason)
+source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/sim_playoffs.R")
 
+inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date & DATE_INDEX>max_real_date-playing_time_window+1)
+thisseason <- filter(inwindow, DATE==max(DATE))[1,"season"]
+win_perc1 <- winpercentages(inwindow, thisseason, w)
+win_perc2 <- win_perc1
+
+inwindow_active <- mutate(inwindow,
+                          today=as.Date(end_date),                        
+                          injured=ifelse(is.na(injury_status), 0, ifelse(today>=injury_scrape_date & today<return_date, 1, 0))
+)
+injured_players <- unique(subset(inwindow_active, injured==1)$PLAYER_FULL_NAME)
+if (length(injured_players)>0){
+  print(paste0("Injuries: ", injured_players))
+  inwindow_active <- filter(inwindow_active, injured==0)
+}
 
 ncore <- detectCores()-1
 registerDoParallel(ncore)
-loop_result <- foreach(p=1:100) %dopar% {
-  playoffs <- sim_playoff(ranks, inwindow, playing_time_window, win_perc1, win_perc2, datemap, 1, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason, end_date)
+loop_result <- foreach(p=1:10) %dopar% {
+  playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, 1, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason, end_date)
   winner <- subset(playoffs[[1]], status=="W")$team
   return(data.frame(p, winner))
 }

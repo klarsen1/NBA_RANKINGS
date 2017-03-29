@@ -27,15 +27,14 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
 
 sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_perc2, datemap, sims, root, c, end_index, thisseason, last_date_in_season){
   
-  
   ### Read the playoff tree
   tree <- data.frame(read.csv(paste0(root, "/rawdata/playofftree.csv"), stringsAsFactors = FALSE))
   
   ### Get the qualifying teams
-  qualifiers <- group_by(ranks, conference) %>% arrange(-pred_win_rate) %>%
+  qualifiers <- group_by(ranks, conference) %>% arrange(-season_win_rate) %>%
     mutate(rank=row_number(), exclude=0, status="W", round=4, ngames=7) %>%
     filter(rank<9) %>%
-    select(conference, team, pred_win_rate, rank, exclude, status, round, ngames) %>%
+    select(conference, team, season_win_rate, rank, exclude, status, round, ngames) %>%
     ungroup()
   
   rounds <- max(tree$round)
@@ -91,7 +90,8 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
       games=0
       while(games<7 & winner_declared==FALSE){
          thisday <- create_fake_entry(games+1, DATE, selected, opposing, thisseason, matchup1, matchup2)
-         pred <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[end_index-playing_time_window, "DATE_INDEX"]), win_perc1, win_perc2, "NA", sims, thisday, nclus, 0.50, 0.55, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
+         # pred <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[end_index-playing_time_window, "DATE_INDEX"]), win_perc1, win_perc2, "NA", sims, thisday, nclus, 0.50, 0.55, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
+           pred <- predict_game(c, filter(inwindow, DATE_INDEX>end_index-playing_time_window), win_perc1, win_perc2, games[d], sims, thisday, nclus, .5, .5, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, 1, NULL)
          if (pred[[1]]$prob_selected_team_win_d>0.5) 
            w1 <- w1 + 1
          else 

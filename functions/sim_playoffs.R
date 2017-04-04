@@ -1,6 +1,9 @@
+striHelper <- function(x) stri_c(x[stri_order(x)], collapse = "")
+
 create_fake_entry <- function(game, date, selected_team, opposing_team, thisseason, matchup1, matchup2){
-  thisday <- data.frame(matrix(nrow=1, ncol=13))
-  names(thisday) <- c("DATE", "opposing_team_travel", "selected_team_travel", "opposing_team_rest", "selected_team_rest", "home_team_name", "road_team_name", "opposing_team", "selected_team", "selected_team_win", "season", "selected_team_matchup_wins", "opposing_team_matchup_wins")
+  thisday <- data.frame(matrix(nrow=1, ncol=18))
+  names(thisday) <- c("DATE", "opposing_team_travel", "selected_team_travel", "opposing_team_rest", "selected_team_rest", "home_team_name", "road_team_name", "opposing_team", "selected_team", "selected_team_win", "season", "selected_team_matchup_wins", "opposing_team_matchup_wins", "days_on_road_selected_team", 
+                      "days_on_road_opposing_team", "fb", "game_id", "future_game")
   thisday$DATE <- date
   thisday$opposing_team_travel <- 0
   thisday$selected_team_travel <- 0
@@ -16,6 +19,12 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
   thisday$road_team_name <- opposing_team
   thisday$selected_team_matchup_wins <- matchup1
   thisday$opposing_team_matchup_wins <- matchup2
+  thisday$days_on_road_selected_team <- 0
+  thisday$days_on_road_opposing_team <- 0
+  thisday$fb <- 0
+  thisday$future_game <- 1
+  cat <- paste0(selected_team, opposing_team)
+  thisday$game_id <- paste0(date, vapply(stri_split_boundaries(cat, type = "character"), striHelper, ""))
   if (game %in% c(3,4,6)) {
     thisday$home_team_selected <- 0
     thisday$road_team_name <- selected_team
@@ -26,7 +35,7 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
 
 
 sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_perc2, datemap, sims, root, c, end_index, thisseason, last_date_in_season){
-  
+
   ### Read the playoff tree
   tree <- data.frame(read.csv(paste0(root, "/rawdata/playofftree.csv"), stringsAsFactors = FALSE))
   
@@ -46,7 +55,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
     #print(paste0("Round = ", i))
     matchups <- subset(tree, round==i)
     n <- max(matchups$series)
-    DATE <- max(inwindow$DATE) + i
+    DATE <- last_date_in_season + i
     for (j in 1:n){
       s <- subset(matchups, series==j)
       if (i<4){
@@ -91,7 +100,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
       while(games<7 & winner_declared==FALSE){
          thisday <- create_fake_entry(games+1, DATE, selected, opposing, thisseason, matchup1, matchup2)
          # pred <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[end_index-playing_time_window, "DATE_INDEX"]), win_perc1, win_perc2, "NA", sims, thisday, nclus, 0.50, 0.55, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
-           pred <- predict_game(c, filter(inwindow, DATE_INDEX>end_index-playing_time_window), win_perc1, win_perc2, games[d], sims, thisday, nclus, .5, .5, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, 1, NULL)
+         pred <- predict_game(c, filter(inwindow, DATE_INDEX>end_index-playing_time_window), win_perc1, win_perc2, thisday[1,"game_id"], sims, thisday, nclus, .5, .5, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, 1, NULL)
          if (pred[[1]]$prob_selected_team_win_d>0.5) 
            w1 <- w1 + 1
          else 
@@ -129,7 +138,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
                            opponent=ifelse(exclude==1, opponent, ifelse(team==home_team, road_team, home_team)),
                            exclude=ifelse(team==loser, 1, exclude))
     }
-    qualifiers <- arrange(qualifiers, -pred_win_rate) %>% group_by(conference, exclude) %>%
+    qualifiers <- arrange(qualifiers, -season_win_rate) %>% group_by(conference, exclude) %>%
       mutate(rank=row_number()) %>%
       ungroup()
   }

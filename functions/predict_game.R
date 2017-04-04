@@ -14,7 +14,6 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   days_on_road1 <- thisgame$days_on_road_selected_team
   days_on_road2 <- thisgame$days_on_road_opposing_team
     
-
   ### Read the overrides
   rosters <- data.frame(read.csv(paste0(dir, "rosters_current.csv"), stringsAsFactors = FALSE))
 
@@ -111,7 +110,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   d$roster <- rowSums(select(d, starts_with("share_minutes_cluster")))
   d$circumstances <- rowSums(select(d, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, home_team_selected))
   d$performance <- rowSums(select(d, selected_team_matchup_wins, opposing_team_matchup_wins, winrate_season_selected_team, winrate_season_selected_team_adj, winrate_season_opposing_team, winrate_season_opposing_team_adj))
-  
+
   if (is.null(offsets_by_team)==FALSE){
     if (nrow(offsets_by_team)>0){
       samplesdf <- left_join(samplesdf, offsets_by_team, by="selected_team") %>%

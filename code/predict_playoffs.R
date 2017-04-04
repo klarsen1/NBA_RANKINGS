@@ -2,6 +2,8 @@
 ## Need to run the season first using run_model.R
 
 source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/sim_playoffs.R")
+library(stringr)
+library(stringi)
 
 inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date & DATE_INDEX>max_real_date-playing_time_window+1)
 thisseason <- filter(inwindow, DATE==max(DATE))[1,"season"]
@@ -18,9 +20,10 @@ if (length(injured_players)>0){
   inwindow_active <- filter(inwindow_active, injured==0)
 }
 
+sims <- 100
 ncore <- detectCores()-1
 registerDoParallel(ncore)
-loop_result <- foreach(p=1:10) %dopar% {
+loop_result <- foreach(p=1:sims) %dopar% {
   playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, 1, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason, end_date)
   winner <- subset(playoffs[[1]], status=="W")$team
   return(data.frame(p, winner))
@@ -28,6 +31,6 @@ loop_result <- foreach(p=1:10) %dopar% {
 
 title_chances <- data.frame(rbindlist(loop_result)) %>% group_by(winner) %>%
   summarise(n=n()) %>%
-  mutate(prob_win_title=n/100) %>%
+  mutate(prob_win_title=n/sims) %>%
   select(-n)
 

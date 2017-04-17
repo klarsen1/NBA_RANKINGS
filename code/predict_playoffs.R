@@ -25,12 +25,14 @@ ncore <- detectCores()-1
 registerDoParallel(ncore)
 loop_result <- foreach(p=1:sims) %dopar% {
   playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, 1, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason, end_date)
-  winner <- subset(playoffs[[1]], status=="W")$team
+  #winner <- subset(playoffs[[1]], status=="W")$team
+  winner <- playoffs[[2]]
   return(data.frame(p, winner))
 }
 
-title_chances <- data.frame(rbindlist(loop_result)) %>% group_by(winner) %>%
+title_chances <- data.frame(rbindlist(loop_result)) %>% group_by(round, winner) %>%
   summarise(n=n()) %>%
-  mutate(prob_win_title=n/sims) %>%
+  mutate(prob_win=n/sims) %>%
   select(-n)
 
+View(title_chances)

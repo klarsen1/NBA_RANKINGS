@@ -1,31 +1,31 @@
 "elo","carm_elo","wins_538","losses_538","selected_team","opposing_team","pred_win_rate_538"
-1757,1783,67,15,"Golden State","Golden State",0.817073170731707
-1712,1707,63,19,"San Antonio","San Antonio",0.768292682926829
-1630,1633,56,26,"Houston","Houston",0.682926829268293
-1608,1604,50,32,"Washington","Washington",0.609756097560976
-1595,1602,53,29,"Boston","Boston",0.646341463414634
-1583,1595,49,33,"LA Clippers","LA Clippers",0.597560975609756
-1576,1579,49,33,"Toronto","Toronto",0.597560975609756
-1578,1571,48,34,"Oklahoma City","Oklahoma City",0.585365853658537
-1575,1568,49,33,"Utah","Utah",0.597560975609756
-1556,1557,41,41,"Portland","Portland",0.5
-1564,1556,52,30,"Cleveland","Cleveland",0.634146341463415
-1559,1545,41,41,"Miami","Miami",0.5
-1529,1530,46,36,"Memphis","Memphis",0.560975609756098
-1527,1527,43,39,"Milwaukee","Milwaukee",0.524390243902439
-1509,1516,36,46,"New Orleans","New Orleans",0.439024390243902
-1491,1501,33,49,"Minnesota","Minnesota",0.402439024390244
-1517,1496,38,44,"Denver","Denver",0.463414634146341
-1481,1485,40,42,"Chicago","Chicago",0.48780487804878
-1484,1479,37,45,"Charlotte","Charlotte",0.451219512195122
-1479,1475,40,42,"Indiana","Indiana",0.48780487804878
-1445,1444,34,48,"Dallas","Dallas",0.414634146341463
-1446,1435,42,40,"Atlanta","Atlanta",0.51219512195122
-1401,1415,31,51,"Philadelphia","Philadelphia",0.378048780487805
-1420,1414,36,46,"Detroit","Detroit",0.439024390243902
-1395,1394,32,50,"Sacramento","Sacramento",0.390243902439024
-1374,1376,30,52,"Orlando","Orlando",0.365853658536585
-1372,1376,30,52,"New York","New York",0.365853658536585
-1343,1341,19,63,"Brooklyn","Brooklyn",0.231707317073171
-1322,1321,24,58,"Phoenix","Phoenix",0.292682926829268
-1314,1317,23,59,"LA Lakers","LA Lakers",0.280487804878049
+1770,1792,0,0,"Golden State","Golden State",NA
+1661,1660,0,0,"San Antonio","San Antonio",NA
+1600,1603,0,0,"Toronto","Toronto",NA
+1587,1589,0,0,"Boston","Boston",NA
+1636,1640,0,0,"LA Clippers","LA Clippers",NA
+1587,1584,0,0,"Washington","Washington",NA
+1617,1609,0,0,"Utah","Utah",NA
+1602,1606,0,0,"Houston","Houston",NA
+1545,1541,0,0,"Cleveland","Cleveland",NA
+1526,1520,0,0,"Indiana","Indiana",NA
+1519,1523,0,0,"Chicago","Chicago",NA
+1563,1564,0,0,"Portland","Portland",NA
+1543,1537,0,0,"Oklahoma City","Oklahoma City",NA
+1502,1502,0,0,"Milwaukee","Milwaukee",NA
+1479,1469,0,0,"Atlanta","Atlanta",NA
+1482,1480,0,0,"Memphis","Memphis",NA
+1569,1555,0,0,"Miami","Miami",NA
+1552,1533,0,0,"Denver","Denver",NA
+1482,1489,0,0,"New Orleans","New Orleans",NA
+1463,1472,0,0,"Minnesota","Minnesota",NA
+1463,1462,0,0,"Charlotte","Charlotte",NA
+1441,1436,0,0,"Detroit","Detroit",NA
+1420,1421,0,0,"Dallas","Dallas",NA
+1393,1395,0,0,"Sacramento","Sacramento",NA
+1374,1379,0,0,"New York","New York",NA
+1367,1370,0,0,"LA Lakers","LA Lakers",NA
+1372,1370,0,0,"Brooklyn","Brooklyn",NA
+1352,1355,0,0,"Orlando","Orlando",NA
+1338,1348,0,0,"Philadelphia","Philadelphia",NA
+1340,1337,0,0,"Phoenix","Phoenix",NA

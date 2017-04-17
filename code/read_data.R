@@ -59,6 +59,8 @@ team[team=="Magic"] <- "Orlando"
 team[team=="Heat"] <- "Miami"
 team[team=="Suns"] <- "Phoenix"
 team[team=="Nets"] <- "Brooklyn"
+wins <- rep(0, length(elo))
+losses <- rep(0, length(elo))
 fivethirtyeight <- data.frame(team, elo=as.numeric(elo), 
                               carm_elo=as.numeric(carm_elo), 
                               wins_538=as.numeric(wins), 

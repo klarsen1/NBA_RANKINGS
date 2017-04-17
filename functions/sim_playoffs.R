@@ -100,7 +100,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
       while(games<7 & winner_declared==FALSE){
          thisday <- create_fake_entry(games+1, DATE, selected, opposing, thisseason, matchup1, matchup2)
          # pred <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[end_index-playing_time_window, "DATE_INDEX"]), win_perc1, win_perc2, "NA", sims, thisday, nclus, 0.50, 0.55, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
-         pred <- predict_game(c, filter(inwindow, DATE_INDEX>end_index-playing_time_window), win_perc1, win_perc2, thisday[1,"game_id"], sims, thisday, nclus, .5, .5, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, 1, NULL)
+         pred <- predict_game(c, filter(inwindow, DATE_INDEX>end_index-playing_time_window), win_perc1, win_perc2, thisday[1,"game_id"], sims, thisday, nclus, prior, posterior, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, 1, NULL)
          if (pred[[1]]$prob_selected_team_win_d>0.5) 
            w1 <- w1 + 1
          else 
@@ -127,7 +127,9 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
          thisday <- mutate(thisday, prob_home_team_win=ifelse(selected_team==home_team_name, pred[[1]]$prob_selected_team_win_d, 1-pred[[1]]$prob_selected_team_win_d), 
                                     prob_road_team_win=1-prob_home_team_win, 
                                     round=i, 
-                                    game=games)
+                                    game=games, 
+                                    loser=loser, 
+                                    winner=winner)
          game_results[[counter]] <- thisday
          counter <- counter + 1
       }
@@ -138,9 +140,14 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
                            opponent=ifelse(exclude==1, opponent, ifelse(team==home_team, road_team, home_team)),
                            exclude=ifelse(team==loser, 1, exclude))
     }
-    qualifiers <- arrange(qualifiers, -season_win_rate) %>% group_by(conference, exclude) %>%
+    qualifiers <- arrange(qualifiers, -season_win_rate) %>% 
+      group_by(conference, exclude) %>%
       mutate(rank=row_number()) %>%
       ungroup()
   }
-  return(list(qualifiers, data.frame(rbindlist(game_results))))
+  final_results <- rbindlist(game_results) %>%
+    filter(winner != "NONE" & loser != "NONE") %>%
+    dplyr::select(round, winner, loser, game, prob_home_team_win)
+    
+  return(list(qualifiers, final_results))
 }

@@ -42,6 +42,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
   ### Get the qualifying teams
   qualifiers <- group_by(ranks, conference) %>% arrange(-season_win_rate) %>%
     mutate(rank=row_number(), exclude=0, status="W", round=4, ngames=7) %>%
+    filter(team != "Miami") %>%
     filter(rank<9) %>%
     select(conference, team, season_win_rate, rank, exclude, status, round, ngames) %>%
     ungroup()
@@ -49,6 +50,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
   rounds <- max(tree$round)
   
   game_results <- list()
+  decomps <- list()
   counter <- 1
   
   for (i in 1:rounds){
@@ -101,6 +103,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
          thisday <- create_fake_entry(games+1, DATE, selected, opposing, thisseason, matchup1, matchup2)
          # pred <- predict_game(c, filter(inwindow, DATE_INDEX>datemap[end_index-playing_time_window, "DATE_INDEX"]), win_perc1, win_perc2, "NA", sims, thisday, nclus, 0.50, 0.55, "/Users/kimlarsen/Documents/Code/NBA_RANKINGS/rawdata/")
          pred <- predict_game(c, filter(inwindow, DATE_INDEX>end_index-playing_time_window), win_perc1, win_perc2, thisday[1,"game_id"], sims, thisday, nclus, prior, posterior, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, 1, NULL)
+         decomps[[counter]] <- pred[[2]]
          if (pred[[1]]$prob_selected_team_win_d>0.5) 
            w1 <- w1 + 1
          else 
@@ -149,5 +152,5 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
     filter(winner != "NONE" & loser != "NONE") %>%
     dplyr::select(round, winner, loser, game, prob_home_team_win)
     
-  return(list(qualifiers, final_results))
+  return(list(qualifiers, final_results, data.frame(rbindlist(decomps))))
 }

@@ -21,13 +21,12 @@ if (length(injured_players)>0){
 }
 
 sims <- 100
-ncore <- detectCores()-1
-registerDoParallel(ncore)
-loop_result <- foreach(p=1:sims) %dopar% {
+loop_result <- list()
+decomp <- list()
+for(p in 1:sims){
   playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, 1, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason, end_date)
-  #winner <- subset(playoffs[[1]], status=="W")$team
-  winner <- playoffs[[2]]
-  return(data.frame(p, winner))
+  loop_result[[p]] <- playoffs[[2]]
+  decomp[[p]] <- playoffs[[3]]
 }
 
 title_chances <- data.frame(rbindlist(loop_result)) %>% group_by(round, winner) %>%
@@ -36,3 +35,8 @@ title_chances <- data.frame(rbindlist(loop_result)) %>% group_by(round, winner) 
   select(-n)
 
 View(title_chances)
+
+decomps <- data.frame(rbindlist(decomp))
+
+write.csv(decomps, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/modeldetails/2017_playoff_decomp.CSV", row.names = FALSE)
+

@@ -41,6 +41,7 @@ r <-
 
 qualifiers <- read.csv(r, stringsAsFactors=FALSE) %>%
     group_by(conference) %>% 
+    filter(team != "Miami") %>%
     mutate(rank=rank(-season_win_rate)) %>%
     filter(rank<9) %>%
     select(team) %>%
@@ -49,13 +50,13 @@ qualifiers <- read.csv(r, stringsAsFactors=FALSE) %>%
   
 
 f <-
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2017-02-12.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/2017_playoff_decomps.csv"
  
 center <- function(x){return(x-median(x))}
 read.csv(f, stringsAsFactors = FALSE) %>%
   select(selected_team, roster, circumstances, performance) %>%
   group_by(selected_team) %>%
-  filter(selected_team %in% qual) %>%
+  #inner_join(qualifiers, by="selected_team") %>%
   summarise_each(funs(mean)) %>% ## get averages across games by team
   ungroup() %>%
   mutate_each(funs(center), which(sapply(., is.numeric))) %>% ## standardize across teams
@@ -66,12 +67,11 @@ read.csv(f, stringsAsFactors = FALSE) %>%
  
 ```
  
-The bars show the contribution from each part of the model. As expected, circumstances do not affect the overall prediction for the entire season as most teams have similarly taxing schedules. However, contributions from performance (weighted winning percentages) and roster (surplus of important player archetypes) vary considerably.
+The bars show the contribution from each part of the model. Longer, positive bars means that the team is stronger in that category compared to its competitors, and vice versa for negative bars. Some interesting observations from this chart:
 
-Some interesting observations:
-
-* akdhas
-* kadhkad
+* Golden state gets the highest score both in terms of performance (weighted winning percentage) and relative quality of the roster (surplus of stronger player archetypes). See the readme file for more details on this. 
+* The model impressed by San Antonio's ability to beat teams, but not impressed by its roster.
+* Boston does not score particularly high compared to Cleveland in any category. The model could be favoring Boston in this matchup due to the fact that Boston beat Cleveland during the last two encounters (which is probably not indicative of the playfoffs).
 
 
 

@@ -24,6 +24,7 @@ sims <- 100
 loop_result <- list()
 decomp <- list()
 for(p in 1:sims){
+  print(p)
   playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, 1, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason, end_date)
   loop_result[[p]] <- playoffs[[2]]
   decomp[[p]] <- playoffs[[3]]

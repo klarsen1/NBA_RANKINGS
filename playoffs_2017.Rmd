@@ -50,7 +50,7 @@ qualifiers <- read.csv(r, stringsAsFactors=FALSE) %>%
   
 
 f <-
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/2017_playoff_decomps.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/2017_playoff_decomp.CSV"
  
 center <- function(x){return(x-median(x))}
 read.csv(f, stringsAsFactors = FALSE) %>%

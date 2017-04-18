@@ -145,11 +145,11 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
          games <- games+1
          if (runif(1)>0.5){
            order_preserved <- 1
-           print("Kept Order")
+           #print("Kept Order")
            selected <- home_team
            opposing <- road_team
          } else{
-           print("Flipped Order")
+           #print("Flipped Order")
            order_preserved <- 0
            selected <- road_team
            opposing <- home_team

@@ -53,7 +53,7 @@ f <-
   "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/2017_playoff_decomp.CSV"
  
 center <- function(x){return(x-median(x))}
-read.csv(f, stringsAsFactors = FALSE) %>%
+t=read.csv(f, stringsAsFactors = FALSE) %>%
   select(selected_team, roster, circumstances, performance) %>%
   group_by(selected_team) %>%
   #inner_join(qualifiers, by="selected_team") %>%

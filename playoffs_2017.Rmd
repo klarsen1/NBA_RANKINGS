@@ -6,11 +6,11 @@
   
 # And the Winner of the 2017 NBA Playoffs is... The Golden State Warriors!
   
-The 2017 NBA playoffs start ths weekend. So of course I had run the model through the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS) to simulate the playoffs and pick a winner.
+The 2017 NBA playoffs start ts weekend. So of course I had run the model through the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS) to simulate the playoffs and pick a winner.
 
 Some results from the model:
-* First, a not-so-contoversial. The Golden State Warriors won the title in every single simulation, barely losing any games along the way. 
-* Moreinterestingly, howevever, is that the model picks the Boston Celtics as Golden State's opponent in the finals. The model predicts that the Celtics will dispose the Cavs in five games
+* First, a not-so-controversial. The Golden State Warriors won the title in every single simulation, barely losing any games along the way. 
+* More interestingly, however, is that the model picks the Boston Celtics as Golden State's opponent in the finals. The model predicts that the Celtics will dispose the Cavs in five games
 * Also, the model favors the Spurs over Houston to advance to the Western Conference Finals.
 
 Obviously, this is just a model, and many things can happen. The style of play is different in the playoffs and injuries can strike at any time. But, barring any serious injuries, I feel confident that the Golden State will take the title this year. I feel less confident that Boston will indeed beat the Cavs in a playoff series, and I also strongly doubt that San Antonio beat Houston -- despite having the better record. 
@@ -22,13 +22,13 @@ Obviously, this is just a model, and many things can happen. The style of play i
 * For each game, the minutes played by each player were varied using a normal distribution where the mean and standard deviation are based on historical data.
 * The playoffs were simulated 100 times. I tried more simulations as well but it didn't really alter the overall story.
 * All injury information is current.
-* The results described in the following section reflect the most commonly occuring outcomes.
+* The results described in the following section reflect the most commonly occurring outcomes.
 
 # Should We Trust the Model?
 
 First of all, we should never completely trust any statistical model. A statistical model is simply one of many inputs into our decision framework. But it's a valuable input because because they help us combine the many variables that often affect a given outcome into a single prediction. 
 
-When I first did a [backtest](https://github.com/klarsen1/NBA_RANKINGS) of the Elastic Rankings, the accuracy was around 66%. For the first half of the 2016-2017 season, the one-week-ahead accuracy was 63%. This was computed by comparing the predictions stored every Sunday to the games during the following week -- from the beginning of December to the end of Ferbruary. Part of the decline in accuracy is due to the fact that the beginning of the season is harder to predict, part of of it is due to reasons that I have not dug into. 
+When I first did a [backtest](https://github.com/klarsen1/NBA_RANKINGS) of the Elastic Rankings, the accuracy was around 66%. For the first half of the 2016-2017 season, the one-week-ahead accuracy was 63%. This was computed by comparing the predictions stored every Sunday to the games during the following week -- from the beginning of December to the end of February. Part of the decline in accuracy is due to the fact that the beginning of the season is harder to predict, part of of it is due to reasons that I have not dug into. 
 
 Having said that, I decided that 63% is sufficient for me to go ahead and predict the playoffs while keeping a healthy dose of skepticism when it comes to the model's bullishness on the Celtics and Spurs.
 
@@ -36,7 +36,7 @@ Having said that, I decided that 63% is sufficient for me to go ahead and predic
 
 Let's say, for now, that we trust the model. The next questions are then: why does model favor the Warriors in every simulation? What's the big deal about Boston and how can San Antonio possibly beat the Rockets in a seven game series?
 
-The answer these questions, we can decompose the playoff preductions across all simulations. 
+The answer these questions, we can decompose the playoff predictions across all simulations. 
 
 ## Decomposing Scores
 As described in the [readme file](https://github.com/klarsen1/NBA_RANKINGS), we can decompose the predictions from the Elastic model into three parts:
@@ -75,17 +75,17 @@ read.csv(f, stringsAsFactors = FALSE) %>%
 
 The bars show the contribution from each part of the model. Longer, more positive bars means that the team is stronger in that category compared to their playoff competitors, and vice versa for negative bars. Some interesting observations from this chart:
 
-* The red bars show sthat circumstanes -- e.g., traveling -- does not matter much for the playoffs.
+* The red bars show that circumstances -- e.g., traveling -- does not matter much for the playoffs.
 * Golden state gets the highest score both in terms of performance (weighted winning percentage) and relative quality of the roster (surplus of stronger player archetypes). See the readme file for more details on this metrics. 
 * The model impressed by San Antonio's ability to beat teams, but not impressed by its roster.
-* The model favors Boston over Cleveland due to Cleveland's recent poor performmance (illustrated by the green bars). Cleveland does well in terms of the quality and diversity of the roster, but not in terms of performance. But we all know that this can change in the playoffs.
+* The model favors Boston over Cleveland due to Cleveland's recent poor performance (illustrated by the green bars). Cleveland does well in terms of the quality and diversity of the roster, but not in terms of performance. But we all know that this can change in the playoffs.
 * It seems like the model is picking home-court advantage and winning history over roster quality in the San Antonio match-up.
 
 ## Last Words
 
 The only thing I know is that all models are wrong. Having said that, barring any injuries, I feel confident that Golden State will reclaim the trophy this year. It seems like a safe prediction and the model seems to agree. 
 
-As mentioned above, we always need to skeptical of models. Often, we must intervene because we know something the model doesn't know. For exapmple, despite what the model says, I think (and hope) we'll see a match-up against Cleveland -- the recent performance we've seen from Cleveland is not indicative of what they can do in the playoffs. 
+As mentioned above, we always need to skeptical of models. Often, we must intervene because we know something the model doesn't know. For example, despite what the model says, I think (and hope) we'll see a match-up against Cleveland -- the recent performance we've seen from Cleveland is not indicative of what they can do in the playoffs. 
 
 
 

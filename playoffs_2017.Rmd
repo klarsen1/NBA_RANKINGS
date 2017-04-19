@@ -4,33 +4,33 @@
   variant: markdown_github
 ---
   
-# And the Winner of the 2017 NBA Playoffs is... The Golden State Warriors!
+# The Winner of the 2017 NBA Playoffs is... The Golden State Warriors!
   
-As we all know, the 2017 NBA playoffs kicked off last weekend. But you didn't know that I've simulated the outcome by running the qualifying teams through playoff tree using the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS).
+As we all know, the 2017 NBA playoffs kicked off last weekend. But what you didn't know is that I've simulated the outcome by running the qualifying teams through playoff tree using the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS).
 
-I know you've been waiting for this for weeks (sarcasm intended) and so let's get right to the key results:
-* First, a not-so-controversial preediction: The Golden State Warriors won the title in every single simulation, barely losing any games along the way. 
+Let's get straight to the key results:
+
+* First, a not-so-controversial prediction: The Golden State Warriors won the title in every single simulation, barely losing any games along the way. 
 * More interestingly, however, is that the model picks the Boston Celtics as Golden State's opponent in the finals.
 * Also, the model favors the Spurs over Houston to advance to the Western Conference Finals.
 
-Obviously, this is just a model, and many things can happen. The style of play is different in the playoffs and injuries can strike at any time. But, barring any serious injuries, I feel confident that the Golden State will take the title this year. I feel less confident, however, that Boston will indeed beat the Cavs in a playoff series, and I also strongly doubt that San Antonio beat Houston -- despite having the better record. 
+Obviously, this is just a model, and many things can happen between now and the finals and the style of play is different in the playoffs. But, barring any serious injuries, I feel confident that the Golden State will take the title this year. I feel less confident, however, that Boston will indeed beat the Cavs in a playoff series, and I also doubt that San Antonio will beat Houston -- despite having the better record. 
 
 # About the Simulations
 
 * No data from the 2017 playoffs were used to make the predictions. Only regular season data were used.
-* Simulated each game in the playoff tree.
-* For each game, the minutes played by each player were varied using a normal distribution where the mean and standard deviation are based on historical data.
-* The playoffs were simulated 100 times. I tried more simulations as well but it didn't really alter the overall story.
+* Simulated each game in the playoff tree. For each game, the minutes played by each player were varied randomly, where the level of variation was based on historical data for the 2016-2017 season.
+* I seemed to get very similar answers whether I simulated the playoffs 100 or 1,000 times.
 * All injury information is current.
 * The results described in the following section reflect the most commonly occurring outcomes.
 
 # Should We Trust the Model?
 
-First of all, we should never completely trust any statistical model. A healthy dose of skepticism and commmon sense should always be mixed with model predictions. Hence, model accuracy in itself is not a sufficient condition for a model to be useful, but it's an important factor.
+First of all, we should never completely trust any statistical model. Model predictions should always be combined with a healthy dose of skepticism and common sense. 
 
-When I first did a [backtest](https://github.com/klarsen1/NBA_RANKINGS) of the Elastic Rankings, the accuracy was around 66%. For the first half of the 2016-2017 season, the one-week-ahead accuracy was 63%. This was computed by comparing the predictions stored every Sunday to the games during the following week -- from the beginning of December to the end of February. Part of the decline in accuracy is due to the fact that the beginning of the season is harder to predict, part of of it is due to reasons that I have not dug into. 
+One way to build trust in a model is to look at model accuracy through back-testing. Common sense still needs to be applied, but this is a place to start. One can argue that model accuracy is a necessary, but not sufficient condition, for a model to be useful and trustworthy.
 
-Having said that, I decided that 63% is sufficient for me to go ahead and predict the playoffs while keeping a healthy dose of skepticism when it comes to the model's bullishness on the Celtics and Spurs.
+When I first did a [backtest](https://github.com/klarsen1/NBA_RANKINGS) of the Elastic Rankings, the accuracy was around 66%. For the first half of the 2016-2017 season, the one-week-ahead accuracy was 63%. This was computed by comparing the predictions stored every Sunday to the games during the following week, from the beginning of December to the end of February. Part of the decline in accuracy is due to the fact that the beginning of the season is harder to predict, part of of it is due to reasons that I have not dug into.
 
 # Breaking Down the Predictions
 
@@ -38,7 +38,7 @@ Let's say, for now, that we trust the model. The next questions are then: why do
 
 The answer these questions, we can decompose the playoff predictions across all simulations. 
 
-## Decomposing Scores
+## Decomposing Predictions into Three Parts
 As described in the [readme file](https://github.com/klarsen1/NBA_RANKINGS), we can decompose the predictions from the Elastic model into three parts:
  
 * Roster -- archetype allocation deficits/surpluses. These are the variables labeled "share_minutes_cluster_XX" described above. This group of variables reflects the quality of the roster.
@@ -71,7 +71,7 @@ read.csv(f, stringsAsFactors = FALSE) %>%
  
 ```
 
-## So What Does this Chart Mean?
+### So What Does this Chart Mean?
 
 The bars show the contribution from each part of the model. Longer, more positive bars means that the team is stronger in that category compared to their playoff competitors, and vice versa for negative bars. Some interesting observations from this chart:
 

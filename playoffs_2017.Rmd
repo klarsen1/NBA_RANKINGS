@@ -6,11 +6,11 @@
   
 # And the Winner of the 2017 NBA Playoffs is... The Golden State Warriors!
   
-As we all know, the 2017 NBA playoffs just started last weekend. But you did not know that I've simulated the outcome by running the qualifying teams through playoff tree using the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS).
+As we all know, the 2017 NBA playoffs kicked off last weekend. But you didn't know that I've simulated the outcome by running the qualifying teams through playoff tree using the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS).
 
 I know you've been waiting for this for weeks (sarcasm intended) and so let's get right to the key results:
 * First, a not-so-controversial preediction: The Golden State Warriors won the title in every single simulation, barely losing any games along the way. 
-* More interestingly, however, is that the model picks the Boston Celtics as Golden State's opponent in the finals. The model predicts that the Celtics will dispose the Cavs in five games
+* More interestingly, however, is that the model picks the Boston Celtics as Golden State's opponent in the finals.
 * Also, the model favors the Spurs over Houston to advance to the Western Conference Finals.
 
 Obviously, this is just a model, and many things can happen. The style of play is different in the playoffs and injuries can strike at any time. But, barring any serious injuries, I feel confident that the Golden State will take the title this year. I feel less confident, however, that Boston will indeed beat the Cavs in a playoff series, and I also strongly doubt that San Antonio beat Houston -- despite having the better record. 
@@ -26,7 +26,7 @@ Obviously, this is just a model, and many things can happen. The style of play i
 
 # Should We Trust the Model?
 
-First of all, we should never completely trust any statistical model. A statistical model is simply one of many inputs into our decision framework. But it's a valuable input because because they help us combine the many variables that often affect a given outcome into a single prediction. 
+First of all, we should never completely trust any statistical model. A healthy dose of skepticism and commmon sense should always be mixed with model predictions. Hence, model accuracy in itself is not a sufficient condition for a model to be useful, but it's an important factor.
 
 When I first did a [backtest](https://github.com/klarsen1/NBA_RANKINGS) of the Elastic Rankings, the accuracy was around 66%. For the first half of the 2016-2017 season, the one-week-ahead accuracy was 63%. This was computed by comparing the predictions stored every Sunday to the games during the following week -- from the beginning of December to the end of February. Part of the decline in accuracy is due to the fact that the beginning of the season is harder to predict, part of of it is due to reasons that I have not dug into. 
 

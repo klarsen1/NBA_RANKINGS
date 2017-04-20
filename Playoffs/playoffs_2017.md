@@ -17,8 +17,7 @@ About the Simulations
 =====================
 
 -   No data from the 2017 playoffs were used to make the predictions. Only regular season data were used (no cheating).
--   For each simulation, the minutes played by each player were varied randomly for every game, where the level of variation was based on historical data for the 2016-2017 season. This was mostly done to gauge the stability of the predictions.
--   The results were very consistent across simulations and I ended up only repeating the playoffs 100 times.
+-   For each simulation, the minutes played by each player were varied randomly for every game, where the level of variation was based on historical data for the 2016-2017 season. This was mostly done to gauge the stability of the predictions (the results were very consistent across simulations).
 
 Making Sense of the Predictions
 ===============================

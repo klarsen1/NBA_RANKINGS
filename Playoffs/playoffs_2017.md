@@ -7,7 +7,7 @@ Let's get straight to the key results:
 
 -   First, a not-so-controversial prediction: The Golden State Warriors will reclaim the title this year. They won in every single simulation, barely losing any games along the way.
 -   More interestingly, however, is that the model picks the Boston Celtics as Golden State's opponent in the finals.
--   Also, the model favors the Spurs over Houston to advance to the Western Conference Finals.
+-   Also, the model favors the Spurs over Houston to advance to the Western Conference Finals, after a seven game series.
 
 Note that this assumes no major injuries to key players (or suspensions).
 

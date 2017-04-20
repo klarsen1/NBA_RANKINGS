@@ -1,7 +1,9 @@
 The Winner of the 2017 NBA Playoffs is... The Golden State Warriors!
 ====================================================================
 
-As we all know, the 2017 NBA playoffs kicked off last weekend. But what you didn't know is that I've attempted to predict the outcome by running the qualifying teams through the playoff tree using the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS). For those who did not read my post from last year, the Elastic NBA Ratings are based on a statistical model that predicts the winner of a given match up based team performance, the quality of the roster -- as measures by the surplus of key player *archetypes* -- as well as circumstances (travel, home court advantage, etc).
+As we all know, the 2017 NBA playoffs kicked off last weekend. But what you didn't know is that I've attempted to predict the outcome by running the qualifying teams through the playoff tree using the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS).
+
+For those who did not read my post from last year, the Elastic NBA Ratings are based on a statistical model that predicts the winner of a given match up based team performance, the quality of the roster -- as measures by the surplus of key player *archetypes* -- as well as circumstances (travel, home court advantage, etc).
 
 Let's get straight to the key results:
 
@@ -25,7 +27,7 @@ Should We Trust the Model?
 
 First of all, we should never completely trust any statistical model. Model predictions should always be combined with a healthy dose of skepticism and common sense.
 
-Having said that, one way to build trust in a model is to look at model accuracy through back-testing. Model accuracy is a necessary, but not sufficient condition, for a model to be useful and trustworthy.
+Having said that, one way to build trust in a model is to assess model accuracy through back-testing. Model accuracy is a necessary, but not sufficient condition, for a model to be useful and trustworthy.
 
 When I first did a [backtest](https://github.com/klarsen1/NBA_RANKINGS) of the Elastic Rankings, the accuracy was around 66%. For the first half of the 2016-2017 season, the one-week-ahead accuracy was 63%. Part of the decline in accuracy is due to the fact that the beginning of the season is harder to predict, part of of it is due to reasons that I have not dug into.
 
@@ -90,3 +92,5 @@ Last Words
 We should always be skeptical of statistical models, and sometimes we need to overrule the model because we know something that the model doesn't know.
 
 For example, despite what the model says, I think (and hope) we'll see another finals match-up against Cleveland -- I just don't see Boston getting past Cleveland, assuming they can even make it past Chicago. Moreover, I wouldn't bet on the Spurs beating the Rockets, despite the better record in the season.
+
+But the Golden State victory prediction seems like a sure bet, barring any significant injuries or suspensions. No need to doubt the model here.

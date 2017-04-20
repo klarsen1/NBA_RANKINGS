@@ -6,7 +6,7 @@ output:
   
 # The Winner of the 2017 NBA Playoffs is... The Golden State Warriors!
   
-As we all know, the 2017 NBA playoffs kicked off last weekend. But what you didn't know is that I've attempted to predict the outcome by running the qualifying teams through the playoff tree using the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS). 
+As we all know, the 2017 NBA playoffs kicked off last weekend. But what you didn't know is that I've predicted the outcome by running the qualifying teams through the playoff tree using the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS). 
 
 For those who did not read my previous post on the Elastic NBA Ratings, they are essentially based on a statistical model that predicts the winner of a given match up based team performance, the quality of the roster -- as measured by the surplus of key player *archetypes* -- as well as circumstances (travel, home court advantage, etc).
 
@@ -20,17 +20,15 @@ Note that this assumes no major injuries to key players (or suspensions).
 
 # About the Simulations
 
-* No data from the 2017 playoffs were used to make the predictions. Only regular season data were used.
+* No data from the 2017 playoffs were used to make the predictions. Only regular season data were used (no cheating).
 * For each game, the minutes played by each player were varied randomly, where the level of variation was based on historical data for the 2016-2017 season.
-* I got very similar answers whether I simulated the playoffs 100 or 1,000 times.
-* All injury information is current.
-* The results described in the following section reflect the most commonly occurring outcomes in the simulations.
+* I got very similar answers whether I simulated the playoffs 100 or 1,000 times. The results described in the following section reflect the most commonly occurring outcomes in the simulations.
 
 # Should We Trust the Model?
 
-First of all, we should never completely trust any statistical model. Model predictions should always be combined with a healthy dose of skepticism and common sense. 
+First of all, we should never completely trust *any* statistical model. Model predictions should always be combined with a healthy dose of skepticism and common sense. 
 
-Having said that, one way to build trust in a model is to demonstrate model accuracy through back-testing. Model accuracy is a necessary -- but not sufficient -- condition for a model to be useful and trustworthy.
+Having said that, one way to build trust in a model is to measure model accuracy through back-testing. Model accuracy is a necessary -- but not sufficient -- condition for a model to be useful and trustworthy.
 
 When I first did a [backtest](https://github.com/klarsen1/NBA_RANKINGS) of the Elastic Rankings, the accuracy was around 66%. For the first half of the 2016-2017 season, the accuracy was around 63%. Part of the decline in accuracy is due to the fact that the beginning of the season is harder to predict, part of of it is due to reasons that I have not dug into.
 
@@ -38,7 +36,7 @@ When I first did a [backtest](https://github.com/klarsen1/NBA_RANKINGS) of the E
 
 Let's say, for now, that we trust the model. The next questions are then: why does the model favor the Warriors in every simulation? What's the big deal about Boston and why is San Antonio beating the Rockets in the simulations?
 
-To answer these questions, we need to decompose the playoff predictions across all simulations. 
+To answer these questions, we need to *decompose* the playoff predictions. 
 
 ## Decomposing Predictions into Three Parts
 As described in the [readme file](https://github.com/klarsen1/NBA_RANKINGS), the R code behind the Elastic Ratings automatically decompose the predictions into three parts:
@@ -75,7 +73,11 @@ read.csv(f, stringsAsFactors = FALSE) %>%
 
 ### So What Does this Chart Mean?
 
-The bars show the contribution from each part of the model. Longer, more positive bars mean that the team is stronger in that category compared to their playoff competitors, and vice versa for negative bars. Note that the bars are *relative* to the competitors a given team might meet in the playoff simulations. In other words, the bars are not completely apples-to-apples across teams as some teams will face off against better competition. Nevertheless, we can get some interesting insights from this chart:
+The bars show the contribution from each part of the model. Longer, more positive bars mean that the given team is stronger in that category compared to its playoff competitors, and vice versa for negative bars. 
+
+Note that the bars are *relative* to the competitors a given team might meet in the playoff simulations. This means that the bars are not completely apples-to-apples across teams as some teams will face off against better competition. For example, Portland's bars essentially reflect how Portland stacks up against Golden State. 
+
+Nevertheless, we can get some interesting insights from this chart:
 
 * The red bars show that circumstances -- e.g., traveling and home court advantage -- does not matter much in the playoffs. That's not a big surprise.
 * Golden State gets the highest score of all playoff teams, both in terms of performance (weighted winning percentage) and relative quality of the roster (surplus of stronger player "archetypes""). See the readme file for more details on these metrics. This is essentially why the model always favors Golden State.

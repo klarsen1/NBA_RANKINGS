@@ -3,7 +3,7 @@ The Winner of the 2017 NBA Playoffs is... The Golden State Warriors!
 
 As we all know, the 2017 NBA playoffs kicked off last weekend. But what you didn't know is that I've attempted to predict the outcome by running the qualifying teams through the playoff tree using the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS).
 
-For those who did not read my post from last year, the Elastic NBA Ratings are based on a statistical model that predicts the winner of a given match up based team performance, the quality of the roster -- as measured by the surplus of key player *archetypes* -- as well as circumstances (travel, home court advantage, etc).
+For those who did not read my previous post on the Elastic NBA Ratings, they are essentially based on a statistical model that predicts the winner of a given match up based team performance, the quality of the roster -- as measured by the surplus of key player *archetypes* -- as well as circumstances (travel, home court advantage, etc).
 
 Let's get straight to the key results:
 

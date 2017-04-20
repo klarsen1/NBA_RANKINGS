@@ -1,5 +1,5 @@
-The Winner of the 2017 NBA Playoffs is... The Golden State Warriors!
-====================================================================
+And the Winner of the 2017 NBA Playoffs is... The Golden State Warriors!
+========================================================================
 
 As we all know, the 2017 NBA playoffs kicked off last weekend. But what you didn't know is that I've predicted the outcome by running the qualifying teams through the playoff tree using the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS).
 

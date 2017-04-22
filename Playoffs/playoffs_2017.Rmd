@@ -76,7 +76,7 @@ Note that the bars are *relative* to the competitors a given team might meet in 
 
 We should always have a healthy dose of skepticism towards predictions from statistical models. In fact, sometimes we need to overrule a prediction because we know something that the model doesn't know. 
 
-For example, despite what the model says, I think (and hope) we'll see another finals match-up between Golden State and Cleveland. I don't see Boston getting past Cleveland and maybe not even Chicago. Moreover, I wouldn't bet on the Spurs beating the Rockets, despite their better season record. 
+For example, despite what the model says, I think (and hope) we'll see another finals match-up between Golden State and Cleveland. I don't see Boston getting past Cleveland. Moreover, I wouldn't bet on the Spurs beating the Rockets, despite their better season record. 
 
 But the Golden State victory prediction seems like a sure bet, barring any significant injuries or suspensions, of course. No need to doubt the model here.
 

@@ -18,7 +18,7 @@ Methodology
 
 -   The [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS) were used to predict the winner of each game in each series, following the structure of the NBA playoff tree.
 -   No data from the 2017 playoffs were used to make the predictions; only regular season data were used. Injury information is from the day before the playoffs started.
--   The projected minutes played by each player were varied randomly across games based on variation observed during the 2016-2017 season. The playoffs were then repeated multiple times. This was done to gauge the stability of the predictions, since minutes played by each player are key inputs into the model.
+-   The projected minutes played by each player were varied randomly across games based on variation observed during the 2016-2017 season. The playoffs were then "simulated" multiple times. This was done to gauge the stability of the predictions, since minutes played by each player are key inputs into the model.
 -   For background, model accuracy (win/loss prediction) for the first half of the 2016-2017 season was 63%, versus 66% for the previous season.
 
 Making Sense of the Predictions
@@ -75,6 +75,6 @@ Last Words
 
 We should always have a healthy dose of skepticism towards predictions from statistical models. In fact, sometimes we need to overrule a prediction because we know something that the model doesn't know.
 
-For example, despite what the model says, I think (and hope) we'll see another finals match-up between Golden State and Cleveland. I don't see Boston getting past Cleveland and maybe not even Chicago. Moreover, I wouldn't bet on the Spurs beating the Rockets, despite their better season record.
+For example, despite what the model says, I think (and hope) we'll see another finals match-up between Golden State and Cleveland. I don't see Boston getting past Cleveland. Moreover, I wouldn't bet on the Spurs beating the Rockets, despite their better season record.
 
 But the Golden State victory prediction seems like a sure bet, barring any significant injuries or suspensions, of course. No need to doubt the model here.

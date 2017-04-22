@@ -48,8 +48,10 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
 }
 
 
-sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_perc2, datemap, sims, root, c, end_index, thisseason, last_date_in_season){
+sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_perc2, datemap, runs=1, root, c, end_index, thisseason, last_date_in_season, seed){
 
+  set.seed(seed)
+  
   ### Read the playoff tree
   tree <- data.frame(read.csv(paste0(root, "/rawdata/playofftree.csv"), stringsAsFactors = FALSE))
   
@@ -73,7 +75,6 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
     n <- max(matchups$series)
     DATE <- last_date_in_season + i
     for (j in 1:n){
-      set.seed(2016)
       s <- subset(matchups, series==j)
       if (i<4){
          home_team <- subset(qualifiers, rank==s$rank_home & exclude==0 & conference==s$conference)$team
@@ -117,7 +118,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
       games=0
       while(games<7 & winner_declared==FALSE){
          thisday <- create_fake_entry(games+1, DATE, selected, opposing, thisseason, matchup1, matchup2, order_preserved)
-         pred <- predict_game(c, filter(inwindow, DATE_INDEX>end_index-playing_time_window), win_perc1, win_perc2, thisday[1,"game_id"], sims, thisday, nclus, prior, posterior, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, 1, NULL)
+         pred <- predict_game(c, filter(inwindow, DATE_INDEX>end_index-playing_time_window), win_perc1, win_perc2, thisday[1,"game_id"], runs, thisday, nclus, prior, posterior, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, 1, NULL, seed=seed)
          decomps[[counter]] <- pred[[2]]
          if (pred[[1]]$prob_selected_team_win_d>0.5){ 
            if (order_preserved==1){

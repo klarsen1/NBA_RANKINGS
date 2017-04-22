@@ -20,24 +20,31 @@ if (length(injured_players)>0){
   inwindow_active <- filter(inwindow_active, injured==0)
 }
 
-sims <- 100
-loop_result <- list()
-decomp <- list()
-for(p in 1:sims){
-  print(p)
-  playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, 1, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason, end_date)
-  loop_result[[p]] <- playoffs[[2]]
-  decomp[[p]] <- playoffs[[3]]
+combine <- function(x, ...) {
+  lapply(seq_along(x),
+         function(i) c(x[[i]], lapply(list(...), function(y) y[[i]])))
 }
 
-title_chances <- data.frame(rbindlist(loop_result)) %>% group_by(round, winner) %>%
+ncore <- detectCores()-1
+registerDoParallel(ncore)
+sims <- 100
+loopResult <- foreach(i=1:sims, .combine='combine', .multicombine=TRUE,
+                      .init=list(list(), list())) %dopar% {
+  playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, 1, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason, end_date, seed=1000*i)
+  playoffs[[2]]$sim <- i
+  playoffs[[3]]$sim <- i
+  return(list(playoffs[[2]], playoffs[[3]]))
+}
+
+title_chances <- data.frame(rbindlist(loopResult[[1]])) %>% 
+  arrange(sim, round, winner) %>%
+  group_by(round, winner) %>%
   summarise(n=n()) %>%
   mutate(prob_win=n/sims) %>%
   select(-n)
 
 View(title_chances)
 
-decomps <- data.frame(rbindlist(decomp))
+decomps <- data.frame(rbindlist(loopResult[1]))
 
 write.csv(decomps, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/modeldetails/2017_playoff_decomp.CSV", row.names = FALSE)
-

@@ -1,5 +1,7 @@
-predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored, nclus, prior, posterior, dir, model_variables, use_current_rosters, offsets_by_team){
+predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored, nclus, prior, posterior, dir, model_variables, use_current_rosters, offsets_by_team, seed=Sys.time()){
 
+  set.seed(seed)
+  
   thisgame <- tobescored[1,]
   date <- thisgame$DATE
   thisseason <- thisgame$season
@@ -69,7 +71,9 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     ungroup()
 
   sim_share_of_minutes <- function(x){
-    x$share_of_minutes=min(max(rnorm(1, x$m_share_of_minutes, x$s_share_of_minutes), 0), 1)
+    x$share_of_minutes=rnorm(1, x$m_share_of_minutes, x$s_share_of_minutes)
+    x$share_of_minutes <- ifelse(x$share_of_minutes<0,0, x$share_of_minutes)
+    x$share_of_minutes <- ifelse(x$share_of_minutes>1,1, x$share_of_minutes)
     return(x)
   }
   if (runs==0){
@@ -78,7 +82,8 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     d <- attach_win_perc(thisgame, win_perc1, win_perc2)
     samplesdf <- data.frame(cbind(x, d, row.names=NULL), stringsAsFactors = FALSE)
   } else if (runs==1){
-    dist_active_sim <- data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes)))  
+    dist_active_sim <- data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes)))
+    print(select(dist_active_sim, PLAYER_FULL_NAME, m_share_of_minutes, share_of_minutes))
     x <- get_surplus_variables(dist_active_sim, nclus)
     d <- attach_win_perc(thisgame, win_perc1, win_perc2)
     samplesdf <- inner_join(x, d, by="game_id")

@@ -13,7 +13,7 @@ For those who didn't see my previous post on the Elastic NBA Ratings, they are b
 Let's get straight to the key results:
 
 * First, a not-so-controversial prediction: The Golden State Warriors will reclaim the title this year. They won in every single simulation, barely losing any games along the way.
-* For the games in the first three rounds, the average estimated win-probability for Golden State is 68%. During the finals against Boston the average win-probability for Golden State is 61%.
+* The average, game-level win-probability across all rounds for Golden State is 66%.
 * More interestingly, however, is that the model picks the Boston Celtics as Golden State's opponent in the finals, after disposing the Cavs in 6 games.
 * Also, the model favors the Spurs over Houston to advance to the Western Conference Finals, after a seven game series between the two teams.
 
@@ -47,7 +47,6 @@ center <- function(x){return(x-median(x))}
 read.csv(f, stringsAsFactors = FALSE) %>%
   select(selected_team, roster, circumstances, performance) %>%
   group_by(selected_team) %>%
-  #inner_join(qualifiers, by="selected_team") %>%
   summarise_each(funs(mean)) %>% ## get averages across games by team
   ungroup() %>%
   mutate_each(funs(center), which(sapply(., is.numeric))) %>% ## standardize across teams

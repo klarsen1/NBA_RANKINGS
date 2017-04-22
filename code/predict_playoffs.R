@@ -47,6 +47,10 @@ probs <- data.frame(rbindlist(loopResult[[1]])) %>%
   group_by(round, selected_team) %>%
   summarise(prob=mean(prob_selected_team_win))
 
+probs <- data.frame(rbindlist(loopResult[[1]])) %>%
+  filter(selected_team=="Golden State") %>%
+  group_by(selected_team) %>%
+  summarise(prob=mean(prob_selected_team_win))
 
 View(title_chances)
 View(probs)

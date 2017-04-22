@@ -20,13 +20,16 @@ Note that this assumes no major injuries to key players (or suspensions). Also, 
 
 # Methodology
 
-* As mentioned, the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS) were used to predict the winner of each game in each series, following the structure of the NBA playoff tree.
+* The [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS) were used to predict the winner of each game in each series, following the structure of the NBA playoff tree.
 * No data from the 2017 playoffs were used to make the predictions; only regular season data were used. Injury information is from the day before the playoffs started. 
-* The projected minutes played by each player were varied randomly across games based on variation observed during the 2016-2017 season. The playoffs were then repeated multiple times. This was done to gauge the stability of the predictions, since minutes played by each player are key inputs into the model.
+* The projected minutes played by each player were varied randomly across games based on variation observed during the 2016-2017 season. The playoffs were then "simulated" multiple times. This was done to gauge the stability of the predictions, since minutes played by each player are key inputs into the model.
+* For background, model accuracy (win/loss prediction) for the first half of the 2016-2017 season was 63%, versus 66% for the previous season.
 
 # Making Sense of the Predictions
 
-In order to understand why the model is favoring the Warriors and Boston, we need to *decompose* the playoff predictions. As described in the [readme file](https://github.com/klarsen1/NBA_RANKINGS), the R code behind the Elastic model automatically decomposes the predictions into three parts:
+In order to understand why, for example, the model is favoring the Warriors and Boston, we need to *decompose* the playoff predictions. Decomposition is an effective way of understanding model behavior, and easily done when your model is additive (the Elastic model is additive before we convert log-odds to probabilities).
+
+As described in the [readme file](https://github.com/klarsen1/NBA_RANKINGS), the R code behind the Elastic model automatically decomposes the predictions into three parts:
  
 * Roster -- archetype allocation deficits/surpluses. This group of variables reflects the quality of the roster.
 * Performance -- e.g., win percentages, previous match-ups.

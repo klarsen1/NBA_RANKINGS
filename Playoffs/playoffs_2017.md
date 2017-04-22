@@ -18,6 +18,7 @@ About the Simulations
 
 -   No data from the 2017 playoffs were used to make the predictions. Only regular season data were used. Injury information is from the day before the playoffs started.
 -   For each simulation, the minutes played by each player were varied randomly for every game, where the level of variation was based on historical data for the 2016-2017 season. This was mostly done to gauge the stability of the predictions (the results were very consistent across simulations).
+-   The playoffs were simulated 1,000 times.
 
 Making Sense of the Predictions
 ===============================

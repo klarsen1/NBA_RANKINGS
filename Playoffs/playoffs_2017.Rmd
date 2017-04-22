@@ -18,8 +18,9 @@ Let's get straight to the key results:
 
 Note that this assumes no major injuries to key players (or suspensions). Also, the model does not know that teams will lose games that they're supposed to win, and vice versa.
 
-# About the Simulations
+# Methodology
 
+* As mentioned, the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS) were used to predict the winner of each game in each series, following the structure of the NBA playoff tree.
 * No data from the 2017 playoffs were used to make the predictions; only regular season data were used. Injury information is from the day before the playoffs started. 
 * The projected minutes played by each player were varied randomly across games based on variation observed during the 2016-2017 season. The playoffs were then repeated multiple times. This was done to gauge the stability of the predictions, since minutes played by each player are key inputs into the model.
 
@@ -31,7 +32,7 @@ In order to understand why the model is favoring the Warriors and Boston, we nee
 * Performance -- e.g., win percentages, previous match-ups.
 * Circumstances -- e.g., travel, rest, home-court advantage
  
-The code below shows how to plot the decomposition of the playoff predictions for all simulations:
+The code below shows how to plot the decomposition of the playoff predictions:
  
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
 library(tidyr)

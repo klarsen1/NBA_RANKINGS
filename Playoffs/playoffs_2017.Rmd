@@ -12,17 +12,16 @@ For those who didn't see my previous post on the Elastic NBA Ratings, they are b
 
 Let's get straight to the key results:
 
-* First, a not-so-controversial prediction: The Golden State Warriors will reclaim the title this year. They won in every single simulation, barely losing any games along the way.
-* The average, game-level win-probability across all rounds for Golden State is 66%.
-* More interestingly, however, is that the model picks the Boston Celtics as Golden State's opponent in the finals, after disposing the Cavs in 6 games.
+* First, a not-so-controversial prediction: The model predicts that the Golden State Warriors will reclaim the title this year, winning every series in less than six games.
+* More interestingly, however, is that the model picks the Boston Celtics as Golden State's opponent in the finals, after beating the Cavs in 6 games.
 * Also, the model favors the Spurs over Houston to advance to the Western Conference Finals, after a seven game series between the two teams.
 
-Note that this assumes no major injuries to key players (or suspensions).
+Note that this assumes no major injuries to key players (or suspensions). Also, the model does not know that teams will lose games that they're supposed to win, and vice versa.
 
 # About the Simulations
 
 * No data from the 2017 playoffs were used to make the predictions; only regular season data were used. Injury information is from the day before the playoffs started. 
-* The minutes played by each player were varied randomly across games for each playoff simulation based on variation observed during the 2016-2017 season. This was done to gauge the stability of the predictions, since minutes played is one of the key inputs into the model.
+* The projected minutes played by each player were varied randomly across games based on variation observed during the 2016-2017 season. The playoffs were then repeated multiple times. This was done to gauge the stability of the predictions, since minutes played by each player are key inputs into the model.
 
 # Making Sense of the Predictions
 
@@ -61,14 +60,12 @@ read.csv(f, stringsAsFactors = FALSE) %>%
 
 The bars show the contribution from each part of the model. Longer, more positive bars mean that the given team is stronger in that category compared to its playoff competitors, and vice versa for negative bars. 
 
-Note that the bars are *relative* to the competitors a given team might meet in the playoff simulations. This means that the bars are not completely apples-to-apples across teams as some teams will face off against better competition. For example, Portland's bars essentially reflect how Portland stacks up against Golden State. 
+Note that the bars are *relative* to the competitors a given team might meet in the playoff. This means that the bars are not apples-to-apples across teams as some teams will face off against better competition. For example, Portland's bars essentially reflect how Portland stacks up against Golden State. Nevertheless, we can get some interesting insights from this chart:
 
-Nevertheless, we can get some interesting insights from this chart:
-
-* The red bars show that circumstances -- e.g., traveling and home court advantage -- do not matter much in the playoffs. That's not a big surprise.
-* Golden State gets the highest score of all playoff teams, both in terms of performance (weighted winning percentage) and relative quality of the roster (surplus of stronger player "archetypes""). This is essentially why the model always favors Golden State.
-* The model is impressed by San Antonio's ability to beat teams, but not impressed by its roster (compared to the teams they're playing).
-* Based on the green bars, it looks like the model favors Boston over Cleveland due to Cleveland's recent poor performance in the season, despite having a strong roster. But we all know that that the Cavs can turn it up to another level in the playoffs.
+* The red bars indicate that circumstances -- e.g., miles traveled and home court advantage -- do not matter much in the playoffs.
+* Golden State gets the highest scores of all playoff teams, both in terms of performance (weighted winning percentage) and relative quality of the roster (surplus of stronger player "archetypes"").
+* The model is impressed by San Antonio's ability to beat good teams, but not impressed by its roster (compared to the teams they're playing).
+* It looks like the model favors Boston over Cleveland due to Cleveland's recent poor performance in the season, despite Cleveland having a highly rated roster. But we all know that that the Cavs can turn it up to another level in the playoffs.
 * The model is picking home-court advantage and winning history over roster quality in a potential Rockets/Spurs match-up. In fact, the model is anticipating a seven-games series if this match up happens.
 
 # Last Words
@@ -78,7 +75,4 @@ We should always have a healthy dose of skepticism towards predictions from stat
 For example, despite what the model says, I think (and hope) we'll see another finals match-up between Golden State and Cleveland. I don't see Boston getting past Cleveland and maybe not even Chicago. Moreover, I wouldn't bet on the Spurs beating the Rockets, despite their better season record. 
 
 But the Golden State victory prediction seems like a sure bet, barring any significant injuries or suspensions, of course. No need to doubt the model here.
-
-
-
 

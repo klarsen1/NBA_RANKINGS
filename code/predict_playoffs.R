@@ -32,7 +32,6 @@ loopResult <- foreach(i=1:sims, .combine='combine', .multicombine=TRUE,
                       .init=list(list(), list())) %dopar% {
   playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, 1, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason, end_date, seed=1000*i)
   playoffs[[2]]$sim <- i
-  playoffs[[3]]$sim <- i
   return(list(playoffs[[2]], playoffs[[3]]))
 }
 
@@ -45,6 +44,6 @@ title_chances <- data.frame(rbindlist(loopResult[[1]])) %>%
 
 View(title_chances)
 
-decomps <- data.frame(rbindlist(loopResult[1]))
+decomps <- data.frame(rbindlist(loopResult[[2]]))
 
-write.csv(decomps, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/modeldetails/2017_playoff_decomp.CSV", row.names = FALSE)
+write.csv(decomps, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/modeldetails/2017_playoff_decomp.csv", row.names = FALSE)

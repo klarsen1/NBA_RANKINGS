@@ -13,16 +13,16 @@ For those who didn't see my previous post on the Elastic NBA Ratings, they are b
 Let's get straight to the key results:
 
 * First, a not-so-controversial prediction: The Golden State Warriors will reclaim the title this year. They won in every single simulation, barely losing any games along the way.
-* More interestingly, however, is that the model picks the Boston Celtics as Golden State's opponent in the finals.
+* For the games in the first three rounds, the average win-probability for Golden State is 68%. During the finals against Boston the average win-probability for Golden State is 61%.
+* More interestingly, however, is that the model picks the Boston Celtics as Golden State's opponent in the finals, after disposing the Cavs in 6 games.
 * Also, the model favors the Spurs over Houston to advance to the Western Conference Finals, after a seven game series between the two teams.
 
 Note that this assumes no major injuries to key players (or suspensions).
 
 # About the Simulations
 
-* No data from the 2017 playoffs were used to make the predictions. Only regular season data were used. Injury information is from the day before the playoffs started.
-* For each simulation, the minutes played by each player were varied randomly for every game, where the level of variation was based on historical data for the 2016-2017 season. This was mostly done to gauge the stability of the predictions (the results were very consistent across simulations).
-* The playoffs were simulated 1,000 times.
+* No data from the 2017 playoffs were used to make the predictions; only regular season data were used. Injury information is from the day before the playoffs started. 
+* The minutes played by each player were varied randomly across games for each playoff simulation based on variation observed during the 2016-2017 season. This was done to gauge the stability of the predictions, since minutes played is one of the key inputs into the model.
 
 # Making Sense of the Predictions
 

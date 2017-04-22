@@ -167,6 +167,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
          thisday <- mutate(thisday, prob_home_team_win=ifelse(selected_team==home_team_name, pred[[1]]$prob_selected_team_win_d, 1-pred[[1]]$prob_selected_team_win_d), 
                                     prob_road_team_win=1-prob_home_team_win, 
                                     round=i, 
+                                    prob_selected_team_win=pred[[1]]$prob_selected_team_win_d,
                                     game=games, 
                                     loser=loser, 
                                     winner=winner)
@@ -186,8 +187,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
       ungroup()
   }
   final_results <- rbindlist(game_results) %>%
-    filter(winner != "NONE" & loser != "NONE") %>%
-    dplyr::select(round, winner, loser, game, prob_home_team_win)
+    dplyr::select(round, winner, loser, game, prob_home_team_win, prob_selected_team_win, selected_team)
     
   return(list(qualifiers, final_results, data.frame(rbindlist(decomps))))
 }

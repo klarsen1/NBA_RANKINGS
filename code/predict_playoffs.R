@@ -30,19 +30,26 @@ registerDoParallel(ncore)
 sims <- 100
 loopResult <- foreach(i=1:sims, .combine='combine', .multicombine=TRUE,
                       .init=list(list(), list())) %dopar% {
-  playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, 1, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason, end_date, seed=1000*i)
+  playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, 1, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason, end_date, seed=1000*i + runif(1)*1000)
   playoffs[[2]]$sim <- i
   return(list(playoffs[[2]], playoffs[[3]]))
 }
 
-title_chances <- data.frame(rbindlist(loopResult[[1]])) %>% 
-  arrange(sim, round, winner) %>%
+title_chances <- data.frame(rbindlist(loopResult[[1]])) %>%
+  filter(winner != "NONE" & loser != "NONE") %>%
   group_by(round, winner) %>%
-  summarise(n=n()) %>%
-  mutate(prob_win=n/sims) %>%
+  summarise(n=n(), games=mean(game)) %>%
+  mutate(perc_wins=n/sims) %>%
   select(-n)
 
+probs <- data.frame(rbindlist(loopResult[[1]])) %>%
+  filter(selected_team=="Golden State") %>%
+  group_by(round, selected_team) %>%
+  summarise(prob=mean(prob_selected_team_win))
+
+
 View(title_chances)
+View(probs)
 
 decomps <- data.frame(rbindlist(loopResult[[2]]))
 

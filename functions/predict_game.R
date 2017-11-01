@@ -15,7 +15,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   future <- thisgame$future_game
   days_on_road1 <- thisgame$days_on_road_selected_team
   days_on_road2 <- thisgame$days_on_road_opposing_team
-    
+  
   ### Read the overrides
   rosters <- data.frame(read.csv(paste0(dir, "rosters_current.csv"), stringsAsFactors = FALSE))
 
@@ -44,6 +44,17 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     d_current_season_data_available <- 1
     thisseason2 <- thisseason
   }
+
+  if (nrow(filter(history_override, OWN_TEAM==team1 & season==thisseason2))==0){
+    print(paste0("ERROR: no data in season ", thisseason2, " for team 1 =  ", team1))
+    print(paste0("Seasons for ", team1, ": ", unique(filter(history_override, OWN_TEAM==team1)$season)))
+    print(paste0("Teams for season ", thisseason2, ": ", unique(filter(history_override, season==thisseason2)$OWN_TEAM)))
+  } 
+  if (nrow(filter(history_override, OWN_TEAM==team2 & season==thisseason2))==0){
+    print(paste0("ERROR: no data in season ", thisseason2, " for team 2 =  ", team2))
+    print(paste0("Seasons for ", team2, ": ", unique(filter(history_override, OWN_TEAM==team2)$season)))
+    print(paste0("Teams for season ", thisseason2, ": ", unique(filter(history_override, season==thisseason2)$OWN_TEAM)))
+  } 
   
   dist_active <- filter(history_override, OWN_TEAM %in% c(team1,team2) & season==thisseason2) %>%
     group_by(PLAYER_FULL_NAME) %>%
@@ -80,6 +91,11 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     dist_active$share_of_minutes <- dist_active$m_share_of_minutes
     x <- get_surplus_variables(dist_active, nclus) %>% select(-game_id)
     d <- attach_win_perc(thisgame, win_perc1, win_perc2)
+    #print(nrow(dist_active))
+    #print(nrow(d))
+    #print(thisseason2)
+    #print(team1)
+    #print(team2)
     samplesdf <- data.frame(cbind(x, d, row.names=NULL), stringsAsFactors = FALSE)
   } else if (runs==1){
     dist_active_sim <- data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes)))

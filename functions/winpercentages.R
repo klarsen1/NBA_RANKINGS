@@ -41,7 +41,8 @@ winpercentages <- function(data, s, use_weights){
                point_diff_adj=point_diff*as.numeric(SS), 
                win_rate_season_adj=win_rate_season*as.numeric(SS),
                first_game=0) %>%
-      select(selected_team, opposing_team, win_rate_early_season, win_rate_season, first_game, point_diff_season, point_diff_early_season, win_rate_season_adj, point_diff_adj)
+      select(selected_team, opposing_team, win_rate_early_season, win_rate_season, first_game, point_diff_season, point_diff_early_season, win_rate_season_adj, point_diff_adj) %>%
+      replace(is.na(.), 0)
     return(winratesdf)
   } else{
     t <- distinct(data, selected_team) %>%

@@ -23,11 +23,11 @@ team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>%
 
 
 ### 538 data
-ft8 <- read_html("http://projects.fivethirtyeight.com/2017-nba-predictions/")
+ft8 <- read_html("http://projects.fivethirtyeight.com/2018-nba-predictions/")
 team <- ft8 %>% html_nodes("tbody tr td.team a") %>% html_text() %>% gsub("[0-9, -]", "", .)
 wins <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('-[0-9]+','', .) 
 losses <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('[0-9]+-','', .)
-elo <- ft8 %>% html_nodes("tbody tr td.elo.original") %>% html_text()
+#elo <- ft8 %>% html_nodes("tbody tr td.elo.original") %>% html_text()
 carm_elo <- ft8 %>% html_nodes("tbody tr td.carmelo") %>% html_text()
 team[team=="ers"] <- "Philadelphia"
 team[team=="Hornets"] <- "Charlotte"
@@ -59,8 +59,9 @@ team[team=="Magic"] <- "Orlando"
 team[team=="Heat"] <- "Miami"
 team[team=="Suns"] <- "Phoenix"
 team[team=="Nets"] <- "Brooklyn"
-wins <- rep(0, length(elo))
-losses <- rep(0, length(elo))
+#wins <- rep(0, length(carm_elo))
+#losses <- rep(0, length(carm_elo))
+elo <- rep(0, length(carm_elo))
 fivethirtyeight <- data.frame(team, elo=as.numeric(elo), 
                               carm_elo=as.numeric(carm_elo), 
                               wins_538=as.numeric(wins), 
@@ -88,7 +89,7 @@ convert_to_date <- function(data){
   if (data$clean_note=="Game Time Decision"){
     data$return_date <- Sys.Date() + 1
   } else if (data$clean_note=="Out for the season"){
-    data$return_date <- as.Date("2017-10-25")
+    data$return_date <- as.Date("2018-10-25")
   } else{
     data$return_date <- as.Date(data$clean_note, format="%b %d")
   }
@@ -211,10 +212,11 @@ s2 <- read_player_data("NBA-2013-2014", c("SEASON", "DATE", "PLAYER FULL NAME", 
 s3 <- read_player_data("NBA-2014-2015", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 3)
 s4 <- read_player_data("NBA-2015-2016", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 4)
 s5 <- read_player_data("NBA-2016-2017", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 5) 
-  
+s6 <- read_player_data("NBA-2017-2018", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 6) 
+
 
 ## Add some indicators
-f <- rbind.data.frame(s1, s2, s3, s4, s5) %>%
+f <- rbind.data.frame(s1, s2, s3, s4, s5, s6) %>%
      filter(is.na(DATA_SET)==FALSE) %>%
      mutate(home_team=as.numeric(VENUE_R_H=='H'), 
             road_team=as.numeric(VENUE_R_H=='R'), 
@@ -236,15 +238,19 @@ altitudes <- data.frame(read.csv("altitudes.csv", stringsAsFactors = FALSE))
 ## Read the schedule
 schedule <- data.frame(read_excel("schedule.xlsx", sheet=1))
 
-home <- rename(schedule, NBAstuffer.Initials=HOME) %>% 
-  inner_join(team_map, by="NBAstuffer.Initials") %>%
-  rename(home_team=City) %>%
+#home <- rename(schedule, NBAstuffer.Initials=HOME) %>% 
+#  inner_join(team_map, by="NBAstuffer.Initials") %>%
+#  rename(home_team=City) %>%
+#  mutate(DATE=as.Date(Date, format="%m/%d/%Y")) %>%
+#  select(home_team)
+
+home <- 
+  rename(schedule, home_team=HOME) %>%
   mutate(DATE=as.Date(Date, format="%m/%d/%Y")) %>%
   select(home_team)
 
-road <- rename(schedule, NBAstuffer.Initials=ROAD) %>% 
-  inner_join(team_map, by="NBAstuffer.Initials") %>%
-  rename(road_team=City) %>% 
+road <- 
+  rename(schedule, road_team=ROAD) %>% 
   mutate(DATE=as.Date(Date, format="%m/%d/%Y")) %>%
   select(road_team, DATE)
 
@@ -256,8 +262,8 @@ future_schedule <- data.frame(cbind(home, road)) %>% filter(DATE>max_date) %>%
          OWN_TEAM=ifelse(r>0.5, home_team, road_team),
          OPP_TEAM=ifelse(OWN_TEAM==home_team, road_team, home_team),
          VENUE_R_H=ifelse(OWN_TEAM==home_team, 'H', 'R'), 
-         DATA_SET="2016-2017 Regular Season", 
-         season=2016,
+         DATA_SET="2017-2018 Regular Season", 
+         season=2017,
          PLAYER_FULL_NAME="BLANK") %>%
   select(DATE, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATA_SET, future_game, PLAYER_FULL_NAME, season)
   

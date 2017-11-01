@@ -1,0 +1,9 @@
+"DATE","home_team_name","road_team_name","road_team_prob_win","home_team_prob_win","predicted_winner","actual_winner","current_season_data_used","future_game"
+2017-10-17,"Golden State","Houston",NA,NA,"NA","Houston",0,0
+2017-10-17,"Cleveland","Boston",NA,NA,"NA","Cleveland",0,0
+2017-10-18,"San Antonio","Minnesota",NA,NA,"NA","San Antonio",0,0
+2017-10-18,"Memphis","New Orleans",NA,NA,"NA","Memphis",0,0
+2017-10-18,"Dallas","Atlanta",NA,NA,"NA","Atlanta",0,0
+2017-10-18,"Washington","Philadelphia",NA,NA,"NA","Washington",0,0
+2017-10-18,"Indiana","Brooklyn",NA,NA,"NA","Indiana",0,0
+2017-10-18,"Sacramento","Houston",NA,NA,"NA","Houston",0,0

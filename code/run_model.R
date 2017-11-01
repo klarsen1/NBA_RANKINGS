@@ -22,7 +22,8 @@ source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/get_team_offsets
 
 
 ## Read the box scores
-box_scores <- readRDS("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA") 
+box_scores <- readRDS("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA") %>%
+  filter(playoffs==0)
 
 ## Get the conferences
 conferences <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/Conferences.csv", stringsAsFactors = FALSE)
@@ -61,10 +62,11 @@ weighted_win_rates <- 1
 use_current_rosters <- 1
 current_season <- max(box_scores$season)
 adjust_intercept_by_team <- 0
+buffer_days <- 10
 
 ### When to start and end the forecasts
-start_date <- min(subset(box_scores, season==2016)$DATE)
-end_date <- max(subset(box_scores, season==2016 & playoffs==0)$DATE)
+start_date <- min(subset(box_scores, season==2017)$DATE)
+end_date <- max(subset(box_scores, season==2017 & playoffs==0)$DATE)
 
 ### Cut off the box scores
 box_scores <- subset(box_scores, DATE<=end_date) %>%
@@ -72,7 +74,7 @@ box_scores <- subset(box_scores, DATE<=end_date) %>%
   mutate(fb=ifelse(season==max(season), 1, 0))
 
 ### specify start and end points
-ignore_season_prior_to <- 2013
+ignore_season_prior_to <- 2014
 start_index <- subset(datemap, DATE==start_date)$DATE_INDEX
 end_index <- subset(datemap, DATE==end_date)$DATE_INDEX
 

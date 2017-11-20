@@ -1,0 +1,1231 @@
+"DATE","home_team_name","road_team_name","road_team_prob_win","home_team_prob_win","predicted_winner","actual_winner","current_season_data_used","future_game"
+2017-10-17,"Golden State","Houston",NA,NA,"NA","Houston",0,0
+2017-10-17,"Cleveland","Boston",NA,NA,"NA","Cleveland",0,0
+2017-10-18,"San Antonio","Minnesota",NA,NA,"NA","San Antonio",0,0
+2017-10-18,"Memphis","New Orleans",NA,NA,"NA","Memphis",0,0
+2017-10-18,"Dallas","Atlanta",NA,NA,"NA","Atlanta",0,0
+2017-10-18,"Washington","Philadelphia",NA,NA,"NA","Washington",0,0
+2017-10-18,"Indiana","Brooklyn",NA,NA,"NA","Indiana",0,0
+2017-10-18,"Sacramento","Houston",NA,NA,"NA","Houston",0,0
+2017-10-18,"Orlando","Miami",NA,NA,"NA","Orlando",0,0
+2017-10-18,"Boston","Milwaukee",NA,NA,"NA","Milwaukee",0,0
+2017-10-18,"Detroit","Charlotte",NA,NA,"NA","Detroit",0,0
+2017-10-18,"Utah","Denver",NA,NA,"NA","Utah",0,0
+2017-10-18,"Phoenix","Portland",NA,NA,"NA","Portland",0,0
+2017-10-19,"LA Lakers","LA Clippers",NA,NA,"NA","LA Clippers",0,0
+2017-10-19,"Oklahoma City","New York",NA,NA,"NA","Oklahoma City",0,0
+2017-10-19,"Toronto","Chicago",NA,NA,"NA","Toronto",0,0
+2017-10-20,"New Orleans","Golden State",NA,NA,"NA","Golden State",1,0
+2017-10-20,"Phoenix","LA Lakers",NA,NA,"NA","LA Lakers",1,0
+2017-10-20,"Dallas","Sacramento",NA,NA,"NA","Sacramento",1,0
+2017-10-20,"Charlotte","Atlanta",NA,NA,"NA","Charlotte",1,0
+2017-10-20,"Indiana","Portland",NA,NA,"NA","Portland",1,0
+2017-10-20,"Philadelphia","Boston",NA,NA,"NA","Boston",1,0
+2017-10-20,"Milwaukee","Cleveland",NA,NA,"NA","Cleveland",1,0
+2017-10-20,"Minnesota","Utah",NA,NA,"NA","Minnesota",1,0
+2017-10-20,"Brooklyn","Orlando",NA,NA,"NA","Brooklyn",1,0
+2017-10-20,"Washington","Detroit",NA,NA,"NA","Washington",1,0
+2017-10-21,"Chicago","San Antonio",NA,NA,"NA","San Antonio",1,0
+2017-10-21,"Utah","Oklahoma City",NA,NA,"NA","Utah",1,0
+2017-10-21,"LA Clippers","Phoenix",NA,NA,"NA","LA Clippers",1,0
+2017-10-21,"Memphis","Golden State",NA,NA,"NA","Memphis",1,0
+2017-10-21,"New York","Detroit",NA,NA,"NA","Detroit",1,0
+2017-10-21,"Miami","Indiana",NA,NA,"NA","Miami",1,0
+2017-10-21,"Cleveland","Orlando",NA,NA,"NA","Orlando",1,0
+2017-10-21,"Denver","Sacramento",NA,NA,"NA","Denver",1,0
+2017-10-21,"Milwaukee","Portland",NA,NA,"NA","Milwaukee",1,0
+2017-10-21,"Toronto","Philadelphia",NA,NA,"NA","Toronto",1,0
+2017-10-21,"Houston","Dallas",NA,NA,"NA","Houston",1,0
+2017-10-22,"LA Lakers","New Orleans",NA,NA,"NA","New Orleans",1,0
+2017-10-22,"Oklahoma City","Minnesota",NA,NA,"NA","Minnesota",1,0
+2017-10-22,"Brooklyn","Atlanta",NA,NA,"NA","Brooklyn",1,0
+2017-10-23,"Dallas","Golden State",NA,NA,"NA","Golden State",1,0
+2017-10-23,"San Antonio","Toronto",NA,NA,"NA","San Antonio",1,0
+2017-10-23,"Miami","Atlanta",NA,NA,"NA","Miami",1,0
+2017-10-23,"Milwaukee","Charlotte",NA,NA,"NA","Milwaukee",1,0
+2017-10-23,"Phoenix","Sacramento",NA,NA,"NA","Phoenix",1,0
+2017-10-23,"Detroit","Philadelphia",NA,NA,"NA","Philadelphia",1,0
+2017-10-23,"Denver","Washington",NA,NA,"NA","Washington",1,0
+2017-10-23,"Houston","Memphis",NA,NA,"NA","Memphis",1,0
+2017-10-24,"LA Clippers","Utah",NA,NA,"NA","LA Clippers",1,0
+2017-10-24,"Portland","New Orleans",NA,NA,"NA","Portland",1,0
+2017-10-24,"Boston","New York",NA,NA,"NA","Boston",1,0
+2017-10-24,"Minnesota","Indiana",NA,NA,"NA","Indiana",1,0
+2017-10-24,"Cleveland","Chicago",NA,NA,"NA","Cleveland",1,0
+2017-10-24,"Orlando","Brooklyn",NA,NA,"NA","Orlando",1,0
+2017-10-25,"Oklahoma City","Indiana",NA,NA,"NA","Oklahoma City",1,0
+2017-10-25,"LA Lakers","Washington",NA,NA,"NA","LA Lakers",1,0
+2017-10-25,"Miami","San Antonio",NA,NA,"NA","San Antonio",1,0
+2017-10-25,"Golden State","Toronto",NA,NA,"NA","Golden State",1,0
+2017-10-25,"Philadelphia","Houston",NA,NA,"NA","Houston",1,0
+2017-10-25,"Dallas","Memphis",NA,NA,"NA","Dallas",1,0
+2017-10-25,"Brooklyn","Cleveland",NA,NA,"NA","Brooklyn",1,0
+2017-10-25,"Charlotte","Denver",NA,NA,"NA","Charlotte",1,0
+2017-10-25,"Detroit","Minnesota",NA,NA,"NA","Detroit",1,0
+2017-10-25,"Phoenix","Utah",NA,NA,"NA","Phoenix",1,0
+2017-10-26,"Sacramento","New Orleans",NA,NA,"NA","New Orleans",1,0
+2017-10-26,"Portland","LA Clippers",NA,NA,"NA","LA Clippers",1,0
+2017-10-26,"Chicago","Atlanta",NA,NA,"NA","Chicago",1,0
+2017-10-26,"Memphis","Dallas",NA,NA,"NA","Memphis",1,0
+2017-10-26,"Milwaukee","Boston",NA,NA,"NA","Boston",1,0
+2017-10-27,"Minnesota","Oklahoma City",NA,NA,"NA","Minnesota",1,0
+2017-10-27,"Orlando","San Antonio",NA,NA,"NA","Orlando",1,0
+2017-10-27,"Golden State","Washington",NA,NA,"NA","Golden State",1,0
+2017-10-27,"LA Lakers","Toronto",NA,NA,"NA","Toronto",1,0
+2017-10-27,"New York","Brooklyn",NA,NA,"NA","New York",1,0
+2017-10-27,"Atlanta","Denver",NA,NA,"NA","Denver",1,0
+2017-10-27,"Charlotte","Houston",NA,NA,"NA","Houston",1,0
+2017-10-28,"Chicago","Oklahoma City",NA,NA,"NA","Oklahoma City",1,0
+2017-10-28,"Utah","LA Lakers",NA,NA,"NA","Utah",1,0
+2017-10-28,"New Orleans","Cleveland",NA,NA,"NA","New Orleans",1,0
+2017-10-28,"LA Clippers","Detroit",NA,NA,"NA","Detroit",1,0
+2017-10-28,"Dallas","Philadelphia",NA,NA,"NA","Philadelphia",1,0
+2017-10-28,"Miami","Boston",NA,NA,"NA","Boston",1,0
+2017-10-28,"Portland","Phoenix",NA,NA,"NA","Portland",1,0
+2017-10-28,"Memphis","Houston",NA,NA,"NA","Memphis",1,0
+2017-10-29,"Indiana","San Antonio",NA,NA,"NA","Indiana",1,0
+2017-10-29,"Cleveland","New York",NA,NA,"NA","New York",1,0
+2017-10-29,"Golden State","Detroit",NA,NA,"NA","Detroit",1,0
+2017-10-29,"Atlanta","Milwaukee",NA,NA,"NA","Milwaukee",1,0
+2017-10-29,"Sacramento","Washington",NA,NA,"NA","Washington",1,0
+2017-10-29,"Charlotte","Orlando",NA,NA,"NA","Charlotte",1,0
+2017-10-29,"Brooklyn","Denver",NA,NA,"NA","Denver",1,0
+2017-10-30,"LA Clippers","Golden State",NA,NA,"NA","Golden State",1,0
+2017-10-30,"Boston","San Antonio",NA,NA,"NA","Boston",1,0
+2017-10-30,"New Orleans","Orlando",NA,NA,"NA","Orlando",1,0
+2017-10-30,"New York","Denver",NA,NA,"NA","New York",1,0
+2017-10-30,"Utah","Dallas",NA,NA,"NA","Utah",1,0
+2017-10-30,"Houston","Philadelphia",NA,NA,"NA","Philadelphia",1,0
+2017-10-30,"Miami","Minnesota",NA,NA,"NA","Minnesota",1,0
+2017-10-30,"Memphis","Charlotte",NA,NA,"NA","Charlotte",1,0
+2017-10-30,"Portland","Toronto",NA,NA,"NA","Toronto",1,0
+2017-10-31,"Milwaukee","Oklahoma City",NA,NA,"NA","Oklahoma City",1,0
+2017-10-31,"LA Lakers","Detroit",NA,NA,"NA","LA Lakers",1,0
+2017-10-31,"Indiana","Sacramento",NA,NA,"NA","Indiana",1,0
+2017-10-31,"Brooklyn","Phoenix",NA,NA,"NA","Phoenix",1,0
+2017-11-01,"LA Clippers","Dallas",NA,NA,"NA","LA Clippers",1,0
+2017-11-01,"New Orleans","Minnesota",NA,NA,"NA","Minnesota",1,0
+2017-11-01,"New York","Houston",NA,NA,"NA","Houston",1,0
+2017-11-01,"Philadelphia","Atlanta",NA,NA,"NA","Philadelphia",1,0
+2017-11-01,"Cleveland","Indiana",NA,NA,"NA","Indiana",1,0
+2017-11-01,"Boston","Sacramento",NA,NA,"NA","Boston",1,0
+2017-11-01,"Miami","Chicago",NA,NA,"NA","Miami",1,0
+2017-11-01,"Charlotte","Milwaukee",NA,NA,"NA","Charlotte",1,0
+2017-11-01,"Utah","Portland",NA,NA,"NA","Utah",1,0
+2017-11-01,"Memphis","Orlando",NA,NA,"NA","Orlando",1,0
+2017-11-01,"Washington","Phoenix",NA,NA,"NA","Phoenix",1,0
+2017-11-01,"Denver","Toronto",NA,NA,"NA","Denver",1,0
+2017-11-02,"San Antonio","Golden State",NA,NA,"NA","Golden State",1,0
+2017-11-02,"Portland","LA Lakers",NA,NA,"NA","Portland",1,0
+2017-11-03,"San Antonio","Charlotte",NA,NA,"NA","San Antonio",1,0
+2017-11-03,"Dallas","New Orleans",NA,NA,"NA","New Orleans",1,0
+2017-11-03,"Oklahoma City","Boston",NA,NA,"NA","Boston",1,0
+2017-11-03,"LA Lakers","Brooklyn",NA,NA,"NA","LA Lakers",1,0
+2017-11-03,"New York","Phoenix",NA,NA,"NA","New York",1,0
+2017-11-03,"Philadelphia","Indiana",NA,NA,"NA","Philadelphia",1,0
+2017-11-03,"Atlanta","Houston",NA,NA,"NA","Houston",1,0
+2017-11-03,"Orlando","Chicago",NA,NA,"NA","Chicago",1,0
+2017-11-03,"Washington","Cleveland",NA,NA,"NA","Cleveland",1,0
+2017-11-03,"Detroit","Milwaukee",NA,NA,"NA","Detroit",1,0
+2017-11-03,"Denver","Miami",NA,NA,"NA","Denver",1,0
+2017-11-03,"Utah","Toronto",NA,NA,"NA","Toronto",1,0
+2017-11-04,"Chicago","New Orleans",NA,NA,"NA","New Orleans",1,0
+2017-11-04,"LA Clippers","Memphis",NA,NA,"NA","Memphis",1,0
+2017-11-04,"Denver","Golden State",NA,NA,"NA","Golden State",1,0
+2017-11-04,"Minnesota","Dallas",NA,NA,"NA","Minnesota",1,0
+2017-11-04,"Detroit","Sacramento",NA,NA,"NA","Detroit",1,0
+2017-11-05,"Portland","Oklahoma City",NA,NA,"NA","Portland",1,0
+2017-11-05,"LA Clippers","Miami",NA,NA,"NA","Miami",1,0
+2017-11-05,"New York","Indiana",NA,NA,"NA","New York",1,0
+2017-11-05,"LA Lakers","Memphis",NA,NA,"NA","LA Lakers",1,0
+2017-11-05,"San Antonio","Phoenix",NA,NA,"NA","San Antonio",1,0
+2017-11-05,"Cleveland","Atlanta",NA,NA,"NA","Atlanta",1,0
+2017-11-05,"Minnesota","Charlotte",NA,NA,"NA","Minnesota",1,0
+2017-11-05,"Orlando","Boston",NA,NA,"NA","Boston",1,0
+2017-11-05,"Toronto","Washington",NA,NA,"NA","Washington",1,0
+2017-11-05,"Houston","Utah",NA,NA,"NA","Houston",1,0
+2017-11-06,"Golden State","Miami",NA,NA,"NA","Golden State",1,0
+2017-11-06,"Atlanta","Boston",NA,NA,"NA","Boston",1,0
+2017-11-06,"Phoenix","Brooklyn",NA,NA,"NA","Brooklyn",1,0
+2017-11-07,"San Antonio","LA Clippers",NA,NA,"NA","San Antonio",1,0
+2017-11-07,"Sacramento","Oklahoma City",NA,NA,"NA","Sacramento",1,0
+2017-11-07,"Indiana","New Orleans",NA,NA,"NA","New Orleans",1,0
+2017-11-07,"New York","Charlotte",NA,NA,"NA","New York",1,0
+2017-11-07,"Utah","Philadelphia",NA,NA,"NA","Philadelphia",1,0
+2017-11-07,"Washington","Dallas",NA,NA,"NA","Dallas",1,0
+2017-11-07,"Cleveland","Milwaukee",NA,NA,"NA","Cleveland",1,0
+2017-11-07,"Toronto","Chicago",NA,NA,"NA","Toronto",1,0
+2017-11-07,"Portland","Memphis",NA,NA,"NA","Memphis",1,0
+2017-11-07,"Denver","Brooklyn",NA,NA,"NA","Denver",1,0
+2017-11-08,"Boston","LA Lakers",NA,NA,"NA","Boston",1,0
+2017-11-08,"Golden State","Minnesota",NA,NA,"NA","Golden State",1,0
+2017-11-08,"Orlando","New York",NA,NA,"NA","Orlando",1,0
+2017-11-08,"Detroit","Indiana",NA,NA,"NA","Detroit",1,0
+2017-11-08,"Phoenix","Miami",NA,NA,"NA","Miami",1,0
+2017-11-09,"Washington","LA Lakers",NA,NA,"NA","Washington",1,0
+2017-11-09,"Denver","Oklahoma City",NA,NA,"NA","Denver",1,0
+2017-11-09,"Toronto","New Orleans",NA,NA,"NA","Toronto",1,0
+2017-11-09,"Sacramento","Philadelphia",NA,NA,"NA","Sacramento",1,0
+2017-11-09,"Houston","Cleveland",NA,NA,"NA","Houston",1,0
+2017-11-10,"Oklahoma City","LA Clippers",NA,NA,"NA","Oklahoma City",1,0
+2017-11-10,"San Antonio","Milwaukee",NA,NA,"NA","Milwaukee",1,0
+2017-11-10,"Chicago","Indiana",NA,NA,"NA","Indiana",1,0
+2017-11-10,"Detroit","Atlanta",NA,NA,"NA","Detroit",1,0
+2017-11-10,"Utah","Miami",NA,NA,"NA","Miami",1,0
+2017-11-10,"Boston","Charlotte",NA,NA,"NA","Boston",1,0
+2017-11-10,"Portland","Brooklyn",NA,NA,"NA","Brooklyn",1,0
+2017-11-10,"Phoenix","Orlando",NA,NA,"NA","Orlando",1,0
+2017-11-11,"New Orleans","LA Clippers",NA,NA,"NA","New Orleans",1,0
+2017-11-11,"San Antonio","Chicago",NA,NA,"NA","San Antonio",1,0
+2017-11-11,"Golden State","Philadelphia",NA,NA,"NA","Golden State",1,0
+2017-11-11,"Milwaukee","LA Lakers",NA,NA,"NA","Milwaukee",1,0
+2017-11-11,"New York","Sacramento",NA,NA,"NA","New York",1,0
+2017-11-11,"Washington","Atlanta",NA,NA,"NA","Washington",1,0
+2017-11-11,"Dallas","Cleveland",NA,NA,"NA","Cleveland",1,0
+2017-11-11,"Utah","Brooklyn",NA,NA,"NA","Utah",1,0
+2017-11-11,"Denver","Orlando",NA,NA,"NA","Denver",1,0
+2017-11-11,"Phoenix","Minnesota",NA,NA,"NA","Phoenix",1,0
+2017-11-11,"Houston","Memphis",NA,NA,"NA","Houston",1,0
+2017-11-12,"Oklahoma City","Dallas",NA,NA,"NA","Oklahoma City",1,0
+2017-11-12,"Indiana","Houston",NA,NA,"NA","Houston",1,0
+2017-11-12,"Detroit","Miami",NA,NA,"NA","Detroit",1,0
+2017-11-12,"Boston","Toronto",NA,NA,"NA","Boston",1,0
+2017-11-13,"New Orleans","Atlanta",NA,NA,"NA","New Orleans",1,0
+2017-11-13,"LA Clippers","Philadelphia",NA,NA,"NA","Philadelphia",1,0
+2017-11-13,"Golden State","Orlando",NA,NA,"NA","Golden State",1,0
+2017-11-13,"Phoenix","LA Lakers",NA,NA,"NA","LA Lakers",1,0
+2017-11-13,"New York","Cleveland",NA,NA,"NA","Cleveland",1,0
+2017-11-13,"Washington","Sacramento",NA,NA,"NA","Washington",1,0
+2017-11-13,"Utah","Minnesota",NA,NA,"NA","Minnesota",1,0
+2017-11-13,"Portland","Denver",NA,NA,"NA","Portland",1,0
+2017-11-13,"Milwaukee","Memphis",NA,NA,"NA","Milwaukee",1,0
+2017-11-14,"Dallas","San Antonio",NA,NA,"NA","San Antonio",1,0
+2017-11-14,"Brooklyn","Boston",NA,NA,"NA","Boston",1,0
+2017-11-14,"Houston","Toronto",NA,NA,"NA","Toronto",1,0
+2017-11-15,"LA Lakers","Philadelphia",NA,NA,"NA","Philadelphia",1,0
+2017-11-15,"Oklahoma City","Chicago",NA,NA,"NA","Oklahoma City",1,0
+2017-11-15,"Minnesota","San Antonio",NA,NA,"NA","Minnesota",1,0
+2017-11-15,"New Orleans","Toronto",NA,NA,"NA","Toronto",1,0
+2017-11-15,"New York","Utah",NA,NA,"NA","New York",1,0
+2017-11-15,"Atlanta","Sacramento",NA,NA,"NA","Atlanta",1,0
+2017-11-15,"Charlotte","Cleveland",NA,NA,"NA","Cleveland",1,0
+2017-11-15,"Portland","Orlando",NA,NA,"NA","Portland",1,0
+2017-11-15,"Memphis","Indiana",NA,NA,"NA","Indiana",1,0
+2017-11-15,"Miami","Washington",NA,NA,"NA","Washington",1,0
+2017-11-15,"Milwaukee","Detroit",NA,NA,"NA","Milwaukee",1,0
+2017-11-16,"Boston","Golden State",NA,NA,"NA","Boston",1,0
+2017-11-16,"Phoenix","Houston",NA,NA,"NA","Houston",1,0
+2017-11-17,"San Antonio","Oklahoma City",NA,NA,"NA","San Antonio",1,0
+2017-11-17,"Cleveland","LA Clippers",NA,NA,"NA","Cleveland",1,0
+2017-11-17,"LA Lakers","Phoenix",NA,NA,"NA","Phoenix",1,0
+2017-11-17,"Denver","New Orleans",NA,NA,"NA","Denver",1,0
+2017-11-17,"Toronto","New York",NA,NA,"NA","Toronto",1,0
+2017-11-17,"Sacramento","Portland",NA,NA,"NA","Sacramento",1,0
+2017-11-17,"Dallas","Minnesota",NA,NA,"NA","Minnesota",1,0
+2017-11-17,"Chicago","Charlotte",NA,NA,"NA","Chicago",1,0
+2017-11-17,"Indiana","Detroit",NA,NA,"NA","Indiana",1,0
+2017-11-17,"Washington","Miami",NA,NA,"NA","Miami",1,0
+2017-11-17,"Brooklyn","Utah",NA,NA,"NA","Brooklyn",1,0
+2017-11-18,"Philadelphia","Golden State",NA,NA,"NA","Golden State",1,0
+2017-11-18,"Charlotte","LA Clippers",NA,NA,"NA","Charlotte",1,0
+2017-11-18,"Atlanta","Boston",NA,NA,"NA","Boston",1,0
+2017-11-18,"Portland","Sacramento",NA,NA,"NA","Portland",1,0
+2017-11-18,"Dallas","Milwaukee",NA,NA,"NA","Dallas",1,0
+2017-11-18,"Orlando","Utah",NA,NA,"NA","Utah",1,0
+2017-11-18,"Memphis","Houston",NA,NA,"NA","Houston",1,0
+2017-11-19,"LA Lakers","Denver",0.74228631231116,0.25771368768884,"Denver","NA",1,1
+2017-11-19,"Brooklyn","Golden State",0.715983763592653,0.284016236407347,"Golden State","NA",1,1
+2017-11-19,"Miami","Indiana",0.425133376141515,0.574866623858485,"Miami","NA",1,1
+2017-11-19,"Phoenix","Chicago",0.377804798546114,0.622195201453886,"Phoenix","NA",1,1
+2017-11-19,"Minnesota","Detroit",0.406484136659102,0.593515863340898,"Minnesota","NA",1,1
+2017-11-19,"Toronto","Washington",0.442796989405945,0.557203010594055,"Toronto","NA",1,1
+2017-11-20,"New Orleans","Oklahoma City",0.357550803586406,0.642449196413594,"New Orleans","NA",1,1
+2017-11-20,"New York","LA Clippers",0.319062836308044,0.680937163691956,"New York","NA",1,1
+2017-11-20,"San Antonio","Atlanta",0.266249394623858,0.733750605376142,"San Antonio","NA",1,1
+2017-11-20,"Orlando","Indiana",0.354615609282237,0.645384390717763,"Orlando","NA",1,1
+2017-11-20,"Philadelphia","Utah",0.278722529627979,0.721277470372021,"Philadelphia","NA",1,1
+2017-11-20,"Dallas","Boston",0.668415778032844,0.331584221967156,"Boston","NA",1,1
+2017-11-20,"Sacramento","Denver",0.765971107883802,0.234028892116198,"Denver","NA",1,1
+2017-11-20,"Charlotte","Minnesota",0.638262470950181,0.361737529049819,"Minnesota","NA",1,1
+2017-11-20,"Milwaukee","Washington",0.427429648952616,0.572570351047384,"Milwaukee","NA",1,1
+2017-11-20,"Detroit","Cleveland",0.521040507304115,0.478959492695885,"Cleveland","NA",1,1
+2017-11-20,"Memphis","Portland",0.520827905317949,0.479172094682051,"Portland","NA",1,1
+2017-11-21,"LA Lakers","Chicago",0.388905617725395,0.611094382274605,"LA Lakers","NA",1,1
+2017-11-22,"Oklahoma City","Golden State",0.54575045576574,0.45424954423426,"Golden State","NA",1,1
+2017-11-22,"New Orleans","San Antonio",0.327868326268241,0.672131673731759,"New Orleans","NA",1,1
+2017-11-22,"Sacramento","LA Lakers",0.468289102398021,0.531710897601979,"Sacramento","NA",1,1
+2017-11-22,"Atlanta","LA Clippers",0.458972866124442,0.541027133875558,"Atlanta","NA",1,1
+2017-11-22,"New York","Toronto",0.453502041450861,0.546497958549139,"New York","NA",1,1
+2017-11-22,"Philadelphia","Portland",0.431421056530754,0.568578943469246,"Philadelphia","NA",1,1
+2017-11-22,"Utah","Chicago",0.402532001339224,0.597467998660776,"Utah","NA",1,1
+2017-11-22,"Charlotte","Washington",0.56009479229034,0.43990520770966,"Washington","NA",1,1
+2017-11-22,"Memphis","Dallas",0.34086242058759,0.65913757941241,"Memphis","NA",1,1
+2017-11-22,"Minnesota","Orlando",0.34395198135056,0.65604801864944,"Minnesota","NA",1,1
+2017-11-22,"Cleveland","Brooklyn",0.217611111929729,0.782388888070271,"Cleveland","NA",1,1
+2017-11-22,"Miami","Boston",0.633477106802429,0.366522893197571,"Boston","NA",1,1
+2017-11-22,"Phoenix","Milwaukee",0.442608790378268,0.557391209621732,"Phoenix","NA",1,1
+2017-11-22,"Houston","Denver",0.449862560145174,0.550137439854826,"Houston","NA",1,1
+2017-11-24,"Atlanta","New York",0.61188464360651,0.38811535639349,"New York","NA",1,1
+2017-11-24,"Golden State","Chicago",0.169440505729912,0.830559494270088,"Golden State","NA",1,1
+2017-11-24,"Oklahoma City","Detroit",0.432831845770708,0.567168154229292,"Oklahoma City","NA",1,1
+2017-11-24,"Phoenix","New Orleans",0.663813195523367,0.336186804476633,"New Orleans","NA",1,1
+2017-11-24,"Cleveland","Charlotte",0.230678778982168,0.769321221017832,"Cleveland","NA",1,1
+2017-11-24,"Indiana","Toronto",0.452745196635899,0.547254803364101,"Indiana","NA",1,1
+2017-11-24,"Minnesota","Miami",0.247032399006132,0.752967600993868,"Minnesota","NA",1,1
+2017-11-24,"Brooklyn","Portland",0.656617445585724,0.343382554414276,"Portland","NA",1,1
+2017-11-24,"Boston","Orlando",0.337263053058887,0.662736946941113,"Boston","NA",1,1
+2017-11-24,"Denver","Memphis",0.186401938642823,0.813598061357177,"Denver","NA",1,1
+2017-11-25,"Golden State","New Orleans",0.350979991690168,0.649020008309832,"Golden State","NA",1,1
+2017-11-25,"Dallas","Oklahoma City",0.62200658167775,0.37799341832225,"Oklahoma City","NA",1,1
+2017-11-25,"Sacramento","LA Clippers",0.45525166448335,0.54474833551665,"Sacramento","NA",1,1
+2017-11-25,"Charlotte","San Antonio",0.603758177095088,0.396241822904912,"San Antonio","NA",1,1
+2017-11-25,"Houston","New York",0.289931255204584,0.710068744795416,"Houston","NA",1,1
+2017-11-25,"Philadelphia","Orlando",0.405371439545482,0.594628560454518,"Philadelphia","NA",1,1
+2017-11-25,"Atlanta","Toronto",0.529284804761354,0.470715195238646,"Toronto","NA",1,1
+2017-11-25,"Indiana","Boston",0.574991050085814,0.425008949914186,"Boston","NA",1,1
+2017-11-25,"Washington","Portland",0.471520045272456,0.528479954727544,"Washington","NA",1,1
+2017-11-25,"Utah","Milwaukee",0.487432202859395,0.512567797140605,"Utah","NA",1,1
+2017-11-26,"Chicago","Miami",0.549883999091804,0.450116000908196,"Miami","NA",1,1
+2017-11-26,"Minnesota","Phoenix",0.270752019472907,0.729247980527093,"Minnesota","NA",1,1
+2017-11-26,"Memphis","Brooklyn",0.3549874530976,0.6450125469024,"Memphis","NA",1,1
+2017-11-27,"LA Clippers","LA Lakers",0.371184676067466,0.628815323932534,"LA Clippers","NA",1,1
+2017-11-27,"San Antonio","Dallas",0.269835269975692,0.730164730024308,"San Antonio","NA",1,1
+2017-11-27,"Golden State","Sacramento",0.174067160466534,0.825932839533466,"Golden State","NA",1,1
+2017-11-27,"New York","Portland",0.455289606446103,0.544710393553897,"New York","NA",1,1
+2017-11-27,"Philadelphia","Cleveland",0.474495140998281,0.525504859001719,"Philadelphia","NA",1,1
+2017-11-27,"Indiana","Orlando",0.523005849996978,0.476994150003022,"Orlando","NA",1,1
+2017-11-27,"Boston","Detroit",0.373747743266189,0.626252256733811,"Boston","NA",1,1
+2017-11-27,"Houston","Brooklyn",0.170148012451248,0.829851987548752,"Houston","NA",1,1
+2017-11-28,"Sacramento","Milwaukee",0.587719159910547,0.412280840089453,"Milwaukee","NA",1,1
+2017-11-28,"Cleveland","Miami",0.311815661845734,0.688184338154266,"Cleveland","NA",1,1
+2017-11-28,"Minnesota","Washington",0.349685215456041,0.650314784543959,"Minnesota","NA",1,1
+2017-11-28,"Chicago","Phoenix",0.496615381115289,0.503384618884711,"Chicago","NA",1,1
+2017-11-28,"Utah","Denver",0.755182324438134,0.244817675561866,"Denver","NA",1,1
+2017-11-29,"LA Lakers","Golden State",0.723751132826112,0.276248867173888,"Golden State","NA",1,1
+2017-11-29,"Orlando","Oklahoma City",0.451365978612223,0.548634021387777,"Orlando","NA",1,1
+2017-11-29,"New Orleans","Minnesota",0.358125137198893,0.641874862801107,"New Orleans","NA",1,1
+2017-11-29,"San Antonio","Memphis",0.37969399845638,0.62030600154362,"San Antonio","NA",1,1
+2017-11-29,"New York","Miami",0.294176158120548,0.705823841879452,"New York","NA",1,1
+2017-11-29,"Philadelphia","Washington",0.386803202706963,0.613196797293037,"Philadelphia","NA",1,1
+2017-11-29,"Dallas","Brooklyn",0.381949838776262,0.618050161223738,"Dallas","NA",1,1
+2017-11-29,"Houston","Indiana",0.240037292520817,0.759962707479183,"Houston","NA",1,1
+2017-11-29,"Toronto","Charlotte",0.321227985652529,0.678772014347471,"Toronto","NA",1,1
+2017-11-29,"Detroit","Phoenix",0.279246106235748,0.720753893764252,"Detroit","NA",1,1
+2017-11-30,"LA Clippers","Utah",0.337890943903065,0.662109056096935,"LA Clippers","NA",1,1
+2017-11-30,"Atlanta","Cleveland",0.562711893754909,0.437288106245091,"Cleveland","NA",1,1
+2017-11-30,"Boston","Philadelphia",0.341103189495962,0.658896810504038,"Boston","NA",1,1
+2017-11-30,"Portland","Milwaukee",0.325108716966761,0.674891283033239,"Portland","NA",1,1
+2017-11-30,"Denver","Chicago",0.112961806902862,0.887038193097138,"Denver","NA",1,1
+2017-12-01,"Oklahoma City","Minnesota",0.494484265613471,0.505515734386529,"Oklahoma City","NA",1,1
+2017-12-01,"Orlando","Golden State",0.581666538985979,0.418333461014021,"Golden State","NA",1,1
+2017-12-01,"Utah","New Orleans",0.628171404821889,0.371828595178111,"New Orleans","NA",1,1
+2017-12-01,"Memphis","San Antonio",0.493330180149191,0.506669819850809,"Memphis","NA",1,1
+2017-12-01,"Chicago","Sacramento",0.427323926892723,0.572676073107277,"Chicago","NA",1,1
+2017-12-01,"Miami","Charlotte",0.437228044918691,0.562771955081309,"Miami","NA",1,1
+2017-12-01,"Toronto","Indiana",0.388064336391191,0.611935663608809,"Toronto","NA",1,1
+2017-12-01,"Washington","Detroit",0.434160134166336,0.565839865833664,"Washington","NA",1,1
+2017-12-02,"Dallas","LA Clippers",0.501385611518425,0.498614388481575,"LA Clippers","NA",1,1
+2017-12-02,"Denver","LA Lakers",0.179268323660772,0.820731676339228,"Denver","NA",1,1
+2017-12-02,"Portland","New Orleans",0.449063840087399,0.550936159912601,"Portland","NA",1,1
+2017-12-02,"Brooklyn","Atlanta",0.427984298117201,0.572015701882799,"Brooklyn","NA",1,1
+2017-12-02,"Milwaukee","Sacramento",0.290718071148697,0.709281928851303,"Milwaukee","NA",1,1
+2017-12-02,"Philadelphia","Detroit",0.391093020867075,0.608906979132925,"Philadelphia","NA",1,1
+2017-12-02,"Cleveland","Memphis",0.302992777072608,0.697007222927392,"Cleveland","NA",1,1
+2017-12-02,"Boston","Phoenix",0.248277284830055,0.751722715169945,"Boston","NA",1,1
+2017-12-03,"Oklahoma City","San Antonio",0.420527918670972,0.579472081329028,"Oklahoma City","NA",1,1
+2017-12-03,"Minnesota","LA Clippers",0.257219508943192,0.742780491056808,"Minnesota","NA",1,1
+2017-12-03,"Miami","Golden State",0.684771329252924,0.315228670747076,"Golden State","NA",1,1
+2017-12-03,"LA Lakers","Houston",0.730311819726244,0.269688180273756,"Houston","NA",1,1
+2017-12-03,"New York","Orlando",0.433561555169921,0.566438444830079,"New York","NA",1,1
+2017-12-04,"New Orleans","Golden State",0.447673870887953,0.552326129112047,"New Orleans","NA",1,1
+2017-12-04,"Indiana","New York",0.510740602542604,0.489259397457396,"New York","NA",1,1
+2017-12-04,"San Antonio","Detroit",0.429640428313588,0.570359571686412,"San Antonio","NA",1,1
+2017-12-04,"Atlanta","Brooklyn",0.353117152032158,0.646882847967842,"Atlanta","NA",1,1
+2017-12-04,"Chicago","Cleveland",0.695819469058326,0.304180530941674,"Cleveland","NA",1,1
+2017-12-04,"Charlotte","Orlando",0.540971817725122,0.459028182274878,"Orlando","NA",1,1
+2017-12-04,"Dallas","Denver",0.77828084348063,0.22171915651937,"Denver","NA",1,1
+2017-12-04,"Philadelphia","Phoenix",0.3147738931753,0.6852261068247,"Philadelphia","NA",1,1
+2017-12-04,"Utah","Washington",0.503320094269697,0.496679905730303,"Washington","NA",1,1
+2017-12-04,"Boston","Milwaukee",0.271913214335805,0.728086785664195,"Boston","NA",1,1
+2017-12-04,"Memphis","Minnesota",0.510712082820693,0.489287917179307,"Minnesota","NA",1,1
+2017-12-05,"Oklahoma City","Utah",0.284840198026263,0.715159801973737,"Oklahoma City","NA",1,1
+2017-12-05,"Portland","Washington",0.346181496059508,0.653818503940492,"Portland","NA",1,1
+2017-12-05,"Toronto","Phoenix",0.301997005960227,0.698002994039773,"Toronto","NA",1,1
+2017-12-06,"San Antonio","Miami",0.31524817203812,0.68475182796188,"San Antonio","NA",1,1
+2017-12-06,"Charlotte","Golden State",0.722297908842032,0.277702091157968,"Golden State","NA",1,1
+2017-12-06,"LA Clippers","Minnesota",0.572467893258452,0.427532106741548,"Minnesota","NA",1,1
+2017-12-06,"New Orleans","Denver",0.524646417657467,0.475353582342533,"Denver","NA",1,1
+2017-12-06,"New York","Memphis",0.399305928200914,0.600694071799086,"New York","NA",1,1
+2017-12-06,"Orlando","Atlanta",0.259670967143555,0.740329032856445,"Orlando","NA",1,1
+2017-12-06,"Cleveland","Sacramento",0.268642947020543,0.731357052979457,"Cleveland","NA",1,1
+2017-12-06,"Indiana","Chicago",0.28117976386674,0.71882023613326,"Indiana","NA",1,1
+2017-12-06,"Boston","Dallas",0.179671956345233,0.820328043654767,"Boston","NA",1,1
+2017-12-06,"Milwaukee","Detroit",0.505349620340746,0.494650379659254,"Detroit","NA",1,1
+2017-12-07,"Philadelphia","LA Lakers",0.266576320583771,0.733423679416229,"Philadelphia","NA",1,1
+2017-12-07,"Brooklyn","Oklahoma City",0.600864068892979,0.399135931107021,"Oklahoma City","NA",1,1
+2017-12-07,"Phoenix","Washington",0.542983335337101,0.457016664662899,"Washington","NA",1,1
+2017-12-07,"Utah","Houston",0.717250760810732,0.282749239189268,"Houston","NA",1,1
+2017-12-08,"New Orleans","Sacramento",0.188746296035254,0.811253703964746,"New Orleans","NA",1,1
+2017-12-08,"San Antonio","Boston",0.546951883920909,0.453048116079091,"Boston","NA",1,1
+2017-12-08,"Detroit","Golden State",0.569928357902135,0.430071642097865,"Golden State","NA",1,1
+2017-12-08,"Indiana","Cleveland",0.544819633321408,0.455180366678592,"Cleveland","NA",1,1
+2017-12-08,"Milwaukee","Dallas",0.336958254886966,0.663041745113034,"Milwaukee","NA",1,1
+2017-12-08,"Charlotte","Chicago",0.377166652474792,0.622833347525208,"Charlotte","NA",1,1
+2017-12-08,"Orlando","Denver",0.638806658665112,0.361193341334888,"Denver","NA",1,1
+2017-12-08,"Memphis","Toronto",0.495810433343638,0.504189566656362,"Memphis","NA",1,1
+2017-12-09,"Charlotte","LA Lakers",0.422880359974902,0.577119640025098,"Charlotte","NA",1,1
+2017-12-09,"LA Clippers","Washington",0.463836670886893,0.536163329113107,"LA Clippers","NA",1,1
+2017-12-09,"Memphis","Oklahoma City",0.540617810931343,0.459382189068657,"Oklahoma City","NA",1,1
+2017-12-09,"Phoenix","San Antonio",0.534444658213703,0.465555341786297,"San Antonio","NA",1,1
+2017-12-09,"Chicago","New York",0.700987579292322,0.299012420707678,"New York","NA",1,1
+2017-12-09,"Atlanta","Orlando",0.590104933470077,0.409895066529923,"Orlando","NA",1,1
+2017-12-09,"Cleveland","Philadelphia",0.39761816963881,0.60238183036119,"Cleveland","NA",1,1
+2017-12-09,"Milwaukee","Utah",0.319993094083714,0.680006905916286,"Milwaukee","NA",1,1
+2017-12-09,"Brooklyn","Miami",0.484537357108926,0.515462642891074,"Brooklyn","NA",1,1
+2017-12-09,"Portland","Houston",0.494058664004198,0.505941335995802,"Portland","NA",1,1
+2017-12-10,"New Orleans","Philadelphia",0.307431314654136,0.692568685345864,"New Orleans","NA",1,1
+2017-12-10,"New York","Atlanta",0.244816660396346,0.755183339603654,"New York","NA",1,1
+2017-12-10,"Minnesota","Dallas",0.207285139860598,0.792714860139402,"Minnesota","NA",1,1
+2017-12-10,"Sacramento","Toronto",0.518308684889609,0.481691315110391,"Toronto","NA",1,1
+2017-12-10,"Indiana","Denver",0.694436604785586,0.305563395214414,"Denver","NA",1,1
+2017-12-10,"Detroit","Boston",0.491300542088631,0.508699457911369,"Detroit","NA",1,1
+2017-12-11,"Oklahoma City","Charlotte",0.247068496080126,0.752931503919874,"Oklahoma City","NA",1,1
+2017-12-11,"Golden State","Portland",0.306549960805097,0.693450039194903,"Golden State","NA",1,1
+2017-12-11,"LA Clippers","Toronto",0.493249479027286,0.506750520972714,"LA Clippers","NA",1,1
+2017-12-11,"Houston","New Orleans",0.379941811887959,0.620058188112041,"Houston","NA",1,1
+2017-12-11,"Chicago","Boston",0.72275066424093,0.27724933575907,"Boston","NA",1,1
+2017-12-11,"Memphis","Miami",0.34736079758366,0.65263920241634,"Memphis","NA",1,1
+2017-12-12,"New York","LA Lakers",0.295996631599875,0.704003368400125,"New York","NA",1,1
+2017-12-12,"Dallas","San Antonio",0.633196501965028,0.366803498034972,"San Antonio","NA",1,1
+2017-12-12,"Cleveland","Atlanta",0.253220211213365,0.746779788786635,"Cleveland","NA",1,1
+2017-12-12,"Minnesota","Philadelphia",0.385482603601777,0.614517396398223,"Minnesota","NA",1,1
+2017-12-12,"Sacramento","Phoenix",0.507525655612936,0.492474344387064,"Phoenix","NA",1,1
+2017-12-12,"Brooklyn","Washington",0.543375680630776,0.456624319369224,"Washington","NA",1,1
+2017-12-12,"Detroit","Denver",0.602944730604813,0.397055269395187,"Denver","NA",1,1
+2017-12-13,"Indiana","Oklahoma City",0.545205762297708,0.454794237702292,"Oklahoma City","NA",1,1
+2017-12-13,"Orlando","LA Clippers",0.2775018943963,0.7224981056037,"Orlando","NA",1,1
+2017-12-13,"New Orleans","Milwaukee",0.31227071096345,0.68772928903655,"New Orleans","NA",1,1
+2017-12-13,"Chicago","Utah",0.565723440434052,0.434276559565948,"Utah","NA",1,1
+2017-12-13,"Miami","Portland",0.616387815950771,0.383612184049229,"Portland","NA",1,1
+2017-12-13,"Houston","Charlotte",0.177307992546851,0.822692007453149,"Houston","NA",1,1
+2017-12-13,"Washington","Memphis",0.435308721548309,0.564691278451691,"Washington","NA",1,1
+2017-12-13,"Boston","Denver",0.537243700277511,0.462756299722489,"Denver","NA",1,1
+2017-12-13,"Phoenix","Toronto",0.569537709138592,0.430462290861408,"Toronto","NA",1,1
+2017-12-14,"Cleveland","LA Lakers",0.25448084233033,0.74551915766967,"Cleveland","NA",1,1
+2017-12-14,"Golden State","Dallas",0.144087705020252,0.855912294979748,"Golden State","NA",1,1
+2017-12-14,"Brooklyn","New York",0.637274131400796,0.362725868599204,"New York","NA",1,1
+2017-12-14,"Minnesota","Sacramento",0.23849787896645,0.76150212103355,"Minnesota","NA",1,1
+2017-12-14,"Atlanta","Detroit",0.616089006520992,0.383910993479008,"Detroit","NA",1,1
+2017-12-15,"Philadelphia","Oklahoma City",0.416258210548086,0.583741789451914,"Philadelphia","NA",1,1
+2017-12-15,"Washington","LA Clippers",0.351163152141808,0.648836847858192,"Washington","NA",1,1
+2017-12-15,"Houston","San Antonio",0.301440740993338,0.698559259006662,"Houston","NA",1,1
+2017-12-15,"Denver","New Orleans",0.313471610754367,0.686528389245633,"Denver","NA",1,1
+2017-12-15,"Memphis","Atlanta",0.365916024318437,0.634083975681563,"Memphis","NA",1,1
+2017-12-15,"Milwaukee","Chicago",0.269123781012946,0.730876218987054,"Milwaukee","NA",1,1
+2017-12-15,"Charlotte","Miami",0.439085368027524,0.560914631972476,"Charlotte","NA",1,1
+2017-12-15,"Indiana","Detroit",0.517263654611139,0.482736345388861,"Detroit","NA",1,1
+2017-12-15,"Orlando","Portland",0.469113112179388,0.530886887820612,"Orlando","NA",1,1
+2017-12-15,"Boston","Utah",0.249053219513238,0.750946780486762,"Boston","NA",1,1
+2017-12-15,"Toronto","Brooklyn",0.247659151037532,0.752340848962468,"Toronto","NA",1,1
+2017-12-16,"New York","Oklahoma City",0.449210777646853,0.550789222353147,"New York","NA",1,1
+2017-12-16,"San Antonio","Dallas",0.320951795499603,0.679048204500397,"San Antonio","NA",1,1
+2017-12-16,"Miami","LA Clippers",0.408351216121214,0.591648783878786,"Miami","NA",1,1
+2017-12-16,"Cleveland","Utah",0.269201100718319,0.730798899281681,"Cleveland","NA",1,1
+2017-12-16,"Charlotte","Portland",0.638967031923984,0.361032968076016,"Portland","NA",1,1
+2017-12-16,"Minnesota","Phoenix",0.249437132100283,0.750562867899717,"Minnesota","NA",1,1
+2017-12-16,"Houston","Milwaukee",0.242191236435227,0.757808763564773,"Houston","NA",1,1
+2017-12-16,"Memphis","Boston",0.586664587736883,0.413335412263117,"Boston","NA",1,1
+2017-12-17,"Brooklyn","Indiana",0.566299344881244,0.433700655118756,"Indiana","NA",1,1
+2017-12-17,"Washington","Cleveland",0.520292854168085,0.479707145831915,"Cleveland","NA",1,1
+2017-12-17,"Toronto","Sacramento",0.312086062701922,0.687913937298078,"Toronto","NA",1,1
+2017-12-17,"Detroit","Orlando",0.397800830133838,0.602199169866162,"Detroit","NA",1,1
+2017-12-18,"San Antonio","LA Clippers",0.336714478370958,0.663285521629042,"San Antonio","NA",1,1
+2017-12-18,"LA Lakers","Golden State",0.692144863507256,0.307855136492744,"Golden State","NA",1,1
+2017-12-18,"Oklahoma City","Denver",0.637226844415266,0.362773155584734,"Denver","NA",1,1
+2017-12-18,"Charlotte","New York",0.591991704568093,0.408008295431907,"New York","NA",1,1
+2017-12-18,"Atlanta","Miami",0.481122928363627,0.518877071636373,"Atlanta","NA",1,1
+2017-12-18,"Chicago","Philadelphia",0.63865849481941,0.36134150518059,"Philadelphia","NA",1,1
+2017-12-18,"Indiana","Boston",0.626707031442684,0.373292968557316,"Boston","NA",1,1
+2017-12-18,"Dallas","Phoenix",0.517079715718393,0.482920284281607,"Phoenix","NA",1,1
+2017-12-18,"Minnesota","Portland",0.388379428451648,0.611620571548352,"Minnesota","NA",1,1
+2017-12-18,"Houston","Utah",0.239570918323978,0.760429081676022,"Houston","NA",1,1
+2017-12-19,"Washington","New Orleans",0.55627430756821,0.44372569243179,"New Orleans","NA",1,1
+2017-12-19,"Philadelphia","Sacramento",0.305055922233397,0.694944077766603,"Philadelphia","NA",1,1
+2017-12-19,"Milwaukee","Cleveland",0.516027862743845,0.483972137256155,"Cleveland","NA",1,1
+2017-12-20,"Oklahoma City","Utah",0.329065713719914,0.670934286280086,"Oklahoma City","NA",1,1
+2017-12-20,"Portland","San Antonio",0.334244201919804,0.665755798080196,"Portland","NA",1,1
+2017-12-20,"Houston","LA Lakers",0.215078635071729,0.784921364928271,"Houston","NA",1,1
+2017-12-20,"LA Clippers","Phoenix",0.34860231242557,0.65139768757443,"LA Clippers","NA",1,1
+2017-12-20,"Golden State","Memphis",0.27174510173453,0.72825489826547,"Golden State","NA",1,1
+2017-12-20,"Atlanta","Indiana",0.483246195407081,0.516753804592919,"Atlanta","NA",1,1
+2017-12-20,"Brooklyn","Sacramento",0.412986107068742,0.587013892931258,"Brooklyn","NA",1,1
+2017-12-20,"Chicago","Orlando",0.649101432085977,0.350898567914023,"Orlando","NA",1,1
+2017-12-20,"Dallas","Detroit",0.599463796617222,0.400536203382778,"Detroit","NA",1,1
+2017-12-20,"Boston","Miami",0.246133411667431,0.753866588332569,"Boston","NA",1,1
+2017-12-20,"Charlotte","Toronto",0.553082663248388,0.446917336751612,"Toronto","NA",1,1
+2017-12-20,"Denver","Minnesota",0.300028626075048,0.699971373924952,"Denver","NA",1,1
+2017-12-21,"Utah","San Antonio",0.55611626657352,0.443883733426481,"San Antonio","NA",1,1
+2017-12-21,"New York","Boston",0.541028016658302,0.458971983341698,"Boston","NA",1,1
+2017-12-21,"Cleveland","Chicago",0.185402285375141,0.814597714624859,"Cleveland","NA",1,1
+2017-12-21,"Philadelphia","Toronto",0.387245288578847,0.612754711421153,"Philadelphia","NA",1,1
+2017-12-21,"Phoenix","Memphis",0.535441391928865,0.464558608071135,"Memphis","NA",1,1
+2017-12-22,"Golden State","LA Lakers",0.195722092760027,0.804277907239973,"Golden State","NA",1,1
+2017-12-22,"Oklahoma City","Atlanta",0.23863558159569,0.76136441840431,"Oklahoma City","NA",1,1
+2017-12-22,"Orlando","New Orleans",0.524218190729527,0.475781809270473,"New Orleans","NA",1,1
+2017-12-22,"Houston","LA Clippers",0.215151843628344,0.784848156371656,"Houston","NA",1,1
+2017-12-22,"Detroit","New York",0.394113835418196,0.605886164581804,"Detroit","NA",1,1
+2017-12-22,"Miami","Dallas",0.323142065200059,0.676857934799941,"Miami","NA",1,1
+2017-12-22,"Milwaukee","Charlotte",0.319012578301608,0.680987421698392,"Milwaukee","NA",1,1
+2017-12-22,"Brooklyn","Washington",0.612798654268776,0.387201345731224,"Washington","NA",1,1
+2017-12-22,"Portland","Denver",0.542323853412955,0.457676146587045,"Denver","NA",1,1
+2017-12-23,"Sacramento","San Antonio",0.55813936362666,0.44186063637334,"San Antonio","NA",1,1
+2017-12-23,"Utah","Oklahoma City",0.561460287807504,0.438539712192496,"Oklahoma City","NA",1,1
+2017-12-23,"LA Lakers","Portland",0.607314432715716,0.392685567284284,"Portland","NA",1,1
+2017-12-23,"Miami","New Orleans",0.614685271267062,0.385314728732938,"New Orleans","NA",1,1
+2017-12-23,"Memphis","LA Clippers",0.40259448861936,0.59740551138064,"Memphis","NA",1,1
+2017-12-23,"Golden State","Denver",0.450323749862861,0.549676250137139,"Golden State","NA",1,1
+2017-12-23,"Atlanta","Dallas",0.436463491762452,0.563536508237548,"Atlanta","NA",1,1
+2017-12-23,"Indiana","Brooklyn",0.27712341688926,0.72287658311074,"Indiana","NA",1,1
+2017-12-23,"Charlotte","Milwaukee",0.483270831058025,0.516729168941975,"Charlotte","NA",1,1
+2017-12-23,"Toronto","Philadelphia",0.460989160058559,0.539010839941441,"Toronto","NA",1,1
+2017-12-23,"Washington","Orlando",0.488472604707556,0.511527395292444,"Washington","NA",1,1
+2017-12-23,"Boston","Chicago",0.170216384430153,0.829783615569847,"Boston","NA",1,1
+2017-12-23,"Phoenix","Minnesota",0.612404102233266,0.387595897766734,"Minnesota","NA",1,1
+2017-12-25,"LA Lakers","Minnesota",0.615999193542498,0.384000806457502,"Minnesota","NA",1,1
+2017-12-25,"Golden State","Cleveland",0.314144575817593,0.685855424182407,"Golden State","NA",1,1
+2017-12-25,"Oklahoma City","Houston",0.56062709129066,0.43937290870934,"Houston","NA",1,1
+2017-12-25,"New York","Philadelphia",0.427647367568867,0.572352632431133,"New York","NA",1,1
+2017-12-25,"Boston","Washington",0.311099297763458,0.688900702236542,"Boston","NA",1,1
+2017-12-26,"LA Clippers","Sacramento",0.359261713435025,0.640738286564975,"LA Clippers","NA",1,1
+2017-12-26,"San Antonio","Brooklyn",0.252546063780802,0.747453936219198,"San Antonio","NA",1,1
+2017-12-26,"Milwaukee","Chicago",0.289957720930091,0.710042279069909,"Milwaukee","NA",1,1
+2017-12-26,"Detroit","Indiana",0.344233051558685,0.655766948441315,"Detroit","NA",1,1
+2017-12-26,"Miami","Orlando",0.542953253090904,0.457046746909096,"Orlando","NA",1,1
+2017-12-26,"Dallas","Toronto",0.584096702335617,0.415903297664383,"Toronto","NA",1,1
+2017-12-26,"Denver","Utah",0.191165517373613,0.808834482626387,"Denver","NA",1,1
+2017-12-26,"Phoenix","Memphis",0.503902770192186,0.496097229807814,"Memphis","NA",1,1
+2017-12-27,"Oklahoma City","Toronto",0.361439286255094,0.638560713744906,"Oklahoma City","NA",1,1
+2017-12-27,"Golden State","Utah",0.188725894504752,0.811274105495248,"Golden State","NA",1,1
+2017-12-27,"LA Lakers","Memphis",0.477638910749321,0.522361089250679,"LA Lakers","NA",1,1
+2017-12-27,"New Orleans","Brooklyn",0.17016320206542,0.82983679793458,"New Orleans","NA",1,1
+2017-12-27,"Chicago","New York",0.684853068210987,0.315146931789013,"New York","NA",1,1
+2017-12-27,"Indiana","Dallas",0.295961087753458,0.704038912246542,"Indiana","NA",1,1
+2017-12-27,"Atlanta","Washington",0.5532659334022,0.4467340665978,"Washington","NA",1,1
+2017-12-27,"Sacramento","Cleveland",0.680378864306079,0.319621135693921,"Cleveland","NA",1,1
+2017-12-27,"Charlotte","Boston",0.679799983142392,0.320200016857608,"Boston","NA",1,1
+2017-12-27,"Minnesota","Denver",0.590301219700545,0.409698780299455,"Denver","NA",1,1
+2017-12-28,"San Antonio","New York",0.449710779564953,0.550289220435047,"San Antonio","NA",1,1
+2017-12-28,"Portland","Philadelphia",0.369150579585844,0.630849420414156,"Portland","NA",1,1
+2017-12-28,"Milwaukee","Minnesota",0.546533527527229,0.453466472472771,"Minnesota","NA",1,1
+2017-12-28,"Orlando","Detroit",0.415913371472223,0.584086628527777,"Orlando","NA",1,1
+2017-12-28,"Boston","Houston",0.49551896959786,0.50448103040214,"Boston","NA",1,1
+2017-12-29,"LA Lakers","LA Clippers",0.507277403402742,0.492722596597258,"LA Clippers","NA",1,1
+2017-12-29,"Oklahoma City","Milwaukee",0.318406242527252,0.681593757472748,"Oklahoma City","NA",1,1
+2017-12-29,"New Orleans","Dallas",0.181080755345701,0.818919244654299,"New Orleans","NA",1,1
+2017-12-29,"Golden State","Charlotte",0.150315861483822,0.849684138516178,"Golden State","NA",1,1
+2017-12-29,"Chicago","Indiana",0.588894152308285,0.411105847691715,"Indiana","NA",1,1
+2017-12-29,"Toronto","Atlanta",0.280541549989387,0.719458450010613,"Toronto","NA",1,1
+2017-12-29,"Sacramento","Phoenix",0.461984950185868,0.538015049814132,"Sacramento","NA",1,1
+2017-12-29,"Miami","Brooklyn",0.3450178516782,0.6549821483218,"Miami","NA",1,1
+2017-12-29,"Washington","Houston",0.588064814718496,0.411935185281504,"Houston","NA",1,1
+2017-12-30,"New Orleans","New York",0.330682028002069,0.669317971997931,"New Orleans","NA",1,1
+2017-12-30,"Detroit","San Antonio",0.375804764427539,0.624195235572461,"Detroit","NA",1,1
+2017-12-30,"Golden State","Memphis",0.264750049534225,0.735249950465775,"Golden State","NA",1,1
+2017-12-30,"Atlanta","Portland",0.562229901267804,0.437770098732196,"Portland","NA",1,1
+2017-12-30,"Utah","Cleveland",0.570015652028425,0.429984347971575,"Cleveland","NA",1,1
+2017-12-30,"Denver","Philadelphia",0.246582767151763,0.753417232848237,"Denver","NA",1,1
+2017-12-30,"Orlando","Miami",0.326236479369697,0.673763520630303,"Orlando","NA",1,1
+2017-12-31,"Oklahoma City","Dallas",0.272139012237939,0.727860987762061,"Oklahoma City","NA",1,1
+2017-12-31,"LA Clippers","Charlotte",0.38457405221843,0.61542594778157,"LA Clippers","NA",1,1
+2017-12-31,"Houston","LA Lakers",0.185644489613316,0.814355510386684,"Houston","NA",1,1
+2017-12-31,"Indiana","Minnesota",0.531979135427487,0.468020864572513,"Minnesota","NA",1,1
+2017-12-31,"Washington","Chicago",0.274113999318907,0.725886000681093,"Washington","NA",1,1
+2017-12-31,"Sacramento","Memphis",0.526026277408993,0.473973722591007,"Memphis","NA",1,1
+2017-12-31,"Phoenix","Philadelphia",0.589190384881532,0.410809615118468,"Philadelphia","NA",1,1
+2017-12-31,"Boston","Brooklyn",0.159457644256502,0.840542355743498,"Boston","NA",1,1
+2018-01-01,"Minnesota","LA Lakers",0.280330333905028,0.719669666094972,"Minnesota","NA",1,1
+2018-01-01,"Chicago","Portland",0.659842617527557,0.340157382472443,"Portland","NA",1,1
+2018-01-01,"Brooklyn","Orlando",0.625474298940311,0.374525701059689,"Orlando","NA",1,1
+2018-01-01,"Toronto","Milwaukee",0.392369319228937,0.607630680771063,"Toronto","NA",1,1
+2018-01-02,"New York","San Antonio",0.403560710138991,0.596439289861009,"New York","NA",1,1
+2018-01-02,"LA Clippers","Memphis",0.438725886678772,0.561274113321228,"LA Clippers","NA",1,1
+2018-01-02,"Sacramento","Charlotte",0.426988446165591,0.573011553834409,"Sacramento","NA",1,1
+2018-01-02,"Phoenix","Atlanta",0.430127991964228,0.569872008035772,"Phoenix","NA",1,1
+2018-01-02,"Cleveland","Portland",0.3965433488863,0.6034566511137,"Cleveland","NA",1,1
+2018-01-03,"LA Lakers","Oklahoma City",0.563531470478989,0.436468529521011,"Oklahoma City","NA",1,1
+2018-01-03,"Philadelphia","San Antonio",0.379719638331155,0.620280361668845,"Philadelphia","NA",1,1
+2018-01-03,"Dallas","Golden State",0.74597880367962,0.25402119632038,"Golden State","NA",1,1
+2018-01-03,"Utah","New Orleans",0.604972304192045,0.395027695807955,"New Orleans","NA",1,1
+2018-01-03,"Washington","New York",0.444299649187252,0.555700350812748,"Washington","NA",1,1
+2018-01-03,"Milwaukee","Indiana",0.434856179809354,0.565143820190646,"Milwaukee","NA",1,1
+2018-01-03,"Boston","Cleveland",0.398664382974257,0.601335617025743,"Boston","NA",1,1
+2018-01-03,"Brooklyn","Minnesota",0.638924480285023,0.361075519714977,"Minnesota","NA",1,1
+2018-01-03,"Chicago","Toronto",0.641432002158618,0.358567997841382,"Toronto","NA",1,1
+2018-01-03,"Miami","Detroit",0.534779928199969,0.465220071800031,"Detroit","NA",1,1
+2018-01-03,"Orlando","Houston",0.581099868204076,0.418900131795924,"Houston","NA",1,1
+2018-01-03,"Denver","Phoenix",0.161004905193458,0.838995094806542,"Denver","NA",1,1
+2018-01-04,"LA Clippers","Oklahoma City",0.545668298094083,0.454331701905917,"Oklahoma City","NA",1,1
+2018-01-04,"Houston","Golden State",0.456414750384295,0.543585249615705,"Houston","NA",1,1
+2018-01-05,"LA Lakers","Charlotte",0.442467586798918,0.557532413201082,"LA Lakers","NA",1,1
+2018-01-05,"San Antonio","Phoenix",0.375622093577034,0.624377906422966,"San Antonio","NA",1,1
+2018-01-05,"Miami","New York",0.556278030147246,0.443721969852754,"New York","NA",1,1
+2018-01-05,"Portland","Atlanta",0.260567520809575,0.739432479190425,"Portland","NA",1,1
+2018-01-05,"Dallas","Chicago",0.419506538110386,0.580493461889614,"Dallas","NA",1,1
+2018-01-05,"Philadelphia","Detroit",0.408752200305975,0.591247799694025,"Philadelphia","NA",1,1
+2018-01-05,"Boston","Minnesota",0.392105347723093,0.607894652276907,"Boston","NA",1,1
+2018-01-05,"Denver","Utah",0.198221383779653,0.801778616220347,"Denver","NA",1,1
+2018-01-05,"Milwaukee","Toronto",0.463056932537398,0.536943067462602,"Milwaukee","NA",1,1
+2018-01-05,"Memphis","Washington",0.428715955822662,0.571284044177338,"Memphis","NA",1,1
+2018-01-06,"LA Clippers","Golden State",0.669657851083879,0.330342148916121,"Golden State","NA",1,1
+2018-01-06,"Minnesota","New Orleans",0.524476093403033,0.475523906596967,"New Orleans","NA",1,1
+2018-01-06,"Indiana","Chicago",0.253942045879698,0.746057954120302,"Indiana","NA",1,1
+2018-01-06,"Orlando","Cleveland",0.452221748618272,0.547778251381728,"Orlando","NA",1,1
+2018-01-06,"Sacramento","Denver",0.74485045330553,0.25514954669447,"Denver","NA",1,1
+2018-01-06,"Washington","Milwaukee",0.373687146929343,0.626312853070657,"Washington","NA",1,1
+2018-01-06,"Brooklyn","Boston",0.654079916212864,0.345920083787136,"Boston","NA",1,1
+2018-01-06,"Detroit","Houston",0.565802450901697,0.434197549098303,"Houston","NA",1,1
+2018-01-07,"LA Lakers","Atlanta",0.369570227246685,0.630429772753315,"LA Lakers","NA",1,1
+2018-01-07,"Portland","San Antonio",0.337793533778172,0.662206466221828,"Portland","NA",1,1
+2018-01-07,"Phoenix","Oklahoma City",0.570855594865509,0.429144405134491,"Oklahoma City","NA",1,1
+2018-01-07,"Dallas","New York",0.628997569770658,0.371002430229342,"New York","NA",1,1
+2018-01-07,"Miami","Utah",0.393039986657504,0.606960013342496,"Miami","NA",1,1
+2018-01-08,"LA Clippers","Atlanta",0.32402152828016,0.67597847171984,"LA Clippers","NA",1,1
+2018-01-08,"Sacramento","San Antonio",0.594985564919152,0.405014435080848,"San Antonio","NA",1,1
+2018-01-08,"Golden State","Denver",0.47026013340495,0.52973986659505,"Golden State","NA",1,1
+2018-01-08,"New Orleans","Detroit",0.32596287442541,0.67403712557459,"New Orleans","NA",1,1
+2018-01-08,"Indiana","Milwaukee",0.459142978327963,0.540857021672037,"Indiana","NA",1,1
+2018-01-08,"Minnesota","Cleveland",0.414755921242468,0.585244078757532,"Minnesota","NA",1,1
+2018-01-08,"Chicago","Houston",0.740903250948368,0.259096749051632,"Houston","NA",1,1
+2018-01-08,"Brooklyn","Toronto",0.578578741055599,0.421421258944401,"Toronto","NA",1,1
+2018-01-09,"LA Lakers","Sacramento",0.353402685624297,0.646597314375703,"LA Lakers","NA",1,1
+2018-01-09,"Oklahoma City","Portland",0.476768063984156,0.523231936015844,"Oklahoma City","NA",1,1
+2018-01-09,"Dallas","Orlando",0.585451292958204,0.414548707041796,"Orlando","NA",1,1
+2018-01-09,"Toronto","Miami",0.381373419124331,0.618626580875669,"Toronto","NA",1,1
+2018-01-10,"Golden State","LA Clippers",0.228576063457584,0.771423936542416,"Golden State","NA",1,1
+2018-01-10,"Minnesota","Oklahoma City",0.358057795739037,0.641942204260963,"Minnesota","NA",1,1
+2018-01-10,"New York","Chicago",0.208908570178614,0.791091429821386,"New York","NA",1,1
+2018-01-10,"Memphis","New Orleans",0.499689905082236,0.500310094917764,"Memphis","NA",1,1
+2018-01-10,"Charlotte","Dallas",0.330885428379737,0.669114571620263,"Charlotte","NA",1,1
+2018-01-10,"Denver","Atlanta",0.139880985008432,0.860119014991568,"Denver","NA",1,1
+2018-01-10,"Indiana","Miami",0.403498218669814,0.596501781330186,"Indiana","NA",1,1
+2018-01-10,"Milwaukee","Orlando",0.448117763552226,0.551882236447774,"Milwaukee","NA",1,1
+2018-01-10,"Washington","Utah",0.343816474503408,0.656183525496592,"Washington","NA",1,1
+2018-01-10,"Houston","Portland",0.328027680279052,0.671972319720948,"Houston","NA",1,1
+2018-01-10,"Brooklyn","Detroit",0.589073852182422,0.410926147817578,"Detroit","NA",1,1
+2018-01-11,"LA Lakers","San Antonio",0.567511411487722,0.432488588512278,"San Antonio","NA",1,1
+2018-01-11,"Sacramento","LA Clippers",0.476460757280425,0.523539242719575,"Sacramento","NA",1,1
+2018-01-11,"Philadelphia","Boston",0.548070803628479,0.451929196371521,"Boston","NA",1,1
+2018-01-11,"Toronto","Cleveland",0.502668931953769,0.497331068046231,"Cleveland","NA",1,1
+2018-01-12,"Milwaukee","Golden State",0.599204864620124,0.400795135379876,"Golden State","NA",1,1
+2018-01-12,"New Orleans","Portland",0.389056062657753,0.610943937342247,"New Orleans","NA",1,1
+2018-01-12,"Minnesota","New York",0.377906464873783,0.622093535126217,"Minnesota","NA",1,1
+2018-01-12,"Atlanta","Brooklyn",0.467339196584699,0.532660803415301,"Atlanta","NA",1,1
+2018-01-12,"Indiana","Cleveland",0.552651904647052,0.447348095352948,"Cleveland","NA",1,1
+2018-01-12,"Charlotte","Utah",0.497167987379355,0.502832012620645,"Charlotte","NA",1,1
+2018-01-12,"Washington","Orlando",0.470817325716528,0.529182674283472,"Washington","NA",1,1
+2018-01-12,"Denver","Memphis",0.203751444847426,0.796248555152574,"Denver","NA",1,1
+2018-01-12,"Phoenix","Houston",0.625843877419606,0.374156122580394,"Houston","NA",1,1
+2018-01-13,"Dallas","LA Lakers",0.47781554700593,0.52218445299407,"Dallas","NA",1,1
+2018-01-13,"LA Clippers","Sacramento",0.379196344120914,0.620803655879086,"LA Clippers","NA",1,1
+2018-01-13,"Charlotte","Oklahoma City",0.591477509822589,0.408522490177411,"Oklahoma City","NA",1,1
+2018-01-13,"San Antonio","Denver",0.657629159823821,0.342370840176179,"Denver","NA",1,1
+2018-01-13,"Toronto","Golden State",0.595269544187256,0.404730455812744,"Golden State","NA",1,1
+2018-01-13,"Washington","Brooklyn",0.26814711078324,0.73185288921676,"Washington","NA",1,1
+2018-01-13,"Chicago","Detroit",0.643805877582786,0.356194122417214,"Detroit","NA",1,1
+2018-01-14,"New York","New Orleans",0.561746221679034,0.438253778320966,"New Orleans","NA",1,1
+2018-01-14,"Phoenix","Indiana",0.49291140975821,0.50708859024179,"Phoenix","NA",1,1
+2018-01-14,"Minnesota","Portland",0.385571550894326,0.614428449105674,"Minnesota","NA",1,1
+2018-01-14,"Miami","Milwaukee",0.434030668434292,0.565969331565708,"Miami","NA",1,1
+2018-01-15,"Atlanta","San Antonio",0.532165721898636,0.467834278101364,"San Antonio","NA",1,1
+2018-01-15,"Oklahoma City","Sacramento",0.290440408226762,0.709559591773238,"Oklahoma City","NA",1,1
+2018-01-15,"Cleveland","Golden State",0.521213508957306,0.478786491042693,"Golden State","NA",1,1
+2018-01-15,"Memphis","LA Lakers",0.34987606762894,0.65012393237106,"Memphis","NA",1,1
+2018-01-15,"LA Clippers","Houston",0.653209805774313,0.346790194225687,"Houston","NA",1,1
+2018-01-15,"Brooklyn","New York",0.621009751095733,0.378990248904267,"New York","NA",1,1
+2018-01-15,"Utah","Indiana",0.406422840022926,0.593577159977074,"Utah","NA",1,1
+2018-01-15,"Chicago","Miami",0.555044612820512,0.444955387179488,"Miami","NA",1,1
+2018-01-15,"Philadelphia","Toronto",0.361815196283586,0.638184803716414,"Philadelphia","NA",1,1
+2018-01-15,"Washington","Milwaukee",0.363179742296207,0.636820257703793,"Washington","NA",1,1
+2018-01-15,"Detroit","Charlotte",0.271573461522175,0.728426538477825,"Detroit","NA",1,1
+2018-01-16,"Boston","New Orleans",0.425297636470573,0.574702363529427,"Boston","NA",1,1
+2018-01-16,"Denver","Dallas",0.152450661621688,0.847549338378312,"Denver","NA",1,1
+2018-01-16,"Orlando","Minnesota",0.441816825846236,0.558183174153764,"Orlando","NA",1,1
+2018-01-16,"Portland","Phoenix",0.254828132688915,0.745171867311085,"Portland","NA",1,1
+2018-01-17,"Oklahoma City","LA Lakers",0.296363412834271,0.703636587165729,"Oklahoma City","NA",1,1
+2018-01-17,"Atlanta","New Orleans",0.691827881998955,0.308172118001045,"New Orleans","NA",1,1
+2018-01-17,"Brooklyn","San Antonio",0.60153370972428,0.39846629027572,"San Antonio","NA",1,1
+2018-01-17,"Chicago","Golden State",0.778352226258027,0.221647773741973,"Golden State","NA",1,1
+2018-01-17,"LA Clippers","Denver",0.653315600370575,0.346684399629425,"Denver","NA",1,1
+2018-01-17,"Memphis","New York",0.500950507439674,0.499049492560326,"New York","NA",1,1
+2018-01-17,"Sacramento","Utah",0.561125255489778,0.438874744510222,"Utah","NA",1,1
+2018-01-17,"Charlotte","Washington",0.572054811770192,0.427945188229808,"Washington","NA",1,1
+2018-01-17,"Milwaukee","Miami",0.370727627916208,0.629272372083792,"Milwaukee","NA",1,1
+2018-01-17,"Toronto","Detroit",0.475742991274622,0.524257008725378,"Toronto","NA",1,1
+2018-01-18,"Portland","Indiana",0.321649747420491,0.678350252579509,"Portland","NA",1,1
+2018-01-18,"Boston","Philadelphia",0.3543279787354,0.6456720212646,"Boston","NA",1,1
+2018-01-18,"Cleveland","Orlando",0.363321810032455,0.636678189967545,"Cleveland","NA",1,1
+2018-01-18,"Houston","Minnesota",0.354923305263553,0.645076694736447,"Houston","NA",1,1
+2018-01-19,"LA Lakers","Indiana",0.529913132698836,0.470086867301164,"Indiana","NA",1,1
+2018-01-19,"Toronto","San Antonio",0.479915071895116,0.520084928104884,"Toronto","NA",1,1
+2018-01-19,"Utah","New York",0.534384933032564,0.465615066967436,"New York","NA",1,1
+2018-01-19,"Memphis","Sacramento",0.329740320884524,0.670259679115476,"Memphis","NA",1,1
+2018-01-19,"Brooklyn","Miami",0.468711461788218,0.531288538211782,"Brooklyn","NA",1,1
+2018-01-19,"Detroit","Washington",0.380161781230328,0.619838218769672,"Detroit","NA",1,1
+2018-01-19,"Denver","Phoenix",0.202518423190347,0.797481576809653,"Denver","NA",1,1
+2018-01-20,"Cleveland","Oklahoma City",0.401184676750037,0.598815323249963,"Cleveland","NA",1,1
+2018-01-20,"Utah","LA Clippers",0.437485766350892,0.562514233649108,"Utah","NA",1,1
+2018-01-20,"Houston","Golden State",0.466953125526695,0.533046874473305,"Houston","NA",1,1
+2018-01-20,"New Orleans","Memphis",0.278347270852939,0.721652729147061,"New Orleans","NA",1,1
+2018-01-20,"Atlanta","Chicago",0.384826665702398,0.615173334297602,"Atlanta","NA",1,1
+2018-01-20,"Portland","Dallas",0.238764336011469,0.761235663988531,"Portland","NA",1,1
+2018-01-20,"Philadelphia","Milwaukee",0.360444729239886,0.639555270760114,"Philadelphia","NA",1,1
+2018-01-20,"Charlotte","Miami",0.45964055504448,0.54035944495552,"Charlotte","NA",1,1
+2018-01-20,"Minnesota","Toronto",0.318187858421143,0.681812141578857,"Minnesota","NA",1,1
+2018-01-21,"LA Lakers","New York",0.584965282402317,0.415034717597683,"New York","NA",1,1
+2018-01-21,"San Antonio","Indiana",0.409794440678205,0.590205559321795,"San Antonio","NA",1,1
+2018-01-21,"Boston","Orlando",0.333943576601732,0.666056423398268,"Boston","NA",1,1
+2018-01-21,"Detroit","Brooklyn",0.264606423781053,0.735393576218947,"Detroit","NA",1,1
+2018-01-22,"New Orleans","Chicago",0.154731388883514,0.845268611116486,"New Orleans","NA",1,1
+2018-01-22,"LA Clippers","Minnesota",0.604115115445986,0.395884884554014,"Minnesota","NA",1,1
+2018-01-22,"Atlanta","Utah",0.430067756630672,0.569932243369328,"Atlanta","NA",1,1
+2018-01-22,"Charlotte","Sacramento",0.394544116049929,0.605455883950071,"Charlotte","NA",1,1
+2018-01-22,"Dallas","Washington",0.599819019177817,0.400180980822183,"Washington","NA",1,1
+2018-01-22,"Memphis","Philadelphia",0.517966104879273,0.482033895120727,"Philadelphia","NA",1,1
+2018-01-22,"Denver","Portland",0.268918843696434,0.731081156303566,"Denver","NA",1,1
+2018-01-22,"Milwaukee","Phoenix",0.404876310028307,0.595123689971693,"Milwaukee","NA",1,1
+2018-01-22,"Houston","Miami",0.228811060916682,0.771188939083318,"Houston","NA",1,1
+2018-01-23,"Golden State","New York",0.285027197182084,0.714972802817916,"Golden State","NA",1,1
+2018-01-23,"San Antonio","Cleveland",0.475824327759398,0.524175672240602,"San Antonio","NA",1,1
+2018-01-23,"Oklahoma City","Brooklyn",0.250189112910231,0.749810887089769,"Oklahoma City","NA",1,1
+2018-01-23,"LA Lakers","Boston",0.656931126720006,0.343068873279995,"Boston","NA",1,1
+2018-01-23,"Orlando","Sacramento",0.228990476536142,0.771009523463858,"Orlando","NA",1,1
+2018-01-24,"Charlotte","New Orleans",0.648615285421042,0.351384714578958,"New Orleans","NA",1,1
+2018-01-24,"Memphis","San Antonio",0.434725779613763,0.565274220386237,"Memphis","NA",1,1
+2018-01-24,"LA Clippers","Boston",0.600236300788655,0.399763699211345,"Boston","NA",1,1
+2018-01-24,"Philadelphia","Chicago",0.200512226138108,0.799487773861892,"Philadelphia","NA",1,1
+2018-01-24,"Atlanta","Toronto",0.564262899241724,0.435737100758276,"Toronto","NA",1,1
+2018-01-24,"Indiana","Phoenix",0.383962336677032,0.616037663322968,"Indiana","NA",1,1
+2018-01-24,"Portland","Minnesota",0.480425775462497,0.519574224537503,"Portland","NA",1,1
+2018-01-24,"Dallas","Houston",0.722236795249747,0.277763204750252,"Houston","NA",1,1
+2018-01-24,"Detroit","Utah",0.304927988120013,0.695072011879987,"Detroit","NA",1,1
+2018-01-25,"Oklahoma City","Washington",0.391178552880669,0.608821447119331,"Oklahoma City","NA",1,1
+2018-01-25,"Golden State","Minnesota",0.298391548414909,0.701608451585091,"Golden State","NA",1,1
+2018-01-25,"Denver","New York",0.253262780003605,0.746737219996395,"Denver","NA",1,1
+2018-01-25,"Miami","Sacramento",0.346547609175009,0.653452390824991,"Miami","NA",1,1
+2018-01-26,"San Antonio","Philadelphia",0.480959148577692,0.519040851422308,"San Antonio","NA",1,1
+2018-01-26,"Chicago","LA Lakers",0.56177324692501,0.43822675307499,"LA Lakers","NA",1,1
+2018-01-26,"Memphis","LA Clippers",0.420824801131169,0.579175198868831,"Memphis","NA",1,1
+2018-01-26,"New Orleans","Houston",0.472771040961531,0.527228959038469,"New Orleans","NA",1,1
+2018-01-26,"Phoenix","New York",0.600134569332707,0.399865430667293,"New York","NA",1,1
+2018-01-26,"Charlotte","Atlanta",0.398690018409004,0.601309981590996,"Charlotte","NA",1,1
+2018-01-26,"Cleveland","Indiana",0.308022927863966,0.691977072136034,"Cleveland","NA",1,1
+2018-01-26,"Dallas","Portland",0.66212248900701,0.33787751099299,"Portland","NA",1,1
+2018-01-26,"Milwaukee","Brooklyn",0.300490149218129,0.699509850781871,"Milwaukee","NA",1,1
+2018-01-26,"Toronto","Utah",0.34556236282864,0.65443763717136,"Toronto","NA",1,1
+2018-01-27,"Detroit","Oklahoma City",0.42837264890655,0.57162735109345,"Detroit","NA",1,1
+2018-01-27,"Golden State","Boston",0.43654794631499,0.56345205368501,"Golden State","NA",1,1
+2018-01-27,"Atlanta","Washington",0.53245206992275,0.46754793007725,"Washington","NA",1,1
+2018-01-27,"Indiana","Orlando",0.52739986982768,0.47260013017232,"Orlando","NA",1,1
+2018-01-27,"Miami","Charlotte",0.351458671513483,0.648541328486517,"Miami","NA",1,1
+2018-01-27,"Denver","Dallas",0.126244122480232,0.873755877519768,"Denver","NA",1,1
+2018-01-27,"Minnesota","Brooklyn",0.201585084913201,0.798414915086799,"Minnesota","NA",1,1
+2018-01-28,"New Orleans","LA Clippers",0.251557790865929,0.748442209134071,"New Orleans","NA",1,1
+2018-01-28,"Oklahoma City","Philadelphia",0.46972136246328,0.53027863753672,"Oklahoma City","NA",1,1
+2018-01-28,"San Antonio","Sacramento",0.305318386088893,0.694681613911107,"San Antonio","NA",1,1
+2018-01-28,"Toronto","LA Lakers",0.296369375445018,0.703630624554982,"Toronto","NA",1,1
+2018-01-28,"Chicago","Milwaukee",0.575044584395055,0.424955415604945,"Milwaukee","NA",1,1
+2018-01-28,"Cleveland","Detroit",0.396776099236009,0.603223900763991,"Cleveland","NA",1,1
+2018-01-28,"Houston","Phoenix",0.229236948060451,0.770763051939549,"Houston","NA",1,1
+2018-01-29,"Atlanta","Minnesota",0.662112890639632,0.337887109360368,"Minnesota","NA",1,1
+2018-01-29,"Indiana","Charlotte",0.376417709293276,0.623582290706724,"Indiana","NA",1,1
+2018-01-29,"Milwaukee","Philadelphia",0.522166918809837,0.477833081190163,"Philadelphia","NA",1,1
+2018-01-29,"Dallas","Miami",0.536228288315248,0.463771711684752,"Miami","NA",1,1
+2018-01-29,"Denver","Boston",0.331535023686887,0.668464976313113,"Denver","NA",1,1
+2018-01-29,"Memphis","Phoenix",0.322820725506978,0.677179274493022,"Memphis","NA",1,1
+2018-01-30,"New Orleans","Sacramento",0.185641666397926,0.814358333602074,"New Orleans","NA",1,1
+2018-01-30,"Washington","Oklahoma City",0.474459934132151,0.525540065867849,"Washington","NA",1,1
+2018-01-30,"LA Clippers","Portland",0.548901048947336,0.451098951052664,"Portland","NA",1,1
+2018-01-30,"Utah","Golden State",0.668350562446225,0.331649437553775,"Golden State","NA",1,1
+2018-01-30,"San Antonio","Denver",0.629044654864874,0.370955345135126,"Denver","NA",1,1
+2018-01-30,"New York","Brooklyn",0.245515980014055,0.754484019985945,"New York","NA",1,1
+2018-01-30,"Detroit","Cleveland",0.461687495991135,0.538312504008865,"Detroit","NA",1,1
+2018-01-30,"Houston","Orlando",0.31830379858708,0.68169620141292,"Houston","NA",1,1
+2018-01-30,"Toronto","Minnesota",0.489296770145371,0.510703229854629,"Toronto","NA",1,1
+2018-01-31,"Orlando","LA Lakers",0.286388346396527,0.713611653603473,"Orlando","NA",1,1
+2018-01-31,"Boston","New York",0.33229527815444,0.66770472184556,"Boston","NA",1,1
+2018-01-31,"Atlanta","Charlotte",0.464662273520144,0.535337726479856,"Atlanta","NA",1,1
+2018-01-31,"Brooklyn","Philadelphia",0.598873499933287,0.401126500066713,"Philadelphia","NA",1,1
+2018-01-31,"Portland","Chicago",0.187840429295018,0.812159570704982,"Portland","NA",1,1
+2018-01-31,"Cleveland","Miami",0.315397052385281,0.684602947614719,"Cleveland","NA",1,1
+2018-01-31,"Indiana","Memphis",0.421372750644342,0.578627249355658,"Indiana","NA",1,1
+2018-01-31,"Phoenix","Dallas",0.438745890592108,0.561254109407892,"Phoenix","NA",1,1
+2018-02-01,"Denver","Oklahoma City",0.246226958046213,0.753773041953787,"Denver","NA",1,1
+2018-02-01,"San Antonio","Houston",0.565057619299104,0.434942380700896,"Houston","NA",1,1
+2018-02-01,"Minnesota","Milwaukee",0.340812601113748,0.659187398886252,"Minnesota","NA",1,1
+2018-02-01,"Washington","Toronto",0.433276285208662,0.566723714791338,"Washington","NA",1,1
+2018-02-01,"Detroit","Memphis",0.34189547083962,0.65810452916038,"Detroit","NA",1,1
+2018-02-02,"Oklahoma City","New Orleans",0.553742788060516,0.446257211939484,"New Orleans","NA",1,1
+2018-02-02,"Sacramento","Golden State",0.731970654134218,0.268029345865782,"Golden State","NA",1,1
+2018-02-02,"Brooklyn","LA Lakers",0.486545391961194,0.513454608038806,"Brooklyn","NA",1,1
+2018-02-02,"Milwaukee","New York",0.526030418228063,0.473969581771937,"New York","NA",1,1
+2018-02-02,"Boston","Atlanta",0.201759889951224,0.798240110048776,"Boston","NA",1,1
+2018-02-02,"Charlotte","Indiana",0.480815312004165,0.519184687995835,"Charlotte","NA",1,1
+2018-02-02,"Philadelphia","Miami",0.303311007639544,0.696688992360456,"Philadelphia","NA",1,1
+2018-02-02,"Toronto","Portland",0.453121207646962,0.546878792353038,"Toronto","NA",1,1
+2018-02-02,"Phoenix","Utah",0.448923361089032,0.551076638910968,"Phoenix","NA",1,1
+2018-02-03,"San Antonio","Utah",0.312970016300188,0.687029983699812,"San Antonio","NA",1,1
+2018-02-03,"LA Clippers","Chicago",0.277028248002248,0.722971751997752,"LA Clippers","NA",1,1
+2018-02-03,"Minnesota","New Orleans",0.465134080943873,0.534865919056127,"Minnesota","NA",1,1
+2018-02-03,"Denver","Golden State",0.389032070897965,0.610967929102035,"Denver","NA",1,1
+2018-02-03,"Sacramento","Dallas",0.440273680105641,0.559726319894359,"Sacramento","NA",1,1
+2018-02-03,"Indiana","Philadelphia",0.530495641666952,0.469504358333048,"Philadelphia","NA",1,1
+2018-02-03,"Orlando","Washington",0.37187626640348,0.62812373359652,"Orlando","NA",1,1
+2018-02-03,"Cleveland","Houston",0.523336820333446,0.476663179666554,"Houston","NA",1,1
+2018-02-03,"Detroit","Miami",0.289390817194048,0.710609182805952,"Detroit","NA",1,1
+2018-02-04,"Oklahoma City","LA Lakers",0.248236735798635,0.751763264201365,"Oklahoma City","NA",1,1
+2018-02-04,"New York","Atlanta",0.264845282380039,0.735154717619961,"New York","NA",1,1
+2018-02-04,"Boston","Portland",0.381495189189774,0.618504810810226,"Boston","NA",1,1
+2018-02-04,"Brooklyn","Milwaukee",0.563618747163767,0.436381252836233,"Milwaukee","NA",1,1
+2018-02-04,"Phoenix","Charlotte",0.348380552849044,0.651619447150956,"Phoenix","NA",1,1
+2018-02-04,"Toronto","Memphis",0.411429343955937,0.588570656044063,"Toronto","NA",1,1
+2018-02-05,"LA Clippers","Dallas",0.370702328923288,0.629297671076712,"LA Clippers","NA",1,1
+2018-02-05,"New Orleans","Utah",0.236961501606832,0.763038498393168,"New Orleans","NA",1,1
+2018-02-05,"Sacramento","Chicago",0.354763236752277,0.645236763247723,"Sacramento","NA",1,1
+2018-02-05,"Indiana","Washington",0.486429777789977,0.513570222210023,"Indiana","NA",1,1
+2018-02-05,"Miami","Orlando",0.530926460694074,0.469073539305926,"Orlando","NA",1,1
+2018-02-05,"Denver","Charlotte",0.16542242741911,0.83457757258089,"Denver","NA",1,1
+2018-02-05,"Detroit","Portland",0.426409707668017,0.573590292331983,"Detroit","NA",1,1
+2018-02-06,"Golden State","Oklahoma City",0.297688774091755,0.702311225908245,"Golden State","NA",1,1
+2018-02-06,"LA Lakers","Phoenix",0.465652287875174,0.534347712124826,"LA Lakers","NA",1,1
+2018-02-06,"New York","Milwaukee",0.376664626958188,0.623335373041812,"New York","NA",1,1
+2018-02-06,"Philadelphia","Washington",0.353907578524707,0.646092421475293,"Philadelphia","NA",1,1
+2018-02-06,"Atlanta","Memphis",0.494637663865425,0.505362336134575,"Atlanta","NA",1,1
+2018-02-06,"Orlando","Cleveland",0.506182332963752,0.493817667036248,"Cleveland","NA",1,1
+2018-02-06,"Brooklyn","Houston",0.72585032931025,0.27414967068975,"Houston","NA",1,1
+2018-02-06,"Toronto","Boston",0.592831677062985,0.407168322937015,"Boston","NA",1,1
+2018-02-07,"New Orleans","Indiana",0.246325232788021,0.753674767211979,"New Orleans","NA",1,1
+2018-02-07,"Phoenix","San Antonio",0.550237644732126,0.449762355267874,"San Antonio","NA",1,1
+2018-02-07,"Cleveland","Minnesota",0.47598572090334,0.52401427909666,"Cleveland","NA",1,1
+2018-02-07,"Memphis","Utah",0.427992566324003,0.572007433675997,"Memphis","NA",1,1
+2018-02-07,"Miami","Houston",0.619912219046034,0.380087780953966,"Houston","NA",1,1
+2018-02-07,"Detroit","Brooklyn",0.260087466624342,0.739912533375658,"Detroit","NA",1,1
+2018-02-08,"LA Lakers","Oklahoma City",0.571420647784802,0.428579352215198,"Oklahoma City","NA",1,1
+2018-02-08,"Golden State","Dallas",0.17808130537334,0.82191869462666,"Golden State","NA",1,1
+2018-02-08,"Toronto","New York",0.453914582308923,0.546085417691077,"Toronto","NA",1,1
+2018-02-08,"Orlando","Atlanta",0.260667663280452,0.739332336719548,"Orlando","NA",1,1
+2018-02-08,"Portland","Charlotte",0.261890099501691,0.738109900498309,"Portland","NA",1,1
+2018-02-08,"Washington","Boston",0.545320767635742,0.454679232364258,"Boston","NA",1,1
+2018-02-09,"Philadelphia","New Orleans",0.479278383364684,0.520721616635316,"Philadelphia","NA",1,1
+2018-02-09,"Detroit","LA Clippers",0.321594321006193,0.678405678993807,"Detroit","NA",1,1
+2018-02-09,"Atlanta","Cleveland",0.60580130851836,0.39419869148164,"Cleveland","NA",1,1
+2018-02-09,"Sacramento","Portland",0.594323384870398,0.405676615129602,"Portland","NA",1,1
+2018-02-09,"Boston","Indiana",0.260511594082356,0.739488405917644,"Boston","NA",1,1
+2018-02-09,"Chicago","Minnesota",0.681717049757937,0.318282950242063,"Minnesota","NA",1,1
+2018-02-09,"Utah","Charlotte",0.423394656407754,0.576605343592246,"Utah","NA",1,1
+2018-02-09,"Miami","Milwaukee",0.49939304159374,0.50060695840626,"Miami","NA",1,1
+2018-02-09,"Houston","Denver",0.513263015438504,0.486736984561496,"Denver","NA",1,1
+2018-02-10,"Golden State","San Antonio",0.24568104351139,0.75431895648861,"Golden State","NA",1,1
+2018-02-10,"Dallas","LA Lakers",0.533812612094143,0.466187387905857,"LA Lakers","NA",1,1
+2018-02-10,"Philadelphia","LA Clippers",0.324679397213415,0.675320602786585,"Philadelphia","NA",1,1
+2018-02-10,"Brooklyn","New Orleans",0.666976088446407,0.333023911553593,"New Orleans","NA",1,1
+2018-02-10,"Chicago","Washington",0.649378575867612,0.350621424132388,"Washington","NA",1,1
+2018-02-10,"Orlando","Milwaukee",0.372371746509467,0.627628253490533,"Orlando","NA",1,1
+2018-02-10,"Phoenix","Denver",0.678062957573362,0.321937042426638,"Denver","NA",1,1
+2018-02-11,"Oklahoma City","Memphis",0.360361910475281,0.639638089524719,"Oklahoma City","NA",1,1
+2018-02-11,"Indiana","New York",0.547559331861445,0.452440668138555,"New York","NA",1,1
+2018-02-11,"Minnesota","Sacramento",0.195254799926068,0.804745200073932,"Minnesota","NA",1,1
+2018-02-11,"Atlanta","Detroit",0.576651132645973,0.423348867354027,"Detroit","NA",1,1
+2018-02-11,"Houston","Dallas",0.188233350541889,0.811766649458111,"Houston","NA",1,1
+2018-02-11,"Portland","Utah",0.32030006681949,0.67969993318051,"Portland","NA",1,1
+2018-02-11,"Boston","Cleveland",0.371347315312587,0.628652684687413,"Boston","NA",1,1
+2018-02-11,"Charlotte","Toronto",0.609695308329303,0.390304691670697,"Toronto","NA",1,1
+2018-02-12,"Utah","San Antonio",0.498166002773808,0.501833997226192,"Utah","NA",1,1
+2018-02-12,"Philadelphia","New York",0.388354929224407,0.611645070775593,"Philadelphia","NA",1,1
+2018-02-12,"Brooklyn","LA Clippers",0.506180352443733,0.493819647556267,"LA Clippers","NA",1,1
+2018-02-12,"Golden State","Phoenix",0.187980694403698,0.812019305596302,"Golden State","NA",1,1
+2018-02-12,"Detroit","New Orleans",0.552298732280831,0.447701267719169,"New Orleans","NA",1,1
+2018-02-12,"Chicago","Orlando",0.611500417885707,0.388499582114293,"Orlando","NA",1,1
+2018-02-13,"Oklahoma City","Cleveland",0.461092525711793,0.538907474288207,"Oklahoma City","NA",1,1
+2018-02-13,"Denver","San Antonio",0.22760479435621,0.77239520564379,"Denver","NA",1,1
+2018-02-13,"Dallas","Sacramento",0.470150260596227,0.529849739403773,"Dallas","NA",1,1
+2018-02-13,"Milwaukee","Atlanta",0.300640399119118,0.699359600880882,"Milwaukee","NA",1,1
+2018-02-13,"Minnesota","Houston",0.487970924797978,0.512029075202022,"Minnesota","NA",1,1
+2018-02-13,"Toronto","Miami",0.382716480291334,0.617283519708666,"Toronto","NA",1,1
+2018-02-14,"New Orleans","LA Lakers",0.236916389613917,0.763083610386083,"New Orleans","NA",1,1
+2018-02-14,"Memphis","Oklahoma City",0.497640857632308,0.502359142367692,"Memphis","NA",1,1
+2018-02-14,"Portland","Golden State",0.525180947972825,0.474819052027175,"Golden State","NA",1,1
+2018-02-14,"Boston","LA Clippers",0.265243391712159,0.734756608287841,"Boston","NA",1,1
+2018-02-14,"New York","Washington",0.414197215091963,0.585802784908037,"New York","NA",1,1
+2018-02-14,"Philadelphia","Miami",0.290210989040101,0.709789010959899,"Philadelphia","NA",1,1
+2018-02-14,"Detroit","Atlanta",0.281372026714019,0.718627973285981,"Detroit","NA",1,1
+2018-02-14,"Brooklyn","Indiana",0.550187016606808,0.449812983393192,"Indiana","NA",1,1
+2018-02-14,"Orlando","Charlotte",0.328017043133747,0.671982956866253,"Orlando","NA",1,1
+2018-02-14,"Houston","Sacramento",0.189732090194696,0.810267909805304,"Houston","NA",1,1
+2018-02-14,"Chicago","Toronto",0.584181846490668,0.415818153509332,"Toronto","NA",1,1
+2018-02-14,"Utah","Phoenix",0.37900013493141,0.62099986506859,"Utah","NA",1,1
+2018-02-15,"Minnesota","LA Lakers",0.255914001095187,0.744085998904813,"Minnesota","NA",1,1
+2018-02-15,"Milwaukee","Denver",0.675953231820293,0.324046768179708,"Denver","NA",1,1
+2018-02-22,"Golden State","LA Clippers",0.185589870605244,0.814410129394756,"Golden State","NA",1,1
+2018-02-22,"Sacramento","Oklahoma City",0.577691289329276,0.422308710670724,"Oklahoma City","NA",1,1
+2018-02-22,"Orlando","New York",0.370293450541428,0.629706549458572,"Orlando","NA",1,1
+2018-02-22,"Chicago","Philadelphia",0.606582280626855,0.393417719373145,"Philadelphia","NA",1,1
+2018-02-22,"Cleveland","Washington",0.285797805011732,0.714202194988268,"Cleveland","NA",1,1
+2018-02-22,"Charlotte","Brooklyn",0.35045156149392,0.64954843850608,"Charlotte","NA",1,1
+2018-02-23,"LA Lakers","Dallas",0.364123257368683,0.635876742631317,"LA Lakers","NA",1,1
+2018-02-23,"Denver","San Antonio",0.20710961632167,0.79289038367833,"Denver","NA",1,1
+2018-02-23,"New Orleans","Miami",0.285338105508865,0.714661894491135,"New Orleans","NA",1,1
+2018-02-23,"Phoenix","LA Clippers",0.377862716428753,0.622137283571247,"Phoenix","NA",1,1
+2018-02-23,"Indiana","Atlanta",0.411613615360251,0.588386384639749,"Indiana","NA",1,1
+2018-02-23,"Washington","Charlotte",0.344546712022943,0.655453287977057,"Washington","NA",1,1
+2018-02-23,"Utah","Portland",0.495631916311514,0.504368083688486,"Utah","NA",1,1
+2018-02-23,"Memphis","Cleveland",0.407896000954131,0.592103999045869,"Memphis","NA",1,1
+2018-02-23,"Toronto","Milwaukee",0.456011824428192,0.543988175571808,"Toronto","NA",1,1
+2018-02-23,"Houston","Minnesota",0.28743620690643,0.71256379309357,"Houston","NA",1,1
+2018-02-23,"Detroit","Boston",0.590746331586721,0.409253668413279,"Boston","NA",1,1
+2018-02-24,"Golden State","Oklahoma City",0.309705847790065,0.690294152209935,"Golden State","NA",1,1
+2018-02-24,"Sacramento","LA Lakers",0.482437992948923,0.517562007051077,"Sacramento","NA",1,1
+2018-02-24,"New York","Boston",0.530006697092782,0.469993302907218,"Boston","NA",1,1
+2018-02-24,"Philadelphia","Orlando",0.396003727433111,0.603996272566889,"Philadelphia","NA",1,1
+2018-02-24,"Utah","Dallas",0.314343242015134,0.685656757984866,"Utah","NA",1,1
+2018-02-24,"Minnesota","Chicago",0.186555087844682,0.813444912155318,"Minnesota","NA",1,1
+2018-02-24,"Phoenix","Portland",0.559740006572836,0.440259993427164,"Portland","NA",1,1
+2018-02-24,"Miami","Memphis",0.526794521851257,0.473205478148743,"Memphis","NA",1,1
+2018-02-25,"Cleveland","San Antonio",0.345089907982415,0.654910092017585,"Cleveland","NA",1,1
+2018-02-25,"Milwaukee","New Orleans",0.558196040111399,0.441803959888601,"New Orleans","NA",1,1
+2018-02-25,"Washington","Philadelphia",0.450431999517778,0.549568000482222,"Washington","NA",1,1
+2018-02-25,"Charlotte","Detroit",0.576353361204682,0.423646638795318,"Detroit","NA",1,1
+2018-02-25,"Denver","Houston",0.366249809867607,0.633750190132393,"Denver","NA",1,1
+2018-02-26,"New York","Golden State",0.519601129597089,0.480398870402911,"Golden State","NA",1,1
+2018-02-26,"Atlanta","LA Lakers",0.463572273352267,0.536427726647733,"Atlanta","NA",1,1
+2018-02-26,"Oklahoma City","Orlando",0.460105186337846,0.539894813662154,"Oklahoma City","NA",1,1
+2018-02-26,"New Orleans","Phoenix",0.282245096524988,0.717754903475012,"New Orleans","NA",1,1
+2018-02-26,"Dallas","Indiana",0.580778840247013,0.419221159752987,"Indiana","NA",1,1
+2018-02-26,"Sacramento","Minnesota",0.616555280352336,0.383444719647664,"Minnesota","NA",1,1
+2018-02-26,"Brooklyn","Chicago",0.381087159887443,0.618912840112557,"Brooklyn","NA",1,1
+2018-02-26,"Utah","Houston",0.625148475184538,0.374851524815462,"Houston","NA",1,1
+2018-02-26,"Boston","Memphis",0.275246644912079,0.724753355087921,"Boston","NA",1,1
+2018-02-26,"Toronto","Detroit",0.438833735818437,0.561166264181563,"Toronto","NA",1,1
+2018-02-27,"Denver","LA Clippers",0.20930827273664,0.79069172726336,"Denver","NA",1,1
+2018-02-27,"Portland","Sacramento",0.238449121354717,0.761550878645283,"Portland","NA",1,1
+2018-02-27,"Miami","Philadelphia",0.545092649685944,0.454907350314056,"Philadelphia","NA",1,1
+2018-02-27,"Charlotte","Chicago",0.319956338653662,0.680043661346338,"Charlotte","NA",1,1
+2018-02-27,"Milwaukee","Washington",0.442149817460972,0.557850182539028,"Milwaukee","NA",1,1
+2018-02-27,"Cleveland","Brooklyn",0.240955486026804,0.759044513973196,"Cleveland","NA",1,1
+2018-02-28,"San Antonio","New Orleans",0.525347825152451,0.474652174847549,"New Orleans","NA",1,1
+2018-02-28,"Dallas","Oklahoma City",0.646843328566624,0.353156671433376,"Oklahoma City","NA",1,1
+2018-02-28,"Washington","Golden State",0.657769719471692,0.342230280528308,"Golden State","NA",1,1
+2018-02-28,"LA Clippers","Houston",0.630553400430002,0.369446599569998,"Houston","NA",1,1
+2018-02-28,"Atlanta","Indiana",0.532745462395319,0.467254537604681,"Indiana","NA",1,1
+2018-02-28,"Boston","Charlotte",0.203079239373431,0.796920760626569,"Boston","NA",1,1
+2018-02-28,"Detroit","Milwaukee",0.363050944254927,0.636949055745073,"Detroit","NA",1,1
+2018-02-28,"Orlando","Toronto",0.43227119328599,0.56772880671401,"Orlando","NA",1,1
+2018-02-28,"Memphis","Phoenix",0.408984894999389,0.591015105000611,"Memphis","NA",1,1
+2018-03-01,"Miami","LA Lakers",0.424209845382927,0.575790154617073,"Miami","NA",1,1
+2018-03-01,"Cleveland","Philadelphia",0.372149356093999,0.627850643906001,"Cleveland","NA",1,1
+2018-03-01,"Sacramento","Brooklyn",0.355067696242942,0.644932303757058,"Sacramento","NA",1,1
+2018-03-01,"Portland","Minnesota",0.461575304857933,0.538424695142067,"Portland","NA",1,1
+2018-03-02,"LA Clippers","New York",0.551708138589837,0.448291861410163,"New York","NA",1,1
+2018-03-02,"Atlanta","Golden State",0.708855696440566,0.291144303559434,"Golden State","NA",1,1
+2018-03-02,"Phoenix","Oklahoma City",0.538552190168531,0.461447809831469,"Oklahoma City","NA",1,1
+2018-03-02,"Chicago","Dallas",0.488333162453687,0.511666837546313,"Chicago","NA",1,1
+2018-03-02,"Philadelphia","Charlotte",0.275857033767908,0.724142966232092,"Philadelphia","NA",1,1
+2018-03-02,"Milwaukee","Indiana",0.389579547430011,0.610420452569989,"Milwaukee","NA",1,1
+2018-03-02,"Utah","Minnesota",0.553213273373256,0.446786726626744,"Minnesota","NA",1,1
+2018-03-02,"Orlando","Detroit",0.444534301275446,0.555465698724554,"Orlando","NA",1,1
+2018-03-02,"Washington","Toronto",0.434398170406931,0.565601829593069,"Washington","NA",1,1
+2018-03-02,"Memphis","Denver",0.662092553057411,0.337907446942589,"Denver","NA",1,1
+2018-03-03,"San Antonio","LA Lakers",0.311133239412304,0.688866760587696,"San Antonio","NA",1,1
+2018-03-03,"Portland","Oklahoma City",0.368774881580872,0.631225118419128,"Portland","NA",1,1
+2018-03-03,"Sacramento","Utah",0.455565675533873,0.544434324466127,"Sacramento","NA",1,1
+2018-03-03,"Cleveland","Denver",0.543454338026475,0.456545661973525,"Denver","NA",1,1
+2018-03-03,"Orlando","Memphis",0.342422538432876,0.657577461567124,"Orlando","NA",1,1
+2018-03-03,"Miami","Detroit",0.551928735382674,0.448071264617326,"Detroit","NA",1,1
+2018-03-03,"Houston","Boston",0.386941151151428,0.613058848848572,"Houston","NA",1,1
+2018-03-04,"Dallas","New Orleans",0.702563523337679,0.297436476662321,"New Orleans","NA",1,1
+2018-03-04,"Sacramento","New York",0.636031224633232,0.363968775366768,"New York","NA",1,1
+2018-03-04,"LA Clippers","Brooklyn",0.336786465593472,0.663213534406528,"LA Clippers","NA",1,1
+2018-03-04,"Milwaukee","Philadelphia",0.479369710326372,0.520630289673628,"Milwaukee","NA",1,1
+2018-03-04,"Washington","Indiana",0.389117916280479,0.610882083719521,"Washington","NA",1,1
+2018-03-04,"Atlanta","Phoenix",0.495727245042155,0.504272754957845,"Atlanta","NA",1,1
+2018-03-04,"Toronto","Charlotte",0.329892261086392,0.670107738913608,"Toronto","NA",1,1
+2018-03-05,"LA Lakers","Portland",0.575522079422208,0.424477920577792,"Portland","NA",1,1
+2018-03-05,"San Antonio","Memphis",0.364885300088155,0.635114699911845,"San Antonio","NA",1,1
+2018-03-05,"Indiana","Milwaukee",0.427459572207491,0.572540427792509,"Indiana","NA",1,1
+2018-03-05,"Utah","Orlando",0.477018870030438,0.522981129969562,"Utah","NA",1,1
+2018-03-05,"Chicago","Boston",0.697864238150917,0.302135761849083,"Boston","NA",1,1
+2018-03-05,"Cleveland","Detroit",0.378636885821686,0.621363114178314,"Cleveland","NA",1,1
+2018-03-05,"Miami","Phoenix",0.387117862575306,0.612882137424694,"Miami","NA",1,1
+2018-03-06,"LA Clippers","New Orleans",0.63020064992087,0.36979935007913,"New Orleans","NA",1,1
+2018-03-06,"Oklahoma City","Houston",0.536301106580956,0.463698893419044,"Houston","NA",1,1
+2018-03-06,"Golden State","Brooklyn",0.149090134313455,0.850909865686545,"Golden State","NA",1,1
+2018-03-06,"Portland","New York",0.439998661465797,0.560001338534203,"Portland","NA",1,1
+2018-03-06,"Charlotte","Philadelphia",0.564961479947684,0.435038520052316,"Philadelphia","NA",1,1
+2018-03-06,"Toronto","Atlanta",0.28306584124375,0.71693415875625,"Toronto","NA",1,1
+2018-03-06,"Dallas","Denver",0.782972951364013,0.217027048635987,"Denver","NA",1,1
+2018-03-06,"Washington","Miami",0.334394414966623,0.665605585033377,"Washington","NA",1,1
+2018-03-07,"Sacramento","New Orleans",0.65020386097408,0.34979613902592,"New Orleans","NA",1,1
+2018-03-07,"LA Lakers","Orlando",0.547955553770962,0.452044446229038,"Orlando","NA",1,1
+2018-03-07,"Indiana","Utah",0.369411329802398,0.630588670197602,"Indiana","NA",1,1
+2018-03-07,"Chicago","Memphis",0.613980405649633,0.386019594350367,"Memphis","NA",1,1
+2018-03-07,"Denver","Cleveland",0.331079102210653,0.668920897789347,"Denver","NA",1,1
+2018-03-07,"Milwaukee","Houston",0.61116608823503,0.38883391176497,"Houston","NA",1,1
+2018-03-07,"Detroit","Toronto",0.376177283904011,0.623822716095989,"Detroit","NA",1,1
+2018-03-08,"Golden State","San Antonio",0.280433410166889,0.719566589833111,"Golden State","NA",1,1
+2018-03-08,"Oklahoma City","Phoenix",0.275013937796222,0.724986062203778,"Oklahoma City","NA",1,1
+2018-03-08,"Miami","Philadelphia",0.585502451925553,0.414497548074447,"Philadelphia","NA",1,1
+2018-03-08,"Charlotte","Brooklyn",0.423434880725938,0.576565119274062,"Charlotte","NA",1,1
+2018-03-08,"Minnesota","Boston",0.45903100953615,0.54096899046385,"Minnesota","NA",1,1
+2018-03-09,"LA Clippers","Cleveland",0.564836721301241,0.435163278698759,"Cleveland","NA",1,1
+2018-03-09,"Portland","Golden State",0.513619281168247,0.486380718831753,"Golden State","NA",1,1
+2018-03-09,"Denver","LA Lakers",0.154248249868271,0.845751750131729,"Denver","NA",1,1
+2018-03-09,"New Orleans","Washington",0.364808893565313,0.635191106434687,"New Orleans","NA",1,1
+2018-03-09,"Milwaukee","New York",0.462882832124193,0.537117167875807,"Milwaukee","NA",1,1
+2018-03-09,"Indiana","Atlanta",0.344467476950894,0.655532523049106,"Indiana","NA",1,1
+2018-03-09,"Sacramento","Orlando",0.631800935351821,0.368199064648179,"Orlando","NA",1,1
+2018-03-09,"Detroit","Chicago",0.218824644657678,0.781175355342322,"Detroit","NA",1,1
+2018-03-09,"Memphis","Utah",0.369512086234111,0.630487913765889,"Memphis","NA",1,1
+2018-03-09,"Toronto","Houston",0.538171106871306,0.461828893128694,"Houston","NA",1,1
+2018-03-10,"Oklahoma City","San Antonio",0.356647057213645,0.643352942786355,"Oklahoma City","NA",1,1
+2018-03-10,"LA Clippers","Orlando",0.486856676435123,0.513143323564877,"LA Clippers","NA",1,1
+2018-03-10,"Dallas","Memphis",0.530868323418436,0.469131676581564,"Memphis","NA",1,1
+2018-03-10,"Miami","Washington",0.472588319473682,0.527411680526318,"Miami","NA",1,1
+2018-03-10,"Charlotte","Phoenix",0.418686384240841,0.581313615759159,"Charlotte","NA",1,1
+2018-03-11,"LA Lakers","Cleveland",0.639437645225355,0.360562354774645,"Cleveland","NA",1,1
+2018-03-11,"Minnesota","Golden State",0.48759296203667,0.51240703796333,"Minnesota","NA",1,1
+2018-03-11,"New Orleans","Utah",0.264897079949874,0.735102920050126,"New Orleans","NA",1,1
+2018-03-11,"New York","Toronto",0.392614690187419,0.607385309812581,"New York","NA",1,1
+2018-03-11,"Atlanta","Chicago",0.333353235512277,0.666646764487723,"Atlanta","NA",1,1
+2018-03-11,"Brooklyn","Philadelphia",0.620502435979466,0.379497564020534,"Philadelphia","NA",1,1
+2018-03-11,"Boston","Indiana",0.260667440732754,0.739332559267246,"Boston","NA",1,1
+2018-03-11,"Denver","Sacramento",0.158941226348598,0.841058773651402,"Denver","NA",1,1
+2018-03-11,"Dallas","Houston",0.688499427758966,0.311500572241034,"Houston","NA",1,1
+2018-03-12,"Oklahoma City","Sacramento",0.222285090848498,0.777714909151502,"Oklahoma City","NA",1,1
+2018-03-12,"Houston","San Antonio",0.304114630929623,0.695885369070377,"Houston","NA",1,1
+2018-03-12,"Portland","Miami",0.290897344752821,0.709102655247179,"Portland","NA",1,1
+2018-03-12,"Memphis","Milwaukee",0.451573568193654,0.548426431806346,"Memphis","NA",1,1
+2018-03-13,"Atlanta","Oklahoma City",0.627334871236171,0.372665128763829,"Oklahoma City","NA",1,1
+2018-03-13,"San Antonio","Orlando",0.483826667545518,0.516173332454482,"San Antonio","NA",1,1
+2018-03-13,"Chicago","LA Clippers",0.61208360768205,0.38791639231795,"LA Clippers","NA",1,1
+2018-03-13,"New Orleans","Charlotte",0.213122591873254,0.786877408126746,"New Orleans","NA",1,1
+2018-03-13,"LA Lakers","Denver",0.746256992211214,0.253743007788786,"Denver","NA",1,1
+2018-03-13,"New York","Dallas",0.23080298756114,0.76919701243886,"New York","NA",1,1
+2018-03-13,"Philadelphia","Indiana",0.354349646075952,0.645650353924048,"Philadelphia","NA",1,1
+2018-03-13,"Washington","Minnesota",0.497031919805971,0.502968080194029,"Washington","NA",1,1
+2018-03-13,"Phoenix","Cleveland",0.572568261990679,0.427431738009321,"Cleveland","NA",1,1
+2018-03-13,"Utah","Detroit",0.533637660708743,0.466362339291257,"Detroit","NA",1,1
+2018-03-13,"Brooklyn","Toronto",0.57965852191673,0.42034147808327,"Toronto","NA",1,1
+2018-03-14,"Golden State","LA Lakers",0.170918464307989,0.829081535692011,"Golden State","NA",1,1
+2018-03-14,"Sacramento","Miami",0.548077465567882,0.451922534432118,"Miami","NA",1,1
+2018-03-14,"Orlando","Milwaukee",0.422014748168454,0.577985251831546,"Orlando","NA",1,1
+2018-03-14,"Boston","Washington",0.300089653017674,0.699910346982326,"Boston","NA",1,1
+2018-03-15,"San Antonio","New Orleans",0.550110247508914,0.449889752491086,"New Orleans","NA",1,1
+2018-03-15,"New York","Philadelphia",0.433545235654124,0.566454764345876,"New York","NA",1,1
+2018-03-15,"Houston","LA Clippers",0.233670556880068,0.766329443119932,"Houston","NA",1,1
+2018-03-15,"Atlanta","Charlotte",0.409613651170625,0.590386348829375,"Atlanta","NA",1,1
+2018-03-15,"Portland","Cleveland",0.402033153869535,0.597966846130465,"Portland","NA",1,1
+2018-03-15,"Indiana","Toronto",0.462638579771678,0.537361420228322,"Indiana","NA",1,1
+2018-03-15,"Memphis","Chicago",0.28449824790857,0.71550175209143,"Memphis","NA",1,1
+2018-03-15,"Utah","Phoenix",0.42455657440065,0.57544342559935,"Utah","NA",1,1
+2018-03-15,"Denver","Detroit",0.28934685557454,0.71065314442546,"Denver","NA",1,1
+2018-03-16,"Oklahoma City","LA Clippers",0.322611008276298,0.677388991723702,"Oklahoma City","NA",1,1
+2018-03-16,"Golden State","Sacramento",0.174067160466534,0.825932839533466,"Golden State","NA",1,1
+2018-03-16,"LA Lakers","Miami",0.482589035494873,0.517410964505127,"LA Lakers","NA",1,1
+2018-03-16,"Philadelphia","Brooklyn",0.271256201037286,0.728743798962714,"Philadelphia","NA",1,1
+2018-03-16,"Toronto","Dallas",0.296092164592023,0.703907835407977,"Toronto","NA",1,1
+2018-03-16,"Orlando","Boston",0.496644133251822,0.503355866748178,"Orlando","NA",1,1
+2018-03-17,"San Antonio","Minnesota",0.49878458232618,0.50121541767382,"San Antonio","NA",1,1
+2018-03-17,"New York","Charlotte",0.268540416466853,0.731459583533147,"New York","NA",1,1
+2018-03-17,"Phoenix","Golden State",0.708127442873395,0.291872557126605,"Golden State","NA",1,1
+2018-03-17,"New Orleans","Houston",0.451023899998894,0.548976100001106,"New Orleans","NA",1,1
+2018-03-17,"Milwaukee","Atlanta",0.301791718353598,0.698208281646402,"Milwaukee","NA",1,1
+2018-03-17,"Utah","Sacramento",0.314299217695514,0.685700782304486,"Utah","NA",1,1
+2018-03-17,"Washington","Indiana",0.371894793856393,0.628105206143607,"Washington","NA",1,1
+2018-03-17,"Brooklyn","Dallas",0.393238605808894,0.606761394191106,"Brooklyn","NA",1,1
+2018-03-17,"Chicago","Cleveland",0.710261315819356,0.289738684180644,"Cleveland","NA",1,1
+2018-03-17,"Portland","Detroit",0.407684210732808,0.592315789267192,"Portland","NA",1,1
+2018-03-17,"Memphis","Denver",0.676052736622283,0.323947263377717,"Denver","NA",1,1
+2018-03-18,"LA Clippers","Portland",0.504417937159073,0.495582062840927,"Portland","NA",1,1
+2018-03-18,"Toronto","Oklahoma City",0.45029312200557,0.54970687799443,"Toronto","NA",1,1
+2018-03-18,"New Orleans","Boston",0.436000422319481,0.563999577680519,"New Orleans","NA",1,1
+2018-03-18,"Minnesota","Houston",0.528783559287645,0.471216440712355,"Houston","NA",1,1
+2018-03-19,"San Antonio","Golden State",0.596109912383709,0.403890087616291,"Golden State","NA",1,1
+2018-03-19,"Indiana","LA Lakers",0.336459659114837,0.663540340885163,"Indiana","NA",1,1
+2018-03-19,"New York","Chicago",0.249257676548062,0.750742323451938,"New York","NA",1,1
+2018-03-19,"Philadelphia","Charlotte",0.278301686636532,0.721698313363468,"Philadelphia","NA",1,1
+2018-03-19,"Cleveland","Milwaukee",0.32627142853476,0.67372857146524,"Cleveland","NA",1,1
+2018-03-19,"Sacramento","Detroit",0.633939923335791,0.366060076664209,"Detroit","NA",1,1
+2018-03-19,"Miami","Denver",0.704546512448347,0.295453487551653,"Denver","NA",1,1
+2018-03-19,"Brooklyn","Memphis",0.568642268825844,0.431357731174156,"Memphis","NA",1,1
+2018-03-20,"New Orleans","Dallas",0.220722680908411,0.779277319091589,"New Orleans","NA",1,1
+2018-03-20,"Boston","Oklahoma City",0.362069434287651,0.637930565712349,"Boston","NA",1,1
+2018-03-20,"Minnesota","LA Clippers",0.259333894087804,0.740666105912196,"Minnesota","NA",1,1
+2018-03-20,"Utah","Atlanta",0.386333024915039,0.613666975084961,"Utah","NA",1,1
+2018-03-20,"Portland","Houston",0.482989333234875,0.517010666765125,"Portland","NA",1,1
+2018-03-20,"Orlando","Toronto",0.364708065177619,0.635291934822381,"Orlando","NA",1,1
+2018-03-20,"Phoenix","Detroit",0.522738492348206,0.477261507651794,"Detroit","NA",1,1
+2018-03-21,"San Antonio","Washington",0.432307689404022,0.567692310595978,"San Antonio","NA",1,1
+2018-03-21,"Milwaukee","LA Clippers",0.419844711485407,0.580155288514593,"Milwaukee","NA",1,1
+2018-03-21,"Miami","New York",0.555394552340958,0.444605447659041,"New York","NA",1,1
+2018-03-21,"Philadelphia","Memphis",0.373686135928321,0.626313864071679,"Philadelphia","NA",1,1
+2018-03-21,"Brooklyn","Charlotte",0.445144913439344,0.554855086560656,"Brooklyn","NA",1,1
+2018-03-21,"Chicago","Denver",0.76489083069257,0.23510916930743,"Denver","NA",1,1
+2018-03-21,"Cleveland","Toronto",0.330067877623206,0.669932122376794,"Cleveland","NA",1,1
+2018-03-22,"New Orleans","LA Lakers",0.219074900117584,0.780925099882416,"New Orleans","NA",1,1
+2018-03-22,"Sacramento","Atlanta",0.453821085282468,0.546178914717532,"Sacramento","NA",1,1
+2018-03-22,"Orlando","Philadelphia",0.39490518923338,0.60509481076662,"Orlando","NA",1,1
+2018-03-22,"Dallas","Utah",0.463750533702856,0.536249466297144,"Dallas","NA",1,1
+2018-03-22,"Charlotte","Memphis",0.491877286204326,0.508122713795674,"Charlotte","NA",1,1
+2018-03-22,"Houston","Detroit",0.308546425566053,0.691453574433947,"Houston","NA",1,1
+2018-03-23,"Golden State","Atlanta",0.155827766523853,0.844172233476147,"Golden State","NA",1,1
+2018-03-23,"Indiana","LA Clippers",0.403325465840353,0.596674534159647,"Indiana","NA",1,1
+2018-03-23,"Oklahoma City","Miami",0.270026160692127,0.729973839307873,"Oklahoma City","NA",1,1
+2018-03-23,"San Antonio","Utah",0.353346437357023,0.646653562642977,"San Antonio","NA",1,1
+2018-03-23,"New York","Minnesota",0.526706454623503,0.473293545376497,"Minnesota","NA",1,1
+2018-03-23,"Chicago","Milwaukee",0.575044584395055,0.424955415604945,"Milwaukee","NA",1,1
+2018-03-23,"Portland","Boston",0.468218549412689,0.531781450587311,"Portland","NA",1,1
+2018-03-23,"Cleveland","Phoenix",0.252281168272556,0.747718831727444,"Cleveland","NA",1,1
+2018-03-23,"Washington","Denver",0.641479401944393,0.358520598055606,"Denver","NA",1,1
+2018-03-23,"Toronto","Brooklyn",0.28081050525686,0.71918949474314,"Toronto","NA",1,1
+2018-03-24,"Memphis","LA Lakers",0.332784138040417,0.667215861959583,"Memphis","NA",1,1
+2018-03-24,"Houston","New Orleans",0.401835493802365,0.598164506197635,"Houston","NA",1,1
+2018-03-24,"Dallas","Charlotte",0.412367392939444,0.587632607060556,"Dallas","NA",1,1
+2018-03-24,"Philadelphia","Minnesota",0.498633473362477,0.501366526637523,"Philadelphia","NA",1,1
+2018-03-24,"Detroit","Chicago",0.255393180783555,0.744606819216445,"Detroit","NA",1,1
+2018-03-24,"Orlando","Phoenix",0.271954766284035,0.728045233715965,"Orlando","NA",1,1
+2018-03-25,"Oklahoma City","Portland",0.405187102889174,0.594812897110826,"Oklahoma City","NA",1,1
+2018-03-25,"Milwaukee","San Antonio",0.437962197396806,0.562037802603194,"Milwaukee","NA",1,1
+2018-03-25,"Golden State","Utah",0.191084844997962,0.808915155002038,"Golden State","NA",1,1
+2018-03-25,"Toronto","LA Clippers",0.382508214955531,0.617491785044469,"Toronto","NA",1,1
+2018-03-25,"Washington","New York",0.458260071037372,0.541739928962628,"Washington","NA",1,1
+2018-03-25,"Indiana","Miami",0.411115599885676,0.588884400114324,"Indiana","NA",1,1
+2018-03-25,"Houston","Atlanta",0.171072919062574,0.828927080937426,"Houston","NA",1,1
+2018-03-25,"Sacramento","Boston",0.705487202226017,0.294512797773983,"Boston","NA",1,1
+2018-03-25,"Brooklyn","Cleveland",0.6309758407606,0.3690241592394,"Cleveland","NA",1,1
+2018-03-26,"Detroit","LA Lakers",0.310663192473822,0.689336807526178,"Detroit","NA",1,1
+2018-03-26,"Charlotte","New York",0.547011429189185,0.452988570810815,"New York","NA",1,1
+2018-03-26,"Philadelphia","Denver",0.619844161279746,0.380155838720254,"Denver","NA",1,1
+2018-03-26,"Minnesota","Memphis",0.302115944635348,0.697884055364652,"Minnesota","NA",1,1
+2018-03-26,"Phoenix","Boston",0.606837340268645,0.393162659731355,"Boston","NA",1,1
+2018-03-27,"Golden State","Indiana",0.19844575968573,0.80155424031427,"Golden State","NA",1,1
+2018-03-27,"Washington","San Antonio",0.431126233296444,0.568873766703556,"Washington","NA",1,1
+2018-03-27,"LA Clippers","Milwaukee",0.398221002183762,0.601778997816238,"LA Clippers","NA",1,1
+2018-03-27,"New Orleans","Portland",0.36421478549367,0.63578521450633,"New Orleans","NA",1,1
+2018-03-27,"Sacramento","Dallas",0.466950284923384,0.533049715076616,"Sacramento","NA",1,1
+2018-03-27,"Miami","Cleveland",0.617714649638316,0.382285350361684,"Cleveland","NA",1,1
+2018-03-27,"Houston","Chicago",0.169735541496586,0.830264458503414,"Houston","NA",1,1
+2018-03-27,"Toronto","Denver",0.633536973875286,0.366463026124714,"Denver","NA",1,1
+2018-03-28,"LA Lakers","Dallas",0.343880792835406,0.656119207164594,"LA Lakers","NA",1,1
+2018-03-28,"Philadelphia","New York",0.42995486330658,0.57004513669342,"Philadelphia","NA",1,1
+2018-03-28,"Phoenix","LA Clippers",0.424303195296827,0.575696804703173,"Phoenix","NA",1,1
+2018-03-28,"Minnesota","Atlanta",0.254071126405535,0.745928873594465,"Minnesota","NA",1,1
+2018-03-28,"Charlotte","Cleveland",0.5806711501505,0.4193288498495,"Cleveland","NA",1,1
+2018-03-28,"Orlando","Brooklyn",0.254516758396669,0.745483241603331,"Orlando","NA",1,1
+2018-03-28,"Utah","Boston",0.599579142904186,0.400420857095814,"Boston","NA",1,1
+2018-03-28,"Memphis","Portland",0.546216561361406,0.453783438638594,"Portland","NA",1,1
+2018-03-29,"San Antonio","Oklahoma City",0.523994956118776,0.476005043881224,"Oklahoma City","NA",1,1
+2018-03-29,"Golden State","Milwaukee",0.243378460388222,0.756621539611778,"Golden State","NA",1,1
+2018-03-29,"Sacramento","Indiana",0.539580419174609,0.460419580825391,"Indiana","NA",1,1
+2018-03-29,"Miami","Chicago",0.347916816192206,0.652083183807794,"Miami","NA",1,1
+2018-03-29,"Detroit","Washington",0.371405750191154,0.628594249808846,"Detroit","NA",1,1
+2018-03-30,"LA Lakers","Milwaukee",0.514154456285051,0.485845543714949,"Milwaukee","NA",1,1
+2018-03-30,"Cleveland","New Orleans",0.509121540599943,0.490878459400057,"New Orleans","NA",1,1
+2018-03-30,"Oklahoma City","Denver",0.636523142147678,0.363476857852322,"Denver","NA",1,1
+2018-03-30,"Portland","LA Clippers",0.280167241360863,0.719832758639137,"Portland","NA",1,1
+2018-03-30,"Atlanta","Philadelphia",0.638538299961041,0.361461700038959,"Philadelphia","NA",1,1
+2018-03-30,"Dallas","Minnesota",0.704322346061038,0.295677653938962,"Minnesota","NA",1,1
+2018-03-30,"Orlando","Chicago",0.24543908104298,0.75456091895702,"Orlando","NA",1,1
+2018-03-30,"Utah","Memphis",0.431663794474507,0.568336205525493,"Utah","NA",1,1
+2018-03-30,"Houston","Phoenix",0.2113090807203,0.7886909192797,"Houston","NA",1,1
+2018-03-31,"Sacramento","Golden State",0.743796843174524,0.256203156825476,"Golden State","NA",1,1
+2018-03-31,"New York","Detroit",0.424980417609101,0.575019582390899,"New York","NA",1,1
+2018-03-31,"Washington","Charlotte",0.341066174436375,0.658933825563625,"Washington","NA",1,1
+2018-03-31,"Miami","Brooklyn",0.382982476507973,0.617017523492027,"Miami","NA",1,1
+2018-03-31,"Boston","Toronto",0.306571388267774,0.693428611732226,"Boston","NA",1,1
+2018-04-01,"New Orleans","Oklahoma City",0.336599187833239,0.663400812166761,"New Orleans","NA",1,1
+2018-04-01,"LA Lakers","Sacramento",0.41323140324833,0.58676859675167,"LA Lakers","NA",1,1
+2018-04-01,"LA Clippers","Indiana",0.432914426333367,0.567085573666633,"LA Clippers","NA",1,1
+2018-04-01,"San Antonio","Houston",0.568865781659545,0.431134218340455,"Houston","NA",1,1
+2018-04-01,"Golden State","Phoenix",0.218234197201925,0.781765802798075,"Golden State","NA",1,1
+2018-04-01,"Atlanta","Orlando",0.566441413613224,0.433558586386776,"Orlando","NA",1,1
+2018-04-01,"Cleveland","Dallas",0.213081774526875,0.786918225473125,"Cleveland","NA",1,1
+2018-04-01,"Charlotte","Philadelphia",0.582346284777663,0.417653715222337,"Philadelphia","NA",1,1
+2018-04-01,"Chicago","Washington",0.651075599725575,0.348924400274425,"Washington","NA",1,1
+2018-04-01,"Minnesota","Utah",0.260560515098324,0.739439484901676,"Minnesota","NA",1,1
+2018-04-01,"Denver","Milwaukee",0.23241606990904,0.76758393009096,"Denver","NA",1,1
+2018-04-01,"Portland","Memphis",0.348205397719452,0.651794602280548,"Portland","NA",1,1
+2018-04-01,"Brooklyn","Detroit",0.6629574168655,0.3370425831345,"Detroit","NA",1,1
+2018-04-03,"Oklahoma City","Golden State",0.579761852216788,0.420238147783212,"Golden State","NA",1,1
+2018-04-03,"LA Clippers","San Antonio",0.462546408090216,0.537453591909784,"LA Clippers","NA",1,1
+2018-04-03,"Utah","LA Lakers",0.366308289499417,0.633691710500583,"Utah","NA",1,1
+2018-04-03,"New York","Orlando",0.402730172914333,0.597269827085667,"New York","NA",1,1
+2018-04-03,"Miami","Atlanta",0.346496021909889,0.653503978090111,"Miami","NA",1,1
+2018-04-03,"Dallas","Portland",0.685475622376029,0.314524377623971,"Portland","NA",1,1
+2018-04-03,"Philadelphia","Brooklyn",0.278430812821508,0.721569187178492,"Philadelphia","NA",1,1
+2018-04-03,"Chicago","Charlotte",0.521934444878484,0.478065555121517,"Charlotte","NA",1,1
+2018-04-03,"Phoenix","Sacramento",0.421396644337238,0.578603355662762,"Phoenix","NA",1,1
+2018-04-03,"Denver","Indiana",0.210192450346922,0.789807549653078,"Denver","NA",1,1
+2018-04-03,"Milwaukee","Boston",0.581689928288404,0.418310071711596,"Boston","NA",1,1
+2018-04-03,"Cleveland","Toronto",0.370742809625742,0.629257190374258,"Cleveland","NA",1,1
+2018-04-03,"Houston","Washington",0.291491811595113,0.708508188404887,"Houston","NA",1,1
+2018-04-04,"LA Lakers","San Antonio",0.587236534796464,0.412763465203536,"San Antonio","NA",1,1
+2018-04-04,"New Orleans","Memphis",0.25143390189308,0.74856609810692,"New Orleans","NA",1,1
+2018-04-04,"Atlanta","Miami",0.432463196093587,0.567536803906413,"Atlanta","NA",1,1
+2018-04-04,"Orlando","Dallas",0.22679554608434,0.77320445391566,"Orlando","NA",1,1
+2018-04-04,"Detroit","Philadelphia",0.3967772575424,0.6032227424576,"Detroit","NA",1,1
+2018-04-04,"Toronto","Boston",0.53873590452622,0.46126409547378,"Boston","NA",1,1
+2018-04-05,"Indiana","Golden State",0.642485848470828,0.357514151529172,"Golden State","NA",1,1
+2018-04-05,"Utah","LA Clippers",0.462406950960308,0.537593049039692,"Utah","NA",1,1
+2018-04-05,"Cleveland","Washington",0.335964035513389,0.664035964486611,"Cleveland","NA",1,1
+2018-04-05,"Milwaukee","Brooklyn",0.296181584359198,0.703818415640802,"Milwaukee","NA",1,1
+2018-04-05,"Denver","Minnesota",0.323205022516409,0.676794977483591,"Denver","NA",1,1
+2018-04-05,"Houston","Portland",0.346971329783356,0.653028670216644,"Houston","NA",1,1
+2018-04-06,"LA Lakers","Minnesota",0.631127602430176,0.368872397569825,"Minnesota","NA",1,1
+2018-04-06,"Phoenix","New Orleans",0.647680920930295,0.352319079069705,"New Orleans","NA",1,1
+2018-04-06,"New York","Miami",0.317631170913377,0.682368829086623,"New York","NA",1,1
+2018-04-06,"Washington","Atlanta",0.291883364167722,0.708116635832278,"Washington","NA",1,1
+2018-04-06,"Philadelphia","Cleveland",0.431545250889427,0.568454749110573,"Philadelphia","NA",1,1
+2018-04-06,"Orlando","Charlotte",0.276462120626702,0.723537879373298,"Orlando","NA",1,1
+2018-04-06,"Memphis","Sacramento",0.283328055541759,0.716671944458241,"Memphis","NA",1,1
+2018-04-06,"Detroit","Dallas",0.235018276234051,0.764981723765949,"Detroit","NA",1,1
+2018-04-06,"Toronto","Indiana",0.356046279700477,0.643953720299523,"Toronto","NA",1,1
+2018-04-06,"Boston","Chicago",0.193582747415923,0.806417252584077,"Boston","NA",1,1
+2018-04-07,"Golden State","New Orleans",0.345002555821796,0.654997444178204,"Golden State","NA",1,1
+2018-04-07,"San Antonio","Portland",0.469888025503851,0.530111974496149,"San Antonio","NA",1,1
+2018-04-07,"Houston","Oklahoma City",0.346370630975437,0.653629369024563,"Houston","NA",1,1
+2018-04-07,"LA Clippers","Denver",0.718005422984294,0.281994577015706,"Denver","NA",1,1
+2018-04-07,"New York","Milwaukee",0.356412845041224,0.643587154958776,"New York","NA",1,1
+2018-04-07,"Chicago","Brooklyn",0.532489405149368,0.467510594850632,"Brooklyn","NA",1,1
+2018-04-08,"LA Lakers","Utah",0.493242020914775,0.506757979085225,"LA Lakers","NA",1,1
+2018-04-08,"Phoenix","Golden State",0.665561570105421,0.334438429894579,"Golden State","NA",1,1
+2018-04-08,"Philadelphia","Dallas",0.244559179848287,0.755440820151713,"Philadelphia","NA",1,1
+2018-04-08,"Boston","Atlanta",0.222182805802127,0.777817194197873,"Boston","NA",1,1
+2018-04-08,"Charlotte","Indiana",0.527009948548121,0.472990051451879,"Indiana","NA",1,1
+2018-04-08,"Toronto","Orlando",0.435120966113875,0.564879033886125,"Toronto","NA",1,1
+2018-04-08,"Memphis","Detroit",0.48357713136115,0.51642286863885,"Memphis","NA",1,1
+2018-04-09,"LA Clippers","New Orleans",0.627867671270957,0.372132328729043,"New Orleans","NA",1,1
+2018-04-09,"San Antonio","Sacramento",0.304096944570512,0.695903055429488,"San Antonio","NA",1,1
+2018-04-09,"Miami","Oklahoma City",0.559017717380489,0.440982282619511,"Oklahoma City","NA",1,1
+2018-04-09,"New York","Cleveland",0.456088619355317,0.543911380644683,"New York","NA",1,1
+2018-04-09,"Milwaukee","Orlando",0.457752359155478,0.542247640844522,"Milwaukee","NA",1,1
+2018-04-09,"Brooklyn","Chicago",0.432592206871787,0.567407793128213,"Brooklyn","NA",1,1
+2018-04-09,"Denver","Portland",0.315650383953994,0.684349616046006,"Denver","NA",1,1
+2018-04-09,"Minnesota","Memphis",0.284738501554035,0.715261498445965,"Minnesota","NA",1,1
+2018-04-09,"Detroit","Toronto",0.380268288424426,0.619731711575574,"Detroit","NA",1,1
+2018-04-10,"Utah","Golden State",0.691917755562388,0.308082244437612,"Golden State","NA",1,1
+2018-04-10,"LA Lakers","Houston",0.666649357548853,0.333350642451147,"Houston","NA",1,1
+2018-04-10,"Atlanta","Philadelphia",0.642039979545426,0.357960020454574,"Philadelphia","NA",1,1
+2018-04-10,"Indiana","Charlotte",0.385305677234564,0.614694322765436,"Indiana","NA",1,1
+2018-04-10,"Dallas","Phoenix",0.544124618943611,0.455875381056389,"Phoenix","NA",1,1
+2018-04-10,"Washington","Boston",0.506635461275067,0.493364538724933,"Boston","NA",1,1
+2018-04-11,"LA Clippers","LA Lakers",0.349019203630097,0.650980796369903,"LA Clippers","NA",1,1
+2018-04-11,"New Orleans","San Antonio",0.367096286525387,0.632903713474613,"New Orleans","NA",1,1
+2018-04-11,"Oklahoma City","Memphis",0.396805025018753,0.603194974981247,"Oklahoma City","NA",1,1
+2018-04-11,"Cleveland","New York",0.381453008938746,0.618546991061254,"Cleveland","NA",1,1
+2018-04-11,"Philadelphia","Milwaukee",0.348425175293828,0.651574824706172,"Philadelphia","NA",1,1
+2018-04-11,"Sacramento","Houston",0.683645929546919,0.316354070453081,"Houston","NA",1,1
+2018-04-11,"Orlando","Washington",0.357964342369386,0.642035657630614,"Orlando","NA",1,1
+2018-04-11,"Portland","Utah",0.267630973873013,0.732369026126987,"Portland","NA",1,1
+2018-04-11,"Chicago","Detroit",0.685377803059982,0.314622196940018,"Detroit","NA",1,1
+2018-04-11,"Minnesota","Denver",0.557436347992555,0.442563652007445,"Denver","NA",1,1
+2018-04-11,"Miami","Toronto",0.52048366202857,0.47951633797143,"Toronto","NA",1,1
+2018-04-11,"Boston","Brooklyn",0.234484706217132,0.765515293782868,"Boston","NA",1,1

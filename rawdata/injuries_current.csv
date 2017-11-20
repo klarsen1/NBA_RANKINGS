@@ -1,111 +1,105 @@
 "PLAYER_FULL_NAME","injury_status","injury_date","return_date","injury_scrape_date"
-"Al Horford","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Andre Iguodala","Day-To-Day","Nov 11",2017-11-13,2017-11-12
-"Andrew Bogut","Out","Nov 8",2017-11-13,2017-11-12
-"Austin Rivers","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Cameron Payne","Out","Nov 9",2017-11-30,2017-11-12
-"Carmelo Anthony","Day-To-Day","Nov 12",2017-11-12,2017-11-12
-"Cole Aldrich","Day-To-Day","Nov 12",2017-11-13,2017-11-12
-"D.J. Augustin","Out","Nov 9",2017-11-18,2017-11-12
-"D'Angelo Russell","Out","Nov 12",2017-11-19,2017-11-12
-"Danilo Gallinari","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Danny Green","Day-To-Day","Nov 11",2017-11-13,2017-11-12
-"DeAndre' Bembry","Out","Nov 8",2017-11-20,2017-11-12
-"Dennis Schroder","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Derrick Rose","Day-To-Day","Nov 9",2017-11-15,2017-11-12
-"Devin Harris","Day-To-Day","Nov 12",2017-11-14,2017-11-12
-"Domantas Sabonis","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Elfrid Payton","Out","Nov 8",2017-11-13,2017-11-12
-"Eric Bledsoe","Day-To-Day","Nov 10",2017-11-13,2017-11-12
-"Ersan Ilyasova","Out","Nov 8",2017-11-15,2017-11-12
-"Gary Harris","Day-To-Day","Nov 12",2017-11-13,2017-11-12
-"Gorgui Dieng","Day-To-Day","Nov 12",2017-11-13,2017-11-12
-"Greg Monroe","Out","Nov 8",2017-11-13,2017-11-12
-"Isaiah Thomas","Out","Nov 12",2018-01-02,2017-11-12
-"JaMychal Green","Out","Nov 12",2017-11-15,2017-11-12
-"Jared Dudley","Day-To-Day","Nov 11",2017-11-13,2017-11-12
-"Jarrett Allen","Out","Nov 9",2017-11-14,2017-11-12
-"Jayson Tatum","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Jerryd Bayless","Out","Nov 8",2017-11-13,2017-11-12
-"Joffrey Lauvergne","Out","Nov 9",2017-11-13,2017-11-12
-"John Wall","Day-To-Day","Nov 11",2017-11-13,2017-11-12
-"Jon Leuer","Day-To-Day","Nov 9",2017-11-15,2017-11-12
-"Jonathan Isaac","Day-To-Day","Nov 12",2017-11-15,2017-11-12
-"Josh McRoberts","Out","Nov 12",2017-11-14,2017-11-12
-"Kentavious Caldwell-Pope","Day-To-Day","Nov 8",2017-11-13,2017-11-12
-"Kevin Durant","Day-To-Day","Nov 8",2017-11-13,2017-11-12
-"Kristaps Porzingis","Day-To-Day","Nov 8",2017-11-13,2017-11-12
-"Kyrie Irving","Day-To-Day","Nov 11",2017-11-14,2017-11-12
-"Lauri Markkanen","Day-To-Day","Nov 9",2017-11-15,2017-11-12
-"Luc Mbah a Moute","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Malcolm Delaney","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Malcolm Miller","Out","Nov 9",2017-11-13,2017-11-12
-"Manu Ginobili","Day-To-Day","Nov 11",2017-11-13,2017-11-12
-"Marco Belinelli","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Meyers Leonard","Out","Nov 12",2017-11-13,2017-11-12
-"Michael Kidd-Gilchrist","Day-To-Day","Nov 8",2017-11-13,2017-11-12
-"Mike Muscala","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Miles Plumlee","Out","Nov 9",2017-11-15,2017-11-12
-"Mirza Teletovic","Day-To-Day","Nov 10",2017-11-13,2017-11-12
-"Nene Hilario","Day-To-Day","Nov 12",2017-11-13,2017-11-12
-"Nicolas Batum","Out","Nov 9",2017-11-13,2017-11-12
-"Nik Stauskas","Day-To-Day","Nov 11",2017-11-13,2017-11-12
-"Nikola Mirotic","Out","Nov 11",2017-11-24,2017-11-12
-"Norman Powell","Day-To-Day","Nov 12",2017-11-13,2017-11-12
-"Patrick Beverley","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Robin Lopez","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Rondae Hollis-Jefferson","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Rudy Gay","Day-To-Day","Nov 11",2017-11-13,2017-11-12
-"Seth Curry","Out","Nov 12",2017-11-18,2017-11-12
-"Shaun Livingston","Day-To-Day","Nov 8",2017-11-13,2017-11-12
-"Spencer Dinwiddie","Day-To-Day","Nov 11",2017-11-14,2017-11-12
-"Stanley Johnson","Day-To-Day","Nov 9",2017-11-15,2017-11-12
-"Stephen Curry","Day-To-Day","Nov 12",2017-11-13,2017-11-12
-"Steven Adams","Day-To-Day","Nov 9",2017-11-15,2017-11-12
-"Tony Allen","Day-To-Day","Nov 12",2017-11-15,2017-11-12
-"Treveon Graham","Day-To-Day","Nov 9",2017-11-15,2017-11-12
-"Trevor Booker","Out","Nov 9",2017-11-13,2017-11-12
-"Tyler Johnson","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Tyler Zeller","Day-To-Day","Nov 11",2017-11-13,2017-11-12
-"Tyson Chandler","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Vince Carter","Day-To-Day","Nov 9",2017-11-13,2017-11-12
-"Wayne Selden","Out","Nov 11",2017-11-13,2017-11-12
-" Nene","Out",NA,2017-11-14,2017-11-12
-"Adreian Payne","Out",NA,2018-01-01,2017-11-12
-"Al-Farouq Aminu","Out",NA,2017-11-17,2017-11-12
-"Alan Williams","Out",NA,2018-03-15,2017-11-12
-"Alexis Ajinca","Out",NA,2017-11-17,2017-11-12
-"Brandon Knight","Out",NA,2018-10-25,2017-11-12
-"C.J. Wilcox","Out",NA,2017-12-05,2017-11-12
-"Chris Boucher","Out",NA,2018-01-01,2017-11-12
-"Chris Paul","Out",NA,2017-11-18,2017-11-12
-"Dante Exum","Out",NA,2018-03-01,2017-11-12
-"David Nwaba","Out",NA,2017-11-21,2017-11-12
-"Davon Reed","Out",NA,2017-12-26,2017-11-12
-"Derrick White","Out",NA,2018-01-21,2017-11-12
-"Devin Robinson","Out",NA,2017-12-01,2017-11-12
-"Edmond Sumner","Out",NA,2018-02-01,2017-11-12
-"Frank Jackson","Out",NA,2017-12-15,2017-11-12
-"Glenn Robinson III","Out",NA,2018-01-15,2017-11-12
-"Gordon Hayward","Out",NA,2018-04-07,2017-11-12
-"Harry Giles","Out",NA,2018-01-02,2017-11-12
-"Jabari Parker","Out",NA,2018-02-01,2017-11-12
-"Jeremy Lin","Out",NA,2018-10-25,2017-11-12
-"Joakim Noah","Out",NA,2017-11-13,2017-11-12
-"Joe Johnson","Out",NA,2017-11-15,2017-11-12
-"Julyan Stone","Out",NA,2017-12-01,2017-11-12
-"Justin Patton","Out",NA,2017-12-01,2017-11-12
-"Kawhi Leonard","Out",NA,2017-11-20,2017-11-12
-"Larry Nance Jr.","Out",NA,2017-12-02,2017-11-12
-"Markelle Fultz","Out",NA,2017-11-20,2017-11-12
-"Milos Teodosic","Out",NA,2017-11-13,2017-11-12
-"Omer Asik","Out",NA,2017-11-20,2017-11-12
-"Rajon Rondo","Out",NA,2017-11-17,2017-11-12
-"Rodney McGruder","Out",NA,2018-01-15,2017-11-12
-"Rudy Gobert","Out",NA,2017-12-13,2017-11-12
-"Sheldon Mac","Out",NA,2018-04-11,2017-11-12
-"Solomon Hill","Out",NA,2018-02-28,2017-11-12
-"Tony Parker","Out",NA,2017-11-20,2017-11-12
-"Tristan Thompson","Out",NA,2017-12-02,2017-11-12
-"Wade Baldwin IV","Out",NA,2017-12-09,2017-11-12
-"Zach LaVine","Out",NA,2017-12-04,2017-11-12
+"Anthony Davis","Day-To-Day","Nov 19",2017-11-20,2017-11-19
+"Brandan Wright","Day-To-Day","Nov 18",2017-11-20,2017-11-19
+"Buddy Hield","Day-To-Day","Nov 18",2017-11-20,2017-11-19
+"Chris Paul","Out","Nov 16",2017-11-20,2017-11-19
+"Cole Aldrich","Day-To-Day","Nov 15",2017-11-20,2017-11-19
+"Courtney Lee","Day-To-Day","Nov 15",2017-11-20,2017-11-19
+"D.J. Augustin","Out","Nov 18",2017-11-20,2017-11-19
+"D'Angelo Russell","Out","Nov 17",2018-01-01,2017-11-19
+"Danilo Gallinari","Out","Nov 16",2017-11-20,2017-11-19
+"David Nwaba","Out","Nov 18",2017-11-21,2017-11-19
+"DeAndre' Bembry","Out","Nov 18",2017-11-20,2017-11-19
+"Delon Wright","Out","Nov 17",2017-12-01,2017-11-19
+"Derrick Rose","Out","Nov 17",2017-12-02,2017-11-19
+"Devin Harris","Day-To-Day","Nov 16",2017-11-20,2017-11-19
+"Domantas Sabonis","Day-To-Day","Nov 17",2017-11-20,2017-11-19
+"Ed Davis","Day-To-Day","Nov 18",2017-11-20,2017-11-19
+"Ersan Ilyasova","Out","Nov 15",2017-11-20,2017-11-19
+"Frank Jackson","Out","Nov 15",2017-12-15,2017-11-19
+"Gary Harris","Day-To-Day","Nov 15",2017-11-20,2017-11-19
+"Gorgui Dieng","Day-To-Day","Nov 17",2017-11-20,2017-11-19
+"Greg Monroe","Out","Nov 16",2017-11-20,2017-11-19
+"Iman Shumpert","Out","Nov 18",2017-11-27,2017-11-19
+"Isaiah Taylor","Day-To-Day","Nov 19",2017-11-25,2017-11-19
+"Isaiah Thomas","Out","Nov 19",2018-01-02,2017-11-19
+"Jahlil Okafor","Day-To-Day","Nov 15",2017-11-20,2017-11-19
+"JaMychal Green","Out","Nov 15",2017-11-20,2017-11-19
+"Jared Dudley","Day-To-Day","Nov 16",2017-11-20,2017-11-19
+"Jeremy Lamb","Day-To-Day","Nov 19",2017-11-20,2017-11-19
+"Jerryd Bayless","Out","Nov 19",2017-11-20,2017-11-19
+"Joakim Noah","Out","Nov 15",2017-11-20,2017-11-19
+"John Wall","Day-To-Day","Nov 19",2017-11-20,2017-11-19
+"Jon Leuer","Day-To-Day","Nov 17",2017-11-20,2017-11-19
+"Jonathan Isaac","Day-To-Day","Nov 17",2017-11-20,2017-11-19
+"Josh McRoberts","Out","Nov 18",2017-11-20,2017-11-19
+"Justin Anderson","Out","Nov 17",2017-12-09,2017-11-19
+"Kemba Walker","Day-To-Day","Nov 18",2017-11-20,2017-11-19
+"Kevin Durant","Day-To-Day","Nov 19",2017-11-22,2017-11-19
+"Luc Mbah a Moute","Day-To-Day","Nov 18",2017-11-20,2017-11-19
+"Luke Babbitt","Day-To-Day","Nov 17",2017-11-20,2017-11-19
+"Mario Hezonja","Day-To-Day","Nov 18",2017-11-20,2017-11-19
+"Markelle Fultz","Out","Nov 19",2017-12-10,2017-11-19
+"Mason Plumlee","Day-To-Day","Nov 18",2017-11-20,2017-11-19
+"Matthew Dellavedova","Day-To-Day","Nov 18",2017-11-20,2017-11-19
+"Michael Kidd-Gilchrist","Day-To-Day","Nov 18",2017-11-20,2017-11-19
+"Mike Conley","Out","Nov 17",2017-12-01,2017-11-19
+"Mike Muscala","Day-To-Day","Nov 17",2017-11-20,2017-11-19
+"Miles Plumlee","Out","Nov 19",2017-11-20,2017-11-19
+"Mirza Teletovic","Day-To-Day","Nov 18",2017-11-20,2017-11-19
+"Nene Hilario","Day-To-Day","Nov 16",2017-11-20,2017-11-19
+"Nicolas Batum","Out","Nov 15",2017-11-20,2017-11-19
+"Nikola Mirotic","Out","Nov 16",2017-11-26,2017-11-19
+"Norman Powell","Out","Nov 19",2017-11-22,2017-11-19
+"Okaro White","Out","Nov 16",2018-02-07,2017-11-19
+"Patrick Beverley","Out","Nov 19",2017-11-20,2017-11-19
+"Ricky Rubio","Day-To-Day","Nov 16",2017-11-20,2017-11-19
+"Ron Baker","Day-To-Day","Nov 15",2017-11-20,2017-11-19
+"Serge Ibaka","Day-To-Day","Nov 18",2017-11-20,2017-11-19
+"Seth Curry","Out","Nov 18",2017-11-20,2017-11-19
+"Steven Adams","Out","Nov 17",2017-11-20,2017-11-19
+"Tony Allen","Day-To-Day","Nov 19",2017-11-20,2017-11-19
+"Treveon Graham","Day-To-Day","Nov 16",2017-11-20,2017-11-19
+"Tyson Chandler","Day-To-Day","Nov 16",2017-11-20,2017-11-19
+"Vince Carter","Out","Nov 18",2017-11-20,2017-11-19
+"Wayne Selden","Day-To-Day","Nov 17",2017-11-20,2017-11-19
+"Yakuba Ouattara","Day-To-Day","Nov 15",2017-11-20,2017-11-19
+"Zach LaVine","Out","Nov 18",2017-12-04,2017-11-19
+"Adreian Payne","Out",NA,2018-01-01,2017-11-19
+"Al-Farouq Aminu","Out",NA,2017-11-20,2017-11-19
+"Alan Williams","Out",NA,2018-03-15,2017-11-19
+"Alexis Ajinca","Out",NA,2017-11-22,2017-11-19
+"Brandon Knight","Out",NA,2018-10-25,2017-11-19
+"C.J. Wilcox","Out",NA,2017-12-05,2017-11-19
+"Cameron Payne","Out",NA,2017-11-30,2017-11-19
+"Chris Boucher","Out",NA,2018-01-01,2017-11-19
+"Dante Exum","Out",NA,2018-03-01,2017-11-19
+"Davon Reed","Out",NA,2017-12-26,2017-11-19
+"Derrick White","Out",NA,2018-01-21,2017-11-19
+"Devin Robinson","Out",NA,2017-12-01,2017-11-19
+"Dorian Finney-Smith","Out",NA,2017-11-20,2017-11-19
+"Edmond Sumner","Out",NA,2018-02-01,2017-11-19
+"Glenn Robinson III","Out",NA,2018-01-15,2017-11-19
+"Gordon Hayward","Out",NA,2018-04-07,2017-11-19
+"Harry Giles","Out",NA,2018-01-02,2017-11-19
+"Jabari Parker","Out",NA,2018-02-01,2017-11-19
+"Jeremy Lin","Out",NA,2018-10-25,2017-11-19
+"Joe Johnson","Out",NA,2017-11-28,2017-11-19
+"Julyan Stone","Out",NA,2017-12-01,2017-11-19
+"Justin Patton","Out",NA,2017-12-01,2017-11-19
+"Kawhi Leonard","Out",NA,2017-11-20,2017-11-19
+"Larry Nance Jr.","Out",NA,2017-12-02,2017-11-19
+"Malcolm Miller","Out",NA,2017-11-20,2017-11-19
+"Milos Teodosic","Out",NA,2017-11-20,2017-11-19
+"Nik Stauskas","Out",NA,2017-11-20,2017-11-19
+"Omer Asik","Out",NA,2017-11-20,2017-11-19
+"Rodney McGruder","Out",NA,2018-01-15,2017-11-19
+"Rudy Gobert","Out",NA,2017-12-13,2017-11-19
+"Sheldon Mac","Out",NA,2018-04-11,2017-11-19
+"Solomon Hill","Out",NA,2018-02-28,2017-11-19
+"Thabo Sefolosha","Out",NA,2017-11-20,2017-11-19
+"Tim Hardaway Jr.","Out",NA,2017-11-20,2017-11-19
+"Tony Parker","Out",NA,2017-11-20,2017-11-19
+"Tristan Thompson","Out",NA,2017-12-02,2017-11-19
+"Wade Baldwin IV","Out",NA,2017-12-09,2017-11-19
+"Wayne Selden Jr.","Out",NA,2017-11-20,2017-11-19

@@ -114,6 +114,8 @@ statuses <- source_injuries %>%
   html_nodes('table tr.oddrow td:nth-child(2), table tr.evenrow  td:nth-child(2)') %>%
   html_text()
 
+players <- players[players != "Vincent Goodwill of NBC Sports Chicago"]
+
 dates <- source_injuries %>%
   html_nodes('table tr.oddrow td:nth-child(3), table tr.evenrow  td:nth-child(3)') %>%
   html_text()
@@ -392,7 +394,7 @@ get_rest_days <- function(id){
     mutate(opposing_team_travel=ifelse(opposing_team_rest>2 & home_team_name==opposing, 0, abs(distance_between(lon1,lat1,lon2,lat2)))) %>%
     filter(game_id==id) %>%
     left_join(t, by="OWN_TEAM") %>%
-    select(opposing_team_rest, opposing_team_last_city, game_id, opposing_team_travel, opposing_team_altitude)
+    select(opposing_team_rest, opposing_team_last_city, game_id, opposing_team_travel, opposing_team_altitude, lon1, lon2, lat1, lat2)
 
   return(data.frame(cbind(df1, df2)))
 }
@@ -528,4 +530,4 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
 saveRDS(final, paste0("BOX_SCORES_", Sys.Date(), ".RDA"))
 saveRDS(final, "BOX_SCORES.RDA")
 
-rm(list=ls())
+#rm(list=ls())

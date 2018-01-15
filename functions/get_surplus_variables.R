@@ -10,7 +10,7 @@ get_surplus_variables <- function(data, nclus){
   
   df <- select(df, game_id, starts_with("share_minutes_cluster_")) %>%
     group_by(game_id) %>%
-    summarise_each(funs(sum)) %>%
+    summarise_all(funs(sum)) %>%
     ungroup()
            
   return(df)

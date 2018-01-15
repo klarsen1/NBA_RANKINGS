@@ -35,7 +35,7 @@ report <- function(scores, predvar){
   
   summary <- bind_rows(summary1, summary2) %>% 
      group_by(team) %>%
-     summarise_each(funs(sum)) %>%
+     summarise_all(funs(sum)) %>%
      mutate(ytd_win_rate = past/games_played, 
             season_win_rate = season/games_season, 
             future_win_rate=future/games_future) %>%

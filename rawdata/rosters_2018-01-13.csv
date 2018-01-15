@@ -1,0 +1,494 @@
+"PLAYER_FULL_NAME","OWN_TEAM","Position","Age","Height","Weight","Salary","Team","injury_status","injury_date","return_notes","clean_note","injury_scrape_date","return_date"
+"Aaron Brooks","Minnesota","PG",32,"6-0",161,1471382,"Minnesota Timberwolves",NA,NA,NA,NA,NA,NA
+"Aaron Gordon","Orlando","PF",22,"6-9",220,5504420,"Orlando Magic",NA,NA,NA,NA,NA,NA
+"Abdel Nader","Boston","SF",24,"6-6",230,1167333,"Boston Celtics",NA,NA,NA,NA,NA,NA
+"Adreian Payne","Orlando","PF",26,"6-10",237,NA,"Orlando Magic",NA,NA,NA,NA,NA,NA
+"AJ Hammons","Miami","C",25,"7-0",260,1312611,"Miami Heat",NA,NA,NA,NA,NA,NA
+"Al Horford","Boston","PF",31,"6-10",245,27734406,"Boston Celtics","Day-To-Day","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Al Jefferson","Indiana","C",33,"6-10",280,9769821,"Indiana Pacers",NA,NA,NA,NA,NA,NA
+"Al-Farouq Aminu","Portland","PF",27,"6-9",220,7319035,"Portland Trailblazers",NA,NA,NA,NA,NA,NA
+"Alan Williams","Phoenix","PF",24,"6-8",265,6e+06,"Phoenix Suns","Out",NA,"Expected to be out until at least Mar 15","Mar 15",2018-01-13,NA
+"Alec Burks","Utah","SG",26,"6-6",214,10845506,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Alec Peters","Phoenix","PF",22,"6-9",235,NA,"Phoenix Suns",NA,NA,NA,NA,NA,NA
+"Alex Abrines","Oklahoma City","SG",24,"6-6",190,5725000,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"Alex Caruso","LA Lakers","SG",23,"6-5",186,NA,"Los Angeles Lakers",NA,NA,NA,NA,NA,NA
+"Alex Len","Phoenix","C",24,"7-1",250,4187599,"Phoenix Suns",NA,NA,NA,NA,NA,NA
+"Alex Poythress","Indiana","SF",24,"6-9",235,778668,"Indiana Pacers",NA,NA,NA,NA,NA,NA
+"Alexis Ajinca","New Orleans","C",29,"7-2",248,4961798,"New Orleans Pelicans","Out",NA,"Expected to be out until at least Apr 7","Apr 7",2018-01-13,NA
+"Alfonzo McKinnie","Toronto","SF",25,"6-8",215,815615,"Toronto Raptors",NA,NA,NA,NA,NA,NA
+"Allen Crabbe","Brooklyn","SG",25,"6-6",215,19332500,"Brooklyn Nets","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Amir Johnson","Philadelphia","PF",30,"6-9",240,1.1e+07,"Philadelphia 76ers","Day-To-Day","Jan 11","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Andre Drummond","Detroit","C",24,"6-11",279,23775506,"Detroit Pistons",NA,NA,NA,NA,NA,NA
+"Andre Iguodala","Golden State","SF",33,"6-6",215,14814815,"Golden State Warriors","Day-To-Day","Jan 9","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Andre Roberson","Oklahoma City","SG",26,"6-7",210,9259260,"Oklahoma City Thunder","Out","Jan 9","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Andrew Harrison","Memphis","SG",23,"6-6",213,1312611,"Memphis Grizzlies","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Andrew Wiggins","Minnesota","SF",22,"6-8",202,7574323,"Minnesota Timberwolves",NA,NA,NA,NA,NA,NA
+"Ante Zizic","Cleveland","PF",21,"6-11",250,1645200,"Cleveland Cavaliers",NA,NA,NA,NA,NA,NA
+"Anthony Brown","Minnesota","SF",25,"6-7",224,NA,"Minnesota Timberwolves",NA,NA,NA,NA,NA,NA
+"Anthony Davis","New Orleans","PF",24,"6-10",253,23775506,"New Orleans Pelicans","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Anthony Tolliver","Detroit","PF",32,"6-8",240,3290000,"Detroit Pistons",NA,NA,NA,NA,NA,NA
+"Antonio Blakeney","Chicago","SG",21,"6-4",197,NA,"Chicago Bulls",NA,NA,NA,NA,NA,NA
+"Aron Baynes","Boston","C",31,"6-10",260,4328000,"Boston Celtics",NA,NA,NA,NA,NA,NA
+"Arron Afflalo","Orlando","SG",32,"6-5",210,1471382,"Orlando Magic",NA,NA,NA,NA,NA,NA
+"Austin Rivers","LA Clippers","PG",25,"6-4",200,11825000,"Los Angeles Clippers","Out",NA,"Expected to be out until at least Jan 20","Jan 20",2018-01-13,NA
+"Avery Bradley","Detroit","SG",27,"6-2",180,8808989,"Detroit Pistons",NA,NA,NA,NA,NA,NA
+"Bam Adebayo","Miami","C",20,"6-10",255,2490360,"Miami Heat",NA,NA,NA,NA,NA,NA
+"Ben McLemore","Memphis","SG",24,"6-5",195,5200000,"Memphis Grizzlies",NA,NA,NA,NA,NA,NA
+"Ben Moore","Indiana","PF",22,"6-8",220,815615,"Indiana Pacers",NA,NA,NA,NA,NA,NA
+"Ben Simmons","Philadelphia","PG",21,"6-10",230,6168840,"Philadelphia 76ers",NA,NA,NA,NA,NA,NA
+"Bismack Biyombo","Orlando","C",25,"6-9",255,1.7e+07,"Orlando Magic",NA,NA,NA,NA,NA,NA
+"Blake Griffin","LA Clippers","PF",28,"6-10",251,29512900,"Los Angeles Clippers","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Boban Marjanovic","Detroit","C",29,"7-3",290,7e+06,"Detroit Pistons",NA,NA,NA,NA,NA,NA
+"Bobby Portis","Chicago","PF",22,"6-11",248,1516320,"Chicago Bulls",NA,NA,NA,NA,NA,NA
+"Bogdan Bogdanovic","Sacramento","SG",25,"6-6",205,9412280,"Sacramento Kings",NA,NA,NA,NA,NA,NA
+"Bojan Bogdanovic","Indiana","SF",28,"6-8",230,10500000,"Indiana Pacers",NA,NA,NA,NA,NA,NA
+"Bradley Beal","Washington","SG",24,"6-5",207,23775506,"Washington Wizards",NA,NA,NA,NA,NA,NA
+"Brandan Wright","Memphis","PF",30,"6-10",235,5955760,"Memphis Grizzlies",NA,NA,NA,NA,NA,NA
+"Brandon Ingram","LA Lakers","SF",20,"6-9",190,5519400,"Los Angeles Lakers","Day-To-Day","Jan 13"," "," ",2018-01-13,NA
+"Brandon Knight","Phoenix","PG",26,"6-3",195,13618750,"Phoenix Suns","Out",NA,"Out for the season","Out for the season",2018-01-13,NA
+"Brandon Paul","San Antonio","SG",26,"6-4",200,815615,"San Antonio Spurs",NA,NA,NA,NA,NA,NA
+"Briante Weber","Houston","PG",25,"6-2",165,NA,"Houston Rockets",NA,NA,NA,NA,NA,NA
+"Brice Johnson","LA Clippers","PF",23,"6-10",230,1331160,"Los Angeles Clippers",NA,NA,NA,NA,NA,NA
+"Brook Lopez","LA Lakers","C",29,"7-0",268,22642650,"Los Angeles Lakers",NA,NA,NA,NA,NA,NA
+"Bruno Caboclo","Toronto","SF",22,"6-9",205,2451225,"Toronto Raptors",NA,NA,NA,NA,NA,NA
+"Bryn Forbes","San Antonio","SG",24,"6-3",190,1312611,"San Antonio Spurs",NA,NA,NA,NA,NA,NA
+"Buddy Hield","Sacramento","SG",24,"6-4",214,3675480,"Sacramento Kings",NA,NA,NA,NA,NA,NA
+"C.J. Williams","LA Clippers","SG",27,"6-5",230,NA,"Los Angeles Clippers","Day-To-Day","Jan 11","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Caleb Swanigan","Portland","PF",20,"6-8",250,1465920,"Portland Trailblazers",NA,NA,NA,NA,NA,NA
+"Cameron Payne","Chicago","PG",23,"6-3",185,2203440,"Chicago Bulls","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Caris LeVert","Brooklyn","SG",23,"6-7",203,1632480,"Brooklyn Nets",NA,NA,NA,NA,NA,NA
+"Carmelo Anthony","Oklahoma City","PF",33,"6-8",240,26243760,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"Cedi Osman","Cleveland","SF",22,"6-8",215,2642857,"Cleveland Cavaliers",NA,NA,NA,NA,NA,NA
+"Chandler Parsons","Memphis","SF",29,"6-10",230,23112004,"Memphis Grizzlies","Out","Jan 9","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Channing Frye","Cleveland","PF",34,"6-11",255,7420912,"Cleveland Cavaliers",NA,NA,NA,NA,NA,NA
+"Charles Cooke","New Orleans","SG",23,"6-5",196,NA,"New Orleans Pelicans",NA,NA,NA,NA,NA,NA
+"Cheick Diallo","New Orleans","PF",21,"6-9",220,1312611,"New Orleans Pelicans",NA,NA,NA,NA,NA,NA
+"Chinanu Onuaku","Houston","C",21,"6-10",245,1312611,"Houston Rockets",NA,NA,NA,NA,NA,NA
+"Chris Boucher","Golden State","PF",25,"6-10",200,NA,"Golden State Warriors","Out",NA,"Expected to be out until at least Jan 25","Jan 25",2018-01-13,NA
+"Chris McCullough","Washington","PF",22,"6-9",215,1471382,"Washington Wizards",NA,NA,NA,NA,NA,NA
+"Chris Paul","Houston","PG",32,"6-0",175,24599495,"Houston Rockets",NA,NA,NA,NA,NA,NA
+"CJ McCollum","Portland","SG",26,"6-3",190,23962573,"Portland Trailblazers",NA,NA,NA,NA,NA,NA
+"CJ Miles","Toronto","SF",30,"6-6",225,7936509,"Toronto Raptors",NA,NA,NA,NA,NA,NA
+"CJ Wilcox","Portland","SG",27,"6-5",195,NA,"Portland Trailblazers",NA,NA,NA,NA,NA,NA
+"Clint Capela","Houston","C",23,"6-10",240,2334528,"Houston Rockets",NA,NA,NA,NA,NA,NA
+"Cody Zeller","Charlotte","C",25,"7-0",240,12584270,"Charlotte Hornets","Out",NA,"Expected to be out until at least Jan 22","Jan 22",2018-01-13,NA
+"Cole Aldrich","Minnesota","C",29,"6-11",253,7300000,"Minnesota Timberwolves",NA,NA,NA,NA,NA,NA
+"Corey Brewer","LA Lakers","SF",31,"6-9",186,7579366,"Los Angeles Lakers",NA,NA,NA,NA,NA,NA
+"Cory Joseph","Indiana","PG",26,"6-3",190,7630000,"Indiana Pacers",NA,NA,NA,NA,NA,NA
+"Courtney Lee","New York","SG",32,"6-5",200,11747890,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Cristiano Felicio","Chicago","C",25,"6-9",280,7833500,"Chicago Bulls",NA,NA,NA,NA,NA,NA
+"D.J. Augustin","Orlando","PG",30,"6-0",183,7250000,"Orlando Magic",NA,NA,NA,NA,NA,NA
+"D.J. Wilson","Milwaukee","PF",21,"6-10",236,2135040,"Milwaukee Bucks",NA,NA,NA,NA,NA,NA
+"D'Angelo Russell","Brooklyn","PG",21,"6-5",195,5562360,"Brooklyn Nets","Out","Jan 13","Expected to be out until at least Jan 13","Jan 13",2018-01-13,NA
+"Dakari Johnson","Oklahoma City","C",22,"7-0",255,815615,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"Damian Jones","Golden State","C",22,"7-0",245,1312611,"Golden State Warriors",NA,NA,NA,NA,NA,NA
+"Damian Lillard","Portland","PG",27,"6-3",195,26153057,"Portland Trailblazers","Day-To-Day","Jan 11",NA,NA,2018-01-13,NA
+"Damyean Dotson","New York","SG",23,"6-5",210,1100000,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Daniel Hamilton","Oklahoma City","SG",22,"6-7",195,NA,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"Daniel Theis","Boston","PF",25,"6-9",243,815615,"Boston Celtics",NA,NA,NA,NA,NA,NA
+"Danilo Gallinari","LA Clippers","SF",29,"6-10",225,20559599,"Los Angeles Clippers","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Danny Green","San Antonio","SG",30,"6-6",215,1e+07,"San Antonio Spurs","Out","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Dante Cunningham","New Orleans","SF",30,"6-8",230,2300000,"New Orleans Pelicans",NA,NA,NA,NA,NA,NA
+"Dante Exum","Utah","PG",22,"6-6",190,4992385,"Utah Jazz","Out",NA,"Expected to be out until at least Mar 1","Mar 1",2018-01-13,NA
+"Danuel House Jr.","Phoenix","SF",24,"6-7",220,543471,"Phoenix Suns",NA,NA,NA,NA,NA,NA
+"Dario Saric","Philadelphia","PF",23,"6-10",223,2422560,"Philadelphia 76ers",NA,NA,NA,NA,NA,NA
+"Darius Miller","New Orleans","SF",27,"6-8",225,2100000,"New Orleans Pelicans",NA,NA,NA,NA,NA,NA
+"Darrell Arthur","Denver","PF",29,"6-9",235,7464912,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Darren Collison","Indiana","PG",30,"6-2",185,1e+07,"Indiana Pacers",NA,NA,NA,NA,NA,NA
+"Darrun Hilliard","San Antonio","SG",24,"6-6",220,NA,"San Antonio Spurs",NA,NA,NA,NA,NA,NA
+"David Nwaba","Chicago","PG",24,"6-4",209,1312611,"Chicago Bulls",NA,NA,NA,NA,NA,NA
+"David West","Golden State","PF",37,"6-9",250,1471382,"Golden State Warriors",NA,NA,NA,NA,NA,NA
+"Davis Bertans","San Antonio","SF",25,"6-10",210,1312611,"San Antonio Spurs",NA,NA,NA,NA,NA,NA
+"Davon Reed","Phoenix","SG",22,"6-6",210,815615,"Phoenix Suns",NA,NA,NA,NA,NA,NA
+"De'Aaron Fox","Sacramento","PG",20,"6-3",175,4609200,"Sacramento Kings",NA,NA,NA,NA,NA,NA
+"DeAndre Jordan","LA Clippers","C",29,"6-11",265,22642350,"Los Angeles Clippers","Day-To-Day","Jan 13","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"DeAndre Liggins","New Orleans","SG",29,"6-6",209,NA,"New Orleans Pelicans",NA,NA,NA,NA,NA,NA
+"DeAndre' Bembry","Atlanta","SF",23,"6-6",210,1567200,"Atlanta Hawks","Day-To-Day","Jan 9","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Dejounte Murray","San Antonio","PG",21,"6-5",170,1312611,"San Antonio Spurs",NA,NA,NA,NA,NA,NA
+"Delon Wright","Toronto","PG",25,"6-5",190,1645200,"Toronto Raptors",NA,NA,NA,NA,NA,NA
+"DeMar DeRozan","Toronto","SG",28,"6-7",220,27739975,"Toronto Raptors",NA,NA,NA,NA,NA,NA
+"DeMarcus Cousins","New Orleans","C",27,"6-11",270,18063850,"New Orleans Pelicans",NA,NA,NA,NA,NA,NA
+"DeMarre Carroll","Brooklyn","SF",31,"6-8",215,14800000,"Brooklyn Nets","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Demetrius Jackson","Houston","PG",23,"6-1",201,NA,"Houston Rockets",NA,NA,NA,NA,NA,NA
+"Dennis Schroder","Atlanta","PG",24,"6-1",172,15500000,"Atlanta Hawks",NA,NA,NA,NA,NA,NA
+"Dennis Smith Jr.","Dallas","PG",20,"6-3",195,3218280,"Dallas Mavericks",NA,NA,NA,NA,NA,NA
+"Denzel Valentine","Chicago","SF",24,"6-6",214,2186400,"Chicago Bulls",NA,NA,NA,NA,NA,NA
+"Derrick Favors","Utah","PF",26,"6-10",265,1.2e+07,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Derrick Jones Jr.","Miami","SF",20,"6-7",200,1312611,"Miami Heat",NA,NA,NA,NA,NA,NA
+"Derrick Rose","Cleveland","PG",29,"6-3",190,1471382,"Cleveland Cavaliers","Out","Jan 10","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Derrick Walton Jr.","Miami","PG",22,"6-1",185,NA,"Miami Heat",NA,NA,NA,NA,NA,NA
+"Derrick White","San Antonio","PG",23,"6-4",190,1404600,"San Antonio Spurs",NA,NA,NA,NA,NA,NA
+"Devin Booker","Phoenix","SG",21,"6-6",210,2319360,"Phoenix Suns",NA,NA,NA,NA,NA,NA
+"Devin Harris","Dallas","PG",34,"6-3",185,4402546,"Dallas Mavericks",NA,NA,NA,NA,NA,NA
+"Devin Robinson","Washington","SF",22,"6-8",200,NA,"Washington Wizards",NA,NA,NA,NA,NA,NA
+"Dewayne Dedmon","Atlanta","C",28,"7-0",245,6e+06,"Atlanta Hawks","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Deyonta Davis","Memphis","C",21,"6-11",237,1312611,"Memphis Grizzlies",NA,NA,NA,NA,NA,NA
+"Dillon Brooks","Memphis","SF",21,"6-6",220,815615,"Memphis Grizzlies",NA,NA,NA,NA,NA,NA
+"Dion Waiters","Miami","SG",26,"6-4",215,1.1e+07,"Miami Heat","Out","Jan 11","Out for the season","Out for the season",2018-01-13,NA
+"Dirk Nowitzki","Dallas","PF",39,"7-0",245,5e+06,"Dallas Mavericks",NA,NA,NA,NA,NA,NA
+"Domantas Sabonis","Indiana","C",21,"6-10",252,2550000,"Indiana Pacers","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Donovan Mitchell","Utah","SG",21,"6-3",215,2621280,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Dorian Finney-Smith","Dallas","SF",24,"6-8",220,1312611,"Dallas Mavericks","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Doug McDermott","New York","SF",26,"6-8",219,3294994,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Dragan Bender","Phoenix","PF",20,"7-1",225,4468800,"Phoenix Suns",NA,NA,NA,NA,NA,NA
+"Draymond Green","Golden State","PF",27,"6-7",230,16400000,"Golden State Warriors","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Dwayne Bacon","Charlotte","SF",22,"6-7",221,815615,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Dwight Buycks","Detroit","PG",28,"6-3",190,NA,"Detroit Pistons",NA,NA,NA,NA,NA,NA
+"Dwight Howard","Charlotte","C",32,"6-11",265,23500000,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Dwight Powell","Dallas","PF",26,"6-11",240,9003125,"Dallas Mavericks",NA,NA,NA,NA,NA,NA
+"Dwyane Wade","Cleveland","SG",35,"6-4",220,1471382,"Cleveland Cavaliers","Day-To-Day","Jan 12","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"E'Twaun Moore","New Orleans","SG",28,"6-4",191,8445024,"New Orleans Pelicans",NA,NA,NA,NA,NA,NA
+"Ed Davis","Portland","PF",28,"6-10",245,6352531,"Portland Trailblazers",NA,NA,NA,NA,NA,NA
+"Edmond Sumner","Indiana","PG",22,"6-5",188,NA,"Indiana Pacers","Out",NA,"Expected to be out until at least Feb 1","Feb 1",2018-01-13,NA
+"Ekpe Udoh","Utah","C",30,"6-10",245,3200000,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Elfrid Payton","Orlando","PG",23,"6-4",185,3332340,"Orlando Magic",NA,NA,NA,NA,NA,NA
+"Emmanuel Mudiay","Denver","PG",21,"6-5",200,3381480,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Enes Kanter","New York","C",25,"6-11",245,17884176,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Eric Bledsoe","Milwaukee","PG",28,"6-1",205,14500000,"Milwaukee Bucks",NA,NA,NA,NA,NA,NA
+"Eric Gordon","Houston","SG",29,"6-4",215,12943020,"Houston Rockets",NA,NA,NA,NA,NA,NA
+"Eric Griffin","Utah","C",27,"6-8",205,NA,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Eric Moreland","Detroit","PF",26,"6-10",238,1739333,"Detroit Pistons",NA,NA,NA,NA,NA,NA
+"Erik McCree","Utah","SF",24,"6-8",225,815615,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Ersan Ilyasova","Atlanta","PF",30,"6-10",235,6e+06,"Atlanta Hawks",NA,NA,NA,NA,NA,NA
+"Evan Fournier","Orlando","SF",25,"6-7",205,1.7e+07,"Orlando Magic",NA,NA,NA,NA,NA,NA
+"Evan Turner","Portland","SG",29,"6-7",220,17131148,"Portland Trailblazers","Day-To-Day","Jan 13","Expected to be out until at least Jan 14","Jan 14",2018-01-13,NA
+"Frank Jackson","New Orleans","PG",19,"6-3",205,815615,"New Orleans Pelicans","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Frank Kaminsky","Charlotte","PF",24,"7-0",242,2847600,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Frank Mason III","Sacramento","PG",23,"5-11",190,1184385,"Sacramento Kings","Out",NA,"Expected to be out until at least Feb 9","Feb 9",2018-01-13,NA
+"Frank Ntilikina","New York","PG",19,"6-5",190,3501120,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Fred VanVleet","Toronto","PG",23,"6-0",195,1312611,"Toronto Raptors",NA,NA,NA,NA,NA,NA
+"Furkan Korkmaz","Philadelphia","SG",20,"6-7",190,1465920,"Philadelphia 76ers","Out",NA,"Expected to be out until at least Jan 24","Jan 24",2018-01-13,NA
+"Garrett Temple","Sacramento","SG",31,"6-6",195,8e+06,"Sacramento Kings",NA,NA,NA,NA,NA,NA
+"Gary Harris","Denver","SG",23,"6-4",210,2550055,"Denver Nuggets","Day-To-Day","Jan 13","Expected to be out until at least Jan 13","Jan 13",2018-01-13,NA
+"George Hill","Sacramento","PG",31,"6-3",188,2e+07,"Sacramento Kings","Out","Jan 9",NA,NA,2018-01-13,NA
+"Georgios Papagiannis","Sacramento","C",20,"7-1",240,2301360,"Sacramento Kings","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Gerald Green","Houston","SG",31,"6-7",205,872854,"Houston Rockets",NA,NA,NA,NA,NA,NA
+"Giannis Antetokounmpo","Milwaukee","PF",23,"6-11",222,22471910,"Milwaukee Bucks",NA,NA,NA,NA,NA,NA
+"Glenn Robinson III","Indiana","SG",24,"6-7",215,1524305,"Indiana Pacers","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Goran Dragic","Miami","PG",31,"6-3",190,17000450,"Miami Heat",NA,NA,NA,NA,NA,NA
+"Gordon Hayward","Boston","SF",27,"6-8",226,29727900,"Boston Celtics","Out","Jan 10","Expected to be out until at least Apr 15","Apr 15",2018-01-13,NA
+"Gorgui Dieng","Minnesota","C",27,"6-11",251,14112360,"Minnesota Timberwolves",NA,NA,NA,NA,NA,NA
+"Greg Monroe","Phoenix","C",27,"6-11",265,17884176,"Phoenix Suns",NA,NA,NA,NA,NA,NA
+"Guerschon Yabusele","Boston","PF",22,"6-8",260,2247480,"Boston Celtics",NA,NA,NA,NA,NA,NA
+"Harrison Barnes","Dallas","SF",25,"6-8",225,23112004,"Dallas Mavericks",NA,NA,NA,NA,NA,NA
+"Harry Giles","Sacramento","PF",19,"6-10",240,1859400,"Sacramento Kings","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Hassan Whiteside","Miami","C",28,"7-0",265,23775506,"Miami Heat",NA,NA,NA,NA,NA,NA
+"Henry Ellenson","Detroit","PF",20,"6-11",245,1780800,"Detroit Pistons",NA,NA,NA,NA,NA,NA
+"Ian Clark","New Orleans","SG",26,"6-3",175,1471382,"New Orleans Pelicans",NA,NA,NA,NA,NA,NA
+"Ian Mahinmi","Washington","C",31,"6-11",262,16661641,"Washington Wizards",NA,NA,NA,NA,NA,NA
+"Ike Anigbogu","Indiana","C",19,"6-10",262,950000,"Indiana Pacers",NA,NA,NA,NA,NA,NA
+"Iman Shumpert","Cleveland","SG",27,"6-5",220,10337079,"Cleveland Cavaliers","Out","Jan 10","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Isaiah Canaan","Phoenix","PG",26,"6-0",201,997547,"Phoenix Suns","Out","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Isaiah Hicks","New York","PF",23,"6-9",242,NA,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Isaiah Taylor","Atlanta","PG",23,"6-3",170,1312611,"Atlanta Hawks",NA,NA,NA,NA,NA,NA
+"Isaiah Thomas","Cleveland","PG",28,"5-9",185,6261395,"Cleveland Cavaliers","Day-To-Day","Jan 12","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Isaiah Whitehead","Brooklyn","SG",22,"6-4",213,1312611,"Brooklyn Nets",NA,NA,NA,NA,NA,NA
+"Ish Smith","Detroit","PG",29,"6-0",175,6e+06,"Detroit Pistons",NA,NA,NA,NA,NA,NA
+"Ivan Rabb","Memphis","PF",20,"6-10",220,950000,"Memphis Grizzlies",NA,NA,NA,NA,NA,NA
+"Ivica Zubac","LA Lakers","C",20,"7-1",240,1312611,"Los Angeles Lakers",NA,NA,NA,NA,NA,NA
+"J.J. Barea","Dallas","PG",33,"6-0",185,3903900,"Dallas Mavericks",NA,NA,NA,NA,NA,NA
+"Jabari Bird","Boston","SG",23,"6-6",198,NA,"Boston Celtics",NA,NA,NA,NA,NA,NA
+"Jabari Parker","Milwaukee","PF",22,"6-8",250,6782392,"Milwaukee Bucks","Out","Jan 10","Expected to be out until at least Feb 13","Feb 13",2018-01-13,NA
+"Jack Cooley","Sacramento","PF",26,"6-10",274,NA,"Sacramento Kings",NA,NA,NA,NA,NA,NA
+"Jacob Wiley","Brooklyn","SF",23,"6-8",223,NA,"Brooklyn Nets",NA,NA,NA,NA,NA,NA
+"Jae Crowder","Cleveland","PF",27,"6-6",235,6796117,"Cleveland Cavaliers",NA,NA,NA,NA,NA,NA
+"Jahlil Okafor","Brooklyn","C",22,"6-11",260,4995120,"Brooklyn Nets",NA,NA,NA,NA,NA,NA
+"JaKarr Sampson","Sacramento","SF",24,"6-9",207,NA,"Sacramento Kings",NA,NA,NA,NA,NA,NA
+"Jake Layman","Portland","SF",23,"6-9",210,1312611,"Portland Trailblazers",NA,NA,NA,NA,NA,NA
+"Jakob Poeltl","Toronto","C",22,"7-0",230,2825640,"Toronto Raptors",NA,NA,NA,NA,NA,NA
+"Jalen Jones","Dallas","SF",24,"6-7",220,NA,"Dallas Mavericks",NA,NA,NA,NA,NA,NA
+"Jamal Crawford","Minnesota","SG",37,"6-5",185,4328000,"Minnesota Timberwolves",NA,NA,NA,NA,NA,NA
+"Jamal Murray","Denver","PG",20,"6-4",207,3355320,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Jameer Nelson","New Orleans","PG",35,"6-0",190,1429818,"New Orleans Pelicans",NA,NA,NA,NA,NA,NA
+"Jamel Artis","Orlando","SG",25,"6-7",213,NA,"Orlando Magic",NA,NA,NA,NA,NA,NA
+"James Ennis III","Memphis","SF",27,"6-7",210,3028410,"Memphis Grizzlies",NA,NA,NA,NA,NA,NA
+"James Harden","Houston","PG",28,"6-5",220,28299399,"Houston Rockets","Out","Jan 10","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"James Johnson","Miami","PF",30,"6-8",240,13734000,"Miami Heat","Day-To-Day","Jan 10","Game Time Decision","Game Time Decision",2018-01-13,NA
+"James Michael McAdoo","Philadelphia","SF",25,"6-9",230,NA,"Philadelphia 76ers",NA,NA,NA,NA,NA,NA
+"James Young","Philadelphia","SG",22,"6-6",215,1471382,"Philadelphia 76ers",NA,NA,NA,NA,NA,NA
+"JaMychal Green","Memphis","PF",27,"6-9",227,8533333,"Memphis Grizzlies",NA,NA,NA,NA,NA,NA
+"Jared Dudley","Phoenix","SF",32,"6-7",240,1e+07,"Phoenix Suns",NA,NA,NA,NA,NA,NA
+"Jarell Martin","Memphis","PF",23,"6-10",239,1471382,"Memphis Grizzlies",NA,NA,NA,NA,NA,NA
+"Jarrett Allen","Brooklyn","C",19,"6-11",234,1713720,"Brooklyn Nets",NA,NA,NA,NA,NA,NA
+"Jarrett Jack","New York","PG",34,"6-3",200,1471382,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Jason Smith","Washington","PF",31,"7-0",240,5225000,"Washington Wizards",NA,NA,NA,NA,NA,NA
+"Jason Terry","Milwaukee","SG",40,"6-2",185,1471382,"Milwaukee Bucks",NA,NA,NA,NA,NA,NA
+"JaVale McGee","Golden State","C",29,"7-0",270,1471382,"Golden State Warriors",NA,NA,NA,NA,NA,NA
+"Jawun Evans","LA Clippers","PG",21,"6-0",190,815615,"Los Angeles Clippers",NA,NA,NA,NA,NA,NA
+"Jaylen Brown","Boston","SG",21,"6-7",225,4956480,"Boston Celtics",NA,NA,NA,NA,NA,NA
+"Jayson Tatum","Boston","SF",19,"6-8",205,5645400,"Boston Celtics","Day-To-Day","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Jeff Green","Cleveland","SF",31,"6-9",235,1471382,"Cleveland Cavaliers",NA,NA,NA,NA,NA,NA
+"Jeff Teague","Minnesota","PG",29,"6-2",189,1.9e+07,"Minnesota Timberwolves","Out","Jan 9",NA,NA,2018-01-13,NA
+"Jerami Grant","Oklahoma City","SF",23,"6-9",220,1524305,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"Jeremy Lamb","Charlotte","SG",25,"6-5",185,7e+06,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Jeremy Lin","Brooklyn","PG",29,"6-3",200,1.2e+07,"Brooklyn Nets","Out",NA,"Out for the season","Out for the season",2018-01-13,NA
+"Jerian Grant","Chicago","PG",25,"6-4",198,1713840,"Chicago Bulls",NA,NA,NA,NA,NA,NA
+"Jerryd Bayless","Philadelphia","PG",29,"6-3",200,9e+06,"Philadelphia 76ers",NA,NA,NA,NA,NA,NA
+"Jimmy Butler","Minnesota","SG",28,"6-8",236,19301070,"Minnesota Timberwolves",NA,NA,NA,NA,NA,NA
+"JJ Redick","Philadelphia","SG",33,"6-4",200,2.3e+07,"Philadelphia 76ers",NA,NA,NA,NA,NA,NA
+"Joakim Noah","New York","C",32,"6-11",230,17765000,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Jodie Meeks","Washington","SG",30,"6-4",210,3290000,"Washington Wizards",NA,NA,NA,NA,NA,NA
+"Joe Harris","Brooklyn","SG",26,"6-6",219,1524305,"Brooklyn Nets",NA,NA,NA,NA,NA,NA
+"Joe Ingles","Utah","SF",30,"6-8",226,14136364,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Joe Johnson","Utah","SG",36,"6-7",240,10505000,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Joe Young","Indiana","PG",25,"6-2",185,1471382,"Indiana Pacers",NA,NA,NA,NA,NA,NA
+"Joel Embiid","Philadelphia","C",23,"7-0",250,6100266,"Philadelphia 76ers",NA,NA,NA,NA,NA,NA
+"Joffrey Lauvergne","San Antonio","C",26,"6-11",260,1524305,"San Antonio Spurs",NA,NA,NA,NA,NA,NA
+"John Collins","Atlanta","PF",20,"6-10",235,1936920,"Atlanta Hawks",NA,NA,NA,NA,NA,NA
+"John Henson","Milwaukee","PF",27,"6-11",229,11422536,"Milwaukee Bucks",NA,NA,NA,NA,NA,NA
+"John Holland","Cleveland","SG",29,"6-5",205,NA,"Cleveland Cavaliers","Out",NA,"Expected to be out until at least Jan 20","Jan 20",2018-01-13,NA
+"John Wall","Washington","PG",27,"6-4",210,18063850,"Washington Wizards",NA,NA,NA,NA,NA,NA
+"Johnathan Motley","Dallas","PF",22,"6-10",230,NA,"Dallas Mavericks",NA,NA,NA,NA,NA,NA
+"Johnny O'Bryant III","Charlotte","PF",24,"6-9",257,1524305,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Jon Leuer","Detroit","PF",28,"6-10",228,10497319,"Detroit Pistons","Out",NA,"Expected to be out until at least Feb 1","Feb 1",2018-01-13,NA
+"Jonas Jerebko","Utah","PF",30,"6-10",231,4e+06,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Jonas Valanciunas","Toronto","C",25,"7-0",255,15460675,"Toronto Raptors",NA,NA,NA,NA,NA,NA
+"Jonathan Isaac","Orlando","PF",20,"6-10",210,4186320,"Orlando Magic","Out",NA,"Expected to be out until at least Feb 3","Feb 3",2018-01-13,NA
+"Jonathon Simmons","Orlando","SF",28,"6-6",195,6300000,"Orlando Magic","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Jordan Bell","Golden State","PF",23,"6-9",224,815615,"Golden State Warriors",NA,NA,NA,NA,NA,NA
+"Jordan Clarkson","LA Lakers","PG",25,"6-5",194,11562500,"Los Angeles Lakers",NA,NA,NA,NA,NA,NA
+"Jordan Mickey","Miami","C",23,"6-8",235,1471382,"Miami Heat",NA,NA,NA,NA,NA,NA
+"Jose Calderon","Cleveland","PG",36,"6-3",200,1471382,"Cleveland Cavaliers",NA,NA,NA,NA,NA,NA
+"Josh Hart","LA Lakers","SG",22,"6-5",215,1394520,"Los Angeles Lakers",NA,NA,NA,NA,NA,NA
+"Josh Huestis","Oklahoma City","SF",26,"6-7",230,1471382,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"Josh Jackson","Phoenix","SF",20,"6-8",200,5090040,"Phoenix Suns","Day-To-Day","Jan 13","Expected to be out until at least Jan 14","Jan 14",2018-01-13,NA
+"Josh Magette","Atlanta","PG",28,"6-1",160,NA,"Atlanta Hawks",NA,NA,NA,NA,NA,NA
+"Josh McRoberts","Dallas","PF",30,"6-10",240,6021175,"Dallas Mavericks",NA,NA,NA,NA,NA,NA
+"Josh Richardson","Miami","SF",24,"6-6",200,1471382,"Miami Heat",NA,NA,NA,NA,NA,NA
+"JR Smith","Cleveland","SG",32,"6-6",225,13760000,"Cleveland Cavaliers",NA,NA,NA,NA,NA,NA
+"Jrue Holiday","New Orleans","PG",27,"6-4",205,25686667,"New Orleans Pelicans",NA,NA,NA,NA,NA,NA
+"Juan Hernangomez","Denver","PF",22,"6-9",230,2076840,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Julius Randle","LA Lakers","PF",23,"6-9",250,4149242,"Los Angeles Lakers",NA,NA,NA,NA,NA,NA
+"Julyan Stone","Charlotte","PG",29,"6-6",200,1524305,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Justin Anderson","Philadelphia","SG",24,"6-6",230,1579440,"Philadelphia 76ers",NA,NA,NA,NA,NA,NA
+"Justin Holiday","Chicago","SG",28,"6-6",185,4615385,"Chicago Bulls",NA,NA,NA,NA,NA,NA
+"Justin Jackson","Sacramento","SF",22,"6-8",210,2365560,"Sacramento Kings",NA,NA,NA,NA,NA,NA
+"Justin Patton","Minnesota","C",20,"7-0",236,2247480,"Minnesota Timberwolves",NA,NA,NA,NA,NA,NA
+"Justise Winslow","Miami","SF",21,"6-7",225,2705040,"Miami Heat","Out","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Jusuf Nurkic","Portland","C",23,"7-0",280,2947305,"Portland Trailblazers",NA,NA,NA,NA,NA,NA
+"Kadeem Allen","Boston","SG",24,"6-3",200,NA,"Boston Celtics",NA,NA,NA,NA,NA,NA
+"Karl-Anthony Towns","Minnesota","C",22,"7-0",248,6216840,"Minnesota Timberwolves",NA,NA,NA,NA,NA,NA
+"Kawhi Leonard","San Antonio","SF",26,"6-7",230,18868626,"San Antonio Spurs","Out","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Kelly Olynyk","Miami","C",26,"7-0",245,10607169,"Miami Heat",NA,NA,NA,NA,NA,NA
+"Kelly Oubre Jr.","Washington","SF",22,"6-7",205,2093040,"Washington Wizards",NA,NA,NA,NA,NA,NA
+"Kemba Walker","Charlotte","PG",27,"6-1",184,1.2e+07,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Kenneth Faried","Denver","PF",28,"6-8",228,12921348,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Kent Bazemore","Atlanta","SG",28,"6-5",201,16910113,"Atlanta Hawks",NA,NA,NA,NA,NA,NA
+"Kentavious Caldwell-Pope","LA Lakers","SG",24,"6-5",205,17745894,"Los Angeles Lakers",NA,NA,NA,NA,NA,NA
+"Kevin Durant","Golden State","SF",29,"6-9",240,2.5e+07,"Golden State Warriors","Out","Jan 9",NA,NA,2018-01-13,NA
+"Kevin Love","Cleveland","PF",29,"6-10",251,22642350,"Cleveland Cavaliers",NA,NA,NA,NA,NA,NA
+"Kevon Looney","Golden State","SF",21,"6-9",220,1471382,"Golden State Warriors",NA,NA,NA,NA,NA,NA
+"Khem Birch","Orlando","C",25,"6-9",220,815615,"Orlando Magic",NA,NA,NA,NA,NA,NA
+"Khris Middleton","Milwaukee","SF",26,"6-8",234,14100000,"Milwaukee Bucks",NA,NA,NA,NA,NA,NA
+"Klay Thompson","Golden State","SG",27,"6-7",215,17826150,"Golden State Warriors","Day-To-Day","Jan 10",NA,NA,2018-01-13,NA
+"Kobi Simmons","Memphis","PG",20,"6-4",170,NA,"Memphis Grizzlies",NA,NA,NA,NA,NA,NA
+"Kosta Koufos","Sacramento","C",28,"7-0",265,8393000,"Sacramento Kings",NA,NA,NA,NA,NA,NA
+"Kris Dunn","Chicago","PG",23,"6-4",210,4046760,"Chicago Bulls",NA,NA,NA,NA,NA,NA
+"Kristaps Porzingis","New York","PF",22,"7-3",240,4503600,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Kyle Anderson","San Antonio","SF",24,"6-9",230,2151704,"San Antonio Spurs",NA,NA,NA,NA,NA,NA
+"Kyle Collinsworth","Dallas","PG",26,"6-6",215,543471,"Dallas Mavericks",NA,NA,NA,NA,NA,NA
+"Kyle Korver","Cleveland","SG",36,"6-7",212,7e+06,"Cleveland Cavaliers",NA,NA,NA,NA,NA,NA
+"Kyle Kuzma","LA Lakers","PF",22,"6-9",220,1423560,"Los Angeles Lakers",NA,NA,NA,NA,NA,NA
+"Kyle Lowry","Toronto","PG",31,"6-0",205,28703704,"Toronto Raptors","Day-To-Day","Jan 9","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Kyle O'Quinn","New York","C",27,"6-10",250,4087500,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Kyle Singler","Oklahoma City","SF",29,"6-8",228,4666500,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"Kyrie Irving","Boston","PG",25,"6-3",193,18868626,"Boston Celtics",NA,NA,NA,NA,NA,NA
+"LaMarcus Aldridge","San Antonio","PF",32,"6-11",260,21461010,"San Antonio Spurs",NA,NA,NA,NA,NA,NA
+"Lance Stephenson","Indiana","SG",27,"6-6",230,4180000,"Indiana Pacers",NA,NA,NA,NA,NA,NA
+"Lance Thomas","New York","SF",29,"6-8",235,6655325,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Langston Galloway","Detroit","SG",26,"6-2",200,6666667,"Detroit Pistons",NA,NA,NA,NA,NA,NA
+"Larry Nance Jr.","LA Lakers","PF",25,"6-9",230,1471382,"Los Angeles Lakers",NA,NA,NA,NA,NA,NA
+"Lauri Markkanen","Chicago","PF",20,"7-0",230,3821640,"Chicago Bulls",NA,NA,NA,NA,NA,NA
+"LeBron James","Cleveland","SF",33,"6-8",250,33285709,"Cleveland Cavaliers",NA,NA,NA,NA,NA,NA
+"London Perrantes","Cleveland","PG",23,"6-2",190,NA,"Cleveland Cavaliers",NA,NA,NA,NA,NA,NA
+"Lonzo Ball","LA Lakers","PG",20,"6-6",190,6286560,"Los Angeles Lakers",NA,NA,NA,NA,NA,NA
+"Lorenzo Brown","Toronto","PG",27,"6-5",189,NA,"Toronto Raptors",NA,NA,NA,NA,NA,NA
+"Lou Williams","LA Clippers","SG",31,"6-1",175,7e+06,"Los Angeles Clippers",NA,NA,NA,NA,NA,NA
+"Luc Mbah a Moute","Houston","PF",31,"6-8",230,1471382,"Houston Rockets","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Lucas Nogueira","Toronto","C",25,"7-0",220,2947305,"Toronto Raptors",NA,NA,NA,NA,NA,NA
+"Luis Montero","Detroit","SG",24,"6-7",200,NA,"Detroit Pistons",NA,NA,NA,NA,NA,NA
+"Luke Babbitt","Atlanta","SF",28,"6-9",225,1471382,"Atlanta Hawks",NA,NA,NA,NA,NA,NA
+"Luke Kennard","Detroit","SG",21,"6-5",200,2759280,"Detroit Pistons",NA,NA,NA,NA,NA,NA
+"Luke Kornet","New York","PF",22,"7-1",250,NA,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Luol Deng","LA Lakers","SF",32,"6-9",220,17190000,"Los Angeles Lakers",NA,NA,NA,NA,NA,NA
+"Malachi Richardson","Sacramento","SG",22,"6-6",205,1504560,"Sacramento Kings",NA,NA,NA,NA,NA,NA
+"Malcolm Brogdon","Milwaukee","PG",25,"6-5",215,1312611,"Milwaukee Bucks",NA,NA,NA,NA,NA,NA
+"Malcolm Delaney","Atlanta","PG",28,"6-3",190,2500000,"Atlanta Hawks",NA,NA,NA,NA,NA,NA
+"Malcolm Miller","Toronto","SF",24,"6-7",210,NA,"Toronto Raptors",NA,NA,NA,NA,NA,NA
+"Malik Beasley","Denver","SG",21,"6-5",196,1700640,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Malik Monk","Charlotte","SG",19,"6-3",200,2904480,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Mangok Mathiang","Charlotte","PF",25,"6-10",230,NA,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Manu Ginobili","San Antonio","SG",40,"6-6",205,2500000,"San Antonio Spurs",NA,NA,NA,NA,NA,NA
+"Marc Gasol","Memphis","C",32,"7-1",255,22642350,"Memphis Grizzlies",NA,NA,NA,NA,NA,NA
+"Marcin Gortat","Washington","C",33,"6-11",240,12782609,"Washington Wizards",NA,NA,NA,NA,NA,NA
+"Marco Belinelli","Atlanta","SG",31,"6-5",210,6060606,"Atlanta Hawks","Day-To-Day","Jan 12","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Marcus Georges-Hunt","Minnesota","SG",23,"6-5",226,1312611,"Minnesota Timberwolves",NA,NA,NA,NA,NA,NA
+"Marcus Morris","Boston","PF",28,"6-9",235,5e+06,"Boston Celtics",NA,NA,NA,NA,NA,NA
+"Marcus Paige","Charlotte","PG",24,"6-0",164,NA,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Marcus Smart","Boston","PG",23,"6-4",220,4538020,"Boston Celtics",NA,NA,NA,NA,NA,NA
+"Mario Chalmers","Memphis","PG",31,"6-2",190,1471382,"Memphis Grizzlies",NA,NA,NA,NA,NA,NA
+"Mario Hezonja","Orlando","SG",22,"6-8",218,3909840,"Orlando Magic",NA,NA,NA,NA,NA,NA
+"Markelle Fultz","Philadelphia","PG",19,"6-4",200,7026240,"Philadelphia 76ers","Out","Jan 11","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Markieff Morris","Washington","PF",28,"6-10",245,8e+06,"Washington Wizards",NA,NA,NA,NA,NA,NA
+"Marquese Chriss","Phoenix","PF",20,"6-10",240,3073800,"Phoenix Suns","Day-To-Day","Jan 9","Expected to be out until at least Jan 14","Jan 14",2018-01-13,NA
+"Marreese Speights","Orlando","PF",30,"6-10",255,1471382,"Orlando Magic",NA,NA,NA,NA,NA,NA
+"Marvin Williams","Charlotte","PF",31,"6-9",237,13168750,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Mason Plumlee","Denver","C",27,"6-11",255,14041096,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Matt Costello","San Antonio","SF",24,"6-10",240,NA,"San Antonio Spurs",NA,NA,NA,NA,NA,NA
+"Matthew Dellavedova","Milwaukee","PG",27,"6-4",198,9607500,"Milwaukee Bucks","Day-To-Day","Jan 10",NA,NA,2018-01-13,NA
+"Maurice Harkless","Portland","SF",24,"6-9",220,10162922,"Portland Trailblazers",NA,NA,NA,NA,NA,NA
+"Maximilian Kleber","Dallas","PF",25,"6-11",220,815615,"Dallas Mavericks",NA,NA,NA,NA,NA,NA
+"Meyers Leonard","Portland","C",25,"7-1",255,9904495,"Portland Trailblazers",NA,NA,NA,NA,NA,NA
+"Michael Beasley","New York","SF",29,"6-9",235,1471382,"New York Knicks","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Michael Carter-Williams","Charlotte","PG",26,"6-6",190,2700000,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Michael Kidd-Gilchrist","Charlotte","SF",24,"6-7",232,1.3e+07,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Mike Conley","Memphis","PG",30,"6-1",175,28530608,"Memphis Grizzlies","Out","Jan 11","Expected to be out until at least Feb 1","Feb 1",2018-01-13,NA
+"Mike Muscala","Atlanta","PF",26,"6-11",240,5e+06,"Atlanta Hawks","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Mike Scott","Washington","PF",29,"6-8",237,1471382,"Washington Wizards",NA,NA,NA,NA,NA,NA
+"Miles Plumlee","Atlanta","C",29,"6-11",249,12500000,"Atlanta Hawks",NA,NA,NA,NA,NA,NA
+"Milos Teodosic","LA Clippers","PG",30,"6-5",196,6e+06,"Los Angeles Clippers","Out","Jan 12",NA,NA,2018-01-13,NA
+"Milton Doyle","Brooklyn","SG",24,"6-4",180,NA,"Brooklyn Nets",NA,NA,NA,NA,NA,NA
+"Mirza Teletovic","Milwaukee","PF",32,"6-9",242,10500000,"Milwaukee Bucks","Out",NA,"Expected to be out until at least Feb 1","Feb 1",2018-01-13,NA
+"Monte Morris","Denver","PG",22,"6-3",175,NA,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Montrezl Harrell","LA Clippers","PF",23,"6-8",240,1471382,"Los Angeles Clippers",NA,NA,NA,NA,NA,NA
+"Myles Turner","Indiana","C",21,"6-11",255,2569920,"Indiana Pacers","Day-To-Day","Jan 9","Expected to be out until at least Jan 14","Jan 14",2018-01-13,NA
+"Nate Wolters","Utah","PG",26,"6-4",190,NA,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Naz Mitrou-Long","Utah","G",24,"6-4",218,815615,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Nemanja Bjelica","Minnesota","PF",29,"6-10",230,3949999,"Minnesota Timberwolves",NA,NA,NA,NA,NA,NA
+"Nene Hilario","Houston","C",35,"6-11",250,3477600,"Houston Rockets","Out","Jan 10",NA,NA,2018-01-13,NA
+"Nerlens Noel","Dallas","C",23,"6-11",220,4187599,"Dallas Mavericks","Out",NA,"Expected to be out until at least Feb 3","Feb 3",2018-01-13,NA
+"Nick Collison","Oklahoma City","PF",37,"6-10",255,1471382,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"Nick Young","Golden State","SG",32,"6-7",210,5192000,"Golden State Warriors",NA,NA,NA,NA,NA,NA
+"Nicolas Batum","Charlotte","SG",29,"6-8",200,22434783,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Nik Stauskas","Brooklyn","SG",24,"6-6",205,3807147,"Brooklyn Nets","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Nikola Jokic","Denver","C",22,"6-10",250,1471382,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Nikola Mirotic","Chicago","PF",26,"6-10",238,12500000,"Chicago Bulls","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Nikola Vucevic","Orlando","C",27,"7-0",260,12250000,"Orlando Magic","Out",NA,"Expected to be out until at least Feb 3","Feb 3",2018-01-13,NA
+"Noah Vonleh","Portland","PF",22,"6-9",245,3505233,"Portland Trailblazers",NA,NA,NA,NA,NA,NA
+"Norman Powell","Toronto","SF",24,"6-4",215,1471382,"Toronto Raptors",NA,NA,NA,NA,NA,NA
+"OG Anunoby","Toronto","SF",20,"6-8",235,1645200,"Toronto Raptors",NA,NA,NA,NA,NA,NA
+"Okaro White","Miami","PF",25,"6-8",215,1312611,"Miami Heat","Out",NA,"Expected to be out until at least Feb 7","Feb 7",2018-01-13,NA
+"Omer Asik","New Orleans","C",31,"7-0",255,10595505,"New Orleans Pelicans",NA,NA,NA,NA,NA,NA
+"Omri Casspi","Golden State","SF",29,"6-9",225,1471382,"Golden State Warriors","Day-To-Day","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Otto Porter Jr.","Washington","SF",24,"6-8",198,24773250,"Washington Wizards",NA,NA,NA,NA,NA,NA
+"Pascal Siakam","Toronto","PF",23,"6-9",230,1312611,"Toronto Raptors",NA,NA,NA,NA,NA,NA
+"Pat Connaughton","Portland","SG",25,"6-5",210,1471382,"Portland Trailblazers",NA,NA,NA,NA,NA,NA
+"Patrick Beverley","LA Clippers","PG",29,"6-1",185,5513514,"Los Angeles Clippers","Out",NA,"Out for the season","Out for the season",2018-01-13,NA
+"Patrick McCaw","Golden State","SG",22,"6-7",185,1312611,"Golden State Warriors",NA,NA,NA,NA,NA,NA
+"Patrick Patterson","Oklahoma City","PF",28,"6-9",230,5192000,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"Patty Mills","San Antonio","PG",29,"6-0",185,10714286,"San Antonio Spurs",NA,NA,NA,NA,NA,NA
+"Pau Gasol","San Antonio","C",37,"7-0",250,1.6e+07,"San Antonio Spurs",NA,NA,NA,NA,NA,NA
+"Paul George","Oklahoma City","SF",27,"6-9",220,19508958,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"Paul Millsap","Denver","PF",32,"6-8",246,31269231,"Denver Nuggets","Out","Jan 10","Expected to be out until at least Feb 23","Feb 23",2018-01-13,NA
+"Paul Zipser","Chicago","SF",23,"6-8",226,1312611,"Chicago Bulls",NA,NA,NA,NA,NA,NA
+"PJ Dozier","Oklahoma City","PG",21,"6-6",205,NA,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"PJ Tucker","Houston","SF",32,"6-6",245,7590035,"Houston Rockets",NA,NA,NA,NA,NA,NA
+"Quincy Acy","Brooklyn","SF",27,"6-7",240,1709538,"Brooklyn Nets",NA,NA,NA,NA,NA,NA
+"Quincy Pondexter","Chicago","SG",29,"6-7",225,3853931,"Chicago Bulls",NA,NA,NA,NA,NA,NA
+"Quinn Cook","Golden State","PG",24,"6-2",179,NA,"Golden State Warriors",NA,NA,NA,NA,NA,NA
+"Rajon Rondo","New Orleans","PG",31,"6-1",186,3300000,"New Orleans Pelicans",NA,NA,NA,NA,NA,NA
+"Rashad Vaughn","Milwaukee","SG",21,"6-6",202,1889040,"Milwaukee Bucks",NA,NA,NA,NA,NA,NA
+"Raul Neto","Utah","PG",25,"6-1",179,1471382,"Utah Jazz","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Raymond Felton","Oklahoma City","PG",33,"6-1",205,1471382,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"Reggie Bullock","Detroit","SF",26,"6-7",205,2500000,"Detroit Pistons",NA,NA,NA,NA,NA,NA
+"Reggie Jackson","Detroit","PG",27,"6-3",208,1.6e+07,"Detroit Pistons","Out",NA,"Expected to be out until at least Feb 23","Feb 23",2018-01-13,NA
+"Richard Jefferson","Denver","SF",37,"6-7",233,1454756,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Richaun Holmes","Philadelphia","PF",24,"6-10",235,1471382,"Philadelphia 76ers",NA,NA,NA,NA,NA,NA
+"Ricky Rubio","Utah","PG",27,"6-4",190,14275000,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Robert Covington","Philadelphia","SF",27,"6-9",225,16698103,"Philadelphia 76ers",NA,NA,NA,NA,NA,NA
+"Robin Lopez","Chicago","C",29,"7-0",277,13788500,"Chicago Bulls",NA,NA,NA,NA,NA,NA
+"Rodney Hood","Utah","SG",25,"6-8",206,2386864,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Rodney McGruder","Miami","SG",26,"6-4",200,1312611,"Miami Heat","Out","Jan 11","Expected to be out until at least Feb 2","Feb 2",2018-01-13,NA
+"Ron Baker","New York","SG",24,"6-4",220,4328000,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Rondae Hollis-Jefferson","Brooklyn","SF",23,"6-7",214,1471382,"Brooklyn Nets",NA,NA,NA,NA,NA,NA
+"Royce O'Neale","Utah","SF",24,"6-6",226,815615,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Rudy Gay","San Antonio","SF",31,"6-8",230,8406000,"San Antonio Spurs","Out","Jan 12","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Rudy Gobert","Utah","C",25,"7-1",245,21924719,"Utah Jazz","Out",NA,"Expected to be out until at least Jan 21","Jan 21",2018-01-13,NA
+"Russell Westbrook","Oklahoma City","PG",29,"6-3",200,28530608,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"Ryan Anderson","Houston","PF",29,"6-10",240,19578455,"Houston Rockets",NA,NA,NA,NA,NA,NA
+"Ryan Arcidiacono","Chicago","PG",23,"6-3",195,NA,"Chicago Bulls",NA,NA,NA,NA,NA,NA
+"Salah Mejri","Dallas","C",31,"7-2",235,1471382,"Dallas Mavericks",NA,NA,NA,NA,NA,NA
+"Sam Dekker","LA Clippers","SF",23,"6-9",230,1794600,"Los Angeles Clippers",NA,NA,NA,NA,NA,NA
+"Sean Kilpatrick","Milwaukee","SG",28,"6-4",212,789725,"Milwaukee Bucks",NA,NA,NA,NA,NA,NA
+"Semi Ojeleye","Boston","PF",23,"6-7",235,1291892,"Boston Celtics",NA,NA,NA,NA,NA,NA
+"Serge Ibaka","Toronto","PF",28,"6-10",235,20061729,"Toronto Raptors","Out","Jan 11",NA,NA,2018-01-13,NA
+"Seth Curry","Dallas","SG",27,"6-2",185,3028410,"Dallas Mavericks","Out",NA,"Expected to be out until at least Jan 20","Jan 20",2018-01-13,NA
+"Shabazz Muhammad","Minnesota","SG",25,"6-6",221,1577230,"Minnesota Timberwolves",NA,NA,NA,NA,NA,NA
+"Shabazz Napier","Portland","PG",26,"6-1",175,2361360,"Portland Trailblazers",NA,NA,NA,NA,NA,NA
+"Shane Larkin","Boston","PG",25,"5-11",175,1471382,"Boston Celtics","Day-To-Day","Jan 13"," "," ",2018-01-13,NA
+"Shaun Livingston","Golden State","PG",32,"6-7",192,7692308,"Golden State Warriors","Day-To-Day","Jan 11",NA,NA,2018-01-13,NA
+"Sheldon Mac","Washington","SG",25,"6-6",200,1312611,"Washington Wizards","Out",NA,"Expected to be out until at least Apr 11","Apr 11",2018-01-13,NA
+"Shelvin Mack","Orlando","PG",27,"6-3",203,6e+06,"Orlando Magic",NA,NA,NA,NA,NA,NA
+"Sindarius Thornwell","LA Clippers","SG",23,"6-5",215,815615,"Los Angeles Clippers",NA,NA,NA,NA,NA,NA
+"Skal Labissiere","Sacramento","PF",21,"6-11",225,1312611,"Sacramento Kings",NA,NA,NA,NA,NA,NA
+"Solomon Hill","New Orleans","SF",26,"6-7",225,12236535,"New Orleans Pelicans","Out",NA,"Expected to be out until at least Feb 20","Feb 20",2018-01-13,NA
+"Spencer Dinwiddie","Brooklyn","PG",24,"6-6",200,1524305,"Brooklyn Nets",NA,NA,NA,NA,NA,NA
+"Stanley Johnson","Detroit","SF",21,"6-7",245,3097800,"Detroit Pistons","Day-To-Day","Jan 9","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Stephen Curry","Golden State","PG",29,"6-3",190,34382550,"Golden State Warriors","Day-To-Day","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Sterling Brown","Milwaukee","SG",22,"6-6",230,815615,"Milwaukee Bucks",NA,NA,NA,NA,NA,NA
+"Steven Adams","Oklahoma City","C",24,"7-0",255,22471910,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"T.J. Leaf","Indiana","PF",20,"6-10",230,2028360,"Indiana Pacers",NA,NA,NA,NA,NA,NA
+"T.J. McConnell","Philadelphia","PG",25,"6-2",190,1471382,"Philadelphia 76ers",NA,NA,NA,NA,NA,NA
+"Taj Gibson","Minnesota","PF",32,"6-9",235,1.4e+07,"Minnesota Timberwolves",NA,NA,NA,NA,NA,NA
+"Tarik Black","Houston","PF",26,"6-9",250,3290000,"Houston Rockets","Day-To-Day","Jan 10","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Taurean Prince","Atlanta","SF",23,"6-8",220,2422560,"Atlanta Hawks","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
+"Terrance Ferguson","Oklahoma City","SG",19,"6-7",184,1785000,"Oklahoma City Thunder",NA,NA,NA,NA,NA,NA
+"Terrence Ross","Orlando","SG",26,"6-7",206,10500000,"Orlando Magic","Out",NA,"Expected to be out until at least Feb 3","Feb 3",2018-01-13,NA
+"Terry Rozier","Boston","PG",23,"6-2",190,1988520,"Boston Celtics",NA,NA,NA,NA,NA,NA
+"Thabo Sefolosha","Utah","SF",33,"6-7",220,5500000,"Utah Jazz","Out","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Thaddeus Young","Indiana","PF",29,"6-8",230,14996348,"Indiana Pacers",NA,NA,NA,NA,NA,NA
+"Thomas Bryant","LA Lakers","C",20,"6-10",248,815615,"Los Angeles Lakers",NA,NA,NA,NA,NA,NA
+"Thon Maker","Milwaukee","C",20,"7-1",223,2684160,"Milwaukee Bucks",NA,NA,NA,NA,NA,NA
+"Tim Frazier","Washington","PG",27,"6-1",170,2e+06,"Washington Wizards",NA,NA,NA,NA,NA,NA
+"Tim Hardaway Jr.","New York","SF",25,"6-6",205,16500000,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Timofey Mozgov","Brooklyn","C",31,"7-1",275,15280000,"Brooklyn Nets",NA,NA,NA,NA,NA,NA
+"Timothe Luwawu-Cabarrot","Philadelphia","SG",22,"6-6",200,1386600,"Philadelphia 76ers",NA,NA,NA,NA,NA,NA
+"TJ Warren","Phoenix","SF",24,"6-8",215,3152931,"Phoenix Suns",NA,NA,NA,NA,NA,NA
+"Tobias Harris","Detroit","SF",25,"6-9",235,1.6e+07,"Detroit Pistons",NA,NA,NA,NA,NA,NA
+"Tomas Satoransky","Washington","SF",26,"6-7",210,3e+06,"Washington Wizards",NA,NA,NA,NA,NA,NA
+"Tony Allen","New Orleans","SG",36,"6-4",213,1471382,"New Orleans Pelicans","Out","Jan 10","Expected to be out until at least Jan 31","Jan 31",2018-01-13,NA
+"Tony Bradley","Utah","C",20,"6-10",248,1414920,"Utah Jazz",NA,NA,NA,NA,NA,NA
+"Tony Parker","San Antonio","PG",35,"6-2",185,15453126,"San Antonio Spurs","Day-To-Day","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Tony Snell","Milwaukee","SG",26,"6-7",221,9887640,"Milwaukee Bucks",NA,NA,NA,NA,NA,NA
+"Torrey Craig","Denver","SG",27,"6-6",215,NA,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Treveon Graham","Charlotte","SG",24,"6-5",219,1312611,"Charlotte Hornets",NA,NA,NA,NA,NA,NA
+"Trevor Ariza","Houston","SF",32,"6-8",215,7420912,"Houston Rockets",NA,NA,NA,NA,NA,NA
+"Trevor Booker","Philadelphia","PF",30,"6-8",228,9125000,"Philadelphia 76ers",NA,NA,NA,NA,NA,NA
+"Trey Burke","New York","PG",25,"6-1",191,NA,"New York Knicks","Day-To-Day","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Trey Lyles","Denver","PF",22,"6-10",234,2441400,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Tristan Thompson","Cleveland","C",26,"6-9",238,16400000,"Cleveland Cavaliers",NA,NA,NA,NA,NA,NA
+"Troy Daniels","Phoenix","SG",26,"6-4",205,3408520,"Phoenix Suns",NA,NA,NA,NA,NA,NA
+"Troy Williams","Houston","SF",23,"6-7",218,1471382,"Houston Rockets","Out","Jan 10","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Tyler Cavanaugh","Atlanta","PF",23,"6-9",238,679919,"Atlanta Hawks",NA,NA,NA,NA,NA,NA
+"Tyler Dorsey","Atlanta","SG",21,"6-4",183,815615,"Atlanta Hawks",NA,NA,NA,NA,NA,NA
+"Tyler Ennis","LA Lakers","PG",23,"6-3",194,1524305,"Los Angeles Lakers",NA,NA,NA,NA,NA,NA
+"Tyler Johnson","Miami","SG",25,"6-4",190,5881260,"Miami Heat","Day-To-Day","Jan 9","Game Time Decision","Game Time Decision",2018-01-13,NA
+"Tyler Lydon","Denver","PF",21,"6-9",220,1579440,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Tyler Ulis","Phoenix","PG",22,"5-10",160,1312611,"Phoenix Suns",NA,NA,NA,NA,NA,NA
+"Tyler Zeller","Brooklyn","C",27,"7-0",250,1709538,"Brooklyn Nets","Day-To-Day","Jan 13","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
+"Tyreke Evans","Memphis","SG",28,"6-6",220,3290000,"Memphis Grizzlies",NA,NA,NA,NA,NA,NA
+"Tyrone Wallace","LA Clippers","SG",23,"6-5",198,815615,"Los Angeles Clippers",NA,NA,NA,NA,NA,NA
+"Tyson Chandler","Phoenix","C",35,"7-1",240,1.3e+07,"Phoenix Suns",NA,NA,NA,NA,NA,NA
+"Tyus Jones","Minnesota","PG",21,"6-2",184,1471382,"Minnesota Timberwolves",NA,NA,NA,NA,NA,NA
+"Udonis Haslem","Miami","PF",37,"6-8",235,1471382,"Miami Heat",NA,NA,NA,NA,NA,NA
+"Victor Oladipo","Indiana","SG",25,"6-4",210,2.1e+07,"Indiana Pacers",NA,NA,NA,NA,NA,NA
+"Vince Carter","Sacramento","SG",40,"6-6",220,8e+06,"Sacramento Kings",NA,NA,NA,NA,NA,NA
+"Vince Hunter","Memphis","SF",23,"6-8",208,NA,"Memphis Grizzlies",NA,NA,NA,NA,NA,NA
+"Wade Baldwin IV","Portland","PG",21,"6-4",202,NA,"Portland Trailblazers",NA,NA,NA,NA,NA,NA
+"Wayne Ellington","Miami","SG",30,"6-5",200,6270000,"Miami Heat",NA,NA,NA,NA,NA,NA
+"Wayne Selden","Memphis","SG",23,"6-5",230,1312611,"Memphis Grizzlies",NA,NA,NA,NA,NA,NA
+"Wesley Iwundu","Orlando","SF",23,"6-7",195,1050000,"Orlando Magic",NA,NA,NA,NA,NA,NA
+"Wesley Johnson","LA Clippers","SF",30,"6-7",215,5882260,"Los Angeles Clippers",NA,NA,NA,NA,NA,NA
+"Wesley Matthews","Dallas","SG",31,"6-5",220,17884176,"Dallas Mavericks",NA,NA,NA,NA,NA,NA
+"Will Barton","Denver","SG",27,"6-6",190,3533333,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Willie Cauley-Stein","Sacramento","C",24,"7-0",240,3704160,"Sacramento Kings",NA,NA,NA,NA,NA,NA
+"Willie Reed","LA Clippers","C",27,"6-11",245,1471382,"Los Angeles Clippers",NA,NA,NA,NA,NA,NA
+"Willy Hernangomez","New York","C",23,"6-11",240,1435750,"New York Knicks",NA,NA,NA,NA,NA,NA
+"Wilson Chandler","Denver","SF",30,"6-9",225,12016854,"Denver Nuggets",NA,NA,NA,NA,NA,NA
+"Xavier Munford","Milwaukee","PG",25,"6-4",173,874636,"Milwaukee Bucks",NA,NA,NA,NA,NA,NA
+"Yogi Ferrell","Dallas","PG",24,"6-0",180,1312611,"Dallas Mavericks",NA,NA,NA,NA,NA,NA
+"Zach Collins","Portland","C",20,"7-0",230,3057240,"Portland Trailblazers",NA,NA,NA,NA,NA,NA
+"Zach LaVine","Chicago","PG",22,"6-5",185,3202218,"Chicago Bulls","Out","Jan 9",NA,NA,2018-01-13,NA
+"Zach Randolph","Sacramento","PF",36,"6-9",250,12307692,"Sacramento Kings",NA,NA,NA,NA,NA,NA
+"Zaza Pachulia","Golden State","C",33,"6-11",270,3477600,"Golden State Warriors",NA,NA,NA,NA,NA,NA
+"Zhou Qi","Houston","PF",21,"7-1",210,815615,"Houston Rockets","Day-To-Day","Jan 11","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA

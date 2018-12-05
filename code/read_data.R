@@ -246,11 +246,11 @@ s3 <- read_player_data("NBA-2014-2015", c("SEASON", "DATE", "PLAYER FULL NAME", 
 s4 <- read_player_data("NBA-2015-2016", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 4)
 s5 <- read_player_data("NBA-2016-2017", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 5) 
 s6 <- read_player_data("NBA-2017-2018", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 6) 
-s7 <- read_player_data(current_season, c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 7) 
+s7 <- read_player_data("NBA-2018-2019", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 7) 
 
 
 ## Add some indicators
-f <- rbind.data.frame(s1, s2, s3, s4, s5, s6) %>%
+f <- rbind.data.frame(s1, s2, s3, s4, s5, s6, s7) %>%
      filter(is.na(DATA_SET)==FALSE) %>%
      mutate(home_team=as.numeric(VENUE_R_H=='H'), 
             road_team=as.numeric(VENUE_R_H=='R'), 

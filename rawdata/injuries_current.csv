@@ -1,111 +1,102 @@
-"PLAYER_FULL_NAME","injury_status","injury_date","return_notes","clean_note","injury_scrape_date","return_date"
-"Al Horford","Day-To-Day","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Allen Crabbe","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Amir Johnson","Day-To-Day","Jan 11","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Andre Iguodala","Day-To-Day","Jan 9","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Andre Roberson","Out","Jan 9","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Andrew Harrison","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Anthony Davis","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Blake Griffin","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Brandon Ingram","Day-To-Day","Jan 13"," "," ",2018-01-13,NA
-"C.J. Williams","Day-To-Day","Jan 11","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Chandler Parsons","Out","Jan 9","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"D'Angelo Russell","Out","Jan 13","Expected to be out until at least Jan 13","Jan 13",2018-01-13,NA
-"Damian Lillard","Day-To-Day","Jan 11",NA,NA,2018-01-13,NA
-"Danny Green","Out","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
-"DeAndre Jordan","Day-To-Day","Jan 13","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"DeAndre' Bembry","Day-To-Day","Jan 9","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"DeMarre Carroll","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Derrick Rose","Out","Jan 10","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Dewayne Dedmon","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Dion Waiters","Out","Jan 11","Out for the season","Out for the season",2018-01-13,NA
-"Domantas Sabonis","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Draymond Green","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Dwyane Wade","Day-To-Day","Jan 12","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Evan Turner","Day-To-Day","Jan 13","Expected to be out until at least Jan 14","Jan 14",2018-01-13,NA
-"Gary Harris","Day-To-Day","Jan 13","Expected to be out until at least Jan 13","Jan 13",2018-01-13,NA
-"George Hill","Out","Jan 9",NA,NA,2018-01-13,NA
-"Georgios Papagiannis","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Gordon Hayward","Out","Jan 10","Expected to be out until at least Apr 15","Apr 15",2018-01-13,NA
-"Iman Shumpert","Out","Jan 10","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Isaiah Canaan","Out","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Isaiah Thomas","Day-To-Day","Jan 12","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Jabari Parker","Out","Jan 10","Expected to be out until at least Feb 13","Feb 13",2018-01-13,NA
-"James Harden","Out","Jan 10","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"James Johnson","Day-To-Day","Jan 10","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Jayson Tatum","Day-To-Day","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Jeff Teague","Out","Jan 9",NA,NA,2018-01-13,NA
-"Jonathon Simmons","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Josh Jackson","Day-To-Day","Jan 13","Expected to be out until at least Jan 14","Jan 14",2018-01-13,NA
-"Justise Winslow","Out","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Kawhi Leonard","Out","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Kevin Durant","Out","Jan 9",NA,NA,2018-01-13,NA
-"Klay Thompson","Day-To-Day","Jan 10",NA,NA,2018-01-13,NA
-"Kyle Lowry","Day-To-Day","Jan 9","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Marco Belinelli","Day-To-Day","Jan 12","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Markelle Fultz","Out","Jan 11","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Marquese Chriss","Day-To-Day","Jan 9","Expected to be out until at least Jan 14","Jan 14",2018-01-13,NA
-"Matthew Dellavedova","Day-To-Day","Jan 10",NA,NA,2018-01-13,NA
-"Michael Beasley","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Mike Conley","Out","Jan 11","Expected to be out until at least Feb 1","Feb 1",2018-01-13,NA
-"Mike Muscala","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Milos Teodosic","Out","Jan 12",NA,NA,2018-01-13,NA
-"Myles Turner","Day-To-Day","Jan 9","Expected to be out until at least Jan 14","Jan 14",2018-01-13,NA
-"Nene Hilario","Out","Jan 10",NA,NA,2018-01-13,NA
-"Nik Stauskas","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Nikola Mirotic","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Omri Casspi","Day-To-Day","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Paul Millsap","Out","Jan 10","Expected to be out until at least Feb 23","Feb 23",2018-01-13,NA
-"Rodney McGruder","Out","Jan 11","Expected to be out until at least Feb 2","Feb 2",2018-01-13,NA
-"Rudy Gay","Out","Jan 12","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Serge Ibaka","Out","Jan 11",NA,NA,2018-01-13,NA
-"Shane Larkin","Day-To-Day","Jan 13"," "," ",2018-01-13,NA
-"Shaun Livingston","Day-To-Day","Jan 11",NA,NA,2018-01-13,NA
-"Stanley Johnson","Day-To-Day","Jan 9","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Stephen Curry","Day-To-Day","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Tarik Black","Day-To-Day","Jan 10","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Taurean Prince","Day-To-Day","Jan 9",NA,NA,2018-01-13,NA
-"Thabo Sefolosha","Out","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Tony Allen","Out","Jan 10","Expected to be out until at least Jan 31","Jan 31",2018-01-13,NA
-"Tony Parker","Day-To-Day","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Trey Burke","Day-To-Day","Jan 13","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Troy Williams","Out","Jan 10","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Tyler Johnson","Day-To-Day","Jan 9","Game Time Decision","Game Time Decision",2018-01-13,NA
-"Tyler Zeller","Day-To-Day","Jan 13","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Zach LaVine","Out","Jan 9",NA,NA,2018-01-13,NA
-"Zhou Qi","Day-To-Day","Jan 11","Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Rudy Gobert","Out",NA,"Expected to be out until at least Jan 21","Jan 21",2018-01-13,NA
-"Harry Giles","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"John Holland","Out",NA,"Expected to be out until at least Jan 20","Jan 20",2018-01-13,NA
-"C.J. Wilcox","Out",NA,"Game Time Decision","Game Time Decision",2018-01-13,NA
-"Frank Mason III","Out",NA,"Expected to be out until at least Feb 9","Feb 9",2018-01-13,NA
-"Luc Mbah a Moute","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Raul Neto","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-" Nene","Out",NA,"Expected to be out until at least Jan 18","Jan 18",2018-01-13,NA
-"Seth Curry","Out",NA,"Expected to be out until at least Jan 20","Jan 20",2018-01-13,NA
-"Dorian Finney-Smith","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Frank Jackson","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Reggie Jackson","Out",NA,"Expected to be out until at least Feb 23","Feb 23",2018-01-13,NA
-"Jon Leuer","Out",NA,"Expected to be out until at least Feb 1","Feb 1",2018-01-13,NA
-"Nerlens Noel","Out",NA,"Expected to be out until at least Feb 3","Feb 3",2018-01-13,NA
-"Austin Rivers","Out",NA,"Expected to be out until at least Jan 20","Jan 20",2018-01-13,NA
-"Furkan Korkmaz","Out",NA,"Expected to be out until at least Jan 24","Jan 24",2018-01-13,NA
-"Chris Boucher","Out",NA,"Expected to be out until at least Jan 25","Jan 25",2018-01-13,NA
-"Jonathan Isaac","Out",NA,"Expected to be out until at least Feb 3","Feb 3",2018-01-13,NA
-"Nikola Vucevic","Out",NA,"Expected to be out until at least Feb 3","Feb 3",2018-01-13,NA
-"Cameron Payne","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Danilo Gallinari","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Mirza Teletovic","Out",NA,"Expected to be out until at least Feb 1","Feb 1",2018-01-13,NA
-"Patrick Beverley","Out",NA,"Out for the season","Out for the season",2018-01-13,NA
-"Cody Zeller","Out",NA,"Expected to be out until at least Jan 22","Jan 22",2018-01-13,NA
-"Alexis Ajinca","Out",NA,"Expected to be out until at least Apr 7","Apr 7",2018-01-13,NA
-"Terrence Ross","Out",NA,"Expected to be out until at least Feb 3","Feb 3",2018-01-13,NA
-"Solomon Hill","Out",NA,"Expected to be out until at least Feb 20","Feb 20",2018-01-13,NA
-"Okaro White","Out",NA,"Expected to be out until at least Feb 7","Feb 7",2018-01-13,NA
-"Brandon Knight","Out",NA,"Out for the season","Out for the season",2018-01-13,NA
-"Jeremy Lin","Out",NA,"Out for the season","Out for the season",2018-01-13,NA
-"Dante Exum","Out",NA,"Expected to be out until at least Mar 1","Mar 1",2018-01-13,NA
-"Glenn Robinson III","Out",NA,"Expected to be out until at least Jan 15","Jan 15",2018-01-13,NA
-"Sheldon Mac","Out",NA,"Expected to be out until at least Apr 11","Apr 11",2018-01-13,NA
-"Alan Williams","Out",NA,"Expected to be out until at least Mar 15","Mar 15",2018-01-13,NA
-"Edmond Sumner","Out",NA,"Expected to be out until at least Feb 1","Feb 1",2018-01-13,NA
+"PLAYER_FULL_NAME","injury_status","injury_date","clean_note","return_date","injury_scrape_date"
+"Alex Poythress","Out","Dec 5","Dec 8",2018-12-08,2018-12-05
+"Alfonzo McKinnie","Out","Dec 4",NA,2018-12-06,2018-12-05
+"Ante Zizic","Out","Dec 4","Dec 7",2018-12-07,2018-12-05
+"Bobby Portis","Out","Dec 4","Dec 19",2018-12-19,2018-12-05
+"Brandon Knight","Out","Dec 1","Game Time Decision",2018-12-06,2018-12-05
+"Caleb Swanigan","Day-To-Day","Dec 2","Game Time Decision",2018-12-06,2018-12-05
+"Cedi Osman","Day-To-Day","Dec 1",NA,2018-12-06,2018-12-05
+"Cody Zeller","Day-To-Day","Dec 4","Game Time Decision",2018-12-06,2018-12-05
+"Courtney Lee","Out","Dec 1",NA,2018-12-06,2018-12-05
+"Damian Jones","Out","Dec 3","Apr 15",2019-04-15,2018-12-05
+"David Nwaba","Out","Dec 4","Dec 7",2018-12-07,2018-12-05
+"DeMarcus Cousins","Out","Dec 2","Dec 27",2018-12-27,2018-12-05
+"Dennis Smith Jr.","Day-To-Day","Dec 3",NA,2018-12-06,2018-12-05
+"Derrick Jones Jr.","Day-To-Day","Dec 3",NA,2018-12-06,2018-12-05
+"Devin Booker","Out","Dec 3","Dec 6",2018-12-06,2018-12-05
+"Dewayne Dedmon","Day-To-Day","Dec 2",NA,2018-12-06,2018-12-05
+"Dirk Nowitzki","Out","Dec 3","Dec 16",2018-12-16,2018-12-05
+"Draymond Green","Out","Dec 3","Dec 10",2018-12-10,2018-12-05
+"Drew Eubanks","Day-To-Day","Dec 5",NA,2018-12-06,2018-12-05
+"Dwight Powell","Day-To-Day","Dec 3",NA,2018-12-06,2018-12-05
+"E'Twaun Moore","Day-To-Day","Dec 3",NA,2018-12-06,2018-12-05
+"Ersan Ilyasova","Day-To-Day","Dec 5","Game Time Decision",2018-12-06,2018-12-05
+"Evan Turner","Day-To-Day","Dec 3",NA,2018-12-06,2018-12-05
+"Frank Jackson","Day-To-Day","Dec 1",NA,2018-12-06,2018-12-05
+"Gary Harris","Day-To-Day","Dec 5","Dec 7",2018-12-07,2018-12-05
+"George Hill","Out","Dec 1",NA,2018-12-06,2018-12-05
+"George King","Day-To-Day","Dec 5","Game Time Decision",2018-12-06,2018-12-05
+"Goran Dragic","Out","Dec 3","Dec 7",2018-12-07,2018-12-05
+"Hamidou Diallo","Day-To-Day","Dec 4","Game Time Decision",2018-12-06,2018-12-05
+"J.J. Barea","Day-To-Day","Dec 3",NA,2018-12-06,2018-12-05
+"James Johnson","Day-To-Day","Dec 4",NA,2018-12-06,2018-12-05
+"Jaylen Brown","Out","Dec 4","Game Time Decision",2018-12-06,2018-12-05
+"Jeff Green","Day-To-Day","Dec 3",NA,2018-12-06,2018-12-05
+"Jeremy Lin","Day-To-Day","Dec 2",NA,2018-12-06,2018-12-05
+"Jerome Robinson","Day-To-Day","Dec 4","Dec 8",2018-12-08,2018-12-05
+"Joe Harris","Out","Dec 4","Game Time Decision",2018-12-06,2018-12-05
+"John Wall","Day-To-Day","Dec 5","Dec 8",2018-12-08,2018-12-05
+"Jonah Bolden","Out","Dec 4",NA,2018-12-06,2018-12-05
+"Kevin Love","Out","Dec 4","Jan 15",2019-01-15,2018-12-05
+"Kosta Koufos","Out","Dec 1",NA,2018-12-06,2018-12-05
+"Kris Dunn","Out","Dec 4","Dec 10",2018-12-10,2018-12-05
+"Kyle Lowry","Day-To-Day","Dec 1",NA,2018-12-06,2018-12-05
+"Lauri Markkanen","Out","Dec 1",NA,2018-12-06,2018-12-05
+"Luc Mbah a Moute","Out","Dec 4","Dec 8",2018-12-08,2018-12-05
+"Luka Doncic","Day-To-Day","Dec 3",NA,2018-12-06,2018-12-05
+"Luke Kennard","Out","Dec 3",NA,2018-12-06,2018-12-05
+"Marc Gasol","Day-To-Day","Dec 2",NA,2018-12-06,2018-12-05
+"Marco Belinelli","Day-To-Day","Dec 3",NA,2018-12-06,2018-12-05
+"Markelle Fultz","Out","Dec 4","Dec 25",2018-12-25,2018-12-05
+"Marvin Bagley III","Day-To-Day","Dec 4","Dec 7",2018-12-07,2018-12-05
+"Marvin Williams","Out","Dec 3","Dec 12",2018-12-12,2018-12-05
+"Nene Hilario","Out","Dec 1",NA,2018-12-06,2018-12-05
+"Nikola Mirotic","Day-To-Day","Dec 4","Game Time Decision",2018-12-06,2018-12-05
+"Norman Powell","Out","Dec 3","Dec 10",2018-12-10,2018-12-05
+"Omari Spellman","Day-To-Day","Dec 5","Game Time Decision",2018-12-06,2018-12-05
+"Otto Porter Jr.","Day-To-Day","Dec 3",NA,2018-12-06,2018-12-05
+"Rajon Rondo","Out","Dec 4","Dec 7",2018-12-07,2018-12-05
+"Reggie Bullock","Day-To-Day","Dec 4","Dec 7",2018-12-07,2018-12-05
+"Rodney McGruder","Day-To-Day","Dec 3",NA,2018-12-06,2018-12-05
+"Ron Baker","Day-To-Day","Dec 1",NA,2018-12-06,2018-12-05
+"Salah Mejri","Day-To-Day","Dec 3",NA,2018-12-06,2018-12-05
+"Sam Dekker","Out","Dec 5","Dec 7",2018-12-07,2018-12-05
+"Stephen Curry","Out","Dec 1",NA,2018-12-06,2018-12-05
+"T.J. Warren","Out","Dec 4","Dec 6",2018-12-06,2018-12-05
+"Taurean Prince","Out","Dec 4",NA,2018-12-06,2018-12-05
+"Terrance Ferguson","Out","Dec 3",NA,2018-12-06,2018-12-05
+"Timofey Mozgov","Out","Dec 3","Game Time Decision",2018-12-06,2018-12-05
+"Trey Burke","Day-To-Day","Dec 4","Dec 8",2018-12-08,2018-12-05
+"Tyler Johnson","Out","Dec 4",NA,2018-12-06,2018-12-05
+"Tyler Ulis","Day-To-Day","Dec 5","Game Time Decision",2018-12-06,2018-12-05
+"Wayne Selden","Day-To-Day","Dec 2",NA,2018-12-06,2018-12-05
+"Wilson Chandler","Day-To-Day","Dec 2",NA,2018-12-06,2018-12-05
+"Alex Caruso","Out",NA,"Game Time Decision",2018-12-06,2018-12-05
+"Andre Roberson","Out",NA,"Jan 10",2019-01-10,2018-12-05
+"Caris LeVert","Out",NA,"Feb 1",2019-02-01,2018-12-05
+"Carmelo Anthony","Out",NA,"Dec 10",2018-12-10,2018-12-05
+"Chandler Parsons","Out",NA,"Dec 12",2018-12-12,2018-12-05
+"Dejounte Murray","Out",NA,"Out for the season",2019-12-05,2018-12-05
+"Denzel Valentine","Out",NA,"Out for the season",2019-12-05,2018-12-05
+"Dillon Brooks","Out",NA,"Dec 23",2018-12-23,2018-12-05
+"Dion Waiters","Out",NA,"Dec 15",2018-12-15,2018-12-05
+"Dwight Howard","Out",NA,"Jan 30",2019-01-30,2018-12-05
+"Elfrid Payton","Out",NA,"Jan 2",2019-01-02,2018-12-05
+"Henry Ellenson","Out",NA,"Game Time Decision",2018-12-06,2018-12-05
+"Isaiah Thomas","Out",NA,"Dec 8",2018-12-08,2018-12-05
+"Jabari Bird","Out",NA,"Jan 2",2019-01-02,2018-12-05
+"Jarred Vanderbilt","Out",NA,"Dec 15",2018-12-15,2018-12-05
+"Jerryd Bayless","Out",NA,"Game Time Decision",2018-12-06,2018-12-05
+"Joakim Noah","Out",NA,"Game Time Decision",2018-12-06,2018-12-05
+"John Henson","Out",NA,"Feb 19",2019-02-19,2018-12-05
+"Justin Patton","Out",NA,"Jan 1",2019-01-01,2018-12-05
+"Kristaps Porzingis","Out",NA,"Dec 25",2018-12-25,2018-12-05
+"Lance Thomas","Out",NA,"Dec 9",2018-12-09,2018-12-05
+"Michael Porter Jr.","Out",NA,"Dec 15",2018-12-15,2018-12-05
+"Pau Gasol","Out",NA,"Jan 15",2019-01-15,2018-12-05
+"Taurean Waller-Prince","Out",NA,"Dec 26",2018-12-26,2018-12-05
+"Treveon Graham","Out",NA,"Dec 23",2018-12-23,2018-12-05
+"Victor Oladipo","Out",NA,"Dec 16",2018-12-16,2018-12-05
+"Will Barton","Out",NA,"Dec 7",2018-12-07,2018-12-05
+"Zhaire Smith","Out",NA,"Jan 15",2019-01-15,2018-12-05
+"Zhou Qi","Out",NA,"Game Time Decision",2018-12-06,2018-12-05

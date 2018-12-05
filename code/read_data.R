@@ -12,23 +12,31 @@ library(doParallel)
 library(rvest)
 library(stringr)
 
-source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/distance_between.R")
+root <- "/Users/thirdlovechangethisname/Documents/Code/NBA_RANKINGS"
+current_season <- "2018-2019 Regular Season"
 
-setwd("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/")
+setwd(root)
+
+source(paste0(root, "/functions/distance_between.R"))
+source(paste0(root, "/functions/trim.R"))
+
+setwd(paste0(root, "/rawdata/"))
 
 team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
+  rename(Team=FULL.NAME, NBAstuffer.Initials=SHORT.NAME) %>%
+  mutate(City=NBAstuffer.Initials) %>%
   distinct(Team, .keep_all=TRUE) %>% select(City, NBAstuffer.Initials, Team) %>%
   filter(!(Team %in% c("Charlotte Bobcats", "New Orleans Hornets")))
   
 
 
 ### 538 data
-ft8 <- read_html("http://projects.fivethirtyeight.com/2018-nba-predictions/")
-team <- ft8 %>% html_nodes("tbody tr td.team a") %>% html_text() %>% gsub("[0-9, -]", "", .)
-wins <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('-[0-9]+','', .) 
-losses <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('[0-9]+-','', .)
+ft8 <- read_html("http://projects.fivethirtyeight.com/2019-nba-predictions/")
+team <- ft8 %>% html_nodes("tbody tr td.team a") %>% html_text() %>% gsub("[0-9, -]", "", .) %>% trim()
+wins <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('-[0-9]+','', .) %>% trim()
+losses <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('[0-9]+-','', .) %>% trim()
 #elo <- ft8 %>% html_nodes("tbody tr td.elo.original") %>% html_text()
-carm_elo <- ft8 %>% html_nodes("tbody tr td.carmelo") %>% html_text()
+carm_elo <- ft8 %>% html_nodes("tbody tr td.carmelo") %>% html_text() %>% trim()
 team[team=="ers"] <- "Philadelphia"
 team[team=="Hornets"] <- "Charlotte"
 team[team=="Clippers"] <- "LA Clippers"
@@ -76,9 +84,9 @@ fivethirtyeight <- data.frame(team, elo=as.numeric(elo),
 ### Injury return dates from CBS
 cbs_injuries <- read_html("http://www.cbssports.com/nba/injuries/daily")
 
-PLAYER_FULL_NAME <- cbs_injuries %>% html_nodes("tr.row1 td:nth-child(3), tr.row2 td:nth-child(3)") %>% html_text()
+PLAYER_FULL_NAME <- cbs_injuries %>% html_nodes(".CellPlayerName--long a") %>% html_text()
 
-return_notes <- cbs_injuries %>% html_nodes("tr.row1 td:nth-child(6), tr.row2 td:nth-child(6)") %>% html_text()
+return_notes <- cbs_injuries %>% html_nodes(".TableBase-bodyTd:nth-child(5)") %>% html_text() %>% gsub("\n ","", .) %>% trim()
 
 daily_injuries <- data.frame(PLAYER_FULL_NAME, 
                              return_notes, 
@@ -86,10 +94,10 @@ daily_injuries <- data.frame(PLAYER_FULL_NAME,
   mutate(clean_note=gsub("Expected to be out until at least ", "", return_notes))
 
 convert_to_date <- function(data){
-  if (data$clean_note=="Game Time Decision"){
+  if (data$clean_note=="Out for the season"){
+    data$return_date <- Sys.Date() + 365
+  } else if (data$clean_note=="Game Time Decision"){
     data$return_date <- Sys.Date() + 1
-  } else if (data$clean_note=="Out for the season"){
-    data$return_date <- as.Date("2018-10-25")
   } else{
     data$return_date <- as.Date(data$clean_note, format="%b %d")
   }
@@ -100,7 +108,7 @@ convert_to_date <- function(data){
 }
 
 daily_injuries <- data.frame(rbindlist(lapply(split(daily_injuries, daily_injuries$PLAYER_FULL_NAME), convert_to_date)), stringsAsFactors = FALSE) %>%
-  select(PLAYER_FULL_NAME, return_date) %>% distinct(PLAYER_FULL_NAME, .keep_all=TRUE)
+  select(PLAYER_FULL_NAME, clean_note, return_date) %>% distinct(PLAYER_FULL_NAME, .keep_all=TRUE)
 
 
 ### Injury status from ESPN
@@ -205,7 +213,30 @@ read_player_data <- function(season, first_labels, suffix){
                  freethrows_made=FT,
                  freethrow_attempts=FTA, 
                  fouls=PF, 
-                 blocks=BL)
+                 blocks=BL) %>%
+    select(DATA_SET, 
+           DATE,
+           PLAYER_FULL_NAME,
+           POSITION,
+           OWN_TEAM,
+           OPP_TEAM,
+           VENUE_R_H,
+           TOT,
+           points, 
+           assists,
+           offensive_rebounds,
+           defensive_rebounds, 
+           turnovers,
+           threepointers_made, 
+           steals,
+           minutes, 
+           threepoint_attempts, 
+           fieldgoal_attempts, 
+           fieldgoals_made,
+           freethrows_made,
+           freethrow_attempts, 
+           fouls, 
+           blocks)
   return(data)
 }
 
@@ -215,6 +246,7 @@ s3 <- read_player_data("NBA-2014-2015", c("SEASON", "DATE", "PLAYER FULL NAME", 
 s4 <- read_player_data("NBA-2015-2016", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 4)
 s5 <- read_player_data("NBA-2016-2017", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 5) 
 s6 <- read_player_data("NBA-2017-2018", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 6) 
+s7 <- read_player_data(current_season, c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 7) 
 
 
 ## Add some indicators
@@ -247,13 +279,13 @@ schedule <- data.frame(read_excel("schedule.xlsx", sheet=1))
 #  select(home_team)
 
 home <- 
-  rename(schedule, home_team=HOME) %>%
-  mutate(DATE=as.Date(Date, format="%m/%d/%Y")) %>%
+  rename(schedule, home_team=HOME.TEAM) %>%
+  mutate(DATE=as.Date(DATE, format="%m/%d/%Y")) %>%
   select(home_team)
 
 road <- 
-  rename(schedule, road_team=ROAD) %>% 
-  mutate(DATE=as.Date(Date, format="%m/%d/%Y")) %>%
+  rename(schedule, road_team=ROAD.TEAM) %>% 
+  mutate(DATE=as.Date(DATE, format="%m/%d/%Y")) %>%
   select(road_team, DATE)
 
 set.seed(2015)
@@ -264,7 +296,7 @@ future_schedule <- data.frame(cbind(home, road)) %>% filter(DATE>max_date) %>%
          OWN_TEAM=ifelse(r>0.5, home_team, road_team),
          OPP_TEAM=ifelse(OWN_TEAM==home_team, road_team, home_team),
          VENUE_R_H=ifelse(OWN_TEAM==home_team, 'H', 'R'), 
-         DATA_SET="2017-2018 Regular Season", 
+         DATA_SET=current_season, 
          season=2017,
          PLAYER_FULL_NAME="BLANK") %>%
   select(DATE, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATA_SET, future_game, PLAYER_FULL_NAME, season)
@@ -272,8 +304,7 @@ future_schedule <- data.frame(cbind(home, road)) %>% filter(DATE>max_date) %>%
 f <- bind_rows(f, future_schedule) %>%
   replace(is.na(.), 0)
   
-
-setwd("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/cleandata")
+setwd(paste0(root, "/cleandata"))
 
 ## Create an ID
 f$cat <- paste0(f$OWN_TEAM, f$OPP_TEAM)

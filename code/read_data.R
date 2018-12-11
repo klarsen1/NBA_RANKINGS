@@ -147,28 +147,28 @@ injuries[is.na(injuries$return_date),"return_date"] <- Sys.Date()+1
 injuries[is.na(injuries$injury_status),"injury_status"] <- "Out"
 
 ### Get the current rosters
+#team_pages <- read_html("http://www.espn.com/nba/teams") %>%
+#  html_nodes("ul.medium-logos span a:nth-child(3)") %>% html_attr("href")
+
 team_pages <- read_html("http://www.espn.com/nba/teams") %>%
-  html_nodes("ul.medium-logos span a:nth-child(3)") %>% html_attr("href")
+  html_nodes(".nowrap:nth-child(3) a") %>% html_attr("href")
+
 
 rosters <- lapply(team_pages, function (team_link) {
   team_link <- paste0('http://www.espn.com', team_link)
   team_roster <- read_html(team_link)
   
-  team_name <- team_roster %>% html_nodes("h2.logo b") %>% html_text()
+  team_name <- team_roster %>% html_nodes(".headline__h1") %>% html_text() %>% gsub("Roster", "", .)
   team_name[team_name=="LA Clippers"] <- "Los Angeles Clippers"
   team_name[team_name=="Portland Trail Blazers"] <- "Portland Trailblazers"
   
-  
-  data <- sapply(1:8, function(col) {
-    team_roster %>% html_nodes(paste0("tr.evenrow > td:nth-child(",col,"), tr.oddrow > td:nth-child(",col,")")) %>% html_text()
-  })
-  data <- data.frame(data, stringsAsFactors = FALSE)
-  colnames(data) <- c('Number','PLAYER_FULL_NAME','Position','Age','Height','Weight','College','Salary')
-  data$Team <- team_name
-  data$Age <- as.numeric(data$Age)
-  data$Weight <- as.numeric(data$Weight)
-  data$Salary <- as.numeric(gsub(',','',gsub('\\$', '', data$Salary)))
-  data
+  Team <- team_name
+  PLAYER_FULL_NAME <- team_roster %>% html_nodes(".Table2__td:nth-child(2)") %>% html_text()
+  Age <- as.numeric(team_roster %>% html_nodes(".Table2__td:nth-child(4)") %>% html_text())
+  Weight <- as.numeric(team_roster %>% html_nodes(".Table2__td:nth-child(6)") %>% html_text() %>% gsub("lbs", "", .) %>% trim())
+  Salary <- team_roster %>% html_nodes(".Table2__td:nth-child(8)") %>% html_text()
+  Salary <- as.numeric(gsub(',','',gsub('\\$', '', Salary)) %>% trim())
+  return(data.frame(Team, PLAYER_FULL_NAME, Age, Weight, Salary))
 })
 
 all_rosters <- bind_rows(lapply(rosters, function(x) as.data.frame(x))) %>%
@@ -193,6 +193,10 @@ write.csv(injuries, "injuries_current.csv", row.names = FALSE)
 ncore <- detectCores()-2
 registerDoParallel(ncore)
 
+data <- data.frame(read_excel(paste0("s", "7", ".xlsx"), sheet=1))
+n <- gsub("_$", "", gsub("__", "_", gsub(".", "_", names(data), fixed=T))) %>% gsub("__","_", .)
+names(data) <- n
+
 
 ## Read the raw data
 read_player_data <- function(season, first_labels, suffix){
@@ -200,8 +204,9 @@ read_player_data <- function(season, first_labels, suffix){
   meta <- data.frame(read_excel(paste0("s", suffix, ".xlsx"), sheet=2, col_names = FALSE))
   labels <- c(first_labels, meta$X1)
   attr(data, "variable.labels") <- labels
-  n <- gsub("_$", "", gsub("__", "_", gsub(".", "_", names(data), fixed=T)))
+  n <- gsub("_$", "", gsub("__", "_", gsub(".", "_", names(data), fixed=T))) %>% gsub("__","_", .)
   names(data) <- n
+  if (names(data)[1] == "DATASET") {names(data)[1] <- "DATA_SET"} 
   data <- rename(data, 
                  points=PTS, 
                  assists=A,

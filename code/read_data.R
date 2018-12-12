@@ -14,6 +14,7 @@ library(stringr)
 
 root <- "/Users/thirdlovechangethisname/Documents/Code/NBA_RANKINGS"
 current_season <- "2018-2019 Regular Season"
+current_season_numeric <- 2018
 
 setwd(root)
 
@@ -227,7 +228,7 @@ read_player_data <- function(season, first_labels, suffix){
   names(data) <- n
   if ("DATASET" %in% names(data)) {data$DATA_SET <- data$DATASET}
   if ("OPPONENT_TEAM" %in% names(data)) {data$OPP_TEAM <- data$OPPONENT_TEAM}
-  data$DATA_SET <- data$DATA_SET %>% trim() %>% gsub("NBA", "", .)
+  data$DATA_SET <- data$DATA_SET %>% gsub("NBA", "", .) %>% trim() 
   data <- rename(data, 
                  points=PTS, 
                  assists=A,
@@ -280,34 +281,28 @@ max_date <- max(f$DATE)
 altitudes <- data.frame(read.csv("altitudes.csv", stringsAsFactors = FALSE))
 
 ## Read the schedule
-schedule <- data.frame(read_excel("schedule.xlsx", sheet=1))
+schedule_team_name_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
+  mutate(home_team=SHORT.NAME, road_team=SHORT.NAME, 
+         home_team=gsub("L.A.", "LA", home_team), 
+         road_team=gsub("L.A.", "LA", road_team), 
+         ROAD.TEAM=FULL.NAME, 
+         HOME.TEAM=FULL.NAME)
 
-#home <- rename(schedule, NBAstuffer.Initials=HOME) %>% 
-#  inner_join(team_map, by="NBAstuffer.Initials") %>%
-#  rename(home_team=City) %>%
-#  mutate(DATE=as.Date(Date, format="%m/%d/%Y")) %>%
-#  select(home_team)
-
-home <- 
-  rename(schedule, home_team=HOME.TEAM) %>%
-  mutate(DATE=as.Date(DATE, format="%m/%d/%Y")) %>%
-  select(home_team)
-
-road <- 
-  rename(schedule, road_team=ROAD.TEAM) %>% 
-  mutate(DATE=as.Date(DATE, format="%m/%d/%Y")) %>%
-  select(road_team, DATE)
+schedule <- data.frame(read_excel("schedule.xlsx", sheet=1)) %>% mutate(DATE=as.Date(DATE)) %>%
+  inner_join(select(schedule_team_name_map, HOME.TEAM, home_team), by="HOME.TEAM") %>%
+  inner_join(select(schedule_team_name_map, ROAD.TEAM, road_team), by="ROAD.TEAM") %>%
+  select(DATE, home_team, road_team)
 
 set.seed(2015)
 
-future_schedule <- data.frame(cbind(home, road)) %>% filter(DATE>max_date) %>%
+future_schedule <- filter(schedule, DATE>max_date) %>%
   mutate(r=runif(n()),
          future_game=1,
          OWN_TEAM=ifelse(r>0.5, home_team, road_team),
          OPP_TEAM=ifelse(OWN_TEAM==home_team, road_team, home_team),
          VENUE_R_H=ifelse(OWN_TEAM==home_team, 'H', 'R'), 
          DATA_SET=current_season, 
-         season=2017,
+         season=current_season_numeric,
          PLAYER_FULL_NAME="BLANK") %>%
   select(DATE, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATA_SET, future_game, PLAYER_FULL_NAME, season)
   

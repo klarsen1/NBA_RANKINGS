@@ -145,34 +145,30 @@ injuries <- data.frame(
 injuries[is.na(injuries$return_date),"return_date"] <- Sys.Date()+1
 injuries[is.na(injuries$injury_status),"injury_status"] <- "Out"
 
-### Get the current rosters
-#team_pages <- read_html("http://www.espn.com/nba/teams") %>%
-#  html_nodes("ul.medium-logos span a:nth-child(3)") %>% html_attr("href")
-
 team_pages <- read_html("http://www.espn.com/nba/teams") %>%
   html_nodes(".nowrap:nth-child(3) a") %>% html_attr("href")
-
 
 rosters <- lapply(team_pages, function (team_link) {
   team_link <- paste0('http://www.espn.com', team_link)
   team_roster <- read_html(team_link)
   
-  team_name <- team_roster %>% html_nodes(".headline__h1") %>% html_text() %>% gsub("Roster", "", .)
-  team_name[team_name=="LA Clippers"] <- "Los Angeles Clippers"
-  team_name[team_name=="Portland Trail Blazers"] <- "Portland Trailblazers"
-  
+  team_name <- team_roster %>% html_nodes(".headline__h1") %>% html_text() %>% gsub("Roster", "", .) %>% trim()
+  if (team_name=="LA Clippers") {team_name<-"Los Angeles Clippers"}
+  if (team_name=="Portland Trail Blazers") {team_name<-"Portland Trailblazers"}
+
   Team <- team_name
   PLAYER_FULL_NAME <- team_roster %>% html_nodes(".Table2__td:nth-child(2)") %>% html_text()
   Age <- as.numeric(team_roster %>% html_nodes(".Table2__td:nth-child(4)") %>% html_text())
   Weight <- as.numeric(team_roster %>% html_nodes(".Table2__td:nth-child(6)") %>% html_text() %>% gsub("lbs", "", .) %>% trim())
+  Height <- team_roster %>% html_nodes(".Table2__td:nth-child(5)") %>% html_text() %>% gsub("lbs", "", .) %>% trim()
   Salary <- team_roster %>% html_nodes(".Table2__td:nth-child(8)") %>% html_text()
   Salary <- as.numeric(gsub(',','',gsub('\\$', '', Salary)) %>% trim())
-  return(data.frame(Team, PLAYER_FULL_NAME, Age, Weight, Salary))
+  Position <- team_roster %>% html_nodes(".Table2__td:nth-child(3)") %>% html_text()
+  return(data.frame(Team, Position, PLAYER_FULL_NAME, Age, Weight, Height, Salary))
 })
 
 all_rosters <- bind_rows(lapply(rosters, function(x) as.data.frame(x))) %>%
   left_join(team_map, by="Team") %>%
-  rename(OWN_TEAM=City) %>%
   select(PLAYER_FULL_NAME, OWN_TEAM, Position, Age, Height, Weight, Salary, Team) %>%
   arrange(PLAYER_FULL_NAME, OWN_TEAM) %>%
   left_join(injuries, by="PLAYER_FULL_NAME") %>%
@@ -230,6 +226,7 @@ read_player_data <- function(season, first_labels, suffix){
   names(data) <- n
   if ("DATASET" %in% names(data)) {data$DATA_SET <- data$DATASET}
   if ("OPPONENT_TEAM" %in% names(data)) {data$OPP_TEAM <- data$OPPONENT_TEAM}
+  data$DATA_SET <- data$DATA_SET %>% trim() %>% gsub("NBA", "", .)
   data <- rename(data, 
                  points=PTS, 
                  assists=A,

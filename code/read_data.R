@@ -22,7 +22,8 @@ source(paste0(root, "/functions/trim.R"))
 
 setwd(paste0(root, "/rawdata/"))
 
-city_lat_long <- read.csv("city_lat_long.csv")
+city_lat_long <- read.csv("city_lat_long.csv", stringsAsFactors = FALSE)
+city_lat_long$OWN_TEAM <- city_lat_long$OWN_TEAM %>% gsub("L.A.", "LA", .)
 
 team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
   rename(Team=FULL.NAME, NBAstuffer.Initials=SHORT.NAME, City=CITY) %>%

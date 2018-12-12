@@ -178,7 +178,7 @@ all_rosters <- bind_rows(lapply(rosters, function(x) as.data.frame(x))) %>%
   arrange(PLAYER_FULL_NAME, OWN_TEAM) %>%
   left_join(injuries, by="PLAYER_FULL_NAME") %>%
   distinct(PLAYER_FULL_NAME, .keep_all=TRUE)
-
+ 
 
 ## Save scraped data
 write.csv(all_rosters, "rosters_current.csv", row.names = FALSE)
@@ -196,6 +196,29 @@ registerDoParallel(ncore)
 data <- data.frame(read_excel(paste0("s", "7", ".xlsx"), sheet=1))
 n <- gsub("_$", "", gsub("__", "_", gsub(".", "_", names(data), fixed=T))) %>% gsub("__","_", .)
 names(data) <- n
+if ("DATASET" %in% names(data)) {data$DATA_SET <- data$DATASET}
+if ("OPPONENT_TEAM" %in% names(data)) {data$OPP_TEAM <- data$OPPONENT_TEAM}
+
+
+data <- rename(data, 
+               points=PTS, 
+               assists=A,
+               offensive_rebounds=OR,
+               defensive_rebounds=DR, 
+               turnovers=TO,
+               threepointers_made=X3P, 
+               steals=ST,
+               minutes=MIN, 
+               threepoint_attempts=X3PA, 
+               fieldgoal_attempts=FGA, 
+               fieldgoals_made=FG,
+               freethrows_made=FT,
+               freethrow_attempts=FTA, 
+               fouls=PF, 
+               blocks=BL) %>% select(DATA_SET, DATE, PLAYER_FULL_NAME, POSITION, OWN_TEAM, OPP_TEAM, VENUE_R_H, TOT, points, 
+                                     assists, offensive_rebounds, defensive_rebounds, turnovers, threepointers_made, 
+                                     steals, minutes, threepoint_attempts, fieldgoal_attempts, fieldgoals_made, freethrows_made,
+                                     freethrow_attempts, fouls, blocks)
 
 
 ## Read the raw data
@@ -206,7 +229,8 @@ read_player_data <- function(season, first_labels, suffix){
   attr(data, "variable.labels") <- labels
   n <- gsub("_$", "", gsub("__", "_", gsub(".", "_", names(data), fixed=T))) %>% gsub("__","_", .)
   names(data) <- n
-  if (names(data)[1] == "DATASET") {names(data)[1] <- "DATA_SET"} 
+  if ("DATASET" %in% names(data)) {data$DATA_SET <- data$DATASET}
+  if ("OPPONENT_TEAM" %in% names(data)) {data$OPP_TEAM <- data$OPPONENT_TEAM}
   data <- rename(data, 
                  points=PTS, 
                  assists=A,
@@ -222,30 +246,10 @@ read_player_data <- function(season, first_labels, suffix){
                  freethrows_made=FT,
                  freethrow_attempts=FTA, 
                  fouls=PF, 
-                 blocks=BL) %>%
-    select(DATA_SET, 
-           DATE,
-           PLAYER_FULL_NAME,
-           POSITION,
-           OWN_TEAM,
-           OPP_TEAM,
-           VENUE_R_H,
-           TOT,
-           points, 
-           assists,
-           offensive_rebounds,
-           defensive_rebounds, 
-           turnovers,
-           threepointers_made, 
-           steals,
-           minutes, 
-           threepoint_attempts, 
-           fieldgoal_attempts, 
-           fieldgoals_made,
-           freethrows_made,
-           freethrow_attempts, 
-           fouls, 
-           blocks)
+                 blocks=BL) %>% select(DATA_SET, DATE, PLAYER_FULL_NAME, POSITION, OWN_TEAM, OPP_TEAM, VENUE_R_H, TOT, points, 
+                                       assists, offensive_rebounds, defensive_rebounds, turnovers, threepointers_made, 
+                                       steals, minutes, threepoint_attempts, fieldgoal_attempts, fieldgoals_made, freethrows_made,
+                                       freethrow_attempts, fouls, blocks)
   return(data)
 }
 

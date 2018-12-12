@@ -2,8 +2,8 @@
 "Al Horford","Day-To-Day","Dec 9","Dec 15",2018-12-15,2018-12-12
 "Alex Poythress","Out","Dec 11","Dec 14",2018-12-14,2018-12-12
 "Allonzo Trier","Day-To-Day","Dec 9","Dec 17",2018-12-17,2018-12-12
-"Andre Iguodala","Day-To-Day","Dec 12","Game Time Decision",2018-12-13,2018-12-12
-"Anfernee Simons","Day-To-Day","Dec 8","Game Time Decision",2018-12-13,2018-12-12
+"Andre Iguodala","Day-To-Day","Dec 12","Dec 14",2018-12-14,2018-12-12
+"Anfernee Simons","Day-To-Day","Dec 8","Dec 14",2018-12-14,2018-12-12
 "Ante Zizic","Out","Dec 11",NA,2018-12-13,2018-12-12
 "Anthony Davis","Day-To-Day","Dec 9",NA,2018-12-13,2018-12-12
 "Aron Baynes","Day-To-Day","Dec 9","Game Time Decision",2018-12-13,2018-12-12
@@ -41,6 +41,7 @@
 "Iman Shumpert","Day-To-Day","Dec 8",NA,2018-12-13,2018-12-12
 "Jamal Crawford","Day-To-Day","Dec 12","Game Time Decision",2018-12-13,2018-12-12
 "Jamal Murray","Day-To-Day","Dec 9",NA,2018-12-13,2018-12-12
+"Jarred Vanderbilt","Out","Dec 12","Dec 20",2018-12-20,2018-12-12
 "Jeremy Lin","Day-To-Day","Dec 11","Dec 14",2018-12-14,2018-12-12
 "Jerome Robinson","Out","Dec 9","Dec 13",2018-12-13,2018-12-12
 "Jerryd Bayless","Out","Dec 9","Dec 17",2018-12-17,2018-12-12
@@ -49,6 +50,7 @@
 "Joel Embiid","Day-To-Day","Dec 9",NA,2018-12-13,2018-12-12
 "John Wall","Day-To-Day","Dec 9","Game Time Decision",2018-12-13,2018-12-12
 "Jonah Bolden","Out","Dec 11",NA,2018-12-13,2018-12-12
+"Jonathon Simmons","Day-To-Day","Dec 12","Game Time Decision",2018-12-13,2018-12-12
 "Jordan Clarkson","Day-To-Day","Dec 10",NA,2018-12-13,2018-12-12
 "Josh Richardson","Day-To-Day","Dec 9",NA,2018-12-13,2018-12-12
 "Kawhi Leonard","Day-To-Day","Dec 11","Game Time Decision",2018-12-13,2018-12-12
@@ -58,8 +60,10 @@
 "Landry Shamet","Day-To-Day","Dec 9",NA,2018-12-13,2018-12-12
 "Lou Williams","Out","Dec 11","Dec 26",2018-12-26,2018-12-12
 "Luc Mbah a Moute","Out","Dec 8","Dec 20",2018-12-20,2018-12-12
-"Marquese Chriss","Out","Dec 11","Game Time Decision",2018-12-13,2018-12-12
+"Marquese Chriss","Out","Dec 12","Dec 15",2018-12-15,2018-12-12
+"Maurice Harkless","Day-To-Day","Dec 12","Dec 14",2018-12-14,2018-12-12
 "Michael Beasley","Day-To-Day","Dec 8",NA,2018-12-13,2018-12-12
+"Michael Porter Jr.","Out","Dec 12","Jan 13",2019-01-13,2018-12-12
 "Mike Conley","Day-To-Day","Dec 9","Game Time Decision",2018-12-13,2018-12-12
 "Miles Plumlee","Day-To-Day","Dec 8","Dec 18",2018-12-18,2018-12-12
 "Nikola Mirotic","Day-To-Day","Dec 11","Dec 16",2018-12-16,2018-12-12
@@ -69,7 +73,7 @@
 "Pat Connaughton","Day-To-Day","Dec 10",NA,2018-12-13,2018-12-12
 "Patrick McCaw","Day-To-Day","Dec 8",NA,2018-12-13,2018-12-12
 "Paul Millsap","Out","Dec 8","Jan 15",2019-01-15,2018-12-12
-"Rajon Rondo","Out","Dec 10","Dec 15",2018-12-15,2018-12-12
+"Rajon Rondo","Out","Dec 12","Dec 15",2018-12-15,2018-12-12
 "Reggie Bullock","Out","Dec 9","Game Time Decision",2018-12-13,2018-12-12
 "Robert Covington","Day-To-Day","Dec 9","Game Time Decision",2018-12-13,2018-12-12
 "Rodney Hood","Day-To-Day","Dec 8",NA,2018-12-13,2018-12-12
@@ -77,7 +81,7 @@
 "Sam Dekker","Out","Dec 9",NA,2018-12-13,2018-12-12
 "Stanley Johnson","Day-To-Day","Dec 9","Game Time Decision",2018-12-13,2018-12-12
 "T.J. Warren","Out","Dec 9",NA,2018-12-13,2018-12-12
-"Trey Burke","Out","Dec 11","Dec 14",2018-12-14,2018-12-12
+"Trey Burke","Out","Dec 12","Dec 16",2018-12-16,2018-12-12
 "Tristan Thompson","Out","Dec 11","Dec 26",2018-12-26,2018-12-12
 "Troy Daniels","Day-To-Day","Dec 11","Game Time Decision",2018-12-13,2018-12-12
 "Tyler Johnson","Day-To-Day","Dec 9",NA,2018-12-13,2018-12-12
@@ -85,7 +89,7 @@
 "Wayne Ellington","Day-To-Day","Dec 9",NA,2018-12-13,2018-12-12
 "Will Barton","Out","Dec 9","Game Time Decision",2018-12-13,2018-12-12
 "Yuta Watanabe","Out","Dec 12","Dec 17",2018-12-17,2018-12-12
-"Zhou Qi","Out","Dec 8","Game Time Decision",2018-12-13,2018-12-12
+"Zhou Qi","Out","Dec 8","Dec 15",2018-12-15,2018-12-12
 "Andre Roberson","Out",NA,"Jan 10",2019-01-10,2018-12-12
 "Caris LeVert","Out",NA,"Feb 1",2019-02-01,2018-12-12
 "Carmelo Anthony","Out",NA,"Dec 15",2018-12-15,2018-12-12
@@ -98,8 +102,7 @@
 "Isaiah Thomas","Out",NA,"Dec 18",2018-12-18,2018-12-12
 "Ish Smith","Out",NA,"Dec 28",2018-12-28,2018-12-12
 "Jabari Bird","Out",NA,"Jan 2",2019-01-02,2018-12-12
-"James Ennis III","Out",NA,"Dec 15",2018-12-15,2018-12-12
-"Jarred Vanderbilt","Out",NA,"Dec 20",2018-12-20,2018-12-12
+"James Ennis III","Out",NA,"Dec 19",2018-12-19,2018-12-12
 "John Henson","Out",NA,"Feb 19",2019-02-19,2018-12-12
 "Justin Patton","Out",NA,"Jan 1",2019-01-01,2018-12-12
 "Kevin Love","Out",NA,"Jan 15",2019-01-15,2018-12-12
@@ -107,7 +110,6 @@
 "Lance Thomas","Out",NA,"Dec 15",2018-12-15,2018-12-12
 "Markelle Fultz","Out",NA,"Dec 25",2018-12-25,2018-12-12
 "Maxi Kleber","Out",NA,"Game Time Decision",2018-12-13,2018-12-12
-"Michael Porter Jr.","Out",NA,"Dec 25",2018-12-25,2018-12-12
 "Pau Gasol","Out",NA,"Jan 15",2019-01-15,2018-12-12
 "Taurean Waller-Prince","Out",NA,"Dec 26",2018-12-26,2018-12-12
 "Timofey Mozgov","Out",NA,"Dec 15",2018-12-15,2018-12-12

@@ -22,6 +22,8 @@ source(paste0(root, "/functions/trim.R"))
 
 setwd(paste0(root, "/rawdata/"))
 
+city_lat_long <- read.csv("city_lat_long.csv")
+
 team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
   rename(Team=FULL.NAME, NBAstuffer.Initials=SHORT.NAME, City=CITY) %>%
   mutate(OWN_TEAM=NBAstuffer.Initials, OWN_TEAM_NAME=OWN_TEAM) %>%
@@ -30,9 +32,6 @@ team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>%
 
   
   
-#city_lat_long <- cbind(rbindlist(lapply(split(city_names$OWN_TEAM_NAME, city_names$OWN_TEAM_NAME), function(x) return(geocode(as.character(x))))), city_names$OWN_TEAM)
-#names(city_lat_long) <- c("lon","lat","OWN_TEAM")
-
 
 ### 538 data
 ft8 <- read_html("http://projects.fivethirtyeight.com/2019-nba-predictions/")

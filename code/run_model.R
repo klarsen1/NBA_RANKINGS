@@ -29,9 +29,6 @@ current_season <- 2018
 box_scores <- readRDS(paste0(root, "/cleandata/box_scores.RDA")) %>%
   filter(playoffs==0)
 
-## Get the conferences
-conferences <- read.csv(paste(root, "/rawdata/Conferences.csv"), stringsAsFactors = FALSE)
-
 
 ### Create a date-index
 datemap <- select(box_scores, DATE, future_game, season) %>%

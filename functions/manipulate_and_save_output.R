@@ -1,5 +1,8 @@
 manipulate_and_save_output <- function(clusters_and_players, scores, model_parts, model_details, root, back_test, save, overwrite_date=NA){
   
+  ## Get the conferences
+  conferences <- read.csv(paste0(root, "/rawdata/Conferences.csv"), stringsAsFactors = FALSE)
+  
   Date <- Sys.Date()
   if (is.na(overwrite_date)==FALSE){
     Date <- overwrite_date

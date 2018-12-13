@@ -378,15 +378,20 @@ game_scores <- data.frame(rbindlist(lapply(split, function(x) spread(select(x, g
                    rename(home_team_name=H, road_team_name=R) %>%
   ungroup()
 
+game_scores$home_team_name <- trim(game_scores$home_team_name)
+game_scores$road_team_name <- trim(game_scores$road_team_name)
+game_scores$selected_team <- trim(game_scores$selected_team)
+game_scores$opposing_team <- trim(game_scores$opposing_team)
+
 saveRDS(game_scores, "GAME_SCORES.RDA")
 
 get_rest_days <- function(id){
 
-  selected <- subset(game_scores, game_id==id)$selected_team
-  opposing <- subset(game_scores, game_id==id)$opposing_team
+  selected <- subset(game_scores, game_id==id)$selected_team %>% trim()
+  opposing <- subset(game_scores, game_id==id)$opposing_team %>% trim()
   
   t <- rename(altitudes, OWN_TEAM=team, selected_team_altitude=altitude)
-  
+
   df1 <- subset(game_scores, home_team_name==selected | road_team_name==selected) %>% 
     arrange(DATE) %>%
     mutate(days_since_last_game=DATE-lag(DATE), 
@@ -552,6 +557,9 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
      left_join(select(fivethirtyeight, elo, carm_elo, opposing_team), by="opposing_team") %>%
      rename(elo_opposing_team=elo, carm_elo_opposing_team=carm_elo) %>%
      left_join(injuries, by="PLAYER_FULL_NAME") %>%
+     replace(is.na(travel_differential), 0) %>% 
+     replace(is.na(opposing_team_travel), 0) %>%
+     replace(is.na(selected_team_travel), 0) %>%
      ungroup()
 
 saveRDS(final, paste0("BOX_SCORES_", Sys.Date(), ".RDA"))

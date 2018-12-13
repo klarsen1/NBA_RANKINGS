@@ -51,7 +51,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     print(paste0("Teams for season ", thisseason2, ": ", unique(filter(history_override, season==thisseason2)$OWN_TEAM)))
   } 
   if (nrow(filter(history_override, OWN_TEAM==team2 & season==thisseason2))==0){
-    print(paste0("ERROR: no data in season ", thisseason2, " for team 2 =  ", team2))
+    print(paste0("predict_game ERROR: no data in season ", thisseason2, " for team 2 =  ", team2))
     print(paste0("Seasons for ", team2, ": ", unique(filter(history_override, OWN_TEAM==team2)$season)))
     print(paste0("Teams for season ", thisseason2, ": ", unique(filter(history_override, season==thisseason2)$OWN_TEAM)))
   } 

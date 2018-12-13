@@ -174,7 +174,8 @@ all_rosters <- bind_rows(lapply(rosters, function(x) as.data.frame(x))) %>%
   select(PLAYER_FULL_NAME, OWN_TEAM, Position, Age, Height, Weight, Salary, Team) %>%
   arrange(PLAYER_FULL_NAME, OWN_TEAM) %>%
   left_join(injuries, by="PLAYER_FULL_NAME") %>%
-  distinct(PLAYER_FULL_NAME, .keep_all=TRUE)
+  distinct(PLAYER_FULL_NAME, .keep_all=TRUE) %>%
+  mutate(OWN_TEAM=gsub("L.A.", "LA", OWN_TEAM))
  
 
 ## Save scraped data

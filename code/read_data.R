@@ -24,7 +24,7 @@ source(paste0(root, "/functions/trim.R"))
 setwd(paste0(root, "/rawdata/"))
 
 city_lat_long <- read.csv("city_lat_long.csv", stringsAsFactors = FALSE)
-city_lat_long$OWN_TEAM <- city_lat_long$OWN_TEAM %>% gsub("L.A.", "LA", .)
+city_lat_long$OWN_TEAM <- city_lat_long$OWN_TEAM %>% gsub("L.A.", "LA", .) %>% trim()
 
 team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
   rename(Team=FULL.NAME, NBAstuffer.Initials=SHORT.NAME, City=CITY) %>%
@@ -229,6 +229,10 @@ read_player_data <- function(season, first_labels, suffix){
   if ("DATASET" %in% names(data)) {data$DATA_SET <- data$DATASET}
   if ("OPPONENT_TEAM" %in% names(data)) {data$OPP_TEAM <- data$OPPONENT_TEAM}
   data$DATA_SET <- data$DATA_SET %>% gsub("NBA", "", .) %>% trim() 
+  data$OPP_TEAM %>% trim()
+  data$OWN_TEAM %>% trim()
+  data$PLAYER_FULL_NAME %>% trim()
+  data$file <- suffix
   data <- rename(data, 
                  points=PTS, 
                  assists=A,
@@ -247,7 +251,7 @@ read_player_data <- function(season, first_labels, suffix){
                  blocks=BL) %>% select(DATA_SET, DATE, PLAYER_FULL_NAME, POSITION, OWN_TEAM, OPP_TEAM, VENUE_R_H, TOT, points, 
                                        assists, offensive_rebounds, defensive_rebounds, turnovers, threepointers_made, 
                                        steals, minutes, threepoint_attempts, fieldgoal_attempts, fieldgoals_made, freethrows_made,
-                                       freethrow_attempts, fouls, blocks)
+                                       freethrow_attempts, fouls, blocks, file)
   return(data)
 }
 

@@ -1,12 +1,12 @@
 library(dplyr)
 
 ### Settings
-cutoff_season <- 2017 ## for example, 2015 cuts off the 2015-2016 season and later seasons
+cutoff_season <- 2018 ## for example, 2015 cuts off the 2015-2016 season and later seasons
 cutoff <- 8 # minutes per game. if a player plays less than this amount, he is excluded
 nclus <- 25 # number of archetypes
 
 ### Read the raw data
-setwd("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/cleandata")
+setwd(paste0(root, "/cleandata"))
 box_scores <- readRDS("BOX_SCORES.RDA")
 
 ### Get means for centroids
@@ -41,7 +41,7 @@ standardized <- scale(means_no_scrubs[,sapply(means_no_scrubs, is.numeric)])
 
 
 #### Get the final centroids
-setwd("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/centroids")
+setwd(paste0(root, "/centroids"))
 set.seed(2015)
 km <- kmeans(standardized, centers=nclus, nstart=25)
 

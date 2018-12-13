@@ -20,15 +20,17 @@ source(paste0(root, "/functions/manipulate_and_save_output.R"))
 source(paste0(root, "/functions/save_results.R"))
 source(paste0(root, "/functions/get_team_offsets.R"))
 
+root <- "/Users/thirdlovechangethisname/Documents/Code/NBA_RANKINGS"
+
 current_season <- 2018
 
 
 ## Read the box scores
-box_scores <- readRDS("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/cleandata/box_scores.RDA") %>%
+box_scores <- readRDS(paste0(root, "/cleandata/box_scores.RDA")) %>%
   filter(playoffs==0)
 
 ## Get the conferences
-conferences <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/Conferences.csv", stringsAsFactors = FALSE)
+conferences <- read.csv(paste(root, "/rawdata/Conferences.csv"), stringsAsFactors = FALSE)
 
 
 ### Create a date-index
@@ -47,7 +49,7 @@ box_scores <- inner_join(box_scores, select(datemap, DATE, DATE_INDEX, season_da
 #box_scores <- mutate(box_scores, future_game = ifelse(DATE>=as.Date('2017-02-11'), 1, 0))
 
 ## Get model variables
-model_variables <- read.csv(paste0(root, "/modeldetails/model_variables.csv", stringsAsFactors = FALSE))
+model_variables <- read.csv(paste0(root, "/modeldetails/model_variables.csv"), stringsAsFactors = FALSE)
 
 
 ### Global settings
@@ -238,7 +240,7 @@ for (i in start_index:end_index){
   }
   
   for (d in 1:length(games)){
-    pred <- predict_game(c, filter(inwindow_active, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, prior, posterior, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, cr, offsets_by_team)
+    pred <- predict_game(c, filter(inwindow_active, DATE_INDEX>j-playing_time_window), win_perc1, win_perc2, games[d], sims, subset(thisday, game_id==games[d]), nclus, prior, posterior, paste0(root, "/rawdata/"), model_variables, cr, offsets_by_team)
     scores[[counter]] <- pred[[1]]
     model_parts[[counter]] <- pred[[2]] 
     counter <- counter + 1

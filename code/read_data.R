@@ -557,9 +557,9 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
      left_join(select(fivethirtyeight, elo, carm_elo, opposing_team), by="opposing_team") %>%
      rename(elo_opposing_team=elo, carm_elo_opposing_team=carm_elo) %>%
      left_join(injuries, by="PLAYER_FULL_NAME") %>%
-     replace(is.na(travel_differential), 0) %>% 
-     replace(is.na(opposing_team_travel), 0) %>%
-     replace(is.na(selected_team_travel), 0) %>%
+     mutate(travel_differential=if_else(is.na(travel_differential), 0, travel_differential), 
+            opposing_team_travel=if_else(is.na(opposing_team_travel), 0, opposing_team_travel), 
+            selected_team_travel=if_else(is.na(selected_team_travel), 0, opposing_team_travel)) %>%
      ungroup()
 
 saveRDS(final, paste0("BOX_SCORES_", Sys.Date(), ".RDA"))

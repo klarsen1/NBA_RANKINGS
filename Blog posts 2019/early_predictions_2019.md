@@ -6,10 +6,9 @@ We're roughly 30 games into the 2018-2019 season and I finally got around to upd
 Let's get straight to the key results: the chart below shows team ranks based on predicted win-rates the Elastic model as well as the [FiveThirtyEight model](https://projects.fivethirtyeight.com/2019-nba-predictions/). The green labels indicate cities where the two models are in agreement (within 2 ranks), and the red labels denote disagreements of three ranks or more.
 
 ``` r
-library(tidyr)
 library(dplyr)
-library(knitr)
-library(ggrepel) ## downloaded from github
+library(ggrepel)
+library(tidyr)
 
  
 f <-
@@ -51,10 +50,9 @@ In order to understand why the Elastic Ranking model is favoring Toronto over Go
 The code below shows how to plot the decomposition of the playoff predictions:
 
 ``` r
-library(tidyr)
 library(dplyr)
-library(knitr)
 library(ggplot2)
+library(tidyr)
 
 f <-
   "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2018-12-13.csv"

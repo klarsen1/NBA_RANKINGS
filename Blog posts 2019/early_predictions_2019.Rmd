@@ -12,10 +12,9 @@ Let's get straight to the key results: the chart below shows team ranks based on
 
 
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
-library(tidyr)
 library(dplyr)
-library(knitr)
-library(ggrepel) ## downloaded from github
+library(ggrepel)
+library(tidyr)
 
  
 f <-
@@ -55,10 +54,9 @@ In order to understand why the Elastic Ranking model is favoring Toronto over Go
 The code below shows how to plot the decomposition of the playoff predictions:
  
 ```{r, echo=TRUE, message=FALSE, warning=FALSE}
-library(tidyr)
 library(dplyr)
-library(knitr)
 library(ggplot2)
+library(tidyr)
 
 f <-
   "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2018-12-13.csv"

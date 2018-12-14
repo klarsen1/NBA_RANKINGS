@@ -288,12 +288,13 @@ altitudes <- data.frame(read.csv("altitudes.csv", stringsAsFactors = FALSE))
 ## Read the schedule
 schedule_team_name_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
   mutate(home_team=SHORT.NAME, road_team=SHORT.NAME, 
-         home_team=gsub("L.A.", "LA", home_team), 
-         road_team=gsub("L.A.", "LA", road_team), 
-         ROAD.TEAM=FULL.NAME, 
-         HOME.TEAM=FULL.NAME)
+         home_team=gsub("L.A.", "LA", home_team) %>% trim(), 
+         road_team=gsub("L.A.", "LA", road_team) %>% gsub("Trailblazers", "Trail Blazers", .) %>% trim(), 
+         ROAD.TEAM=FULL.NAME %>% gsub("Trailblazers", "Trail Blazers", .) %>% trim(), 
+         HOME.TEAM=FULL.NAME %>% gsub("Trailblazers", "Trail Blazers", .) %>% trim())
 
 schedule <- data.frame(read_excel("schedule.xlsx", sheet=1)) %>% mutate(DATE=as.Date(DATE)) %>%
+  mutate(HOME.TEAM=trim(HOME.TEAM), ROAD.ROAD=trim(ROAD.TEAM)) %>%
   inner_join(select(schedule_team_name_map, HOME.TEAM, home_team), by="HOME.TEAM") %>%
   inner_join(select(schedule_team_name_map, ROAD.TEAM, road_team), by="ROAD.TEAM") %>%
   select(DATE, home_team, road_team)

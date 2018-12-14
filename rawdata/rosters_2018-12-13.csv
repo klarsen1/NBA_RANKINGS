@@ -145,7 +145,7 @@
 "Enes Kanter","New York","C",26,"6' 11""",250,18622514,"New York Knicks",NA,NA,NA,NA,NA
 "Eric Bledsoe","Milwaukee","PG",29,"6' 1""",205,1.5e+07,"Milwaukee Bucks",NA,NA,NA,NA,NA
 "Eric Gordon","Houston","SG",29,"6' 4""",215,13500375,"Houston Rockets",NA,NA,NA,NA,NA
-"Eric Moreland","Phoenix","PF",26,"6' 10""",238,1042584,"Phoenix Suns",NA,NA,NA,NA,NA
+"Eric Moreland","Phoenix","C",26,"6' 10""",238,1042584,"Phoenix Suns",NA,NA,NA,NA,NA
 "Ersan Ilyasova","Milwaukee","PF",31,"6' 10""",235,7e+06,"Milwaukee Bucks",NA,NA,NA,NA,NA
 "Evan Fournier","Orlando","SG",26,"6' 7""",205,1.7e+07,"Orlando Magic","Day-To-Day","Dec 12",NA,2018-12-14,2018-12-13
 "Evan Turner","Portland","SG",30,"6' 7""",220,17868853,"Portland Trailblazers",NA,NA,NA,NA,NA
@@ -247,7 +247,7 @@
 "Jonas Jerebko","Golden State","PF",31,"6' 10""",231,1512601,"Golden State Warriors",NA,NA,NA,NA,NA
 "Jonas Valanciunas","Toronto","C",26,"7' 0""",265,16539326,"Toronto Raptors","Out","Dec 13","Jan 13",2019-01-13,2018-12-13
 "Jonathan Isaac","Orlando","PF",21,"6' 10""",210,4969080,"Orlando Magic",NA,NA,NA,NA,NA
-"Jonathon Simmons","Orlando","SF",29,"6' 6""",195,6e+06,"Orlando Magic","Day-To-Day","Dec 13","Game Time Decision",2018-12-14,2018-12-13
+"Jonathon Simmons","Orlando","SF",29,"6' 6""",195,6e+06,"Orlando Magic","Day-To-Day","Dec 13",NA,2018-12-14,2018-12-13
 "Jordan Bell","Golden State","PF",23,"6' 9""",224,1378242,"Golden State Warriors",NA,NA,NA,NA,NA
 "Jordan Clarkson","Cleveland","PG",26,"6' 5""",194,12500000,"Cleveland Cavaliers","Day-To-Day","Dec 10",NA,2018-12-14,2018-12-13
 "Jordan Loyd","Toronto","PG",25,"6' 4""",210,NA,"Toronto Raptors",NA,NA,NA,NA,NA
@@ -333,7 +333,7 @@
 "Marvin Williams","Charlotte","PF",32,"6' 9""",237,14087500,"Charlotte Hornets",NA,NA,NA,NA,NA
 "Mason Plumlee","Denver","PF",28,"6' 11""",235,12917808,"Denver Nuggets",NA,NA,NA,NA,NA
 "Matthew Dellavedova","Cleveland","PG",28,"6' 4""",200,9607500,"Cleveland Cavaliers",NA,NA,NA,NA,NA
-"Maurice Harkless","Portland","SF",25,"6' 9""",220,10837079,"Portland Trailblazers","Day-To-Day","Dec 12","Game Time Decision",2018-12-14,2018-12-13
+"Maurice Harkless","Portland","SF",25,"6' 9""",220,10837079,"Portland Trailblazers","Day-To-Day","Dec 12",NA,2018-12-14,2018-12-13
 "Maximilian Kleber","Dallas","PF",26,"6' 11""",240,1378242,"Dallas Mavericks",NA,NA,NA,NA,NA
 "Melvin Frazier Jr.","Orlando","SG",22,"6' 6""",200,1050000,"Orlando Magic",NA,NA,NA,NA,NA
 "Meyers Leonard","Portland","PF",26,"7' 1""",255,10595506,"Portland Trailblazers",NA,NA,NA,NA,NA
@@ -342,7 +342,7 @@
 "Michael Kidd-Gilchrist","Charlotte","SF",25,"6' 7""",232,1.3e+07,"Charlotte Hornets","Day-To-Day","Dec 13","Game Time Decision",2018-12-14,2018-12-13
 "Michael Porter Jr.","Denver","PF",20,"6' 10""",210,2894160,"Denver Nuggets","Out","Dec 12","Jan 13",2019-01-13,2018-12-13
 "Mikal Bridges","Phoenix","SF",22,"6' 7""",210,3552960,"Phoenix Suns",NA,NA,NA,NA,NA
-"Mike Conley","Memphis","PG",31,"6' 1""",175,30521115,"Memphis Grizzlies","Day-To-Day","Dec 9",NA,2018-12-14,2018-12-13
+"Mike Conley","Memphis","PG",31,"6' 1""",175,30521115,"Memphis Grizzlies","Day-To-Day","Dec 9","Game Time Decision",2018-12-14,2018-12-13
 "Mike Muscala","Philadelphia","PF",27,"6' 11""",240,5e+06,"Philadelphia 76ers","Day-To-Day","Dec 12","Game Time Decision",2018-12-14,2018-12-13
 "Mike Scott","LA Clippers","PF",30,"6' 8""",237,4320500,"Los Angeles Clippers",NA,NA,NA,NA,NA
 "Miles Bridges","Charlotte","SF",20,"6' 7""",225,3206640,"Charlotte Hornets",NA,NA,NA,NA,NA

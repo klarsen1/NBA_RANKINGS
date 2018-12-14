@@ -1,0 +1,98 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+  
+# Golden State will Three Peat
+  
+
+
+... [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS). 
+
+For those who didn't see my previous post on the Elastic NBA Ratings, they are based on a statistical model that predicts the winner of a given match-up using variables such as team performance, the quality of the roster -- as measured by the surplus of key player *archetypes* -- as well as circumstances (travel, home court advantage, etc).
+
+Let's get straight to the key results:
+
+* Toronto gets the top rating, followed by Golden State
+
+
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+library(tidyr)
+library(dplyr)
+library(knitr)
+library(ggrepel) ## downloaded from github
+
+ 
+f <-
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-27.csv"
+ 
+all_rankings <- read.csv(f) %>%
+  mutate(elastic_ranking=min_rank(-season_win_rate),
+         FiveThirtyEight=min_rank(-pred_win_rate_538),
+         absdiff=ifelse(abs(elastic_ranking-FiveThirtyEight)>4, 0, 1)) %>%
+  select(team, conference, division, elastic_ranking, FiveThirtyEight, absdiff) %>%
+  arrange(elastic_ranking)
+ 
+kable(select(all_rankings, conference, division, team, elastic_ranking, FiveThirtyEight))
+
+ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
+  xlab("Elastic Ranking") + ylab("FiveThirtyEight") +
+  geom_point(size = 2, color = 'black') +
+  geom_smooth(method='lm') + 
+  geom_label_repel(aes(elastic_ranking, FiveThirtyEight, label = team, fill=factor(absdiff)),
+                  fontface = 'bold', color = 'white', size=2,
+                  box.padding = unit(0.35, "lines"),
+                  point.padding = unit(0.5, "lines")) + 
+  theme(legend.title = element_blank()) + theme(legend.position="none")
+
+```
+
+
+# Making Sense of the Predictions
+
+In order to understand why the model is favoring the Warriors and Boston, we need to *decompose* the predictions. Decomposition is an effective way of understanding model behavior, and easily done when your model is additive (the Elastic model is additive before we convert log-odds to probabilities).
+
+As described in the [readme file](https://github.com/klarsen1/NBA_RANKINGS), the R code behind the Elastic model automatically decomposes the predictions into three parts:
+ 
+* Roster -- archetype allocation deficits/surpluses. This group of variables reflects the quality of the roster.
+* Performance -- e.g., win percentages, previous match-ups.
+* Circumstances -- e.g., travel, rest, home-court advantage
+ 
+The code below shows how to plot the decomposition of the playoff predictions:
+ 
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+library(tidyr)
+library(dplyr)
+library(knitr)
+library(ggplot2)
+
+f <-
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2018-12-13.CSV"
+ 
+center <- function(x){return(x-median(x))}
+read.csv(f, stringsAsFactors = FALSE) %>%
+  select(selected_team, roster, circumstances, performance) %>%
+  group_by(selected_team) %>%
+  summarise_each(funs(mean)) %>% ## get averages across games by team
+  ungroup() %>%
+  mutate_each(funs(center), which(sapply(., is.numeric))) %>% ## standardize across teams
+  gather(modelpart, value, roster:performance) %>% ## transpose
+  rename(team=selected_team) %>%
+  ggplot(aes(team, value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
+  xlab("") + ylab("") + theme(legend.title = element_blank())
+ 
+```
+
+### So What Does this Chart Mean?
+
+The bars show the contribution from each part of the model. Longer, more positive bars mean that the given team is stronger in that category compared to its playoff competitors, and vice versa for negative bars. 
+
+Note that the bars are *relative* to the competitors a given team might meet in the playoff. This means that the bars are not apples-to-apples across teams as some teams will face off against better competition. For example, Portland's bars essentially reflect how Portland stacks up against Golden State. Nevertheless, we can get some interesting insights from this chart:
+
+* Golden State gets the highest scores of all playoff teams, both in terms of performance (weighted winning percentage) and relative quality of the roster (surplus of stronger player "archetypes"").
+
+# Last Words
+
+

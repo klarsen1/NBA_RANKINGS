@@ -289,7 +289,7 @@ altitudes <- data.frame(read.csv("altitudes.csv", stringsAsFactors = FALSE))
 schedule_team_name_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
   mutate(home_team=SHORT.NAME, road_team=SHORT.NAME, 
          home_team=gsub("L.A.", "LA", home_team) %>% trim(), 
-         road_team=gsub("L.A.", "LA", road_team) %>% gsub("Trailblazers", "Trail Blazers", .) %>% trim(), 
+         road_team=gsub("L.A.", "LA", road_team) %>% trim(), 
          ROAD.TEAM=FULL.NAME %>% gsub("Trailblazers", "Trail Blazers", .) %>% trim(), 
          HOME.TEAM=FULL.NAME %>% gsub("Trailblazers", "Trail Blazers", .) %>% trim())
 

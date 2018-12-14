@@ -1,17 +1,11 @@
----
-output:
-  md_document:
-    variant: markdown_github
----
-  
-# Golden State Will Three-peat
-  
+Golden State Will Three-peat
+============================
+
 We're roughly 30 games into the 2018-2019 season and I finnally got around to update the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS). For those who didn't see my previous posts on the Elastic NBA Ratings, they are based on a statistical model that predicts the winner of a given match-up using variables such as team performance, the quality of the roster, and circumstances (travel, home court advantage, etc).
 
 Let's get straight to the key results: the chart below shows team ranks based on predicted win-rates the Elastic model as well as the [FiveThirtyEight model](https://projects.fivethirtyeight.com/2019-nba-predictions/). The green labels indicate cities where the two models are in agreement (within 2 ranks), and the red labels donate disagreement of three ranks or more.
 
-
-```{r, echo=TRUE, message=FALSE, warning=FALSE}
+``` r
 library(tidyr)
 library(dplyr)
 library(knitr)
@@ -37,24 +31,26 @@ ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
                   box.padding = unit(0.35, "lines"),
                   point.padding = unit(0.5, "lines")) + 
   theme(legend.title = element_blank()) + theme(legend.position="none")
-
 ```
+
+![](early_predictions_2019_files/figure-markdown_github/unnamed-chunk-1-1.png)
 
 The models agree that Toronto and Golden State are two the top teams. If we believe this, we have to believe that these two teams will meet in the finals. But which team is the best team? Who will be the NBA champs? If go by the chart above, and consider the fact that Toronto beat Goldenb State in their two only match-ups this year, you have to go with Toronto.
 
 But there's more to this.
 
-# Making Sense of the Predictions
+Making Sense of the Predictions
+===============================
 
 In order to understand why the Elastic Ranking model is favoring Toronto over Golden State, we can *decompose* the prediction into three parts:
 
-* Roster -- archetype allocation deficits/surpluses. This group of variables reflects the quality of the roster.
-* Performance -- e.g., win percentages, previous match-ups.
-* Circumstances -- e.g., travel, rest, home-court advantage
- 
+-   Roster -- archetype allocation deficits/surpluses. This group of variables reflects the quality of the roster.
+-   Performance -- e.g., win percentages, previous match-ups.
+-   Circumstances -- e.g., travel, rest, home-court advantage
+
 The code below shows how to plot the decomposition of the playoff predictions:
- 
-```{r, echo=TRUE, message=FALSE, warning=FALSE}
+
+``` r
 library(tidyr)
 library(dplyr)
 library(knitr)
@@ -76,23 +72,23 @@ read.csv(f, stringsAsFactors = FALSE) %>%
   rename(team=selected_team) %>%
   ggplot(aes(x=reorder(team, order), value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
   xlab("") + ylab("") + theme(legend.title = element_blank())
- 
 ```
+
+![](early_predictions_2019_files/figure-markdown_github/unnamed-chunk-2-1.png)
 
 ### So What Does this Chart Mean?
 
-The bars show the contribution from each part of the model. Longer, more positive bars mean that the given team is stronger in that category compared to its playoff competitors, and vice versa for negative bars. 
+The bars show the contribution from each part of the model. Longer, more positive bars mean that the given team is stronger in that category compared to its playoff competitors, and vice versa for negative bars.
 
 Here are the take-aways:
 
-* Toronto is the best team right now, but the decomposition shows that their top rating is mainly coming fromn the team's performance this season. This could mean that Toronto is punching above its weight.
+-   Toronto is the best team right now, but the decomposition shows that their top rating is mainly coming fromn the team's performance this season. This could mean that Toronto is punching above its weight.
 
-* Golden State has a better roster than Toronto. But they' might're clearly underperformning this season -- which is typical for a team coming off two straight championships and four straight finals appearences.
+-   Golden State has a better roster than Toronto. But they' might're clearly underperformning this season -- which is typical for a team coming off two straight championships and four straight finals appearences.
 
-* Houston has a very strong and balanced roster, but they can't seem to get it together.
+-   Houston has a very strong and balanced roster, but they can't seem to get it together.
 
-# Last words
+Last words
+==========
 
-You know where I'm going with this. If Golden State meets Toronto in the finals, I have no doubt Golden State will win --  barring any major injuries or kicks to the groin. The finals is a different beast than the regular season, and Golden State has more experience dealing with this than any other team. Also, they'l be fired up. Whatever it is that's leading the current underperformance will go away once we're in June. In fact, I think that the largest threat to Golden State is a functioning Houston team.
-
-
+You know where I'm going with this. If Golden State meets Toronto in the finals, I have no doubt Golden State will win -- barring any major injuries or kicks to the groin. The finals is a different beast than the regular season, and Golden State has more experience dealing with this than any other team. Also, they'l be fired up. Whatever it is that's leading the current underperformance will go away once we're in June. In fact, I think that the largest threat to Golden State is a functioning Houston team.

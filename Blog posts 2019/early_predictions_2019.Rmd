@@ -42,9 +42,9 @@ ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
 
 The models agree that Toronto and Golden State are two the top teams. If we believe this, we have to believe that these two teams will meet in the finals. But which team is the best team? Who will be the NBA champs? If go by the chart above, and consider the fact that Toronto beat Golden State in their two only match-ups this year, you have to go with Toronto.
 
-But there's more to it than this. 
+But there's more to it than this. When digging deeper into the predictions, a different picture emerges. 
 
-# Making Sense of the Predictions
+# Decomposing the predictions
 
 In order to understand why the Elastic Ranking model is favoring Toronto over Golden State, we can *decompose* the contributions to the model predictions into three parts:
 
@@ -64,7 +64,7 @@ f <-
   "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2018-12-13.csv"
  
 center <- function(x){return(x-median(x))}
-read.csv(f, stringsAsFactors = FALSE) %>%
+d <- read.csv(f, stringsAsFactors = FALSE) %>%
   select(selected_team, roster, circumstances, performance) %>%
   group_by(selected_team) %>%
   summarise_each(funs(mean)) %>% ## get averages across games by team
@@ -73,19 +73,20 @@ read.csv(f, stringsAsFactors = FALSE) %>%
   ungroup() %>%
   mutate_each(funs(center), which(sapply(., is.numeric))) %>% ## standardize across teams
   gather(modelpart, value, roster:performance) %>% ## transpose
-  rename(team=selected_team) %>%
-  ggplot(aes(x=reorder(team, order), value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
+  rename(team=selected_team)
+
+ggplot(data=d, aes(x=reorder(team, order), value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
   xlab("") + ylab("") + theme(legend.title = element_blank())
  
 ```
 
-The bars show the contribution from each part of the model. Longer, more positive bars mean that the given team is stronger in that category compared to its playoff competitors. Here are the takeaways:
+The bars show the contribution from each part of the model. A value close to zero can be considered average. Here are the takeaways:
 
 * Toronto is the best team right now, but the decomposition shows that their top rating is mainly coming from the team's performance this season. This could mean that Toronto is punching above its weight.
 
 * Golden State has a better roster than Toronto. But the Dubs are clearly under-performing this season so far -- which is typical for a team coming off two straight championships and four straight finals appearances.
 
-* Houston has a very strong and balanced roster, but they can't seem to get it together.
+* Houston has a very strong and balanced roster, but they can't seem to get it together. They're under the 50% mark so far.
 
 # The Final Takes
 

@@ -26,12 +26,12 @@ library(ggrepel) ## downloaded from github
 
  
 f <-
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2016-11-27.csv"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/rankings/rankings_2018-12-13.csv"
  
 all_rankings <- read.csv(f) %>%
-  mutate(elastic_ranking=min_rank(-season_win_rate),
-         FiveThirtyEight=min_rank(-pred_win_rate_538),
-         absdiff=ifelse(abs(elastic_ranking-FiveThirtyEight)>4, 0, 1)) %>%
+  mutate(elastic_ranking=min_rank(season_win_rate),
+         FiveThirtyEight=min_rank(pred_win_rate_538),
+         absdiff=ifelse(abs(elastic_ranking-FiveThirtyEight)>3, 0, 1)) %>%
   select(team, conference, division, elastic_ranking, FiveThirtyEight, absdiff) %>%
   arrange(elastic_ranking)
  
@@ -69,18 +69,20 @@ library(knitr)
 library(ggplot2)
 
 f <-
-  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2018-12-13.CSV"
+  "https://raw.githubusercontent.com/klarsen1/NBA_RANKINGS/master/modeldetails/score_decomp_2018-12-13.csv"
  
 center <- function(x){return(x-median(x))}
-read.csv(f, stringsAsFactors = FALSE) %>%
+d <- read.csv(f, stringsAsFactors = FALSE) %>%
   select(selected_team, roster, circumstances, performance) %>%
   group_by(selected_team) %>%
   summarise_each(funs(mean)) %>% ## get averages across games by team
+  mutate(total=roster+circumstances+performance) %>%
+  arrange(total) %>%
   ungroup() %>%
   mutate_each(funs(center), which(sapply(., is.numeric))) %>% ## standardize across teams
   gather(modelpart, value, roster:performance) %>% ## transpose
   rename(team=selected_team) %>%
-  ggplot(aes(team, value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
+  ggplot(aes(x=reorder(team, total), value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
   xlab("") + ylab("") + theme(legend.title = element_blank())
  
 ```

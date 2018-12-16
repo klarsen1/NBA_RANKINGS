@@ -1,7 +1,7 @@
 The Golden State Warriors will Three-peat
 =========================================
 
-We're roughly 30 games into the 2018–2019 season and it's the perfect time to run the Elastic NBA Ratings and analyze the results.
+We're roughly 30 games into the 2018–2019 season and it's the perfect time to run the Elastic NBA Ratings and analyze the results. What else could be more important?
 
 If you're not familiar with the Elastic NBA Ratings, here's the short version: the ratings are based on a statistical model that predicts the winner of future match-ups using variables such as team performance, the quality of the roster, and circumstances (travel, home court advantage, etc). For more details, see this [readme file](https://github.com/klarsen1/NBA_RANKINGS).
 
@@ -48,7 +48,7 @@ In order to understand why the Elastic Ranking model is favoring Toronto over Go
 
 -   Roster -- archetype allocation deficits/surpluses. This group of variables reflects the quality of the roster.
 
--   Current performance --  trailing win percentages, previous match-ups.
+-   Current performance -- trailing win percentages, previous match-ups.
 
 -   Circumstances -- e.g., travel, rest, home-court advantage.
 
@@ -84,7 +84,7 @@ The bars show the normalized contribution from each part of the model. A value c
 
 -   Toronto is the best team right now, but the decomposition shows that their top rating is mainly coming from the team's performance this season. This could mean that Toronto is punching above its weight.
 
--   Golden State has a better roster than Toronto. But the Dubs are clearly under-performing this season so far - which is typical for a team coming off two straight championships and four straight finals appearances.
+-   Golden State has a better roster than Toronto. But the Dubs are clearly under-performing this season so far -- which is typical for a team coming off two straight championships and four straight finals appearances.
 
 -   Houston has a very strong and balanced roster, but they can't seem to get it together. They're under the 50% mark so far this season.
 
@@ -93,4 +93,4 @@ The bars show the normalized contribution from each part of the model. A value c
 The Final Takes
 ---------------
 
-You know where I'm going with this. If Golden State meets Toronto in the finals, I have no doubt Golden State will win - barring any major injuries or kicks to the groin. The NBA finals is a different beast than the regular season, and no current team has more experience than Golden State when it comes to playing on the big stage. They'll be motivated and they'll three-peat. In fact, I'd submit that the largest threat to Golden State is a fully functioning Houston team, not Toronto.
+You know where I'm going with this. If Golden State meets Toronto in the finals, I have no doubt Golden State will win -- barring any major injuries or kicks to the groin. The NBA finals is a different beast than the regular season, and no current team has more experience than Golden State when it comes to playing on the big stage. They'll be motivated and they'll three-peat. In fact, I'd submit that the largest threat to Golden State is a fully functioning Houston team, not Toronto.

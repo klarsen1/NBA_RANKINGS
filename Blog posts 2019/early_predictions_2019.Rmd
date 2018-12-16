@@ -4,7 +4,7 @@ output:
     variant: markdown_github
 ---
   
-# Golden State will Three-peat
+# The Golden State Warriors will Three-peat
   
 We're roughly 30 games into the 2018-2019 season and I finally got around to updating the [Elastic NBA Ratings](https://github.com/klarsen1/NBA_RANKINGS). For those who didn't see my previous posts on the Elastic NBA Ratings, they are based on a statistical model that predicts the winner of a given match-up using variables such as team performance, the quality of the roster, and circumstances (travel, home court advantage, etc).
 

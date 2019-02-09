@@ -1,126 +1,156 @@
 "PLAYER_FULL_NAME","injury_status","injury_date","clean_note","return_date","injury_scrape_date"
-"Al Horford","Out","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"Alex Poythress","Out","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"Allen Crabbe","Out","Dec 22","Dec 26",2018-12-26,2018-12-22
-"Allonzo Trier","Out","Dec 18","Game Time Decision",2018-12-23,2018-12-22
-"Andre Drummond","Day-To-Day","Dec 21",NA,2018-12-23,2018-12-22
-"Anthony Davis","Day-To-Day","Dec 21",NA,2018-12-23,2018-12-22
-"Aron Baynes","Out","Dec 20","Jan 21",2019-01-21,2018-12-22
-"Blake Griffin","Day-To-Day","Dec 19",NA,2018-12-23,2018-12-22
-"Bobby Portis","Out","Dec 20","Jan 3",2019-01-03,2018-12-22
-"Bogdan Bogdanovic","Day-To-Day","Dec 21",NA,2018-12-23,2018-12-22
-"Brandon Ingram","Out","Dec 22",NA,2018-12-23,2018-12-22
-"Cameron Payne","Day-To-Day","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"Chris Paul","Out","Dec 21","Jan 5",2019-01-05,2018-12-22
-"Damyean Dotson","Out","Dec 19",NA,2018-12-23,2018-12-22
-"Danny Green","Day-To-Day","Dec 22",NA,2018-12-23,2018-12-22
-"David Nwaba","Day-To-Day","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"DeAndre Jordan","Day-To-Day","Dec 20",NA,2018-12-23,2018-12-22
-"Dennis Schroder","Suspension","Dec 19",NA,2018-12-23,2018-12-22
-"Dennis Smith Jr.","Out","Dec 21","Dec 26",2018-12-26,2018-12-22
-"Derrick Rose","Day-To-Day","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"Dillon Brooks","Out","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"Dion Waiters","Out","Dec 19","Jan 2",2019-01-02,2018-12-22
-"Dwight Howard","Out","Dec 19","Jan 30",2019-01-30,2018-12-22
-"Dzanan Musa","Out","Dec 21","Jan 28",2019-01-28,2018-12-22
-"Ersan Ilyasova","Out","Dec 22","Dec 27",2018-12-27,2018-12-22
-"Fred VanVleet","Day-To-Day","Dec 18",NA,2018-12-23,2018-12-22
-"Gary Harris","Out","Dec 21","Jan 1",2019-01-01,2018-12-22
-"Goran Dragic","Out","Dec 19","Feb 23",2019-02-23,2018-12-22
-"Guerschon Yabusele","Out","Dec 21",NA,2018-12-23,2018-12-22
-"Ian Clark","Day-To-Day","Dec 20",NA,2018-12-23,2018-12-22
-"Iman Shumpert","Out","Dec 22",NA,2018-12-23,2018-12-22
-"Isaiah Briscoe","Day-To-Day","Dec 19",NA,2018-12-23,2018-12-22
-"Ivica Zubac","Day-To-Day","Dec 21",NA,2018-12-23,2018-12-22
-"J.J. Barea","Day-To-Day","Dec 21",NA,2018-12-23,2018-12-22
-"Jabari Parker","Out","Dec 22",NA,2018-12-23,2018-12-22
-"JaMychal Green","Day-To-Day","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"JaVale McGee","Out","Dec 21","Game Time Decision",2018-12-23,2018-12-22
-"Jaylen Brown","Day-To-Day","Dec 18",NA,2018-12-23,2018-12-22
-"Jeff Teague","Out","Dec 21","Dec 28",2018-12-28,2018-12-22
-"Jerome Robinson","Out","Dec 19","Game Time Decision",2018-12-23,2018-12-22
-"Jerryd Bayless","Out","Dec 19",NA,2018-12-23,2018-12-22
-"Joakim Noah","Day-To-Day","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"John Collins","Day-To-Day","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"John Wall","Day-To-Day","Dec 22","Dec 23",2018-12-23,2018-12-22
-"Jonah Bolden","Out","Dec 21",NA,2018-12-23,2018-12-22
-"Jonathon Simmons","Day-To-Day","Dec 21","Game Time Decision",2018-12-23,2018-12-22
-"Jordan Clarkson","Day-To-Day","Dec 18",NA,2018-12-23,2018-12-22
-"Josh Richardson","Day-To-Day","Dec 18",NA,2018-12-23,2018-12-22
-"Julius Randle","Day-To-Day","Dec 21",NA,2018-12-23,2018-12-22
-"Justise Winslow","Day-To-Day","Dec 21",NA,2018-12-23,2018-12-22
-"Kawhi Leonard","Day-To-Day","Dec 22","Dec 26",2018-12-26,2018-12-22
-"Kelly Oubre Jr.","Day-To-Day","Dec 18",NA,2018-12-23,2018-12-22
-"Kristaps Porzingis","Out","Dec 21","Mar 1",2019-03-01,2018-12-22
-"Kyle Anderson","Day-To-Day","Dec 20",NA,2018-12-23,2018-12-22
-"Kyle Lowry","Out","Dec 22",NA,2018-12-23,2018-12-22
-"LeBron James","Day-To-Day","Dec 21",NA,2018-12-23,2018-12-22
-"Lou Williams","Out","Dec 21",NA,2018-12-23,2018-12-22
-"Luc Mbah a Moute","Out","Dec 19","Game Time Decision",2018-12-23,2018-12-22
-"Malcolm Brogdon","Day-To-Day","Dec 22","Dec 25",2018-12-25,2018-12-22
-"Marcus Morris","Day-To-Day","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"Markelle Fultz","Out","Dec 22","Jan 1",2019-01-01,2018-12-22
-"Markieff Morris","Day-To-Day","Dec 21",NA,2018-12-23,2018-12-22
-"Matthew Dellavedova","Day-To-Day","Dec 19","Game Time Decision",2018-12-23,2018-12-22
-"Michael Beasley","Out","Dec 21",NA,2018-12-23,2018-12-22
-"Mike Conley","Day-To-Day","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"Miles Plumlee","Out","Dec 22","Dec 26",2018-12-26,2018-12-22
-"Mitchell Robinson","Out","Dec 21","Game Time Decision",2018-12-23,2018-12-22
-"Nene Hilario","Day-To-Day","Dec 19",NA,2018-12-23,2018-12-22
-"Nikola Mirotic","Out","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"Nikola Vucevic","Day-To-Day","Dec 19",NA,2018-12-23,2018-12-22
-"Norman Powell","Out","Dec 18",NA,2018-12-23,2018-12-22
-"Omari Spellman","Out","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"Omri Casspi","Day-To-Day","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"Otto Porter Jr.","Out","Dec 21","Dec 23",2018-12-23,2018-12-22
-"Pascal Siakam","Day-To-Day","Dec 18",NA,2018-12-23,2018-12-22
-"Patrick McCaw","Out","Dec 20",NA,2018-12-23,2018-12-22
-"Rajon Rondo","Out","Dec 22",NA,2018-12-23,2018-12-22
-"Raymond Felton","Suspension","Dec 19",NA,2018-12-23,2018-12-22
-"Rodney Hood","Day-To-Day","Dec 22","Dec 26",2018-12-26,2018-12-22
-"Rondae Hollis-Jefferson","Day-To-Day","Dec 19",NA,2018-12-23,2018-12-22
-"Ryan Broekhoff","Day-To-Day","Dec 21","Game Time Decision",2018-12-23,2018-12-22
-"Salah Mejri","Day-To-Day","Dec 20",NA,2018-12-23,2018-12-22
-"Serge Ibaka","Out","Dec 22","Dec 26",2018-12-26,2018-12-22
-"Tim Hardaway Jr.","Day-To-Day","Dec 18",NA,2018-12-23,2018-12-22
-"Treveon Graham","Out","Dec 18","Game Time Decision",2018-12-23,2018-12-22
-"Tyler Dorsey","Day-To-Day","Dec 18",NA,2018-12-23,2018-12-22
-"Tyler Johnson","Day-To-Day","Dec 19",NA,2018-12-23,2018-12-22
-"Tyreke Evans","Day-To-Day","Dec 22","Game Time Decision",2018-12-23,2018-12-22
-"Tyson Chandler","Day-To-Day","Dec 21",NA,2018-12-23,2018-12-22
-"Wesley Matthews","Day-To-Day","Dec 21",NA,2018-12-23,2018-12-22
-"Wilson Chandler","Day-To-Day","Dec 22","Dec 25",2018-12-25,2018-12-22
-"Yuta Watanabe","Day-To-Day","Dec 18",NA,2018-12-23,2018-12-22
-"Zach LaVine","Out","Dec 19","Jan 2",2019-01-02,2018-12-22
-"Zhaire Smith","Out","Dec 22","Jan 15",2019-01-15,2018-12-22
-"Andre Roberson","Out",NA,"Jan 10",2019-01-10,2018-12-22
-"Anfernee Simons","Out",NA,"Game Time Decision",2018-12-23,2018-12-22
-"Caris LeVert","Out",NA,"Feb 1",2019-02-01,2018-12-22
-"Carmelo Anthony","Out",NA,"Dec 25",2018-12-25,2018-12-22
-"Chandler Parsons","Out",NA,"Dec 26",2018-12-26,2018-12-22
-"Damian Jones","Out",NA,"Apr 15",2019-04-15,2018-12-22
-"Dejounte Murray","Out",NA,"Out for the season",2019-12-22,2018-12-22
-"DeMarcus Cousins","Out",NA,"Jan 1",2019-01-01,2018-12-22
-"Denzel Valentine","Out",NA,"Out for the season",2019-12-22,2018-12-22
-"Elfrid Payton","Out",NA,"Jan 2",2019-01-02,2018-12-22
-"Glenn Robinson III","Out",NA,"Dec 26",2018-12-26,2018-12-22
-"Henry Ellenson","Out",NA,"Dec 26",2018-12-26,2018-12-22
-"Isaiah Thomas","Out",NA,"Dec 23",2018-12-23,2018-12-22
-"Ish Smith","Out",NA,"Dec 28",2018-12-28,2018-12-22
-"Jabari Bird","Out",NA,"Jan 2",2019-01-02,2018-12-22
-"James Ennis III","Out",NA,"Dec 25",2018-12-25,2018-12-22
-"Jarred Vanderbilt","Out",NA,"Dec 26",2018-12-26,2018-12-22
-"John Henson","Out",NA,"Feb 19",2019-02-19,2018-12-22
-"Jonas Valanciunas","Out",NA,"Jan 13",2019-01-13,2018-12-22
-"Justin Patton","Out",NA,"Jan 1",2019-01-01,2018-12-22
-"Kevin Love","Out",NA,"Jan 15",2019-01-15,2018-12-22
-"Marvin Bagley III","Out",NA,"Dec 26",2018-12-26,2018-12-22
-"Michael Porter Jr.","Out",NA,"Jan 13",2019-01-13,2018-12-22
-"Naz Mitrou-Long","Out",NA,"Game Time Decision",2018-12-23,2018-12-22
-"Pau Gasol","Out",NA,"Jan 15",2019-01-15,2018-12-22
-"Paul Millsap","Out",NA,"Jan 15",2019-01-15,2018-12-22
-"Taurean Waller-Prince","Out",NA,"Dec 26",2018-12-26,2018-12-22
-"Timofey Mozgov","Out",NA,"Game Time Decision",2018-12-23,2018-12-22
-"Tristan Thompson","Out",NA,"Dec 26",2018-12-26,2018-12-22
-"Tyler Davis","Out",NA,"Game Time Decision",2018-12-23,2018-12-22
-"Will Barton","Out",NA,"Dec 26",2018-12-26,2018-12-22
+"Alec Burks","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Alex Abrines","Out","Feb 9",NA,2019-02-10,2019-02-09
+"Allen Crabbe","Out","Feb 6",NA,2019-02-10,2019-02-09
+"Anthony Davis","Day-To-Day","Feb 9",NA,2019-02-10,2019-02-09
+"Aron Baynes","Out","Feb 5","Feb 21",2019-02-21,2019-02-09
+"Avery Bradley","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Ben McLemore","Day-To-Day","Feb 9",NA,2019-02-10,2019-02-09
+"Boban Marjanovic","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Bobby Portis","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Brandon Knight","Day-To-Day","Feb 8",NA,2019-02-10,2019-02-09
+"Caleb Swanigan","Day-To-Day","Feb 8","Game Time Decision",2019-02-10,2019-02-09
+"Caris LeVert","Out","Feb 8",NA,2019-02-10,2019-02-09
+"Cedi Osman","Out","Feb 9","Feb 11",2019-02-11,2019-02-09
+"Chandler Parsons","Out","Feb 9","Feb 22",2019-02-22,2019-02-09
+"CJ Miles","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Cody Zeller","Out","Feb 5",NA,2019-02-10,2019-02-09
+"Corey Brewer","Day-To-Day","Feb 8",NA,2019-02-10,2019-02-09
+"Damion Lee","Day-To-Day","Feb 8","Game Time Decision",2019-02-10,2019-02-09
+"Daniel Theis","Day-To-Day","Feb 8",NA,2019-02-10,2019-02-09
+"Danilo Gallinari","Out","Feb 7",NA,2019-02-10,2019-02-09
+"De'Anthony Melton","Out","Feb 9","Game Time Decision",2019-02-10,2019-02-09
+"Delon Wright","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"DeMar DeRozan","Day-To-Day","Feb 5",NA,2019-02-10,2019-02-09
+"Derrick Rose","Day-To-Day","Feb 8","Game Time Decision",2019-02-10,2019-02-09
+"Derrick White","Out","Feb 7","Feb 22",2019-02-22,2019-02-09
+"Devin Booker","Day-To-Day","Feb 9","Game Time Decision",2019-02-10,2019-02-09
+"Donte DiVincenzo","Out","Feb 9","Feb 11",2019-02-11,2019-02-09
+"Doug McDermott","Out","Feb 9","Feb 11",2019-02-11,2019-02-09
+"E'Twaun Moore","Out","Feb 9","Game Time Decision",2019-02-10,2019-02-09
+"Elfrid Payton","Out","Feb 9","Feb 12",2019-02-12,2019-02-09
+"Emanuel Terry","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Eric Gordon","Day-To-Day","Feb 5",NA,2019-02-10,2019-02-09
+"Frank Ntilikina","Out","Feb 8","Feb 22",2019-02-22,2019-02-09
+"Garrett Temple","Out","Feb 9",NA,2019-02-10,2019-02-09
+"Gary Harris","Out","Feb 7","Game Time Decision",2019-02-10,2019-02-09
+"George Hill","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Giannis Antetokounmpo","Day-To-Day","Feb 9","Feb 11",2019-02-11,2019-02-09
+"Greg Monroe","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Harrison Barnes","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Haywood Highsmith","Day-To-Day","Feb 8","Game Time Decision",2019-02-10,2019-02-09
+"Ike Anigbogu","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Iman Shumpert","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Isaiah Thomas","Out","Feb 8","Feb 13",2019-02-13,2019-02-09
+"Ish Smith","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Ivica Zubac","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Jabari Bird","Out","Feb 7",NA,2019-02-10,2019-02-09
+"Jabari Parker","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Jahlil Okafor","Day-To-Day","Feb 9","Game Time Decision",2019-02-10,2019-02-09
+"Jamal Murray","Out","Feb 6",NA,2019-02-10,2019-02-09
+"JaMychal Green","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Jared Dudley","Out","Feb 8","Game Time Decision",2019-02-10,2019-02-09
+"Jared Terrell","Day-To-Day","Feb 8","Game Time Decision",2019-02-10,2019-02-09
+"Jason Smith","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Jaylen Adams","Day-To-Day","Feb 9","Feb 10",2019-02-10,2019-02-09
+"Jeff Teague","Out","Feb 8",NA,2019-02-10,2019-02-09
+"Jerryd Bayless","Day-To-Day","Feb 8","Game Time Decision",2019-02-10,2019-02-09
+"JJ Redick","Day-To-Day","Feb 5",NA,2019-02-10,2019-02-09
+"Joakim Noah","Day-To-Day","Feb 8","Game Time Decision",2019-02-10,2019-02-09
+"Joel Embiid","Day-To-Day","Feb 8",NA,2019-02-10,2019-02-09
+"John Wall","Out","Feb 9","Out for the season",2020-02-09,2019-02-09
+"Jonas Valanciunas","Out","Feb 9","Feb 12",2019-02-12,2019-02-09
+"Jonathon Simmons","Out","Feb 8","Game Time Decision",2019-02-10,2019-02-09
+"Josh Hart","Day-To-Day","Feb 9","Game Time Decision",2019-02-10,2019-02-09
+"Julius Randle","Out","Feb 6",NA,2019-02-10,2019-02-09
+"Justin Jackson","Day-To-Day","Feb 8",NA,2019-02-10,2019-02-09
+"Justin Patton","Out","Feb 7","Feb 21",2019-02-21,2019-02-09
+"Kawhi Leonard","Day-To-Day","Feb 8",NA,2019-02-10,2019-02-09
+"Kevin Love","Day-To-Day","Feb 9","Feb 11",2019-02-11,2019-02-09
+"Khris Middleton","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Kostas Antetokounmpo","Day-To-Day","Feb 8",NA,2019-02-10,2019-02-09
+"Kyle Anderson","Out","Feb 8","Feb 12",2019-02-12,2019-02-09
+"Kyle Kuzma","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"LaMarcus Aldridge","Day-To-Day","Feb 5",NA,2019-02-10,2019-02-09
+"Landry Shamet","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"LeBron James","Day-To-Day","Feb 9","Game Time Decision",2019-02-10,2019-02-09
+"Lonnie Walker IV","Day-To-Day","Feb 9","Feb 12",2019-02-12,2019-02-09
+"Luc Mbah a Moute","Out","Feb 8","Feb 11",2019-02-11,2019-02-09
+"Luka Doncic","Day-To-Day","Feb 8",NA,2019-02-10,2019-02-09
+"Malachi Richardson","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Marc Gasol","Day-To-Day","Feb 9","Game Time Decision",2019-02-10,2019-02-09
+"Marcus Morris","Day-To-Day","Feb 5",NA,2019-02-10,2019-02-09
+"Markelle Fultz","Out","Feb 7","Mar 1",2019-03-01,2019-02-09
+"Markieff Morris","Out","Feb 7",NA,2019-02-10,2019-02-09
+"Marquese Chriss","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Michael Beasley","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Mike Muscala","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Mike Scott","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Miles Plumlee","Out","Feb 8","Feb 10",2019-02-10,2019-02-09
+"Milos Teodosic","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Mo Bamba","Out","Feb 7","Mar 20",2019-03-20,2019-02-09
+"Myles Turner","Day-To-Day","Feb 5",NA,2019-02-10,2019-02-09
+"Nik Stauskas","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Nikola Mirotic","Out","Feb 9","Game Time Decision",2019-02-10,2019-02-09
+"Otto Porter Jr.","Day-To-Day","Feb 8",NA,2019-02-10,2019-02-09
+"Paul Millsap","Out","Feb 9","Game Time Decision",2019-02-10,2019-02-09
+"Raul Neto","Out","Feb 6",NA,2019-02-10,2019-02-09
+"Reggie Bullock","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Robert Covington","Out","Feb 8","Game Time Decision",2019-02-10,2019-02-09
+"Robert Williams","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Robin Lopez","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Rodney Hood","Day-To-Day","Feb 5",NA,2019-02-10,2019-02-09
+"Rudy Gay","Day-To-Day","Feb 9","Feb 12",2019-02-12,2019-02-09
+"Ryan Anderson","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Shake Milton","Out","Feb 5","Mar 17",2019-03-17,2019-02-09
+"Shelvin Mack","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Skal Labissiere","Day-To-Day","Feb 7","Game Time Decision",2019-02-10,2019-02-09
+"Stanley Johnson","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Sterling Brown","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Sviatoslav Mykhailiuk","Day-To-Day","Feb 5",NA,2019-02-10,2019-02-09
+"T.J. Warren","Out","Feb 9","Feb 10",2019-02-10,2019-02-09
+"Thabo Sefolosha","Out","Feb 9",NA,2019-02-10,2019-02-09
+"Thon Maker","Day-To-Day","Feb 8",NA,2019-02-10,2019-02-09
+"Tobias Harris","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Tony Bradley","Out","Feb 6","Feb 25",2019-02-25,2019-02-09
+"Tony Parker","Day-To-Day","Feb 8","Feb 11",2019-02-11,2019-02-09
+"Tristan Thompson","Out","Feb 7","Feb 21",2019-02-21,2019-02-09
+"Tyler Dorsey","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Tyler Johnson","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Tyus Jones","Out","Feb 8","Game Time Decision",2019-02-10,2019-02-09
+"Wayne Ellington","Day-To-Day","Feb 8",NA,2019-02-10,2019-02-09
+"Wayne Selden","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Wesley Johnson","Day-To-Day","Feb 6",NA,2019-02-10,2019-02-09
+"Wesley Matthews","Day-To-Day","Feb 9",NA,2019-02-10,2019-02-09
+"Wilson Chandler","Out","Feb 6","Feb 21",2019-02-21,2019-02-09
+"Yuta Watanabe","Day-To-Day","Feb 8","Game Time Decision",2019-02-10,2019-02-09
+"Zach LaVine","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Zach Randolph","Day-To-Day","Feb 7",NA,2019-02-10,2019-02-09
+"Andre Roberson","Out",NA,"Feb 22",2019-02-22,2019-02-09
+"Chandler Hutchison","Out",NA,"Feb 21",2019-02-21,2019-02-09
+"Clint Capela","Out",NA,"Feb 21",2019-02-21,2019-02-09
+"Damian Jones","Out",NA,"Apr 15",2019-04-15,2019-02-09
+"Dante Exum","Out",NA,"Feb 22",2019-02-22,2019-02-09
+"Dejounte Murray","Out",NA,"Out for the season",2020-02-09,2019-02-09
+"Denzel Valentine","Out",NA,"Out for the season",2020-02-09,2019-02-09
+"Derrick Jones Jr.","Out",NA,"Mar 13",2019-03-13,2019-02-09
+"Devin Robinson","Out",NA,"Feb 11",2019-02-11,2019-02-09
+"Dillon Brooks","Out",NA,"Out for the season",2020-02-09,2019-02-09
+"Dwight Howard","Out",NA,"Mar 5",2019-03-05,2019-02-09
+"Emmanuel Mudiay","Out",NA,"Feb 11",2019-02-11,2019-02-09
+"Goran Dragic","Out",NA,"Feb 23",2019-02-23,2019-02-09
+"J.J. Barea","Out",NA,"Out for the season",2020-02-09,2019-02-09
+"J.P. Macura","Out",NA,"Feb 11",2019-02-11,2019-02-09
+"J.R. Smith","Out",NA,"Feb 25",2019-02-25,2019-02-09
+"John Henson","Out",NA,"Feb 25",2019-02-25,2019-02-09
+"Kristaps Porzingis","Out",NA,"Jul 1",2019-07-01,2019-02-09
+"Lonzo Ball","Out",NA,"Feb 21",2019-02-21,2019-02-09
+"Michael Porter Jr.","Out",NA,"Feb 22",2019-02-22,2019-02-09
+"Spencer Dinwiddie","Out",NA,"Feb 21",2019-02-21,2019-02-09
+"Timofey Mozgov","Out",NA,"Feb 22",2019-02-22,2019-02-09
+"Trevon Bluiett","Out",NA,"Mar 1",2019-03-01,2019-02-09
+"Troy Brown Jr.","Out",NA,"Feb 22",2019-02-22,2019-02-09
+"Victor Oladipo","Out",NA,"Out for the season",2020-02-09,2019-02-09
+"Wendell Carter Jr.","Out",NA,"Mar 20",2019-03-20,2019-02-09
+"Yante Maten","Out",NA,"Game Time Decision",2019-02-10,2019-02-09
+"Zhaire Smith","Out",NA,"Feb 21",2019-02-21,2019-02-09

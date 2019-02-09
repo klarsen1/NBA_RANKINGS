@@ -20,7 +20,7 @@ source(paste0(root, "/functions/manipulate_and_save_output.R"))
 source(paste0(root, "/functions/save_results.R"))
 source(paste0(root, "/functions/get_team_offsets.R"))
 
-root <- "/Users/thirdlovechangethisname/Documents/Code/NBA_RANKINGS"
+root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
 
 current_season <- 2018
 

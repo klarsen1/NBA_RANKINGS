@@ -12,7 +12,7 @@ library(doParallel)
 library(rvest)
 library(stringr)
 
-root <- "/Users/thirdlovechangethisname/Documents/Code/NBA_RANKINGS"
+root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
 current_season <- "2018-2019 Regular Season"
 current_season_numeric <- 2018
 

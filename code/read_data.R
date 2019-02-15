@@ -159,7 +159,8 @@ rosters <- lapply(team_pages, function (team_link) {
   if (team_name=="Portland Trail Blazers") {team_name<-"Portland Trailblazers"}
 
   Team <- team_name
-  PLAYER_FULL_NAME <- team_roster %>% html_nodes(".Table2__td:nth-child(2)") %>% html_text()
+  #PLAYER_FULL_NAME <- team_roster %>% html_nodes(".Table2__td:nth-child(2)") %>% html_text()
+  PLAYER_FULL_NAME <- team_roster %>% html_nodes(".Table2__td+ .Table2__td a") %>% html_text()
   Age <- as.numeric(team_roster %>% html_nodes(".Table2__td:nth-child(4)") %>% html_text())
   Weight <- as.numeric(team_roster %>% html_nodes(".Table2__td:nth-child(6)") %>% html_text() %>% gsub("lbs", "", .) %>% trim())
   Height <- team_roster %>% html_nodes(".Table2__td:nth-child(5)") %>% html_text() %>% gsub("lbs", "", .) %>% trim()

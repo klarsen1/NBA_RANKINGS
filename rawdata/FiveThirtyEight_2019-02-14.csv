@@ -1,0 +1,31 @@
+"elo","carm_elo","wins_538","losses_538","selected_team","opposing_team","pred_win_rate_538"
+0,1821,61,21,"Golden State","Golden State",0.74390243902439
+0,1709,54,28,"Oklahoma City","Oklahoma City",0.658536585365854
+0,1706,62,20,"Milwaukee","Milwaukee",0.75609756097561
+0,1703,60,22,"Toronto","Toronto",0.731707317073171
+0,1684,54,28,"Philadelphia","Philadelphia",0.658536585365854
+0,1682,49,33,"Houston","Houston",0.597560975609756
+0,1666,53,29,"Boston","Boston",0.646341463414634
+0,1633,49,33,"Utah","Utah",0.597560975609756
+0,1627,54,28,"Denver","Denver",0.658536585365854
+0,1587,48,34,"Portland","Portland",0.585365853658537
+0,1578,49,33,"Indiana","Indiana",0.597560975609756
+0,1548,40,42,"LA Lakers","LA Lakers",0.48780487804878
+0,1546,38,44,"New Orleans","New Orleans",0.463414634146341
+0,1546,39,43,"Minnesota","Minnesota",0.475609756097561
+0,1514,35,47,"Washington","Washington",0.426829268292683
+0,1496,34,48,"Memphis","Memphis",0.414634146341463
+0,1494,45,37,"San Antonio","San Antonio",0.548780487804878
+0,1491,38,44,"Detroit","Detroit",0.463414634146341
+0,1488,36,46,"Dallas","Dallas",0.439024390243902
+0,1474,37,45,"Charlotte","Charlotte",0.451219512195122
+0,1467,37,45,"Orlando","Orlando",0.451219512195122
+0,1461,43,39,"LA Clippers","LA Clippers",0.524390243902439
+0,1458,39,43,"Brooklyn","Brooklyn",0.475609756097561
+0,1448,36,46,"Miami","Miami",0.439024390243902
+0,1413,39,43,"Sacramento","Sacramento",0.475609756097561
+0,1368,28,54,"Atlanta","Atlanta",0.341463414634146
+0,1360,21,61,"Chicago","Chicago",0.25609756097561
+0,1323,18,64,"Phoenix","Phoenix",0.219512195121951
+0,1276,18,64,"Cleveland","Cleveland",0.219512195121951
+0,1248,16,66,"New York","New York",0.195121951219512

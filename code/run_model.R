@@ -256,6 +256,9 @@ s <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rankings/game_level
 View(s)
 
 s <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rankings/game_level_predictions_2019-02-15.csv", stringsAsFactors = FALSE) %>%
-  filter(DATE==as.Date("2019-03-13"))
+  filter(DATE==as.Date("2019-03-21"))
 View(s)
 
+s <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rankings/game_level_predictions_2019-02-15.csv", stringsAsFactors = FALSE) %>%
+  filter(DATE==as.Date("2019-03-26"))
+View(s)

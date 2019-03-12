@@ -251,14 +251,23 @@ for (i in start_index:end_index){
 #results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/", 0, 0)
 results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, root, 0, 1, NA)
 
-s <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rankings/game_level_predictions_2019-02-15.csv", stringsAsFactors = FALSE) %>%
+s <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rankings/game_level_predictions_2019-03-10.csv", stringsAsFactors = FALSE) %>%
   filter(DATE==as.Date("2019-03-12"))
 View(s)
 
-s <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rankings/game_level_predictions_2019-02-15.csv", stringsAsFactors = FALSE) %>%
+s <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rankings/game_level_predictions_2019-03-10.csv", stringsAsFactors = FALSE) %>%
+  filter(DATE==as.Date("2019-03-13"))
+View(s)
+
+s <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rankings/game_level_predictions_2019-03-10.csv", stringsAsFactors = FALSE) %>%
   filter(DATE==as.Date("2019-03-21"))
 View(s)
 
-s <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rankings/game_level_predictions_2019-02-15.csv", stringsAsFactors = FALSE) %>%
+s <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rankings/game_level_predictions_2019-03-10.csv", stringsAsFactors = FALSE) %>%
   filter(DATE==as.Date("2019-03-26"))
 View(s)
+
+c <- read.csv("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/modeldetails/cluster_details_2019-03-10.csv", stringsAsFactors = FALSE) %>%
+  filter(PLAYER_FULL_NAME=="Stephen Curry)
+View(c)
+

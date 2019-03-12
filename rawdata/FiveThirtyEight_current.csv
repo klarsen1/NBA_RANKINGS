@@ -1,31 +1,31 @@
 "elo","carm_elo","wins_538","losses_538","selected_team","opposing_team","pred_win_rate_538"
-0,1821,60,22,"Golden State","Golden State",0.731707317073171
-0,1716,62,20,"Milwaukee","Milwaukee",0.75609756097561
-0,1700,59,23,"Toronto","Toronto",0.719512195121951
-0,1685,50,32,"Houston","Houston",0.609756097560976
-0,1685,52,30,"Oklahoma City","Oklahoma City",0.634146341463415
-0,1682,53,29,"Philadelphia","Philadelphia",0.646341463414634
-0,1669,52,30,"Boston","Boston",0.634146341463415
-0,1632,49,33,"Utah","Utah",0.597560975609756
-0,1632,55,27,"Denver","Denver",0.670731707317073
-0,1595,50,32,"Indiana","Indiana",0.609756097560976
-0,1591,49,33,"Portland","Portland",0.597560975609756
-0,1550,39,43,"Minnesota","Minnesota",0.475609756097561
-0,1547,40,42,"LA Lakers","LA Lakers",0.48780487804878
-0,1536,38,44,"New Orleans","New Orleans",0.463414634146341
-0,1511,44,38,"San Antonio","San Antonio",0.536585365853659
-0,1494,40,42,"Detroit","Detroit",0.48780487804878
-0,1490,34,48,"Washington","Washington",0.414634146341463
-0,1487,37,45,"Charlotte","Charlotte",0.451219512195122
-0,1483,35,47,"Dallas","Dallas",0.426829268292683
-0,1483,32,50,"Memphis","Memphis",0.390243902439024
-0,1475,38,44,"Orlando","Orlando",0.463414634146341
-0,1467,43,39,"LA Clippers","LA Clippers",0.524390243902439
-0,1461,36,46,"Miami","Miami",0.439024390243902
-0,1456,39,43,"Brooklyn","Brooklyn",0.475609756097561
-0,1419,40,42,"Sacramento","Sacramento",0.48780487804878
-0,1366,23,59,"Chicago","Chicago",0.280487804878049
-0,1322,26,56,"Atlanta","Atlanta",0.317073170731707
-0,1322,17,65,"Phoenix","Phoenix",0.207317073170732
+0,1800,59,23,"Golden State","Golden State",0.719512195121951
+0,1721,63,19,"Milwaukee","Milwaukee",0.768292682926829
+0,1705,60,22,"Toronto","Toronto",0.731707317073171
+0,1687,52,30,"Houston","Houston",0.634146341463415
+0,1674,50,32,"Oklahoma City","Oklahoma City",0.609756097560976
+0,1668,53,29,"Philadelphia","Philadelphia",0.646341463414634
+0,1662,52,30,"Boston","Boston",0.634146341463415
+0,1632,50,32,"Utah","Utah",0.609756097560976
+0,1632,53,29,"Denver","Denver",0.646341463414634
+0,1602,50,32,"Portland","Portland",0.609756097560976
+0,1589,49,33,"Indiana","Indiana",0.597560975609756
+0,1544,38,44,"Minnesota","Minnesota",0.463414634146341
+0,1527,37,45,"LA Lakers","LA Lakers",0.451219512195122
+0,1512,42,40,"Detroit","Detroit",0.51219512195122
+0,1506,37,45,"New Orleans","New Orleans",0.451219512195122
+0,1493,35,47,"Washington","Washington",0.426829268292683
+0,1493,45,37,"San Antonio","San Antonio",0.548780487804878
+0,1487,33,49,"Memphis","Memphis",0.402439024390244
+0,1485,39,43,"Orlando","Orlando",0.475609756097561
+0,1480,46,36,"LA Clippers","LA Clippers",0.560975609756098
+0,1474,36,46,"Charlotte","Charlotte",0.439024390243902
+0,1471,34,48,"Dallas","Dallas",0.414634146341463
+0,1467,37,45,"Miami","Miami",0.451219512195122
+0,1448,39,43,"Brooklyn","Brooklyn",0.475609756097561
+0,1433,40,42,"Sacramento","Sacramento",0.48780487804878
+0,1377,24,58,"Chicago","Chicago",0.292682926829268
+0,1330,26,56,"Atlanta","Atlanta",0.317073170731707
+0,1323,20,62,"Phoenix","Phoenix",0.24390243902439
 0,1274,19,63,"Cleveland","Cleveland",0.231707317073171
-0,1245,17,65,"New York","New York",0.207317073170732
+0,1245,16,66,"New York","New York",0.195121951219512

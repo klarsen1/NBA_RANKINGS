@@ -1,7 +1,9 @@
 ##### Run the playoffs
 ## Need to run the season first using run_model.R
 
-source("/Users/kim.larsen/Documents/Code/NBA_RANKINGS/functions/sim_playoffs.R")
+root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
+
+source(paste0(root, "/functions/sim_playoffs.R"))
 library(stringr)
 library(stringi)
 

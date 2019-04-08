@@ -120,6 +120,8 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
          thisday <- create_fake_entry(games+1, DATE, selected, opposing, thisseason, matchup1, matchup2, order_preserved)
          pred <- predict_game(c, filter(inwindow, DATE_INDEX>end_index-playing_time_window), win_perc1, win_perc2, thisday[1,"game_id"], runs, thisday, nclus, prior, posterior, paste0(root, "/rawdata/"), model_variables, 1, NULL, seed=seed)
          decomps[[counter]] <- pred[[2]]
+         decomps[[counter]]$round <- i
+         decomps[[counter]]$matchup <- j
          if (pred[[1]]$prob_selected_team_win_d>0.5){ 
            if (order_preserved==1){
               w1 <- w1 + 1

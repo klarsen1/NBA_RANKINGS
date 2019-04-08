@@ -36,7 +36,7 @@ loopResult <- foreach(i=1:sims, .combine='combine', .multicombine=TRUE,
                       .init=list(list(), list())) %dopar% {
   playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, runs, root, c, max_real_date, thisseason, end_date, seed=1000*i + runif(1)*1000)
   playoffs[[2]]$sim <- i
-  return(list(playoffs[[2]], playoffs[[3]]))
+  return(list(playoffs[[2]], playoffs[[3]], playoffs[[4]]))
 }
 
 winners <- data.frame(rbindlist(loopResult[[1]])) %>%
@@ -53,6 +53,12 @@ final_results <- data.frame(rbindlist(loopResult[[1]])) %>%
   mutate(spread=2*abs(prob_selected_team_win-.5)) %>%
   summarise(games=n(), win_spread=mean(spread))
 
-decomps <- data.frame(rbindlist(loopResult[[2]]))
+decomps <- data.frame(rbindlist(loopResult[[2]])) %>%
+  inner_join(winners, by=c("round", "matchup")) %>%
+  mutate(s=ifelse(selected_team==final_winner, 1, -1)) %>%
+  group_by(round, matchup, final_winner, final_loser) %>%
+  summarise(performance=mean(performance*s), roster=mean(roster*s), circumstances=mean(circumstances))
+
+loopResult[[3]]
 
 #write.csv(decomps, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/modeldetails/2017_playoff_decomp.csv", row.names = FALSE)

@@ -251,3 +251,4 @@ for (i in start_index:end_index){
 #results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/", 0, 0)
 results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, root, 0, 1, NA)
 
+saveRDS(results, "forecast_040819.rda")

@@ -34,7 +34,7 @@ registerDoParallel(ncore)
 sims <- 1
 loopResult <- foreach(i=1:sims, .combine='combine', .multicombine=TRUE,
                       .init=list(list(), list())) %dopar% {
-  playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, runs, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason, end_date, seed=1000*i + runif(1)*1000)
+  playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, runs, root, c, max_real_date, thisseason, end_date, seed=1000*i + runif(1)*1000)
   playoffs[[2]]$sim <- i
   return(list(playoffs[[2]], playoffs[[3]]))
 }
@@ -43,21 +43,15 @@ winners <- data.frame(rbindlist(loopResult[[1]])) %>%
   group_by(round, matchup) %>%
   mutate(r=row_number(), n=n()) %>%
   filter(r==n) %>%
-  select(round, matchup, winner) %>%
-  rename(final_winner=winner)
+  select(round, matchup, winner, loser) %>%
+  rename(final_winner=winner, final_loser=loser)
 
 
 final_results <- data.frame(rbindlist(loopResult[[1]])) %>%
   inner_join(winners, by=c("round", "matchup")) %>%
-  group_by(round, matchup) %>%
-  mutate(prob_win=ifelse(prob_selected_team_win>0.5, prob_selected_team_win, 1-prob_selected_team_win))
-
-  filter(winner != "NONE" & loser != "NONE") %>%
-  mutate(prob_win=ifelse(winner==selected_team))
-  group_by(round, winner) %>%
-  summarise(n=n(), games=mean(game)) %>%
-  mutate(perc_wins=n/sims) %>%
-  select(-n)
+  group_by(round, matchup, final_winner, final_loser) %>%
+  mutate(spread=2*abs(prob_selected_team_win-.5)) %>%
+  summarise(games=n(), win_spread=mean(spread))
 
 decomps <- data.frame(rbindlist(loopResult[[2]]))
 

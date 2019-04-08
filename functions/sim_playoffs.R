@@ -58,7 +58,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
   ### Get the qualifying teams
   qualifiers <- group_by(ranks, conference) %>% arrange(-season_win_rate) %>%
     mutate(rank=row_number(), exclude=0, status="W", round=4, ngames=7) %>%
-    filter(team != "Miami") %>%
+    #filter(team != "Miami") %>%
     filter(rank<9) %>%
     select(conference, team, season_win_rate, rank, exclude, status, round, ngames) %>%
     ungroup()
@@ -190,5 +190,5 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
   final_results <- rbindlist(game_results) %>%
     dplyr::select(round, matchup, winner, loser, game, prob_home_team_win, prob_selected_team_win, selected_team)
     
-  return(list(qualifiers, final_results, data.frame(rbindlist(decomps))))
+  return(list(qualifiers, final_results, data.frame(rbindlist(decomps)), qualifiers))
 }

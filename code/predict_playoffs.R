@@ -7,6 +7,8 @@ source(paste0(root, "/functions/sim_playoffs.R"))
 library(stringr)
 library(stringi)
 
+runs <- 0
+
 inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date & DATE_INDEX>max_real_date-playing_time_window+1)
 thisseason <- filter(inwindow, DATE==max(DATE))[1,"season"]
 win_perc1 <- winpercentages(inwindow, thisseason, w)
@@ -18,7 +20,7 @@ inwindow_active <- mutate(inwindow,
 )
 injured_players <- unique(subset(inwindow_active, injured==1)$PLAYER_FULL_NAME)
 if (length(injured_players)>0){
-  print(paste0("Injuries: ", injured_players))
+  #print(paste0("Injuries: ", injured_players))
   inwindow_active <- filter(inwindow_active, injured==0)
 }
 
@@ -29,34 +31,34 @@ combine <- function(x, ...) {
 
 ncore <- detectCores()-1
 registerDoParallel(ncore)
-sims <- 100
+sims <- 1
 loopResult <- foreach(i=1:sims, .combine='combine', .multicombine=TRUE,
                       .init=list(list(), list())) %dopar% {
-  playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, 1, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason, end_date, seed=1000*i + runif(1)*1000)
+  playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, runs, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS", c, max_real_date, thisseason, end_date, seed=1000*i + runif(1)*1000)
   playoffs[[2]]$sim <- i
   return(list(playoffs[[2]], playoffs[[3]]))
 }
 
-title_chances <- data.frame(rbindlist(loopResult[[1]])) %>%
+winners <- data.frame(rbindlist(loopResult[[1]])) %>%
+  group_by(round, matchup) %>%
+  mutate(r=row_number(), n=n()) %>%
+  filter(r==n) %>%
+  select(round, matchup, winner) %>%
+  rename(final_winner=winner)
+
+
+final_results <- data.frame(rbindlist(loopResult[[1]])) %>%
+  inner_join(winners, by=c("round", "matchup")) %>%
+  group_by(round, matchup) %>%
+  mutate(prob_win=ifelse(prob_selected_team_win>0.5, prob_selected_team_win, 1-prob_selected_team_win))
+
   filter(winner != "NONE" & loser != "NONE") %>%
+  mutate(prob_win=ifelse(winner==selected_team))
   group_by(round, winner) %>%
   summarise(n=n(), games=mean(game)) %>%
   mutate(perc_wins=n/sims) %>%
   select(-n)
 
-probs <- data.frame(rbindlist(loopResult[[1]])) %>%
-  filter(selected_team=="Golden State") %>%
-  group_by(round, selected_team) %>%
-  summarise(prob=mean(prob_selected_team_win))
-
-probs <- data.frame(rbindlist(loopResult[[1]])) %>%
-  filter(selected_team=="Golden State") %>%
-  group_by(selected_team) %>%
-  summarise(prob=mean(prob_selected_team_win))
-
-View(title_chances)
-View(probs)
-
 decomps <- data.frame(rbindlist(loopResult[[2]]))
 
-write.csv(decomps, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/modeldetails/2017_playoff_decomp.csv", row.names = FALSE)
+#write.csv(decomps, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/modeldetails/2017_playoff_decomp.csv", row.names = FALSE)

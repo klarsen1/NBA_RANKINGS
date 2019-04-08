@@ -100,7 +100,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     samplesdf <- data.frame(cbind(x, d, row.names=NULL), stringsAsFactors = FALSE)
   } else if (runs==1){
     dist_active_sim <- data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes)))
-    print(select(dist_active_sim, PLAYER_FULL_NAME, m_share_of_minutes, share_of_minutes))
+    #print(select(dist_active_sim, PLAYER_FULL_NAME, m_share_of_minutes, share_of_minutes))
     x <- get_surplus_variables(dist_active_sim, nclus)
     d <- attach_win_perc(thisgame, win_perc1, win_perc2)
     samplesdf <- inner_join(x, d, by="game_id")

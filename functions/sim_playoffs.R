@@ -48,7 +48,7 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
 }
 
 
-sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_perc2, datemap, runs=1, root, c, end_index, thisseason, last_date_in_season, seed){
+sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_perc2, datemap, runs=0, root, c, end_index, thisseason, last_date_in_season, seed){
 
   set.seed(seed)
   
@@ -118,7 +118,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
       games=0
       while(games<7 & winner_declared==FALSE){
          thisday <- create_fake_entry(games+1, DATE, selected, opposing, thisseason, matchup1, matchup2, order_preserved)
-         pred <- predict_game(c, filter(inwindow, DATE_INDEX>end_index-playing_time_window), win_perc1, win_perc2, thisday[1,"game_id"], runs, thisday, nclus, prior, posterior, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/rawdata/", model_variables, 1, NULL, seed=seed)
+         pred <- predict_game(c, filter(inwindow, DATE_INDEX>end_index-playing_time_window), win_perc1, win_perc2, thisday[1,"game_id"], runs, thisday, nclus, prior, posterior, paste0(root, "/rawdata/"), model_variables, 1, NULL, seed=seed)
          decomps[[counter]] <- pred[[2]]
          if (pred[[1]]$prob_selected_team_win_d>0.5){ 
            if (order_preserved==1){
@@ -167,6 +167,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
          thisday <- mutate(thisday, prob_home_team_win=ifelse(selected_team==home_team_name, pred[[1]]$prob_selected_team_win_d, 1-pred[[1]]$prob_selected_team_win_d), 
                                     prob_road_team_win=1-prob_home_team_win, 
                                     round=i, 
+                                    matchup=j,
                                     prob_selected_team_win=pred[[1]]$prob_selected_team_win_d,
                                     game=games, 
                                     loser=loser, 
@@ -187,7 +188,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
       ungroup()
   }
   final_results <- rbindlist(game_results) %>%
-    dplyr::select(round, winner, loser, game, prob_home_team_win, prob_selected_team_win, selected_team)
+    dplyr::select(round, matchup, winner, loser, game, prob_home_team_win, prob_selected_team_win, selected_team)
     
   return(list(qualifiers, final_results, data.frame(rbindlist(decomps))))
 }

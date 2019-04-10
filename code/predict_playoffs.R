@@ -36,8 +36,53 @@ loopResult <- foreach(i=1:sims, .combine='combine', .multicombine=TRUE,
                       .init=list(list(), list(), list())) %dopar% {
   playoffs <- sim_playoff(results[[2]], inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, runs, root, c, max_real_date, thisseason, end_date, seed=1000*i + runif(1)*1000)
   playoffs[[2]]$sim <- i
-  return(list(playoffs[[2]], playoffs[[3]], playoffs[[1]]))
+  return(list(playoffs[[2]], playoffs[[3]], data.frame(playoffs[[1]])))
 }
+
+full_results <- data.frame(rbindlist(loopResult[[1]]))
+r <- max(full_results$round)
+m <- max(full_results$matchup)
+
+for (i in 1:r){
+  for (j in 1:m){
+    d <- data.frame(filter(full_results, round==i & matchup==j & game<5))
+    if (nrow(d)>0){
+       p <- d$prob_selected_team_win
+       s <- d$selected_team
+       t1 <- unique(s)[1]
+       t2 <- unique(s)[2]
+       n1 <- 0
+       n2 <- 0
+       p <- c(p,p[1],p[3], p[1])
+       s <- c(s,s[1],s[3], s[1])
+       for (k in 1:10000){
+         nn1 <- 0
+         nn2 <- 0
+         for (g in 1:length(p)){
+             binomial <- as.numeric(rbinom(n=1, size=1, prob=p[g]))
+             if (t1==s[g]){
+                if (binomial==1){nn1 <- nn1+1}
+                else {nn2 <- nn2+1}
+             } else{
+               if (binomial==1){nn2 <- nn2+1}
+               else {nn1<- nn1+1}
+             }
+         }
+         if (nn1>nn2){
+            n1 <- n1+1
+          } else{
+            n2 <- n2+1
+          }
+       }
+       prob_win <- n1/(n1+n2)
+       print(t1)
+       print(t2)
+       print(n1)
+       print(prob_win)
+    }
+  }
+}
+
 
 winners <- data.frame(rbindlist(loopResult[[1]])) %>%
   group_by(round, matchup) %>%
@@ -46,12 +91,19 @@ winners <- data.frame(rbindlist(loopResult[[1]])) %>%
   select(round, matchup, winner, loser) %>%
   rename(final_winner=winner, final_loser=loser)
 
+ranks <- arrange(data.frame(loopResult[[3]]), conference, season_win_rate) %>%
+  rename(final_winner=team) %>%
+  select(final_winner, conference, season_win_rate)
 
 final_results <- data.frame(rbindlist(loopResult[[1]])) %>%
   inner_join(winners, by=c("round", "matchup")) %>%
   group_by(round, matchup, final_winner, final_loser) %>%
   mutate(spread=2*abs(prob_selected_team_win-.5)) %>%
-  summarise(games=n(), win_spread=mean(spread))
+  summarise(games=n(), win_spread=mean(spread)) %>%
+  inner_join(ranks, by="final_winner") %>%
+  arrange(round, conference, -season_win_rate)
+
+
 
 decomps <- data.frame(rbindlist(loopResult[[2]])) %>%
   inner_join(winners, by=c("round", "matchup")) %>%

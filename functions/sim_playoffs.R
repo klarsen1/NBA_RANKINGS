@@ -9,12 +9,13 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
   thisday$selected_team_travel <- 0
   thisday$opposing_team_rest <- 0
   thisday$selected_team_rest <- 0
-  thisday$home_team_selected <- 0
+  #thisday$home_team_selected <- 0
   thisday$selected_team_win <- NA
   thisday$season <- thisseason
   thisday$opposing_team <- opposing_team
   thisday$selected_team <- selected_team
   thisday$home_team_selected <- order_preserved
+  thisday$order_preserved <- order_preserved
   if (order_preserved==1){
      thisday$home_team_name <- selected_team
      thisday$road_team_name <- opposing_team
@@ -146,21 +147,22 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
            loser <- home_team
          }
          games <- games+1
-         if (runif(1)>0.5){
-           order_preserved <- 1
-           #print("Kept Order")
-           selected <- home_team
-           opposing <- road_team
-         } else{
-           #print("Flipped Order")
-           order_preserved <- 0
-           selected <- road_team
-           opposing <- home_team
-         }
+         #if (runif(1)>0.5){
+         #   order_preserved <- 1
+         #   #print("Kept Order")
+         #   selected <- home_team
+         #   opposing <- road_team
+         #} else{
+         #  #print("Flipped Order")
+         #   order_preserved <- 0
+         #   selected <- road_team
+         #   opposing <- home_team
+         #}
          #print(paste0("game ", games))
          result <- data.frame(matrix(nrow=1, ncol=6))
          names(result) <- c("round", "game", "home_team", "road_team", "prob_home_team_win", "prob_road_team_win")
          result$round <- i
+         result$order_preserved
          result$game <- games
          result$road_team <- road_team
          result$home_team <- home_team
@@ -190,7 +192,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
       ungroup()
   }
   final_results <- rbindlist(game_results) %>%
-    dplyr::select(round, matchup, winner, loser, game, prob_home_team_win, prob_selected_team_win, selected_team)
+    dplyr::select(round, matchup, winner, loser, game, prob_home_team_win, prob_selected_team_win, selected_team, order_preserved, home_team_selected)
    
   #print(qualifiers) 
   return(list(data.frame(qualifiers), data.frame(final_results), data.frame(rbindlist(decomps))))

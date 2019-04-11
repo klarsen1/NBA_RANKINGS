@@ -46,6 +46,8 @@ full_results <- data.frame(rbindlist(loopResult[[1]]))
 r <- max(full_results$round)
 m <- max(full_results$matchup)
 
+
+
 for (i in 1:r){
   for (j in 1:m){
     d <- data.frame(filter(full_results, round==i & matchup==j))
@@ -84,6 +86,11 @@ for (i in 1:r){
        print(t2)
        print(n1)
        print(prob_win)
+       simresult <- data.frame(matrix(nrow=1, ncol=7))
+       names(simresult) <- c("round", "matchup", "selected_team", "winner", "loser", "prob_win", "sims")
+       simresult$round <- i
+       
+       
     }
   }
 }

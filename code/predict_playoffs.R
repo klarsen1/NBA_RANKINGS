@@ -7,6 +7,8 @@ source(paste0(root, "/functions/sim_playoffs.R"))
 library(stringr)
 library(stringi)
 
+playoff_start_date <- as.Date("2019-04-14") ## faking it a bit here
+
 runs <- 0
 
 inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date & DATE_INDEX>max_real_date-playing_time_window+1)
@@ -14,13 +16,14 @@ thisseason <- filter(inwindow, DATE==max(DATE))[1,"season"]
 win_perc1 <- winpercentages(inwindow, thisseason, w)
 win_perc2 <- win_perc1
 
+
 inwindow_active <- mutate(inwindow,
                           today=as.Date(end_date),                        
-                          injured=ifelse(is.na(injury_status), 0, ifelse(today>=injury_scrape_date & today<return_date, 1, 0))
+                          injured=ifelse(is.na(injury_status), 0, ifelse(playoff_start_date>=injury_scrape_date & playoff_start_date<=return_date, 1, 0))
 )
 injured_players <- unique(subset(inwindow_active, injured==1)$PLAYER_FULL_NAME)
 if (length(injured_players)>0){
-  #print(paste0("Injuries: ", injured_players))
+  print(paste0("Injuries: ", sort(injured_players)))
   inwindow_active <- filter(inwindow_active, injured==0)
 }
 
@@ -45,16 +48,18 @@ m <- max(full_results$matchup)
 
 for (i in 1:r){
   for (j in 1:m){
-    d <- data.frame(filter(full_results, round==i & matchup==j & game<5))
+    d <- data.frame(filter(full_results, round==i & matchup==j))
     if (nrow(d)>0){
+       dd <- filter(d, winner != "NONE")
+       t1 <- dd$winner
+       t2 <- dd$loser
+       d <- filter(d, game<5)
        p <- d$prob_selected_team_win
        s <- d$selected_team
-       t1 <- unique(s)[1]
-       t2 <- unique(s)[2]
        n1 <- 0
        n2 <- 0
-       p <- c(p,p[1],p[3], p[1])
-       s <- c(s,s[1],s[3], s[1])
+       p <- c(p, p[1], p[3], p[1])
+       s <- c(s, s[1], s[3], s[1])
        for (k in 1:10000){
          nn1 <- 0
          nn2 <- 0

@@ -123,25 +123,18 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
          decomps[[counter]] <- pred[[2]]
          decomps[[counter]]$round <- i
          decomps[[counter]]$matchup <- j
-         if (pred[[1]]$prob_selected_team_win_d>0.5){ 
-           if (order_preserved==1){
-              w1 <- w1 + 1
-           } else{
-             w2 <- w2 + 1
-           }
+         if (order_preserved==1){
+              w1 <- w1 + pred[[1]]$prob_selected_team_win_d
+              w2 <- w2 + 1-pred[[1]]$prob_selected_team_win_d 
+         } else{
+              w1 <- w1 + 1-pred[[1]]$prob_selected_team_win_d
+              w2 <- w2 + pred[[1]]$prob_selected_team_win_d
          }
-         else{ 
-           if (order_preserved==1){
-             w2 <- w2 + 1
-           } else{
-             w1 <- w1 + 1
-           }
-         }
-         if (w1==4){
+         if (w1>3.5){
            winner_declared <- TRUE
            winner <- home_team
            loser <- road_team
-         } else if (w2==4){
+         } else if (w2>3.5){
            winner_declared <- TRUE
            winner <- road_team
            loser <- home_team

@@ -13,7 +13,7 @@ coeff_details <- read.csv(paste0(root, "/modeldetails/coefficients_2019-04-11.cs
 rosters <- read.csv(paste0(root, "/rawdata/rosters_2019-04-11.csv"), stringsAsFactors = FALSE) %>%
   select(PLAYER_FULL_NAME, Team)
 
-injuries
+injuries <- read.csv(paste0(root, "/rawdata/injuries_2019-04-11.csv"), stringsAsFactors = FALSE)
 
 cluster_details <- read.csv(paste0(root, "/modeldetails/cluster_details_2019-04-11.csv"), stringsAsFactors = FALSE) %>%
   arrange(PLAYER_FULL_NAME, DATE) %>%
@@ -26,7 +26,8 @@ cluster_details <- read.csv(paste0(root, "/modeldetails/cluster_details_2019-04-
   arrange(archetype_strength, games_in_cluster) %>%
   filter(Team %in% c("Golden State Warriors", "Houston Rockets", "Oklahoma City Thunder", "Utah Jazz", "Detroit Pistons", "Indiana Pacers", "Milwaukee Bucks", "Denver Nuggets", "Portland Trailblazers", "Philadelphia 76ers", "Orlando Magic", "Brooklyn Nets", "Toronto Raptors", "San Antonio Spurs", "Los Angeles Clippers", "Boston Celtics")) %>%
   mutate(super_cluster=(archetype_strength>0.7)) %>%
-  filter(is.na(injury_status)==FALSE & playoff_start_date>=injury_scrape_date & playoff_start_date<=return_date, 1, 0))
+  left_join(injuries, by="PLAYER_FULL_NAME") %>%
+  filter(is.na(injury_status)==TRUE | injury_status=="Day-To-Day")
 
 
 View(cluster_details)  

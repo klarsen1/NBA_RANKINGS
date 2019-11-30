@@ -76,7 +76,7 @@ box_scores <- subset(box_scores, DATE<=end_date) %>%
   mutate(fb=ifelse(season==max(season), 1, 0))
 
 ### specify start and end points
-ignore_season_prior_to <- 2015
+ignore_season_prior_to <- 2016
 start_index <- subset(datemap, DATE==start_date)$DATE_INDEX
 end_index <- subset(datemap, DATE==end_date)$DATE_INDEX
 
@@ -222,7 +222,10 @@ playoff_start_date <- max(box_scores$DATE)+1 ## faking it a bit here
 runs <- 0
 
 rankings <- results[[2]] %>%
-  arrange(season_win_rate)
+  arrange(conference, -season_win_rate) %>%
+  group_by(conference) %>%
+  mutate(seed=row_number()) %>%
+  mutate(seed=ifelse(seed>8, NA, seed))
 
 
 inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date & DATE_INDEX>max_real_date-playing_time_window+1)
@@ -234,9 +237,8 @@ inwindow_active <- mutate(inwindow,
                           today=as.Date(end_date),                        
                           injured=ifelse(is.na(injury_status), 0, ifelse(playoff_start_date>=injury_scrape_date & playoff_start_date<=return_date, 1, 0)))
 injured_players <- unique(subset(inwindow_active, injured==1)$PLAYER_FULL_NAME)
-print(sort(injured_players))
 if (length(injured_players)>0){
-  print(paste0("Injuries: ", sort(injured_players)))
+  print(sort(injured_players))
   inwindow_active <- filter(inwindow_active, injured==0)
 }
 

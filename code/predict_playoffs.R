@@ -139,6 +139,9 @@ for (i in 1:r){
 coin_flip_results <- data.frame(rbindlist(coin_flips)) %>% arrange(round, winner, matchup)
 
 
+
+
+
 winners <- data.frame(rbindlist(loopResult[[1]])) %>%
   group_by(round, matchup) %>%
   mutate(r=row_number(), n=n()) %>%

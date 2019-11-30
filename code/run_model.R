@@ -7,7 +7,7 @@ library(tidyr)
 library(parallel)
 library(foreach)
 library(doParallel)
-
+root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
 source(paste0(root, "/functions/auc.R"))
 source(paste0(root, "/functions/assign_clusters.R"))
 source(paste0(root, "/functions/winpercentages.R"))
@@ -20,9 +20,8 @@ source(paste0(root, "/functions/manipulate_and_save_output.R"))
 source(paste0(root, "/functions/save_results.R"))
 source(paste0(root, "/functions/get_team_offsets.R"))
 
-root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
 
-current_season <- 2018
+current_season <- 2019
 
 
 ## Read the box scores
@@ -79,43 +78,8 @@ ignore_season_prior_to <- 2015
 start_index <- subset(datemap, DATE==start_date)$DATE_INDEX
 end_index <- subset(datemap, DATE==end_date)$DATE_INDEX
 
-
 ### Assign clusters to the historical data and calculate rolling win percentages
-centroids <- readRDS(paste0(root, "/centroids/centroids.RDA"))
-s <- min(subset(datemap, season==ignore_season_prior_to)$DATE_INDEX)
-e <-max(subset(datemap, future_game==0)$DATE_INDEX) 
-ncore <- detectCores()-2
-registerDoParallel(ncore)
-loop_result <- foreach(i=s:e) %dopar% {
-  #for (i in s:e){
-  ### Get the data inside the window  
-  thisseason <- datemap[i, "season"]
-  inwindow <- filter(box_scores, DATE_INDEX<i & DATE_INDEX>i-cluster_window)
-  thisdate <- filter(box_scores, DATE_INDEX==i)
-  thisseason <- thisdate[1,"season"]
-
-  ## Get the win percentages
-  w <- weighted_win_rates 
-  if (thisseason != current_season){
-    w <-0 
-  }
-  win_perc1 <- winpercentages(filter(inwindow, DATE_INDEX>i-winstreak_window), thisseason, w)
-  win_perc2 <- winpercentages(filter(inwindow, DATE_INDEX>i-winstreak_window_s), thisseason, w)
-  
-  ## Assign clusters
-  clusters <- assign_clusters(centroids, inwindow, cutoff, thisseason)
-
-  ### Join
-  t <- inner_join(thisdate, select(clusters, PLAYER_FULL_NAME, Cluster), by="PLAYER_FULL_NAME")
-  f <- attach_win_perc(t, win_perc1, win_perc2)
-
-  rm(win_perc1)
-  rm(win_perc2)
-  
-  return(f)
-}
-
-box_scores_plus <- data.frame(rbindlist(loop_result))
+box_scores_plus <- assign_clusters_and_win_rates(root, datemap)
 
 ## Save clusters
 clusters_and_players <- 

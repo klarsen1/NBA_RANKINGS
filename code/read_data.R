@@ -14,8 +14,8 @@ library(rvest)
 library(stringr)
 
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
-current_season <- "2018-2019 Regular Season"
-current_season_numeric <- 2018
+current_season <- "2019-2020 Regular Season"
+current_season_numeric <- 2019
 
 setwd(root)
 
@@ -28,7 +28,7 @@ city_lat_long <- read.csv("city_lat_long.csv", stringsAsFactors = FALSE)
 city_lat_long$OWN_TEAM <- city_lat_long$OWN_TEAM %>% gsub("L.A.", "LA", .) %>% trim()
 
 team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
-  rename(Team=FULL.NAME, NBAstuffer.Initials=SHORT.NAME, City=CITY) %>%
+  rename(Team=FULL.NAME, NBAstuffer.Initials=SHORT.NAME) %>%
   mutate(OWN_TEAM=NBAstuffer.Initials, OWN_TEAM_NAME=OWN_TEAM) %>%
   distinct(Team, .keep_all=TRUE) %>% select(City, NBAstuffer.Initials, Team, OWN_TEAM_NAME, OWN_TEAM) %>%
   filter(!(Team %in% c("Charlotte Bobcats", "New Orleans Hornets")))
@@ -37,12 +37,14 @@ team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>%
   
 
 ### 538 data
-ft8 <- read_html("http://projects.fivethirtyeight.com/2019-nba-predictions/")
+ft8 <- read_html("http://projects.fivethirtyeight.com/2020-nba-predictions/")
 team <- ft8 %>% html_nodes("tbody tr td.team a") %>% html_text() %>% gsub("[0-9, -]", "", .) %>% trim()
 wins <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('-[0-9]+','', .) %>% trim()
 losses <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('[0-9]+-','', .) %>% trim()
-#elo <- ft8 %>% html_nodes("tbody tr td.elo.original") %>% html_text()
-carm_elo <- ft8 %>% html_nodes("tbody tr td.carmelo") %>% html_text() %>% trim()
+carm_elo_full <- ft8 %>% html_nodes(".border-right+ .big-desktop") %>% html_text()
+carm_elo <- ft8 %>% html_nodes("td.carmelo-current") %>% html_text() %>% trim()
+chance_making_finals <- ft8 %>% html_nodes("td.top-seed") %>% html_text() %>% trim() 
+chance_winning_finals <- ft8 %>% html_nodes("td.top-seed+ .pct") %>% html_text() %>% trim() 
 team[team=="ers"] <- "Philadelphia"
 team[team=="Hornets"] <- "Charlotte"
 team[team=="Clippers"] <- "LA Clippers"
@@ -75,15 +77,18 @@ team[team=="Suns"] <- "Phoenix"
 team[team=="Nets"] <- "Brooklyn"
 #wins <- rep(0, length(carm_elo))
 #losses <- rep(0, length(carm_elo))
-elo <- rep(0, length(carm_elo))
-fivethirtyeight <- data.frame(team, elo=as.numeric(elo), 
+#elo <- rep(0, length(carm_elo))
+fivethirtyeight <- data.frame(team, 
+                              carm_elo_full=as.numeric(carm_elo_full), 
                               carm_elo=as.numeric(carm_elo), 
                               wins_538=as.numeric(wins), 
                               losses_538=as.numeric(losses), 
+                              chance_making_finals, chance_winning_finals,
                               stringsAsFactors = FALSE) %>%
   mutate(selected_team=as.character(team), opposing_team=as.character(team), 
-         elo=elo, carm_elo=carm_elo, 
-         pred_win_rate_538=wins_538/(wins_538+losses_538)) %>%
+         carm_elo_full=carm_elo_full, carm_elo=carm_elo, 
+         pred_win_rate_538=wins_538/(wins_538+losses_538),  
+         chance_making_finals, chance_winning_finals) %>%
   select(-team)
 
 
@@ -265,10 +270,12 @@ s4 <- read_player_data("NBA-2015-2016", c("SEASON", "DATE", "PLAYER FULL NAME", 
 s5 <- read_player_data("NBA-2016-2017", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 5) 
 s6 <- read_player_data("NBA-2017-2018", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 6) 
 s7 <- read_player_data("NBA-2018-2019", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 7) 
+s8 <- read_player_data("NBA-2018-2019", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 8) 
+
 
 
 ## Add some indicators
-f <- rbind.data.frame(s1, s2, s3, s4, s5, s6, s7) %>%
+f <- rbind.data.frame(s1, s2, s3, s4, s5, s6, s7, s8) %>%
      filter(is.na(DATA_SET)==FALSE) %>%
      mutate(home_team=as.numeric(VENUE_R_H=='H'), 
             road_team=as.numeric(VENUE_R_H=='R'), 

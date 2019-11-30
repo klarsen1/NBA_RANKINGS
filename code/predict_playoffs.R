@@ -6,6 +6,17 @@ root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
 source(paste0(root, "/functions/sim_playoffs.R"))
 library(stringr)
 library(stringi)
+library(data.table)
+library(parallel)
+library(foreach)
+library(doParallel)
+library(dplyr)
+
+#box_scores <- readRDS(paste0(root, "/cleandata/box_scores.RDA")) %>%
+#  filter(playoffs==0)
+
+#max_real_date <- max(box_scores$DATE)
+#end_date <- max_real_date
 
 playoff_start_date <- as.Date("2019-04-14") ## faking it a bit here
 
@@ -24,9 +35,17 @@ win_perc2 <- win_perc1
 
 inwindow_active <- mutate(inwindow,
                           today=as.Date(end_date),                        
-                          injured=ifelse(is.na(injury_status), 0, ifelse(playoff_start_date>=injury_scrape_date & playoff_start_date<=return_date, 1, 0))
+                          injured=ifelse(is.na(injury_status), 0, ifelse(playoff_start_date>=injury_scrape_date & playoff_start_date<=return_date, 1, 0)), 
+                          #injured=ifelse(PLAYER_FULL_NAME=="DeMarcus Cousins", 1, injured), 
+                          #injured=ifelse(PLAYER_FULL_NAME=="Kevon Looney", 1, injured), 
+                          injured=ifelse(PLAYER_FULL_NAME=="Kevin Durant", 1, injured), 
+                          injured=ifelse(PLAYER_FULL_NAME=="Giannis Antetokounmpo", 1, injured),
+                          injured=ifelse(PLAYER_FULL_NAME=="James Harden", 1, injured), 
+                          injured=ifelse(PLAYER_FULL_NAME=="Rudy Gobert", 1, injured), 
+                          injured=ifelse(PLAYER_FULL_NAME=="Brook Lopez", 1, injured)
 )
 injured_players <- unique(subset(inwindow_active, injured==1)$PLAYER_FULL_NAME)
+print(sort(injured_players))
 if (length(injured_players)>0){
   print(paste0("Injuries: ", sort(injured_players)))
   inwindow_active <- filter(inwindow_active, injured==0)
@@ -72,7 +91,21 @@ for (i in 1:r){
          nn1 <- 0
          nn2 <- 0
          for (g in 1:length(p)){
-             binomial <- as.numeric(rbinom(n=1, size=1, prob=p[g]))
+             if (g %in% c(1,3,4)){
+                if (s[g]=="Toronto"){
+                   binomial <- 1
+                } else if (t1=="Toronto" | t2=="Toronto"){
+                   binomial <- 0
+                }
+             } else if (g==2){
+               if (s[g]=="Golden State"){
+                 binomial <- 1
+               } else if (t1=="Golden State" | t2=="Golden State"){
+                 binomial <- 0
+               }
+             } else{
+                binomial <- as.numeric(rbinom(n=1, size=1, prob=p[g]))  
+             }
              if (t1==s[g]){
                 if (binomial==1){nn1 <- nn1+1}
                 else {nn2 <- nn2+1}
@@ -103,7 +136,7 @@ for (i in 1:r){
   }
 }
 
-coin_flip_results <- data.frame(rbindlist(coin_flips)) %>% arrange(winner, round, matchup)
+coin_flip_results <- data.frame(rbindlist(coin_flips)) %>% arrange(round, winner, matchup)
 
 
 winners <- data.frame(rbindlist(loopResult[[1]])) %>%

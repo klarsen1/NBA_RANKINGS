@@ -1,175 +1,127 @@
 "PLAYER_FULL_NAME","injury_status","injury_date","clean_note","return_date","injury_scrape_date"
-"Al Horford","Day-To-Day","Apr 8","Apr 13",2019-04-13,2019-04-11
-"Alex Poythress","Out","Apr 9","Oct 1",2019-10-01,2019-04-11
-"Allonzo Trier","Out","Apr 8","Apr 11",2019-04-11,2019-04-11
-"Andre Iguodala","Out","Apr 8",NA,2019-04-12,2019-04-11
-"Andrew Bogut","Day-To-Day","Apr 8",NA,2019-04-12,2019-04-11
-"Anthony Davis","Out","Apr 9","May 1",2019-05-01,2019-04-11
-"Aron Baynes","Day-To-Day","Apr 8","Apr 13",2019-04-13,2019-04-11
-"Avery Bradley","Out","Apr 8","May 1",2019-05-01,2019-04-11
-"Ben Simmons","Day-To-Day","Apr 10","Apr 13",2019-04-13,2019-04-11
-"Blake Griffin","Day-To-Day","Apr 9","Apr 13",2019-04-13,2019-04-11
-"Bojan Bogdanovic","Day-To-Day","Apr 10","Apr 14",2019-04-14,2019-04-11
-"Brook Lopez","Day-To-Day","Apr 9","Apr 12",2019-04-12,2019-04-11
-"Chandler Parsons","Day-To-Day","Apr 10","Apr 11",2019-04-11,2019-04-11
-"CJ McCollum","Out","Apr 7","Apr 13",2019-04-13,2019-04-11
-"Cody Zeller","Out","Apr 8","Apr 13",2019-04-13,2019-04-11
-"Courtney Lee","Day-To-Day","Apr 9",NA,2019-04-12,2019-04-11
-"Damian Lillard","Day-To-Day","Apr 10",NA,2019-04-12,2019-04-11
-"Daniel Theis","Day-To-Day","Apr 8",NA,2019-04-12,2019-04-11
-"Danilo Gallinari","Day-To-Day","Apr 9",NA,2019-04-12,2019-04-11
-"Dante Cunningham","Day-To-Day","Apr 10","Apr 13",2019-04-13,2019-04-11
-"Darius Miller","Out","Apr 8","May 1",2019-05-01,2019-04-11
-"Darren Collison","Out","Apr 7",NA,2019-04-12,2019-04-11
-"Deandre Ayton","Out","Apr 8","May 1",2019-05-01,2019-04-11
-"DeMarcus Cousins","Day-To-Day","Apr 10","Apr 13",2019-04-13,2019-04-11
-"DeMarre Carroll","Day-To-Day","Apr 9","Apr 13",2019-04-13,2019-04-11
-"Dennis Smith Jr.","Out","Apr 7","Apr 10",2020-04-09,2019-04-11
-"Derrick Favors","Out","Apr 9","Apr 13",2019-04-13,2019-04-11
-"Deyonta Davis","Out","Apr 9",NA,2019-04-12,2019-04-11
-"Dirk Nowitzki","Day-To-Day","Apr 7",NA,2019-04-12,2019-04-11
-"Domantas Sabonis","Day-To-Day","Apr 10",NA,2019-04-12,2019-04-11
-"Donovan Mitchell","Day-To-Day","Apr 10","Apr 13",2019-04-13,2019-04-11
-"Draymond Green","Day-To-Day","Apr 10","Apr 13",2019-04-13,2019-04-11
-"Emmanuel Mudiay","Out","Apr 9","May 1",2019-05-01,2019-04-11
-"Frank Jackson","Out","Apr 8","May 1",2019-05-01,2019-04-11
-"Furkan Korkmaz","Out","Apr 9",NA,2019-04-12,2019-04-11
-"Giannis Antetokounmpo","Day-To-Day","Apr 9","Apr 13",2019-04-13,2019-04-11
-"Gordon Hayward","Day-To-Day","Apr 8","Apr 13",2019-04-13,2019-04-11
-"Guerschon Yabusele","Day-To-Day","Apr 8",NA,2019-04-12,2019-04-11
-"Isaiah Hicks","Out","Apr 7",NA,2019-04-12,2019-04-11
-"Jabari Parker","Out","Apr 9","May 1",2019-05-01,2019-04-11
-"JaMychal Green","Day-To-Day","Apr 7",NA,2019-04-12,2019-04-11
-"Jaylen Brown","Day-To-Day","Apr 8",NA,2019-04-12,2019-04-11
-"Jayson Tatum","Day-To-Day","Apr 8",NA,2019-04-12,2019-04-11
-"Jeff Teague","Out","Apr 10","Jun 1",2019-06-01,2019-04-11
-"Jerryd Bayless","Day-To-Day","Apr 9","Apr 10",2020-04-09,2019-04-11
-"Jimmy Butler","Day-To-Day","Apr 10","Apr 13",2019-04-13,2019-04-11
-"JJ Redick","Day-To-Day","Apr 8","Apr 13",2019-04-13,2019-04-11
-"Joakim Noah","Out","Apr 8","May 1",2019-05-01,2019-04-11
-"Joe Harris","Day-To-Day","Apr 9","Apr 13",2019-04-13,2019-04-11
-"Joel Embiid","Day-To-Day","Apr 8","Apr 13",2019-04-13,2019-04-11
-"John Collins","Day-To-Day","Apr 7",NA,2019-04-12,2019-04-11
-"John Henson","Out","Apr 9","Jun 1",2019-06-01,2019-04-11
-"John Wall","Out","Apr 10","Mar 1",2020-02-29,2019-04-11
-"Jonah Bolden","Day-To-Day","Apr 9","Apr 13",2019-04-13,2019-04-11
-"Jonathan Isaac","Day-To-Day","Apr 9","Apr 13",2019-04-13,2019-04-11
-"Jordan McRae","Day-To-Day","Apr 9","May 1",2019-05-01,2019-04-11
-"Josh Richardson","Out","Apr 10","Apr 13",2019-04-13,2019-04-11
-"Julius Randle","Day-To-Day","Apr 9",NA,2019-04-12,2019-04-11
-"Kadeem Allen","Out","Apr 8",NA,2019-04-12,2019-04-11
-"Karl-Anthony Towns","Day-To-Day","Apr 9","Sep 1",2019-09-01,2019-04-11
-"Kevin Durant","Day-To-Day","Apr 9",NA,2019-04-12,2019-04-11
-"Kevin Huerter","Day-To-Day","Apr 7",NA,2019-04-12,2019-04-11
-"Kevin Love","Out","Apr 8",NA,2019-04-12,2019-04-11
-"Klay Thompson","Day-To-Day","Apr 9",NA,2019-04-12,2019-04-11
-"Kosta Koufos","Day-To-Day","Apr 7","Apr 11",2019-04-11,2019-04-11
-"Kostas Antetokounmpo","Day-To-Day","Apr 7","Apr 10",2020-04-09,2019-04-11
-"Kris Dunn","Out","Apr 8","Apr 10",2020-04-09,2019-04-11
-"Kyle Anderson","Out","Apr 10","Jun 1",2019-06-01,2019-04-11
-"Kyle Korver","Out","Apr 8","Apr 13",2019-04-13,2019-04-11
-"Kyle Kuzma","Out","Apr 8","May 1",2019-05-01,2019-04-11
-"Kyle Lowry","Day-To-Day","Apr 9",NA,2019-04-12,2019-04-11
-"Kyle O'Quinn","Day-To-Day","Apr 10","Apr 13",2019-04-13,2019-04-11
-"Kyrie Irving","Day-To-Day","Apr 8","Apr 13",2019-04-13,2019-04-11
-"Lance Thomas","Day-To-Day","Apr 8","Apr 10",2020-04-09,2019-04-11
-"Lonzo Ball","Out","Apr 10","May 1",2019-05-01,2019-04-11
-"Lou Williams","Day-To-Day","Apr 9","Apr 10",2020-04-09,2019-04-11
-"Luka Doncic","Day-To-Day","Apr 8","Apr 11",2019-04-11,2019-04-11
-"Luol Deng","Out","Apr 8","Apr 10",2020-04-09,2019-04-11
-"Marcus Morris","Day-To-Day","Apr 8","Apr 13",2019-04-13,2019-04-11
-"Marcus Smart","Day-To-Day","Apr 8","May 2",2019-05-02,2019-04-11
-"Mario Hezonja","Day-To-Day","Apr 9",NA,2019-04-12,2019-04-11
-"Marvin Williams","Day-To-Day","Apr 9","Apr 13",2019-04-13,2019-04-11
-"Matthew Dellavedova","Out","Apr 8","May 1",2019-05-01,2019-04-11
-"Maurice Harkless","Day-To-Day","Apr 7",NA,2019-04-12,2019-04-11
-"Maxi Kleber","Day-To-Day","Apr 8","May 1",2019-05-01,2019-04-11
-"Michael Kidd-Gilchrist","Day-To-Day","Apr 8",NA,2019-04-12,2019-04-11
-"Mike Conley","Out","Apr 8","May 1",2019-05-01,2019-04-11
-"Mike Scott","Day-To-Day","Apr 9",NA,2019-04-12,2019-04-11
-"Mo Bamba","Out","Apr 7","Apr 11",2019-04-11,2019-04-11
-"Myles Turner","Day-To-Day","Apr 7","Apr 14",2019-04-14,2019-04-11
-"Nik Stauskas","Day-To-Day","Apr 8",NA,2019-04-12,2019-04-11
-"Nikola Mirotic","Out","Apr 9","Apr 13",2019-04-13,2019-04-11
-"Nikola Vucevic","Day-To-Day","Apr 10","Apr 13",2019-04-13,2019-04-11
-"Noah Vonleh","Out","Apr 8","Apr 11",2019-04-11,2019-04-11
-"Omari Spellman","Out","Apr 9","Apr 12",2019-04-12,2019-04-11
-"Otto Porter Jr.","Out","Apr 8","Apr 11",2019-04-11,2019-04-11
-"Pat Connaughton","Day-To-Day","Apr 9","Apr 10",2020-04-09,2019-04-11
-"Patrick Beverley","Out","Apr 9",NA,2019-04-12,2019-04-11
-"Paul George","Day-To-Day","Apr 10","Apr 13",2019-04-13,2019-04-11
-"Rajon Rondo","Out","Apr 7","May 1",2019-05-01,2019-04-11
-"Raul Neto","Out","Apr 9","Apr 13",2019-04-13,2019-04-11
-"Reggie Bullock","Out","Apr 8","May 1",2019-05-01,2019-04-11
-"Richaun Holmes","Out","Apr 9","May 1",2019-05-01,2019-04-11
-"Ricky Rubio","Day-To-Day","Apr 8","Apr 13",2019-04-13,2019-04-11
-"Rudy Gobert","Day-To-Day","Apr 10","Apr 13",2019-04-13,2019-04-11
-"Serge Ibaka","Day-To-Day","Apr 9",NA,2019-04-12,2019-04-11
-"Shaquille Harrison","Day-To-Day","Apr 9",NA,2019-04-12,2019-04-11
-"Shaun Livingston","Day-To-Day","Apr 10","Apr 13",2019-04-13,2019-04-11
-"Shelvin Mack","Day-To-Day","Apr 8","Apr 10",2020-04-09,2019-04-11
-"Stanley Johnson","Out","Apr 8","May 1",2019-05-01,2019-04-11
-"Stephen Curry","Day-To-Day","Apr 9","Apr 13",2019-04-13,2019-04-11
-"Steven Adams","Day-To-Day","Apr 10",NA,2019-04-12,2019-04-11
-"Sviatoslav Mykhailiuk","Out","Apr 10",NA,2019-04-12,2019-04-11
-"T.J. Warren","Out","Apr 8","May 1",2019-05-01,2019-04-11
-"Taj Gibson","Out","Apr 9","Apr 11",2019-04-11,2019-04-11
-"Terry Rozier","Day-To-Day","Apr 7",NA,2019-04-12,2019-04-11
-"Thaddeus Young","Day-To-Day","Apr 10","Apr 14",2019-04-14,2019-04-11
-"Timofey Mozgov","Out","Apr 7","Apr 11",2019-04-11,2019-04-11
-"Tobias Harris","Day-To-Day","Apr 10","Apr 13",2019-04-13,2019-04-11
-"Tony Snell","Out","Apr 9","Apr 15",2019-04-15,2019-04-11
-"Trae Young","Day-To-Day","Apr 7",NA,2019-04-12,2019-04-11
-"Tristan Thompson","Out","Apr 8",NA,2019-04-12,2019-04-11
-"Tyreke Evans","Day-To-Day","Apr 7",NA,2019-04-12,2019-04-11
-"Tyson Chandler","Out","Apr 7",NA,2019-04-12,2019-04-11
-"Wesley Matthews","Day-To-Day","Apr 9","Apr 14",2019-04-14,2019-04-11
-"Will Barton","Day-To-Day","Apr 9",NA,2019-04-12,2019-04-11
-"Zach LaVine","Out","Apr 8","Apr 11",2019-04-11,2019-04-11
-"Allen Crabbe","Out",NA,"Jul 1",2019-07-01,2019-04-11
-"Andre Roberson","Out",NA,"Jun 10",2019-06-10,2019-04-11
-"Brandon Ingram","Out",NA,"Jul 1",2019-07-01,2019-04-11
-"C.J. Miles","Out",NA,"Jun 1",2019-06-01,2019-04-11
-"Chandler Hutchison","Out",NA,"May 1",2019-05-01,2019-04-11
-"Damian Jones","Out",NA,"May 1",2019-05-01,2019-04-11
-"Dante Exum","Out",NA,"Jul 1",2019-07-01,2019-04-11
-"Dejounte Murray","Out",NA,"Jun 1",2019-06-01,2019-04-11
-"Denzel Valentine","Out",NA,"Jul 1",2019-07-01,2019-04-11
-"Derrick Rose","Out",NA,"Jun 1",2019-06-01,2019-04-11
-"Devin Booker","Out",NA,"May 1",2019-05-01,2019-04-11
-"DeWayne Dedmon","Out",NA,"May 31",2019-05-31,2019-04-11
-"Dillon Brooks","Out",NA,"Jun 1",2019-06-01,2019-04-11
-"Donte DiVincenzo","Out",NA,"Jul 1",2019-07-01,2019-04-11
-"Dwight Howard","Out",NA,"May 1",2019-05-01,2019-04-11
-"E'Twaun Moore","Out",NA,"May 1",2019-05-01,2019-04-11
-"Frank Ntilikina","Out",NA,"Jul 1",2019-07-01,2019-04-11
-"Harry Giles","Out",NA,"May 1",2019-05-01,2019-04-11
-"J.J. Barea","Out",NA,"Aug 1",2019-08-01,2019-04-11
-"J.R. Smith","Out",NA,"Jun 15",2019-06-15,2019-04-11
-"James Ennis III","Out",NA,"Apr 18",2019-04-18,2019-04-11
-"Jaren Jackson Jr.","Out",NA,"Jun 1",2019-06-01,2019-04-11
-"Joe Chealey","Out",NA,"Apr 10",2020-04-09,2019-04-11
-"Jonas Valanciunas","Out",NA,"Jul 1",2019-07-01,2019-04-11
-"Josh Hart","Out",NA,"Jul 1",2019-07-01,2019-04-11
-"Jrue Holiday","Out",NA,"May 15",2019-05-15,2019-04-11
-"Jusuf Nurkic","Out",NA,"Sep 1",2019-09-01,2019-04-11
-"Kelly Oubre Jr.","Out",NA,"Jun 1",2019-06-01,2019-04-11
-"Kristaps Porzingis","Out",NA,"Jul 1",2019-07-01,2019-04-11
-"Lauri Markkanen","Out",NA,"May 1",2019-05-01,2019-04-11
-"LeBron James","Out",NA,"Jul 1",2019-07-01,2019-04-11
-"Malcolm Brogdon","Out",NA,"Apr 27",2019-04-27,2019-04-11
-"Markelle Fultz","Out",NA,"Apr 11",2019-04-11,2019-04-11
-"Michael Porter Jr.","Out",NA,"Apr 13",2019-04-13,2019-04-11
-"Miles Plumlee","Out",NA,"Jul 1",2019-07-01,2019-04-11
-"Patrick McCaw","Out",NA,"Apr 20",2019-04-20,2019-04-11
-"Pau Gasol","Out",NA,"Apr 22",2019-04-22,2019-04-11
-"Robert Covington","Out",NA,"Jul 1",2019-07-01,2019-04-11
-"Svi Mykhailiuk","Out",NA,"Apr 10",2020-04-09,2019-04-11
-"Tim Hardaway Jr.","Out",NA,"Aug 1",2019-08-01,2019-04-11
-"Trevon Bluiett","Out",NA,"May 1",2019-05-01,2019-04-11
-"Trevor Ariza","Out",NA,"May 1",2019-05-01,2019-04-11
-"Troy Brown Jr.","Out",NA,"May 1",2019-05-01,2019-04-11
-"Tyler Johnson","Out",NA,"Jun 1",2019-06-01,2019-04-11
-"Victor Oladipo","Out",NA,"Oct 1",2019-10-01,2019-04-11
-"Wendell Carter Jr.","Out",NA,"Jun 1",2019-06-01,2019-04-11
-"Wenyen Gabriel","Out",NA,"Apr 10",2020-04-09,2019-04-11
+"Aaron Gordon","Out","Nov 29",NA,2019-12-01,2019-11-30
+"Al Horford","Day-To-Day","Nov 28",NA,2019-12-01,2019-11-30
+"Alen Smailagic","Out","Nov 27",NA,2019-12-01,2019-11-30
+"Amir Coffey","Day-To-Day","Nov 26","Game Time Decision",2019-12-01,2019-11-30
+"Anthony Davis","Day-To-Day","Nov 28",NA,2019-12-01,2019-11-30
+"Aron Baynes","Out","Nov 29",NA,2019-12-01,2019-11-30
+"Avery Bradley","Out","Nov 29","Game Time Decision",2019-12-01,2019-11-30
+"Ben Simmons","Day-To-Day","Nov 29",NA,2019-12-01,2019-11-30
+"Bogdan Bogdanovic","Day-To-Day","Nov 30","Game Time Decision",2019-12-01,2019-11-30
+"Bol Bol","Day-To-Day","Nov 29",NA,2019-12-01,2019-11-30
+"Brook Lopez","Day-To-Day","Nov 30","Dec 2",2019-12-02,2019-11-30
+"C.J. Miles","Out","Nov 30","Dec 3",2019-12-03,2019-11-30
+"Cam Reddish","Day-To-Day","Nov 30","Game Time Decision",2019-12-01,2019-11-30
+"Cameron Johnson","Day-To-Day","Nov 26",NA,2019-12-01,2019-11-30
+"Chandler Hutchison","Out","Nov 29","Dec 4",2019-12-04,2019-11-30
+"Chimezie Metu","Day-To-Day","Nov 28","Game Time Decision",2019-12-01,2019-11-30
+"Clint Capela","Day-To-Day","Nov 29","Game Time Decision",2019-12-01,2019-11-30
+"Cody Zeller","Day-To-Day","Nov 30","Game Time Decision",2019-12-01,2019-11-30
+"D'Angelo Russell","Out","Nov 30","Dec 4",2019-12-04,2019-11-30
+"Damion Lee","Out","Nov 27","Game Time Decision",2019-12-01,2019-11-30
+"Daniel Theis","Day-To-Day","Nov 26",NA,2019-12-01,2019-11-30
+"De'Aaron Fox","Out","Nov 29","Dec 20",2019-12-20,2019-11-30
+"De'Andre Hunter","Day-To-Day","Nov 26",NA,2019-12-01,2019-11-30
+"DeAndre Jordan","Day-To-Day","Nov 28",NA,2019-12-01,2019-11-30
+"DeAndre' Bembry","Day-To-Day","Nov 27",NA,2019-12-01,2019-11-30
+"Derrick Favors","Out","Nov 28","Game Time Decision",2019-12-01,2019-11-30
+"Derrick Jones Jr.","Out","Nov 28","Game Time Decision",2019-12-01,2019-11-30
+"Dewan Hernandez","Out","Nov 28","Game Time Decision",2019-12-01,2019-11-30
+"Dion Waiters","Day-To-Day","Nov 29",NA,2019-12-01,2019-11-30
+"Dorian Finney-Smith","Day-To-Day","Nov 28",NA,2019-12-01,2019-11-30
+"Draymond Green","Out","Nov 27",NA,2019-12-01,2019-11-30
+"Ed Davis","Out","Nov 29",NA,2019-12-01,2019-11-30
+"Edmond Sumner","Out","Nov 30","Dec 9",2019-12-09,2019-11-30
+"Elfrid Payton","Out","Nov 30","Dec 1",2019-12-01,2019-11-30
+"Eric Bledsoe","Day-To-Day","Nov 30","Game Time Decision",2019-12-01,2019-11-30
+"Frank Ntilikina","Day-To-Day","Nov 27",NA,2019-12-01,2019-11-30
+"Gary Trent Jr.","Day-To-Day","Nov 28","Game Time Decision",2019-12-01,2019-11-30
+"George Hill","Day-To-Day","Nov 30","Game Time Decision",2019-12-01,2019-11-30
+"Giannis Antetokounmpo","Day-To-Day","Nov 30","Game Time Decision",2019-12-01,2019-11-30
+"Gordon Hayward","Out","Nov 30","Dec 25",2019-12-25,2019-11-30
+"Ian Mahinmi","Out","Nov 27","Game Time Decision",2019-12-01,2019-11-30
+"Ja Morant","Day-To-Day","Nov 27",NA,2019-12-01,2019-11-30
+"Jacob Evans","Out","Nov 30","Dec 4",2019-12-04,2019-11-30
+"JaKarr Sampson","Out","Nov 30","Game Time Decision",2019-12-01,2019-11-30
+"Jake Layman","Out","Nov 26","Game Time Decision",2019-12-01,2019-11-30
+"James Johnson","Day-To-Day","Nov 26",NA,2019-12-01,2019-11-30
+"Jimmy Butler","Day-To-Day","Nov 29",NA,2019-12-01,2019-11-30
+"John Henson","Out","Nov 28","Game Time Decision",2019-12-01,2019-11-30
+"Josh Hart","Out","Nov 27",NA,2019-12-01,2019-11-30
+"Josh Okogie","Day-To-Day","Nov 26",NA,2019-12-01,2019-11-30
+"Josh Richardson","Day-To-Day","Nov 30","Game Time Decision",2019-12-01,2019-11-30
+"Justise Winslow","Out","Nov 27",NA,2019-12-01,2019-11-30
+"Kawhi Leonard","Day-To-Day","Nov 27",NA,2019-12-01,2019-11-30
+"Kemba Walker","Day-To-Day","Nov 26",NA,2019-12-01,2019-11-30
+"Kenrich Williams","Day-To-Day","Nov 29","Game Time Decision",2019-12-01,2019-11-30
+"Kevin Huerter","Out","Nov 26","Dec 17",2019-12-17,2019-11-30
+"Kevin Knox II","Day-To-Day","Nov 27",NA,2019-12-01,2019-11-30
+"Kevin Love","Day-To-Day","Nov 27",NA,2019-12-01,2019-11-30
+"Kevon Looney","Out","Nov 29","Dec 2",2019-12-02,2019-11-30
+"Khris Middleton","Out","Nov 27",NA,2019-12-01,2019-11-30
+"Kristaps Porzingis","Day-To-Day","Nov 28",NA,2019-12-01,2019-11-30
+"Kyle Anderson","Day-To-Day","Nov 29",NA,2019-12-01,2019-11-30
+"Kyle Korver","Day-To-Day","Nov 28",NA,2019-12-01,2019-11-30
+"Kyle O'Quinn","Out","Nov 30","Game Time Decision",2019-12-01,2019-11-30
+"Kyrie Irving","Out","Nov 29","Dec 4",2019-12-04,2019-11-30
+"KZ Okpala","Out","Nov 27","Game Time Decision",2019-12-01,2019-11-30
+"Lonzo Ball","Day-To-Day","Nov 28","Game Time Decision",2019-12-01,2019-11-30
+"Luke Kornet","Out","Nov 27",NA,2019-12-01,2019-11-30
+"Malik Monk","Day-To-Day","Nov 28",NA,2019-12-01,2019-11-30
+"Marcus Morris Sr.","Day-To-Day","Nov 30",NA,2019-12-01,2019-11-30
+"Marvin Bagley III","Out","Nov 29","Dec 4",2019-12-04,2019-11-30
+"Matt Thomas","Out","Nov 26","Dec 28",2019-12-28,2019-11-30
+"Maxi Kleber","Day-To-Day","Nov 26",NA,2019-12-01,2019-11-30
+"Michael Carter-Williams","Out","Nov 28","Game Time Decision",2019-12-01,2019-11-30
+"Nigel Williams-Goss","Day-To-Day","Nov 26",NA,2019-12-01,2019-11-30
+"Nikola Vucevic","Out","Nov 30","Dec 20",2019-12-20,2019-11-30
+"Richaun Holmes","Day-To-Day","Nov 29","Game Time Decision",2019-12-01,2019-11-30
+"Ricky Rubio","Day-To-Day","Nov 28",NA,2019-12-01,2019-11-30
+"RJ Barrett","Day-To-Day","Nov 26",NA,2019-12-01,2019-11-30
+"Rodney McGruder","Day-To-Day","Nov 28","Game Time Decision",2019-12-01,2019-11-30
+"Romeo Langford","Out","Nov 30",NA,2019-12-01,2019-11-30
+"Rudy Gobert","Day-To-Day","Nov 27",NA,2019-12-01,2019-11-30
+"Ryan Arcidiacono","Day-To-Day","Nov 28","Game Time Decision",2019-12-01,2019-11-30
+"Serge Ibaka","Out","Nov 29","Game Time Decision",2019-12-01,2019-11-30
+"Shabazz Napier","Out","Nov 27","Game Time Decision",2019-12-01,2019-11-30
+"Shake Milton","Day-To-Day","Nov 28","Game Time Decision",2019-12-01,2019-11-30
+"Sterling Brown","Day-To-Day","Nov 30","Dec 2",2019-12-02,2019-11-30
+"Tacko Fall","Out","Nov 27","Dec 8",2019-12-08,2019-11-30
+"Thanasis Antetokounmpo","Day-To-Day","Nov 30","Dec 2",2019-12-02,2019-11-30
+"Tomas Satoransky","Day-To-Day","Nov 29",NA,2019-12-01,2019-11-30
+"Tony Snell","Out","Nov 27",NA,2019-12-01,2019-11-30
+"Trae Young","Day-To-Day","Nov 26",NA,2019-12-01,2019-11-30
+"Treveon Graham","Day-To-Day","Nov 27","Game Time Decision",2019-12-01,2019-11-30
+"Trevor Ariza","Out","Nov 29","Dec 2",2019-12-02,2019-11-30
+"Ty Jerome","Out","Nov 29","Game Time Decision",2019-12-01,2019-11-30
+"Victor Oladipo","Out","Nov 30","Dec 9",2019-12-09,2019-11-30
+"Vlatko Cancar","Day-To-Day","Nov 28","Game Time Decision",2019-12-01,2019-11-30
+"Zion Williamson","Out","Nov 29","Dec 15",2019-12-15,2019-11-30
+"Andre Iguodala","Out",NA,"Dec 15",2019-12-15,2019-11-30
+"Andre Roberson","Out",NA,"Game Time Decision",2019-12-01,2019-11-30
+"Caris LeVert","Out",NA,"Dec 14",2019-12-14,2019-11-30
+"Cristiano Felicio","Out",NA,"Dec 21",2019-12-21,2019-11-30
+"Danuel House Jr.","Out",NA,"Game Time Decision",2019-12-01,2019-11-30
+"Darius Miller","Out",NA,"Apr 1",2020-03-31,2019-11-30
+"DeMarcus Cousins","Out",NA,"May 15",2020-05-14,2019-11-30
+"Dylan Windler","Out",NA,"Dec 3",2019-12-03,2019-11-30
+"Eric Gordon","Out",NA,"Dec 13",2019-12-13,2019-11-30
+"Gerald Green","Out",NA,"Apr 15",2020-04-14,2019-11-30
+"Hamidou Diallo","Out",NA,"Jan 4",2020-01-04,2019-11-30
+"John Konchar","Out",NA,"Game Time Decision",2019-12-01,2019-11-30
+"John Wall","Out",NA,"May 1",2020-04-30,2019-11-30
+"Jusuf Nurkic","Out",NA,"Feb 1",2020-02-01,2019-11-30
+"Kevin Durant","Out",NA,"Out for the season",2020-11-29,2019-11-30
+"Khyri Thomas","Out",NA,"Jan 1",2020-01-01,2019-11-30
+"Klay Thompson","Out",NA,"Jun 1",2020-05-31,2019-11-30
+"Kyle Lowry","Out",NA,"Game Time Decision",2019-12-01,2019-11-30
+"Landry Shamet","Out",NA,"Game Time Decision",2019-12-01,2019-11-30
+"Naz Mitrou-Long","Out",NA,"Game Time Decision",2019-12-01,2019-11-30
+"Nene","Out",NA,"Dec 1",2019-12-01,2019-11-30
+"Otto Porter Jr.","Out",NA,"Dec 6",2019-12-06,2019-11-30
+"Patrick McCaw","Out",NA,"Dec 14",2019-12-14,2019-11-30
+"Reggie Bullock","Out",NA,"Dec 20",2019-12-20,2019-11-30
+"Reggie Jackson","Out",NA,"Game Time Decision",2019-12-01,2019-11-30
+"Stanley Johnson","Out",NA,"Dec 3",2019-12-03,2019-11-30
+"Stephen Curry","Out",NA,"Mar 5",2020-03-04,2019-11-30
+"Zach Collins","Out",NA,"Mar 15",2020-03-14,2019-11-30

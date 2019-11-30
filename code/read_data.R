@@ -77,7 +77,6 @@ team[team=="Suns"] <- "Phoenix"
 team[team=="Nets"] <- "Brooklyn"
 #wins <- rep(0, length(carm_elo))
 #losses <- rep(0, length(carm_elo))
-#elo <- rep(0, length(carm_elo))
 fivethirtyeight <- data.frame(team, 
                               carm_elo_full=as.numeric(carm_elo_full), 
                               carm_elo=as.numeric(carm_elo), 
@@ -86,7 +85,7 @@ fivethirtyeight <- data.frame(team,
                               chance_making_finals, chance_winning_finals,
                               stringsAsFactors = FALSE) %>%
   mutate(selected_team=as.character(team), opposing_team=as.character(team), 
-         carm_elo_full=carm_elo_full, carm_elo=carm_elo, 
+         carm_elo_full, carm_elo, 
          pred_win_rate_538=wins_538/(wins_538+losses_538),  
          chance_making_finals, chance_winning_finals) %>%
   select(-team)
@@ -563,10 +562,10 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
             opposing_team_points=ifelse(home_team_selected==0, home_team_points, road_team_points),
             win=ifelse(future_game==1, NA, win)) %>%
      dplyr::select(-VENUE_R_H, -TOT) %>% arrange(DATE, game_id) %>%
-     left_join(select(fivethirtyeight, elo, carm_elo, selected_team), by="selected_team") %>%
-     rename(elo_selected_team=elo, carm_elo_selected_team=carm_elo) %>%
-     left_join(select(fivethirtyeight, elo, carm_elo, opposing_team), by="opposing_team") %>%
-     rename(elo_opposing_team=elo, carm_elo_opposing_team=carm_elo) %>%
+     left_join(select(fivethirtyeight, carm_elo_full, carm_elo, selected_team, wins_538), by="selected_team") %>%
+     rename(carm_elo_full_selected_team=carm_elo_full, carm_elo_selected_team=carm_elo, wins_538_selected_team=wins_538) %>%
+     left_join(select(fivethirtyeight, carm_elo_full, carm_elo, opposing_team, wins_538), by="opposing_team") %>%
+     rename(carm_elo_full_opposing_team=carm_elo_full, carm_elo_opposing_team=carm_elo, wins_538_opposing_team=wins_538) %>%
      left_join(injuries, by="PLAYER_FULL_NAME") %>%
      mutate(travel_differential=if_else(is.na(travel_differential), 0, travel_differential), 
             opposing_team_travel=if_else(is.na(opposing_team_travel), 0, opposing_team_travel), 

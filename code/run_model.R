@@ -19,6 +19,8 @@ source(paste0(root, "/functions/attach_win_perc.R"))
 source(paste0(root, "/functions/manipulate_and_save_output.R"))
 source(paste0(root, "/functions/save_results.R"))
 source(paste0(root, "/functions/get_team_offsets.R"))
+source(paste0(root, "/functions/assign_clusters_and_win_rates.R"))
+
 
 
 current_season <- 2019
@@ -79,7 +81,7 @@ start_index <- subset(datemap, DATE==start_date)$DATE_INDEX
 end_index <- subset(datemap, DATE==end_date)$DATE_INDEX
 
 ### Assign clusters to the historical data and calculate rolling win percentages
-box_scores_plus <- assign_clusters_and_win_rates(root, datemap)
+box_scores_plus <- assign_clusters_and_win_rates(root, datemap, box_scores, weighted_win_rates, cluster_window)
 
 ## Save clusters
 clusters_and_players <- 

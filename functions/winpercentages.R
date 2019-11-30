@@ -1,7 +1,7 @@
 winpercentages <- function(data, s, use_weights){
 
   df <- subset(data, season==s) %>% distinct(game_id, .keep_all=TRUE) %>%
-    select(selected_team, opposing_team, selected_team_win, selected_team_points, opposing_team_points, season_day_std, carm_elo_selected_team, carm_elo_opposing_team)
+    select(selected_team, opposing_team, selected_team_win, selected_team_points, opposing_team_points, season_day_std, wins_538_selected_team, wins_538_opposing_team)
 
   MM <- month(max(subset(data, season==s)$DATE))
   SS <- filter(data, DATE==max(DATE))[1,"season_day_std"]
@@ -12,8 +12,8 @@ winpercentages <- function(data, s, use_weights){
     for (k in 1:nrow(all_teams)){
       t <- all_teams[k,"OWN_TEAM"]
       if (use_weights==1){
-        df <- mutate(df, weight=ifelse(selected_team==t, log(carm_elo_opposing_team), log(carm_elo_selected_team)))
-        #print("--- Using CARM-ELO weights")
+        df <- mutate(df, weight=ifelse(selected_team==t, log(wins_538_opposing_team), log(wins_538_selected_team)))
+        #print("--- Using 538 weights")
       }  else{
         df$weight <- 1
       }

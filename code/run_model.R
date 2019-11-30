@@ -196,7 +196,7 @@ for (i in start_index:end_index){
   }
   
   if (w==1){
-    print("Using CARM-ELO weights")
+    print("Using 538 wins as weights")
   }      
   if (cr==1){
     print("Using current scraped rosters")
@@ -213,8 +213,4 @@ for (i in start_index:end_index){
 }
 
 ### Manipulate and save the output
-#results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/", 0, 1, as.Date("2016-11-20"))
-#results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, "/Users/kim.larsen/Documents/Code/NBA_RANKINGS/", 0, 0)
 results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, root, 0, 1, NA)
-
-saveRDS(results, "forecast_041119.rda")

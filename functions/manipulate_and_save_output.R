@@ -23,7 +23,8 @@ manipulate_and_save_output <- function(clusters_and_players, scores, model_parts
        left_join(ft8, by="team") %>%
        arrange(conference, -season_win_rate) %>%
        group_by(conference) %>%
-       mutate(seed=row_number())
+       mutate(seed=row_number()) %>%
+       ungroup()
      
      models <- data.frame(rbindlist(model_details), stringsAsFactors = FALSE)
      parts <- data.frame(rbindlist(model_parts), stringsAsFactors = FALSE)

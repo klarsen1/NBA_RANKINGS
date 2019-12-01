@@ -221,8 +221,7 @@ playoff_start_date <- max(box_scores$DATE)+1 ## faking it a bit here
 
 runs <- 0
 
-rankings <- results[[2]] 
-
+rankings <- results[[2]] %>% filter(seed<9)
 
 inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date & DATE_INDEX>max_real_date-playing_time_window+1)
 thisseason <- filter(inwindow, DATE==max(DATE))[1,"season"]
@@ -309,5 +308,14 @@ for (i in 1:r){
   }
 }
 
-coin_flip_results <- data.frame(rbindlist(coin_flips)) %>% arrange(round, winner, matchup)
+seeds <- mutate(rankings, winner=team, loser=team) %>%
+  select(winner, loser, seed)
+
+playoff_results <- 
+  data.frame(rbindlist(coin_flips)) %>% 
+  arrange(round, winner, matchup) %>% 
+  inner_join(select(seeds, -loser), by="winner") %>%
+  rename(winner_seed=seed) %>%
+  inner_join(select(seeds, -winner), by="loser") %>%
+  rename(loser_seed=seed)
 

@@ -221,11 +221,7 @@ playoff_start_date <- max(box_scores$DATE)+1 ## faking it a bit here
 
 runs <- 0
 
-rankings <- results[[2]] %>%
-  arrange(conference, -season_win_rate) %>%
-  group_by(conference) %>%
-  mutate(seed=row_number()) %>%
-  mutate(seed=ifelse(seed>8, NA, seed))
+rankings <- results[[2]] 
 
 
 inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date & DATE_INDEX>max_real_date-playing_time_window+1)

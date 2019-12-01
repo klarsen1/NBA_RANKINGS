@@ -309,3 +309,4 @@ playoff_results <-
   inner_join(select(seeds, -winner), by="loser") %>%
   rename(loser_seed=seed)
 
+write.csv(playoff_results, paste0(root, "/rankings/playoff_prediction_", Sys.Date(), ".csv"))

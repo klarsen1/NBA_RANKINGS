@@ -1,0 +1,16 @@
+"","round","matchup","selected_team","winner","loser","prob_win_series","sims","winner_seed","loser_seed"
+"1",1,7,"Boston","Boston","Indiana",0.692,20000,3,6
+"2",1,3,"Denver","Denver","Dallas",0.55465,20000,3,6
+"3",1,2,"Houston","Houston","Minnesota",0.85815,20000,2,7
+"4",1,1,"LA Lakers","LA Lakers","Oklahoma City",0.9081,20000,1,8
+"5",1,5,"Milwaukee","Milwaukee","Charlotte",0.91505,20000,1,8
+"6",1,8,"Philadelphia","Philadelphia","Miami",0.5056,20000,4,5
+"7",1,6,"Toronto","Toronto","Brooklyn",0.7898,20000,2,7
+"8",1,4,"Utah","Utah","LA Clippers",0.6106,20000,4,5
+"9",2,2,"Houston","Houston","Denver",0.8335,20000,2,3
+"10",2,1,"LA Lakers","LA Lakers","Utah",0.6765,20000,1,4
+"11",2,3,"Milwaukee","Milwaukee","Philadelphia",0.70195,20000,1,4
+"12",2,4,"Toronto","Toronto","Boston",0.66305,20000,2,3
+"13",3,1,"LA Lakers","LA Lakers","Houston",0.51445,20000,1,2
+"14",3,2,"Milwaukee","Milwaukee","Toronto",0.6677,20000,1,2
+"15",4,1,"Milwaukee","Milwaukee","LA Lakers",0.60085,20000,1,1

@@ -33,8 +33,8 @@ team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>%
   distinct(Team, .keep_all=TRUE) %>% select(City, NBAstuffer.Initials, Team, OWN_TEAM_NAME, OWN_TEAM) %>%
   filter(!(Team %in% c("Charlotte Bobcats", "New Orleans Hornets")))
 
-  
-  
+
+
 
 ### 538 data
 ft8 <- read_html("http://projects.fivethirtyeight.com/2020-nba-predictions/")
@@ -162,16 +162,16 @@ rosters <- lapply(team_pages, function (team_link) {
   team_name <- team_roster %>% html_nodes(".headline__h1") %>% html_text() %>% gsub("Roster", "", .) %>% trim()
   if (team_name=="LA Clippers") {team_name<-"Los Angeles Clippers"}
   if (team_name=="Portland Trail Blazers") {team_name<-"Portland Trailblazers"}
-
+  
   Team <- team_name
   #PLAYER_FULL_NAME <- team_roster %>% html_nodes(".Table2__td:nth-child(2)") %>% html_text()
-  PLAYER_FULL_NAME <- team_roster %>% html_nodes(".Table2__td+ .Table2__td a") %>% html_text()
-  Age <- as.numeric(team_roster %>% html_nodes(".Table2__td:nth-child(4)") %>% html_text())
-  Weight <- as.numeric(team_roster %>% html_nodes(".Table2__td:nth-child(6)") %>% html_text() %>% gsub("lbs", "", .) %>% trim())
-  Height <- team_roster %>% html_nodes(".Table2__td:nth-child(5)") %>% html_text() %>% gsub("lbs", "", .) %>% trim()
-  Salary <- team_roster %>% html_nodes(".Table2__td:nth-child(8)") %>% html_text()
+  PLAYER_FULL_NAME <- team_roster %>% html_nodes(".Table__TD+ .Table__TD .AnchorLink") %>% html_text()
+  Age <- as.numeric(team_roster %>% html_nodes(".Table__TD:nth-child(4)") %>% html_text())
+  Weight <- as.numeric(team_roster %>% html_nodes(".Table__TD:nth-child(6) span") %>% html_text() %>% gsub("lbs", "", .) %>% trim())
+  Height <- team_roster %>% html_nodes(".Table__TD:nth-child(5) span") %>% html_text() %>% gsub("lbs", "", .) %>% trim()
+  Salary <- team_roster %>% html_nodes(".Table__TD:nth-child(8)") %>% html_text()
   Salary <- as.numeric(gsub(',','',gsub('\\$', '', Salary)) %>% trim())
-  Position <- team_roster %>% html_nodes(".Table2__td:nth-child(3)") %>% html_text()
+  Position <- team_roster %>% html_nodes(".Table__TD:nth-child(3)") %>% html_text()
   return(data.frame(Team, Position, PLAYER_FULL_NAME, Age, Weight, Height, Salary))
 })
 
@@ -182,7 +182,7 @@ all_rosters <- bind_rows(lapply(rosters, function(x) as.data.frame(x))) %>%
   left_join(injuries, by="PLAYER_FULL_NAME") %>%
   distinct(PLAYER_FULL_NAME, .keep_all=TRUE) %>%
   mutate(OWN_TEAM=gsub("L.A.", "LA", OWN_TEAM))
- 
+
 
 ## Save scraped data
 write.csv(all_rosters, "rosters_current.csv", row.names = FALSE)
@@ -275,18 +275,18 @@ s8 <- read_player_data("NBA-2018-2019", c("SEASON", "DATE", "PLAYER FULL NAME", 
 
 ## Add some indicators
 f <- rbind.data.frame(s1, s2, s3, s4, s5, s6, s7, s8) %>%
-     filter(is.na(DATA_SET)==FALSE) %>%
-     mutate(home_team=as.numeric(VENUE_R_H=='H'), 
-            road_team=as.numeric(VENUE_R_H=='R'), 
-            playoffs=as.numeric(substr(DATA_SET, 6, 13)=="Playoffs"),
-            season=ifelse(playoffs==0, as.numeric(substr(DATA_SET, 1, 4)), as.numeric(substr(DATA_SET, 1, 4))-1), 
-            playoff_minutes=playoffs*minutes,
-            playoff_points=playoffs*points,
-            DATE=as.Date(DATE, format="%m/%d/%Y"),
-            quarter=quarter(DATE),
-            future_game=0,
-            OWN_TEAM=ifelse(OWN_TEAM=="LA", "LA Clippers", OWN_TEAM),
-            OPP_TEAM=ifelse(OPP_TEAM=="LA", "LA Clippers", OPP_TEAM))
+  filter(is.na(DATA_SET)==FALSE) %>%
+  mutate(home_team=as.numeric(VENUE_R_H=='H'), 
+         road_team=as.numeric(VENUE_R_H=='R'), 
+         playoffs=as.numeric(substr(DATA_SET, 6, 13)=="Playoffs"),
+         season=ifelse(playoffs==0, as.numeric(substr(DATA_SET, 1, 4)), as.numeric(substr(DATA_SET, 1, 4))-1), 
+         playoff_minutes=playoffs*minutes,
+         playoff_points=playoffs*points,
+         DATE=as.Date(DATE, format="%m/%d/%Y"),
+         quarter=quarter(DATE),
+         future_game=0,
+         OWN_TEAM=ifelse(OWN_TEAM=="LA", "LA Clippers", OWN_TEAM),
+         OPP_TEAM=ifelse(OPP_TEAM=="LA", "LA Clippers", OPP_TEAM))
 
 max_date <- max(f$DATE)
 
@@ -319,10 +319,10 @@ future_schedule <- filter(schedule, DATE>max_date) %>%
          season=current_season_numeric,
          PLAYER_FULL_NAME="BLANK") %>%
   select(DATE, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATA_SET, future_game, PLAYER_FULL_NAME, season)
-  
+
 f <- bind_rows(f, future_schedule) %>%
   replace(is.na(.), 0)
-  
+
 setwd(paste0(root, "/cleandata"))
 
 ## Create an ID
@@ -333,37 +333,37 @@ f$cat <- NULL
 
 ## Team/game level points
 team_pts <- group_by(f, game_id, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATE, future_game, season) %>%
-            summarise(total_playoff_minutes=sum(minutes*playoffs),
-                      total_playoff_points=sum(points*playoffs),
-                      total_minutes=sum(minutes), 
-                      total_points=sum(points),
-                      playoffs=max(playoffs)) %>%
-            ungroup()
+  summarise(total_playoff_minutes=sum(minutes*playoffs),
+            total_playoff_points=sum(points*playoffs),
+            total_minutes=sum(minutes), 
+            total_points=sum(points),
+            playoffs=max(playoffs)) %>%
+  ungroup()
 
 ## Game level points
 game_pts <- group_by(team_pts, game_id, future_game, season) %>%
-            mutate(home_team_points=total_points*(VENUE_R_H=='H'), 
-                   road_team_points=total_points*(VENUE_R_H=='R')) %>%
-            summarise(max_game_points=max(total_points), 
-                      home_team_points=sum(home_team_points), 
-                      road_team_points=sum(road_team_points)) %>%
-            ungroup()
+  mutate(home_team_points=total_points*(VENUE_R_H=='H'), 
+         road_team_points=total_points*(VENUE_R_H=='R')) %>%
+  summarise(max_game_points=max(total_points), 
+            home_team_points=sum(home_team_points), 
+            road_team_points=sum(road_team_points)) %>%
+  ungroup()
 
 ## Random indicator to choose the selected team
 game_pts$r <- as.numeric(rbinom(nrow(game_pts), 1, 0.5)>0.5)
 
 ## Create win indicators at the game/team level            
 team_win <- inner_join(team_pts, select(game_pts, game_id, max_game_points, r), by="game_id") %>%
-            mutate(win=as.numeric(total_points==max_game_points)) %>%
-            select(-max_game_points)
+  mutate(win=as.numeric(total_points==max_game_points)) %>%
+  select(-max_game_points)
 
 
 ## Create win indicators at the game level
 game_win <- group_by(team_win, game_id, DATE, future_game, season) %>%
-            mutate(selected_team_win=ifelse(r==1, win*(VENUE_R_H=='H'), win*(VENUE_R_H=='R'))) %>%
-            summarise(selected_team_win=max(selected_team_win),
-                      playoffs=max(playoffs)) %>%
-            ungroup()
+  mutate(selected_team_win=ifelse(r==1, win*(VENUE_R_H=='H'), win*(VENUE_R_H=='R'))) %>%
+  summarise(selected_team_win=max(selected_team_win),
+            playoffs=max(playoffs)) %>%
+  ungroup()
 
 ## Create a game level summary file to be saved
 future_flipped <- filter(team_win, future_game==1) %>%
@@ -374,18 +374,18 @@ future_flipped <- filter(team_win, future_game==1) %>%
   rename(OPP_TEAM=OPP_TEAM2, 
          OWN_TEAM=OWN_TEAM2,
          VENUE_R_H=VENUE_R_H2)
-  
+
 team_win <- bind_rows(team_win, future_flipped) %>% arrange(DATE, game_id)
 
 split <- split(team_win, team_win$game_id)
 game_scores <- data.frame(rbindlist(lapply(split, function(x) spread(select(x, game_id, VENUE_R_H, OWN_TEAM), VENUE_R_H, OWN_TEAM))), stringsAsFactors = FALSE) %>%
-                   inner_join(select(game_pts, -max_game_points, -future_game, -season), by="game_id") %>%
-                   inner_join(game_win, by="game_id") %>%
-                   mutate(selected_team=ifelse(r==1, H, R), 
-                          opposing_team=ifelse(r==1, R, H), 
-                          selected_team_win=ifelse(future_game==1, NA, selected_team_win)) %>% 
-                   select(-r, -future_game) %>%
-                   rename(home_team_name=H, road_team_name=R) %>%
+  inner_join(select(game_pts, -max_game_points, -future_game, -season), by="game_id") %>%
+  inner_join(game_win, by="game_id") %>%
+  mutate(selected_team=ifelse(r==1, H, R), 
+         opposing_team=ifelse(r==1, R, H), 
+         selected_team_win=ifelse(future_game==1, NA, selected_team_win)) %>% 
+  select(-r, -future_game) %>%
+  rename(home_team_name=H, road_team_name=R) %>%
   ungroup()
 
 game_scores$home_team_name <- trim(game_scores$home_team_name)
@@ -396,12 +396,12 @@ game_scores$opposing_team <- trim(game_scores$opposing_team)
 saveRDS(game_scores, "GAME_SCORES.RDA")
 
 get_rest_days <- function(id){
-
+  
   selected <- subset(game_scores, game_id==id)$selected_team %>% trim()
   opposing <- subset(game_scores, game_id==id)$opposing_team %>% trim()
   
   t <- rename(altitudes, OWN_TEAM=team, selected_team_altitude=altitude)
-
+  
   df1 <- subset(game_scores, home_team_name==selected | road_team_name==selected) %>% 
     arrange(DATE) %>%
     mutate(days_since_last_game=DATE-lag(DATE), 
@@ -418,7 +418,7 @@ get_rest_days <- function(id){
     filter(game_id==id) %>%
     left_join(t, by="OWN_TEAM") %>%
     select(selected_team_rest, selected_team_last_city, selected_team_travel, selected_team_altitude)
- 
+  
   t <- rename(altitudes, OWN_TEAM=team, opposing_team_altitude=altitude)
   
   df2 <- subset(game_scores, home_team_name==opposing | road_team_name==opposing) %>% 
@@ -437,7 +437,7 @@ get_rest_days <- function(id){
     filter(game_id==id) %>%
     left_join(t, by="OWN_TEAM") %>%
     select(opposing_team_rest, opposing_team_last_city, game_id, opposing_team_travel, opposing_team_altitude, lon1, lon2, lat1, lat2)
-
+  
   return(data.frame(cbind(df1, df2)))
 }
 
@@ -465,7 +465,7 @@ games_last_week <- function(id){
     mutate(back2back=as.numeric(DATE-lag(DATE)==1)) %>%
     replace(is.na(.), 0) %>%
     summarise(back2back=sum(back2back))
-    
+  
   team2 <- filter(game_scores, DATE<date & DATE>date-6 & season==s) %>%
     filter(selected_team==t2 | opposing_team==t2) %>%
     arrange(DATE) %>%
@@ -473,7 +473,7 @@ games_last_week <- function(id){
     mutate(back2back=as.numeric(DATE-lag(DATE)==1)) %>%
     replace(is.na(.), 0) %>%
     summarise(back2back=sum(back2back))
-
+  
   if (nrow(team1)>0 & nrow(team2)){
     df <- data.frame(cbind(id, team1$back2back, team2$back2back), stringsAsFactors = FALSE)
   } else{
@@ -548,29 +548,29 @@ prev_matchups$game_id <- as.character(prev_matchups$game_id)
 
 ## Create the fill box score file
 final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_TEAM, -future_game, -season), by=c("game_id", "OWN_TEAM")) %>%
-     inner_join(select(game_scores, -DATE, -playoffs, -season), by="game_id") %>%
-     inner_join(rest_days, by="game_id") %>%
-     inner_join(trailing_games, by="game_id") %>%
-     inner_join(prev_matchups, by="game_id") %>%
-     mutate(share_of_minutes=minutes/total_minutes, 
-            share_of_playoff_minutes=ifelse(total_playoff_minutes>0, playoff_minutes/total_playoff_minutes, 0),
-            share_of_playoff_points=ifelse(total_playoff_points>0, playoff_points/total_playoff_points, 0),
-            share_of_points=points/total_points,
-            share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes),
-            home_team_selected = as.numeric(home_team_name==selected_team),
-            selected_team_points=ifelse(home_team_selected==1, home_team_points, road_team_points),
-            opposing_team_points=ifelse(home_team_selected==0, home_team_points, road_team_points),
-            win=ifelse(future_game==1, NA, win)) %>%
-     dplyr::select(-VENUE_R_H, -TOT) %>% arrange(DATE, game_id) %>%
-     left_join(select(fivethirtyeight, carm_elo_full, carm_elo, selected_team, wins_538), by="selected_team") %>%
-     rename(carm_elo_full_selected_team=carm_elo_full, carm_elo_selected_team=carm_elo, wins_538_selected_team=wins_538) %>%
-     left_join(select(fivethirtyeight, carm_elo_full, carm_elo, opposing_team, wins_538), by="opposing_team") %>%
-     rename(carm_elo_full_opposing_team=carm_elo_full, carm_elo_opposing_team=carm_elo, wins_538_opposing_team=wins_538) %>%
-     left_join(injuries, by="PLAYER_FULL_NAME") %>%
-     mutate(travel_differential=if_else(is.na(travel_differential), 0, travel_differential), 
-            opposing_team_travel=if_else(is.na(opposing_team_travel), 0, opposing_team_travel), 
-            selected_team_travel=if_else(is.na(selected_team_travel), 0, opposing_team_travel)) %>%
-     ungroup()
+  inner_join(select(game_scores, -DATE, -playoffs, -season), by="game_id") %>%
+  inner_join(rest_days, by="game_id") %>%
+  inner_join(trailing_games, by="game_id") %>%
+  inner_join(prev_matchups, by="game_id") %>%
+  mutate(share_of_minutes=minutes/total_minutes, 
+         share_of_playoff_minutes=ifelse(total_playoff_minutes>0, playoff_minutes/total_playoff_minutes, 0),
+         share_of_playoff_points=ifelse(total_playoff_points>0, playoff_points/total_playoff_points, 0),
+         share_of_points=points/total_points,
+         share_of_minutes_signed = ifelse(OWN_TEAM==selected_team, share_of_minutes, -share_of_minutes),
+         home_team_selected = as.numeric(home_team_name==selected_team),
+         selected_team_points=ifelse(home_team_selected==1, home_team_points, road_team_points),
+         opposing_team_points=ifelse(home_team_selected==0, home_team_points, road_team_points),
+         win=ifelse(future_game==1, NA, win)) %>%
+  dplyr::select(-VENUE_R_H, -TOT) %>% arrange(DATE, game_id) %>%
+  left_join(select(fivethirtyeight, carm_elo_full, carm_elo, selected_team, wins_538), by="selected_team") %>%
+  rename(carm_elo_full_selected_team=carm_elo_full, carm_elo_selected_team=carm_elo, wins_538_selected_team=wins_538) %>%
+  left_join(select(fivethirtyeight, carm_elo_full, carm_elo, opposing_team, wins_538), by="opposing_team") %>%
+  rename(carm_elo_full_opposing_team=carm_elo_full, carm_elo_opposing_team=carm_elo, wins_538_opposing_team=wins_538) %>%
+  left_join(injuries, by="PLAYER_FULL_NAME") %>%
+  mutate(travel_differential=if_else(is.na(travel_differential), 0, travel_differential), 
+         opposing_team_travel=if_else(is.na(opposing_team_travel), 0, opposing_team_travel), 
+         selected_team_travel=if_else(is.na(selected_team_travel), 0, opposing_team_travel)) %>%
+  ungroup()
 
 saveRDS(final, paste0("BOX_SCORES_", Sys.Date(), ".RDA"))
 saveRDS(final, "BOX_SCORES.RDA")

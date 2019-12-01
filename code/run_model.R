@@ -20,15 +20,28 @@ source(paste0(root, "/functions/manipulate_and_save_output.R"))
 source(paste0(root, "/functions/save_results.R"))
 source(paste0(root, "/functions/get_team_offsets.R"))
 source(paste0(root, "/functions/assign_clusters_and_win_rates.R"))
-
-
-
-current_season <- 2019
-
+source(paste0(root, "/functions/combine.R"))
 
 ## Read the box scores
 box_scores <- readRDS(paste0(root, "/cleandata/box_scores.RDA")) %>%
   filter(playoffs==0)
+
+### Global settings
+cutoff <- 8 # minutes per game. if a player plays less than this amount, he is excluded
+estimation_window <- 1000 # number of days used to estimate the model
+winstreak_window <- 91 # number of days used to calculate the weighted win %, for the short term effect
+winstreak_window_s <- 31 # number of days used to calculate the weighted win %
+playing_time_window <- 91 # number of days used to estimate average playing time
+cluster_window <- 91 # number of days used for cluster assignment
+alpha <- 0 # for elastic net
+sims <- 0 # number of random normal draws used when playing games
+save_results <- 1 # set to 1 if you want to save the results
+weighted_win_rates <- 1
+use_current_rosters <- 1
+current_season <- max(box_scores$season)
+# current_season <- 2019
+adjust_intercept_by_team <- 0
+buffer_days <- 10
 
 
 ### Create a date-index
@@ -44,27 +57,8 @@ datemap <- select(box_scores, DATE, future_game, season) %>%
 
 box_scores <- inner_join(box_scores, select(datemap, DATE, DATE_INDEX, season_day, season_day_std), by="DATE")
 
-#box_scores <- mutate(box_scores, future_game = ifelse(DATE>=as.Date('2017-02-11'), 1, 0))
-
 ## Get model variables
 model_variables <- read.csv(paste0(root, "/modeldetails/model_variables.csv"), stringsAsFactors = FALSE)
-
-
-### Global settings
-cutoff <- 8 # minutes per game. if a player plays less than this amount, he is excluded
-estimation_window <- 1000 # number of days used to estimate the model
-winstreak_window <- 91 # number of days used to calculate the weighted win %, for the short term effect
-winstreak_window_s <- 31 # number of days used to calculate the weighted win %
-playing_time_window <- 91 # number of days used to estimate average playing time
-cluster_window <- 91 # number of days used for cluster assignment
-alpha <- 0 # for elastic net
-sims <- 0 # number of random normal draws used when playing games
-save_results <- 1 # set to 1 if you want to save the results
-weighted_win_rates <- 1
-use_current_rosters <- 1
-current_season <- max(box_scores$season)
-adjust_intercept_by_team <- 0
-buffer_days <- 10
 
 ### When to start and end the forecasts
 start_date <- min(subset(box_scores, season==current_season)$DATE)
@@ -93,7 +87,7 @@ clusters_and_players <-
 ### Number of clusters
 nclus <- max(box_scores_plus$Cluster)
 
-### Predict the past and the future
+### Predict the past and the future -- season only
 counter <- 1
 modelupdates <- 1
 index <- 1
@@ -213,9 +207,10 @@ for (i in start_index:end_index){
 }
 
 ### Manipulate and save the output
-results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, root, 0, 1, NA)
+results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, root, 0, 1, NA, "prob_selected_team_win")
 
-## Run the playoffs
+
+### Run the playoffs
 
 playoff_start_date <- max(box_scores$DATE)+1 ## faking it a bit here
 
@@ -235,11 +230,6 @@ injured_players <- unique(subset(inwindow_active, injured==1)$PLAYER_FULL_NAME)
 if (length(injured_players)>0){
   print(sort(injured_players))
   inwindow_active <- filter(inwindow_active, injured==0)
-}
-
-combine <- function(x, ...) {
-  lapply(seq_along(x),
-         function(i) c(x[[i]], lapply(list(...), function(y) y[[i]])))
 }
 
 ncore <- detectCores()-1
@@ -294,13 +284,13 @@ for (i in 1:r){
       }
       prob_win <- n1/(n1+n2)
       simresult <- data.frame(matrix(nrow=1, ncol=7))
-      names(simresult) <- c("round", "matchup", "selected_team", "winner", "loser", "prob_win", "sims")
+      names(simresult) <- c("round", "matchup", "selected_team", "winner", "loser", "prob_win_series", "sims")
       simresult$round <- i
       simresult$matchup <- j
       simresult$selected_team <- s[1]
       simresult$winner <- t1
       simresult$loser <- t2
-      simresult$prob_win <- prob_win
+      simresult$prob_win_series <- prob_win
       simresult$sims <- n1+n2
       coin_flips[[f]] <- simresult
       f <- f+1

@@ -17,7 +17,7 @@ manipulate_and_save_output <- function(clusters_and_players, scores, model_parts
        select(-prob_selected_team_win_b) %>%
        mutate(prob_selected_team_win=ifelse(current_season_data_used==0, NA, prob_selected_team_win_d))
      
-     ranks <- report(game_level, "prob_selected_team_win") %>%
+     ranks <- report(game_level, predvar) %>%
        left_join(conferences, by="team") %>%
        select(team, games_season, games_played, games_future, season_win_rate, ytd_win_rate, ytd_pred_win_rate, future_win_rate, conference, division) %>%
        left_join(ft8, by="team") %>%
@@ -47,7 +47,7 @@ manipulate_and_save_output <- function(clusters_and_players, scores, model_parts
     game_level <- data.frame(rbindlist(scores), stringsAsFactors = FALSE) %>% 
       select(-prob_selected_team_win_b) %>%
       mutate(prob_selected_team_win=ifelse(current_season_data_used==0, NA, prob_selected_team_win_d))
-    ranks <- report(game_level, "prob_selected_team_win")
+    ranks <- report(game_level, predvar)
     models <- data.frame(rbindlist(model_details), stringsAsFactors = FALSE)
     return(list(game_level, ranks, models))
   }

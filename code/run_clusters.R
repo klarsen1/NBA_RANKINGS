@@ -1,9 +1,11 @@
 library(dplyr)
 
 ### Settings
-cutoff_season <- 2019 ## for example, 2015 cuts off the 2015-2016 season and later seasons
+max_cutoff_season <- 2019 ## for example, 2015 cuts off the 2015-2016 season and later seasons
+min_cutoff_season <- 2017 ## for example, 2016 cuts off anything before the 2017-2018 season
 cutoff <- 8 # minutes per game. if a player plays less than this amount, he is excluded
 nclus <- 25 # number of archetypes
+root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
 
 ### Read the raw data
 setwd(paste0(root, "/cleandata"))
@@ -12,7 +14,7 @@ box_scores <- readRDS("BOX_SCORES.RDA")
 ### Get means for centroids
 means <- box_scores %>%
   group_by(PLAYER_FULL_NAME) %>%
-  filter(season<cutoff_season & playoffs==0 & season>2013) %>%
+  filter(season<max_cutoff_season & playoffs==0 & season>min_cutoff_season) %>%
   summarise(assists=mean(assists),
             offensive_rebounds=mean(offensive_rebounds),
             defensive_rebounds=mean(defensive_rebounds),

@@ -7,7 +7,9 @@ library(tidyr)
 library(parallel)
 library(foreach)
 library(doParallel)
+
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
+
 source(paste0(root, "/functions/auc.R"))
 source(paste0(root, "/functions/assign_clusters.R"))
 source(paste0(root, "/functions/winpercentages.R"))

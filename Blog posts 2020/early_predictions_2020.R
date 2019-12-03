@@ -4,13 +4,13 @@ library(tidyr)
 
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
 
-f <- paste0(root, "/rankings/rankings_2019-12-01.csv")
+f <- paste0(root, "/rankings/rankings_2019-12-02.csv")
 
 all_rankings <- read.csv(f, stringsAsFactors = FALSE) %>%
   group_by(conference) %>%
   mutate(elastic_ranking=min_rank(-season_win_rate),
-         FiveThirtyEight=min_rank(pred_win_rate_538),
-         absdiff=ifelse(abs(elastic_ranking-FiveThirtyEight)>2, 0, 1)) %>%
+         FiveThirtyEight=min_rank(-pred_win_rate_538),
+         absdiff=ifelse(abs(elastic_ranking-FiveThirtyEight)>1, 0, 1)) %>%
   select(team, conference, division, elastic_ranking, FiveThirtyEight, absdiff, season_win_rate) %>%
   mutate(selected_team=team) %>%
   arrange(conference, elastic_ranking) %>%
@@ -35,7 +35,8 @@ ggplot(filter(all_rankings, conference=="East"), aes(x=elastic_ranking, y=FiveTh
                    fontface = 'bold', color = 'white', size=2,
                    box.padding = unit(0.35, "lines"),
                    point.padding = unit(0.5, "lines")) + 
-  theme(legend.title = element_blank()) + theme(legend.position="none")
+  theme(legend.title = element_blank()) + theme(legend.position="none") + 
+  scale_y_reverse() + scale_x_reverse()
 
 ggplot(filter(all_rankings, conference=="West"), aes(x=elastic_ranking, y=FiveThirtyEight)) +
   xlab("Elastic Ranking") + ylab("FiveThirtyEight") +

@@ -14,7 +14,7 @@ all_rankings <- read.csv(f, stringsAsFactors = FALSE) %>%
   select(team, conference, division, elastic_ranking, FiveThirtyEight, absdiff, season_win_rate) %>%
   mutate(selected_team=team) %>%
   arrange(conference, elastic_ranking) %>%
-  mutate(miss=ifelse(elastic_ranking<8, "Top 8", "9-15")) %>%
+  mutate(miss=ifelse(elastic_ranking<9, "Top 8", "9-15")) %>%
   ungroup(conference)
 
 ggplot(data=filter(all_rankings, conference=="East"), aes(x=reorder(team, -elastic_ranking), season_win_rate, fill=factor(miss))) + 
@@ -22,6 +22,10 @@ ggplot(data=filter(all_rankings, conference=="East"), aes(x=reorder(team, -elast
   xlab("") + ylab("") + theme(legend.position = 'none') + 
   scale_y_continuous(labels = scales::percent_format(accuracy=1))
 
+ggplot(data=filter(all_rankings, conference=="West"), aes(x=reorder(team, -elastic_ranking), season_win_rate, fill=factor(miss))) + 
+  geom_bar(stat="identity") + coord_flip() +
+  xlab("") + ylab("") + theme(legend.position = 'none') + 
+  scale_y_continuous(labels = scales::percent_format(accuracy=1))
 
 ggplot(filter(all_rankings, conference=="East"), aes(x=elastic_ranking, y=FiveThirtyEight)) +
   xlab("Elastic Ranking") + ylab("FiveThirtyEight") +
@@ -45,7 +49,7 @@ ggplot(filter(all_rankings, conference=="West"), aes(x=elastic_ranking, y=FiveTh
 
 ff <- paste0(root, "/modeldetails/score_decomp_2019-12-01.csv")
 
-center <- function(x){return(x-median(x))}
+center <- function(x){return((x-median(x))/1)}
 
 d <- read.csv(ff, stringsAsFactors = FALSE) %>%
   select(selected_team, roster, circumstances, performance) %>%
@@ -55,15 +59,26 @@ d <- read.csv(ff, stringsAsFactors = FALSE) %>%
   mutate(order=elastic_ranking) %>%
   arrange(order) %>%
   ungroup() %>%
+  inner_join(select(all_rankings, conference, selected_team, division), by="selected_team") %>%
+  group_by(conference) %>%
   mutate_each(funs(center), which(sapply(., is.numeric))) %>% ## standardize across teams
-  gather(modelpart, value, roster:performance) %>% ## transpose
-  inner_join(select(all_rankings, conference, selected_team), by="selected_team") %>%
-  rename(team=selected_team)
+  ungroup() %>%
+  mutate(roster_rank=round(100*(roster+abs(min(roster)))/(max(roster)+abs(min(roster))))) %>%
+  rename(team=selected_team) 
 
-ggplot(data=filter(d, conference=="East"), aes(x=reorder(team, order), value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
+dd <- gather(d, modelpart, value, roster:performance)
+  
+
+ggplot(data=filter(dd, conference=="East"), aes(x=reorder(team, order), value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
   xlab("") + ylab("") + theme(legend.title = element_blank())
 
-ggplot(data=filter(d, conference=="West"), aes(x=reorder(team, order), value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
+ggplot(data=filter(dd, conference=="West"), aes(x=reorder(team, order), value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
   xlab("") + ylab("") + theme(legend.title = element_blank())
 
 
+ggplot(data=filter(d, conference=="East"), aes(x=reorder(team, roster_rank), roster_rank)) + geom_bar(stat="identity") + coord_flip() +
+  xlab("") + ylab("") + theme(legend.title = element_blank())
+
+
+ggplot(data=filter(d, conference=="West"), aes(x=reorder(team, roster_rank), roster_rank)) + geom_bar(stat="identity") + coord_flip() +
+  xlab("") + ylab("") + theme(legend.title = element_blank())

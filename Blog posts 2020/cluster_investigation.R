@@ -55,5 +55,5 @@ ggplot(data=t,
        aes(x=reorder(Team, order), players2)) + 
        geom_bar(aes(fill=Cluster), stat="identity") + coord_flip() +
   xlab("") + ylab("") + theme(legend.title = element_blank()) + 
-  scale_y_continuous(labels = scales::number_format(accuracy = 1.0))
+  scale_y_continuous(labels = scales::number_format(accuracy = 1.0)) 
 

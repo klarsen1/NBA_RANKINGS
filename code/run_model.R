@@ -301,14 +301,14 @@ for (i in 1:r){
 }
 
 seeds <- mutate(rankings, winner=team, loser=team) %>%
-  select(winner, loser, seed)
+  select(winner, loser, seed, conference)
 
 playoff_results <- 
   data.frame(rbindlist(coin_flips)) %>% 
   arrange(round, winner, matchup) %>% 
-  inner_join(select(seeds, -loser), by="winner") %>%
+  inner_join(select(seeds, -loser, -conference), by="winner") %>%
   rename(winner_seed=seed) %>%
-  inner_join(select(seeds, -winner), by="loser") %>%
+  inner_join(select(seeds, -winner, conference), by="loser") %>%
   rename(loser_seed=seed)
 
 write.csv(playoff_results, paste0(root, "/rankings/playoff_prediction_", Sys.Date(), ".csv"))

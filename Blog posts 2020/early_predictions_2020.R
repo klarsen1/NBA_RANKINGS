@@ -2,9 +2,12 @@ library(dplyr)
 library(ggrepel)
 library(tidyr)
 
+stamp <- "2019-12-03"
+  
+
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
 
-f <- paste0(root, "/rankings/rankings_2019-12-02.csv")
+f <- paste0(root, "/rankings/rankings_", stamp,".csv")
 
 all_rankings <- read.csv(f, stringsAsFactors = FALSE) %>%
   group_by(conference) %>%
@@ -46,9 +49,10 @@ ggplot(filter(all_rankings, conference=="West"), aes(x=elastic_ranking, y=FiveTh
                    fontface = 'bold', color = 'white', size=2,
                    box.padding = unit(0.35, "lines"),
                    point.padding = unit(0.5, "lines")) + 
-  theme(legend.title = element_blank()) + theme(legend.position="none")
+  theme(legend.title = element_blank()) + theme(legend.position="none")+ 
+  scale_y_reverse() + scale_x_reverse()
 
-ff <- paste0(root, "/modeldetails/score_decomp_2019-12-01.csv")
+ff <- paste0(root, "/modeldetails/score_decomp_", stamp,".csv")
 
 center <- function(x){return((x-median(x))/1)}
 
@@ -70,16 +74,41 @@ d <- read.csv(ff, stringsAsFactors = FALSE) %>%
 dd <- gather(d, modelpart, value, roster:performance)
   
 
-ggplot(data=filter(dd, conference=="East"), aes(x=reorder(team, order), value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
-  xlab("") + ylab("") + theme(legend.title = element_blank())
+#ggplot(data=filter(dd, conference=="East"), aes(x=reorder(team, order), value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
+#  xlab("") + ylab("") + theme(legend.title = element_blank())
 
-ggplot(data=filter(dd, conference=="West"), aes(x=reorder(team, order), value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
-  xlab("") + ylab("") + theme(legend.title = element_blank())
-
-
-ggplot(data=filter(d, conference=="East"), aes(x=reorder(team, roster_rank), roster_rank)) + geom_bar(stat="identity") + coord_flip() +
-  xlab("") + ylab("") + theme(legend.title = element_blank())
+#ggplot(data=filter(dd, conference=="West"), aes(x=reorder(team, order), value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
+#  xlab("") + ylab("") + theme(legend.title = element_blank())
 
 
-ggplot(data=filter(d, conference=="West"), aes(x=reorder(team, roster_rank), roster_rank)) + geom_bar(stat="identity") + coord_flip() +
-  xlab("") + ylab("") + theme(legend.title = element_blank())
+#ggplot(data=filter(d, conference=="East"), aes(x=reorder(team, roster_rank), roster_rank)) + geom_bar(stat="identity") + coord_flip() +
+#  xlab("") + ylab("") + theme(legend.title = element_blank())
+
+
+#ggplot(data=filter(d, conference=="West"), aes(x=reorder(team, roster_rank), roster_rank)) + geom_bar(stat="identity") + coord_flip() +
+#  xlab("") + ylab("") + theme(legend.title = element_blank())
+
+
+## playoffs
+
+ffff <- paste0(root, "/rankings/playoff_prediction_",stamp,".csv")
+playoffs <- read.csv(ffff, stringsAsFactors = FALSE) %>% 
+  mutate(d=1, seed=winner_seed, 
+         matchup=paste0(winner, "=", round(100*prob_win_series), "% ", loser,"=", round(100*(1-prob_win_series))," %"),
+         round_text=case_when(round == 1 ~ "1. First Round",
+                              round == 2 ~ "2. Conf Semifinals",
+                              round == 3 ~ "3. Conf Finals",
+                              round == 4 ~ "4. NBA Finals"))
+
+ggplot(playoffs, aes(x=round_text, y=prob_win_series)) +
+  xlab("") + ylab("Certainty") +
+  geom_point(size = 2, color = 'black') +
+  #geom_smooth(method='lm') + 
+  geom_label_repel(aes(round, prob_win_series, label = matchup, fill=factor(round_text)),
+                   fontface = 'bold', color = 'black', size=2,
+                   box.padding = unit(0.35, "lines"),
+                   point.padding = unit(0.5, "lines")) + 
+  theme(legend.title = element_blank()) + theme(legend.position="none") +
+  scale_y_continuous(labels = scales::percent_format(accuracy=1)) 
+  #theme(axis.text.y=element_blank())
+

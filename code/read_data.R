@@ -19,6 +19,9 @@ current_season_numeric <- 2019
 
 setwd(root)
 
+
+latest_external_stats <- paste0(format(Sys.Date()-1, "%m-%d-%Y"), "-nba-season-player-feed")
+
 source(paste0(root, "/functions/distance_between.R"))
 source(paste0(root, "/functions/trim.R"))
 
@@ -227,8 +230,8 @@ data <- rename(data,
 
 ## Read the raw data
 read_player_data <- function(season, first_labels, suffix){
-  data <- data.frame(read_excel(paste0("s", suffix, ".xlsx"), sheet=1))
-  meta <- data.frame(read_excel(paste0("s", suffix, ".xlsx"), sheet=2, col_names = FALSE))
+  data <- data.frame(read_excel(paste0(suffix, ".xlsx"), sheet=1))
+  meta <- data.frame(read_excel(paste0(suffix, ".xlsx"), sheet=2, col_names = FALSE))
   labels <- c(first_labels, meta$X1)
   attr(data, "variable.labels") <- labels
   n <- gsub("_$", "", gsub("__", "_", gsub(".", "_", names(data), fixed=T))) %>% gsub("__","_", .)
@@ -262,14 +265,14 @@ read_player_data <- function(season, first_labels, suffix){
   return(data)
 }
 
-s1 <- read_player_data("NBA-2012-2013", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 1)
-s2 <- read_player_data("NBA-2013-2014", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 2)
-s3 <- read_player_data("NBA-2014-2015", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 3)
-s4 <- read_player_data("NBA-2015-2016", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 4)
-s5 <- read_player_data("NBA-2016-2017", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 5) 
-s6 <- read_player_data("NBA-2017-2018", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 6) 
-s7 <- read_player_data("NBA-2018-2019", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 7) 
-s8 <- read_player_data("NBA-2018-2019", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), 8) 
+s1 <- read_player_data("NBA-2012-2013", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), "s1")
+s2 <- read_player_data("NBA-2013-2014", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), "s2")
+s3 <- read_player_data("NBA-2014-2015", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), "s3")
+s4 <- read_player_data("NBA-2015-2016", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), "s4")
+s5 <- read_player_data("NBA-2016-2017", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), "s5") 
+s6 <- read_player_data("NBA-2017-2018", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), "s6") 
+s7 <- read_player_data("NBA-2018-2019", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), "s7") 
+s8 <- read_player_data("NBA-2018-2019", c("SEASON", "DATE", "PLAYER FULL NAME", "POSITION"), latest_external_stats) 
 
 
 

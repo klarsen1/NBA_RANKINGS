@@ -2,7 +2,7 @@ library(dplyr)
 library(ggrepel)
 library(tidyr)
 
-stamp <- "2019-12-03"
+stamp <- "2019-12-05"
   
 
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
@@ -39,7 +39,7 @@ ggplot(filter(all_rankings, conference=="East"), aes(x=elastic_ranking, y=FiveTh
                    box.padding = unit(0.35, "lines"),
                    point.padding = unit(0.5, "lines")) + 
   theme(legend.title = element_blank()) + theme(legend.position="none") + 
-  scale_y_reverse() + scale_x_reverse()
+  scale_y_reverse(limits=c(15,0)) + scale_x_reverse(limits=c(15,0))
 
 ggplot(filter(all_rankings, conference=="West"), aes(x=elastic_ranking, y=FiveThirtyEight)) +
   xlab("Elastic Ranking") + ylab("FiveThirtyEight") +
@@ -49,8 +49,19 @@ ggplot(filter(all_rankings, conference=="West"), aes(x=elastic_ranking, y=FiveTh
                    fontface = 'bold', color = 'white', size=2,
                    box.padding = unit(0.35, "lines"),
                    point.padding = unit(0.5, "lines")) + 
-  theme(legend.title = element_blank()) + theme(legend.position="none")+ 
-  scale_y_reverse() + scale_x_reverse()
+  theme(legend.title = element_blank()) + theme(legend.position="none") + 
+  scale_y_reverse(limits=c(15,0)) + scale_x_reverse(limits=c(15,0))
+
+ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
+  xlab("Elastic Ranking") + ylab("FiveThirtyEight") +
+  geom_point(size = 2, color = 'black') +
+  geom_smooth(method='lm') + 
+  geom_label_repel(aes(elastic_ranking, FiveThirtyEight, label = team, fill=factor(absdiff)),
+                   fontface = 'bold', color = 'white', size=2,
+                   box.padding = unit(0.35, "lines"),
+                   point.padding = unit(0.5, "lines")) + 
+  theme(legend.title = element_blank()) + theme(legend.position="none") +
+  scale_y_reverse(limits=c(15,0)) + scale_x_reverse(limits=c(15,0))
 
 ff <- paste0(root, "/modeldetails/score_decomp_", stamp,".csv")
 

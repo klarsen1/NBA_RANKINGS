@@ -4,7 +4,7 @@ library(ggplot2)
 
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
 
-stamp <- "2019-12-02"
+stamp <- "2019-12-06"
 
 coeff_details <- read.csv(paste0(root, "/modeldetails/coefficients_",stamp,".csv"), stringsAsFactors = FALSE) %>%
   filter(as.Date(DATE)==max(as.Date(DATE))) %>%

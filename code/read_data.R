@@ -1,5 +1,5 @@
-library(rJava)
-library(xlsx)
+#library(rJava)
+#library(xlsx)
 library(dplyr)
 library(readxl)
 library(stringi)
@@ -107,6 +107,9 @@ daily_injuries <- data.frame(PLAYER_FULL_NAME,
   mutate(clean_note=gsub("Expected to be out until at least ", "", return_notes))
 
 convert_to_date <- function(data){
+  if (data$clean_note=="Feb 29"){
+    data$clean_note <- "Feb 28" # deal with leap years
+  }
   if (data$clean_note=="Out for the season"){
     data$return_date <- Sys.Date() + 365
   } else if (data$clean_note=="Game Time Decision"){

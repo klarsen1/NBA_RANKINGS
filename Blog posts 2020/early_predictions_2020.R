@@ -2,7 +2,7 @@ library(dplyr)
 library(ggrepel)
 library(tidyr)
 
-stamp <- "2019-12-11"
+stamp <- "2019-12-21"
   
 
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
@@ -14,13 +14,13 @@ all_rankings <- read.csv(f, stringsAsFactors = FALSE) %>%
   mutate(elastic_ranking=min_rank(-season_win_rate),
          FiveThirtyEight=min_rank(-pred_win_rate_538),
          absdiff=ifelse(abs(elastic_ranking-FiveThirtyEight)>0, 0, 1), 
-         diff=case_when(elastic_ranking>FiveThirtyEight ~ "Elastic > 538", 
-                   elastic_ranking<FiveThirtyEight ~ "538 < Elastic",
-                   elastic_ranking==FiveThirtyEight ~ "538 == Elastic")) %>%
+         diff=case_when(elastic_ranking>FiveThirtyEight ~ "Elastic < 538", 
+                   elastic_ranking<FiveThirtyEight ~ "Elastic > 538",
+                   elastic_ranking==FiveThirtyEight ~ "Elastic == 538")) %>%
   select(team, conference, division, elastic_ranking, FiveThirtyEight, absdiff, season_win_rate, diff) %>%
   mutate(selected_team=team) %>%
   arrange(conference, elastic_ranking) %>%
-  mutate(miss=ifelse(elastic_ranking<9, "Top 8", "9-15")) %>%
+  mutate(miss=ifelse(elastic_ranking<9, "Make Playoffs", "Miss Playoffs")) %>%
   ungroup(conference)
 
 ggplot(data=filter(all_rankings, conference=="East"), aes(x=reorder(team, -elastic_ranking), season_win_rate, fill=factor(miss))) + 
@@ -33,6 +33,13 @@ ggplot(data=filter(all_rankings, conference=="West"), aes(x=reorder(team, -elast
   xlab("") + ylab("") + theme(legend.position = 'none') + 
   scale_y_continuous(labels = scales::percent_format(accuracy=1))
 
+ggplot(data=all_rankings, aes(x=reorder(team, season_win_rate), season_win_rate, fill=factor(miss))) + 
+  geom_bar(stat="identity") + coord_flip() +
+  xlab("") + ylab("") + 
+  #theme(legend.position = 'none') + 
+  theme(legend.title = element_blank()) +
+  scale_y_continuous(labels = scales::percent_format(accuracy=1))
+
 ggplot(filter(all_rankings, conference=="East"), aes(x=elastic_ranking, y=FiveThirtyEight)) +
   xlab("Elastic Ranking") + ylab("FiveThirtyEight") +
   geom_point(size = 2, color = 'black') +
@@ -43,7 +50,7 @@ ggplot(filter(all_rankings, conference=="East"), aes(x=elastic_ranking, y=FiveTh
                    point.padding = unit(0.5, "lines"))+
   theme(legend.title = element_blank()) + 
   #theme(legend.position="none") + 
-  scale_y_reverse(limits=c(15,0)) + scale_x_reverse(limits=c(15,0)) + 
+  scale_y_reverse(limits=c(15,1), breaks=seq(1,15)) + scale_x_reverse(limits=c(15,1), breaks=seq(1,15)) + 
   guides(
     fill = guide_legend(
       override.aes = aes(label = "")
@@ -60,7 +67,7 @@ ggplot(filter(all_rankings, conference=="West"), aes(x=elastic_ranking, y=FiveTh
                    point.padding = unit(0.5, "lines"))+
   theme(legend.title = element_blank()) + 
   #theme(legend.position="none") + 
-  scale_y_reverse(limits=c(15,0)) + scale_x_reverse(limits=c(15,0)) + 
+  scale_y_reverse(limits=c(15,1), breaks=seq(1,15)) + scale_x_reverse(limits=c(15,1), breaks=seq(1,15)) + 
   guides(
     fill = guide_legend(
       override.aes = aes(label = "")
@@ -76,8 +83,7 @@ ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
                    box.padding = unit(0.35, "lines"),
                    point.padding = unit(0.5, "lines"))+
   theme(legend.title = element_blank()) + 
-  #theme(legend.position="none") + 
-  scale_y_reverse(limits=c(15,0)) + scale_x_reverse(limits=c(15,0)) + 
+  scale_y_reverse(limits=c(15,1), breaks=seq(1,15)) + scale_x_reverse(limits=c(15,1), breaks=seq(1,15)) + 
   guides(
     fill = guide_legend(
       override.aes = aes(label = "")

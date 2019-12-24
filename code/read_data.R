@@ -182,6 +182,7 @@ rosters <- lapply(team_pages, function (team_link) {
 })
 
 all_rosters <- bind_rows(lapply(rosters, function(x) as.data.frame(x))) %>%
+  mutate(Team=ifelse(Team=="Portland Trailblazers", "Portland Trail Blazers", Team)) %>%
   left_join(team_map, by="Team") %>%
   select(PLAYER_FULL_NAME, OWN_TEAM, Position, Age, Height, Weight, Salary, Team) %>%
   arrange(PLAYER_FULL_NAME, OWN_TEAM) %>%
@@ -292,7 +293,8 @@ f <- rbind.data.frame(s1, s2, s3, s4, s5, s6, s7, s8) %>%
          quarter=quarter(DATE),
          future_game=0,
          OWN_TEAM=ifelse(OWN_TEAM=="LA", "LA Clippers", OWN_TEAM),
-         OPP_TEAM=ifelse(OPP_TEAM=="LA", "LA Clippers", OPP_TEAM))
+         OPP_TEAM=ifelse(OPP_TEAM=="LA", "LA Clippers", OPP_TEAM)) %>%
+         mutate(VENUE_R_H=ifelse(DATE==as.Date("2019-12-23") & OWN_TEAM=="Washington" & VENUE_R_H=="H", "R", VENUE_R_H))
 
 max_date <- max(f$DATE)
 

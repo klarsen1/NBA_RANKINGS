@@ -4,7 +4,7 @@ library(ggplot2)
 
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
 
-stamp <- "2019-12-21"
+stamp <- "2019-12-22"
 
 coeff_details <- read.csv(paste0(root, "/modeldetails/coefficients_",stamp,".csv"), stringsAsFactors = FALSE) %>%
   filter(as.Date(DATE)==max(as.Date(DATE))) %>%
@@ -58,6 +58,9 @@ ggplot(data=t,
 
 tt <- filter(cluster_details, archetype_strength>0.8) %>% 
   mutate(cluster=ifelse(archetype_strength>1.15, "Max", "Super"))
+
+nrow(tt)
+nrow(cluster_details)
 
 ggplot(data=tt,
        aes(x=reorder(PLAYER_FULL_NAME, archetype_strength), archetype_strength)) + 

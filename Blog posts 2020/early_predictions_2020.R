@@ -2,7 +2,7 @@ library(dplyr)
 library(ggrepel)
 library(tidyr)
 
-stamp <- "2019-12-21"
+stamp <- "2019-12-24"
   
 
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
@@ -33,7 +33,7 @@ ggplot(data=filter(all_rankings, conference=="West"), aes(x=reorder(team, -elast
   xlab("") + ylab("") + theme(legend.position = 'none') + 
   scale_y_continuous(labels = scales::percent_format(accuracy=1))
 
-ggplot(data=all_rankings, aes(x=reorder(team, season_win_rate), season_win_rate, fill=factor(miss))) + 
+ggplot(data=all_rankings, aes(x=reorder(team, season_win_rate), season_win_rate, fill=factor(conference))) + 
   geom_bar(stat="identity") + coord_flip() +
   xlab("") + ylab("") + 
   #theme(legend.position = 'none') + 

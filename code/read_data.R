@@ -293,8 +293,8 @@ f <- rbind.data.frame(s1, s2, s3, s4, s5, s6, s7, s8) %>%
          quarter=quarter(DATE),
          future_game=0,
          OWN_TEAM=ifelse(OWN_TEAM=="LA", "LA Clippers", OWN_TEAM),
-         OPP_TEAM=ifelse(OPP_TEAM=="LA", "LA Clippers", OPP_TEAM)) %>%
-         mutate(VENUE_R_H=ifelse(DATE==as.Date("2019-12-23") & OWN_TEAM=="Washington" & VENUE_R_H=="H", "R", VENUE_R_H))
+         OPP_TEAM=ifelse(OPP_TEAM=="LA", "LA Clippers", OPP_TEAM))
+         #mutate(VENUE_R_H=ifelse(DATE==as.Date("2019-12-23") & OWN_TEAM=="Washington" & VENUE_R_H=="H", "R", VENUE_R_H))
 
 max_date <- max(f$DATE)
 
@@ -338,6 +338,13 @@ f$cat <- paste0(f$OWN_TEAM, f$OPP_TEAM)
 striHelper <- function(x) stri_c(x[stri_order(x)], collapse = "")
 f$game_id <- paste0(f$DATE, vapply(stri_split_boundaries(f$cat, type = "character"), striHelper, ""))
 f$cat <- NULL
+f <- group_by(f, game_id, OWN_TEAM) %>%
+  mutate(distinct_venue=n_distinct(VENUE_R_H), 
+         n_H=sum(as.numeric(VENUE_R_H=="H")),
+         n_R=sum(as.numeric(VENUE_R_H=="R")),
+         VENUE_R_H=ifelse(distinct_venue==2, ifelse(n_H>n_R, "H", "R"), VENUE_R_H)) %>%
+  ungroup()
+
 
 ## Team/game level points
 team_pts <- group_by(f, game_id, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATE, future_game, season) %>%
@@ -384,6 +391,18 @@ future_flipped <- filter(team_win, future_game==1) %>%
          VENUE_R_H=VENUE_R_H2)
 
 team_win <- bind_rows(team_win, future_flipped) %>% arrange(DATE, game_id)
+
+dups <- 
+  group_by(team_win, game_id) %>%
+  summarise(d1=n_distinct(OWN_TEAM), d2=n_distinct(VENUE_R_H), d3=n()) %>%
+  ungroup() %>%
+  summarise(m1=min(d1), 
+            m2=min(d2), 
+            m3=max(d1), 
+            m4=max(d2), 
+            m5=max(d3), 
+            d=n_distinct(game_id), 
+            n=n())
 
 split <- split(team_win, team_win$game_id)
 game_scores <- data.frame(rbindlist(lapply(split, function(x) spread(select(x, game_id, VENUE_R_H, OWN_TEAM), VENUE_R_H, OWN_TEAM))), stringsAsFactors = FALSE) %>%

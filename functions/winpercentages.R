@@ -5,12 +5,12 @@ winpercentages <- function(data, s, use_weights){
 
   MM <- month(max(subset(data, season==s)$DATE))
   SS <- filter(data, DATE==max(DATE))[1,"season_day_std"]
-
+  
   if (nrow(df)>0){
     all_teams <- distinct(data, OWN_TEAM)
     winrates <- list()
     for (k in 1:nrow(all_teams)){
-      t <- all_teams[k,"OWN_TEAM"]
+      t <- as.character(all_teams[k,"OWN_TEAM"])
       if (use_weights==1){
         df <- mutate(df, weight=ifelse(selected_team==t, log(wins_538_opposing_team), log(wins_538_selected_team)))
         #print("--- Using 538 weights")
@@ -18,16 +18,24 @@ winpercentages <- function(data, s, use_weights){
         df$weight <- 1
       }
       winrate <- filter(df, selected_team==t | opposing_team==t) %>%
-        ungroup() %>%
-        mutate(win=ifelse(selected_team==t, selected_team_win, 1-selected_team_win),
+        ungroup() 
+
+      winrate <- 
+        mutate(winrate, win=ifelse(selected_team==t, selected_team_win, 1-selected_team_win),
                points_scored=ifelse(selected_team==t, selected_team_points, opposing_team_points),
-               points_allowed=ifelse(opposing_team==t, selected_team_points, opposing_team_points)) %>%
-        summarise(win_rate=weighted.mean(win, weight), 
+               points_allowed=ifelse(opposing_team==t, selected_team_points, opposing_team_points)) 
+
+      winrate <- 
+        summarise(winrate, win_rate=weighted.mean(win, weight), 
                   n=n(), 
                   points_scored=sum(points_scored), 
-                  points_allowed=sum(points_allowed)) %>%
-        mutate(opposing_team=t, 
+                  points_allowed=sum(points_allowed)) 
+      
+      winrate <- 
+        mutate(winrate, 
+               opposing_team=t, 
                selected_team=t)
+
       winrates[[k]] <- winrate
     }
     winratesdf <- data.frame(rbindlist(winrates), stringsAsFactors=FALSE) %>%

@@ -5,7 +5,10 @@ assign_clusters_and_win_rates <- function(root, datemap, box_scores, weighted_wi
    e <-max(subset(datemap, future_game==0)$DATE_INDEX) 
    ncore <- detectCores()-2
    registerDoParallel(ncore)
+   i=s # just for testing outside loop
    loop_result <- foreach(i=s:e) %dopar% {
+   #for (i in s:e){
+      
       ### Get the data inside the window  
       thisseason <- datemap[i, "season"]
       inwindow <- filter(box_scores, DATE_INDEX<i & DATE_INDEX>i-cluster_window)

@@ -2,7 +2,7 @@ library(dplyr)
 library(ggrepel)
 library(tidyr)
 
-stamp <- "2019-12-29"
+stamp <- "2020-01-06"
   
 
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"

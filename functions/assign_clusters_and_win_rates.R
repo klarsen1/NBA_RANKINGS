@@ -24,7 +24,7 @@ assign_clusters_and_win_rates <- function(root, datemap, box_scores, weighted_wi
   
       ## Assign clusters
       clusters <- assign_clusters(centroids, inwindow, cutoff, thisseason)
-      print(unique(clusters$Cluster))
+      #print(unique(clusters$Cluster))
   
       ### Join
       t <- inner_join(thisdate, select(clusters, PLAYER_FULL_NAME, Cluster), by="PLAYER_FULL_NAME")

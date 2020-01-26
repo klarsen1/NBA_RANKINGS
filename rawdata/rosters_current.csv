@@ -1,7 +1,7 @@
 "PLAYER_FULL_NAME","OWN_TEAM","Position","Age","Height","Weight","Salary","Team","injury_status","injury_date","clean_note","return_date","injury_scrape_date"
 "Aaron Gordon","Orlando","PF",24,"6' 8""",235,19863636,"Orlando Magic",NA,NA,NA,NA,NA
 "Aaron Holiday","Indiana","PG",23,"6' 0""",185,2329200,"Indiana Pacers","Day-To-Day","Jan 21",NA,2020-01-26,2020-01-25
-"Abdel Nader","Oklahoma City","SF",26,"6' 5""",225,1618520,"Oklahoma City Thunder","Out","Jan 23","Game Time Decision",2020-01-26,2020-01-25
+"Abdel Nader","Oklahoma City","SF",26,"6' 5""",225,1618520,"Oklahoma City Thunder","Out","Jan 25","Jan 27",2020-01-27,2020-01-25
 "Adam Mokoka","Chicago","SG",21,"6' 5""",190,NA,"Chicago Bulls",NA,NA,NA,NA,NA
 "Admiral Schofield","Washington","SG",22,"6' 5""",241,1e+06,"Washington Wizards",NA,NA,NA,NA,NA
 "Al Horford","Philadelphia","PF",33,"6' 9""",240,2.8e+07,"Philadelphia 76ers",NA,NA,NA,NA,NA
@@ -9,24 +9,24 @@
 "Alec Burks","Golden State","SG",28,"6' 6""",214,1620564,"Golden State Warriors",NA,NA,NA,NA,NA
 "Alen Smailagic","Golden State","PF",19,"6' 10""",215,898310,"Golden State Warriors",NA,NA,NA,NA,NA
 "Alex Caruso","LA Lakers","SG",25,"6' 5""",186,2750000,"Los Angeles Lakers",NA,NA,NA,NA,NA
-"Alex Len","Atlanta","C",26,"7' 0""",250,4160000,"Atlanta Hawks","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Alex Len","Atlanta","C",26,"7' 0""",250,4160000,"Atlanta Hawks","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Alfonzo McKinnie","Cleveland","SF",27,"6' 7""",215,NA,"Cleveland Cavaliers",NA,NA,NA,NA,NA
 "Alize Johnson","Indiana","PF",23,"6' 7""",212,1416852,"Indiana Pacers",NA,NA,NA,NA,NA
-"Allen Crabbe","Minnesota","SG",27,"6' 5""",212,18500000,"Minnesota Timberwolves",NA,NA,NA,NA,NA
+"Allen Crabbe","Minnesota","G",27,"6' 5""",212,18500000,"Minnesota Timberwolves","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Allonzo Trier","New York","SG",24,"6' 4""",200,3551000,"New York Knicks",NA,NA,NA,NA,NA
 "Amile Jefferson","Orlando","PF",26,"6' 9""",222,1529007,"Orlando Magic",NA,NA,NA,NA,NA
 "Amir Coffey","LA Clippers","SG",22,"6' 7""",210,NA,"Los Angeles Clippers",NA,NA,NA,NA,NA
-"Andre Drummond","Detroit","C",26,"6' 10""",279,27093019,"Detroit Pistons","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Andre Drummond","Detroit","C",26,"6' 10""",279,27093019,"Detroit Pistons","Day-To-Day","Jan 25",NA,2020-01-26,2020-01-25
 "Andre Iguodala","Memphis","SG",35,"6' 6""",215,17185185,"Memphis Grizzlies","Out",NA,"Feb 6",2020-02-06,2020-01-25
 "Andre Roberson","Oklahoma City","SG",28,"6' 7""",210,10740740,"Oklahoma City Thunder","Out",NA,"Feb 21",2020-02-21,2020-01-25
 "Andrew Wiggins","Minnesota","SG",24,"6' 7""",197,27504630,"Minnesota Timberwolves",NA,NA,NA,NA,NA
 "Anfernee Simons","Portland","SG",20,"6' 3""",181,2149560,"Portland Trail Blazers",NA,NA,NA,NA,NA
 "Ante Zizic","Cleveland","C",23,"6' 10""",266,2281800,"Cleveland Cavaliers","Out","Jan 22","Feb 1",2020-02-01,2020-01-25
-"Anthony Davis","LA Lakers","PF",26,"6' 10""",253,27093018,"Los Angeles Lakers","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Anthony Davis","LA Lakers","PF",26,"6' 10""",253,27093018,"Los Angeles Lakers","Day-To-Day","Jan 24",NA,2020-01-26,2020-01-25
 "Anthony Tolliver","Sacramento","PF",34,"6' 8""",240,1620564,"Sacramento Kings","Day-To-Day","Jan 21",NA,2020-01-26,2020-01-25
 "Antonius Cleveland","Dallas","SG",25,"6' 5""",195,NA,"Dallas Mavericks",NA,NA,NA,NA,NA
 "Anzejs Pasecniks","Washington","C",24,"7' 1""",220,482144,"Washington Wizards","Day-To-Day","Jan 23",NA,2020-01-26,2020-01-25
-"Aron Baynes","Phoenix","C",33,"6' 10""",260,5453280,"Phoenix Suns","Out","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Aron Baynes","Phoenix","C",33,"6' 10""",260,5453280,"Phoenix Suns","Out","Jan 25","Feb 2",2020-02-02,2020-01-25
 "Austin Rivers","Houston","PG",27,"6' 3""",200,2147317,"Houston Rockets","Day-To-Day","Jan 21",NA,2020-01-26,2020-01-25
 "Avery Bradley","LA Lakers","PG",29,"6' 3""",180,4767000,"Los Angeles Lakers",NA,NA,NA,NA,NA
 "Bam Adebayo","Miami","PF",22,"6' 9""",255,3454080,"Miami Heat",NA,NA,NA,NA,NA
@@ -45,10 +45,10 @@
 "Brandon Clarke","Memphis","SF",23,"6' 8""",215,2478840,"Memphis Grizzlies",NA,NA,NA,NA,NA
 "Brandon Goodwin","Atlanta","PG",24,"6' 0""",180,NA,"Atlanta Hawks",NA,NA,NA,NA,NA
 "Brandon Ingram","New Orleans","SF",22,"6' 7""",190,7265485,"New Orleans Pelicans",NA,NA,NA,NA,NA
-"Brandon Knight","Cleveland","PG",28,"6' 2""",182,15643750,"Cleveland Cavaliers","Out","Jan 24","Jan 27",2020-01-27,2020-01-25
+"Brandon Knight","Cleveland","PG",28,"6' 2""",182,15643750,"Cleveland Cavaliers","Out","Jan 24","Game Time Decision",2020-01-26,2020-01-25
 "Brian Bowen II","Indiana","SG",21,"6' 6""",190,NA,"Indiana Pacers",NA,NA,NA,NA,NA
 "Brook Lopez","Milwaukee","C",31,"7' 0""",282,12093023,"Milwaukee Bucks",NA,NA,NA,NA,NA
-"Bruce Brown","Detroit","SG",23,"6' 4""",202,1416852,"Detroit Pistons","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Bruce Brown","Detroit","SG",23,"6' 4""",202,1416852,"Detroit Pistons","Day-To-Day","Jan 24",NA,2020-01-26,2020-01-25
 "Bruno Caboclo","Memphis","SF",24,"6' 9""",218,1845301,"Memphis Grizzlies","Out",NA,"Feb 20",2020-02-20,2020-01-25
 "Bruno Fernando","Atlanta","PF",21,"6' 9""",240,1400000,"Atlanta Hawks",NA,NA,NA,NA,NA
 "Bryn Forbes","San Antonio","SG",26,"6' 2""",205,2875000,"San Antonio Spurs",NA,NA,NA,NA,NA
@@ -56,7 +56,7 @@
 "Caleb Martin","Charlotte","SF",24,"6' 5""",205,898310,"Charlotte Hornets",NA,NA,NA,NA,NA
 "Caleb Swanigan","Portland","PF",22,"6' 9""",260,2033160,"Portland Trail Blazers",NA,NA,NA,NA,NA
 "Cam Reddish","Atlanta","SG",20,"6' 8""",218,4245720,"Atlanta Hawks",NA,NA,NA,NA,NA
-"Cameron Johnson","Phoenix","SF",23,"6' 8""",210,4033440,"Phoenix Suns","Out","Jan 23","Game Time Decision",2020-01-26,2020-01-25
+"Cameron Johnson","Phoenix","SF",23,"6' 8""",210,4033440,"Phoenix Suns","Out","Jan 25","Feb 2",2020-02-02,2020-01-25
 "Cameron Reynolds","Milwaukee","SG",24,"6' 7""",225,NA,"Milwaukee Bucks",NA,NA,NA,NA,NA
 "Caris LeVert","Brooklyn","SG",25,"6' 6""",205,2625718,"Brooklyn Nets",NA,NA,NA,NA,NA
 "Carmelo Anthony","Portland","PF",35,"6' 8""",238,1364204,"Portland Trail Blazers",NA,NA,NA,NA,NA
@@ -73,7 +73,7 @@
 "Chris Paul","Oklahoma City","PG",34,"6' 1""",175,38506482,"Oklahoma City Thunder",NA,NA,NA,NA,NA
 "Chris Silva","Miami","PF",23,"6' 8""",234,466918,"Miami Heat",NA,NA,NA,NA,NA
 "Christian Wood","Detroit","PF",24,"6' 10""",214,1645357,"Detroit Pistons",NA,NA,NA,NA,NA
-"CJ McCollum","Portland","SG",28,"6' 3""",190,27556959,"Portland Trail Blazers","Out","Jan 23","Game Time Decision",2020-01-26,2020-01-25
+"CJ McCollum","Portland","SG",28,"6' 3""",190,27556959,"Portland Trail Blazers","Out","Jan 25",NA,2020-01-26,2020-01-25
 "Clint Capela","Houston","C",25,"6' 10""",240,14896552,"Houston Rockets",NA,NA,NA,NA,NA
 "Coby White","Chicago","PG",19,"6' 4""",195,5307120,"Chicago Bulls",NA,NA,NA,NA,NA
 "Cody Martin","Charlotte","SF",24,"6' 5""",205,1173310,"Charlotte Hornets",NA,NA,NA,NA,NA
@@ -91,7 +91,7 @@
 "Damyean Dotson","New York","SG",25,"6' 5""",210,1618520,"New York Knicks",NA,NA,NA,NA,NA
 "Daniel Gafford","Chicago","PF",21,"6' 10""",234,898310,"Chicago Bulls","Out",NA,"Jan 31",2020-01-31,2020-01-25
 "Daniel Theis","Boston","C",27,"6' 8""",245,5e+06,"Boston Celtics",NA,NA,NA,NA,NA
-"Danilo Gallinari","Oklahoma City","PF",31,"6' 10""",233,22615559,"Oklahoma City Thunder",NA,NA,NA,NA,NA
+"Danilo Gallinari","Oklahoma City","PF",31,"6' 10""",233,22615559,"Oklahoma City Thunder","Day-To-Day","Jan 25","Jan 27",2020-01-27,2020-01-25
 "Danny Green","LA Lakers","SG",32,"6' 6""",215,14634146,"Los Angeles Lakers",NA,NA,NA,NA,NA
 "Dante Exum","Cleveland","PG",24,"6' 5""",214,9600000,"Cleveland Cavaliers",NA,NA,NA,NA,NA
 "Danuel House Jr.","Houston","SF",26,"6' 6""",220,3540000,"Houston Rockets",NA,NA,NA,NA,NA
@@ -106,8 +106,8 @@
 "De'Anthony Melton","Memphis","SG",21,"6' 2""",200,1416852,"Memphis Grizzlies",NA,NA,NA,NA,NA
 "Dean Wade","Cleveland","PF",23,"6' 9""",228,NA,"Cleveland Cavaliers",NA,NA,NA,NA,NA
 "Deandre Ayton","Phoenix","C",21,"6' 11""",250,9562920,"Phoenix Suns",NA,NA,NA,NA,NA
-"DeAndre Jordan","Brooklyn","C",31,"6' 11""",265,9881598,"Brooklyn Nets","Out","Jan 24","Game Time Decision",2020-01-26,2020-01-25
-"DeAndre' Bembry","Atlanta","SG",25,"6' 5""",210,2603982,"Atlanta Hawks","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"DeAndre Jordan","Brooklyn","C",31,"6' 11""",265,9881598,"Brooklyn Nets","Out","Jan 25","Game Time Decision",2020-01-26,2020-01-25
+"DeAndre' Bembry","Atlanta","SG",25,"6' 5""",210,2603982,"Atlanta Hawks","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Dejounte Murray","San Antonio","PG",23,"6' 4""",180,2321735,"San Antonio Spurs",NA,NA,NA,NA,NA
 "Delon Wright","Dallas","PG",27,"6' 5""",185,9473684,"Dallas Mavericks",NA,NA,NA,NA,NA
 "DeMar DeRozan","San Antonio","SF",30,"6' 6""",220,27739975,"San Antonio Spurs",NA,NA,NA,NA,NA
@@ -123,9 +123,9 @@
 "Derrick Walton Jr.","LA Clippers","PG",24,"6' 0""",185,1445697,"Los Angeles Clippers",NA,NA,NA,NA,NA
 "Derrick White","San Antonio","PG",25,"6' 4""",190,1948080,"San Antonio Spurs",NA,NA,NA,NA,NA
 "Devin Booker","Phoenix","SG",23,"6' 5""",206,27285000,"Phoenix Suns",NA,NA,NA,NA,NA
-"Devontae Cacok","LA Lakers","C",23,"6' 8""",240,NA,"Los Angeles Lakers","Out",NA,"Jan 27",2020-01-27,2020-01-25
+"Devontae Cacok","LA Lakers","C",23,"6' 8""",240,NA,"Los Angeles Lakers","Out",NA,"Game Time Decision",2020-01-26,2020-01-25
 "Devonte' Graham","Charlotte","PG",24,"6' 1""",195,1416852,"Charlotte Hornets",NA,NA,NA,NA,NA
-"Dewan Hernandez","Toronto","C",23,"6' 10""",235,898310,"Toronto Raptors","Out",NA,"Game Time Decision",2020-01-26,2020-01-25
+"Dewan Hernandez","Toronto","C",23,"6' 10""",235,898310,"Toronto Raptors","Out","Jan 25","Jan 28",2020-01-28,2020-01-25
 "Dewayne Dedmon","Sacramento","C",30,"7' 0""",245,13333333,"Sacramento Kings",NA,NA,NA,NA,NA
 "Dillon Brooks","Memphis","SG",24,"6' 7""",225,1618520,"Memphis Grizzlies",NA,NA,NA,NA,NA
 "Dion Waiters","Miami","SG",28,"6' 3""",210,12100000,"Miami Heat",NA,NA,NA,NA,NA
@@ -148,7 +148,7 @@
 "Edmond Sumner","Indiana","PG",24,"6' 4""",196,2e+06,"Indiana Pacers",NA,NA,NA,NA,NA
 "Elfrid Payton","New York","PG",25,"6' 3""",195,8e+06,"New York Knicks",NA,NA,NA,NA,NA
 "Elie Okobo","Phoenix","SF",22,"6' 3""",190,1416852,"Phoenix Suns",NA,NA,NA,NA,NA
-"Emmanuel Mudiay","Utah","PG",23,"6' 3""",200,1620564,"Utah Jazz",NA,NA,NA,NA,NA
+"Emmanuel Mudiay","Utah","PG",23,"6' 3""",200,1620564,"Utah Jazz","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Enes Kanter","Boston","C",27,"6' 10""",250,4767000,"Boston Celtics","Day-To-Day","Jan 25","Jan 28",2020-01-28,2020-01-25
 "Eric Bledsoe","Milwaukee","PG",30,"6' 1""",214,15625000,"Milwaukee Bucks",NA,NA,NA,NA,NA
 "Eric Gordon","Houston","SG",31,"6' 3""",215,14057730,"Houston Rockets",NA,NA,NA,NA,NA
@@ -164,7 +164,7 @@
 "Furkan Korkmaz","Philadelphia","SG",22,"6' 7""",202,1620564,"Philadelphia 76ers",NA,NA,NA,NA,NA
 "Gabe Vincent","Miami","PG",23,"6' 3""",200,NA,"Miami Heat",NA,NA,NA,NA,NA
 "Garrett Temple","Brooklyn","SG",33,"6' 5""",195,4767000,"Brooklyn Nets",NA,NA,NA,NA,NA
-"Garrison Mathews","Washington","SG",23,"6' 5""",215,NA,"Washington Wizards","Out",NA,"Jan 26",2020-01-26,2020-01-25
+"Garrison Mathews","Washington","SG",23,"6' 5""",215,NA,"Washington Wizards","Out","Jan 25","Feb 1",2020-02-01,2020-01-25
 "Gary Clark","Orlando","PF",25,"6' 6""",225,NA,"Orlando Magic",NA,NA,NA,NA,NA
 "Gary Harris","Denver","SG",25,"6' 4""",210,17839286,"Denver Nuggets","Out","Jan 24",NA,2020-01-26,2020-01-25
 "Gary Payton II","Washington","PG",27,"6' 3""",195,1052909,"Washington Wizards",NA,NA,NA,NA,NA
@@ -174,12 +174,12 @@
 "Gerald Green","Houston","SG",33,"6' 6""",205,1620564,"Houston Rockets","Out",NA,"Apr 15",2020-04-15,2020-01-25
 "Giannis Antetokounmpo","Milwaukee","PF",25,"6' 11""",242,25842697,"Milwaukee Bucks",NA,NA,NA,NA,NA
 "Glenn Robinson III","Golden State","SF",26,"6' 6""",222,1620564,"Golden State Warriors","Day-To-Day","Jan 21",NA,2020-01-26,2020-01-25
-"Goga Bitadze","Indiana","C",20,"6' 11""",250,2816760,"Indiana Pacers","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Goga Bitadze","Indiana","C",20,"6' 11""",250,2816760,"Indiana Pacers","Day-To-Day","Jan 25",NA,2020-01-26,2020-01-25
 "Goran Dragic","Miami","PG",33,"6' 3""",190,19217900,"Miami Heat","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
 "Gordon Hayward","Boston","SF",29,"6' 7""",225,32700690,"Boston Celtics",NA,NA,NA,NA,NA
 "Gorgui Dieng","Minnesota","C",30,"6' 10""",252,16229213,"Minnesota Timberwolves",NA,NA,NA,NA,NA
 "Grant Williams","Boston","PF",21,"6' 6""",236,2379840,"Boston Celtics",NA,NA,NA,NA,NA
-"Grayson Allen","Memphis","SG",24,"6' 4""",198,2429400,"Memphis Grizzlies","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Grayson Allen","Memphis","SG",24,"6' 4""",198,2429400,"Memphis Grizzlies","Day-To-Day","Jan 25","Jan 28",2020-01-28,2020-01-25
 "Hamidou Diallo","Oklahoma City","SG",21,"6' 5""",202,1416852,"Oklahoma City Thunder",NA,NA,NA,NA,NA
 "Harrison Barnes","Sacramento","SF",27,"6' 8""",225,24147727,"Sacramento Kings",NA,NA,NA,NA,NA
 "Harry Giles III","Sacramento","PF",21,"6' 11""",240,2578800,"Sacramento Kings",NA,NA,NA,NA,NA
@@ -196,17 +196,17 @@
 "Ja Morant","Memphis","PG",20,"6' 3""",174,8730240,"Memphis Grizzlies",NA,NA,NA,NA,NA
 "Jabari Parker","Atlanta","PF",24,"6' 8""",245,6500000,"Atlanta Hawks","Out","Jan 21","Feb 5",2020-02-05,2020-01-25
 "Jacob Evans","Golden State","SG",22,"6' 4""",210,1925880,"Golden State Warriors","Out","Jan 21",NA,2020-01-26,2020-01-25
-"Jae Crowder","Memphis","SF",29,"6' 6""",235,7815533,"Memphis Grizzlies",NA,NA,NA,NA,NA
+"Jae Crowder","Memphis","SF",29,"6' 6""",235,7815533,"Memphis Grizzlies","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Jahlil Okafor","New Orleans","C",24,"6' 10""",270,1702486,"New Orleans Pelicans","Out","Jan 22",NA,2020-01-26,2020-01-25
-"JaKarr Sampson","Indiana","SF",26,"6' 7""",214,1620564,"Indiana Pacers","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
-"Jake Layman","Minnesota","SF",25,"6' 8""",209,3581986,"Minnesota Timberwolves","Out","Jan 21","Game Time Decision",2020-01-26,2020-01-25
+"JaKarr Sampson","Indiana","SF",26,"6' 7""",214,1620564,"Indiana Pacers","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
+"Jake Layman","Minnesota","SF",25,"6' 8""",209,3581986,"Minnesota Timberwolves","Out","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Jakob Poeltl","San Antonio","C",24,"7' 1""",245,3754886,"San Antonio Spurs",NA,NA,NA,NA,NA
 "Jalen Brunson","Dallas","PG",23,"6' 1""",190,1416852,"Dallas Mavericks",NA,NA,NA,NA,NA
 "Jalen Lecque","Phoenix","PG",19,"6' 4""",185,898310,"Phoenix Suns",NA,NA,NA,NA,NA
 "Jalen McDaniels","Charlotte","PF",21,"6' 10""",205,898310,"Charlotte Hornets",NA,NA,NA,NA,NA
 "Jamal Murray","Denver","PG",22,"6' 4""",215,4444746,"Denver Nuggets","Out","Jan 22","Jan 30",2020-01-30,2020-01-25
 "James Ennis III","Philadelphia","SF",29,"6' 6""",215,1882867,"Philadelphia 76ers",NA,NA,NA,NA,NA
-"James Harden","Houston","SG",30,"6' 5""",220,38199000,"Houston Rockets","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"James Harden","Houston","SG",30,"6' 5""",220,38199000,"Houston Rockets","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "James Johnson","Miami","PF",32,"6' 7""",240,15349400,"Miami Heat",NA,NA,NA,NA,NA
 "JaMychal Green","LA Clippers","PF",29,"6' 8""",227,4767000,"Los Angeles Clippers",NA,NA,NA,NA,NA
 "Jared Dudley","LA Lakers","SF",34,"6' 6""",237,1620564,"Los Angeles Lakers",NA,NA,NA,NA,NA
@@ -216,13 +216,13 @@
 "Jarrell Brantley","Utah","PF",23,"6' 5""",250,NA,"Utah Jazz",NA,NA,NA,NA,NA
 "Jarrett Allen","Brooklyn","C",21,"6' 11""",243,2376840,"Brooklyn Nets",NA,NA,NA,NA,NA
 "Jarrett Culver","Minnesota","SG",20,"6' 6""",195,5813640,"Minnesota Timberwolves",NA,NA,NA,NA,NA
-"JaVale McGee","LA Lakers","C",32,"7' 0""",270,4e+06,"Los Angeles Lakers","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"JaVale McGee","LA Lakers","C",32,"7' 0""",270,4e+06,"Los Angeles Lakers","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Javonte Green","Boston","SG",26,"6' 4""",205,898310,"Boston Celtics",NA,NA,NA,NA,NA
 "Jaxson Hayes","New Orleans","C",19,"6' 11""",220,4862040,"New Orleans Pelicans",NA,NA,NA,NA,NA
-"Jaylen Brown","Boston","SG",23,"6' 6""",223,6534829,"Boston Celtics","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Jaylen Brown","Boston","SG",23,"6' 6""",223,6534829,"Boston Celtics","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Jaylen Hoard","Portland","SF",20,"6' 8""",216,NA,"Portland Trail Blazers",NA,NA,NA,NA,NA
 "Jaylen Nowell","Minnesota","SG",20,"6' 4""",201,1400000,"Minnesota Timberwolves",NA,NA,NA,NA,NA
-"Jayson Tatum","Boston","PF",21,"6' 8""",210,7830000,"Boston Celtics","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Jayson Tatum","Boston","PF",21,"6' 8""",210,7830000,"Boston Celtics","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Jeff Teague","Atlanta","PG",31,"6' 3""",195,1.9e+07,"Atlanta Hawks",NA,NA,NA,NA,NA
 "Jerami Grant","Denver","PF",25,"6' 8""",210,9346153,"Denver Nuggets",NA,NA,NA,NA,NA
 "Jeremiah Martin","Brooklyn","G",23,"6' 2""",185,NA,"Brooklyn Nets",NA,NA,NA,NA,NA
@@ -255,14 +255,13 @@
 "Josh Okogie","Minnesota","SG",21,"6' 4""",213,2530680,"Minnesota Timberwolves",NA,NA,NA,NA,NA
 "Josh Reaves","Dallas","SG",22,"6' 4""",214,NA,"Dallas Mavericks",NA,NA,NA,NA,NA
 "Josh Richardson","Philadelphia","SG",26,"6' 5""",200,10116576,"Philadelphia 76ers","Out","Jan 23","Feb 6",2020-02-06,2020-01-25
-"Jrue Holiday","New Orleans","SG",29,"6' 3""",205,26231111,"New Orleans Pelicans","Day-To-Day","Jan 21",NA,2020-01-26,2020-01-25
+"Jrue Holiday","New Orleans","SG",29,"6' 3""",205,26231111,"New Orleans Pelicans","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Juan Hernangomez","Denver","PF",24,"6' 9""",214,3321030,"Denver Nuggets",NA,NA,NA,NA,NA
 "Julius Randle","New York","PF",25,"6' 8""",250,1.8e+07,"New York Knicks",NA,NA,NA,NA,NA
 "Justin Anderson","Brooklyn","SG",26,"6' 5""",231,NA,"Brooklyn Nets",NA,NA,NA,NA,NA
 "Justin Holiday","Indiana","SF",30,"6' 6""",180,4767000,"Indiana Pacers",NA,NA,NA,NA,NA
 "Justin Jackson","Dallas","SF",24,"6' 7""",220,3280920,"Dallas Mavericks",NA,NA,NA,NA,NA
 "Justin James","Sacramento","SG",22,"6' 7""",190,898310,"Sacramento Kings",NA,NA,NA,NA,NA
-"Justin Patton","Dallas","C",22,"6' 11""",241,1620564,"Dallas Mavericks","Day-To-Day","Jan 24",NA,2020-01-26,2020-01-25
 "Justin Wright-Foreman","Utah","PG",22,"6' 0""",190,NA,"Utah Jazz",NA,NA,NA,NA,NA
 "Justise Winslow","Miami","SF",23,"6' 6""",222,1.3e+07,"Miami Heat","Out",NA,"Feb 1",2020-02-01,2020-01-25
 "Jusuf Nurkic","Portland","C",25,"7' 0""",290,13125000,"Portland Trail Blazers","Out","Jan 22","Feb 15",2020-02-15,2020-01-25
@@ -278,7 +277,7 @@
 "Kemba Walker","Boston","PG",29,"6' 0""",184,32742000,"Boston Celtics","Day-To-Day","Jan 21",NA,2020-01-26,2020-01-25
 "Kendrick Nunn","Miami","SG",24,"6' 2""",190,1416852,"Miami Heat","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
 "Kenny Wooten","New York","F",21,"6' 9""",225,NA,"New York Knicks",NA,NA,NA,NA,NA
-"Kenrich Williams","New Orleans","SG",25,"6' 6""",210,1416852,"New Orleans Pelicans","Out","Jan 23","Game Time Decision",2020-01-26,2020-01-25
+"Kenrich Williams","New Orleans","SG",25,"6' 6""",210,1416852,"New Orleans Pelicans","Out","Jan 25","Jan 28",2020-01-28,2020-01-25
 "Kent Bazemore","Sacramento","SG",30,"6' 4""",195,19269662,"Sacramento Kings","Day-To-Day","Jan 21",NA,2020-01-26,2020-01-25
 "Kentavious Caldwell-Pope","LA Lakers","SG",26,"6' 5""",204,8089282,"Los Angeles Lakers",NA,NA,NA,NA,NA
 "Kevin Durant","Brooklyn","SF",31,"6' 10""",240,38199000,"Brooklyn Nets","Out",NA,"Out for the season",2021-01-24,2020-01-25
@@ -290,7 +289,7 @@
 "Kevon Looney","Golden State","PF",23,"6' 9""",222,4464226,"Golden State Warriors","Out","Jan 24","Game Time Decision",2020-01-26,2020-01-25
 "Khem Birch","Orlando","C",27,"6' 9""",233,3e+06,"Orlando Magic",NA,NA,NA,NA,NA
 "Khris Middleton","Milwaukee","SF",28,"6' 7""",222,30603448,"Milwaukee Bucks",NA,NA,NA,NA,NA
-"Khyri Thomas","Detroit","SG",23,"6' 3""",210,1416852,"Detroit Pistons","Out",NA,"Jan 27",2020-01-27,2020-01-25
+"Khyri Thomas","Detroit","SG",23,"6' 3""",210,1416852,"Detroit Pistons","Out",NA,"Game Time Decision",2020-01-26,2020-01-25
 "Klay Thompson","Golden State","SG",29,"6' 6""",215,32742000,"Golden State Warriors","Out",NA,"Jun 1",2020-06-01,2020-01-25
 "Kobi Simmons","Charlotte","PG",22,"6' 5""",180,NA,"Charlotte Hornets",NA,NA,NA,NA,NA
 "Kostas Antetokounmpo","LA Lakers","PF",22,"6' 10""",200,NA,"Los Angeles Lakers",NA,NA,NA,NA,NA
@@ -301,7 +300,7 @@
 "Kyle Anderson","Memphis","SF",26,"6' 9""",230,9073050,"Memphis Grizzlies",NA,NA,NA,NA,NA
 "Kyle Guy","Sacramento","SG",22,"6' 1""",167,NA,"Sacramento Kings",NA,NA,NA,NA,NA
 "Kyle Korver","Milwaukee","SG",38,"6' 7""",212,1620564,"Milwaukee Bucks",NA,NA,NA,NA,NA
-"Kyle Kuzma","LA Lakers","PF",24,"6' 8""",221,1974600,"Los Angeles Lakers","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Kyle Kuzma","LA Lakers","PF",24,"6' 8""",221,1974600,"Los Angeles Lakers","Day-To-Day","Jan 24",NA,2020-01-26,2020-01-25
 "Kyle Lowry","Toronto","PG",33,"6' 0""",196,34996296,"Toronto Raptors",NA,NA,NA,NA,NA
 "Kyle O'Quinn","Philadelphia","C",29,"6' 9""",250,1620564,"Philadelphia 76ers",NA,NA,NA,NA,NA
 "Kyrie Irving","Brooklyn","PG",27,"6' 2""",195,31742000,"Brooklyn Nets","Day-To-Day","Jan 22",NA,2020-01-26,2020-01-25
@@ -321,14 +320,14 @@
 "Luka Samanic","San Antonio","PF",20,"6' 10""",227,2689920,"San Antonio Spurs",NA,NA,NA,NA,NA
 "Luke Kennard","Detroit","SG",23,"6' 5""",206,3827160,"Detroit Pistons","Out",NA,"Feb 3",2020-02-03,2020-01-25
 "Luke Kornet","Chicago","PF",24,"7' 2""",250,2250000,"Chicago Bulls",NA,NA,NA,NA,NA
-"Malcolm Brogdon","Indiana","PG",27,"6' 5""",229,2e+07,"Indiana Pacers","Day-To-Day","Jan 23","Game Time Decision",2020-01-26,2020-01-25
+"Malcolm Brogdon","Indiana","PG",27,"6' 5""",229,2e+07,"Indiana Pacers","Day-To-Day","Jan 25","Jan 29",2020-01-29,2020-01-25
 "Malcolm Miller","Toronto","SG",26,"6' 7""",210,1588231,"Toronto Raptors",NA,NA,NA,NA,NA
 "Malik Beasley","Denver","SG",23,"6' 4""",187,2731714,"Denver Nuggets",NA,NA,NA,NA,NA
 "Malik Monk","Charlotte","SG",21,"6' 3""",200,4028400,"Charlotte Hornets",NA,NA,NA,NA,NA
 "Marc Gasol","Toronto","C",34,"6' 11""",255,25595700,"Toronto Raptors",NA,NA,NA,NA,NA
 "Marco Belinelli","San Antonio","SG",33,"6' 5""",220,5846154,"San Antonio Spurs",NA,NA,NA,NA,NA
 "Marcus Morris Sr.","New York","SF",30,"6' 8""",218,1.5e+07,"New York Knicks","Day-To-Day","Jan 21",NA,2020-01-26,2020-01-25
-"Marcus Smart","Boston","PG",25,"6' 3""",220,12553571,"Boston Celtics",NA,NA,NA,NA,NA
+"Marcus Smart","Boston","PG",25,"6' 3""",220,12553571,"Boston Celtics","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Marial Shayok","Philadelphia","SG",24,"6' 5""",198,NA,"Philadelphia 76ers",NA,NA,NA,NA,NA
 "Mario Hezonja","Portland","SF",24,"6' 8""",220,1737145,"Portland Trail Blazers",NA,NA,NA,NA,NA
 "Markelle Fultz","Orlando","PG",21,"6' 3""",209,9745200,"Orlando Magic","Day-To-Day","Jan 23",NA,2020-01-26,2020-01-25
@@ -370,10 +369,10 @@
 "Naz Reid","Minnesota","C",20,"6' 9""",264,898310,"Minnesota Timberwolves",NA,NA,NA,NA,NA
 "Nemanja Bjelica","Sacramento","PF",31,"6' 10""",234,6825000,"Sacramento Kings",NA,NA,NA,NA,NA
 "Nene ","Houston","C",37,"6' 11""",250,2564753,"Houston Rockets",NA,NA,NA,NA,NA
-"Nerlens Noel","Oklahoma City","C",25,"6' 10""",220,1620564,"Oklahoma City Thunder","Day-To-Day","Jan 21",NA,2020-01-26,2020-01-25
+"Nerlens Noel","Oklahoma City","C",25,"6' 10""",220,1620564,"Oklahoma City Thunder","Out","Jan 25","Jan 31",2020-01-31,2020-01-25
 "Nickeil Alexander-Walker","New Orleans","SG",21,"6' 5""",205,2964840,"New Orleans Pelicans",NA,NA,NA,NA,NA
 "Nicolas Batum","Charlotte","SG",31,"6' 9""",230,25565217,"Charlotte Hornets",NA,NA,NA,NA,NA
-"Nicolas Claxton","Brooklyn","PF",20,"6' 11""",215,898310,"Brooklyn Nets","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Nicolas Claxton","Brooklyn","PF",20,"6' 11""",215,898310,"Brooklyn Nets","Day-To-Day","Jan 24",NA,2020-01-26,2020-01-25
 "Nicolo Melli","New Orleans","PF",28,"6' 9""",236,4102564,"New Orleans Pelicans",NA,NA,NA,NA,NA
 "Nigel Williams-Goss","Utah","PG",25,"6' 2""",190,1500000,"Utah Jazz","Out","Jan 21",NA,2020-01-26,2020-01-25
 "Nikola Jokic","Denver","C",24,"7' 0""",284,27504630,"Denver Nuggets",NA,NA,NA,NA,NA
@@ -388,23 +387,23 @@
 "P.J. Tucker","Houston","PF",34,"6' 5""",245,8349039,"Houston Rockets",NA,NA,NA,NA,NA
 "Pascal Siakam","Toronto","PF",25,"6' 9""",230,2351839,"Toronto Raptors",NA,NA,NA,NA,NA
 "Pat Connaughton","Milwaukee","SG",27,"6' 5""",209,1723050,"Milwaukee Bucks",NA,NA,NA,NA,NA
-"Patrick Beverley","LA Clippers","PG",31,"6' 1""",180,12345680,"Los Angeles Clippers","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
-"Patrick McCaw","Toronto","SF",24,"6' 7""",181,4e+06,"Toronto Raptors","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
-"Patrick Patterson","LA Clippers","PF",30,"6' 8""",235,1620564,"Los Angeles Clippers",NA,NA,NA,NA,NA
+"Patrick Beverley","LA Clippers","PG",31,"6' 1""",180,12345680,"Los Angeles Clippers","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
+"Patrick McCaw","Toronto","SF",24,"6' 7""",181,4e+06,"Toronto Raptors","Out","Jan 25","Jan 28",2020-01-28,2020-01-25
+"Patrick Patterson","LA Clippers","PF",30,"6' 8""",235,1620564,"Los Angeles Clippers","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Patty Mills","San Antonio","PG",31,"6' 1""",180,12428571,"San Antonio Spurs",NA,NA,NA,NA,NA
-"Paul George","LA Clippers","SG",29,"6' 8""",220,30560700,"Los Angeles Clippers","Out","Jan 23","Game Time Decision",2020-01-26,2020-01-25
+"Paul George","LA Clippers","SG",29,"6' 8""",220,30560700,"Los Angeles Clippers","Out","Jan 25","Jan 28",2020-01-28,2020-01-25
 "Paul Millsap","Denver","PF",34,"6' 7""",257,30350000,"Denver Nuggets","Out","Jan 22","Jan 30",2020-01-30,2020-01-25
 "Paul Watson","Toronto","SF",25,"6' 6""",210,NA,"Toronto Raptors",NA,NA,NA,NA,NA
 "PJ Dozier","Denver","PG",23,"6' 6""",205,NA,"Denver Nuggets",NA,NA,NA,NA,NA
 "PJ Washington","Charlotte","PF",21,"6' 7""",230,3831840,"Charlotte Hornets",NA,NA,NA,NA,NA
 "Quinn Cook","LA Lakers","PG",26,"6' 1""",180,3e+06,"Los Angeles Lakers",NA,NA,NA,NA,NA
 "Quinndary Weatherspoon","San Antonio","SG",23,"6' 3""",205,NA,"San Antonio Spurs",NA,NA,NA,NA,NA
-"Rajon Rondo","LA Lakers","PG",33,"6' 1""",180,2564753,"Los Angeles Lakers","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Rajon Rondo","LA Lakers","PG",33,"6' 1""",180,2564753,"Los Angeles Lakers","Day-To-Day","Jan 24",NA,2020-01-26,2020-01-25
 "Raul Neto","Philadelphia","PG",27,"6' 1""",180,1620564,"Philadelphia 76ers",NA,NA,NA,NA,NA
 "Ray Spalding","Charlotte","PF",22,"6' 10""",215,NA,"Charlotte Hornets",NA,NA,NA,NA,NA
 "Rayjon Tucker","Utah","SG",22,"6' 3""",209,578573,"Utah Jazz",NA,NA,NA,NA,NA
 "Reggie Bullock","New York","SG",28,"6' 6""",205,4e+06,"New York Knicks",NA,NA,NA,NA,NA
-"Reggie Jackson","Detroit","PG",29,"6' 3""",208,18086956,"Detroit Pistons","Out","Jan 22",NA,2020-01-26,2020-01-25
+"Reggie Jackson","Detroit","PG",29,"6' 3""",208,18086956,"Detroit Pistons","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Richaun Holmes","Sacramento","C",26,"6' 10""",235,4767000,"Sacramento Kings","Out",NA,"Feb 1",2020-02-01,2020-01-25
 "Ricky Rubio","Phoenix","PG",29,"6' 3""",190,16200000,"Phoenix Suns",NA,NA,NA,NA,NA
 "RJ Barrett","New York","SG",19,"6' 6""",214,7839960,"New York Knicks","Out","Jan 25",NA,2020-01-26,2020-01-25
@@ -422,7 +421,7 @@
 "Rui Hachimura","Washington","PF",21,"6' 8""",230,4469160,"Washington Wizards","Out","Jan 25","Jan 30",2020-01-30,2020-01-25
 "Russell Westbrook","Houston","PG",31,"6' 3""",200,38506482,"Houston Rockets",NA,NA,NA,NA,NA
 "Ryan Arcidiacono","Chicago","PG",25,"6' 3""",195,3e+06,"Chicago Bulls","Day-To-Day","Jan 23",NA,2020-01-26,2020-01-25
-"Ryan Broekhoff","Dallas","SG",29,"6' 6""",215,1416852,"Dallas Mavericks","Out","Jan 21","Jan 27",2020-01-27,2020-01-25
+"Ryan Broekhoff","Dallas","SG",29,"6' 6""",215,1416852,"Dallas Mavericks","Out","Jan 21","Game Time Decision",2020-01-26,2020-01-25
 "Sekou Doumbouya","Detroit","SF",19,"6' 8""",230,3285120,"Detroit Pistons",NA,NA,NA,NA,NA
 "Semi Ojeleye","Boston","PF",25,"6' 6""",240,1618520,"Boston Celtics",NA,NA,NA,NA,NA
 "Serge Ibaka","Toronto","C",30,"7' 0""",235,23271604,"Toronto Raptors",NA,NA,NA,NA,NA
@@ -437,9 +436,9 @@
 "Stanley Johnson","Toronto","SF",23,"6' 6""",242,3623000,"Toronto Raptors",NA,NA,NA,NA,NA
 "Stephen Curry","Golden State","PG",31,"6' 3""",185,40231758,"Golden State Warriors","Out",NA,"Mar 1",2020-03-01,2020-01-25
 "Sterling Brown","Milwaukee","SG",24,"6' 5""",219,1618520,"Milwaukee Bucks","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
-"Steven Adams","Oklahoma City","C",26,"6' 11""",265,25842697,"Oklahoma City Thunder","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Steven Adams","Oklahoma City","C",26,"6' 11""",265,25842697,"Oklahoma City Thunder","Day-To-Day","Jan 25",NA,2020-01-26,2020-01-25
 "Sviatoslav Mykhailiuk","Detroit","SG",22,"6' 7""",205,1416852,"Detroit Pistons",NA,NA,NA,NA,NA
-"T.J. Leaf","Indiana","PF",22,"6' 10""",222,2813280,"Indiana Pacers","Day-To-Day","Jan 24",NA,2020-01-26,2020-01-25
+"T.J. Leaf","Indiana","PF",22,"6' 10""",222,2813280,"Indiana Pacers","Day-To-Day","Jan 25",NA,2020-01-26,2020-01-25
 "T.J. McConnell","Indiana","PG",27,"6' 1""",190,3500000,"Indiana Pacers",NA,NA,NA,NA,NA
 "T.J. Warren","Indiana","SF",26,"6' 8""",220,10810000,"Indiana Pacers",NA,NA,NA,NA,NA
 "Tacko Fall","Boston","C",24,"7' 5""",311,NA,"Boston Celtics",NA,NA,NA,NA,NA
@@ -449,7 +448,7 @@
 "Taurean Prince","Brooklyn","PF",25,"6' 7""",218,3481986,"Brooklyn Nets",NA,NA,NA,NA,NA
 "Terance Mann","LA Clippers","SG",23,"6' 5""",215,1e+06,"Los Angeles Clippers",NA,NA,NA,NA,NA
 "Terence Davis","Toronto","SG",22,"6' 4""",201,898310,"Toronto Raptors",NA,NA,NA,NA,NA
-"Terrance Ferguson","Oklahoma City","SF",21,"6' 6""",190,2475840,"Oklahoma City Thunder","Out","Jan 23","Game Time Decision",2020-01-26,2020-01-25
+"Terrance Ferguson","Oklahoma City","SF",21,"6' 6""",190,2475840,"Oklahoma City Thunder","Out","Jan 25","Jan 27",2020-01-27,2020-01-25
 "Terrence Ross","Orlando","SG",28,"6' 6""",206,12500000,"Orlando Magic",NA,NA,NA,NA,NA
 "Terry Rozier","Charlotte","PG",25,"6' 1""",190,19894737,"Charlotte Hornets",NA,NA,NA,NA,NA
 "Thabo Sefolosha","Houston","SF",35,"6' 6""",215,1620564,"Houston Rockets",NA,NA,NA,NA,NA
@@ -464,7 +463,7 @@
 "Tobias Harris","Philadelphia","SF",27,"6' 8""",226,32742000,"Philadelphia 76ers",NA,NA,NA,NA,NA
 "Tomas Satoransky","Chicago","SG",28,"6' 7""",210,1e+07,"Chicago Bulls","Day-To-Day","Jan 23",NA,2020-01-26,2020-01-25
 "Tony Bradley","Utah","C",22,"6' 10""",248,1962360,"Utah Jazz",NA,NA,NA,NA,NA
-"Tony Snell","Detroit","SF",28,"6' 6""",213,11392857,"Detroit Pistons","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Tony Snell","Detroit","SF",28,"6' 6""",213,11392857,"Detroit Pistons","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Torrey Craig","Denver","SF",29,"6' 7""",221,2e+06,"Denver Nuggets",NA,NA,NA,NA,NA
 "Trae Young","Atlanta","PG",21,"6' 1""",180,6273000,"Atlanta Hawks","Day-To-Day","Jan 23",NA,2020-01-26,2020-01-25
 "Tremont Waters","Boston","PG",22,"5' 10""",175,NA,"Boston Celtics",NA,NA,NA,NA,NA
@@ -494,7 +493,7 @@
 "Wesley Matthews","Milwaukee","SG",33,"6' 4""",220,2564753,"Milwaukee Bucks","Day-To-Day","Jan 23",NA,2020-01-26,2020-01-25
 "Will Barton","Denver","SF",29,"6' 5""",181,12776786,"Denver Nuggets",NA,NA,NA,NA,NA
 "William Howard","Houston","SG",26,"6' 8""",207,NA,"Houston Rockets",NA,NA,NA,NA,NA
-"Willie Cauley-Stein","Dallas","C",26,"7' 0""",240,2177483,"Dallas Mavericks","Day-To-Day","Jan 24","Game Time Decision",2020-01-26,2020-01-25
+"Willie Cauley-Stein","Dallas","C",26,"7' 0""",240,2177483,"Dallas Mavericks","Day-To-Day","Jan 25","Game Time Decision",2020-01-26,2020-01-25
 "Willy Hernangomez","Charlotte","C",25,"6' 11""",250,1676735,"Charlotte Hornets",NA,NA,NA,NA,NA
 "Wilson Chandler","Brooklyn","SF",32,"6' 8""",235,1620564,"Brooklyn Nets",NA,NA,NA,NA,NA
 "Yogi Ferrell","Sacramento","PG",26,"6' 0""",178,3150000,"Sacramento Kings",NA,NA,NA,NA,NA

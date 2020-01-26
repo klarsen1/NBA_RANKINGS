@@ -137,14 +137,14 @@ for (i in start_index:end_index){
      ## Save model details
      details <- cbind.data.frame(sapply(row.names(c), as.character), sapply(c, as.numeric), stringsAsFactors = FALSE)
      names(details) <- c("Variable", "Coeff")
-     details$DATE <- subset(datemap, DATE_INDEX==i)$DATE
+     details$DATE <- as.Date(subset(datemap, DATE_INDEX==i)$DATE)
      details$AUROC <- AUC(Y, p)[[1]]
      details$N <- nrow(X)
      model_details[[modelupdates]] <- subset(details, Variable != "(Intercept)")
      modelupdates <- modelupdates+1
      
      ## Get the latest win percentages
-     thisseason <- filter(inwindow, DATE==max(DATE))[1,"season"]
+     thisseason <- as.numeric(filter(inwindow, DATE==max(DATE))[1,"season"])
      if (thisseason != current_season){
        w <-0 
      }
@@ -269,6 +269,7 @@ for (i in 1:r){
         nn1 <- 0
         nn2 <- 0
         for (g in 1:length(p)){
+          #print(p[g])
           binomial <- as.numeric(rbinom(n=1, size=1, prob=p[g]))  
           if (t1==s[g]){
             if (binomial==1){nn1 <- nn1+1}

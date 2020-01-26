@@ -4,7 +4,6 @@ assign_clusters <- function(centroids, data, cutoff, thisseason){
                weight=ifelse(season==thisseason, weight, weight*0.25)) 
     
   means <- group_by(df, PLAYER_FULL_NAME) %>%
-    
     summarise(assists=weighted.mean(assists, weight),
             offensive_rebounds=weighted.mean(offensive_rebounds, weight),
             defensive_rebounds=weighted.mean(defensive_rebounds, weight),

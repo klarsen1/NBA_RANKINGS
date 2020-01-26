@@ -5,15 +5,14 @@ assign_clusters_and_win_rates <- function(root, datemap, box_scores, weighted_wi
    e <-max(subset(datemap, future_game==0)$DATE_INDEX) 
    ncore <- detectCores()-2
    registerDoParallel(ncore)
-   i=s # just for testing outside loop
+   i=e
    loop_result <- foreach(i=s:e) %dopar% {
-   #for (i in s:e){
-      
+
       ### Get the data inside the window  
-      thisseason <- datemap[i, "season"]
+      thisseason <- as.numeric(datemap[i, "season"])
       inwindow <- filter(box_scores, DATE_INDEX<i & DATE_INDEX>i-cluster_window)
       thisdate <- filter(box_scores, DATE_INDEX==i)
-      thisseason <- thisdate[1,"season"]
+      #thisseason <- as.numeric(thisdate[1,"season"])
   
       ## Get the win percentages
       w <- weighted_win_rates 
@@ -25,6 +24,7 @@ assign_clusters_and_win_rates <- function(root, datemap, box_scores, weighted_wi
   
       ## Assign clusters
       clusters <- assign_clusters(centroids, inwindow, cutoff, thisseason)
+      print(unique(clusters$Cluster))
   
       ### Join
       t <- inner_join(thisdate, select(clusters, PLAYER_FULL_NAME, Cluster), by="PLAYER_FULL_NAME")

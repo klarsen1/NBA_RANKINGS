@@ -343,6 +343,7 @@ f <- group_by(f, game_id, OWN_TEAM) %>%
          n_H=sum(as.numeric(VENUE_R_H=="H")),
          n_R=sum(as.numeric(VENUE_R_H=="R")),
          VENUE_R_H=ifelse(distinct_venue==2, ifelse(n_H>n_R, "H", "R"), VENUE_R_H)) %>%
+  select(-n_H, -n_R) %>%
   ungroup()
 
 

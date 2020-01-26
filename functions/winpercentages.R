@@ -1,7 +1,7 @@
 winpercentages <- function(data, s, use_weights){
 
   df <- subset(data, season==s) %>% distinct(game_id, .keep_all=TRUE) %>%
-    select(selected_team, opposing_team, selected_team_win, selected_team_points, opposing_team_points, season_day_std, wins_538_selected_team, wins_538_opposing_team)
+    select(selected_team, opposing_team, selected_team_win, season_day_std, wins_538_selected_team, wins_538_opposing_team)
 
   MM <- month(max(subset(data, season==s)$DATE))
   SS <- filter(data, DATE==max(DATE))[1,"season_day_std"]
@@ -21,15 +21,12 @@ winpercentages <- function(data, s, use_weights){
         ungroup() 
 
       winrate <- 
-        mutate(winrate, win=ifelse(selected_team==t, selected_team_win, 1-selected_team_win),
-               points_scored=ifelse(selected_team==t, selected_team_points, opposing_team_points),
-               points_allowed=ifelse(opposing_team==t, selected_team_points, opposing_team_points)) 
+        mutate(winrate, win=ifelse(selected_team==t, selected_team_win, 1-selected_team_win)) 
 
       winrate <- 
-        summarise(winrate, win_rate=weighted.mean(win, weight), 
-                  n=n(), 
-                  points_scored=sum(points_scored), 
-                  points_allowed=sum(points_allowed)) 
+        summarise(winrate, 
+                  win_rate=weighted.mean(win, weight), 
+                  n=n()) 
       
       winrate <- 
         mutate(winrate, 
@@ -40,21 +37,15 @@ winpercentages <- function(data, s, use_weights){
     }
     winratesdf <- data.frame(rbindlist(winrates), stringsAsFactors=FALSE) %>%
         mutate(month=MM,
-               early_season=as.numeric(month %in% c(10, 11)),
-               win_rate_early_season=win_rate*as.numeric(early_season==1),
                win_rate_season=win_rate,
-               point_diff=ifelse(points_allowed>0, points_scored/points_allowed, 1),
-               point_diff_season=point_diff,
-               point_diff_early_season=point_diff*as.numeric(early_season==1),
-               point_diff_adj=point_diff*as.numeric(SS), 
                win_rate_season_adj=win_rate_season*as.numeric(SS),
                first_game=0) %>%
-      select(selected_team, opposing_team, win_rate_early_season, win_rate_season, first_game, point_diff_season, point_diff_early_season, win_rate_season_adj, point_diff_adj) %>%
+      select(selected_team, opposing_team, win_rate_season, first_game, win_rate_season_adj) %>%
       replace(is.na(.), 0)
     return(winratesdf)
   } else{
     t <- distinct(data, selected_team) %>%
-      mutate(win_rate_early_season=0, win_rate_season=0, opposing_team=selected_team, first_game=1, point_diff_season=0, point_diff_early_season=0, win_rate_season_adj=0, point_diff_adj=0)
+      mutate(win_rate_season=0, opposing_team=selected_team, first_game=1, win_rate_season_adj=0)
     return(data.frame(t))
   }
 }

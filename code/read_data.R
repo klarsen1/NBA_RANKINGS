@@ -48,6 +48,7 @@ carm_elo_full <- ft8 %>% html_nodes(".border-right+ .big-desktop") %>% html_text
 carm_elo <- ft8 %>% html_nodes("td.carmelo-current") %>% html_text() %>% trim()
 chance_making_finals <- ft8 %>% html_nodes("td.top-seed") %>% html_text() %>% trim() 
 chance_winning_finals <- ft8 %>% html_nodes("td.top-seed+ .pct") %>% html_text() %>% trim() 
+team[team=="76ers"] <- "Philadelphia"
 team[team=="ers"] <- "Philadelphia"
 team[team=="Hornets"] <- "Charlotte"
 team[team=="Clippers"] <- "LA Clippers"

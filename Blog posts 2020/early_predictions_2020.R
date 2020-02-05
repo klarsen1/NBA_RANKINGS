@@ -1,8 +1,9 @@
 library(dplyr)
 library(ggrepel)
 library(tidyr)
+library(formattable)
 
-stamp <- "2020-01-25"
+stamp <- "2020-02-04"
   
 
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
@@ -33,12 +34,16 @@ ggplot(data=filter(all_rankings, conference=="West"), aes(x=reorder(team, -elast
   xlab("") + ylab("") + theme(legend.position = 'none') + 
   scale_y_continuous(labels = scales::percent_format(accuracy=1))
 
-ggplot(data=all_rankings, aes(x=reorder(team, season_win_rate), season_win_rate, fill=factor(conference))) + 
+g1 <- ggplot(data=all_rankings, aes(x=reorder(team, season_win_rate), season_win_rate, fill=factor(conference))) + 
   geom_bar(stat="identity") + coord_flip() +
   xlab("") + ylab("") + 
   #theme(legend.position = 'none') + 
   theme(legend.title = element_blank()) +
   scale_y_continuous(labels = scales::percent_format(accuracy=1))
+
+g1
+
+ggsave(g1, file=paste0(root, "/newsletter/season_win_rates.png"), device = "png", dpi=72, width=9, height=6)
 
 ggplot(filter(all_rankings, conference=="East"), aes(x=elastic_ranking, y=FiveThirtyEight)) +
   xlab("Elastic Ranking") + ylab("FiveThirtyEight") +
@@ -74,7 +79,7 @@ ggplot(filter(all_rankings, conference=="West"), aes(x=elastic_ranking, y=FiveTh
     )
   )
 
-ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
+g2 <- ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
   xlab("Elastic Ranking") + ylab("FiveThirtyEight") +
   geom_point(size = 2, color = 'black') +
   geom_smooth(method='lm') + 
@@ -89,6 +94,10 @@ ggplot(all_rankings, aes(x=elastic_ranking, y=FiveThirtyEight)) +
       override.aes = aes(label = "")
     )
   )
+
+g2 
+
+ggsave(g2, file=paste0(root, "/newsletter/comp_538.png"), device = "png", dpi=72, width=9, height=6)
 
 
 ff <- paste0(root, "/modeldetails/score_decomp_", stamp,".csv")
@@ -112,27 +121,11 @@ d <- read.csv(ff, stringsAsFactors = FALSE) %>%
 
 dd <- gather(d, modelpart, value, roster:performance)
   
-
-#ggplot(data=filter(dd, conference=="East"), aes(x=reorder(team, order), value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
-#  xlab("") + ylab("") + theme(legend.title = element_blank())
-
-#ggplot(data=filter(dd, conference=="West"), aes(x=reorder(team, order), value)) + geom_bar(aes(fill=modelpart), stat="identity") + coord_flip() +
-#  xlab("") + ylab("") + theme(legend.title = element_blank())
-
-
-#ggplot(data=filter(d, conference=="East"), aes(x=reorder(team, roster_rank), roster_rank)) + geom_bar(stat="identity") + coord_flip() +
-#  xlab("") + ylab("") + theme(legend.title = element_blank())
-
-
-#ggplot(data=filter(d, conference=="West"), aes(x=reorder(team, roster_rank), roster_rank)) + geom_bar(stat="identity") + coord_flip() +
-#  xlab("") + ylab("") + theme(legend.title = element_blank())
-
-
 ## playoffs
 
 ffff <- paste0(root, "/rankings/playoff_prediction_",stamp,".csv")
 playoffs <- read.csv(ffff, stringsAsFactors = FALSE) %>% 
-  mutate(d=1, seed=winner_seed, 
+  mutate(d=1, seed=winner_seed, odds=round(prob_win_series/(1-prob_win_series), 2),
          matchup=paste0(winner, "=", round(100*prob_win_series), "% ", loser,"=", round(100*(1-prob_win_series))," %"),
          round_text=case_when(round == 1 ~ "1. First Round",
                               round == 2 ~ "2. Conf Semifinals",
@@ -150,4 +143,99 @@ ggplot(playoffs, aes(x=round_text, y=prob_win_series)) +
   theme(legend.title = element_blank()) + theme(legend.position="none") +
   scale_y_continuous(labels = scales::percent_format(accuracy=1)) 
   #theme(axis.text.y=element_blank())
+
+g3 <- ggplot(playoffs, aes(x=round_text, y=odds)) +
+  xlab("") + ylab("Odds") +
+  geom_point(size = 2, color = 'black') +
+  #geom_smooth(method='lm') + 
+  geom_label_repel(aes(round, odds, label = matchup, fill=factor(round_text)),
+                   fontface = 'bold', color = 'black', size=2,
+                   box.padding = unit(0.35, "lines"),
+                   point.padding = unit(0.5, "lines")) + 
+  theme(legend.title = element_blank()) + theme(legend.position="none")
+
+g3
+
+ggsave(g3, file=paste0(root, "/newsletter/playoffs.png"), device = "png", dpi=72, width=9, height=6)
+
+
+five38<-read.csv(paste0(root,"/rawdata/FiveThirtyEight_", stamp, ".csv")) %>%
+  filter(chance_winning_finals != "<1%") %>%
+  mutate(chance_winning_finals=as.numeric(gsub("%", "", chance_winning_finals))/100, 
+         chance_making_finals=as.numeric(gsub("%", "", chance_making_finals))/100) %>%
+  select(selected_team, chance_winning_finals, chance_making_finals) %>%
+  group_by(selected_team) %>%
+  gather(metric, value, chance_winning_finals:chance_making_finals) %>%
+  arrange(selected_team, metric) %>%
+  mutate(order=min(value)) %>%
+  ungroup() %>%
+  mutate(metric=ifelse(metric=="chance_winning_finals", "Chance of winning finals (538)", "Chance of making finals (538)"),)
+
+    
+
+g4 <- ggplot(five38, aes(x=reorder(selected_team, order), y=value)) +
+  geom_bar(stat="identity", position="dodge", aes(fill=metric)) + coord_flip() +
+  xlab("Team") + ylab("") +
+  scale_y_continuous(labels = scales::percent_format(accuracy=1)) +
+  theme(legend.title = element_blank())
+
+g4
+  
+ggsave(g4, file=paste0(root, "/newsletter/title_probs_538.png"), device = "png", dpi=72, width=9, height=6)
+
+games <- read.csv(paste0(root,"/rankings/game_level_predictions_",stamp,".csv"), stringsAsFactors = FALSE) %>%
+  select(DATE, home_team_name,  road_team_name, home_team_prob_win) %>%
+  mutate(DATE=as.Date(DATE))
+
+
+raptor<-read.csv(paste0(root,"/rawdata/FiveThirtyEight_", stamp, ".csv"), stringsAsFactors = FALSE) %>%
+  select(carm_elo, selected_team) %>%
+  mutate(road_team_name=selected_team, home_team_name=selected_team,
+         raptor_home=carm_elo, raptor_road=carm_elo)
+
+raptor1 <- select(raptor, home_team_name, raptor_home) 
+raptor2 <- select(raptor, road_team_name, raptor_road)
+
+fff <- read_html("https://projects.fivethirtyeight.com/2020-nba-predictions/games/")
+dates <- test %>% html_nodes(".h3") %>% html_text() %>% as.Date("%A, %b. %d")
+teams <- test %>% html_nodes(".text") %>% html_text() %>% trim()
+probs <- test %>% html_nodes(".number.chance") %>% html_text() %>% gsub('%','', .) %>% as.numeric()/100
+games_per_day <- test %>% html_nodes(".day") %>% html_text() 
+l <- list()
+k <- 1
+for (i in 1:length(games_per_day)){
+  c <- str_count(games_per_day[[i]],'%')/2
+  for (j in 1:c){
+    l[[k]] <- data.frame(ID=k, DATE=as.Date(dates[i]), home_team_prob_win_538=probs[k+1], home_team_name_538=teams[k+1], road_team_name=teams[k], stringsAsFactors = FALSE)
+    k <- k+2
+  }
+}
+name_map <- read.csv(paste0(root, "/rawdata/five38_names.csv"), stringsAsFactors = FALSE) %>%
+  mutate(home_team_name_538=Five38_name)
+final_538_probs <- data.frame(rbindlist(l), stringsAsFactors = FALSE) %>% 
+  select(DATE, home_team_name_538, home_team_prob_win_538) %>%
+  inner_join(name_map, by="home_team_name_538") %>%
+  rename(home_team_name=Elastic_name) %>%
+  select(-Five38_name)
+
+
+
+
+
+
+games_interesting <- 
+  inner_join(games, raptor1, by="home_team_name") %>%
+  inner_join(raptor2, by="road_team_name") %>%
+  inner_join(final_538_probs, by=c("home_team_name", "DATE")) %>%
+  filter(as.Date(DATE) < as.Date(stamp)+30 & as.Date(DATE)>as.Date(stamp)) %>%
+  filter((home_team_prob_win>.5 & home_team_prob_win_538<.5) | (home_team_prob_win<.5 & home_team_prob_win_538>.5) | abs(home_team_prob_win-home_team_prob_win_538)>.2) %>%
+  select(DATE, home_team_name, road_team_name, home_team_prob_win, home_team_prob_win_538)
+
+
+names(games_interesting) <- c("Date", "Home Team", "Road Team", "Home Team Win (Elastic)", "Home Team Win (538)")
+
+formattable(games_interesting, align = c(rep("c", NCOL(t) - 1)),
+                       list(`Date` = formatter("span", style = ~ style(color = "grey", font.weight = "bold")), 
+                            `Home Team Win (Elastic)` = percent, 
+                            `Home Team Win (538)` = percent))
 

@@ -310,6 +310,7 @@ playoff_results <-
   inner_join(select(seeds, -loser, -conference), by="winner") %>%
   rename(winner_seed=seed) %>%
   inner_join(select(seeds, -winner, conference), by="loser") %>%
-  rename(loser_seed=seed)
+  rename(loser_seed=seed) %>%
+  mutate(conference=ifelse(round==4, "Finals", conference))
 
 write.csv(playoff_results, paste0(root, "/rankings/playoff_prediction_", Sys.Date(), ".csv"))

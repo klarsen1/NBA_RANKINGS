@@ -6,7 +6,7 @@ library("htmltools")
 library("webshot")    
 
 
-stamp <- "2020-02-05"
+stamp <- "2020-02-06"
   
 
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
@@ -135,8 +135,8 @@ playoffs <- read.csv(ffff, stringsAsFactors = FALSE) %>%
                               round == 3 ~ "3. Conf Finals",
                               round == 4 ~ "4. NBA Finals"))
 
-ggplot(playoffs, aes(x=round_text, y=prob_win_series)) +
-  xlab("") + ylab("Certainty") +
+g3 <- ggplot(playoffs, aes(x=round_text, y=prob_win_series)) +
+  xlab("") + ylab("Probability of winning team advancing") +
   geom_point(size = 2, color = 'black') +
   #geom_smooth(method='lm') + 
   geom_label_repel(aes(round, prob_win_series, label = matchup, fill=factor(round_text)),
@@ -147,7 +147,7 @@ ggplot(playoffs, aes(x=round_text, y=prob_win_series)) +
   scale_y_continuous(labels = scales::percent_format(accuracy=1)) 
   #theme(axis.text.y=element_blank())
 
-g3 <- ggplot(playoffs, aes(x=round_text, y=odds)) +
+g3_test <- ggplot(playoffs, aes(x=round_text, y=odds)) +
   xlab("") + ylab("Odds") +
   geom_point(size = 2, color = 'black') +
   #geom_smooth(method='lm') + 
@@ -226,7 +226,7 @@ games_interesting <-
          home_win=ifelse(home_team_prob_win>.5, 1, 0), 
          home_win_538=ifelse(home_team_prob_win_538>.5, 1, 0)) %>%
   filter(Difference>.2 | (home_win != home_win_538 & Difference>0.05)) %>%
-  arrange(-Difference) %>% select(-home_win, -home_win_538)
+  arrange(DATE) %>% select(-home_win, -home_win_538)
   
 
 

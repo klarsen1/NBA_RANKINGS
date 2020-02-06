@@ -41,10 +41,10 @@ team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>%
 
 ### 538 data
 fff <- read_html("https://projects.fivethirtyeight.com/2020-nba-predictions/games/")
-dates <- test %>% html_nodes(".h3") %>% html_text() %>% as.Date("%A, %b. %d")
-teams <- test %>% html_nodes(".text") %>% html_text() %>% trim()
-probs <- test %>% html_nodes(".number.chance") %>% html_text() %>% gsub('%','', .) %>% as.numeric()/100
-games_per_day <- test %>% html_nodes(".day") %>% html_text() 
+dates <- fff %>% html_nodes(".h3") %>% html_text() %>% as.Date("%A, %b. %d")
+teams <- fff %>% html_nodes(".text") %>% html_text() %>% trim()
+probs <- fff %>% html_nodes(".number.chance") %>% html_text() %>% gsub('%','', .) %>% as.numeric()/100
+games_per_day <- fff %>% html_nodes(".day") %>% html_text() 
 l <- list()
 k <- 1
 for (i in 1:length(games_per_day)){

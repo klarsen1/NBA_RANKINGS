@@ -40,6 +40,29 @@ team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>%
 
 
 ### 538 data
+fff <- read_html("https://projects.fivethirtyeight.com/2020-nba-predictions/games/")
+dates <- test %>% html_nodes(".h3") %>% html_text() %>% as.Date("%A, %b. %d")
+teams <- test %>% html_nodes(".text") %>% html_text() %>% trim()
+probs <- test %>% html_nodes(".number.chance") %>% html_text() %>% gsub('%','', .) %>% as.numeric()/100
+games_per_day <- test %>% html_nodes(".day") %>% html_text() 
+l <- list()
+k <- 1
+for (i in 1:length(games_per_day)){
+  c <- str_count(games_per_day[[i]],'%')/2
+  for (j in 1:c){
+    l[[k]] <- data.frame(ID=k, DATE=as.Date(dates[i]), home_team_prob_win_538=probs[k+1], home_team_name_538=teams[k+1], road_team_name=teams[k], stringsAsFactors = FALSE)
+    k <- k+2
+  }
+}
+name_map <- read.csv(paste0(root, "/rawdata/five38_names.csv"), stringsAsFactors = FALSE) %>%
+  mutate(home_team_name_538=Five38_name)
+final_538_probs <- data.frame(rbindlist(l), stringsAsFactors = FALSE) %>% 
+  select(DATE, home_team_name_538, home_team_prob_win_538) %>%
+  inner_join(name_map, by="home_team_name_538") %>%
+  rename(home_team_name=Elastic_name) %>%
+  select(-Five38_name)
+
+
 ft8 <- read_html("http://projects.fivethirtyeight.com/2020-nba-predictions/")
 team <- ft8 %>% html_nodes("tbody tr td.team a") %>% html_text() %>% gsub("[0-9, -]", "", .) %>% trim()
 wins <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('-[0-9]+','', .) %>% trim()
@@ -48,39 +71,6 @@ carm_elo_full <- ft8 %>% html_nodes(".border-right+ .big-desktop") %>% html_text
 carm_elo <- ft8 %>% html_nodes("td.carmelo-current") %>% html_text() %>% trim()
 chance_making_finals <- ft8 %>% html_nodes("td.top-seed") %>% html_text() %>% trim() 
 chance_winning_finals <- ft8 %>% html_nodes("td.top-seed+ .pct") %>% html_text() %>% trim() 
-team[team=="76ers"] <- "Philadelphia"
-team[team=="ers"] <- "Philadelphia"
-team[team=="Hornets"] <- "Charlotte"
-team[team=="Clippers"] <- "LA Clippers"
-team[team=="Cavaliers"] <- "Cleveland"
-team[team=="Warriors"] <- "Golden State"
-team[team=="Spurs"] <- "San Antonio"
-team[team=="Raptors"] <- "Toronto"
-team[team=="Jazz"] <- "Utah"
-team[team=="Thunder"] <- "Oklahoma City"
-team[team=="TrailBlazers"] <- "Portland"
-team[team=="Rockets"] <- "Houston"
-team[team=="Pelicans"] <- "New Orleans"
-team[team=="Celtics"] <- "Boston"
-team[team=="Timberwolves"] <- "Minnesota"
-team[team=="Bulls"] <- "Chicago"
-team[team=="Hawks"] <- "Atlanta"
-team[team=="Pistons"] <- "Detroit"
-team[team=="Nuggets"] <- "Denver"
-team[team=="Mavericks"] <- "Dallas"
-team[team=="Wizards"] <- "Washington"
-team[team=="Lakers"] <- "LA Lakers"
-team[team=="Kings"] <- "Sacramento"
-team[team=="Knicks"] <- "New York"
-team[team=="Grizzlies"] <- "Memphis"
-team[team=="Pacers"] <- "Indiana"
-team[team=="Bucks"] <- "Milwaukee"
-team[team=="Magic"] <- "Orlando"
-team[team=="Heat"] <- "Miami"
-team[team=="Suns"] <- "Phoenix"
-team[team=="Nets"] <- "Brooklyn"
-#wins <- rep(0, length(carm_elo))
-#losses <- rep(0, length(carm_elo))
 fivethirtyeight <- data.frame(team, 
                               carm_elo_full=as.numeric(carm_elo_full), 
                               carm_elo=as.numeric(carm_elo), 
@@ -92,7 +82,10 @@ fivethirtyeight <- data.frame(team,
          carm_elo_full, carm_elo, 
          pred_win_rate_538=wins_538/(wins_538+losses_538),  
          chance_making_finals, chance_winning_finals) %>%
-  select(-team)
+  mutate(Five38_name=selected_team) %>%
+  inner_join(name_map, by="Five38_name") %>%
+  mutate(selected_team=Elastic_name, opposing_team=Elastic_name) %>%
+  select(-team, -Elastic_name, -home_team_name_538)
 
 
 ### Injury return dates from CBS
@@ -199,6 +192,7 @@ write.csv(fivethirtyeight, paste0("FiveThirtyEight_", Sys.Date(), ".csv"), row.n
 write.csv(fivethirtyeight, paste0("FiveThirtyEight_current.csv"), row.names = FALSE)
 write.csv(injuries, paste0("injuries_", Sys.Date(), ".csv"), row.names = FALSE)
 write.csv(injuries, "injuries_current.csv", row.names = FALSE)
+write.csv(final_538_probs, paste0("five38_probs_", Sys.Date(), ".csv"), row.names = FALSE)
 
 
 ## Register cores

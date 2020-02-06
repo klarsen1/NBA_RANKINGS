@@ -2,8 +2,11 @@ library(dplyr)
 library(ggrepel)
 library(tidyr)
 library(formattable)
+library("htmltools")
+library("webshot")    
 
-stamp <- "2020-02-04"
+
+stamp <- "2020-02-05"
   
 
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
@@ -210,32 +213,41 @@ for (i in 1:length(games_per_day)){
     k <- k+2
   }
 }
-name_map <- read.csv(paste0(root, "/rawdata/five38_names.csv"), stringsAsFactors = FALSE) %>%
-  mutate(home_team_name_538=Five38_name)
-final_538_probs <- data.frame(rbindlist(l), stringsAsFactors = FALSE) %>% 
-  select(DATE, home_team_name_538, home_team_prob_win_538) %>%
-  inner_join(name_map, by="home_team_name_538") %>%
-  rename(home_team_name=Elastic_name) %>%
-  select(-Five38_name)
-
-
-
-
-
+final_538_probs <- read.csv(paste0(root, "/rawdata/five38_probs_", stamp, ".csv"), stringsAsFactors = FALSE) %>%
+  mutate(DATE=as.Date(DATE))
 
 games_interesting <- 
   inner_join(games, raptor1, by="home_team_name") %>%
   inner_join(raptor2, by="road_team_name") %>%
   inner_join(final_538_probs, by=c("home_team_name", "DATE")) %>%
   filter(as.Date(DATE) < as.Date(stamp)+30 & as.Date(DATE)>as.Date(stamp)) %>%
-  filter((home_team_prob_win>.5 & home_team_prob_win_538<.5) | (home_team_prob_win<.5 & home_team_prob_win_538>.5) | abs(home_team_prob_win-home_team_prob_win_538)>.2) %>%
-  select(DATE, home_team_name, road_team_name, home_team_prob_win, home_team_prob_win_538)
+  select(DATE, home_team_name, road_team_name, home_team_prob_win, home_team_prob_win_538) %>%
+  mutate(Difference=round(abs(home_team_prob_win-home_team_prob_win_538),2), 
+         home_win=ifelse(home_team_prob_win>.5, 1, 0), 
+         home_win_538=ifelse(home_team_prob_win_538>.5, 1, 0)) %>%
+  filter(Difference>.2 | (home_win != home_win_538 & Difference>0.05)) %>%
+  arrange(-Difference) %>% select(-home_win, -home_win_538)
+  
 
 
-names(games_interesting) <- c("Date", "Home Team", "Road Team", "Home Team Win (Elastic)", "Home Team Win (538)")
+names(games_interesting) <- c("Date", "Home Team", "Road Team", "Home Team Win (Elastic)", "Home Team Win (538)", "Difference")
 
-formattable(games_interesting, align = c(rep("c", NCOL(t) - 1)),
+nice_table <- formattable(games_interesting, align = rep("c", NCOL(games_interesting)),
                        list(`Date` = formatter("span", style = ~ style(color = "grey", font.weight = "bold")), 
-                            `Home Team Win (Elastic)` = percent, 
-                            `Home Team Win (538)` = percent))
+                            area(col = 4:5) ~ function(x) percent(x, digits = 0),
+                            area(col = 6) ~ color_tile("#DeF7E9","#71CA97")))
+                             
 
+export_formattable <- function(f, file, width = "100%", height = NULL, 
+                               background = "white", delay = 0.2)
+{
+  w <- as.htmlwidget(f, width = width, height = height)
+  path <- html_print(w, background = background, viewer = NULL)
+  url <- paste0("file:///", gsub("\\\\", "/", normalizePath(path)))
+  webshot(url,
+          file = file,
+          selector = ".formattable_widget",
+          delay = delay)
+}
+
+export_formattable(nice_table,paste0(root, "/newsletter/games.png"))

@@ -178,7 +178,7 @@ five38<-read.csv(paste0(root,"/rawdata/FiveThirtyEight_", stamp, ".csv")) %>%
 
 g4 <- ggplot(five38, aes(x=reorder(selected_team, order), y=value)) +
   geom_bar(stat="identity", position="dodge", aes(fill=metric)) + coord_flip() +
-  xlab("Team") + ylab("") +
+  xlab("") + ylab("") +
   scale_y_continuous(labels = scales::percent_format(accuracy=1)) +
   theme(legend.title = element_blank())
 
@@ -225,14 +225,18 @@ games_interesting <-
   mutate(Difference=round(abs(home_team_prob_win-home_team_prob_win_538),2), 
          home_win=ifelse(home_team_prob_win>.5, 1, 0), 
          home_win_538=ifelse(home_team_prob_win_538>.5, 1, 0)) %>%
-  filter(Difference>.2 | (home_win != home_win_538 & Difference>0.05)) %>%
+  mutate(interesting=as.numeric((Difference>.15 & home_team_prob_win>.45 & home_team_prob_win<.55) | (home_win != home_win_538 & Difference>0.05) | (Difference>.15 & home_team_prob_win_538>.45 & home_team_prob_win_538<.55))) %>%
   arrange(DATE) %>% select(-home_win, -home_win_538)
   
+mean(games_interesting$interesting)
 
+cor(games_interesting$home_team_prob_win, games_interesting$home_team_prob_win_538)
 
-names(games_interesting) <- c("Date", "Home Team", "Road Team", "Home Team Win (Elastic)", "Home Team Win (538)", "Difference")
+t <- filter(games_interesting, interesting==TRUE) %>% select(-interesting)
 
-nice_table <- formattable(games_interesting, align = rep("c", NCOL(games_interesting)),
+names(t) <- c("Date", "Home Team", "Road Team", "Home Team Win (Elastic)", "Home Team Win (538)", "Difference")
+
+nice_table <- formattable(t, align = rep("c", NCOL(t)),
                        list(`Date` = formatter("span", style = ~ style(color = "grey", font.weight = "bold")), 
                             area(col = 4:5) ~ function(x) percent(x, digits = 0),
                             area(col = 6) ~ color_tile("#DeF7E9","#71CA97")))

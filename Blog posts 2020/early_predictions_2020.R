@@ -6,7 +6,7 @@ library("htmltools")
 library("webshot")    
 
 
-stamp <- "2020-02-06"
+stamp <- "2020-02-28"
   
 
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
@@ -227,7 +227,7 @@ games_interesting <-
          home_win_538=ifelse(home_team_prob_win_538>.5, 1, 0)) %>%
   mutate(interesting=as.numeric((Difference>.15 & home_team_prob_win>.45 & home_team_prob_win<.55) | (home_win != home_win_538 & Difference>0.05) | (Difference>.15 & home_team_prob_win_538>.45 & home_team_prob_win_538<.55))) %>%
   arrange(DATE) %>% select(-home_win, -home_win_538)
-  
+
 mean(games_interesting$interesting)
 
 cor(games_interesting$home_team_prob_win, games_interesting$home_team_prob_win_538)

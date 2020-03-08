@@ -6,7 +6,7 @@ library("htmltools")
 library("webshot")    
 
 
-stamp <- "2020-02-28"
+stamp <- "2020-03-08"
   
 
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
@@ -191,35 +191,33 @@ games <- read.csv(paste0(root,"/rankings/game_level_predictions_",stamp,".csv"),
   mutate(DATE=as.Date(DATE))
 
 
-raptor<-read.csv(paste0(root,"/rawdata/FiveThirtyEight_", stamp, ".csv"), stringsAsFactors = FALSE) %>%
-  select(carm_elo, selected_team) %>%
-  mutate(road_team_name=selected_team, home_team_name=selected_team,
-         raptor_home=carm_elo, raptor_road=carm_elo)
-
-raptor1 <- select(raptor, home_team_name, raptor_home) 
-raptor2 <- select(raptor, road_team_name, raptor_road)
-
 fff <- read_html("https://projects.fivethirtyeight.com/2020-nba-predictions/games/")
-dates <- test %>% html_nodes(".h3") %>% html_text() %>% as.Date("%A, %b. %d")
-teams <- test %>% html_nodes(".text") %>% html_text() %>% trim()
-probs <- test %>% html_nodes(".number.chance") %>% html_text() %>% gsub('%','', .) %>% as.numeric()/100
-games_per_day <- test %>% html_nodes(".day") %>% html_text() 
+dates <- fff %>% html_nodes(".h3") %>% html_text() %>% as.Date("%A, %B %d")
+teams <- fff %>% html_nodes(".text") %>% html_text() %>% trim()
+probs <- fff %>% html_nodes(".number.chance") %>% html_text() %>% gsub('%','', .) %>% as.numeric()/100
+games_per_day <- fff %>% html_nodes(".day") %>% html_text() 
 l <- list()
 k <- 1
 for (i in 1:length(games_per_day)){
   c <- str_count(games_per_day[[i]],'%')/2
   for (j in 1:c){
-    l[[k]] <- data.frame(ID=k, DATE=as.Date(dates[i]), home_team_prob_win_538=probs[k+1], home_team_name_538=teams[k+1], road_team_name=teams[k], stringsAsFactors = FALSE)
+    l[[k]] <- data.frame(ID=k, DATE=as.Date(dates[i]), home_team_prob_win_538=probs[k+1], home_team_name_538=teams[k+1], road_team_name_538=teams[k], stringsAsFactors = FALSE)
     k <- k+2
   }
 }
-final_538_probs <- read.csv(paste0(root, "/rawdata/five38_probs_", stamp, ".csv"), stringsAsFactors = FALSE) %>%
-  mutate(DATE=as.Date(DATE))
+
+name_map <- read.csv(paste0(root, "/rawdata/five38_names.csv"), stringsAsFactors = FALSE) %>%
+  mutate(home_team_name_538=Five38_name)
+
+final_538_probs <- data.frame(rbindlist(l), stringsAsFactors = FALSE) %>%
+  inner_join(name_map, by="home_team_name_538") %>%
+  mutate(home_team_name=Elastic_name) %>%
+  select(DATE, home_team_name, home_team_prob_win_538)
+
+write.csv(final_538_probs, paste0(root, "/rawdata/five38_probs_", stamp, ".csv"))
 
 games_interesting <- 
-  inner_join(games, raptor1, by="home_team_name") %>%
-  inner_join(raptor2, by="road_team_name") %>%
-  inner_join(final_538_probs, by=c("home_team_name", "DATE")) %>%
+  inner_join(games, final_538_probs, by=c("home_team_name", "DATE")) %>%
   filter(as.Date(DATE) < as.Date(stamp)+30 & as.Date(DATE)>as.Date(stamp)) %>%
   select(DATE, home_team_name, road_team_name, home_team_prob_win, home_team_prob_win_538) %>%
   mutate(Difference=round(abs(home_team_prob_win-home_team_prob_win_538),2), 

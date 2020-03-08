@@ -288,8 +288,8 @@ f <- rbind.data.frame(s1, s2, s3, s4, s5, s6, s7, s8) %>%
          quarter=quarter(DATE),
          future_game=0,
          OWN_TEAM=ifelse(OWN_TEAM=="LA", "LA Clippers", OWN_TEAM),
-         OPP_TEAM=ifelse(OPP_TEAM=="LA", "LA Clippers", OPP_TEAM))
-         #mutate(VENUE_R_H=ifelse(DATE==as.Date("2019-12-23") & OWN_TEAM=="Washington" & VENUE_R_H=="H", "R", VENUE_R_H))
+         OPP_TEAM=ifelse(OPP_TEAM=="LA", "LA Clippers", OPP_TEAM),
+         VENUE_R_H=ifelse(DATE==as.Date("2020-01-04") & OWN_TEAM=="Memphis", "R", VENUE_R_H))
 
 max_date <- max(f$DATE)
 
@@ -340,6 +340,14 @@ f <- group_by(f, game_id, OWN_TEAM) %>%
          VENUE_R_H=ifelse(distinct_venue==2, ifelse(n_H>n_R, "H", "R"), VENUE_R_H)) %>%
   select(-n_H, -n_R) %>%
   ungroup()
+
+check_venue <- group_by(f, game_id) %>%
+  mutate(issue=ifelse(n_distinct(VENUE_R_H)==1 & future_game==0, 1, 0))
+
+if(max(check_venue$issue)==1){
+  print("Error with venues")
+  View(filter(check_venue, issue==1))
+}
 
 
 ## Team/game level points

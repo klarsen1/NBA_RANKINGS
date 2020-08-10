@@ -219,12 +219,16 @@ for (i in start_index:end_index){
   rm(inwindow)
 }
 
+scoresdf <- bind_rows(scores)
+
 ### Remove teams of of the bubble
-
-
+in_the_bubble <- unique(c(pull(filter(scoresdf, DATE>=as.Date("2020-07-30")),home_team_name),
+                       pull(filter(scoresdf, DATE>=as.Date("2020-07-30")),road_team_name)))
+                              
+scores_bubble <- filter(scoresdf, home_team_name %in% in_the_bubble | road_team_name %in% in_the_bubble)
 
 ### Manipulate and save the output
-results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, root, 0, 1, NA, "prob_selected_team_win")
+results <- manipulate_and_save_output(clusters_and_players, scores_bubble, model_parts, model_details, root, 0, 1, NA, "prob_selected_team_win")
 
 ### Run the playoffs
 

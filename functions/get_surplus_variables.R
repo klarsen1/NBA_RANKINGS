@@ -8,7 +8,7 @@ get_surplus_variables <- function(data, nclus){
     df[,paste0("share_minutes_cluster_", j)] <- df$share_of_minutes_signed * as.numeric(df$Cluster==j)
   }
   
-  df <- select(df, game_id, starts_with("share_minutes_cluster_")) %>%
+  df <- dplyr::select(df, game_id, starts_with("share_minutes_cluster_")) %>%
     group_by(game_id) %>%
     summarise_all(funs(sum)) %>%
     ungroup()

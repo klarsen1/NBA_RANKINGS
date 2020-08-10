@@ -30,12 +30,16 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   
   ## Apply the overrides
   if (use_current_rosters==1){
-     history_override <- inner_join(select(history, -OWN_TEAM), rosters, by="PLAYER_FULL_NAME")
+     history_override <- inner_join(dplyr::select(history, -OWN_TEAM), rosters, by="PLAYER_FULL_NAME")
      print("-- Using current scraped rosters")
   } else{
      history_override <- history
      print("-- Inferring rosters")
   }
+  
+  #print(thisseason)
+  #print(sort(unique(filter(history_override, season==thisseason)$OWN_TEAM)))
+  #print(sort(unique(history_override$season)))
   
   ## Infer active rosters
   if (nrow(filter(history_override, OWN_TEAM==team1 & season==thisseason))==0 | nrow(filter(history_override, OWN_TEAM==team2 & season==thisseason))==0){
@@ -61,7 +65,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     group_by(PLAYER_FULL_NAME) %>%
     filter(DATE==max(DATE)) %>%
     inner_join(dist, by="PLAYER_FULL_NAME") %>%
-    select(PLAYER_FULL_NAME, OWN_TEAM, m_share_of_minutes, s_share_of_minutes, Cluster, DATE_INDEX) %>%
+    dplyr::select(PLAYER_FULL_NAME, OWN_TEAM, m_share_of_minutes, s_share_of_minutes, Cluster, DATE_INDEX) %>%
     group_by(OWN_TEAM) %>%
     mutate(rank_minutes=percent_rank(m_share_of_minutes), 
            rank_time=percent_rank(DATE_INDEX), 
@@ -79,7 +83,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
            days_on_road_opposing_team=days_on_road2,
            fb=floating_base) %>%
     filter(player<14) %>%
-    select(-player, -DATE_INDEX) %>%
+    dplyr::select(-player, -DATE_INDEX) %>%
     ungroup()
 
   sim_share_of_minutes <- function(x){
@@ -90,7 +94,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   }
   if (runs==0){
     dist_active$share_of_minutes <- dist_active$m_share_of_minutes
-    x <- get_surplus_variables(dist_active, nclus) %>% select(-game_id)
+    x <- get_surplus_variables(dist_active, nclus) %>% dplyr::select(-game_id)
     d <- attach_win_perc(thisgame, win_perc1, win_perc2)
     #print(nrow(dist_active))
     #print(nrow(d))
@@ -100,7 +104,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
     samplesdf <- data.frame(cbind(x, d, row.names=NULL), stringsAsFactors = FALSE)
   } else if (runs==1){
     dist_active_sim <- data.frame(rbindlist(lapply(split(dist_active, dist_active$PLAYER_FULL_NAME), sim_share_of_minutes)))
-    #print(select(dist_active_sim, PLAYER_FULL_NAME, m_share_of_minutes, share_of_minutes))
+    #print(dplyr::select(dist_active_sim, PLAYER_FULL_NAME, m_share_of_minutes, share_of_minutes))
     x <- get_surplus_variables(dist_active_sim, nclus)
     d <- attach_win_perc(thisgame, win_perc1, win_perc2)
     samplesdf <- inner_join(x, d, by="game_id")
@@ -126,12 +130,12 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   #prob_win <- 1/(1+exp(-X%*%b[-1] + offset))
   XtB <- X%*%b[-1]
   samplesdf$xb <- as.numeric(XtB)
-  d <- data.frame(cbind(X*c[-1], distinct(select(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team), game_id, .keep_all=TRUE)), stringsAsFactors = FALSE) %>%
-    select(-X.Intercept.) 
+  d <- data.frame(cbind(X*c[-1], distinct(dplyr::select(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team), game_id, .keep_all=TRUE)), stringsAsFactors = FALSE) %>%
+    dplyr::select(-X.Intercept.) 
 
-  d$roster <- rowSums(select(d, starts_with("share_minutes_cluster")))
-  d$circumstances <- rowSums(select(d, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, home_team_selected))
-  d$performance <- rowSums(select(d, selected_team_matchup_wins, opposing_team_matchup_wins, winrate_season_selected_team, winrate_season_selected_team_adj, winrate_season_opposing_team, winrate_season_opposing_team_adj))
+  d$roster <- rowSums(dplyr::select(d, starts_with("share_minutes_cluster")))
+  d$circumstances <- rowSums(dplyr::select(d, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, home_team_selected))
+  #d$performance <- rowSums(dplyr::select(d, selected_team_matchup_wins, opposing_team_matchup_wins, winrate_season_selected_team, winrate_season_selected_team_adj, winrate_season_opposing_team, winrate_season_opposing_team_adj))
 
   if (is.null(offsets_by_team)==FALSE){
     if (nrow(offsets_by_team)>0){

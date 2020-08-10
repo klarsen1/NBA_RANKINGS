@@ -49,7 +49,7 @@ report <- function(scores, predvar){
             ytd_pred_win_rate=past/games_pred,
             future_win_rate=future/games_future) %>%
      arrange(season_win_rate) %>%
-     select(team, games_season, games_played, games_future, 
+     dplyr::select(team, games_season, games_played, games_future, 
             season_win_rate, ytd_win_rate, ytd_pred_win_rate, future_win_rate) %>%
      mutate(rank_actual=min_rank(-ytd_win_rate), 
             rank_pred=min_rank(-season_win_rate)) %>%

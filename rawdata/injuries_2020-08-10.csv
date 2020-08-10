@@ -1,10 +1,13 @@
 "PLAYER_FULL_NAME","injury_status","injury_date","clean_note","return_date","injury_scrape_date"
 "Aaron Gordon","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Al Horford","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Anthony Davis","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Aron Baynes","Out",NA,"Aug 11",2020-08-11,2020-08-10
-"Ben Simmons","Out",NA,"Sep 1",2020-09-01,2020-08-10
+"Ben Simmons","Out",NA,"Nov 1",2020-11-01,2020-08-10
+"Brandon Ingram","Out",NA,"Aug 13",2020-08-13,2020-08-10
 "Bruno Caboclo","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Bryn Forbes","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Caris LeVert","Out",NA,"Aug 13",2020-08-13,2020-08-10
 "Chandler Hutchison","Out",NA,"Out for the season",2021-08-10,2020-08-10
 "Clint Capela","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Courtney Lee","Out",NA,"Out for the season",2021-08-10,2020-08-10
@@ -22,21 +25,29 @@
 "Elie Okobo","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Eric Gordon","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Evan Fournier","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Fred VanVleet","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Garrett Temple","Out",NA,"Aug 13",2020-08-13,2020-08-10
 "Garrison Mathews","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Gary Harris","Out",NA,"Aug 12",2020-08-12,2020-08-10
-"Giannis Antetokounmpo","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Giannis Antetokounmpo","Out",NA,"Aug 11",2020-08-11,2020-08-10
 "Goran Dragic","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Hassan Whiteside","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
-"Jamal Crawford","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Jamal Crawford","Out",NA,"Aug 13",2020-08-13,2020-08-10
+"James Harden","Out",NA,"Aug 12",2020-08-12,2020-08-10
 "Jaren Jackson Jr.","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Jarrett Allen","Out",NA,"Aug 13",2020-08-13,2020-08-10
+"Jerami Grant","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Jeremy Lamb","Out",NA,"Out for the season",2021-08-10,2020-08-10
 "Jimmy Butler","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
-"Joel Embiid","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Joe Harris","Out",NA,"Aug 13",2020-08-13,2020-08-10
+"Joel Embiid","Out",NA,"Aug 12",2020-08-12,2020-08-10
 "Jonathan Isaac","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Josh Richardson","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Jrue Holiday","Out",NA,"Aug 13",2020-08-13,2020-08-10
 "Justise Winslow","Out",NA,"Out for the season",2021-08-10,2020-08-10
-"Juwan Morgan","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Juwan Morgan","Out",NA,"Aug 13",2020-08-13,2020-08-10
 "Karl-Anthony Towns","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
-"Kelly Oubre Jr.","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Kelly Oubre Jr.","Out",NA,"Aug 11",2020-08-11,2020-08-10
 "Kendrick Nunn","Out",NA,"Aug 14",2020-08-14,2020-08-10
 "Kent Bazemore","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Kentavious Caldwell-Pope","Out",NA,"Aug 11",2020-08-11,2020-08-10
@@ -44,6 +55,7 @@
 "Kobi Simmons","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Kris Dunn","Out",NA,"Out for the season",2021-08-10,2020-08-10
 "Kristaps Porzingis","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Kyle Lowry","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "KZ Okpala","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "LeBron James","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Luka Doncic","Out",NA,"Aug 11",2020-08-11,2020-08-10
@@ -61,15 +73,17 @@
 "Rajon Rondo","Out",NA,"Sep 1",2020-09-01,2020-08-10
 "Ray Spalding","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Richaun Holmes","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
-"Russell Westbrook","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
-"Seth Curry","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Serge Ibaka","Out",NA,"Aug 12",2020-08-12,2020-08-10
 "Shabazz Napier","Out",NA,"Aug 11",2020-08-11,2020-08-10
 "Shai Gilgeous-Alexander","Out",NA,"Aug 12",2020-08-12,2020-08-10
 "Steven Adams","Out",NA,"Aug 12",2020-08-12,2020-08-10
 "T.J. Warren","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Terrence Ross","Out",NA,"Aug 17",2020-08-17,2020-08-10
+"Tobias Harris","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Trey Lyles","Out",NA,"Out for the season",2021-08-10,2020-08-10
 "Troy Daniels","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
 "Tyler Zeller","Out",NA,"Aug 11",2020-08-11,2020-08-10
 "Tyus Jones","Out",NA,"Aug 11",2020-08-11,2020-08-10
 "Vlatko Cancar","Out",NA,"Aug 14",2020-08-14,2020-08-10
 "Will Barton","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Zion Williamson","Out",NA,"Aug 13",2020-08-13,2020-08-10

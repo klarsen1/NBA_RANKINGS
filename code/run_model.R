@@ -44,6 +44,7 @@ current_season <- max(box_scores$season)
 # current_season <- 2019
 adjust_intercept_by_team <- 0
 buffer_days <- 10
+use_win_rates <- 0
 
 
 ### Create a date-index
@@ -61,6 +62,16 @@ box_scores <- inner_join(box_scores, dplyr::select(datemap, DATE, DATE_INDEX, se
 
 ## Get model variables
 model_variables <- read.csv(paste0(root, "/modeldetails/model_variables.csv"), stringsAsFactors = FALSE)
+if (use_win_rates==0){
+  model_variables <- filter(model_variables, 
+                            !(Variable %in% c("winrate_season_selected_team_adj",
+                                              "winrate_season_opposing_team_adj",
+                                              "winrate_season_selected_team",
+                                              "winrate_season_opposing_team",
+                                              "selected_team_matchup_wins",
+                                              "opposing_team_matchup_wins")))
+}
+
 
 ### When to start and end the forecasts
 start_date <- min(subset(box_scores, season==current_season)$DATE)

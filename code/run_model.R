@@ -47,7 +47,7 @@ buffer_days <- 10
 
 
 ### Create a date-index
-datemap <- select(box_scores, DATE, future_game, season) %>%
+datemap <- dplyr::select(box_scores, DATE, future_game, season) %>%
   ungroup() %>%
   distinct(DATE, .keep_all=TRUE) %>%
   arrange(DATE) %>%
@@ -57,7 +57,7 @@ datemap <- select(box_scores, DATE, future_game, season) %>%
          season_day_std=ifelse(season_day>91, 0, 1-(season_day-1)/90)) %>%
   ungroup()
 
-box_scores <- inner_join(box_scores, select(datemap, DATE, DATE_INDEX, season_day, season_day_std), by="DATE")
+box_scores <- inner_join(box_scores, dplyr::select(datemap, DATE, DATE_INDEX, season_day, season_day_std), by="DATE")
 
 ## Get model variables
 model_variables <- read.csv(paste0(root, "/modeldetails/model_variables.csv"), stringsAsFactors = FALSE)
@@ -81,7 +81,7 @@ box_scores_plus <- assign_clusters_and_win_rates(root, datemap, box_scores, weig
 
 ## Save clusters
 clusters_and_players <- 
-  select(box_scores_plus, DATE, PLAYER_FULL_NAME, Cluster, season) %>%
+  dplyr::select(box_scores_plus, DATE, PLAYER_FULL_NAME, Cluster, season, minutes) %>%
   ungroup() %>%
   filter(season==max(season)) %>%
   arrange(Cluster, PLAYER_FULL_NAME, DATE)
@@ -208,13 +208,17 @@ for (i in start_index:end_index){
   rm(inwindow)
 }
 
+### Remove teams of of the bubble
+
+
+
 ### Manipulate and save the output
 results <- manipulate_and_save_output(clusters_and_players, scores, model_parts, model_details, root, 0, 1, NA, "prob_selected_team_win")
 
-
 ### Run the playoffs
 
-playoff_start_date <- max(box_scores$DATE)+1 ## faking it a bit here
+#playoff_start_date <- max(box_scores$DATE)+1 ## faking it a bit here
+playoff_start_date <- as.Date("2020-08-15")
 
 runs <- 0
 
@@ -247,6 +251,8 @@ loopResult <- foreach(i=1:sims, .combine='combine', .multicombine=TRUE,
 full_results <- data.frame(rbindlist(loopResult[[1]]))
 r <- max(full_results$round)
 m <- max(full_results$matchup)
+
+playoff_decomps  <- data.frame(rbindlist(loopResult[[2]]))
 
 
 coin_flips <- list()
@@ -302,14 +308,14 @@ for (i in 1:r){
 }
 
 seeds <- mutate(rankings, winner=team, loser=team) %>%
-  select(winner, loser, seed, conference)
+  dplyr::select(winner, loser, seed, conference)
 
 playoff_results <- 
   data.frame(rbindlist(coin_flips)) %>% 
   arrange(round, winner, matchup) %>% 
-  inner_join(select(seeds, -loser, -conference), by="winner") %>%
+  inner_join(dplyr::select(seeds, -loser, -conference), by="winner") %>%
   rename(winner_seed=seed) %>%
-  inner_join(select(seeds, -winner, conference), by="loser") %>%
+  inner_join(dplyr::select(seeds, -winner, conference), by="loser") %>%
   rename(loser_seed=seed) %>%
   mutate(conference=ifelse(round==4, "Finals", conference))
 

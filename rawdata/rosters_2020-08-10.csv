@@ -1,0 +1,510 @@
+"PLAYER_FULL_NAME","OWN_TEAM","Position","Age","Height","Weight","Salary","Team","injury_status","injury_date","clean_note","return_date","injury_scrape_date"
+"Brad Wanamaker",NA,"PG",31,"6' 3""",210,1445697,"1",NA,NA,NA,NA,NA
+"Carsen Edwards",NA,"PG",22,"5' 11""",200,1228026,"1",NA,NA,NA,NA,NA
+"Daniel Theis",NA,"C",28,"6' 8""",245,5e+06,"1",NA,NA,NA,NA,NA
+"Enes Kanter",NA,"C",28,"6' 10""",250,4767000,"1",NA,NA,NA,NA,NA
+"Gordon Hayward",NA,"SF",30,"6' 7""",225,32700690,"1",NA,NA,NA,NA,NA
+"Grant Williams",NA,"PF",21,"6' 6""",236,2379840,"1",NA,NA,NA,NA,NA
+"Javonte Green",NA,"SG",27,"6' 4""",205,898310,"1",NA,NA,NA,NA,NA
+"Jaylen Brown",NA,"SG",23,"6' 6""",223,6534829,"1",NA,NA,NA,NA,NA
+"Jayson Tatum",NA,"PF",22,"6' 8""",210,7830000,"1",NA,NA,NA,NA,NA
+"Kemba Walker",NA,"PG",30,"6' 0""",184,32742000,"1",NA,NA,NA,NA,NA
+"Marcus Smart",NA,"PG",26,"6' 3""",220,12553571,"1",NA,NA,NA,NA,NA
+"Robert Williams III",NA,"C",22,"6' 8""",237,1937520,"1",NA,NA,NA,NA,NA
+"Romeo Langford",NA,"SG",20,"6' 4""",216,3458400,"1",NA,NA,NA,NA,NA
+"Semi Ojeleye",NA,"PF",25,"6' 6""",240,1618520,"1",NA,NA,NA,NA,NA
+"Tacko Fall",NA,"C",24,"7' 5""",311,NA,"1",NA,NA,NA,NA,NA
+"Tremont Waters",NA,"PG",22,"5' 10""",175,NA,"1",NA,NA,NA,NA,NA
+"Vincent Poirier",NA,"C",26,"7' 0""",235,2505793,"1",NA,NA,NA,NA,NA
+"Caris LeVert",NA,"SG",25,"6' 6""",205,2625718,"2",NA,NA,NA,NA,NA
+"Chris Chiozza",NA,"PG",24,"5' 11""",176,NA,"2",NA,NA,NA,NA,NA
+"DeAndre Jordan",NA,"C",32,"6' 11""",265,9881598,"2",NA,NA,NA,NA,NA
+"Donta Hall",NA,"PF",23,"6' 9""",229,NA,"2",NA,NA,NA,NA,NA
+"Dzanan Musa",NA,"SG",21,"6' 9""",217,1911600,"2",NA,NA,NA,NA,NA
+"Garrett Temple",NA,"SG",34,"6' 5""",195,4767000,"2",NA,NA,NA,NA,NA
+"Jamal Crawford",NA,"SG",40,"6' 5""",185,NA,"2","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Jarrett Allen",NA,"C",22,"6' 11""",243,2376840,"2",NA,NA,NA,NA,NA
+"Jeremiah Martin",NA,"PG",24,"6' 2""",185,NA,"2",NA,NA,NA,NA,NA
+"Joe Harris",NA,"SF",28,"6' 6""",220,7666667,"2",NA,NA,NA,NA,NA
+"Justin Anderson",NA,"SG",26,"6' 5""",231,NA,"2",NA,NA,NA,NA,NA
+"Kevin Durant",NA,"SF",31,"6' 10""",240,38199000,"2",NA,NA,NA,NA,NA
+"Kyrie Irving",NA,"PG",28,"6' 2""",195,31742000,"2",NA,NA,NA,NA,NA
+"Lance Thomas",NA,"SF",32,"6' 8""",235,7119650,"2",NA,NA,NA,NA,NA
+"Nicolas Claxton",NA,"PF",21,"6' 11""",215,898310,"2",NA,NA,NA,NA,NA
+"Rodions Kurucs",NA,"SF",22,"6' 9""",228,1699236,"2",NA,NA,NA,NA,NA
+"Spencer Dinwiddie",NA,"PG",27,"6' 5""",215,10605600,"2",NA,NA,NA,NA,NA
+"Taurean Prince",NA,"PF",26,"6' 7""",218,3481986,"2",NA,NA,NA,NA,NA
+"Timothe Luwawu-Cabarrot",NA,"SG",25,"6' 7""",210,654469,"2",NA,NA,NA,NA,NA
+"Tyler Johnson",NA,"SG",28,"6' 4""",190,183115,"2",NA,NA,NA,NA,NA
+"Wilson Chandler",NA,"SF",33,"6' 8""",235,1620564,"2",NA,NA,NA,NA,NA
+"Bobby Portis",NA,"PF",25,"6' 10""",250,1.5e+07,"3",NA,NA,NA,NA,NA
+"Damyean Dotson",NA,"SG",26,"6' 5""",210,1618520,"3",NA,NA,NA,NA,NA
+"Dennis Smith Jr.",NA,"PG",22,"6' 2""",205,4463640,"3",NA,NA,NA,NA,NA
+"Elfrid Payton",NA,"PG",26,"6' 3""",195,8e+06,"3",NA,NA,NA,NA,NA
+"Frank Ntilikina",NA,"PG",22,"6' 4""",200,4855800,"3",NA,NA,NA,NA,NA
+"Ignas Brazdeikis",NA,"SF",21,"6' 6""",221,898310,"3",NA,NA,NA,NA,NA
+"Jared Harper",NA,"PG",22,"5' 11""",175,NA,"3",NA,NA,NA,NA,NA
+"Julius Randle",NA,"PF",25,"6' 8""",250,1.8e+07,"3",NA,NA,NA,NA,NA
+"Kenny Wooten",NA,"PF",22,"6' 9""",225,NA,"3",NA,NA,NA,NA,NA
+"Kevin Knox II",NA,"SF",20,"6' 7""",215,4380120,"3",NA,NA,NA,NA,NA
+"Maurice Harkless",NA,"SF",27,"6' 7""",220,11011234,"3",NA,NA,NA,NA,NA
+"Mitchell Robinson",NA,"C",22,"7' 0""",240,1599712,"3",NA,NA,NA,NA,NA
+"Reggie Bullock",NA,"SF",29,"6' 6""",205,4e+06,"3",NA,NA,NA,NA,NA
+"RJ Barrett",NA,"SG",20,"6' 6""",214,7839960,"3",NA,NA,NA,NA,NA
+"Taj Gibson",NA,"C",35,"6' 9""",232,9e+06,"3",NA,NA,NA,NA,NA
+"Theo Pinson",NA,"SG",24,"6' 5""",212,1445697,"3",NA,NA,NA,NA,NA
+"Wayne Ellington",NA,"SG",32,"6' 4""",207,8e+06,"3",NA,NA,NA,NA,NA
+"Al Horford",NA,"PF",34,"6' 9""",240,2.8e+07,"4",NA,NA,NA,NA,NA
+"Alec Burks",NA,"SG",29,"6' 6""",214,1620564,"4",NA,NA,NA,NA,NA
+"Ben Simmons",NA,"PG",24,"6' 10""",240,8113930,"4","Out",NA,"Sep 1",2020-09-01,2020-08-10
+"Furkan Korkmaz",NA,"SG",23,"6' 7""",202,1620564,"4",NA,NA,NA,NA,NA
+"Glenn Robinson III",NA,"SF",26,"6' 6""",222,1620564,"4",NA,NA,NA,NA,NA
+"Joel Embiid",NA,"C",26,"7' 0""",280,27504630,"4","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Josh Richardson",NA,"SG",26,"6' 5""",200,10116576,"4",NA,NA,NA,NA,NA
+"Kyle O'Quinn",NA,"C",30,"6' 9""",250,1620564,"4",NA,NA,NA,NA,NA
+"Marial Shayok",NA,"SG",25,"6' 5""",198,NA,"4",NA,NA,NA,NA,NA
+"Matisse Thybulle",NA,"SG",23,"6' 5""",201,2582160,"4",NA,NA,NA,NA,NA
+"Mike Scott",NA,"PF",32,"6' 7""",237,4767000,"4",NA,NA,NA,NA,NA
+"Norvel Pelle",NA,"SF",27,"6' 10""",231,350189,"4",NA,NA,NA,NA,NA
+"Raul Neto",NA,"PG",28,"6' 1""",180,1620564,"4",NA,NA,NA,NA,NA
+"Ryan Broekhoff",NA,"SG",29,"6' 6""",215,1416852,"4",NA,NA,NA,NA,NA
+"Shake Milton",NA,"SG",23,"6' 5""",205,1455697,"4",NA,NA,NA,NA,NA
+"Tobias Harris",NA,"SF",28,"6' 8""",226,32742000,"4",NA,NA,NA,NA,NA
+"Zhaire Smith",NA,"SG",21,"6' 3""",205,3058800,"4",NA,NA,NA,NA,NA
+"Chris Boucher",NA,"PF",27,"6' 9""",200,1588231,"5",NA,NA,NA,NA,NA
+"Dewan Hernandez",NA,"C",23,"6' 10""",235,898310,"5",NA,NA,NA,NA,NA
+"Fred VanVleet",NA,"SG",26,"6' 1""",197,9346153,"5",NA,NA,NA,NA,NA
+"Kyle Lowry",NA,"PG",34,"6' 0""",196,34996296,"5",NA,NA,NA,NA,NA
+"Malcolm Miller",NA,"SG",27,"6' 7""",210,1588231,"5",NA,NA,NA,NA,NA
+"Marc Gasol",NA,"C",35,"6' 11""",255,25595700,"5",NA,NA,NA,NA,NA
+"Matt Thomas",NA,"SG",26,"6' 4""",190,898310,"5",NA,NA,NA,NA,NA
+"Norman Powell",NA,"SG",27,"6' 3""",215,10116576,"5",NA,NA,NA,NA,NA
+"OG Anunoby",NA,"SF",23,"6' 7""",232,2281800,"5",NA,NA,NA,NA,NA
+"Oshae Brissett",NA,"SF",22,"6' 7""",210,NA,"5","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Pascal Siakam",NA,"PF",26,"6' 9""",230,2351839,"5",NA,NA,NA,NA,NA
+"Patrick McCaw",NA,"SF",24,"6' 7""",181,4e+06,"5","Out",NA,"Aug 24",2020-08-24,2020-08-10
+"Paul Watson",NA,"SF",25,"6' 6""",210,NA,"5",NA,NA,NA,NA,NA
+"Rondae Hollis-Jefferson",NA,"SF",25,"6' 6""",217,2500000,"5",NA,NA,NA,NA,NA
+"Serge Ibaka",NA,"C",30,"7' 0""",235,23271604,"5",NA,NA,NA,NA,NA
+"Stanley Johnson",NA,"SF",24,"6' 6""",242,3623000,"5",NA,NA,NA,NA,NA
+"Terence Davis",NA,"SG",23,"6' 4""",201,898310,"5",NA,NA,NA,NA,NA
+"Adam Mokoka",NA,"SG",22,"6' 5""",190,NA,"6",NA,NA,NA,NA,NA
+"Chandler Hutchison",NA,"SF",24,"6' 7""",210,2332320,"6","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Coby White",NA,"PG",20,"6' 4""",195,5307120,"6",NA,NA,NA,NA,NA
+"Cristiano Felicio",NA,"PF",28,"6' 10""",270,8156500,"6",NA,NA,NA,NA,NA
+"Daniel Gafford",NA,"PF",21,"6' 10""",234,898310,"6",NA,NA,NA,NA,NA
+"Denzel Valentine",NA,"SG",26,"6' 4""",220,3377569,"6",NA,NA,NA,NA,NA
+"Kris Dunn",NA,"PG",26,"6' 3""",205,5348007,"6","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Lauri Markkanen",NA,"PF",23,"7' 0""",240,5300400,"6",NA,NA,NA,NA,NA
+"Luke Kornet",NA,"C",25,"7' 2""",250,2250000,"6","Out",NA,"Aug 31",2020-08-31,2020-08-10
+"Max Strus",NA,"SG",24,"6' 5""",215,898310,"6","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Otto Porter Jr.",NA,"SF",27,"6' 8""",198,27250575,"6",NA,NA,NA,NA,NA
+"Ryan Arcidiacono",NA,"PG",26,"6' 3""",195,3e+06,"6",NA,NA,NA,NA,NA
+"Shaquille Harrison",NA,"PG",26,"6' 7""",190,1620564,"6",NA,NA,NA,NA,NA
+"Thaddeus Young",NA,"PF",32,"6' 8""",235,12900000,"6",NA,NA,NA,NA,NA
+"Tomas Satoransky",NA,"SG",28,"6' 7""",210,1e+07,"6",NA,NA,NA,NA,NA
+"Wendell Carter Jr.",NA,"C",21,"6' 9""",270,5201400,"6",NA,NA,NA,NA,NA
+"Zach LaVine",NA,"PG",25,"6' 6""",200,19500000,"6",NA,NA,NA,NA,NA
+"Alfonzo McKinnie",NA,"SF",27,"6' 7""",215,1500000,"7",NA,NA,NA,NA,NA
+"Andre Drummond",NA,"C",26,"6' 10""",279,27093019,"7",NA,NA,NA,NA,NA
+"Ante Zizic",NA,"C",23,"6' 10""",266,2281800,"7",NA,NA,NA,NA,NA
+"Cedi Osman",NA,"SF",25,"6' 7""",230,2907143,"7",NA,NA,NA,NA,NA
+"Collin Sexton",NA,"PG",21,"6' 1""",190,4764960,"7",NA,NA,NA,NA,NA
+"Dante Exum",NA,"PG",25,"6' 5""",214,9600000,"7","Out",NA,"Nov 1",2020-11-01,2020-08-10
+"Darius Garland",NA,"PG",20,"6' 1""",192,6400920,"7",NA,NA,NA,NA,NA
+"Dean Wade",NA,"PF",23,"6' 9""",228,NA,"7",NA,NA,NA,NA,NA
+"Dylan Windler",NA,"SG",23,"6' 6""",196,2035800,"7","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Jordan Bell",NA,"PF",25,"6' 8""",216,1620564,"7",NA,NA,NA,NA,NA
+"Kevin Love",NA,"PF",31,"6' 8""",251,28942830,"7",NA,NA,NA,NA,NA
+"Kevin Porter Jr.",NA,"SG",20,"6' 4""",203,1290960,"7",NA,NA,NA,NA,NA
+"Larry Nance Jr.",NA,"PF",27,"6' 7""",245,12727273,"7",NA,NA,NA,NA,NA
+"Matt Mooney",NA,"SG",25,"6' 3""",200,NA,"7",NA,NA,NA,NA,NA
+"Matthew Dellavedova",NA,"PG",29,"6' 3""",200,9607500,"7",NA,NA,NA,NA,NA
+"Tristan Thompson",NA,"C",29,"6' 9""",254,18539130,"7",NA,NA,NA,NA,NA
+"Blake Griffin",NA,"PF",31,"6' 9""",250,34449964,"8",NA,NA,NA,NA,NA
+"Brandon Knight",NA,"PG",28,"6' 2""",182,15643750,"8",NA,NA,NA,NA,NA
+"Bruce Brown",NA,"SG",23,"6' 4""",202,1416852,"8",NA,NA,NA,NA,NA
+"Christian Wood",NA,"PF",24,"6' 10""",214,1645357,"8",NA,NA,NA,NA,NA
+"Derrick Rose",NA,"PG",31,"6' 2""",200,7317073,"8",NA,NA,NA,NA,NA
+"John Henson",NA,"PF",29,"6' 9""",219,9732396,"8",NA,NA,NA,NA,NA
+"Jordan Bone",NA,"PG",22,"6' 3""",180,NA,"8",NA,NA,NA,NA,NA
+"Jordan McRae",NA,"SG",29,"6' 5""",179,1645357,"8",NA,NA,NA,NA,NA
+"Justin Patton",NA,"C",23,"6' 11""",241,1620564,"8",NA,NA,NA,NA,NA
+"Khyri Thomas",NA,"SG",24,"6' 3""",210,1416852,"8",NA,NA,NA,NA,NA
+"Langston Galloway",NA,"SG",28,"6' 1""",200,7333333,"8",NA,NA,NA,NA,NA
+"Louis King",NA,"SF",21,"6' 7""",205,NA,"8",NA,NA,NA,NA,NA
+"Luke Kennard",NA,"SG",24,"6' 5""",206,3827160,"8",NA,NA,NA,NA,NA
+"Sekou Doumbouya",NA,"SF",19,"6' 8""",230,3285120,"8",NA,NA,NA,NA,NA
+"Sviatoslav Mykhailiuk",NA,"SG",23,"6' 7""",205,1416852,"8",NA,NA,NA,NA,NA
+"Thon Maker",NA,"C",23,"7' 0""",221,3569643,"8",NA,NA,NA,NA,NA
+"Tony Snell",NA,"SF",28,"6' 6""",213,11392857,"8",NA,NA,NA,NA,NA
+"Aaron Holiday",NA,"PG",23,"6' 0""",185,2329200,"9",NA,NA,NA,NA,NA
+"Alize Johnson",NA,"PF",24,"6' 7""",212,1416852,"9",NA,NA,NA,NA,NA
+"Brian Bowen II",NA,"SG",21,"6' 6""",190,NA,"9",NA,NA,NA,NA,NA
+"Domantas Sabonis",NA,"PF",24,"6' 11""",240,3529555,"9","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Doug McDermott",NA,"SF",28,"6' 7""",225,7333333,"9",NA,NA,NA,NA,NA
+"Edmond Sumner",NA,"PG",24,"6' 4""",196,2e+06,"9",NA,NA,NA,NA,NA
+"Goga Bitadze",NA,"C",21,"6' 11""",250,2816760,"9",NA,NA,NA,NA,NA
+"JaKarr Sampson",NA,"SF",27,"6' 7""",214,1620564,"9",NA,NA,NA,NA,NA
+"Jeremy Lamb",NA,"SG",28,"6' 5""",180,10500000,"9","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Justin Holiday",NA,"SF",31,"6' 6""",180,4767000,"9",NA,NA,NA,NA,NA
+"Malcolm Brogdon",NA,"PG",27,"6' 5""",229,2e+07,"9",NA,NA,NA,NA,NA
+"Myles Turner",NA,"C",24,"6' 11""",250,1.8e+07,"9",NA,NA,NA,NA,NA
+"Naz Mitrou-Long",NA,"SG",27,"6' 3""",218,NA,"9",NA,NA,NA,NA,NA
+"T.J. Leaf",NA,"PF",23,"6' 10""",222,2813280,"9",NA,NA,NA,NA,NA
+"T.J. McConnell",NA,"PG",28,"6' 1""",190,3500000,"9",NA,NA,NA,NA,NA
+"T.J. Warren",NA,"SF",26,"6' 8""",220,10810000,"9","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Victor Oladipo",NA,"SG",28,"6' 4""",213,2.1e+07,"9",NA,NA,NA,NA,NA
+"Brook Lopez",NA,"C",32,"7' 0""",282,12093023,"10",NA,NA,NA,NA,NA
+"Cameron Reynolds",NA,"SG",25,"6' 7""",225,NA,"10",NA,NA,NA,NA,NA
+"D.J. Wilson",NA,"PF",24,"6' 10""",231,2961120,"10",NA,NA,NA,NA,NA
+"Donte DiVincenzo",NA,"SG",23,"6' 4""",203,2905800,"10",NA,NA,NA,NA,NA
+"Eric Bledsoe",NA,"PG",30,"6' 1""",214,15625000,"10",NA,NA,NA,NA,NA
+"Ersan Ilyasova",NA,"PF",33,"6' 9""",235,7e+06,"10",NA,NA,NA,NA,NA
+"Frank Mason III",NA,"PG",26,"5' 11""",190,NA,"10",NA,NA,NA,NA,NA
+"George Hill",NA,"PG",34,"6' 3""",188,9133907,"10",NA,NA,NA,NA,NA
+"Giannis Antetokounmpo",NA,"PF",25,"6' 11""",242,25842697,"10","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Khris Middleton",NA,"SF",28,"6' 7""",222,30603448,"10",NA,NA,NA,NA,NA
+"Kyle Korver",NA,"SG",39,"6' 7""",212,1620564,"10",NA,NA,NA,NA,NA
+"Marvin Williams",NA,"PF",34,"6' 8""",237,604278,"10",NA,NA,NA,NA,NA
+"Pat Connaughton",NA,"SG",27,"6' 5""",209,1723050,"10",NA,NA,NA,NA,NA
+"Robin Lopez",NA,"C",32,"7' 0""",281,4767000,"10",NA,NA,NA,NA,NA
+"Sterling Brown",NA,"SG",25,"6' 5""",219,1618520,"10",NA,NA,NA,NA,NA
+"Thanasis Antetokounmpo",NA,"SF",28,"6' 6""",219,1445697,"10",NA,NA,NA,NA,NA
+"Wesley Matthews",NA,"SG",33,"6' 4""",220,2564753,"10",NA,NA,NA,NA,NA
+"Bol Bol",NA,"C",20,"7' 2""",220,NA,"11",NA,NA,NA,NA,NA
+"Gary Harris",NA,"SG",25,"6' 4""",210,17839286,"11","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Jamal Murray",NA,"PG",23,"6' 4""",215,4444746,"11",NA,NA,NA,NA,NA
+"Jerami Grant",NA,"PF",26,"6' 8""",210,9346153,"11",NA,NA,NA,NA,NA
+"Keita Bates-Diop",NA,"SF",24,"6' 8""",229,1416852,"11",NA,NA,NA,NA,NA
+"Mason Plumlee",NA,"PF",30,"6' 11""",254,14041096,"11",NA,NA,NA,NA,NA
+"Michael Porter Jr.",NA,"PF",22,"6' 10""",218,3389400,"11",NA,NA,NA,NA,NA
+"Monte Morris",NA,"PG",25,"6' 2""",183,1588231,"11",NA,NA,NA,NA,NA
+"Nikola Jokic",NA,"C",25,"7' 0""",284,27504630,"11",NA,NA,NA,NA,NA
+"Noah Vonleh",NA,"PF",24,"6' 10""",257,2e+06,"11",NA,NA,NA,NA,NA
+"Paul Millsap",NA,"PF",35,"6' 7""",257,30350000,"11",NA,NA,NA,NA,NA
+"PJ Dozier",NA,"PG",23,"6' 6""",205,NA,"11",NA,NA,NA,NA,NA
+"Torrey Craig",NA,"SF",29,"6' 7""",221,2e+06,"11",NA,NA,NA,NA,NA
+"Troy Daniels",NA,"SG",29,"6' 4""",205,384541,"11","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Tyler Cook",NA,"PF",22,"6' 8""",255,NA,"11",NA,NA,NA,NA,NA
+"Vlatko Cancar",NA,"SF",23,"6' 8""",236,898310,"11","Out",NA,"Aug 14",2020-08-14,2020-08-10
+"Will Barton",NA,"SF",29,"6' 5""",181,12776786,"11","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"D'Angelo Russell",NA,"SG",24,"6' 4""",193,27285000,"12",NA,NA,NA,NA,NA
+"Evan Turner",NA,"SG",31,"6' 6""",220,18606556,"12",NA,NA,NA,NA,NA
+"Jacob Evans",NA,"SG",23,"6' 4""",210,1925880,"12",NA,NA,NA,NA,NA
+"Jake Layman",NA,"SF",26,"6' 8""",209,3581986,"12",NA,NA,NA,NA,NA
+"James Johnson",NA,"PF",33,"6' 7""",240,15349400,"12",NA,NA,NA,NA,NA
+"Jarred Vanderbilt",NA,"PF",21,"6' 9""",214,1416852,"12",NA,NA,NA,NA,NA
+"Jarrett Culver",NA,"SG",21,"6' 6""",195,5813640,"12",NA,NA,NA,NA,NA
+"Jaylen Nowell",NA,"SG",21,"6' 4""",201,1400000,"12",NA,NA,NA,NA,NA
+"Jordan McLaughlin",NA,"PG",24,"5' 11""",185,NA,"12",NA,NA,NA,NA,NA
+"Josh Okogie",NA,"SF",21,"6' 4""",213,2530680,"12",NA,NA,NA,NA,NA
+"Juan Hernangomez",NA,"PF",24,"6' 9""",214,3321030,"12",NA,NA,NA,NA,NA
+"Karl-Anthony Towns",NA,"C",24,"6' 11""",248,27285000,"12","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Kelan Martin",NA,"SF",25,"6' 5""",230,NA,"12",NA,NA,NA,NA,NA
+"Malik Beasley",NA,"SG",23,"6' 4""",187,2731714,"12",NA,NA,NA,NA,NA
+"Naz Reid",NA,"C",20,"6' 9""",264,898310,"12",NA,NA,NA,NA,NA
+"Omari Spellman",NA,"PF",23,"6' 8""",245,1897800,"12",NA,NA,NA,NA,NA
+"Abdel Nader",NA,"SF",26,"6' 5""",225,1618520,"13",NA,NA,NA,NA,NA
+"Andre Roberson",NA,"SG",28,"6' 7""",210,10740740,"13",NA,NA,NA,NA,NA
+"Chris Paul",NA,"PG",35,"6' 1""",175,38506482,"13",NA,NA,NA,NA,NA
+"Danilo Gallinari",NA,"PF",32,"6' 10""",233,22615559,"13","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Darius Bazley",NA,"SF",20,"6' 8""",208,2284800,"13",NA,NA,NA,NA,NA
+"Dennis Schroder",NA,"PG",26,"6' 1""",172,15500000,"13","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Deonte Burton",NA,"SG",26,"6' 4""",240,1416852,"13",NA,NA,NA,NA,NA
+"Devon Hall",NA,"SG",25,"6' 2""",215,NA,"13",NA,NA,NA,NA,NA
+"Hamidou Diallo",NA,"SG",22,"6' 5""",202,1416852,"13",NA,NA,NA,NA,NA
+"Isaiah Roby",NA,"SF",22,"6' 8""",230,1500000,"13",NA,NA,NA,NA,NA
+"Kevin Hervey",NA,"PF",24,"6' 9""",230,NA,"13",NA,NA,NA,NA,NA
+"Luguentz Dort",NA,"SG",21,"6' 3""",215,155647,"13",NA,NA,NA,NA,NA
+"Mike Muscala",NA,"PF",29,"6' 10""",240,2028594,"13",NA,NA,NA,NA,NA
+"Nerlens Noel",NA,"C",26,"6' 10""",220,1620564,"13","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Shai Gilgeous-Alexander",NA,"SG",22,"6' 5""",180,3952920,"13","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Steven Adams",NA,"C",27,"6' 11""",265,25842697,"13","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Terrance Ferguson",NA,"SF",22,"6' 6""",190,2475840,"13",NA,NA,NA,NA,NA
+"Anfernee Simons","Portland","SG",21,"6' 3""",181,2149560,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Caleb Swanigan","Portland","PF",23,"6' 9""",260,2033160,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Carmelo Anthony","Portland","PF",36,"6' 8""",238,1364204,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"CJ McCollum","Portland","SG",28,"6' 3""",190,27556959,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Damian Lillard","Portland","PG",30,"6' 2""",195,29802321,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Gary Trent Jr.","Portland","SG",21,"6' 5""",209,1416852,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Hassan Whiteside","Portland","C",31,"7' 0""",265,27093017,"Portland Trail Blazers","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Jaylen Adams","Portland","PG",24,"6' 2""",190,NA,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Jaylen Hoard","Portland","SF",21,"6' 8""",216,NA,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Jusuf Nurkic","Portland","C",25,"7' 0""",290,13125000,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Mario Hezonja","Portland","SF",25,"6' 8""",220,1737145,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Moses Brown","Portland","C",20,"7' 2""",245,NA,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Nassir Little","Portland","SF",20,"6' 5""",220,2105520,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Rodney Hood","Portland","SF",27,"6' 8""",208,5718000,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Trevor Ariza","Portland","SF",35,"6' 8""",215,12195122,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Wenyen Gabriel","Portland","PF",23,"6' 9""",205,1445697,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Zach Collins","Portland","PF",22,"6' 11""",250,4240200,"Portland Trail Blazers",NA,NA,NA,NA,NA
+"Bojan Bogdanovic",NA,"SF",31,"6' 8""",226,1.7e+07,"15",NA,NA,NA,NA,NA
+"Donovan Mitchell",NA,"SG",23,"6' 1""",215,3635760,"15","Out",NA,"Aug 13",2020-08-13,2020-08-10
+"Ed Davis",NA,"C",31,"6' 9""",218,4767000,"15",NA,NA,NA,NA,NA
+"Emmanuel Mudiay",NA,"PG",24,"6' 3""",200,1620564,"15",NA,NA,NA,NA,NA
+"Georges Niang",NA,"SF",27,"6' 7""",230,1645357,"15",NA,NA,NA,NA,NA
+"Jarrell Brantley",NA,"PF",24,"6' 5""",250,NA,"15",NA,NA,NA,NA,NA
+"Joe Ingles",NA,"SG",32,"6' 7""",220,11954546,"15",NA,NA,NA,NA,NA
+"Jordan Clarkson",NA,"PG",28,"6' 4""",192,13437500,"15",NA,NA,NA,NA,NA
+"Justin Wright-Foreman",NA,"PG",22,"6' 0""",190,NA,"15",NA,NA,NA,NA,NA
+"Juwan Morgan",NA,"SF",23,"6' 7""",232,746054,"15","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Mike Conley",NA,"PG",32,"6' 1""",175,32511624,"15",NA,NA,NA,NA,NA
+"Miye Oni",NA,"SG",23,"6' 5""",206,898310,"15",NA,NA,NA,NA,NA
+"Nigel Williams-Goss",NA,"PG",25,"6' 2""",190,1500000,"15","Out",NA,"Aug 13",2020-08-13,2020-08-10
+"Rayjon Tucker",NA,"SG",22,"6' 3""",209,578573,"15",NA,NA,NA,NA,NA
+"Royce O'Neale",NA,"SF",27,"6' 4""",226,1618520,"15",NA,NA,NA,NA,NA
+"Rudy Gobert",NA,"C",28,"7' 1""",258,23241573,"15",NA,NA,NA,NA,NA
+"Tony Bradley",NA,"C",22,"6' 10""",248,1962360,"15",NA,NA,NA,NA,NA
+"Alen Smailagic",NA,"PF",19,"6' 10""",215,898310,"16",NA,NA,NA,NA,NA
+"Andrew Wiggins",NA,"SF",25,"6' 7""",197,27504630,"16",NA,NA,NA,NA,NA
+"Damion Lee",NA,"SG",27,"6' 5""",210,842327,"16",NA,NA,NA,NA,NA
+"Draymond Green",NA,"PF",30,"6' 6""",230,18539130,"16",NA,NA,NA,NA,NA
+"Eric Paschall",NA,"PF",23,"6' 6""",255,898310,"16",NA,NA,NA,NA,NA
+"Jordan Poole",NA,"SG",21,"6' 4""",194,1964760,"16",NA,NA,NA,NA,NA
+"Juan Toscano-Anderson",NA,"SF",27,"6' 6""",209,350189,"16",NA,NA,NA,NA,NA
+"Kevon Looney",NA,"PF",24,"6' 9""",222,4464226,"16","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Klay Thompson",NA,"SG",30,"6' 6""",215,32742000,"16",NA,NA,NA,NA,NA
+"Ky Bowman",NA,"PG",23,"6' 1""",187,350189,"16",NA,NA,NA,NA,NA
+"Marquese Chriss",NA,"C",23,"6' 9""",240,654469,"16",NA,NA,NA,NA,NA
+"Mychal Mulder",NA,"G",26,"6' 4""",184,NA,"16",NA,NA,NA,NA,NA
+"Stephen Curry",NA,"PG",32,"6' 3""",185,40231758,"16",NA,NA,NA,NA,NA
+"Amir Coffey",NA,"SG",23,"6' 7""",210,NA,"17",NA,NA,NA,NA,NA
+"Ivica Zubac",NA,"C",23,"7' 0""",240,6481482,"17",NA,NA,NA,NA,NA
+"JaMychal Green",NA,"PF",30,"6' 8""",227,4767000,"17",NA,NA,NA,NA,NA
+"Joakim Noah",NA,"C",35,"6' 11""",230,NA,"17",NA,NA,NA,NA,NA
+"Johnathan Motley",NA,"PF",25,"6' 8""",230,NA,"17",NA,NA,NA,NA,NA
+"Kawhi Leonard",NA,"SF",29,"6' 7""",225,32742000,"17",NA,NA,NA,NA,NA
+"Landry Shamet",NA,"SG",23,"6' 4""",190,1995120,"17",NA,NA,NA,NA,NA
+"Lou Williams",NA,"SG",33,"6' 1""",175,8e+06,"17",NA,NA,NA,NA,NA
+"Marcus Morris Sr.",NA,"SF",30,"6' 8""",218,1.5e+07,"17",NA,NA,NA,NA,NA
+"Mfiondu Kabengele",NA,"PF",22,"6' 9""",250,1977000,"17",NA,NA,NA,NA,NA
+"Montrezl Harrell",NA,"PF",26,"6' 7""",240,6e+06,"17","Out",NA,"Aug 17",2020-08-17,2020-08-10
+"Patrick Beverley",NA,"PG",32,"6' 1""",180,12345680,"17","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Patrick Patterson",NA,"PF",31,"6' 8""",235,1620564,"17",NA,NA,NA,NA,NA
+"Paul George",NA,"SG",30,"6' 8""",220,30560700,"17","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Reggie Jackson",NA,"PG",30,"6' 3""",208,512721,"17",NA,NA,NA,NA,NA
+"Rodney McGruder",NA,"SG",29,"6' 4""",205,4807693,"17",NA,NA,NA,NA,NA
+"Terance Mann",NA,"SG",23,"6' 5""",215,1e+06,"17",NA,NA,NA,NA,NA
+"Alex Caruso",NA,"SG",26,"6' 5""",186,2750000,"18",NA,NA,NA,NA,NA
+"Anthony Davis",NA,"PF",27,"6' 10""",253,27093018,"18","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Avery Bradley",NA,"PG",29,"6' 3""",180,4767000,"18",NA,NA,NA,NA,NA
+"Danny Green",NA,"SG",33,"6' 6""",215,14634146,"18","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Devontae Cacok",NA,"C",23,"6' 8""",240,NA,"18",NA,NA,NA,NA,NA
+"Dion Waiters",NA,"SG",28,"6' 3""",210,375385,"18",NA,NA,NA,NA,NA
+"Dwight Howard",NA,"C",34,"6' 10""",265,1620564,"18","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Jared Dudley",NA,"SF",35,"6' 6""",237,1620564,"18",NA,NA,NA,NA,NA
+"JaVale McGee",NA,"C",32,"7' 0""",270,4e+06,"18",NA,NA,NA,NA,NA
+"JR Smith",NA,"SG",34,"6' 6""",225,15680000,"18",NA,NA,NA,NA,NA
+"Kentavious Caldwell-Pope",NA,"SG",27,"6' 5""",204,8089282,"18","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Kostas Antetokounmpo",NA,"PF",22,"6' 10""",200,NA,"18",NA,NA,NA,NA,NA
+"Kyle Kuzma",NA,"PF",25,"6' 8""",221,1974600,"18",NA,NA,NA,NA,NA
+"LeBron James",NA,"SF",35,"6' 9""",250,37436858,"18","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Markieff Morris",NA,"PF",30,"6' 8""",245,1750000,"18",NA,NA,NA,NA,NA
+"Quinn Cook",NA,"PG",27,"6' 1""",180,3e+06,"18",NA,NA,NA,NA,NA
+"Rajon Rondo",NA,"PG",34,"6' 1""",180,2564753,"18","Out",NA,"Sep 1",2020-09-01,2020-08-10
+"Talen Horton-Tucker",NA,"SG",19,"6' 4""",234,898310,"18",NA,NA,NA,NA,NA
+"Aron Baynes",NA,"C",33,"6' 10""",260,5453280,"19","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Cameron Johnson",NA,"SF",24,"6' 8""",210,4033440,"19",NA,NA,NA,NA,NA
+"Cameron Payne",NA,"PG",26,"6' 3""",190,1737145,"19",NA,NA,NA,NA,NA
+"Cheick Diallo",NA,"PF",23,"6' 8""",219,1678854,"19",NA,NA,NA,NA,NA
+"Dario Saric",NA,"PF",26,"6' 10""",225,3481986,"19",NA,NA,NA,NA,NA
+"Deandre Ayton",NA,"C",22,"6' 11""",250,9562920,"19",NA,NA,NA,NA,NA
+"Devin Booker",NA,"SG",23,"6' 5""",206,27285000,"19",NA,NA,NA,NA,NA
+"Elie Okobo",NA,"SF",22,"6' 3""",190,1416852,"19","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Frank Kaminsky",NA,"C",27,"7' 0""",240,4767000,"19",NA,NA,NA,NA,NA
+"Jalen Lecque",NA,"PG",20,"6' 4""",185,898310,"19",NA,NA,NA,NA,NA
+"Jevon Carter",NA,"PG",24,"6' 1""",200,1416852,"19",NA,NA,NA,NA,NA
+"Kelly Oubre Jr.",NA,"SF",24,"6' 7""",203,15625000,"19","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Mikal Bridges",NA,"SF",23,"6' 6""",209,4161000,"19",NA,NA,NA,NA,NA
+"Ricky Rubio",NA,"PG",29,"6' 3""",190,16200000,"19",NA,NA,NA,NA,NA
+"Tariq Owens",NA,"F",25,"6' 10""",205,NA,"19",NA,NA,NA,NA,NA
+"Ty Jerome",NA,"SG",23,"6' 5""",195,2193480,"19",NA,NA,NA,NA,NA
+"Alex Len",NA,"C",27,"7' 0""",250,4160000,"20",NA,NA,NA,NA,NA
+"Bogdan Bogdanovic",NA,"SG",27,"6' 6""",220,8529386,"20",NA,NA,NA,NA,NA
+"Buddy Hield",NA,"SG",27,"6' 4""",220,4861208,"20",NA,NA,NA,NA,NA
+"Corey Brewer",NA,"SG",34,"6' 9""",186,NA,"20",NA,NA,NA,NA,NA
+"Cory Joseph",NA,"PG",28,"6' 3""",200,1.2e+07,"20",NA,NA,NA,NA,NA
+"DaQuan Jeffries",NA,"SG",22,"6' 5""",230,NA,"20",NA,NA,NA,NA,NA
+"De'Aaron Fox",NA,"PG",22,"6' 3""",185,6392760,"20",NA,NA,NA,NA,NA
+"Harrison Barnes",NA,"SF",28,"6' 8""",225,24147727,"20",NA,NA,NA,NA,NA
+"Harry Giles III",NA,"C",22,"6' 11""",240,2578800,"20",NA,NA,NA,NA,NA
+"Jabari Parker",NA,"PF",25,"6' 8""",245,6500000,"20",NA,NA,NA,NA,NA
+"Justin James",NA,"SG",23,"6' 7""",190,898310,"20",NA,NA,NA,NA,NA
+"Kent Bazemore",NA,"SG",31,"6' 4""",195,19269662,"20","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Kyle Guy",NA,"SG",22,"6' 1""",167,NA,"20",NA,NA,NA,NA,NA
+"Marvin Bagley III",NA,"PF",21,"6' 11""",235,8556120,"20","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Nemanja Bjelica",NA,"PF",32,"6' 10""",234,6825000,"20",NA,NA,NA,NA,NA
+"Richaun Holmes",NA,"C",26,"6' 10""",235,4767000,"20","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Yogi Ferrell",NA,"PG",27,"6' 0""",178,3150000,"20",NA,NA,NA,NA,NA
+"Brandon Goodwin",NA,"PG",24,"6' 0""",180,522738,"21",NA,NA,NA,NA,NA
+"Bruno Fernando",NA,"C",21,"6' 9""",240,1400000,"21",NA,NA,NA,NA,NA
+"Cam Reddish",NA,"SG",20,"6' 8""",218,4245720,"21",NA,NA,NA,NA,NA
+"Charlie Brown Jr.",NA,"SG",23,"6' 6""",199,NA,"21",NA,NA,NA,NA,NA
+"Clint Capela",NA,"C",26,"6' 10""",240,14896552,"21","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Damian Jones",NA,"C",25,"6' 11""",245,2305057,"21",NA,NA,NA,NA,NA
+"De'Andre Hunter",NA,"SF",22,"6' 7""",225,7068360,"21",NA,NA,NA,NA,NA
+"DeAndre' Bembry",NA,"SG",26,"6' 5""",210,2603982,"21",NA,NA,NA,NA,NA
+"Dewayne Dedmon",NA,"C",30,"7' 0""",245,13333333,"21",NA,NA,NA,NA,NA
+"Jeff Teague",NA,"PG",32,"6' 3""",195,1.9e+07,"21",NA,NA,NA,NA,NA
+"John Collins",NA,"PF",22,"6' 9""",235,2686560,"21",NA,NA,NA,NA,NA
+"Kevin Huerter",NA,"SG",21,"6' 7""",190,2636280,"21",NA,NA,NA,NA,NA
+"Skal Labissiere",NA,"PF",24,"6' 10""",235,2338847,"21",NA,NA,NA,NA,NA
+"Trae Young",NA,"PG",21,"6' 1""",180,6273000,"21",NA,NA,NA,NA,NA
+"Treveon Graham",NA,"SG",26,"6' 5""",219,1645357,"21",NA,NA,NA,NA,NA
+"Bismack Biyombo",NA,"C",27,"6' 8""",255,1.7e+07,"22",NA,NA,NA,NA,NA
+"Caleb Martin",NA,"SF",24,"6' 5""",205,898310,"22",NA,NA,NA,NA,NA
+"Cody Martin",NA,"SF",24,"6' 5""",205,1173310,"22",NA,NA,NA,NA,NA
+"Cody Zeller",NA,"C",27,"7' 0""",240,14471910,"22",NA,NA,NA,NA,NA
+"Devonte' Graham",NA,"PG",25,"6' 1""",195,1416852,"22",NA,NA,NA,NA,NA
+"Dwayne Bacon",NA,"SG",24,"6' 6""",221,1618520,"22",NA,NA,NA,NA,NA
+"Jalen McDaniels",NA,"PF",22,"6' 10""",205,898310,"22",NA,NA,NA,NA,NA
+"Kobi Simmons",NA,"PG",23,"6' 5""",180,NA,"22","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Malik Monk",NA,"SG",22,"6' 3""",200,4028400,"22",NA,NA,NA,NA,NA
+"Miles Bridges",NA,"SF",22,"6' 6""",225,3755400,"22",NA,NA,NA,NA,NA
+"Nicolas Batum",NA,"SG",31,"6' 9""",230,25565217,"22",NA,NA,NA,NA,NA
+"PJ Washington",NA,"PF",21,"6' 7""",230,3831840,"22",NA,NA,NA,NA,NA
+"Ray Spalding",NA,"PF",23,"6' 10""",215,NA,"22","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Terry Rozier",NA,"PG",26,"6' 1""",190,19894737,"22",NA,NA,NA,NA,NA
+"Willy Hernangomez",NA,"C",26,"6' 11""",250,1676735,"22",NA,NA,NA,NA,NA
+"Andre Iguodala",NA,"SG",36,"6' 6""",215,17185185,"23",NA,NA,NA,NA,NA
+"Bam Adebayo",NA,"PF",23,"6' 9""",255,3454080,"23",NA,NA,NA,NA,NA
+"Chris Silva",NA,"PF",23,"6' 8""",234,466918,"23",NA,NA,NA,NA,NA
+"Derrick Jones Jr.",NA,"SF",23,"6' 6""",210,1645357,"23",NA,NA,NA,NA,NA
+"Duncan Robinson",NA,"SG",26,"6' 7""",215,1416852,"23",NA,NA,NA,NA,NA
+"Gabe Vincent",NA,"PG",24,"6' 3""",200,NA,"23",NA,NA,NA,NA,NA
+"Goran Dragic",NA,"PG",34,"6' 3""",190,19217900,"23","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Jae Crowder",NA,"SF",30,"6' 6""",235,7815533,"23",NA,NA,NA,NA,NA
+"Jimmy Butler",NA,"SF",30,"6' 7""",230,32742000,"23","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Kelly Olynyk",NA,"PF",29,"6' 11""",240,12667885,"23",NA,NA,NA,NA,NA
+"Kendrick Nunn",NA,"SG",25,"6' 2""",190,1416852,"23","Out",NA,"Aug 14",2020-08-14,2020-08-10
+"Kyle Alexander",NA,"F",23,"6' 11""",220,NA,"23",NA,NA,NA,NA,NA
+"KZ Okpala",NA,"SF",21,"6' 8""",215,898310,"23","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Meyers Leonard",NA,"C",28,"7' 0""",260,11286516,"23",NA,NA,NA,NA,NA
+"Solomon Hill",NA,"SF",29,"6' 6""",226,12758781,"23",NA,NA,NA,NA,NA
+"Tyler Herro",NA,"SG",20,"6' 5""",195,3640200,"23",NA,NA,NA,NA,NA
+"Udonis Haslem",NA,"PF",40,"6' 8""",235,1620564,"23",NA,NA,NA,NA,NA
+"Aaron Gordon",NA,"PF",24,"6' 8""",235,19863636,"24","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Al-Farouq Aminu",NA,"PF",29,"6' 8""",220,9258000,"24",NA,NA,NA,NA,NA
+"BJ Johnson",NA,"SF",24,"6' 7""",200,NA,"24",NA,NA,NA,NA,NA
+"D.J. Augustin",NA,"PG",32,"5' 11""",183,7250000,"24",NA,NA,NA,NA,NA
+"Evan Fournier",NA,"SG",27,"6' 7""",205,17150000,"24","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Gary Clark",NA,"PF",25,"6' 6""",225,555409,"24",NA,NA,NA,NA,NA
+"James Ennis III",NA,"SF",30,"6' 6""",215,1882867,"24",NA,NA,NA,NA,NA
+"Jonathan Isaac",NA,"PF",22,"6' 11""",230,5806440,"24","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Khem Birch",NA,"PF",27,"6' 9""",233,3e+06,"24",NA,NA,NA,NA,NA
+"Markelle Fultz",NA,"PG",22,"6' 3""",209,9745200,"24",NA,NA,NA,NA,NA
+"Melvin Frazier Jr.",NA,"SG",23,"6' 5""",215,1416852,"24",NA,NA,NA,NA,NA
+"Michael Carter-Williams",NA,"PG",28,"6' 5""",190,1620564,"24","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Mo Bamba",NA,"C",22,"7' 0""",231,5697600,"24",NA,NA,NA,NA,NA
+"Nikola Vucevic",NA,"C",29,"6' 11""",260,2.8e+07,"24",NA,NA,NA,NA,NA
+"Terrence Ross",NA,"SG",29,"6' 6""",206,12500000,"24",NA,NA,NA,NA,NA
+"Vic Law",NA,"F",24,"6' 7""",200,NA,"24",NA,NA,NA,NA,NA
+"Wes Iwundu",NA,"SF",25,"6' 6""",195,1618420,"24",NA,NA,NA,NA,NA
+"Admiral Schofield",NA,"SG",23,"6' 5""",241,1e+06,"25",NA,NA,NA,NA,NA
+"Anzejs Pasecniks",NA,"C",24,"7' 1""",220,482144,"25",NA,NA,NA,NA,NA
+"Bradley Beal",NA,"SG",27,"6' 3""",207,27093019,"25",NA,NA,NA,NA,NA
+"Davis Bertans",NA,"SF",27,"6' 10""",225,7e+06,"25",NA,NA,NA,NA,NA
+"Garrison Mathews",NA,"SG",23,"6' 5""",215,NA,"25","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Gary Payton II",NA,"PG",27,"6' 3""",195,1052909,"25",NA,NA,NA,NA,NA
+"Ian Mahinmi",NA,"C",33,"6' 11""",262,15450051,"25",NA,NA,NA,NA,NA
+"Isaac Bonga",NA,"SF",20,"6' 8""",180,1416842,"25",NA,NA,NA,NA,NA
+"Ish Smith",NA,"PG",32,"6' 0""",175,6e+06,"25",NA,NA,NA,NA,NA
+"Jarrod Uthoff",NA,"SF",27,"6' 9""",221,NA,"25",NA,NA,NA,NA,NA
+"Jerian Grant",NA,"PG",27,"6' 4""",204,NA,"25",NA,NA,NA,NA,NA
+"Jerome Robinson",NA,"SG",23,"6' 4""",190,3567720,"25",NA,NA,NA,NA,NA
+"John Wall",NA,"PG",29,"6' 4""",210,38199000,"25",NA,NA,NA,NA,NA
+"Johnathan Williams",NA,"PF",25,"6' 9""",228,NA,"25",NA,NA,NA,NA,NA
+"Moritz Wagner",NA,"SF",23,"6' 11""",245,2063520,"25",NA,NA,NA,NA,NA
+"Rui Hachimura",NA,"PF",22,"6' 8""",230,4469160,"25",NA,NA,NA,NA,NA
+"Shabazz Napier",NA,"PG",29,"6' 0""",175,1845301,"25","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Thomas Bryant",NA,"C",23,"6' 10""",248,8e+06,"25",NA,NA,NA,NA,NA
+"Troy Brown Jr.",NA,"SF",21,"6' 6""",215,3219480,"25",NA,NA,NA,NA,NA
+"Antonius Cleveland",NA,"SG",26,"6' 5""",195,NA,"26",NA,NA,NA,NA,NA
+"Boban Marjanovic",NA,"C",31,"7' 4""",290,3500000,"26",NA,NA,NA,NA,NA
+"Courtney Lee",NA,"SG",34,"6' 5""",215,12759670,"26","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Delon Wright",NA,"PG",28,"6' 5""",185,9473684,"26",NA,NA,NA,NA,NA
+"Dorian Finney-Smith",NA,"SF",27,"6' 7""",220,4e+06,"26","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Dwight Powell",NA,"C",29,"6' 10""",240,10259375,"26","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"J.J. Barea",NA,"PG",36,"5' 10""",180,1620564,"26",NA,NA,NA,NA,NA
+"Jalen Brunson",NA,"PG",23,"6' 1""",190,1416852,"26",NA,NA,NA,NA,NA
+"Josh Reaves",NA,"SG",23,"6' 4""",214,NA,"26",NA,NA,NA,NA,NA
+"Justin Jackson",NA,"SF",25,"6' 7""",220,3280920,"26",NA,NA,NA,NA,NA
+"Kristaps Porzingis",NA,"PF",25,"7' 3""",240,27285000,"26","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Luka Doncic",NA,"SG",21,"6' 7""",230,7683360,"26","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Maxi Kleber",NA,"PF",28,"6' 10""",240,8e+06,"26",NA,NA,NA,NA,NA
+"Michael Kidd-Gilchrist",NA,"SF",26,"6' 6""",230,595122,"26",NA,NA,NA,NA,NA
+"Seth Curry",NA,"SG",29,"6' 2""",185,7461380,"26","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Tim Hardaway Jr.",NA,"SG",28,"6' 5""",205,20025127,"26",NA,NA,NA,NA,NA
+"Trey Burke",NA,"PG",27,"6' 0""",185,1620564,"26",NA,NA,NA,NA,NA
+"Willie Cauley-Stein",NA,"C",26,"7' 0""",240,2177483,"26",NA,NA,NA,NA,NA
+"Austin Rivers",NA,"PG",28,"6' 3""",200,2147317,"27",NA,NA,NA,NA,NA
+"Ben McLemore",NA,"SF",27,"6' 3""",195,2028594,"27",NA,NA,NA,NA,NA
+"Bruno Caboclo",NA,"SF",24,"6' 9""",218,1845301,"27","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Chris Clemons",NA,"PG",23,"5' 9""",180,563347,"27",NA,NA,NA,NA,NA
+"Danuel House Jr.",NA,"SF",27,"6' 6""",220,3540000,"27",NA,NA,NA,NA,NA
+"David Nwaba",NA,"SG",27,"6' 5""",219,903111,"27",NA,NA,NA,NA,NA
+"DeMarre Carroll",NA,"SF",34,"6' 6""",215,512721,"27",NA,NA,NA,NA,NA
+"Eric Gordon",NA,"SG",31,"6' 3""",215,14057730,"27","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"James Harden",NA,"SG",30,"6' 5""",220,38199000,"27",NA,NA,NA,NA,NA
+"Jeff Green",NA,"PF",33,"6' 8""",235,439475,"27",NA,NA,NA,NA,NA
+"Luc Mbah a Moute",NA,"PF",33,"6' 8""",230,4320500,"27",NA,NA,NA,NA,NA
+"Michael Frazier",NA,"SG",26,"6' 3""",200,NA,"27",NA,NA,NA,NA,NA
+"P.J. Tucker",NA,"PF",35,"6' 5""",245,8349039,"27",NA,NA,NA,NA,NA
+"Robert Covington",NA,"PF",29,"6' 7""",209,11301219,"27",NA,NA,NA,NA,NA
+"Russell Westbrook",NA,"PG",31,"6' 3""",200,38506482,"27","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Thabo Sefolosha",NA,"SF",36,"6' 6""",215,1620564,"27",NA,NA,NA,NA,NA
+"Tyson Chandler",NA,"C",37,"7' 0""",235,1620564,"27",NA,NA,NA,NA,NA
+"William Howard",NA,"SG",26,"6' 8""",207,NA,"27",NA,NA,NA,NA,NA
+"Anthony Tolliver",NA,"PF",35,"6' 8""",240,183115,"28",NA,NA,NA,NA,NA
+"Brandon Clarke",NA,"SF",23,"6' 8""",215,2478840,"28",NA,NA,NA,NA,NA
+"De'Anthony Melton",NA,"SG",22,"6' 2""",200,1416852,"28",NA,NA,NA,NA,NA
+"Dillon Brooks",NA,"SG",24,"6' 7""",225,1618520,"28",NA,NA,NA,NA,NA
+"Gorgui Dieng",NA,"C",30,"6' 10""",252,16229213,"28",NA,NA,NA,NA,NA
+"Grayson Allen",NA,"SG",24,"6' 4""",198,2429400,"28",NA,NA,NA,NA,NA
+"Ja Morant",NA,"PG",20,"6' 3""",174,8730240,"28",NA,NA,NA,NA,NA
+"Jaren Jackson Jr.",NA,"PF",20,"6' 11""",242,6927480,"28","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"John Konchar",NA,"SG",24,"6' 5""",210,NA,"28",NA,NA,NA,NA,NA
+"Jonas Valanciunas",NA,"C",28,"6' 11""",265,1.6e+07,"28",NA,NA,NA,NA,NA
+"Jontay Porter",NA,"PF",20,"6' 10""",236,197933,"28",NA,NA,NA,NA,NA
+"Josh Jackson",NA,"SG",23,"6' 8""",207,7059480,"28",NA,NA,NA,NA,NA
+"Justise Winslow",NA,"SF",24,"6' 6""",222,1.3e+07,"28","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Kyle Anderson",NA,"SF",26,"6' 9""",230,9073050,"28",NA,NA,NA,NA,NA
+"Marko Guduric",NA,"SG",25,"6' 6""",201,2625000,"28",NA,NA,NA,NA,NA
+"Tyus Jones",NA,"PG",24,"6' 0""",196,9258000,"28","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Yuta Watanabe",NA,"SG",25,"6' 8""",215,NA,"28",NA,NA,NA,NA,NA
+"Brandon Ingram",NA,"SF",22,"6' 7""",190,7265485,"29",NA,NA,NA,NA,NA
+"Darius Miller",NA,"SF",30,"6' 6""",225,7e+06,"29",NA,NA,NA,NA,NA
+"Derrick Favors",NA,"C",29,"6' 9""",265,17650000,"29",NA,NA,NA,NA,NA
+"E'Twaun Moore",NA,"SG",31,"6' 3""",191,8664928,"29",NA,NA,NA,NA,NA
+"Frank Jackson",NA,"PG",22,"6' 3""",205,1618520,"29",NA,NA,NA,NA,NA
+"Jahlil Okafor",NA,"C",24,"6' 10""",270,1702486,"29",NA,NA,NA,NA,NA
+"Jaxson Hayes",NA,"C",20,"6' 11""",220,4862040,"29",NA,NA,NA,NA,NA
+"JJ Redick",NA,"SG",36,"6' 3""",200,13486300,"29",NA,NA,NA,NA,NA
+"Josh Gray",NA,"PG",26,"6' 0""",180,NA,"29",NA,NA,NA,NA,NA
+"Josh Hart",NA,"SF",25,"6' 5""",215,1655160,"29",NA,NA,NA,NA,NA
+"Jrue Holiday",NA,"SG",30,"6' 3""",205,26231111,"29",NA,NA,NA,NA,NA
+"Kenrich Williams",NA,"SF",25,"6' 6""",210,1416852,"29",NA,NA,NA,NA,NA
+"Lonzo Ball",NA,"PG",22,"6' 6""",190,8719320,"29",NA,NA,NA,NA,NA
+"Nickeil Alexander-Walker",NA,"SG",21,"6' 5""",205,2964840,"29",NA,NA,NA,NA,NA
+"Nicolo Melli",NA,"PF",29,"6' 9""",236,4102564,"29",NA,NA,NA,NA,NA
+"Sindarius Thornwell",NA,"SG",25,"6' 4""",215,NA,"29",NA,NA,NA,NA,NA
+"Zion Williamson",NA,"SF",20,"6' 6""",284,9757440,"29",NA,NA,NA,NA,NA
+"Zylan Cheatham",NA,"SF",24,"6' 5""",220,NA,"29",NA,NA,NA,NA,NA
+"Bryn Forbes",NA,"SG",27,"6' 2""",205,2875000,"30","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Chimezie Metu",NA,"PF",23,"6' 9""",225,1416852,"30",NA,NA,NA,NA,NA
+"Dejounte Murray",NA,"PG",23,"6' 4""",180,2321735,"30",NA,NA,NA,NA,NA
+"DeMar DeRozan",NA,"SF",31,"6' 6""",220,27739975,"30",NA,NA,NA,NA,NA
+"Derrick White",NA,"PG",26,"6' 4""",190,1948080,"30","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Drew Eubanks",NA,"PF",23,"6' 9""",245,NA,"30",NA,NA,NA,NA,NA
+"Jakob Poeltl",NA,"C",24,"7' 1""",245,3754886,"30",NA,NA,NA,NA,NA
+"Keldon Johnson",NA,"SF",20,"6' 5""",220,1950600,"30",NA,NA,NA,NA,NA
+"LaMarcus Aldridge",NA,"PF",35,"6' 11""",250,2.6e+07,"30",NA,NA,NA,NA,NA
+"Lonnie Walker IV",NA,"SG",21,"6' 5""",204,2689920,"30",NA,NA,NA,NA,NA
+"Luka Samanic",NA,"PF",20,"6' 10""",227,2689920,"30",NA,NA,NA,NA,NA
+"Marco Belinelli",NA,"SG",34,"6' 5""",220,5846154,"30",NA,NA,NA,NA,NA
+"Patty Mills",NA,"PG",31,"6' 1""",180,12428571,"30",NA,NA,NA,NA,NA
+"Quinndary Weatherspoon",NA,"SG",23,"6' 3""",205,NA,"30",NA,NA,NA,NA,NA
+"Rudy Gay",NA,"SF",33,"6' 8""",250,14500000,"30",NA,NA,NA,NA,NA
+"Trey Lyles",NA,"C",24,"6' 9""",234,5500000,"30","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Tyler Zeller",NA,"C",30,"7' 0""",255,245686,"30","Out",NA,"Aug 11",2020-08-11,2020-08-10

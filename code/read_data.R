@@ -33,7 +33,8 @@ city_lat_long$OWN_TEAM <- city_lat_long$OWN_TEAM %>% gsub("L.A.", "LA", .) %>% t
 team_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>% 
   rename(Team=FULL.NAME, NBAstuffer.Initials=SHORT.NAME) %>%
   mutate(OWN_TEAM=NBAstuffer.Initials, OWN_TEAM_NAME=OWN_TEAM) %>%
-  distinct(Team, .keep_all=TRUE) %>% select(City, NBAstuffer.Initials, Team, OWN_TEAM_NAME, OWN_TEAM) %>%
+  distinct(Team, .keep_all=TRUE) %>% 
+  dplyr::select(City, NBAstuffer.Initials, Team, OWN_TEAM_NAME, OWN_TEAM) %>%
   filter(!(Team %in% c("Charlotte Bobcats", "New Orleans Hornets")))
 
 
@@ -57,10 +58,10 @@ for (i in 1:length(games_per_day)){
 name_map <- read.csv(paste0(root, "/rawdata/five38_names.csv"), stringsAsFactors = FALSE) %>%
   mutate(home_team_name_538=Five38_name)
 final_538_probs <- data.frame(rbindlist(l), stringsAsFactors = FALSE) %>% 
-  select(DATE, home_team_name_538, home_team_prob_win_538) %>%
+  dplyr::select(DATE, home_team_name_538, home_team_prob_win_538) %>%
   inner_join(name_map, by="home_team_name_538") %>%
   rename(home_team_name=Elastic_name) %>%
-  select(-Five38_name)
+  dplyr::select(-Five38_name)
 
 
 ft8 <- read_html("http://projects.fivethirtyeight.com/2020-nba-predictions/")
@@ -85,7 +86,7 @@ fivethirtyeight <- data.frame(team,
   mutate(Five38_name=selected_team) %>%
   inner_join(name_map, by="Five38_name") %>%
   mutate(selected_team=Elastic_name, opposing_team=Elastic_name) %>%
-  select(-team, -Elastic_name, -home_team_name_538)
+  dplyr::select(-team, -Elastic_name, -home_team_name_538)
 
 
 ### Injury return dates from CBS
@@ -118,7 +119,7 @@ convert_to_date <- function(data){
 }
 
 daily_injuries <- data.frame(rbindlist(lapply(split(daily_injuries, daily_injuries$PLAYER_FULL_NAME), convert_to_date)), stringsAsFactors = FALSE) %>%
-  select(PLAYER_FULL_NAME, clean_note, return_date) %>% distinct(PLAYER_FULL_NAME, .keep_all=TRUE)
+  dplyr::select(PLAYER_FULL_NAME, clean_note, return_date) %>% distinct(PLAYER_FULL_NAME, .keep_all=TRUE)
 
 
 ### Injury status from ESPN
@@ -178,7 +179,7 @@ rosters <- lapply(team_pages, function (team_link) {
 all_rosters <- bind_rows(lapply(rosters, function(x) as.data.frame(x))) %>%
   mutate(Team=ifelse(Team=="Portland Trailblazers", "Portland Trail Blazers", Team)) %>%
   left_join(team_map, by="Team") %>%
-  select(PLAYER_FULL_NAME, OWN_TEAM, Position, Age, Height, Weight, Salary, Team) %>%
+  dplyr::select(PLAYER_FULL_NAME, OWN_TEAM, Position, Age, Height, Weight, Salary, Team) %>%
   arrange(PLAYER_FULL_NAME, OWN_TEAM) %>%
   left_join(injuries, by="PLAYER_FULL_NAME") %>%
   distinct(PLAYER_FULL_NAME, .keep_all=TRUE) %>%
@@ -221,7 +222,7 @@ data <- rename(data,
                freethrows_made=FT,
                freethrow_attempts=FTA, 
                fouls=PF, 
-               blocks=BL) %>% select(DATA_SET, DATE, PLAYER_FULL_NAME, POSITION, OWN_TEAM, OPP_TEAM, VENUE_R_H, TOT, points, 
+               blocks=BL) %>% dplyr::select(DATA_SET, DATE, PLAYER_FULL_NAME, POSITION, OWN_TEAM, OPP_TEAM, VENUE_R_H, TOT, points, 
                                      assists, offensive_rebounds, defensive_rebounds, turnovers, threepointers_made, 
                                      steals, minutes, threepoint_attempts, fieldgoal_attempts, fieldgoals_made, freethrows_made,
                                      freethrow_attempts, fouls, blocks)
@@ -257,7 +258,7 @@ read_player_data <- function(season, first_labels, suffix){
                  freethrows_made=FT,
                  freethrow_attempts=FTA, 
                  fouls=PF, 
-                 blocks=BL) %>% select(DATA_SET, DATE, PLAYER_FULL_NAME, POSITION, OWN_TEAM, OPP_TEAM, VENUE_R_H, TOT, points, 
+                 blocks=BL) %>% dplyr::select(DATA_SET, DATE, PLAYER_FULL_NAME, POSITION, OWN_TEAM, OPP_TEAM, VENUE_R_H, TOT, points, 
                                        assists, offensive_rebounds, defensive_rebounds, turnovers, threepointers_made, 
                                        steals, minutes, threepoint_attempts, fieldgoal_attempts, fieldgoals_made, freethrows_made,
                                        freethrow_attempts, fouls, blocks, file)
@@ -306,9 +307,9 @@ schedule_team_name_map <- data.frame(read_excel("schedule.xlsx", sheet=2)) %>%
 
 schedule <- data.frame(read_excel("schedule.xlsx", sheet=1)) %>% mutate(DATE=as.Date(DATE)) %>%
   mutate(HOME.TEAM=trim(HOME.TEAM), ROAD.ROAD=trim(ROAD.TEAM)) %>%
-  inner_join(select(schedule_team_name_map, HOME.TEAM, home_team), by="HOME.TEAM") %>%
-  inner_join(select(schedule_team_name_map, ROAD.TEAM, road_team), by="ROAD.TEAM") %>%
-  select(DATE, home_team, road_team)
+  inner_join(dplyr::select(schedule_team_name_map, HOME.TEAM, home_team), by="HOME.TEAM") %>%
+  inner_join(dplyr::select(schedule_team_name_map, ROAD.TEAM, road_team), by="ROAD.TEAM") %>%
+  dplyr::select(DATE, home_team, road_team)
 
 set.seed(2015)
 
@@ -321,7 +322,7 @@ future_schedule <- filter(schedule, DATE>max_date) %>%
          DATA_SET=current_season, 
          season=current_season_numeric,
          PLAYER_FULL_NAME="BLANK") %>%
-  select(DATE, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATA_SET, future_game, PLAYER_FULL_NAME, season)
+  dplyr::select(DATE, OWN_TEAM, OPP_TEAM, VENUE_R_H, DATA_SET, future_game, PLAYER_FULL_NAME, season)
 
 f <- bind_rows(f, future_schedule) %>%
   replace(is.na(.), 0)
@@ -338,7 +339,7 @@ f <- group_by(f, game_id, OWN_TEAM) %>%
          n_H=sum(as.numeric(VENUE_R_H=="H")),
          n_R=sum(as.numeric(VENUE_R_H=="R")),
          VENUE_R_H=ifelse(distinct_venue==2, ifelse(n_H>n_R, "H", "R"), VENUE_R_H)) %>%
-  select(-n_H, -n_R) %>%
+  dplyr::select(-n_H, -n_R) %>%
   ungroup()
 
 check_venue <- group_by(f, game_id) %>%
@@ -372,9 +373,9 @@ game_pts <- group_by(team_pts, game_id, future_game, season) %>%
 game_pts$r <- as.numeric(rbinom(nrow(game_pts), 1, 0.5)>0.5)
 
 ## Create win indicators at the game/team level            
-team_win <- inner_join(team_pts, select(game_pts, game_id, max_game_points, r), by="game_id") %>%
+team_win <- inner_join(team_pts, dplyr::select(game_pts, game_id, max_game_points, r), by="game_id") %>%
   mutate(win=as.numeric(total_points==max_game_points)) %>%
-  select(-max_game_points)
+  dplyr::select(-max_game_points)
 
 
 ## Create win indicators at the game level
@@ -389,7 +390,7 @@ future_flipped <- filter(team_win, future_game==1) %>%
   mutate(VENUE_R_H2=ifelse(VENUE_R_H=='H', 'R', 'H'),
          OWN_TEAM2=OPP_TEAM, 
          OPP_TEAM2=OWN_TEAM) %>%
-  select(-OPP_TEAM, -OWN_TEAM) %>%
+  dplyr::select(-OPP_TEAM, -OWN_TEAM, -VENUE_R_H) %>%
   rename(OPP_TEAM=OPP_TEAM2, 
          OWN_TEAM=OWN_TEAM2,
          VENUE_R_H=VENUE_R_H2)
@@ -409,13 +410,13 @@ dups <-
             n=n())
 
 split <- split(team_win, team_win$game_id)
-game_scores <- data.frame(rbindlist(lapply(split, function(x) spread(select(x, game_id, VENUE_R_H, OWN_TEAM), VENUE_R_H, OWN_TEAM))), stringsAsFactors = FALSE) %>%
-  inner_join(select(game_pts, -max_game_points, -future_game, -season), by="game_id") %>%
+game_scores <- data.frame(rbindlist(lapply(split, function(x) spread(dplyr::select(x, game_id, VENUE_R_H, OWN_TEAM), VENUE_R_H, OWN_TEAM))), stringsAsFactors = FALSE) %>%
+  inner_join(dplyr::select(game_pts, -max_game_points, -future_game, -season), by="game_id") %>%
   inner_join(game_win, by="game_id") %>%
   mutate(selected_team=ifelse(r==1, H, R), 
          opposing_team=ifelse(r==1, R, H), 
          selected_team_win=ifelse(future_game==1, NA, selected_team_win)) %>% 
-  select(-r, -future_game) %>%
+  dplyr::select(-r, -future_game) %>%
   rename(home_team_name=H, road_team_name=R) %>%
   ungroup()
 
@@ -448,7 +449,7 @@ get_rest_days <- function(id){
     mutate(selected_team_travel=ifelse(selected_team_rest>2 & home_team_name==selected, 0, abs(distance_between(lon1,lat1,lon2,lat2)))) %>%
     filter(game_id==id) %>%
     left_join(t, by="OWN_TEAM") %>%
-    select(selected_team_rest, selected_team_last_city, selected_team_travel, selected_team_altitude)
+    dplyr::select(selected_team_rest, selected_team_last_city, selected_team_travel, selected_team_altitude)
   
   t <- rename(altitudes, OWN_TEAM=team, opposing_team_altitude=altitude)
   
@@ -467,7 +468,7 @@ get_rest_days <- function(id){
     mutate(opposing_team_travel=ifelse(opposing_team_rest>2 & home_team_name==opposing, 0, abs(distance_between(lon1,lat1,lon2,lat2)))) %>%
     filter(game_id==id) %>%
     left_join(t, by="OWN_TEAM") %>%
-    select(opposing_team_rest, opposing_team_last_city, game_id, opposing_team_travel, opposing_team_altitude, lon1, lon2, lat1, lat2)
+    dplyr::select(opposing_team_rest, opposing_team_last_city, game_id, opposing_team_travel, opposing_team_altitude, lon1, lon2, lat1, lat2)
   
   return(data.frame(cbind(df1, df2)))
 }
@@ -480,7 +481,7 @@ loop_result <- foreach(i=1:length(ids)) %dopar% {
 rest_days <- data.frame(rbindlist(loop_result), stringsAsFactors = FALSE) %>% 
   mutate(rest_differential=selected_team_rest-opposing_team_rest, 
          travel_differential=opposing_team_travel-selected_team_travel) %>%
-  select(game_id, rest_differential, travel_differential, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, selected_team_last_city, opposing_team_last_city, selected_team_altitude, opposing_team_altitude)
+  dplyr::select(game_id, rest_differential, travel_differential, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, selected_team_last_city, opposing_team_last_city, selected_team_altitude, opposing_team_altitude)
 
 games_last_week <- function(id){
   game <- filter(game_scores, game_id==id)
@@ -553,7 +554,7 @@ loop_result <- foreach(i=1:length(games)) %dopar% {
   
   matchups <- filter(game_scores, selected_team %in% c(selected, opposing) & opposing_team %in% c(selected, opposing)) %>%
     filter(season==s & DATE<date) %>%
-    select(-game_id)
+    dplyr::select(-game_id)
   
   if (nrow(matchups)==0){
     df <- data.frame(0, 0, as.character(games[i]))
@@ -567,7 +568,7 @@ loop_result <- foreach(i=1:length(games)) %dopar% {
              selected_team_matchup_wins=selected_team_matchup_wins/t,
              opposing_team_matchup_wins=opposing_team_matchup_wins/t,
              game_id=as.character(games[i])) %>%
-      select(-t)
+      dplyr::select(-t)
   }
   return(df)
 }
@@ -578,8 +579,8 @@ prev_matchups$game_id <- as.character(prev_matchups$game_id)
 
 
 ## Create the fill box score file
-final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_TEAM, -future_game, -season), by=c("game_id", "OWN_TEAM")) %>%
-  inner_join(select(game_scores, -DATE, -playoffs, -season), by="game_id") %>%
+final <- inner_join(f, dplyr::select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_TEAM, -future_game, -season), by=c("game_id", "OWN_TEAM")) %>%
+  inner_join(dplyr::select(game_scores, -DATE, -playoffs, -season), by="game_id") %>%
   inner_join(rest_days, by="game_id") %>%
   inner_join(trailing_games, by="game_id") %>%
   inner_join(prev_matchups, by="game_id") %>%
@@ -593,9 +594,9 @@ final <- inner_join(f, select(team_win, -DATE, -VENUE_R_H, -r, -playoffs, -OPP_T
          opposing_team_points=ifelse(home_team_selected==0, home_team_points, road_team_points),
          win=ifelse(future_game==1, NA, win)) %>%
   dplyr::select(-VENUE_R_H, -TOT) %>% arrange(DATE, game_id) %>%
-  left_join(select(fivethirtyeight, carm_elo_full, carm_elo, selected_team, wins_538), by="selected_team") %>%
+  left_join(dplyr::select(fivethirtyeight, carm_elo_full, carm_elo, selected_team, wins_538), by="selected_team") %>%
   rename(carm_elo_full_selected_team=carm_elo_full, carm_elo_selected_team=carm_elo, wins_538_selected_team=wins_538) %>%
-  left_join(select(fivethirtyeight, carm_elo_full, carm_elo, opposing_team, wins_538), by="opposing_team") %>%
+  left_join(dplyr::select(fivethirtyeight, carm_elo_full, carm_elo, opposing_team, wins_538), by="opposing_team") %>%
   rename(carm_elo_full_opposing_team=carm_elo_full, carm_elo_opposing_team=carm_elo, wins_538_opposing_team=wins_538) %>%
   left_join(injuries, by="PLAYER_FULL_NAME") %>%
   mutate(travel_differential=if_else(is.na(travel_differential), 0, travel_differential), 

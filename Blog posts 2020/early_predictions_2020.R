@@ -6,7 +6,7 @@ library("htmltools")
 library("webshot")    
 
 
-stamp <- "2020-03-08"
+stamp <- "2020-03-11"
   
 
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
@@ -163,7 +163,7 @@ ggsave(g3, file=paste0(root, "/newsletter/playoffs.png"), device = "png", dpi=72
 
 
 five38<-read.csv(paste0(root,"/rawdata/FiveThirtyEight_", stamp, ".csv")) %>%
-  filter(chance_winning_finals != "<1%") %>%
+  filter(!(chance_winning_finals %in% c("<1%","-","—"))) %>%
   mutate(chance_winning_finals=as.numeric(gsub("%", "", chance_winning_finals))/100, 
          chance_making_finals=as.numeric(gsub("%", "", chance_making_finals))/100) %>%
   select(selected_team, chance_winning_finals, chance_making_finals) %>%

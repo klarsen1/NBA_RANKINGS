@@ -1,139 +1,75 @@
 "PLAYER_FULL_NAME","injury_status","injury_date","clean_note","return_date","injury_scrape_date"
-"Aaron Gordon","Day-To-Day","Mar 4",NA,2020-03-09,2020-03-08
-"Al-Farouq Aminu","Out","Mar 7","May 1",2020-05-01,2020-03-08
-"Alen Smailagic","Day-To-Day","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Alex Caruso","Day-To-Day","Mar 7",NA,2020-03-09,2020-03-08
-"Alfonzo McKinnie","Out","Mar 7",NA,2020-03-09,2020-03-08
-"Andre Drummond","Out","Mar 8",NA,2020-03-09,2020-03-08
-"Andre Roberson","Out","Mar 7","Mar 15",2020-03-15,2020-03-08
-"Anthony Davis","Day-To-Day","Mar 7",NA,2020-03-09,2020-03-08
-"Ben Simmons","Out","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Bol Bol","Out","Mar 7","Mar 13",2020-03-13,2020-03-08
-"Brandon Clarke","Out","Mar 7","Mar 12",2020-03-12,2020-03-08
-"Brandon Knight","Day-To-Day","Mar 8","Game Time Decision",2020-03-09,2020-03-08
-"Bruce Brown","Out","Mar 6",NA,2020-03-09,2020-03-08
-"Bruno Fernando","Day-To-Day","Mar 5",NA,2020-03-09,2020-03-08
-"Cam Reddish","Day-To-Day","Mar 7","Mar 9",2020-03-09,2020-03-08
-"Cameron Johnson","Day-To-Day","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Chandler Hutchison","Out","Mar 8","Apr 1",2020-04-01,2020-03-08
-"Clint Capela","Out","Mar 7","Mar 20",2020-03-20,2020-03-08
-"Cory Joseph","Day-To-Day","Mar 4",NA,2020-03-09,2020-03-08
-"D.J. Wilson","Day-To-Day","Mar 8",NA,2020-03-09,2020-03-08
-"Damian Lillard","Out","Mar 4",NA,2020-03-09,2020-03-08
-"Dante Exum","Out","Mar 7","Mar 17",2020-03-17,2020-03-08
-"Darius Bazley","Out","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Darius Garland","Out","Mar 8","Mar 10",2020-03-10,2020-03-08
-"De'Aaron Fox","Day-To-Day","Mar 4",NA,2020-03-09,2020-03-08
-"De'Andre Hunter","Day-To-Day","Mar 8","Game Time Decision",2020-03-09,2020-03-08
-"Dean Wade","Day-To-Day","Mar 8","Game Time Decision",2020-03-09,2020-03-08
-"Deandre Ayton","Day-To-Day","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"DeAndre' Bembry","Out","Mar 8","Game Time Decision",2020-03-09,2020-03-08
-"DeMarre Carroll","Day-To-Day","Mar 4",NA,2020-03-09,2020-03-08
-"Dennis Smith Jr.","Out","Mar 8","Mar 10",2020-03-10,2020-03-08
-"Derrick Rose","Out","Mar 7","Mar 25",2020-03-25,2020-03-08
-"Devonte' Graham","Day-To-Day","Mar 4",NA,2020-03-09,2020-03-08
-"Dewan Hernandez","Out","Mar 7","Mar 9",2020-03-09,2020-03-08
-"Dewayne Dedmon","Out","Mar 6",NA,2020-03-09,2020-03-08
-"Dion Waiters","Day-To-Day","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Dorian Finney-Smith","Day-To-Day","Mar 8","Mar 10",2020-03-10,2020-03-08
-"Doug McDermott","Day-To-Day","Mar 8","Mar 10",2020-03-10,2020-03-08
-"Draymond Green","Out","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Eric Gordon","Day-To-Day","Mar 8","Mar 10",2020-03-10,2020-03-08
-"Evan Fournier","Out","Mar 7","Mar 17",2020-03-17,2020-03-08
-"Evan Turner","Day-To-Day","Mar 7","Apr 15",2020-04-15,2020-03-08
-"Frank Kaminsky","Out","Mar 7","Mar 20",2020-03-20,2020-03-08
-"Frank Ntilikina","Day-To-Day","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Fred VanVleet","Out","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Garrett Temple","Out","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"George Hill","Day-To-Day","Mar 7",NA,2020-03-09,2020-03-08
-"Giannis Antetokounmpo","Day-To-Day","Mar 8","Mar 12",2020-03-12,2020-03-08
-"Gordon Hayward","Day-To-Day","Mar 7",NA,2020-03-09,2020-03-08
-"Grayson Allen","Out","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Ish Smith","Out","Mar 8","Mar 10",2020-03-10,2020-03-08
-"J.J. Barea","Day-To-Day","Mar 5",NA,2020-03-09,2020-03-08
-"Jae Crowder","Day-To-Day","Mar 7","Mar 11",2020-03-11,2020-03-08
-"JaKarr Sampson","Day-To-Day","Mar 5",NA,2020-03-09,2020-03-08
-"Jakob Poeltl","Out","Mar 7","Mar 27",2020-03-27,2020-03-08
-"Jalen Brunson","Out","Mar 8","Mar 11",2020-03-11,2020-03-08
-"Jared Harper","Out","Mar 4",NA,2020-03-09,2020-03-08
-"Jaren Jackson Jr.","Out","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Javonte Green","Day-To-Day","Mar 4",NA,2020-03-09,2020-03-08
-"Jaylen Brown","Out","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Jayson Tatum","Day-To-Day","Mar 4",NA,2020-03-09,2020-03-08
-"Jerome Robinson","Day-To-Day","Mar 8","Mar 10",2020-03-10,2020-03-08
-"JJ Redick","Out","Mar 7","Mar 16",2020-03-16,2020-03-08
-"Joakim Noah","Day-To-Day","Mar 7",NA,2020-03-09,2020-03-08
-"Joel Embiid","Out","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"John Collins","Day-To-Day","Mar 8","Game Time Decision",2020-03-09,2020-03-08
-"John Wall","Out","Mar 8","Out for the season",2021-03-08,2020-03-08
-"Jordan McRae","Day-To-Day","Mar 4",NA,2020-03-09,2020-03-08
-"Josh Richardson","Out","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Justise Winslow","Out","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Jusuf Nurkic","Out","Mar 7","Mar 15",2020-03-15,2020-03-08
-"Kadeem Allen","Out","Mar 7",NA,2020-03-09,2020-03-08
-"Karl-Anthony Towns","Out","Mar 7","Mar 20",2020-03-20,2020-03-08
-"Kelan Martin","Day-To-Day","Mar 8","Game Time Decision",2020-03-09,2020-03-08
-"Kelly Oubre Jr.","Out","Mar 7","Apr 1",2020-04-01,2020-03-08
-"Kemba Walker","Day-To-Day","Mar 4",NA,2020-03-09,2020-03-08
-"Kenny Wooten","Out","Mar 7",NA,2020-03-09,2020-03-08
-"Kenrich Williams","Out","Mar 6",NA,2020-03-09,2020-03-08
-"Kevin Huerter","Day-To-Day","Mar 8","Game Time Decision",2020-03-09,2020-03-08
-"Kevin Knox II","Day-To-Day","Mar 5",NA,2020-03-09,2020-03-08
-"Kevin Porter Jr.","Day-To-Day","Mar 8",NA,2020-03-09,2020-03-08
-"Kevon Looney","Out","Mar 7","Mar 28",2020-03-28,2020-03-08
-"Kobi Simmons","Out","Mar 8","Mar 14",2020-03-14,2020-03-08
-"Kristaps Porzingis","Day-To-Day","Mar 8",NA,2020-03-09,2020-03-08
-"Ky Bowman","Out","Mar 7","Mar 12",2020-03-12,2020-03-08
-"Kyle Alexander","Out","Mar 8","Mar 16",2020-03-16,2020-03-08
-"Kyle Korver","Out","Mar 5",NA,2020-03-09,2020-03-08
-"LaMarcus Aldridge","Out","Mar 7","Mar 10",2020-03-10,2020-03-08
-"Lauri Markkanen","Out","Mar 4",NA,2020-03-09,2020-03-08
-"Lonnie Walker IV","Day-To-Day","Mar 8","Mar 10",2020-03-10,2020-03-08
-"Luka Doncic","Day-To-Day","Mar 5",NA,2020-03-09,2020-03-08
-"Luke Kennard","Out","Mar 7","Mar 11",2020-03-11,2020-03-08
-"Luke Kornet","Out","Mar 7","Apr 5",2020-04-05,2020-03-08
-"Malcolm Brogdon","Out","Mar 7","Mar 21",2020-03-21,2020-03-08
-"Malik Monk","Suspension","Mar 7",NA,2020-03-09,2020-03-08
-"Marc Gasol","Out","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Marco Belinelli","Day-To-Day","Mar 7","Mar 10",2020-03-10,2020-03-08
-"Markelle Fultz","Day-To-Day","Mar 8",NA,2020-03-09,2020-03-08
-"Marvin Bagley III","Out","Mar 7","Mar 15",2020-03-15,2020-03-08
-"Meyers Leonard","Out","Mar 7","Mar 11",2020-03-11,2020-03-08
-"Michael Kidd-Gilchrist","Day-To-Day","Mar 8","Mar 10",2020-03-10,2020-03-08
-"Mitchell Robinson","Day-To-Day","Mar 5",NA,2020-03-09,2020-03-08
-"Nickeil Alexander-Walker","Out","Mar 7","Mar 21",2020-03-21,2020-03-08
-"Nigel Williams-Goss","Out","Mar 7","Game Time Decision",2020-03-09,2020-03-08
-"Noah Vonleh","Day-To-Day","Mar 6",NA,2020-03-09,2020-03-08
-"Richaun Holmes","Out","Mar 7",NA,2020-03-09,2020-03-08
-"Romeo Langford","Day-To-Day","Mar 4",NA,2020-03-09,2020-03-08
-"Russell Westbrook","Day-To-Day","Mar 7",NA,2020-03-09,2020-03-08
-"Ryan Arcidiacono","Day-To-Day","Mar 8","Game Time Decision",2020-03-09,2020-03-08
-"Semi Ojeleye","Day-To-Day","Mar 4",NA,2020-03-09,2020-03-08
-"Serge Ibaka","Out","Mar 5",NA,2020-03-09,2020-03-08
-"Seth Curry","Day-To-Day","Mar 7","Mar 10",2020-03-10,2020-03-08
-"Shai Gilgeous-Alexander","Day-To-Day","Mar 8","Game Time Decision",2020-03-09,2020-03-08
-"Skal Labissiere","Out","Mar 7","Mar 18",2020-03-18,2020-03-08
-"Stephen Curry","Day-To-Day","Mar 8","Game Time Decision",2020-03-09,2020-03-08
-"T.J. Warren","Day-To-Day","Mar 7",NA,2020-03-09,2020-03-08
-"Thomas Bryant","Day-To-Day","Mar 4",NA,2020-03-09,2020-03-08
-"Tim Hardaway Jr.","Day-To-Day","Mar 7",NA,2020-03-09,2020-03-08
-"Trae Young","Day-To-Day","Mar 7",NA,2020-03-09,2020-03-08
-"Tristan Thompson","Out","Mar 7",NA,2020-03-09,2020-03-08
-"Troy Daniels","Day-To-Day","Mar 5",NA,2020-03-09,2020-03-08
-"Tyler Herro","Out","Mar 7","Mar 11",2020-03-11,2020-03-08
-"Victor Oladipo","Day-To-Day","Mar 7",NA,2020-03-09,2020-03-08
-"Zach Collins","Out","Mar 7","Mar 15",2020-03-15,2020-03-08
-"Zach LaVine","Out","Mar 8","Game Time Decision",2020-03-09,2020-03-08
-"Blake Griffin","Out",NA,"Out for the season",2021-03-08,2020-03-08
-"Darius Miller","Out",NA,"Out for the season",2021-03-08,2020-03-08
-"Dwight Powell","Out",NA,"Out for the season",2021-03-08,2020-03-08
-"Dylan Windler","Out",NA,"Out for the season",2021-03-08,2020-03-08
-"Jeremy Lamb","Out",NA,"Out for the season",2021-03-08,2020-03-08
-"Jonathan Isaac","Out",NA,"Out for the season",2021-03-08,2020-03-08
-"Kevin Durant","Out",NA,"Out for the season",2021-03-08,2020-03-08
-"Kevin Porter","Out",NA,"Mar 10",2020-03-10,2020-03-08
-"Klay Thompson","Out",NA,"Out for the season",2021-03-08,2020-03-08
-"Kris Dunn","Out",NA,"Out for the season",2021-03-08,2020-03-08
-"Kyrie Irving","Out",NA,"Out for the season",2021-03-08,2020-03-08
-"Max Strus","Out",NA,"Out for the season",2021-03-08,2020-03-08
-"Rodney Hood","Out",NA,"Out for the season",2021-03-08,2020-03-08
+"Aaron Gordon","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Anthony Davis","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Aron Baynes","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Ben Simmons","Out",NA,"Sep 1",2020-09-01,2020-08-10
+"Bruno Caboclo","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Bryn Forbes","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Chandler Hutchison","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Clint Capela","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Courtney Lee","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Danilo Gallinari","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Danny Green","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Dante Exum","Out",NA,"Nov 1",2020-11-01,2020-08-10
+"Dennis Schroder","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Derrick White","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Domantas Sabonis","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Donovan Mitchell","Out",NA,"Aug 13",2020-08-13,2020-08-10
+"Dorian Finney-Smith","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Dwight Howard","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Dwight Powell","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Dylan Windler","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Elie Okobo","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Eric Gordon","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Evan Fournier","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Garrison Mathews","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Gary Harris","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Giannis Antetokounmpo","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Goran Dragic","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Hassan Whiteside","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Jamal Crawford","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Jaren Jackson Jr.","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Jeremy Lamb","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Jimmy Butler","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Joel Embiid","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Jonathan Isaac","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Justise Winslow","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Juwan Morgan","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Karl-Anthony Towns","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Kelly Oubre Jr.","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Kendrick Nunn","Out",NA,"Aug 14",2020-08-14,2020-08-10
+"Kent Bazemore","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Kentavious Caldwell-Pope","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Kevon Looney","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Kobi Simmons","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Kris Dunn","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Kristaps Porzingis","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"KZ Okpala","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"LeBron James","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Luka Doncic","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Luke Kornet","Out",NA,"Aug 31",2020-08-31,2020-08-10
+"Marvin Bagley III","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Max Strus","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Michael Carter-Williams","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Montrezl Harrell","Out",NA,"Aug 17",2020-08-17,2020-08-10
+"Nerlens Noel","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Nigel Williams-Goss","Out",NA,"Aug 13",2020-08-13,2020-08-10
+"Oshae Brissett","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Patrick Beverley","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Patrick McCaw","Out",NA,"Aug 24",2020-08-24,2020-08-10
+"Paul George","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Rajon Rondo","Out",NA,"Sep 1",2020-09-01,2020-08-10
+"Ray Spalding","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Richaun Holmes","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Russell Westbrook","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Seth Curry","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Shabazz Napier","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Shai Gilgeous-Alexander","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"Steven Adams","Out",NA,"Aug 12",2020-08-12,2020-08-10
+"T.J. Warren","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Trey Lyles","Out",NA,"Out for the season",2021-08-10,2020-08-10
+"Troy Daniels","Out",NA,"Game Time Decision",2020-08-11,2020-08-10
+"Tyler Zeller","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Tyus Jones","Out",NA,"Aug 11",2020-08-11,2020-08-10
+"Vlatko Cancar","Out",NA,"Aug 14",2020-08-14,2020-08-10
+"Will Barton","Out",NA,"Aug 12",2020-08-12,2020-08-10

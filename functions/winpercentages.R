@@ -1,7 +1,7 @@
 winpercentages <- function(data, s, use_weights){
 
   df <- subset(data, season==s) %>% distinct(game_id, .keep_all=TRUE) %>%
-    select(selected_team, opposing_team, selected_team_win, season_day_std, wins_538_selected_team, wins_538_opposing_team, carm_elo_full_opposing_team, carm_elo_full_selected_team)
+    dplyr::select(selected_team, opposing_team, selected_team_win, season_day_std, wins_538_selected_team, wins_538_opposing_team, carm_elo_full_opposing_team, carm_elo_full_selected_team)
 
   MM <- month(max(subset(data, season==s)$DATE))
   SS <- filter(data, DATE==max(DATE))[1,"season_day_std"]
@@ -40,7 +40,7 @@ winpercentages <- function(data, s, use_weights){
                win_rate_season=win_rate,
                win_rate_season_adj=win_rate_season*as.numeric(SS),
                first_game=0) %>%
-      select(selected_team, opposing_team, win_rate_season, first_game, win_rate_season_adj) %>%
+      dplyr::select(selected_team, opposing_team, win_rate_season, first_game, win_rate_season_adj) %>%
       replace(is.na(.), 0)
     return(winratesdf)
   } else{

@@ -27,7 +27,7 @@ assign_clusters_and_win_rates <- function(root, datemap, box_scores, weighted_wi
       #print(unique(clusters$Cluster))
   
       ### Join
-      t <- inner_join(thisdate, select(clusters, PLAYER_FULL_NAME, Cluster), by="PLAYER_FULL_NAME")
+      t <- inner_join(thisdate, dplyr::select(clusters, PLAYER_FULL_NAME, Cluster), by="PLAYER_FULL_NAME")
       f <- attach_win_perc(t, win_perc1, win_perc2)
   
       rm(win_perc1)

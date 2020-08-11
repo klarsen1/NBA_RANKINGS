@@ -14,7 +14,7 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
   thisday$season <- thisseason
   thisday$opposing_team <- opposing_team
   thisday$selected_team <- selected_team
-  thisday$home_team_selected <- order_preserved
+  #thisday$home_team_selected <- order_preserved
   thisday$order_preserved <- order_preserved
   if (order_preserved==1){
      thisday$home_team_name <- selected_team
@@ -35,12 +35,14 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
   thisday$game_id <- paste0(date, vapply(stri_split_boundaries(cat, type = "character"), striHelper, ""))
   if (game %in% c(3,4,6)) {
     if (order_preserved==1){
-       thisday$home_team_selected <- 0
+       #thisday$home_team_selected <- 0
+       thisday$home_team_selected <- 0.5
        thisday$road_team_name <- selected_team
        thisday$home_team_name <- opposing_team
     }
     else{
-      thisday$home_team_selected <- 1
+      #thisday$home_team_selected <- 1
+      thisday$home_team_selected <- 0.5
       thisday$home_team_name <- selected_team
       thisday$road_team_name <- opposing_team
     }

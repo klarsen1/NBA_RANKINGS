@@ -1,8 +1,8 @@
 library(dplyr)
 
 ### Settings
-max_cutoff_season <- 2020 ## for example, 2015 cuts off the 2015-2016 season and later seasons
-min_cutoff_season <- 2018 ## for example, 2016 cuts off anything before the 2017-2018 season
+max_cutoff_season <- 2019 ## for example, 2015 cuts off the 2015-2016 season and later seasons
+min_cutoff_season <- 2017 ## for example, 2016 cuts off anything before the 2017-2018 season
 cutoff <- 8 # minutes per game. if a player plays less than this amount, he is excluded
 nclus <- 25 # number of archetypes
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"

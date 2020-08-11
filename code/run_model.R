@@ -34,8 +34,8 @@ estimation_window <- 1000 # number of days used to estimate the model
 winstreak_window <- 91 # number of days used to calculate the weighted win %, for the short term effect
 winstreak_window_s <- 31 # number of days used to calculate the weighted win %
 playing_time_window <- 91 # number of days used to estimate average playing time
-#cluster_window <- 91 # number of days used for cluster assignment
-cluster_window <- 30 # number of days used for cluster assignment
+cluster_window <- 91 # number of days used for cluster assignment
+#cluster_window <- 30 # number of days used for cluster assignment
 alpha <- 0 # for elastic net
 sims <- 0 # number of random normal draws used when playing games
 save_results <- 1 # set to 1 if you want to save the results
@@ -126,6 +126,11 @@ for (i in start_index:end_index){
 
   ### Data inside the window  
   inwindow <- filter(box_scores_plus, DATE_INDEX<j & DATE_INDEX>j-estimation_window) 
+  
+  ## fix the home team indicator for thee bubble
+  inwindow <- mutate(home_team_selected=if_else(date>=as.Date("2020-07-30"), 0.5, home_team_selected), 
+                     opposing_team_travel=if_else(date>=as.Date("2020-07-30"), 0, opposing_team_travel), 
+                     selected_team_travel=if_else(date>=as.Date("2020-07-30"), 0, selected_team_travel))
   
   ### Estimate the model unless we have run out of historical data
   if (counter==1 | i <= max_real_date){

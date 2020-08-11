@@ -34,7 +34,8 @@ estimation_window <- 1000 # number of days used to estimate the model
 winstreak_window <- 91 # number of days used to calculate the weighted win %, for the short term effect
 winstreak_window_s <- 31 # number of days used to calculate the weighted win %
 playing_time_window <- 91 # number of days used to estimate average playing time
-cluster_window <- 91 # number of days used for cluster assignment
+#cluster_window <- 91 # number of days used for cluster assignment
+cluster_window <- 30 # number of days used for cluster assignment
 alpha <- 0 # for elastic net
 sims <- 0 # number of random normal draws used when playing games
 save_results <- 1 # set to 1 if you want to save the results

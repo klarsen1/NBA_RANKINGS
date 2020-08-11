@@ -60,7 +60,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
   qualifiers <- group_by(ranks, conference) %>% arrange(-season_win_rate) %>%
     mutate(rank=row_number(), exclude=0, status="W", round=4, ngames=7) %>%
     filter(rank<9) %>%
-    select(conference, team, season_win_rate, rank, exclude, status, round, ngames) %>%
+    dplyr::select(conference, team, season_win_rate, rank, exclude, status, round, ngames) %>%
     ungroup()
   
   rounds <- max(tree$round)
@@ -80,8 +80,8 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
          home_team <- subset(qualifiers, rank==s$rank_home & exclude==0 & conference==s$conference)$team
          road_team <- subset(qualifiers, rank==s$rank_road & exclude==0 & conference==s$conference)$team
       } else{
-        h <- filter(qualifiers, exclude==0) %>% filter(row_number()==1) %>% select(team)
-        r <- filter(qualifiers, exclude==0) %>% filter(row_number()==2) %>% select(team)
+        h <- filter(qualifiers, exclude==0) %>% filter(row_number()==1) %>% dplyr::select(team)
+        r <- filter(qualifiers, exclude==0) %>% filter(row_number()==2) %>% dplyr::select(team)
         home_team <- h$team
         road_team <- r$team
       }
@@ -91,7 +91,7 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
       last_matchup <- filter(inwindow, selected_team %in% c(home_team, road_team) & opposing_team %in% c(home_team, road_team) & season==thisseason) %>%
          ungroup() %>%
          filter(DATE==max(DATE)) %>%
-         select(selected_team, opposing_team, selected_team_matchup_wins, opposing_team_matchup_wins, selected_team_win) %>%
+         dplyr::select(selected_team, opposing_team, selected_team_matchup_wins, opposing_team_matchup_wins, selected_team_win) %>%
          distinct(selected_team, .keep_all=TRUE)
 
       if (nrow(last_matchup)>0){

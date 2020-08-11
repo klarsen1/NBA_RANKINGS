@@ -1,8 +1,8 @@
 library(dplyr)
 
 ### Settings
-max_cutoff_season <- 2019 ## for example, 2015 cuts off the 2015-2016 season and later seasons
-min_cutoff_season <- 2017 ## for example, 2016 cuts off anything before the 2017-2018 season
+max_cutoff_season <- 2020 ## for example, 2015 cuts off the 2015-2016 season and later seasons
+min_cutoff_season <- 2018 ## for example, 2016 cuts off anything before the 2017-2018 season
 cutoff <- 8 # minutes per game. if a player plays less than this amount, he is excluded
 nclus <- 25 # number of archetypes
 root <- "/Users/kim.larsen/Documents/Code/NBA_RANKINGS"
@@ -34,7 +34,7 @@ means <- box_scores %>%
          freethrow_percent=ifelse(freethrow_attempts>0, freethrows_made/freethrow_attempts, 0), 
          efficiency=(blocks + points + offensive_rebounds + defensive_rebounds + assists + steals - (fieldgoal_attempts - fieldgoals_made) - (freethrow_attempts - freethrows_made) - turnovers)) %>%
   replace(is.na(.), 0) %>%
-  select(-threepoint_attempts, -freethrow_attempts, -fieldgoal_attempts, -points)
+  dplyr::select(-threepoint_attempts, -freethrow_attempts, -fieldgoal_attempts, -points)
 
 means_no_scrubs <- subset(means, minutes>cutoff)
 length(unique(means_no_scrubs$PLAYER_FULL_NAME))

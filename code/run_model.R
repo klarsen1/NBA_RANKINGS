@@ -33,8 +33,8 @@ box_scores <- readRDS(paste0(root, "/cleandata/box_scores.RDA")) %>%
 cutoff <- 8 # minutes per game. if a player plays less than this amount, he is excluded
 estimation_window <- 1000 # number of days used to estimate the model
 #winstreak_window <- 91 # number of days used to calculate the weighted win %, for the short term effect
-winstreak_window <- 31 # number of days used to calculate the weighted win %, for the short term effect
-winstreak_window_s <- 31 # number of days used to calculate the weighted win %
+winstreak_window <- 61 # number of days used to calculate the weighted win %, for the short term effect
+winstreak_window_s <- 61 # number of days used to calculate the weighted win %
 #playing_time_window <- 91 # number of days used to estimate average playing time
 playing_time_window <- 31 # number of days used to estimate average playing time
 cluster_window <- 91 # number of days used for cluster assignment
@@ -289,10 +289,10 @@ ncore <- detectCores()-1
 registerDoParallel(ncore)
 sims <- 1
 loopResult <- foreach(i=1:sims, .combine='combine', .multicombine=TRUE,
-                      .init=list(list(), list(), list())) %dopar% {
+                      .init=list(list(), list())) %dopar% {
                         playoffs <- sim_playoff(rankings, inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, runs, root, c, max_real_date_index, thisseason, end_date, seed=1000*i + runif(1)*1000, scoresdf)
                         playoffs[[2]]$sim <- i
-                        return(list(playoffs[[2]], playoffs[[3]], data.frame(playoffs[[1]])))
+                        return(list(playoffs[[2]], data.frame(playoffs[[1]])))
                       }
 
 full_results <- data.frame(rbindlist(loopResult[[1]]))

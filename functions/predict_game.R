@@ -128,10 +128,10 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   f <- as.formula(~.)
   X <- model.matrix(f, x)
   #prob_win <- 1/(1+exp(-X%*%b[-1] + offset))
-  print(b[-1])
-  print(X)
-  print(length(b[-1]))
-  print(dim(X))
+  #print(b[-1])
+  #print(X)
+  #print(length(b[-1]))
+  #print(dim(X))
   XtB <- X%*%b[-1]
   samplesdf$xb <- as.numeric(XtB)
   d <- data.frame(cbind(X*c[-1], distinct(dplyr::select(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team), game_id, .keep_all=TRUE)), stringsAsFactors = FALSE) %>%

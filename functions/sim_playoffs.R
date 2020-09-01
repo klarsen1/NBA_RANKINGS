@@ -1,10 +1,11 @@
 striHelper <- function(x) stri_c(x[stri_order(x)], collapse = "")
 
 create_fake_entry <- function(game, date, selected_team, opposing_team, thisseason, matchup1, matchup2, order_preserved){
-  thisday <- data.frame(matrix(nrow=1, ncol=18))
+  thisday <- data.frame(matrix(nrow=1, ncol=19))
   names(thisday) <- c("DATE", "opposing_team_travel", "selected_team_travel", "opposing_team_rest", "selected_team_rest", "home_team_name", "road_team_name", "opposing_team", "selected_team", "selected_team_win", "season", "selected_team_matchup_wins", "opposing_team_matchup_wins", "days_on_road_selected_team", 
-                      "days_on_road_opposing_team", "fb", "game_id", "future_game")
+                      "days_on_road_opposing_team", "fb", "game_id", "future_game", "playoffs")
   thisday$DATE <- date
+  thisday$playoffs <- 1
   thisday$opposing_team_travel <- 0
   thisday$selected_team_travel <- 0
   thisday$opposing_team_rest <- 0
@@ -121,33 +122,37 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
           playoffs==1 & season==thisseason & selected_team %in% c(selected, opposing) & opposing_team %in% c(selected, opposing)) %>%
           distinct(game_id, .keep_all = TRUE) %>%
           ungroup() %>%
-          filter(row_number()==matchup)
+          mutate(r=row_number()) %>%
+          filter(r==games+1)
         
-        print(check_games)
+        thisday <- create_fake_entry(games+1, DATE, selected, opposing, thisseason, matchup1, matchup2, order_preserved)
         
-          if (nrow(check_games)>0) { #check if the game has already been played
-            winner <- 
+        if (nrow(check_games)>0) { #check if the game has already been played
+          print(check_games)
+          winner <- 
               mutate(check_games, 
                      winner=if_else(selected_team_win==1, selected_team, opposing_team)) %>%
               pull(winner)
-            
-            decomps[[counter]] <- 0
-            
-            if(winner==selected){d <- 1} else{d <- 0}
+            #decomps[[counter]] <- 0
+            print(winner)
+            print(selected)
+            p <- 0
+            if(winner==selected){
+              p <- 1
+            } 
          } else{
-            thisday <- create_fake_entry(games+1, DATE, selected, opposing, thisseason, matchup1, matchup2, order_preserved)
             pred <- predict_game(c, filter(inwindow, DATE_INDEX>end_index-playing_time_window), win_perc1, win_perc2, thisday[1,"game_id"], runs, thisday, nclus, prior, posterior, paste0(root, "/rawdata/"), model_variables, 1, NULL, seed=seed)
-            decomps[[counter]] <- pred[[2]]
-            d <- pred[[1]]$prob_selected_team_win_d
+            #decomps[[counter]] <- pred[[2]]
+            p <- pred[[1]]$prob_selected_team_win_d
          }
-         decomps[[counter]]$round <- i
-         decomps[[counter]]$matchup <- j
+         #decomps[[counter]]$round <- i
+         #decomps[[counter]]$matchup <- j
          if (order_preserved==1){
-              w1 <- w1 + d
-              w2 <- w2 + 1-d
+              w1 <- w1 + p
+              w2 <- w2 + 1-p
          } else{
-              w1 <- w1 + 1-d
-              w2 <- w2 + d
+              w1 <- w1 + 1-p
+              w2 <- w2 + p
          }
          if (w1>3.5){
            winner_declared <- TRUE
@@ -178,13 +183,13 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
          result$game <- games
          result$road_team <- road_team
          result$home_team <- home_team
-         result$prob_home_team_win <- pred[[1]]$prob_selected_team_win_d
-         result$prob_road_team_win <- 1-pred[[1]]$prob_selected_team_win_d
-         thisday <- mutate(thisday, prob_home_team_win=ifelse(selected_team==home_team_name, pred[[1]]$prob_selected_team_win_d, 1-pred[[1]]$prob_selected_team_win_d), 
+         result$prob_home_team_win <- p
+         result$prob_road_team_win <- 1-p
+         thisday <- mutate(thisday, prob_home_team_win=ifelse(selected_team==home_team_name, p, 1-p), 
                                     prob_road_team_win=1-prob_home_team_win, 
                                     round=i, 
                                     matchup=j,
-                                    prob_selected_team_win=pred[[1]]$prob_selected_team_win_d,
+                                    prob_selected_team_win=p,
                                     game=games, 
                                     loser=loser, 
                                     winner=winner)
@@ -207,5 +212,6 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
     dplyr::select(round, matchup, winner, loser, game, prob_home_team_win, prob_selected_team_win, selected_team, order_preserved, home_team_selected)
    
   #print(qualifiers) 
-  return(list(data.frame(qualifiers), data.frame(final_results), data.frame(rbindlist(decomps))))
+  return(list(data.frame(qualifiers), data.frame(final_results)))
+  #return(list(data.frame(qualifiers), data.frame(final_results), data.frame(rbindlist(decomps))))
 }

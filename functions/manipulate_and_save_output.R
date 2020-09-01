@@ -14,6 +14,7 @@ manipulate_and_save_output <- function(clusters_and_players, scores, model_parts
        dplyr::select(team, pred_win_rate_538)
      
      game_level <- data.frame(scores, stringsAsFactors = FALSE) %>% 
+       filter(playoffs==0) %>%
        dplyr::select(-prob_selected_team_win_b) %>%
        mutate(prob_selected_team_win=ifelse(current_season_data_used==0, NA, prob_selected_team_win_d))
      
@@ -45,6 +46,7 @@ manipulate_and_save_output <- function(clusters_and_players, scores, model_parts
     return(list(details, ranks, models, parts))
   } else{
     game_level <- data.frame(scores, stringsAsFactors = FALSE) %>% 
+      filter(playoffs==0) %>%
       dplyr::select(-prob_selected_team_win_b) %>%
       mutate(prob_selected_team_win=ifelse(current_season_data_used==0, NA, prob_selected_team_win_d))
     ranks <- report(game_level, predvar)

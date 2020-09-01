@@ -128,15 +128,19 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   f <- as.formula(~.)
   X <- model.matrix(f, x)
   #prob_win <- 1/(1+exp(-X%*%b[-1] + offset))
+  print(b[-1])
+  print(X)
+  print(length(b[-1]))
+  print(dim(X))
   XtB <- X%*%b[-1]
   samplesdf$xb <- as.numeric(XtB)
   d <- data.frame(cbind(X*c[-1], distinct(dplyr::select(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team), game_id, .keep_all=TRUE)), stringsAsFactors = FALSE) %>%
     dplyr::select(-X.Intercept.) 
 
   d$roster <- rowSums(dplyr::select(d, starts_with("share_minutes_cluster")))
-  d$circumstances <- rowSums(dplyr::select(d, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, home_team_selected))
+  #d$circumstances <- rowSums(dplyr::select(d, opposing_team_travel, opposing_team_rest, selected_team_rest, selected_team_travel, home_team_selected))
   #d$performance <- rowSums(dplyr::select(d, selected_team_matchup_wins, opposing_team_matchup_wins, winrate_season_selected_team, winrate_season_selected_team_adj, winrate_season_opposing_team, winrate_season_opposing_team_adj))
-
+  d$performance <- rowSums(dplyr::select(d, winrate_season_selected_team, winrate_season_opposing_team))
   if (is.null(offsets_by_team)==FALSE){
     if (nrow(offsets_by_team)>0){
       samplesdf <- left_join(samplesdf, offsets_by_team, by="selected_team") %>%
@@ -154,7 +158,7 @@ predict_game <- function(b, history, win_perc1, win_perc2, id, runs, tobescored,
   #samplesdf$prob_win <- prob_win
   samplesdf$d_prob_selected_team_win <- ifelse(samplesdf$prob_win>.5, 1.0, 0.0)
   
-  prediction <- group_by(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team) %>%
+  prediction <- group_by(samplesdf, game_id, DATE, home_team_name, road_team_name, selected_team, opposing_team, playoffs, season) %>%
     summarise(prob_selected_team_win_d=mean(as.numeric(prob_win)),
               prob_selected_team_win_b=mean(as.numeric(d_prob_selected_team_win))) %>%
     mutate(current_season_data_used=d_current_season_data_available,

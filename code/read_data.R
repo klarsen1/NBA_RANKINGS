@@ -66,23 +66,24 @@ final_538_probs <- data.frame(rbindlist(l), stringsAsFactors = FALSE) %>%
 
 ft8 <- read_html("http://projects.fivethirtyeight.com/2020-nba-predictions/")
 team <- ft8 %>% html_nodes("tbody tr td.team a") %>% html_text() %>% gsub("[0-9, -]", "", .) %>% trim()
-wins <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('-[0-9]+','', .) %>% trim()
-losses <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('[0-9]+-','', .) %>% trim()
-carm_elo_full <- ft8 %>% html_nodes(".border-right+ .big-desktop") %>% html_text()
+#wins <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('-[0-9]+','', .) %>% trim()
+#losses <- ft8 %>% html_nodes("tbody tr td.proj-rec") %>% html_text() %>% gsub('[0-9]+-','', .) %>% trim()
+carm_elo_full <- ft8 %>% html_nodes(".drop-430+ td.drop-430") %>% html_text()
 carm_elo <- ft8 %>% html_nodes("td.carmelo-current") %>% html_text() %>% trim()
-chance_making_finals <- ft8 %>% html_nodes("td.top-seed") %>% html_text() %>% trim() 
-chance_winning_finals <- ft8 %>% html_nodes("td.top-seed+ .pct") %>% html_text() %>% trim() 
+#chance_making_finals <- ft8 %>% html_nodes("td.top-seed") %>% html_text() %>% trim() 
+#chance_winning_finals <- ft8 %>% html_nodes("td.top-seed+ .pct") %>% html_text() %>% trim() 
 fivethirtyeight <- data.frame(team, 
                               carm_elo_full=as.numeric(carm_elo_full), 
                               carm_elo=as.numeric(carm_elo), 
-                              wins_538=as.numeric(wins), 
-                              losses_538=as.numeric(losses), 
-                              chance_making_finals, chance_winning_finals,
+                              wins_538=rep(0, length(carm_elo)), 
+                              losses_538=rep(0, length(carm_elo)), 
+                              chance_making_finals=rep(0, length(carm_elo)), 
+                              chance_winning_finals=rep(0, length(carm_elo)),
                               stringsAsFactors = FALSE) %>%
   mutate(selected_team=as.character(team), opposing_team=as.character(team), 
-         carm_elo_full, carm_elo, 
-         pred_win_rate_538=wins_538/(wins_538+losses_538),  
-         chance_making_finals, chance_winning_finals) %>%
+         carm_elo_full, carm_elo) %>% 
+         #pred_win_rate_538=wins_538/(wins_538+losses_538,
+         #chance_making_finals, chance_winning_finals) %>%
   mutate(Five38_name=selected_team) %>%
   inner_join(name_map, by="Five38_name") %>%
   mutate(selected_team=Elastic_name, opposing_team=Elastic_name) %>%
@@ -168,8 +169,8 @@ rosters <- lapply(team_pages, function (team_link) {
   #PLAYER_FULL_NAME <- team_roster %>% html_nodes(".Table2__td:nth-child(2)") %>% html_text()
   PLAYER_FULL_NAME <- team_roster %>% html_nodes(".Table__TD+ .Table__TD .AnchorLink") %>% html_text()
   Age <- as.numeric(team_roster %>% html_nodes(".Table__TD:nth-child(4)") %>% html_text())
-  Weight <- as.numeric(team_roster %>% html_nodes(".Table__TD:nth-child(6) span") %>% html_text() %>% gsub("lbs", "", .) %>% trim())
-  Height <- team_roster %>% html_nodes(".Table__TD:nth-child(5) span") %>% html_text() %>% gsub("lbs", "", .) %>% trim()
+  Weight <- as.numeric(team_roster %>% html_nodes(".Table__TD:nth-child(6)") %>% html_text() %>% gsub("lbs", "", .) %>% trim())
+  Height <- team_roster %>% html_nodes(".Table__TD:nth-child(5)") %>% html_text() %>% gsub("lbs", "", .) %>% trim()
   Salary <- team_roster %>% html_nodes(".Table__TD:nth-child(8)") %>% html_text()
   Salary <- as.numeric(gsub(',','',gsub('\\$', '', Salary)) %>% trim())
   Position <- team_roster %>% html_nodes(".Table__TD:nth-child(3)") %>% html_text()

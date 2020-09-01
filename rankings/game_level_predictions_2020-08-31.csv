@@ -1,0 +1,993 @@
+"DATE","home_team_name","road_team_name","selected_team","road_team_prob_win","home_team_prob_win","prob_selected_team_win","selected_team_win","actual_winner","current_season_data_used","future_game"
+2019-10-22,"LA Clippers","LA Lakers","LA Lakers",0,1,0,0,"LA Clippers",1,0
+2019-10-22,"Toronto","New Orleans","New Orleans",0,1,0,0,"Toronto",1,0
+2019-10-23,"San Antonio","New York","San Antonio",0,1,1,1,"San Antonio",1,0
+2019-10-23,"Utah","Oklahoma City","Oklahoma City",0,1,0,0,"Utah",1,0
+2019-10-23,"Dallas","Washington","Washington",0,1,0,0,"Dallas",1,0
+2019-10-23,"Philadelphia","Boston","Boston",0,1,0,0,"Philadelphia",1,0
+2019-10-23,"Orlando","Cleveland","Cleveland",0,1,0,0,"Orlando",1,0
+2019-10-23,"Phoenix","Sacramento","Phoenix",0,1,1,1,"Phoenix",1,0
+2019-10-23,"Indiana","Detroit","Indiana",1,0,0,0,"Detroit",1,0
+2019-10-23,"Brooklyn","Minnesota","Brooklyn",1,0,0,0,"Minnesota",1,0
+2019-10-23,"Portland","Denver","Portland",1,0,0,0,"Denver",1,0
+2019-10-23,"Miami","Memphis","Memphis",0,1,0,0,"Miami",1,0
+2019-10-24,"Golden State","LA Clippers","LA Clippers",1,0,1,1,"LA Clippers",1,0
+2019-10-24,"Houston","Milwaukee","Milwaukee",1,0,1,1,"Milwaukee",1,0
+2019-10-25,"Oklahoma City","Washington","Oklahoma City",1,0,0,0,"Washington",1,0
+2019-10-25,"New Orleans","Dallas","Dallas",1,0,1,1,"Dallas",1,0
+2019-10-25,"LA Lakers","Utah","Utah",0,1,0,0,"LA Lakers",1,0
+2019-10-25,"Brooklyn","New York","New York",0,1,0,0,"Brooklyn",1,0
+2019-10-25,"Sacramento","Portland","Sacramento",1,0,0,0,"Portland",1,0
+2019-10-25,"Memphis","Chicago","Chicago",1,0,1,1,"Chicago",1,0
+2019-10-25,"Boston","Toronto","Boston",0,1,1,1,"Boston",1,0
+2019-10-25,"Denver","Phoenix","Phoenix",0,1,0,0,"Denver",1,0
+2019-10-26,"San Antonio","Washington","San Antonio",0,1,1,1,"San Antonio",1,0
+2019-10-26,"Phoenix","LA Clippers","LA Clippers",0,1,0,0,"Phoenix",1,0
+2019-10-26,"Houston","New Orleans","New Orleans",0,1,0,0,"Houston",1,0
+2019-10-26,"New York","Boston","New York",1,0,0,0,"Boston",1,0
+2019-10-26,"Atlanta","Orlando","Atlanta",0,1,1,1,"Atlanta",1,0
+2019-10-26,"Cleveland","Indiana","Indiana",0,1,0,0,"Cleveland",1,0
+2019-10-26,"Utah","Sacramento","Sacramento",0,1,0,0,"Utah",1,0
+2019-10-26,"Detroit","Philadelphia","Detroit",1,0,0,0,"Philadelphia",1,0
+2019-10-26,"Milwaukee","Miami","Milwaukee",1,0,0,0,"Miami",1,0
+2019-10-26,"Chicago","Toronto","Toronto",1,0,1,1,"Toronto",1,0
+2019-10-27,"Oklahoma City","Golden State","Golden State",0,1,0,0,"Oklahoma City",1,0
+2019-10-27,"LA Lakers","Charlotte","Charlotte",0,1,0,0,"LA Lakers",1,0
+2019-10-27,"Dallas","Portland","Portland",1,0,1,1,"Portland",1,0
+2019-10-27,"Minnesota","Miami","Miami",0,1,0,0,"Minnesota",1,0
+2019-10-27,"Memphis","Brooklyn","Memphis",0,1,1,1,"Memphis",1,0
+2019-10-28,"New Orleans","Golden State","Golden State",1,0,1,1,"Golden State",1,0
+2019-10-28,"San Antonio","Portland","Portland",0,1,0,0,"San Antonio",1,0
+2019-10-28,"LA Clippers","Charlotte","LA Clippers",0,1,1,1,"LA Clippers",1,0
+2019-10-28,"Houston","Oklahoma City","Houston",0,1,1,1,"Houston",1,0
+2019-10-28,"Atlanta","Philadelphia","Atlanta",1,0,0,0,"Philadelphia",1,0
+2019-10-28,"Milwaukee","Cleveland","Cleveland",0,1,0,0,"Milwaukee",1,0
+2019-10-28,"Sacramento","Denver","Sacramento",1,0,0,0,"Denver",1,0
+2019-10-28,"Detroit","Indiana","Indiana",0,1,0,0,"Detroit",1,0
+2019-10-28,"Toronto","Orlando","Toronto",0,1,1,1,"Toronto",1,0
+2019-10-28,"Phoenix","Utah","Phoenix",1,0,0,0,"Utah",1,0
+2019-10-29,"LA Lakers","Memphis","Memphis",0,1,0,0,"LA Lakers",1,0
+2019-10-29,"Miami","Atlanta","Miami",0,1,1,1,"Miami",1,0
+2019-10-29,"Denver","Dallas","Dallas",1,0,1,1,"Dallas",1,0
+2019-10-30,"Oklahoma City","Portland","Oklahoma City",1,0,0,0,"Portland",1,0
+2019-10-30,"Utah","LA Clippers","LA Clippers",0,1,0,0,"Utah",1,0
+2019-10-30,"Golden State","Phoenix","Phoenix",1,0,1,1,"Phoenix",1,0
+2019-10-30,"Orlando","New York","New York",0,1,0,0,"Orlando",1,0
+2019-10-30,"Sacramento","Charlotte","Charlotte",1,0,1,1,"Charlotte",1,0
+2019-10-30,"Philadelphia","Minnesota","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2019-10-30,"Brooklyn","Indiana","Indiana",1,0,1,1,"Indiana",1,0
+2019-10-30,"Boston","Milwaukee","Milwaukee",0,1,0,0,"Boston",1,0
+2019-10-30,"Washington","Houston","Houston",1,0,1,1,"Houston",1,0
+2019-10-30,"Toronto","Detroit","Toronto",0,1,1,1,"Toronto",1,0
+2019-10-31,"LA Clippers","San Antonio","LA Clippers",0,1,1,1,"LA Clippers",1,0
+2019-10-31,"New Orleans","Denver","New Orleans",0,1,1,1,"New Orleans",1,0
+2019-10-31,"Atlanta","Miami","Miami",1,0,1,1,"Miami",1,0
+2019-11-01,"Golden State","San Antonio","Golden State",1,0,0,0,"San Antonio",1,0
+2019-11-01,"Dallas","LA Lakers","LA Lakers",1,0,1,1,"LA Lakers",1,0
+2019-11-01,"Boston","New York","Boston",0,1,1,1,"Boston",1,0
+2019-11-01,"Indiana","Cleveland","Indiana",0,1,1,1,"Indiana",1,0
+2019-11-01,"Sacramento","Utah","Sacramento",0,1,1,1,"Sacramento",1,0
+2019-11-01,"Orlando","Milwaukee","Orlando",1,0,0,0,"Milwaukee",1,0
+2019-11-01,"Brooklyn","Houston","Houston",0,1,0,0,"Brooklyn",1,0
+2019-11-02,"Oklahoma City","New Orleans","New Orleans",0,1,0,0,"Oklahoma City",1,0
+2019-11-02,"Portland","Philadelphia","Philadelphia",1,0,1,1,"Philadelphia",1,0
+2019-11-02,"Washington","Minnesota","Minnesota",1,0,1,1,"Minnesota",1,0
+2019-11-02,"Orlando","Denver","Orlando",1,0,0,0,"Denver",1,0
+2019-11-02,"Milwaukee","Toronto","Toronto",0,1,0,0,"Milwaukee",1,0
+2019-11-02,"Detroit","Brooklyn","Brooklyn",0,1,0,0,"Detroit",1,0
+2019-11-02,"Memphis","Phoenix","Phoenix",1,0,1,1,"Phoenix",1,0
+2019-11-03,"San Antonio","LA Lakers","LA Lakers",1,0,1,1,"LA Lakers",1,0
+2019-11-03,"New York","Sacramento","Sacramento",1,0,1,1,"Sacramento",1,0
+2019-11-03,"LA Clippers","Utah","Utah",0,1,0,0,"LA Clippers",1,0
+2019-11-03,"Indiana","Chicago","Chicago",0,1,0,0,"Indiana",1,0
+2019-11-03,"Cleveland","Dallas","Cleveland",1,0,0,0,"Dallas",1,0
+2019-11-03,"Miami","Houston","Miami",0,1,1,1,"Miami",1,0
+2019-11-04,"Golden State","Portland","Golden State",0,1,1,1,"Golden State",1,0
+2019-11-04,"Brooklyn","New Orleans","New Orleans",0,1,0,0,"Brooklyn",1,0
+2019-11-04,"Phoenix","Philadelphia","Phoenix",0,1,1,1,"Phoenix",1,0
+2019-11-04,"Minnesota","Milwaukee","Minnesota",1,0,0,0,"Milwaukee",1,0
+2019-11-04,"Washington","Detroit","Washington",0,1,1,1,"Washington",1,0
+2019-11-04,"Memphis","Houston","Houston",1,0,1,1,"Houston",1,0
+2019-11-05,"Atlanta","San Antonio","Atlanta",0,1,1,1,"Atlanta",1,0
+2019-11-05,"Chicago","LA Lakers","LA Lakers",1,0,1,1,"LA Lakers",1,0
+2019-11-05,"Oklahoma City","Orlando","Orlando",0,1,0,0,"Oklahoma City",1,0
+2019-11-05,"Charlotte","Indiana","Charlotte",0,1,1,1,"Charlotte",1,0
+2019-11-05,"Cleveland","Boston","Cleveland",1,0,0,0,"Boston",1,0
+2019-11-05,"Denver","Miami","Miami",0,1,0,0,"Denver",1,0
+2019-11-06,"LA Clippers","Milwaukee","LA Clippers",1,0,0,0,"Milwaukee",1,0
+2019-11-06,"Houston","Golden State","Houston",0,1,1,1,"Houston",1,0
+2019-11-06,"Dallas","Orlando","Dallas",0,1,1,1,"Dallas",1,0
+2019-11-06,"Utah","Philadelphia","Utah",0,1,1,1,"Utah",1,0
+2019-11-06,"Indiana","Washington","Washington",0,1,0,0,"Indiana",1,0
+2019-11-06,"Toronto","Sacramento","Toronto",0,1,1,1,"Toronto",1,0
+2019-11-06,"Memphis","Minnesota","Minnesota",0,1,0,0,"Memphis",1,0
+2019-11-07,"San Antonio","Oklahoma City","San Antonio",0,1,1,1,"San Antonio",1,0
+2019-11-07,"LA Clippers","Portland","Portland",0,1,0,0,"LA Clippers",1,0
+2019-11-07,"Charlotte","Boston","Charlotte",1,0,0,0,"Boston",1,0
+2019-11-07,"Phoenix","Miami","Miami",1,0,1,1,"Miami",1,0
+2019-11-08,"LA Lakers","Miami","Miami",0,1,0,0,"LA Lakers",1,0
+2019-11-08,"Dallas","New York","Dallas",1,0,0,0,"New York",1,0
+2019-11-08,"New Orleans","Toronto","Toronto",1,0,1,1,"Toronto",1,0
+2019-11-08,"Atlanta","Sacramento","Sacramento",1,0,1,1,"Sacramento",1,0
+2019-11-08,"Washington","Cleveland","Washington",1,0,0,0,"Cleveland",1,0
+2019-11-08,"Denver","Philadelphia","Denver",0,1,1,1,"Denver",1,0
+2019-11-08,"Indiana","Detroit","Detroit",0,1,0,0,"Indiana",1,0
+2019-11-08,"Utah","Milwaukee","Milwaukee",0,1,0,0,"Utah",1,0
+2019-11-08,"Portland","Brooklyn","Brooklyn",1,0,1,1,"Brooklyn",1,0
+2019-11-08,"Orlando","Memphis","Memphis",0,1,0,0,"Orlando",1,0
+2019-11-09,"Oklahoma City","Golden State","Golden State",0,1,0,0,"Oklahoma City",1,0
+2019-11-09,"San Antonio","Boston","Boston",1,0,1,1,"Boston",1,0
+2019-11-09,"Charlotte","New Orleans","Charlotte",1,0,0,0,"New Orleans",1,0
+2019-11-09,"Memphis","Dallas","Dallas",1,0,1,1,"Dallas",1,0
+2019-11-09,"Chicago","Houston","Chicago",1,0,0,0,"Houston",1,0
+2019-11-10,"Oklahoma City","Milwaukee","Milwaukee",1,0,1,1,"Milwaukee",1,0
+2019-11-10,"LA Lakers","Toronto","LA Lakers",1,0,0,0,"Toronto",1,0
+2019-11-10,"Portland","Atlanta","Portland",0,1,1,1,"Portland",1,0
+2019-11-10,"Philadelphia","Charlotte","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2019-11-10,"Orlando","Indiana","Orlando",1,0,0,0,"Indiana",1,0
+2019-11-10,"Minnesota","Denver","Denver",1,0,1,1,"Denver",1,0
+2019-11-10,"Phoenix","Brooklyn","Brooklyn",0,1,0,0,"Phoenix",1,0
+2019-11-11,"Golden State","Utah","Utah",1,0,1,1,"Utah",1,0
+2019-11-11,"San Antonio","Memphis","Memphis",1,0,1,1,"Memphis",1,0
+2019-11-11,"LA Clippers","Toronto","LA Clippers",0,1,1,1,"LA Clippers",1,0
+2019-11-11,"New Orleans","Houston","New Orleans",1,0,0,0,"Houston",1,0
+2019-11-11,"Boston","Dallas","Dallas",0,1,0,0,"Boston",1,0
+2019-11-12,"Indiana","Oklahoma City","Indiana",0,1,1,1,"Indiana",1,0
+2019-11-12,"Phoenix","LA Lakers","Phoenix",1,0,0,0,"LA Lakers",1,0
+2019-11-12,"Philadelphia","Cleveland","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2019-11-12,"Sacramento","Portland","Portland",0,1,0,0,"Sacramento",1,0
+2019-11-12,"Denver","Atlanta","Atlanta",1,0,1,1,"Atlanta",1,0
+2019-11-12,"Utah","Brooklyn","Utah",0,1,1,1,"Utah",1,0
+2019-11-12,"Miami","Detroit","Detroit",0,1,0,0,"Miami",1,0
+2019-11-13,"LA Lakers","Golden State","LA Lakers",0,1,1,1,"LA Lakers",1,0
+2019-11-13,"Minnesota","San Antonio","Minnesota",0,1,1,1,"Minnesota",1,0
+2019-11-13,"Houston","LA Clippers","Houston",0,1,1,1,"Houston",1,0
+2019-11-13,"Orlando","Philadelphia","Orlando",0,1,1,1,"Orlando",1,0
+2019-11-13,"Boston","Washington","Washington",0,1,0,0,"Boston",1,0
+2019-11-13,"Charlotte","Memphis","Memphis",1,0,1,1,"Memphis",1,0
+2019-11-13,"Portland","Toronto","Portland",1,0,0,0,"Toronto",1,0
+2019-11-14,"New Orleans","LA Clippers","LA Clippers",0,1,0,0,"New Orleans",1,0
+2019-11-14,"New York","Dallas","Dallas",0,1,0,0,"New York",1,0
+2019-11-14,"Phoenix","Atlanta","Phoenix",0,1,1,1,"Phoenix",1,0
+2019-11-14,"Milwaukee","Chicago","Chicago",0,1,0,0,"Milwaukee",1,0
+2019-11-14,"Cleveland","Miami","Cleveland",1,0,0,0,"Miami",1,0
+2019-11-14,"Denver","Brooklyn","Denver",0,1,1,1,"Denver",1,0
+2019-11-15,"Oklahoma City","Philadelphia","Oklahoma City",0,1,1,1,"Oklahoma City",1,0
+2019-11-15,"LA Lakers","Sacramento","LA Lakers",0,1,1,1,"LA Lakers",1,0
+2019-11-15,"Orlando","San Antonio","Orlando",0,1,1,1,"Orlando",1,0
+2019-11-15,"Golden State","Boston","Boston",1,0,1,1,"Boston",1,0
+2019-11-15,"Houston","Indiana","Indiana",0,1,0,0,"Houston",1,0
+2019-11-15,"Minnesota","Washington","Minnesota",1,0,0,0,"Washington",1,0
+2019-11-15,"Memphis","Utah","Memphis",0,1,1,1,"Memphis",1,0
+2019-11-16,"LA Clippers","Atlanta","Atlanta",0,1,0,0,"LA Clippers",1,0
+2019-11-16,"San Antonio","Portland","Portland",1,0,1,1,"Portland",1,0
+2019-11-16,"Miami","New Orleans","New Orleans",0,1,0,0,"Miami",1,0
+2019-11-16,"Indiana","Milwaukee","Milwaukee",1,0,1,1,"Milwaukee",1,0
+2019-11-16,"Dallas","Toronto","Toronto",0,1,0,0,"Dallas",1,0
+2019-11-16,"Chicago","Brooklyn","Chicago",1,0,0,0,"Brooklyn",1,0
+2019-11-16,"Minnesota","Houston","Minnesota",1,0,0,0,"Houston",1,0
+2019-11-17,"New Orleans","Golden State","New Orleans",0,1,1,1,"New Orleans",1,0
+2019-11-17,"LA Lakers","Atlanta","LA Lakers",0,1,1,1,"LA Lakers",1,0
+2019-11-17,"Cleveland","Philadelphia","Cleveland",1,0,0,0,"Philadelphia",1,0
+2019-11-17,"Sacramento","Boston","Boston",0,1,0,0,"Sacramento",1,0
+2019-11-17,"Orlando","Washington","Orlando",0,1,1,1,"Orlando",1,0
+2019-11-17,"Memphis","Denver","Denver",1,0,1,1,"Denver",1,0
+2019-11-18,"LA Clippers","Oklahoma City","LA Clippers",0,1,1,1,"LA Clippers",1,0
+2019-11-18,"Dallas","San Antonio","Dallas",0,1,1,1,"Dallas",1,0
+2019-11-18,"Brooklyn","Indiana","Brooklyn",1,0,0,0,"Indiana",1,0
+2019-11-18,"Chicago","Milwaukee","Milwaukee",1,0,1,1,"Milwaukee",1,0
+2019-11-18,"Utah","Minnesota","Utah",1,0,0,0,"Minnesota",1,0
+2019-11-18,"Toronto","Charlotte","Toronto",0,1,1,1,"Toronto",1,0
+2019-11-18,"Houston","Portland","Houston",0,1,1,1,"Houston",1,0
+2019-11-18,"Phoenix","Boston","Boston",1,0,1,1,"Boston",1,0
+2019-11-19,"LA Lakers","Oklahoma City","Oklahoma City",0,1,0,0,"LA Lakers",1,0
+2019-11-19,"New Orleans","Portland","New Orleans",0,1,1,1,"New Orleans",1,0
+2019-11-19,"Memphis","Golden State","Memphis",1,0,0,0,"Golden State",1,0
+2019-11-19,"Sacramento","Phoenix","Sacramento",0,1,1,1,"Sacramento",1,0
+2019-11-20,"Dallas","Golden State","Golden State",0,1,0,0,"Dallas",1,0
+2019-11-20,"Washington","San Antonio","San Antonio",0,1,0,0,"Washington",1,0
+2019-11-20,"Philadelphia","New York","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2019-11-20,"LA Clippers","Boston","Boston",0,1,0,0,"LA Clippers",1,0
+2019-11-20,"Atlanta","Milwaukee","Milwaukee",1,0,1,1,"Milwaukee",1,0
+2019-11-20,"Miami","Cleveland","Miami",0,1,1,1,"Miami",1,0
+2019-11-20,"Minnesota","Utah","Utah",1,0,1,1,"Utah",1,0
+2019-11-20,"Brooklyn","Charlotte","Charlotte",0,1,0,0,"Brooklyn",1,0
+2019-11-20,"Toronto","Orlando","Orlando",0,1,0,0,"Toronto",1,0
+2019-11-20,"Denver","Houston","Houston",0,1,0,0,"Denver",1,0
+2019-11-21,"Phoenix","New Orleans","New Orleans",1,0,1,1,"New Orleans",1,0
+2019-11-21,"Milwaukee","Portland","Milwaukee",0,1,1,1,"Milwaukee",1,0
+2019-11-22,"Oklahoma City","LA Lakers","Oklahoma City",1,0,0,0,"LA Lakers",1,0
+2019-11-22,"Philadelphia","San Antonio","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2019-11-22,"Utah","Golden State","Utah",0,1,1,1,"Utah",1,0
+2019-11-22,"LA Clippers","Houston","Houston",0,1,0,0,"LA Clippers",1,0
+2019-11-22,"Dallas","Cleveland","Dallas",0,1,1,1,"Dallas",1,0
+2019-11-22,"Brooklyn","Sacramento","Sacramento",0,1,0,0,"Brooklyn",1,0
+2019-11-22,"Chicago","Miami","Miami",1,0,1,1,"Miami",1,0
+2019-11-22,"Washington","Charlotte","Charlotte",0,1,0,0,"Washington",1,0
+2019-11-22,"Denver","Boston","Boston",0,1,0,0,"Denver",1,0
+2019-11-23,"New York","San Antonio","New York",1,0,0,0,"San Antonio",1,0
+2019-11-23,"Memphis","LA Lakers","LA Lakers",1,0,1,1,"LA Lakers",1,0
+2019-11-23,"Utah","New Orleans","Utah",0,1,1,1,"Utah",1,0
+2019-11-23,"Indiana","Orlando","Indiana",0,1,1,1,"Indiana",1,0
+2019-11-23,"Philadelphia","Miami","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2019-11-23,"Atlanta","Toronto","Atlanta",1,0,0,0,"Toronto",1,0
+2019-11-23,"Cleveland","Portland","Portland",0,1,0,0,"Cleveland",1,0
+2019-11-23,"Milwaukee","Detroit","Milwaukee",0,1,1,1,"Milwaukee",1,0
+2019-11-23,"Minnesota","Phoenix","Phoenix",1,0,1,1,"Phoenix",1,0
+2019-11-24,"LA Clippers","New Orleans","LA Clippers",0,1,1,1,"LA Clippers",1,0
+2019-11-24,"New York","Brooklyn","New York",1,0,0,0,"Brooklyn",1,0
+2019-11-24,"Washington","Sacramento","Sacramento",1,0,1,1,"Sacramento",1,0
+2019-11-24,"Houston","Dallas","Houston",1,0,0,0,"Dallas",1,0
+2019-11-24,"Denver","Phoenix","Denver",0,1,1,1,"Denver",1,0
+2019-11-25,"San Antonio","LA Lakers","LA Lakers",1,0,1,1,"LA Lakers",1,0
+2019-11-25,"Golden State","Oklahoma City","Oklahoma City",1,0,1,1,"Oklahoma City",1,0
+2019-11-25,"Boston","Sacramento","Sacramento",0,1,0,0,"Boston",1,0
+2019-11-25,"Chicago","Portland","Chicago",1,0,0,0,"Portland",1,0
+2019-11-25,"Miami","Charlotte","Miami",0,1,1,1,"Miami",1,0
+2019-11-25,"Toronto","Philadelphia","Philadelphia",0,1,0,0,"Toronto",1,0
+2019-11-25,"Indiana","Memphis","Indiana",0,1,1,1,"Indiana",1,0
+2019-11-25,"Milwaukee","Utah","Milwaukee",0,1,1,1,"Milwaukee",1,0
+2019-11-25,"Cleveland","Brooklyn","Cleveland",1,0,0,0,"Brooklyn",1,0
+2019-11-25,"Detroit","Orlando","Orlando",0,1,0,0,"Detroit",1,0
+2019-11-26,"Dallas","LA Clippers","LA Clippers",1,0,1,1,"LA Clippers",1,0
+2019-11-26,"Denver","Washington","Denver",0,1,1,1,"Denver",1,0
+2019-11-27,"New Orleans","LA Lakers","LA Lakers",1,0,1,1,"LA Lakers",1,0
+2019-11-27,"Portland","Oklahoma City","Oklahoma City",0,1,0,0,"Portland",1,0
+2019-11-27,"San Antonio","Minnesota","San Antonio",1,0,0,0,"Minnesota",1,0
+2019-11-27,"Memphis","LA Clippers","Memphis",1,0,0,0,"LA Clippers",1,0
+2019-11-27,"Toronto","New York","Toronto",0,1,1,1,"Toronto",1,0
+2019-11-27,"Philadelphia","Sacramento","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2019-11-27,"Milwaukee","Atlanta","Atlanta",0,1,0,0,"Milwaukee",1,0
+2019-11-27,"Indiana","Utah","Utah",0,1,0,0,"Indiana",1,0
+2019-11-27,"Cleveland","Orlando","Orlando",1,0,1,1,"Orlando",1,0
+2019-11-27,"Phoenix","Washington","Phoenix",1,0,0,0,"Washington",1,0
+2019-11-27,"Houston","Miami","Houston",0,1,1,1,"Houston",1,0
+2019-11-27,"Boston","Brooklyn","Brooklyn",0,1,0,0,"Boston",1,0
+2019-11-29,"Oklahoma City","New Orleans","New Orleans",0,1,0,0,"Oklahoma City",1,0
+2019-11-29,"San Antonio","LA Clippers","San Antonio",0,1,1,1,"San Antonio",1,0
+2019-11-29,"LA Lakers","Washington","LA Lakers",0,1,1,1,"LA Lakers",1,0
+2019-11-29,"Miami","Golden State","Golden State",0,1,0,0,"Miami",1,0
+2019-11-29,"New York","Philadelphia","Philadelphia",1,0,1,1,"Philadelphia",1,0
+2019-11-29,"Indiana","Atlanta","Indiana",0,1,1,1,"Indiana",1,0
+2019-11-29,"Portland","Chicago","Chicago",0,1,0,0,"Portland",1,0
+2019-11-29,"Cleveland","Milwaukee","Milwaukee",1,0,1,1,"Milwaukee",1,0
+2019-11-29,"Phoenix","Dallas","Phoenix",1,0,0,0,"Dallas",1,0
+2019-11-29,"Orlando","Toronto","Orlando",1,0,0,0,"Toronto",1,0
+2019-11-29,"Memphis","Utah","Utah",1,0,1,1,"Utah",1,0
+2019-11-29,"Brooklyn","Boston","Boston",0,1,0,0,"Brooklyn",1,0
+2019-11-30,"Philadelphia","Indiana","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2019-11-30,"Houston","Atlanta","Houston",0,1,1,1,"Houston",1,0
+2019-11-30,"Sacramento","Denver","Denver",0,1,0,0,"Sacramento",1,0
+2019-11-30,"Milwaukee","Charlotte","Milwaukee",0,1,1,1,"Milwaukee",1,0
+2019-12-01,"New Orleans","Oklahoma City","Oklahoma City",1,0,1,1,"Oklahoma City",1,0
+2019-12-01,"LA Lakers","Dallas","LA Lakers",1,0,0,0,"Dallas",1,0
+2019-12-01,"LA Clippers","Washington","Washington",0,1,0,0,"LA Clippers",1,0
+2019-12-01,"Orlando","Golden State","Orlando",0,1,1,1,"Orlando",1,0
+2019-12-01,"Detroit","San Antonio","Detroit",0,1,1,1,"Detroit",1,0
+2019-12-01,"New York","Boston","Boston",1,0,1,1,"Boston",1,0
+2019-12-01,"Brooklyn","Miami","Miami",1,0,1,1,"Miami",1,0
+2019-12-01,"Minnesota","Memphis","Memphis",1,0,1,1,"Memphis",1,0
+2019-12-01,"Toronto","Utah","Toronto",0,1,1,1,"Toronto",1,0
+2019-12-02,"Milwaukee","New York","New York",0,1,0,0,"Milwaukee",1,0
+2019-12-02,"Sacramento","Chicago","Chicago",1,0,1,1,"Chicago",1,0
+2019-12-02,"Philadelphia","Utah","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2019-12-02,"Memphis","Indiana","Indiana",1,0,1,1,"Indiana",1,0
+2019-12-02,"Charlotte","Phoenix","Phoenix",1,0,1,1,"Phoenix",1,0
+2019-12-03,"New Orleans","Dallas","New Orleans",1,0,0,0,"Dallas",1,0
+2019-12-03,"LA Clippers","Portland","Portland",0,1,0,0,"LA Clippers",1,0
+2019-12-03,"Denver","LA Lakers","Denver",1,0,0,0,"LA Lakers",1,0
+2019-12-03,"San Antonio","Houston","San Antonio",0,1,1,1,"San Antonio",1,0
+2019-12-03,"Washington","Orlando","Washington",1,0,0,0,"Orlando",1,0
+2019-12-03,"Toronto","Miami","Miami",1,0,1,1,"Miami",1,0
+2019-12-04,"Oklahoma City","Indiana","Indiana",1,0,1,1,"Indiana",1,0
+2019-12-04,"Utah","LA Lakers","Utah",1,0,0,0,"LA Lakers",1,0
+2019-12-04,"Atlanta","Brooklyn","Atlanta",1,0,0,0,"Brooklyn",1,0
+2019-12-04,"Portland","Sacramento","Portland",0,1,1,1,"Portland",1,0
+2019-12-04,"Dallas","Minnesota","Minnesota",0,1,0,0,"Dallas",1,0
+2019-12-04,"Boston","Miami","Miami",0,1,0,0,"Boston",1,0
+2019-12-04,"Chicago","Memphis","Memphis",0,1,0,0,"Chicago",1,0
+2019-12-04,"Detroit","Milwaukee","Detroit",1,0,0,0,"Milwaukee",1,0
+2019-12-04,"Orlando","Phoenix","Orlando",0,1,1,1,"Orlando",1,0
+2019-12-05,"New Orleans","Phoenix","New Orleans",1,0,0,0,"Phoenix",1,0
+2019-12-05,"New York","Denver","New York",1,0,0,0,"Denver",1,0
+2019-12-05,"Washington","Philadelphia","Washington",0,1,1,1,"Washington",1,0
+2019-12-05,"Toronto","Houston","Houston",1,0,1,1,"Houston",1,0
+2019-12-06,"San Antonio","Sacramento","San Antonio",0,1,1,1,"San Antonio",1,0
+2019-12-06,"Oklahoma City","Minnesota","Minnesota",0,1,0,0,"Oklahoma City",1,0
+2019-12-06,"Portland","LA Lakers","Portland",1,0,0,0,"LA Lakers",1,0
+2019-12-06,"Milwaukee","LA Clippers","Milwaukee",0,1,1,1,"Milwaukee",1,0
+2019-12-06,"Cleveland","Orlando","Cleveland",1,0,0,0,"Orlando",1,0
+2019-12-06,"Detroit","Indiana","Detroit",0,1,1,1,"Detroit",1,0
+2019-12-06,"Miami","Washington","Miami",0,1,1,1,"Miami",1,0
+2019-12-06,"Charlotte","Brooklyn","Charlotte",1,0,0,0,"Brooklyn",1,0
+2019-12-06,"Boston","Denver","Denver",0,1,0,0,"Boston",1,0
+2019-12-07,"Dallas","New Orleans","Dallas",0,1,1,1,"Dallas",1,0
+2019-12-07,"New York","Indiana","New York",1,0,0,0,"Indiana",1,0
+2019-12-07,"Philadelphia","Cleveland","Cleveland",0,1,0,0,"Philadelphia",1,0
+2019-12-07,"Utah","Memphis","Memphis",0,1,0,0,"Utah",1,0
+2019-12-07,"Houston","Phoenix","Houston",0,1,1,1,"Houston",1,0
+2019-12-08,"Portland","Oklahoma City","Oklahoma City",1,0,1,1,"Oklahoma City",1,0
+2019-12-08,"LA Lakers","Minnesota","Minnesota",0,1,0,0,"LA Lakers",1,0
+2019-12-08,"Washington","LA Clippers","Washington",1,0,0,0,"LA Clippers",1,0
+2019-12-08,"Dallas","Sacramento","Dallas",1,0,0,0,"Sacramento",1,0
+2019-12-08,"Miami","Chicago","Chicago",0,1,0,0,"Miami",1,0
+2019-12-08,"Philadelphia","Toronto","Toronto",0,1,0,0,"Philadelphia",1,0
+2019-12-08,"Brooklyn","Denver","Brooklyn",0,1,1,1,"Brooklyn",1,0
+2019-12-09,"Indiana","LA Clippers","LA Clippers",1,0,1,1,"LA Clippers",1,0
+2019-12-09,"Utah","Oklahoma City","Utah",1,0,0,0,"Oklahoma City",1,0
+2019-12-09,"Golden State","Memphis","Golden State",1,0,0,0,"Memphis",1,0
+2019-12-09,"New Orleans","Detroit","New Orleans",1,0,0,0,"Detroit",1,0
+2019-12-09,"Houston","Sacramento","Sacramento",1,0,1,1,"Sacramento",1,0
+2019-12-09,"Milwaukee","Orlando","Milwaukee",0,1,1,1,"Milwaukee",1,0
+2019-12-09,"Boston","Cleveland","Cleveland",0,1,0,0,"Boston",1,0
+2019-12-09,"Chicago","Toronto","Toronto",1,0,1,1,"Toronto",1,0
+2019-12-09,"Phoenix","Minnesota","Phoenix",0,1,1,1,"Phoenix",1,0
+2019-12-10,"Portland","New York","Portland",0,1,1,1,"Portland",1,0
+2019-12-10,"Miami","Atlanta","Miami",0,1,1,1,"Miami",1,0
+2019-12-10,"Charlotte","Washington","Charlotte",0,1,1,1,"Charlotte",1,0
+2019-12-10,"Philadelphia","Denver","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2019-12-11,"Sacramento","Oklahoma City","Sacramento",0,1,1,1,"Sacramento",1,0
+2019-12-11,"Orlando","LA Lakers","Orlando",1,0,0,0,"LA Lakers",1,0
+2019-12-11,"Milwaukee","New Orleans","New Orleans",0,1,0,0,"Milwaukee",1,0
+2019-12-11,"Toronto","LA Clippers","LA Clippers",1,0,1,1,"LA Clippers",1,0
+2019-12-11,"Indiana","Boston","Indiana",0,1,1,1,"Indiana",1,0
+2019-12-11,"Minnesota","Utah","Minnesota",1,0,0,0,"Utah",1,0
+2019-12-11,"Brooklyn","Charlotte","Brooklyn",1,0,0,0,"Charlotte",1,0
+2019-12-11,"Cleveland","Houston","Cleveland",1,0,0,0,"Houston",1,0
+2019-12-11,"Phoenix","Memphis","Memphis",1,0,1,1,"Memphis",1,0
+2019-12-12,"San Antonio","Cleveland","Cleveland",1,0,1,1,"Cleveland",1,0
+2019-12-12,"Boston","Philadelphia","Philadelphia",1,0,1,1,"Philadelphia",1,0
+2019-12-12,"Detroit","Dallas","Dallas",1,0,1,1,"Dallas",1,0
+2019-12-12,"Denver","Portland","Portland",0,1,0,0,"Denver",1,0
+2019-12-13,"Philadelphia","New Orleans","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2019-12-13,"Miami","LA Lakers","Miami",1,0,0,0,"LA Lakers",1,0
+2019-12-13,"Minnesota","LA Clippers","Minnesota",1,0,0,0,"LA Clippers",1,0
+2019-12-13,"Sacramento","New York","New York",1,0,1,1,"New York",1,0
+2019-12-13,"Utah","Golden State","Golden State",0,1,0,0,"Utah",1,0
+2019-12-13,"Atlanta","Indiana","Indiana",1,0,1,1,"Indiana",1,0
+2019-12-13,"Orlando","Houston","Houston",1,0,1,1,"Houston",1,0
+2019-12-13,"Memphis","Milwaukee","Milwaukee",1,0,1,1,"Milwaukee",1,0
+2019-12-14,"Chicago","LA Clippers","LA Clippers",0,1,0,0,"Chicago",1,0
+2019-12-14,"Denver","Oklahoma City","Oklahoma City",0,1,0,0,"Denver",1,0
+2019-12-14,"Phoenix","San Antonio","Phoenix",1,0,0,0,"San Antonio",1,0
+2019-12-14,"Dallas","Miami","Miami",1,0,1,1,"Miami",1,0
+2019-12-14,"Milwaukee","Cleveland","Milwaukee",0,1,1,1,"Milwaukee",1,0
+2019-12-14,"Memphis","Washington","Memphis",0,1,1,1,"Memphis",1,0
+2019-12-14,"Toronto","Brooklyn","Toronto",0,1,1,1,"Toronto",1,0
+2019-12-14,"Houston","Detroit","Houston",1,0,0,0,"Detroit",1,0
+2019-12-15,"Atlanta","LA Lakers","Atlanta",1,0,0,0,"LA Lakers",1,0
+2019-12-15,"Golden State","Sacramento","Sacramento",1,0,1,1,"Sacramento",1,0
+2019-12-15,"New Orleans","Orlando","New Orleans",1,0,0,0,"Orlando",1,0
+2019-12-15,"Denver","New York","Denver",0,1,1,1,"Denver",1,0
+2019-12-15,"Indiana","Charlotte","Charlotte",0,1,0,0,"Indiana",1,0
+2019-12-15,"Brooklyn","Philadelphia","Brooklyn",0,1,1,1,"Brooklyn",1,0
+2019-12-16,"Oklahoma City","Chicago","Oklahoma City",0,1,1,1,"Oklahoma City",1,0
+2019-12-16,"Houston","San Antonio","Houston",0,1,1,1,"Houston",1,0
+2019-12-16,"Milwaukee","Dallas","Milwaukee",1,0,0,0,"Dallas",1,0
+2019-12-16,"Toronto","Cleveland","Toronto",0,1,1,1,"Toronto",1,0
+2019-12-16,"Detroit","Washington","Washington",1,0,1,1,"Washington",1,0
+2019-12-16,"Phoenix","Portland","Portland",1,0,1,1,"Portland",1,0
+2019-12-16,"Memphis","Miami","Miami",0,1,0,0,"Memphis",1,0
+2019-12-17,"Indiana","LA Lakers","Indiana",0,1,1,1,"Indiana",1,0
+2019-12-17,"New Orleans","Brooklyn","New Orleans",1,0,0,0,"Brooklyn",1,0
+2019-12-17,"LA Clippers","Phoenix","Phoenix",0,1,0,0,"LA Clippers",1,0
+2019-12-17,"Charlotte","Sacramento","Sacramento",0,1,0,0,"Charlotte",1,0
+2019-12-17,"Utah","Orlando","Orlando",0,1,0,0,"Utah",1,0
+2019-12-18,"Oklahoma City","Memphis","Memphis",0,1,0,0,"Oklahoma City",1,0
+2019-12-18,"Portland","Golden State","Golden State",0,1,0,0,"Portland",1,0
+2019-12-18,"Minnesota","New Orleans","New Orleans",1,0,1,1,"New Orleans",1,0
+2019-12-18,"Philadelphia","Miami","Philadelphia",1,0,0,0,"Miami",1,0
+2019-12-18,"Dallas","Boston","Boston",1,0,1,1,"Boston",1,0
+2019-12-18,"Washington","Chicago","Chicago",1,0,1,1,"Chicago",1,0
+2019-12-18,"Denver","Orlando","Denver",0,1,1,1,"Denver",1,0
+2019-12-18,"Detroit","Toronto","Detroit",1,0,0,0,"Toronto",1,0
+2019-12-19,"Milwaukee","LA Lakers","Milwaukee",0,1,1,1,"Milwaukee",1,0
+2019-12-19,"San Antonio","Brooklyn","San Antonio",0,1,1,1,"San Antonio",1,0
+2019-12-19,"LA Clippers","Houston","Houston",1,0,1,1,"Houston",1,0
+2019-12-19,"Atlanta","Utah","Atlanta",1,0,0,0,"Utah",1,0
+2019-12-20,"Golden State","New Orleans","Golden State",0,1,1,1,"Golden State",1,0
+2019-12-20,"Oklahoma City","Phoenix","Phoenix",0,1,0,0,"Oklahoma City",1,0
+2019-12-20,"Miami","New York","New York",0,1,0,0,"Miami",1,0
+2019-12-20,"Indiana","Sacramento","Indiana",0,1,1,1,"Indiana",1,0
+2019-12-20,"Philadelphia","Dallas","Philadelphia",1,0,0,0,"Dallas",1,0
+2019-12-20,"Portland","Orlando","Orlando",0,1,0,0,"Portland",1,0
+2019-12-20,"Cleveland","Memphis","Cleveland",0,1,1,1,"Cleveland",1,0
+2019-12-20,"Denver","Minnesota","Minnesota",0,1,0,0,"Denver",1,0
+2019-12-20,"Toronto","Washington","Toronto",0,1,1,1,"Toronto",1,0
+2019-12-20,"Boston","Detroit","Boston",0,1,1,1,"Boston",1,0
+2019-12-21,"San Antonio","LA Clippers","LA Clippers",1,0,1,1,"LA Clippers",1,0
+2019-12-21,"New York","Milwaukee","New York",1,0,0,0,"Milwaukee",1,0
+2019-12-21,"Brooklyn","Atlanta","Atlanta",0,1,0,0,"Brooklyn",1,0
+2019-12-21,"Philadelphia","Washington","Washington",0,1,0,0,"Philadelphia",1,0
+2019-12-21,"Memphis","Sacramento","Memphis",0,1,1,1,"Memphis",1,0
+2019-12-21,"Charlotte","Utah","Charlotte",1,0,0,0,"Utah",1,0
+2019-12-21,"Portland","Minnesota","Minnesota",0,1,0,0,"Portland",1,0
+2019-12-21,"Phoenix","Houston","Phoenix",1,0,0,0,"Houston",1,0
+2019-12-22,"Oklahoma City","LA Clippers","LA Clippers",0,1,0,0,"Oklahoma City",1,0
+2019-12-22,"LA Lakers","Denver","LA Lakers",1,0,0,0,"Denver",1,0
+2019-12-22,"Milwaukee","Indiana","Indiana",0,1,0,0,"Milwaukee",1,0
+2019-12-22,"Toronto","Dallas","Dallas",0,1,0,0,"Toronto",1,0
+2019-12-22,"Boston","Charlotte","Boston",0,1,1,1,"Boston",1,0
+2019-12-23,"Portland","New Orleans","Portland",1,0,0,0,"New Orleans",1,0
+2019-12-23,"Memphis","San Antonio","San Antonio",1,0,1,1,"San Antonio",1,0
+2019-12-23,"New York","Washington","New York",1,0,0,0,"Washington",1,0
+2019-12-23,"Orlando","Chicago","Orlando",0,1,1,1,"Orlando",1,0
+2019-12-23,"Sacramento","Houston","Houston",1,0,1,1,"Houston",1,0
+2019-12-23,"Detroit","Philadelphia","Philadelphia",1,0,1,1,"Philadelphia",1,0
+2019-12-23,"Indiana","Toronto","Toronto",0,1,0,0,"Indiana",1,0
+2019-12-23,"Miami","Utah","Utah",0,1,0,0,"Miami",1,0
+2019-12-23,"Phoenix","Denver","Phoenix",1,0,0,0,"Denver",1,0
+2019-12-25,"LA Lakers","LA Clippers","LA Clippers",1,0,1,1,"LA Clippers",1,0
+2019-12-25,"Denver","New Orleans","New Orleans",1,0,1,1,"New Orleans",1,0
+2019-12-25,"Golden State","Houston","Houston",0,1,0,0,"Golden State",1,0
+2019-12-25,"Philadelphia","Milwaukee","Milwaukee",0,1,0,0,"Philadelphia",1,0
+2019-12-25,"Toronto","Boston","Boston",1,0,1,1,"Boston",1,0
+2019-12-26,"Dallas","San Antonio","Dallas",0,1,1,1,"Dallas",1,0
+2019-12-26,"Oklahoma City","Memphis","Memphis",1,0,1,1,"Memphis",1,0
+2019-12-26,"Brooklyn","New York","Brooklyn",1,0,0,0,"New York",1,0
+2019-12-26,"Sacramento","Minnesota","Minnesota",1,0,1,1,"Minnesota",1,0
+2019-12-26,"Utah","Portland","Portland",0,1,0,0,"Utah",1,0
+2019-12-26,"Detroit","Washington","Detroit",0,1,1,1,"Detroit",1,0
+2019-12-27,"Charlotte","Oklahoma City","Charlotte",1,0,0,0,"Oklahoma City",1,0
+2019-12-27,"Golden State","Phoenix","Phoenix",0,1,0,0,"Golden State",1,0
+2019-12-27,"Atlanta","Milwaukee","Milwaukee",1,0,1,1,"Milwaukee",1,0
+2019-12-27,"Orlando","Philadelphia","Philadelphia",0,1,0,0,"Orlando",1,0
+2019-12-27,"Miami","Indiana","Indiana",0,1,0,0,"Miami",1,0
+2019-12-27,"Boston","Cleveland","Boston",0,1,1,1,"Boston",1,0
+2019-12-28,"Golden State","Dallas","Dallas",1,0,1,1,"Dallas",1,0
+2019-12-28,"New Orleans","Indiana","New Orleans",0,1,1,1,"New Orleans",1,0
+2019-12-28,"Portland","LA Lakers","Portland",1,0,0,0,"LA Lakers",1,0
+2019-12-28,"LA Clippers","Utah","Utah",1,0,1,1,"Utah",1,0
+2019-12-28,"San Antonio","Detroit","Detroit",0,1,0,0,"San Antonio",1,0
+2019-12-28,"Washington","New York","Washington",1,0,0,0,"New York",1,0
+2019-12-28,"Miami","Philadelphia","Miami",0,1,1,1,"Miami",1,0
+2019-12-28,"Sacramento","Phoenix","Phoenix",1,0,1,1,"Phoenix",1,0
+2019-12-28,"Milwaukee","Orlando","Orlando",0,1,0,0,"Milwaukee",1,0
+2019-12-28,"Houston","Brooklyn","Houston",0,1,1,1,"Houston",1,0
+2019-12-28,"Boston","Toronto","Boston",1,0,0,0,"Toronto",1,0
+2019-12-28,"Denver","Memphis","Memphis",0,1,0,0,"Denver",1,0
+2019-12-29,"LA Lakers","Dallas","Dallas",0,1,0,0,"LA Lakers",1,0
+2019-12-29,"Toronto","Oklahoma City","Oklahoma City",1,0,1,1,"Oklahoma City",1,0
+2019-12-29,"New Orleans","Houston","Houston",0,1,0,0,"New Orleans",1,0
+2019-12-29,"Denver","Sacramento","Sacramento",0,1,0,0,"Denver",1,0
+2019-12-29,"Memphis","Charlotte","Charlotte",0,1,0,0,"Memphis",1,0
+2019-12-30,"Orlando","Atlanta","Orlando",1,0,0,0,"Atlanta",1,0
+2019-12-30,"Chicago","Milwaukee","Milwaukee",1,0,1,1,"Milwaukee",1,0
+2019-12-30,"Washington","Miami","Washington",0,1,1,1,"Washington",1,0
+2019-12-30,"Minnesota","Brooklyn","Minnesota",0,1,1,1,"Minnesota",1,0
+2019-12-30,"Portland","Phoenix","Portland",1,0,0,0,"Phoenix",1,0
+2019-12-30,"Utah","Detroit","Detroit",0,1,0,0,"Utah",1,0
+2019-12-31,"San Antonio","Golden State","Golden State",0,1,0,0,"San Antonio",1,0
+2019-12-31,"Oklahoma City","Dallas","Oklahoma City",0,1,1,1,"Oklahoma City",1,0
+2019-12-31,"Sacramento","LA Clippers","Sacramento",1,0,0,0,"LA Clippers",1,0
+2019-12-31,"Indiana","Philadelphia","Indiana",0,1,1,1,"Indiana",1,0
+2019-12-31,"Charlotte","Boston","Boston",1,0,1,1,"Boston",1,0
+2019-12-31,"Toronto","Cleveland","Toronto",0,1,1,1,"Toronto",1,0
+2019-12-31,"Houston","Denver","Houston",0,1,1,1,"Houston",1,0
+2020-01-01,"LA Lakers","Phoenix","LA Lakers",0,1,1,1,"LA Lakers",1,0
+2020-01-01,"New York","Portland","New York",0,1,1,1,"New York",1,0
+2020-01-01,"Washington","Orlando","Orlando",1,0,1,1,"Orlando",1,0
+2020-01-01,"Milwaukee","Minnesota","Minnesota",0,1,0,0,"Milwaukee",1,0
+2020-01-02,"San Antonio","Oklahoma City","San Antonio",1,0,0,0,"Oklahoma City",1,0
+2020-01-02,"LA Clippers","Detroit","Detroit",0,1,0,0,"LA Clippers",1,0
+2020-01-02,"Dallas","Brooklyn","Dallas",0,1,1,1,"Dallas",1,0
+2020-01-02,"Chicago","Utah","Chicago",1,0,0,0,"Utah",1,0
+2020-01-02,"Sacramento","Memphis","Memphis",0,1,0,0,"Sacramento",1,0
+2020-01-02,"Indiana","Denver","Denver",1,0,1,1,"Denver",1,0
+2020-01-02,"Miami","Toronto","Miami",0,1,1,1,"Miami",1,0
+2020-01-03,"LA Lakers","New Orleans","LA Lakers",0,1,1,1,"LA Lakers",1,0
+2020-01-03,"Phoenix","New York","Phoenix",0,1,1,1,"Phoenix",1,0
+2020-01-03,"Boston","Atlanta","Boston",0,1,1,1,"Boston",1,0
+2020-01-03,"Houston","Philadelphia","Philadelphia",0,1,0,0,"Houston",1,0
+2020-01-03,"Washington","Portland","Portland",1,0,1,1,"Portland",1,0
+2020-01-03,"Orlando","Miami","Orlando",0,1,1,1,"Orlando",1,0
+2020-01-04,"Cleveland","Oklahoma City","Oklahoma City",1,0,1,1,"Oklahoma City",1,0
+2020-01-04,"Sacramento","New Orleans","Sacramento",1,0,0,0,"New Orleans",1,0
+2020-01-04,"Milwaukee","San Antonio","Milwaukee",0,1,1,1,"Milwaukee",1,0
+2020-01-04,"LA Clippers","Memphis","LA Clippers",1,0,0,0,"Memphis",1,0
+2020-01-04,"Atlanta","Indiana","Indiana",0,1,0,0,"Atlanta",1,0
+2020-01-04,"Dallas","Charlotte","Charlotte",1,0,1,1,"Charlotte",1,0
+2020-01-04,"Orlando","Utah","Utah",1,0,1,1,"Utah",1,0
+2020-01-04,"Chicago","Boston","Boston",1,0,1,1,"Boston",1,0
+2020-01-04,"Washington","Denver","Washington",0,1,1,1,"Washington",1,0
+2020-01-04,"Brooklyn","Toronto","Brooklyn",1,0,0,0,"Toronto",1,0
+2020-01-05,"LA Clippers","New York","LA Clippers",0,1,1,1,"LA Clippers",1,0
+2020-01-05,"LA Lakers","Detroit","Detroit",0,1,0,0,"LA Lakers",1,0
+2020-01-05,"Miami","Portland","Miami",0,1,1,1,"Miami",1,0
+2020-01-05,"Phoenix","Memphis","Phoenix",1,0,0,0,"Memphis",1,0
+2020-01-06,"Philadelphia","Oklahoma City","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2020-01-06,"Sacramento","Golden State","Golden State",0,1,0,0,"Sacramento",1,0
+2020-01-06,"San Antonio","Milwaukee","Milwaukee",0,1,0,0,"San Antonio",1,0
+2020-01-06,"New Orleans","Utah","Utah",1,0,1,1,"Utah",1,0
+2020-01-06,"Dallas","Chicago","Dallas",0,1,1,1,"Dallas",1,0
+2020-01-06,"Charlotte","Indiana","Indiana",1,0,1,1,"Indiana",1,0
+2020-01-06,"Atlanta","Denver","Denver",1,0,1,1,"Denver",1,0
+2020-01-06,"Orlando","Brooklyn","Brooklyn",0,1,0,0,"Orlando",1,0
+2020-01-06,"Washington","Boston","Boston",0,1,0,0,"Washington",1,0
+2020-01-07,"LA Lakers","New York","LA Lakers",0,1,1,1,"LA Lakers",1,0
+2020-01-07,"Brooklyn","Oklahoma City","Brooklyn",1,0,0,0,"Oklahoma City",1,0
+2020-01-07,"Phoenix","Sacramento","Phoenix",1,0,0,0,"Sacramento",1,0
+2020-01-07,"Toronto","Portland","Portland",1,0,1,1,"Portland",1,0
+2020-01-07,"Memphis","Minnesota","Minnesota",0,1,0,0,"Memphis",1,0
+2020-01-08,"Boston","San Antonio","Boston",1,0,0,0,"San Antonio",1,0
+2020-01-08,"New Orleans","Chicago","New Orleans",0,1,1,1,"New Orleans",1,0
+2020-01-08,"Golden State","Milwaukee","Milwaukee",1,0,1,1,"Milwaukee",1,0
+2020-01-08,"Utah","New York","Utah",0,1,1,1,"Utah",1,0
+2020-01-08,"Indiana","Miami","Indiana",1,0,0,0,"Miami",1,0
+2020-01-08,"Atlanta","Houston","Atlanta",1,0,0,0,"Houston",1,0
+2020-01-08,"Dallas","Denver","Denver",1,0,1,1,"Denver",1,0
+2020-01-08,"Orlando","Washington","Washington",0,1,0,0,"Orlando",1,0
+2020-01-08,"Charlotte","Toronto","Charlotte",1,0,0,0,"Toronto",1,0
+2020-01-09,"Oklahoma City","Houston","Houston",0,1,0,0,"Oklahoma City",1,0
+2020-01-09,"Philadelphia","Boston","Boston",0,1,0,0,"Philadelphia",1,0
+2020-01-09,"Minnesota","Portland","Portland",0,1,0,0,"Minnesota",1,0
+2020-01-10,"LA Clippers","Golden State","Golden State",0,1,0,0,"LA Clippers",1,0
+2020-01-10,"New York","New Orleans","New Orleans",1,0,1,1,"New Orleans",1,0
+2020-01-10,"Dallas","LA Lakers","LA Lakers",1,0,1,1,"LA Lakers",1,0
+2020-01-10,"Memphis","San Antonio","San Antonio",0,1,0,0,"Memphis",1,0
+2020-01-10,"Washington","Atlanta","Atlanta",0,1,0,0,"Washington",1,0
+2020-01-10,"Chicago","Indiana","Chicago",1,0,0,0,"Indiana",1,0
+2020-01-10,"Sacramento","Milwaukee","Sacramento",1,0,0,0,"Milwaukee",1,0
+2020-01-10,"Utah","Charlotte","Utah",0,1,1,1,"Utah",1,0
+2020-01-10,"Brooklyn","Miami","Brooklyn",0,1,1,1,"Brooklyn",1,0
+2020-01-10,"Phoenix","Orlando","Orlando",0,1,0,0,"Phoenix",1,0
+2020-01-11,"Oklahoma City","LA Lakers","Oklahoma City",1,0,0,0,"LA Lakers",1,0
+2020-01-11,"Boston","New Orleans","Boston",0,1,1,1,"Boston",1,0
+2020-01-11,"Dallas","Philadelphia","Philadelphia",0,1,0,0,"Dallas",1,0
+2020-01-11,"Portland","Milwaukee","Portland",1,0,0,0,"Milwaukee",1,0
+2020-01-11,"Denver","Cleveland","Denver",1,0,0,0,"Cleveland",1,0
+2020-01-11,"Houston","Minnesota","Minnesota",0,1,0,0,"Houston",1,0
+2020-01-12,"Toronto","San Antonio","San Antonio",1,0,1,1,"San Antonio",1,0
+2020-01-12,"Denver","LA Clippers","Denver",0,1,1,1,"Denver",1,0
+2020-01-12,"Memphis","Golden State","Golden State",0,1,0,0,"Memphis",1,0
+2020-01-12,"New York","Miami","Miami",0,1,0,0,"New York",1,0
+2020-01-12,"Brooklyn","Atlanta","Brooklyn",0,1,1,1,"Brooklyn",1,0
+2020-01-12,"Washington","Utah","Washington",1,0,0,0,"Utah",1,0
+2020-01-12,"Phoenix","Charlotte","Phoenix",0,1,1,1,"Phoenix",1,0
+2020-01-13,"LA Lakers","Cleveland","LA Lakers",0,1,1,1,"LA Lakers",1,0
+2020-01-13,"Minnesota","Oklahoma City","Oklahoma City",1,0,1,1,"Oklahoma City",1,0
+2020-01-13,"Detroit","New Orleans","New Orleans",1,0,1,1,"New Orleans",1,0
+2020-01-13,"Indiana","Philadelphia","Indiana",0,1,1,1,"Indiana",1,0
+2020-01-13,"Sacramento","Orlando","Sacramento",1,0,0,0,"Orlando",1,0
+2020-01-13,"Portland","Charlotte","Charlotte",0,1,0,0,"Portland",1,0
+2020-01-13,"Boston","Chicago","Chicago",0,1,0,0,"Boston",1,0
+2020-01-14,"Golden State","Dallas","Golden State",1,0,0,0,"Dallas",1,0
+2020-01-14,"LA Clippers","Cleveland","LA Clippers",0,1,1,1,"LA Clippers",1,0
+2020-01-14,"Milwaukee","New York","New York",0,1,0,0,"Milwaukee",1,0
+2020-01-14,"Atlanta","Phoenix","Atlanta",0,1,1,1,"Atlanta",1,0
+2020-01-14,"Brooklyn","Utah","Utah",1,0,1,1,"Utah",1,0
+2020-01-14,"Memphis","Houston","Memphis",0,1,1,1,"Memphis",1,0
+2020-01-15,"LA Lakers","Orlando","LA Lakers",1,0,0,0,"Orlando",1,0
+2020-01-15,"Miami","San Antonio","San Antonio",0,1,0,0,"Miami",1,0
+2020-01-15,"Oklahoma City","Toronto","Toronto",1,0,1,1,"Toronto",1,0
+2020-01-15,"Sacramento","Dallas","Sacramento",1,0,0,0,"Dallas",1,0
+2020-01-15,"Minnesota","Indiana","Minnesota",1,0,0,0,"Indiana",1,0
+2020-01-15,"Philadelphia","Brooklyn","Brooklyn",0,1,0,0,"Philadelphia",1,0
+2020-01-15,"Chicago","Washington","Washington",0,1,0,0,"Chicago",1,0
+2020-01-15,"Denver","Charlotte","Charlotte",0,1,0,0,"Denver",1,0
+2020-01-15,"Houston","Portland","Houston",1,0,0,0,"Portland",1,0
+2020-01-15,"Boston","Detroit","Detroit",1,0,1,1,"Detroit",1,0
+2020-01-16,"LA Clippers","Orlando","LA Clippers",0,1,1,1,"LA Clippers",1,0
+2020-01-16,"New Orleans","Utah","New Orleans",0,1,1,1,"New Orleans",1,0
+2020-01-16,"Golden State","Denver","Golden State",1,0,0,0,"Denver",1,0
+2020-01-16,"New York","Phoenix","Phoenix",1,0,1,1,"Phoenix",1,0
+2020-01-16,"Milwaukee","Boston","Boston",0,1,0,0,"Milwaukee",1,0
+2020-01-17,"San Antonio","Atlanta","San Antonio",1,0,0,0,"Atlanta",1,0
+2020-01-17,"Oklahoma City","Miami","Oklahoma City",1,0,0,0,"Miami",1,0
+2020-01-17,"Philadelphia","Chicago","Chicago",0,1,0,0,"Philadelphia",1,0
+2020-01-17,"Dallas","Portland","Portland",0,1,0,0,"Dallas",1,0
+2020-01-17,"Indiana","Minnesota","Minnesota",0,1,0,0,"Indiana",1,0
+2020-01-17,"Memphis","Cleveland","Memphis",0,1,1,1,"Memphis",1,0
+2020-01-17,"Toronto","Washington","Toronto",0,1,1,1,"Toronto",1,0
+2020-01-18,"New Orleans","LA Clippers","New Orleans",1,0,0,0,"LA Clippers",1,0
+2020-01-18,"Oklahoma City","Portland","Portland",0,1,0,0,"Oklahoma City",1,0
+2020-01-18,"Golden State","Orlando","Golden State",0,1,1,1,"Golden State",1,0
+2020-01-18,"New York","Philadelphia","New York",1,0,0,0,"Philadelphia",1,0
+2020-01-18,"Houston","LA Lakers","LA Lakers",1,0,1,1,"LA Lakers",1,0
+2020-01-18,"Utah","Sacramento","Sacramento",0,1,0,0,"Utah",1,0
+2020-01-18,"Brooklyn","Milwaukee","Brooklyn",1,0,0,0,"Milwaukee",1,0
+2020-01-18,"Minnesota","Toronto","Minnesota",1,0,0,0,"Toronto",1,0
+2020-01-18,"Boston","Phoenix","Phoenix",1,0,1,1,"Phoenix",1,0
+2020-01-19,"San Antonio","Miami","Miami",0,1,0,0,"San Antonio",1,0
+2020-01-19,"Denver","Indiana","Denver",1,0,0,0,"Indiana",1,0
+2020-01-20,"Boston","LA Lakers","LA Lakers",0,1,0,0,"Boston",1,0
+2020-01-20,"Houston","Oklahoma City","Oklahoma City",1,0,1,1,"Oklahoma City",1,0
+2020-01-20,"Portland","Golden State","Portland",0,1,1,1,"Portland",1,0
+2020-01-20,"Phoenix","San Antonio","Phoenix",1,0,0,0,"San Antonio",1,0
+2020-01-20,"Memphis","New Orleans","New Orleans",1,0,1,1,"New Orleans",1,0
+2020-01-20,"Miami","Sacramento","Sacramento",0,1,0,0,"Miami",1,0
+2020-01-20,"Utah","Indiana","Indiana",0,1,0,0,"Utah",1,0
+2020-01-20,"Atlanta","Toronto","Toronto",1,0,1,1,"Toronto",1,0
+2020-01-20,"Brooklyn","Philadelphia","Philadelphia",1,0,1,1,"Philadelphia",1,0
+2020-01-20,"Milwaukee","Chicago","Milwaukee",0,1,1,1,"Milwaukee",1,0
+2020-01-20,"Charlotte","Orlando","Orlando",1,0,1,1,"Orlando",1,0
+2020-01-20,"Minnesota","Denver","Minnesota",1,0,0,0,"Denver",1,0
+2020-01-20,"Washington","Detroit","Detroit",0,1,0,0,"Washington",1,0
+2020-01-21,"Dallas","LA Clippers","Dallas",1,0,0,0,"LA Clippers",1,0
+2020-01-22,"New Orleans","San Antonio","San Antonio",1,0,1,1,"San Antonio",1,0
+2020-01-22,"New York","LA Lakers","LA Lakers",1,0,1,1,"LA Lakers",1,0
+2020-01-22,"Atlanta","LA Clippers","LA Clippers",0,1,0,0,"Atlanta",1,0
+2020-01-22,"Orlando","Oklahoma City","Oklahoma City",1,0,1,1,"Oklahoma City",1,0
+2020-01-22,"Golden State","Utah","Utah",1,0,1,1,"Utah",1,0
+2020-01-22,"Detroit","Sacramento","Sacramento",0,1,0,0,"Detroit",1,0
+2020-01-22,"Toronto","Philadelphia","Philadelphia",0,1,0,0,"Toronto",1,0
+2020-01-22,"Phoenix","Indiana","Phoenix",1,0,0,0,"Indiana",1,0
+2020-01-22,"Miami","Washington","Miami",0,1,1,1,"Miami",1,0
+2020-01-22,"Boston","Memphis","Memphis",0,1,0,0,"Boston",1,0
+2020-01-22,"Houston","Denver","Houston",0,1,1,1,"Houston",1,0
+2020-01-23,"Brooklyn","LA Lakers","LA Lakers",1,0,1,1,"LA Lakers",1,0
+2020-01-23,"Portland","Dallas","Dallas",1,0,1,1,"Dallas",1,0
+2020-01-23,"Cleveland","Washington","Cleveland",1,0,0,0,"Washington",1,0
+2020-01-24,"Oklahoma City","Atlanta","Atlanta",0,1,0,0,"Oklahoma City",1,0
+2020-01-24,"Golden State","Indiana","Indiana",1,0,1,1,"Indiana",1,0
+2020-01-24,"Miami","LA Clippers","LA Clippers",1,0,1,1,"LA Clippers",1,0
+2020-01-24,"San Antonio","Phoenix","Phoenix",1,0,1,1,"Phoenix",1,0
+2020-01-24,"New Orleans","Denver","Denver",1,0,1,1,"Denver",1,0
+2020-01-24,"New York","Toronto","Toronto",1,0,1,1,"Toronto",1,0
+2020-01-24,"Chicago","Sacramento","Sacramento",1,0,1,1,"Sacramento",1,0
+2020-01-24,"Charlotte","Milwaukee","Charlotte",1,0,0,0,"Milwaukee",1,0
+2020-01-24,"Orlando","Boston","Orlando",1,0,0,0,"Boston",1,0
+2020-01-24,"Minnesota","Houston","Houston",1,0,1,1,"Houston",1,0
+2020-01-24,"Detroit","Memphis","Detroit",1,0,0,0,"Memphis",1,0
+2020-01-25,"Philadelphia","LA Lakers","LA Lakers",0,1,0,0,"Philadelphia",1,0
+2020-01-25,"Minnesota","Oklahoma City","Oklahoma City",1,0,1,1,"Oklahoma City",1,0
+2020-01-25,"Utah","Dallas","Utah",0,1,1,1,"Utah",1,0
+2020-01-25,"Detroit","Brooklyn","Brooklyn",1,0,1,1,"Brooklyn",1,0
+2020-01-26,"Orlando","LA Clippers","LA Clippers",1,0,1,1,"LA Clippers",1,0
+2020-01-26,"San Antonio","Toronto","San Antonio",1,0,0,0,"Toronto",1,0
+2020-01-26,"New Orleans","Boston","Boston",0,1,0,0,"New Orleans",1,0
+2020-01-26,"New York","Brooklyn","New York",0,1,1,1,"New York",1,0
+2020-01-26,"Atlanta","Washington","Washington",0,1,0,0,"Atlanta",1,0
+2020-01-26,"Portland","Indiana","Portland",0,1,1,1,"Portland",1,0
+2020-01-26,"Denver","Houston","Denver",0,1,1,1,"Denver",1,0
+2020-01-26,"Memphis","Phoenix","Phoenix",0,1,0,0,"Memphis",1,0
+2020-01-27,"Oklahoma City","Dallas","Oklahoma City",1,0,0,0,"Dallas",1,0
+2020-01-27,"Chicago","San Antonio","Chicago",0,1,1,1,"Chicago",1,0
+2020-01-27,"Minnesota","Sacramento","Minnesota",1,0,0,0,"Sacramento",1,0
+2020-01-27,"Miami","Orlando","Orlando",0,1,0,0,"Miami",1,0
+2020-01-27,"Utah","Houston","Houston",1,0,1,1,"Houston",1,0
+2020-01-28,"Philadelphia","Golden State","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2020-01-28,"Cleveland","New Orleans","New Orleans",1,0,1,1,"New Orleans",1,0
+2020-01-28,"Toronto","Atlanta","Toronto",0,1,1,1,"Toronto",1,0
+2020-01-28,"Dallas","Phoenix","Phoenix",1,0,1,1,"Phoenix",1,0
+2020-01-28,"Milwaukee","Washington","Milwaukee",0,1,1,1,"Milwaukee",1,0
+2020-01-28,"Miami","Boston","Boston",1,0,1,1,"Boston",1,0
+2020-01-28,"Memphis","Denver","Denver",0,1,0,0,"Memphis",1,0
+2020-01-29,"Sacramento","Oklahoma City","Oklahoma City",1,0,1,1,"Oklahoma City",1,0
+2020-01-29,"San Antonio","Utah","San Antonio",0,1,1,1,"San Antonio",1,0
+2020-01-29,"New York","Memphis","Memphis",1,0,1,1,"Memphis",1,0
+2020-01-29,"Indiana","Chicago","Indiana",0,1,1,1,"Indiana",1,0
+2020-01-29,"Portland","Houston","Houston",0,1,0,0,"Portland",1,0
+2020-01-29,"Brooklyn","Detroit","Detroit",0,1,0,0,"Brooklyn",1,0
+2020-01-30,"LA Clippers","Sacramento","Sacramento",1,0,1,1,"Sacramento",1,0
+2020-01-30,"Boston","Golden State","Boston",0,1,1,1,"Boston",1,0
+2020-01-30,"Atlanta","Philadelphia","Philadelphia",0,1,0,0,"Atlanta",1,0
+2020-01-30,"Washington","Charlotte","Charlotte",0,1,0,0,"Washington",1,0
+2020-01-30,"Cleveland","Toronto","Cleveland",1,0,0,0,"Toronto",1,0
+2020-01-30,"Denver","Utah","Denver",0,1,1,1,"Denver",1,0
+2020-01-31,"LA Lakers","Portland","LA Lakers",1,0,0,0,"Portland",1,0
+2020-01-31,"Phoenix","Oklahoma City","Phoenix",1,0,0,0,"Oklahoma City",1,0
+2020-01-31,"New Orleans","Memphis","Memphis",0,1,0,0,"New Orleans",1,0
+2020-01-31,"Houston","Dallas","Houston",0,1,1,1,"Houston",1,0
+2020-01-31,"Brooklyn","Chicago","Brooklyn",0,1,1,1,"Brooklyn",1,0
+2020-01-31,"Milwaukee","Denver","Denver",1,0,1,1,"Denver",1,0
+2020-01-31,"Detroit","Toronto","Toronto",1,0,1,1,"Toronto",1,0
+2020-02-01,"Sacramento","LA Lakers","Sacramento",1,0,0,0,"LA Lakers",1,0
+2020-02-01,"San Antonio","Charlotte","San Antonio",0,1,1,1,"San Antonio",1,0
+2020-02-01,"LA Clippers","Minnesota","Minnesota",0,1,0,0,"LA Clippers",1,0
+2020-02-01,"Indiana","New York","Indiana",1,0,0,0,"New York",1,0
+2020-02-01,"Dallas","Atlanta","Atlanta",0,1,0,0,"Dallas",1,0
+2020-02-01,"Boston","Philadelphia","Philadelphia",0,1,0,0,"Boston",1,0
+2020-02-01,"Portland","Utah","Utah",0,1,0,0,"Portland",1,0
+2020-02-01,"Orlando","Miami","Miami",1,0,1,1,"Miami",1,0
+2020-02-01,"Washington","Brooklyn","Brooklyn",0,1,0,0,"Washington",1,0
+2020-02-02,"Houston","New Orleans","New Orleans",0,1,0,0,"Houston",1,0
+2020-02-02,"Toronto","Chicago","Chicago",0,1,0,0,"Toronto",1,0
+2020-02-02,"Milwaukee","Phoenix","Phoenix",0,1,0,0,"Milwaukee",1,0
+2020-02-02,"Detroit","Denver","Detroit",0,1,1,1,"Detroit",1,0
+2020-02-03,"LA Clippers","San Antonio","San Antonio",0,1,0,0,"LA Clippers",1,0
+2020-02-03,"Washington","Golden State","Golden State",1,0,1,1,"Golden State",1,0
+2020-02-03,"Indiana","Dallas","Indiana",1,0,0,0,"Dallas",1,0
+2020-02-03,"Atlanta","Boston","Boston",1,0,1,1,"Boston",1,0
+2020-02-03,"Sacramento","Minnesota","Sacramento",0,1,1,1,"Sacramento",1,0
+2020-02-03,"Miami","Philadelphia","Philadelphia",0,1,0,0,"Miami",1,0
+2020-02-03,"Charlotte","Orlando","Charlotte",1,0,0,0,"Orlando",1,0
+2020-02-03,"Brooklyn","Phoenix","Phoenix",0,1,0,0,"Brooklyn",1,0
+2020-02-03,"Memphis","Detroit","Memphis",0,1,1,1,"Memphis",1,0
+2020-02-04,"LA Lakers","San Antonio","LA Lakers",0,1,1,1,"LA Lakers",1,0
+2020-02-04,"New Orleans","Milwaukee","New Orleans",1,0,0,0,"Milwaukee",1,0
+2020-02-04,"Houston","Charlotte","Charlotte",0,1,0,0,"Houston",1,0
+2020-02-04,"Denver","Portland","Portland",0,1,0,0,"Denver",1,0
+2020-02-05,"Oklahoma City","Cleveland","Cleveland",0,1,0,0,"Oklahoma City",1,0
+2020-02-05,"LA Clippers","Miami","LA Clippers",0,1,1,1,"LA Clippers",1,0
+2020-02-05,"Brooklyn","Golden State","Golden State",0,1,0,0,"Brooklyn",1,0
+2020-02-05,"Dallas","Memphis","Memphis",1,0,1,1,"Memphis",1,0
+2020-02-05,"Toronto","Indiana","Toronto",0,1,1,1,"Toronto",1,0
+2020-02-05,"Boston","Orlando","Boston",0,1,1,1,"Boston",1,0
+2020-02-05,"Utah","Denver","Utah",1,0,0,0,"Denver",1,0
+2020-02-05,"Detroit","Phoenix","Detroit",0,1,1,1,"Detroit",1,0
+2020-02-06,"Portland","San Antonio","San Antonio",0,1,0,0,"Portland",1,0
+2020-02-06,"Chicago","New Orleans","New Orleans",1,0,1,1,"New Orleans",1,0
+2020-02-06,"LA Lakers","Houston","LA Lakers",1,0,0,0,"Houston",1,0
+2020-02-06,"New York","Orlando","Orlando",0,1,0,0,"New York",1,0
+2020-02-06,"Milwaukee","Philadelphia","Milwaukee",0,1,1,1,"Milwaukee",1,0
+2020-02-07,"Oklahoma City","Detroit","Oklahoma City",0,1,1,1,"Oklahoma City",1,0
+2020-02-07,"Boston","Atlanta","Atlanta",0,1,0,0,"Boston",1,0
+2020-02-07,"Sacramento","Miami","Miami",0,1,0,0,"Sacramento",1,0
+2020-02-07,"Washington","Dallas","Washington",0,1,1,1,"Washington",1,0
+2020-02-07,"Philadelphia","Memphis","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2020-02-07,"Utah","Portland","Utah",0,1,1,1,"Utah",1,0
+2020-02-07,"Indiana","Toronto","Toronto",1,0,1,1,"Toronto",1,0
+2020-02-07,"Phoenix","Houston","Houston",0,1,0,0,"Phoenix",1,0
+2020-02-08,"Golden State","LA Lakers","Golden State",1,0,0,0,"LA Lakers",1,0
+2020-02-08,"Sacramento","San Antonio","San Antonio",0,1,0,0,"Sacramento",1,0
+2020-02-08,"Indiana","New Orleans","Indiana",1,0,0,0,"New Orleans",1,0
+2020-02-08,"Minnesota","LA Clippers","LA Clippers",0,1,0,0,"Minnesota",1,0
+2020-02-08,"Charlotte","Dallas","Dallas",1,0,1,1,"Dallas",1,0
+2020-02-08,"Orlando","Milwaukee","Orlando",1,0,0,0,"Milwaukee",1,0
+2020-02-08,"Toronto","Brooklyn","Brooklyn",0,1,0,0,"Toronto",1,0
+2020-02-08,"Phoenix","Denver","Phoenix",1,0,0,0,"Denver",1,0
+2020-02-09,"Oklahoma City","Boston","Oklahoma City",1,0,0,0,"Boston",1,0
+2020-02-09,"Cleveland","LA Clippers","Cleveland",1,0,0,0,"LA Clippers",1,0
+2020-02-09,"Philadelphia","Chicago","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2020-02-09,"Portland","Miami","Portland",0,1,1,1,"Portland",1,0
+2020-02-09,"Washington","Memphis","Memphis",1,0,1,1,"Memphis",1,0
+2020-02-09,"Houston","Utah","Houston",1,0,0,0,"Utah",1,0
+2020-02-10,"Golden State","Miami","Miami",1,0,1,1,"Miami",1,0
+2020-02-10,"Denver","San Antonio","Denver",0,1,1,1,"Denver",1,0
+2020-02-10,"LA Lakers","Phoenix","Phoenix",0,1,0,0,"LA Lakers",1,0
+2020-02-10,"Orlando","Atlanta","Orlando",0,1,1,1,"Orlando",1,0
+2020-02-10,"Milwaukee","Sacramento","Sacramento",0,1,0,0,"Milwaukee",1,0
+2020-02-10,"Dallas","Utah","Dallas",1,0,0,0,"Utah",1,0
+2020-02-10,"Indiana","Brooklyn","Indiana",1,0,0,0,"Brooklyn",1,0
+2020-02-10,"Toronto","Minnesota","Minnesota",0,1,0,0,"Toronto",1,0
+2020-02-11,"Oklahoma City","San Antonio","San Antonio",1,0,1,1,"San Antonio",1,0
+2020-02-11,"Philadelphia","LA Clippers","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2020-02-11,"New Orleans","Portland","Portland",0,1,0,0,"New Orleans",1,0
+2020-02-11,"Washington","Chicago","Washington",0,1,1,1,"Washington",1,0
+2020-02-11,"Houston","Boston","Houston",0,1,1,1,"Houston",1,0
+2020-02-12,"Denver","LA Lakers","LA Lakers",1,0,1,1,"LA Lakers",1,0
+2020-02-12,"Phoenix","Golden State","Phoenix",0,1,1,1,"Phoenix",1,0
+2020-02-12,"New York","Washington","Washington",1,0,1,1,"Washington",1,0
+2020-02-12,"Dallas","Sacramento","Dallas",0,1,1,1,"Dallas",1,0
+2020-02-12,"Indiana","Milwaukee","Milwaukee",0,1,0,0,"Indiana",1,0
+2020-02-12,"Utah","Miami","Utah",0,1,1,1,"Utah",1,0
+2020-02-12,"Orlando","Detroit","Orlando",0,1,1,1,"Orlando",1,0
+2020-02-12,"Memphis","Portland","Memphis",0,1,1,1,"Memphis",1,0
+2020-02-12,"Brooklyn","Toronto","Toronto",0,1,0,0,"Brooklyn",1,0
+2020-02-13,"New Orleans","Oklahoma City","Oklahoma City",1,0,1,1,"Oklahoma City",1,0
+2020-02-13,"Boston","LA Clippers","LA Clippers",0,1,0,0,"Boston",1,0
+2020-02-20,"Golden State","Houston","Houston",1,0,1,1,"Houston",1,0
+2020-02-20,"Atlanta","Miami","Miami",0,1,0,0,"Atlanta",1,0
+2020-02-20,"Philadelphia","Brooklyn","Brooklyn",0,1,0,0,"Philadelphia",1,0
+2020-02-20,"Sacramento","Memphis","Sacramento",0,1,1,1,"Sacramento",1,0
+2020-02-20,"Detroit","Milwaukee","Detroit",1,0,0,0,"Milwaukee",1,0
+2020-02-21,"Utah","San Antonio","Utah",1,0,0,0,"San Antonio",1,0
+2020-02-21,"Oklahoma City","Denver","Oklahoma City",0,1,1,1,"Oklahoma City",1,0
+2020-02-21,"Portland","New Orleans","Portland",1,0,0,0,"New Orleans",1,0
+2020-02-21,"New York","Indiana","New York",1,0,0,0,"Indiana",1,0
+2020-02-21,"LA Lakers","Memphis","LA Lakers",0,1,1,1,"LA Lakers",1,0
+2020-02-21,"Orlando","Dallas","Orlando",1,0,0,0,"Dallas",1,0
+2020-02-21,"Washington","Cleveland","Cleveland",1,0,1,1,"Cleveland",1,0
+2020-02-21,"Minnesota","Boston","Minnesota",1,0,0,0,"Boston",1,0
+2020-02-21,"Toronto","Phoenix","Phoenix",0,1,0,0,"Toronto",1,0
+2020-02-22,"LA Clippers","Sacramento","LA Clippers",1,0,0,0,"Sacramento",1,0
+2020-02-22,"Atlanta","Dallas","Atlanta",0,1,1,1,"Atlanta",1,0
+2020-02-22,"Milwaukee","Philadelphia","Philadelphia",0,1,0,0,"Milwaukee",1,0
+2020-02-22,"Miami","Cleveland","Miami",0,1,1,1,"Miami",1,0
+2020-02-22,"Charlotte","Brooklyn","Brooklyn",1,0,1,1,"Brooklyn",1,0
+2020-02-22,"Chicago","Phoenix","Chicago",1,0,0,0,"Phoenix",1,0
+2020-02-22,"Utah","Houston","Utah",1,0,0,0,"Houston",1,0
+2020-02-23,"Oklahoma City","San Antonio","San Antonio",0,1,0,0,"Oklahoma City",1,0
+2020-02-23,"Golden State","New Orleans","New Orleans",1,0,1,1,"New Orleans",1,0
+2020-02-23,"LA Lakers","Boston","Boston",0,1,0,0,"LA Lakers",1,0
+2020-02-23,"Chicago","Washington","Washington",0,1,0,0,"Chicago",1,0
+2020-02-23,"Toronto","Indiana","Toronto",0,1,1,1,"Toronto",1,0
+2020-02-23,"Portland","Detroit","Portland",0,1,1,1,"Portland",1,0
+2020-02-23,"Denver","Minnesota","Minnesota",0,1,0,0,"Denver",1,0
+2020-02-24,"LA Clippers","Memphis","LA Clippers",0,1,1,1,"LA Clippers",1,0
+2020-02-24,"Houston","New York","New York",0,1,0,0,"Houston",1,0
+2020-02-24,"Philadelphia","Atlanta","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2020-02-24,"Dallas","Minnesota","Minnesota",0,1,0,0,"Dallas",1,0
+2020-02-24,"Cleveland","Miami","Cleveland",0,1,1,1,"Cleveland",1,0
+2020-02-24,"Washington","Milwaukee","Milwaukee",1,0,1,1,"Milwaukee",1,0
+2020-02-24,"Brooklyn","Orlando","Orlando",1,0,1,1,"Orlando",1,0
+2020-02-24,"Utah","Phoenix","Phoenix",1,0,1,1,"Phoenix",1,0
+2020-02-25,"LA Lakers","New Orleans","New Orleans",0,1,0,0,"LA Lakers",1,0
+2020-02-25,"Chicago","Oklahoma City","Chicago",1,0,0,0,"Oklahoma City",1,0
+2020-02-25,"Golden State","Sacramento","Golden State",1,0,0,0,"Sacramento",1,0
+2020-02-25,"Indiana","Charlotte","Indiana",0,1,1,1,"Indiana",1,0
+2020-02-25,"Portland","Boston","Portland",1,0,0,0,"Boston",1,0
+2020-02-25,"Toronto","Milwaukee","Milwaukee",1,0,1,1,"Milwaukee",1,0
+2020-02-25,"Denver","Detroit","Denver",0,1,1,1,"Denver",1,0
+2020-02-26,"San Antonio","Dallas","Dallas",1,0,1,1,"Dallas",1,0
+2020-02-26,"Phoenix","LA Clippers","Phoenix",1,0,0,0,"LA Clippers",1,0
+2020-02-26,"Atlanta","Orlando","Atlanta",1,0,0,0,"Orlando",1,0
+2020-02-26,"Cleveland","Philadelphia","Cleveland",0,1,1,1,"Cleveland",1,0
+2020-02-26,"Miami","Minnesota","Minnesota",1,0,1,1,"Minnesota",1,0
+2020-02-26,"Washington","Brooklyn","Brooklyn",0,1,0,0,"Washington",1,0
+2020-02-26,"Utah","Boston","Boston",1,0,1,1,"Boston",1,0
+2020-02-26,"Houston","Memphis","Houston",0,1,1,1,"Houston",1,0
+2020-02-27,"Golden State","LA Lakers","Golden State",1,0,0,0,"LA Lakers",1,0
+2020-02-27,"Oklahoma City","Sacramento","Oklahoma City",0,1,1,1,"Oklahoma City",1,0
+2020-02-27,"Philadelphia","New York","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2020-02-27,"Indiana","Portland","Portland",0,1,0,0,"Indiana",1,0
+2020-02-28,"Milwaukee","Oklahoma City","Milwaukee",0,1,1,1,"Milwaukee",1,0
+2020-02-28,"New Orleans","Cleveland","New Orleans",0,1,1,1,"New Orleans",1,0
+2020-02-28,"LA Clippers","Denver","LA Clippers",0,1,1,1,"LA Clippers",1,0
+2020-02-28,"Atlanta","Brooklyn","Atlanta",0,1,1,1,"Atlanta",1,0
+2020-02-28,"Miami","Dallas","Dallas",0,1,0,0,"Miami",1,0
+2020-02-28,"Memphis","Sacramento","Memphis",1,0,0,0,"Sacramento",1,0
+2020-02-28,"Orlando","Minnesota","Minnesota",0,1,0,0,"Orlando",1,0
+2020-02-28,"Utah","Washington","Utah",0,1,1,1,"Utah",1,0
+2020-02-28,"Toronto","Charlotte","Toronto",1,0,0,0,"Charlotte",1,0
+2020-02-28,"Phoenix","Detroit","Phoenix",1,0,0,0,"Detroit",1,0
+2020-02-29,"San Antonio","Orlando","San Antonio",0,1,1,1,"San Antonio",1,0
+2020-02-29,"Memphis","LA Lakers","Memphis",0,1,1,1,"Memphis",1,0
+2020-02-29,"Phoenix","Golden State","Phoenix",1,0,0,0,"Golden State",1,0
+2020-02-29,"Atlanta","Portland","Atlanta",0,1,1,1,"Atlanta",1,0
+2020-02-29,"Cleveland","Indiana","Cleveland",1,0,0,0,"Indiana",1,0
+2020-02-29,"Miami","Brooklyn","Miami",0,1,1,1,"Miami",1,0
+2020-02-29,"Boston","Houston","Boston",1,0,0,0,"Houston",1,0
+2020-03-01,"New Orleans","LA Lakers","New Orleans",1,0,0,0,"LA Lakers",1,0
+2020-03-01,"LA Clippers","Philadelphia","LA Clippers",0,1,1,1,"LA Clippers",1,0
+2020-03-01,"Golden State","Washington","Washington",1,0,1,1,"Washington",1,0
+2020-03-01,"Minnesota","Dallas","Dallas",1,0,1,1,"Dallas",1,0
+2020-03-01,"Sacramento","Detroit","Sacramento",0,1,1,1,"Sacramento",1,0
+2020-03-01,"Charlotte","Milwaukee","Charlotte",1,0,0,0,"Milwaukee",1,0
+2020-03-01,"Denver","Toronto","Denver",0,1,1,1,"Denver",1,0
+2020-03-02,"San Antonio","Indiana","Indiana",1,0,1,1,"Indiana",1,0
+2020-03-02,"New York","Houston","Houston",0,1,0,0,"New York",1,0
+2020-03-02,"Chicago","Dallas","Dallas",0,1,0,0,"Chicago",1,0
+2020-03-02,"Atlanta","Memphis","Atlanta",1,0,0,0,"Memphis",1,0
+2020-03-02,"Cleveland","Utah","Cleveland",1,0,0,0,"Utah",1,0
+2020-03-02,"Orlando","Portland","Portland",1,0,1,1,"Portland",1,0
+2020-03-02,"Miami","Milwaukee","Milwaukee",0,1,0,0,"Miami",1,0
+2020-03-03,"Oklahoma City","LA Clippers","Oklahoma City",1,0,0,0,"LA Clippers",1,0
+2020-03-03,"LA Lakers","Philadelphia","Philadelphia",0,1,0,0,"LA Lakers",1,0
+2020-03-03,"Charlotte","San Antonio","Charlotte",1,0,0,0,"San Antonio",1,0
+2020-03-03,"New Orleans","Minnesota","Minnesota",1,0,1,1,"Minnesota",1,0
+2020-03-03,"Denver","Golden State","Denver",1,0,0,0,"Golden State",1,0
+2020-03-03,"Sacramento","Washington","Washington",0,1,0,0,"Sacramento",1,0
+2020-03-03,"Boston","Brooklyn","Brooklyn",1,0,1,1,"Brooklyn",1,0
+2020-03-03,"Phoenix","Toronto","Phoenix",1,0,0,0,"Toronto",1,0
+2020-03-04,"Dallas","New Orleans","New Orleans",0,1,0,0,"Dallas",1,0
+2020-03-04,"Detroit","Oklahoma City","Detroit",1,0,0,0,"Oklahoma City",1,0
+2020-03-04,"New York","Utah","New York",1,0,0,0,"Utah",1,0
+2020-03-04,"Milwaukee","Indiana","Indiana",0,1,0,0,"Milwaukee",1,0
+2020-03-04,"Portland","Washington","Washington",0,1,0,0,"Portland",1,0
+2020-03-04,"Miami","Orlando","Orlando",0,1,0,0,"Miami",1,0
+2020-03-04,"Cleveland","Boston","Boston",1,0,1,1,"Boston",1,0
+2020-03-04,"Brooklyn","Memphis","Memphis",1,0,1,1,"Memphis",1,0
+2020-03-05,"Houston","LA Clippers","LA Clippers",1,0,1,1,"LA Clippers",1,0
+2020-03-05,"Golden State","Toronto","Golden State",1,0,0,0,"Toronto",1,0
+2020-03-05,"Sacramento","Philadelphia","Sacramento",1,0,0,0,"Philadelphia",1,0
+2020-03-05,"Charlotte","Denver","Denver",1,0,1,1,"Denver",1,0
+2020-03-06,"New York","Oklahoma City","Oklahoma City",1,0,1,1,"Oklahoma City",1,0
+2020-03-06,"LA Lakers","Milwaukee","Milwaukee",0,1,0,0,"LA Lakers",1,0
+2020-03-06,"Brooklyn","San Antonio","San Antonio",0,1,0,0,"Brooklyn",1,0
+2020-03-06,"New Orleans","Miami","New Orleans",0,1,1,1,"New Orleans",1,0
+2020-03-06,"Washington","Atlanta","Washington",0,1,1,1,"Washington",1,0
+2020-03-06,"Chicago","Indiana","Indiana",1,0,1,1,"Indiana",1,0
+2020-03-06,"Dallas","Memphis","Dallas",0,1,1,1,"Dallas",1,0
+2020-03-06,"Minnesota","Orlando","Orlando",1,0,1,1,"Orlando",1,0
+2020-03-06,"Boston","Utah","Utah",1,0,1,1,"Utah",1,0
+2020-03-06,"Phoenix","Portland","Phoenix",0,1,1,1,"Phoenix",1,0
+2020-03-07,"Golden State","Philadelphia","Golden State",0,1,1,1,"Golden State",1,0
+2020-03-07,"Portland","Sacramento","Sacramento",1,0,1,1,"Sacramento",1,0
+2020-03-07,"Memphis","Atlanta","Memphis",0,1,1,1,"Memphis",1,0
+2020-03-07,"Cleveland","Denver","Denver",0,1,0,0,"Cleveland",1,0
+2020-03-07,"Charlotte","Houston","Charlotte",0,1,1,1,"Charlotte",1,0
+2020-03-07,"Detroit","Utah","Detroit",1,0,0,0,"Utah",1,0
+2020-03-08,"LA Clippers","LA Lakers","LA Clippers",1,0,0,0,"LA Lakers",1,0
+2020-03-08,"Cleveland","San Antonio","Cleveland",0,1,1,1,"Cleveland",1,0
+2020-03-08,"Boston","Oklahoma City","Oklahoma City",1,0,1,1,"Oklahoma City",1,0
+2020-03-08,"Minnesota","New Orleans","New Orleans",1,0,1,1,"New Orleans",1,0
+2020-03-08,"Dallas","Indiana","Indiana",1,0,1,1,"Indiana",1,0
+2020-03-08,"Sacramento","Toronto","Toronto",1,0,1,1,"Toronto",1,0
+2020-03-08,"Washington","Miami","Miami",1,0,1,1,"Miami",1,0
+2020-03-08,"Brooklyn","Chicago","Chicago",0,1,0,0,"Brooklyn",1,0
+2020-03-08,"Houston","Orlando","Orlando",1,0,1,1,"Orlando",1,0
+2020-03-08,"Phoenix","Milwaukee","Phoenix",0,1,1,1,"Phoenix",1,0
+2020-03-09,"Denver","Milwaukee","Denver",0,1,1,1,"Denver",1,0
+2020-03-09,"Utah","Toronto","Utah",1,0,0,0,"Toronto",1,0
+2020-03-10,"Golden State","LA Clippers","Golden State",1,0,0,0,"LA Clippers",1,0
+2020-03-10,"San Antonio","Dallas","San Antonio",0,1,1,1,"San Antonio",1,0
+2020-03-10,"LA Lakers","Brooklyn","Brooklyn",1,0,1,1,"Brooklyn",1,0
+2020-03-10,"Washington","New York","New York",0,1,0,0,"Washington",1,0
+2020-03-10,"Indiana","Boston","Boston",1,0,1,1,"Boston",1,0
+2020-03-10,"Memphis","Orlando","Memphis",1,0,0,0,"Orlando",1,0
+2020-03-10,"Portland","Phoenix","Portland",0,1,1,1,"Portland",1,0
+2020-03-10,"Houston","Minnesota","Houston",0,1,1,1,"Houston",1,0
+2020-03-11,"Miami","Charlotte","Charlotte",1,0,1,1,"Charlotte",1,0
+2020-03-11,"Philadelphia","Detroit","Philadelphia",0,1,1,1,"Philadelphia",1,0
+2020-03-11,"Dallas","Denver","Denver",0,1,0,0,"Dallas",1,0
+2020-07-30,"LA Lakers","LA Clippers","LA Lakers",0.441360072825804,0.558639927174196,0.558639927174196,1,"LA Lakers",1,0
+2020-07-30,"New Orleans","Utah","Utah",0.490806186536208,0.509193813463792,0.490806186536208,1,"Utah",1,0
+2020-07-31,"San Antonio","Sacramento","San Antonio",0.538011558147718,0.461988441852282,0.461988441852282,1,"San Antonio",1,0
+2020-07-31,"Dallas","Houston","Dallas",0.619357156419629,0.380642843580371,0.380642843580371,0,"Houston",1,0
+2020-07-31,"Brooklyn","Orlando","Brooklyn",0.467528800769106,0.532471199230894,0.532471199230894,0,"Orlando",1,0
+2020-07-31,"Milwaukee","Boston","Boston",0.52458371373491,0.47541628626509,0.52458371373491,0,"Milwaukee",1,0
+2020-07-31,"Portland","Memphis","Memphis",0.487685702607349,0.512314297392651,0.487685702607349,0,"Portland",1,0
+2020-07-31,"Washington","Phoenix","Phoenix",0.50664530057567,0.49335469942433,0.50664530057567,1,"Phoenix",1,0
+2020-08-01,"LA Clippers","New Orleans","New Orleans",0.519560793112212,0.480439206887788,0.519560793112212,0,"LA Clippers",1,0
+2020-08-01,"Oklahoma City","Utah","Utah",0.529611207982151,0.470388792017849,0.529611207982151,0,"Oklahoma City",1,0
+2020-08-01,"Toronto","LA Lakers","LA Lakers",0.51926214520241,0.48073785479759,0.51926214520241,0,"Toronto",1,0
+2020-08-01,"Indiana","Philadelphia","Philadelphia",0.597790320154889,0.402209679845111,0.597790320154889,0,"Indiana",1,0
+2020-08-01,"Denver","Miami","Miami",0.432812294910011,0.567187705089989,0.432812294910011,1,"Miami",1,0
+2020-08-02,"Memphis","San Antonio","San Antonio",0.518244319488472,0.481755680511528,0.518244319488472,1,"San Antonio",1,0
+2020-08-02,"Orlando","Sacramento","Sacramento",0.543895018951759,0.456104981048241,0.543895018951759,0,"Orlando",1,0
+2020-08-02,"Phoenix","Dallas","Dallas",0.558836602434032,0.441163397565968,0.558836602434032,0,"Phoenix",1,0
+2020-08-02,"Boston","Portland","Portland",0.507832541669571,0.492167458330429,0.507832541669571,0,"Boston",1,0
+2020-08-02,"Brooklyn","Washington","Washington",0.506161438018546,0.493838561981454,0.506161438018546,0,"Brooklyn",1,0
+2020-08-02,"Houston","Milwaukee","Milwaukee",0.344455762126629,0.655544237873371,0.344455762126629,0,"Houston",1,0
+2020-08-03,"Philadelphia","San Antonio","San Antonio",0.444166822611302,0.555833177388698,0.444166822611302,0,"Philadelphia",1,0
+2020-08-03,"Utah","LA Lakers","LA Lakers",0.545329642895144,0.454670357104856,0.545329642895144,1,"LA Lakers",1,0
+2020-08-03,"Oklahoma City","Denver","Denver",0.509236250382931,0.490763749617069,0.509236250382931,1,"Denver",1,0
+2020-08-03,"New Orleans","Memphis","Memphis",0.468226625498245,0.531773374501755,0.468226625498245,0,"New Orleans",1,0
+2020-08-03,"Washington","Indiana","Indiana",0.581105086613955,0.418894913386045,0.581105086613955,1,"Indiana",1,0
+2020-08-03,"Miami","Toronto","Toronto",0.561255312358148,0.438744687641852,0.561255312358148,1,"Toronto",1,0
+2020-08-04,"LA Clippers","Phoenix","Phoenix",0.46630484600822,0.53369515399178,0.46630484600822,1,"Phoenix",1,0
+2020-08-04,"Sacramento","Dallas","Dallas",0.531731119183221,0.468268880816779,0.531731119183221,1,"Dallas",1,0
+2020-08-04,"Indiana","Orlando","Indiana",0.441273042877807,0.558726957122193,0.558726957122193,1,"Indiana",1,0
+2020-08-04,"Milwaukee","Brooklyn","Brooklyn",0.534341830451306,0.465658169548694,0.534341830451306,1,"Brooklyn",1,0
+2020-08-04,"Miami","Boston","Miami",0.488057714932346,0.511942285067654,0.511942285067654,1,"Miami",1,0
+2020-08-04,"Portland","Houston","Portland",0.656348483080476,0.343651516919524,0.343651516919524,1,"Portland",1,0
+2020-08-05,"LA Lakers","Oklahoma City","Oklahoma City",0.451284071390669,0.548715928609331,0.451284071390669,1,"Oklahoma City",1,0
+2020-08-05,"San Antonio","Denver","San Antonio",0.498756823159758,0.501243176840242,0.501243176840242,0,"Denver",1,0
+2020-08-05,"Washington","Philadelphia","Washington",0.609535633463197,0.390464366536803,0.390464366536803,0,"Philadelphia",1,0
+2020-08-05,"Orlando","Toronto","Orlando",0.571250794418915,0.428749205581085,0.428749205581085,0,"Toronto",1,0
+2020-08-05,"Utah","Memphis","Memphis",0.471451602229248,0.528548397770752,0.471451602229248,0,"Utah",1,0
+2020-08-05,"Boston","Brooklyn","Brooklyn",0.481265251059932,0.518734748940068,0.481265251059932,0,"Boston",1,0
+2020-08-06,"Dallas","LA Clippers","Dallas",0.492667783550362,0.507332216449638,0.507332216449638,0,"LA Clippers",1,0
+2020-08-06,"Sacramento","New Orleans","New Orleans",0.520412484388434,0.479587515611566,0.520412484388434,0,"Sacramento",1,0
+2020-08-06,"Houston","LA Lakers","Houston",0.39319163242567,0.60680836757433,0.60680836757433,1,"Houston",1,0
+2020-08-06,"Phoenix","Indiana","Indiana",0.556487147136054,0.443512852863946,0.556487147136054,0,"Phoenix",1,0
+2020-08-06,"Milwaukee","Miami","Milwaukee",0.512693283292277,0.487306716707723,0.487306716707723,1,"Milwaukee",1,0
+2020-08-06,"Denver","Portland","Denver",0.492705971251324,0.507294028748676,0.507294028748676,0,"Portland",1,0
+2020-08-07,"San Antonio","Utah","Utah",0.513481209290146,0.486518790709854,0.513481209290146,0,"San Antonio",1,0
+2020-08-07,"Memphis","Oklahoma City","Oklahoma City",0.58708987566299,0.41291012433701,0.58708987566299,0,"Memphis",1,0
+2020-08-07,"New Orleans","Washington","Washington",0.423425465684815,0.576574534315185,0.423425465684815,0,"New Orleans",1,0
+2020-08-07,"Philadelphia","Orlando","Philadelphia",0.391734728861048,0.608265271138952,0.608265271138952,1,"Philadelphia",1,0
+2020-08-07,"Brooklyn","Sacramento","Sacramento",0.593213180114402,0.406786819885598,0.593213180114402,0,"Brooklyn",1,0
+2020-08-07,"Toronto","Boston","Boston",0.428676663645426,0.571323336354574,0.428676663645426,1,"Boston",1,0
+2020-08-08,"Indiana","LA Lakers","Indiana",0.448338413140108,0.551661586859892,0.551661586859892,1,"Indiana",1,0
+2020-08-08,"Portland","LA Clippers","Portland",0.499848076641903,0.500151923358097,0.500151923358097,0,"LA Clippers",1,0
+2020-08-08,"Dallas","Milwaukee","Milwaukee",0.444461060044004,0.555538939955996,0.444461060044004,0,"Dallas",1,0
+2020-08-08,"Denver","Utah","Utah",0.482287577805198,0.517712422194802,0.482287577805198,0,"Denver",1,0
+2020-08-08,"Miami","Phoenix","Phoenix",0.512998555032739,0.487001444967261,0.512998555032739,1,"Phoenix",1,0
+2020-08-09,"New Orleans","San Antonio","San Antonio",0.486695949054729,0.513304050945271,0.486695949054729,1,"San Antonio",1,0
+2020-08-09,"Oklahoma City","Washington","Washington",0.43442911845758,0.56557088154242,0.43442911845758,0,"Oklahoma City",1,0
+2020-08-09,"LA Clippers","Brooklyn","LA Clippers",0.390178244186922,0.609821755813078,0.609821755813078,0,"Brooklyn",1,0
+2020-08-09,"Portland","Philadelphia","Philadelphia",0.457663672345688,0.542336327654312,0.457663672345688,0,"Portland",1,0
+2020-08-09,"Sacramento","Houston","Sacramento",0.636949107935563,0.363050892064437,0.363050892064437,0,"Houston",1,0
+2020-08-09,"Boston","Orlando","Boston",0.447950733035599,0.552049266964401,0.552049266964401,1,"Boston",1,0
+2020-08-09,"Toronto","Memphis","Memphis",0.420453499837801,0.579546500162199,0.420453499837801,0,"Toronto",1,0
+2020-08-10,"Phoenix","Oklahoma City","Phoenix",0.459714620004371,0.540285379995629,0.540285379995629,1,"Phoenix",1,0
+2020-08-10,"LA Lakers","Denver","LA Lakers",0.47838336598236,0.52161663401764,0.52161663401764,1,"LA Lakers",1,0
+2020-08-10,"Utah","Dallas","Utah",0.553944227352159,0.446055772647841,0.446055772647841,0,"Dallas",1,0
+2020-08-10,"Miami","Indiana","Indiana",0.549267720433393,0.450732279566607,0.549267720433393,0,"Miami",1,0
+2020-08-10,"Milwaukee","Toronto","Milwaukee",0.553182951135258,0.446817048864742,0.446817048864742,0,"Toronto",1,0
+2020-08-11,"Sacramento","New Orleans","Sacramento",0.533597955609276,0.466402044390724,0.466402044390724,1,"Sacramento",1,0
+2020-08-11,"San Antonio","Houston","Houston",0.62950177788564,0.37049822211436,0.62950177788564,0,"San Antonio",1,0
+2020-08-11,"Dallas","Portland","Dallas",0.539514332906544,0.460485667093456,0.460485667093456,0,"Portland",1,0
+2020-08-11,"Philadelphia","Phoenix","Philadelphia",0.480235964174202,0.519764035825798,0.519764035825798,0,"Phoenix",1,0
+2020-08-11,"Washington","Milwaukee","Milwaukee",0.568620317332075,0.431379682667925,0.568620317332075,1,"Milwaukee",1,0
+2020-08-11,"Orlando","Brooklyn","Brooklyn",0.51278727084465,0.48721272915535,0.51278727084465,1,"Brooklyn",1,0
+2020-08-11,"Memphis","Boston","Boston",0.53052246300038,0.46947753699962,0.53052246300038,1,"Boston",1,0
+2020-08-12,"Oklahoma City","Miami","Miami",0.52838071873037,0.47161928126963,0.52838071873037,0,"Oklahoma City",1,0
+2020-08-12,"Denver","LA Clippers","LA Clippers",0.536265353729114,0.463734646270886,0.536265353729114,1,"LA Clippers",1,0
+2020-08-12,"Philadelphia","Toronto","Philadelphia",0.515910997785841,0.484089002214159,0.484089002214159,0,"Toronto",1,0
+2020-08-12,"Houston","Indiana","Indiana",0.404529217927596,0.595470782072404,0.404529217927596,1,"Indiana",1,0
+2020-08-13,"LA Lakers","Sacramento","LA Lakers",0.469086541555045,0.530913458444955,0.530913458444955,0,"Sacramento",1,0
+2020-08-13,"Utah","San Antonio","Utah",0.550784120438055,0.449215879561945,0.449215879561945,1,"Utah",1,0
+2020-08-13,"Orlando","New Orleans","Orlando",0.559119187512567,0.440880812487433,0.440880812487433,1,"Orlando",1,0
+2020-08-13,"Phoenix","Dallas","Phoenix",0.523337667099838,0.476662332900162,0.476662332900162,1,"Phoenix",1,0
+2020-08-13,"Brooklyn","Portland","Portland",0.650120113097219,0.349879886902781,0.650120113097219,1,"Portland",1,0
+2020-08-13,"Boston","Washington","Boston",0.402348579383369,0.597651420616631,0.597651420616631,0,"Washington",1,0
+2020-08-13,"Memphis","Milwaukee","Milwaukee",0.516119207811546,0.483880792188454,0.516119207811546,0,"Memphis",1,0
+2020-08-14,"LA Clippers","Oklahoma City","LA Clippers",0.445571456220737,0.554428543779263,0.554428543779263,1,"LA Clippers",1,0
+2020-08-14,"Indiana","Miami","Miami",0.457731690234644,0.542268309765356,0.457731690234644,0,"Indiana",1,0
+2020-08-14,"Houston","Philadelphia","Houston",0.364720680285546,0.635279319714454,0.635279319714454,0,"Philadelphia",1,0
+2020-08-14,"Toronto","Denver","Toronto",0.414562716483282,0.585437283516718,0.585437283516718,1,"Toronto",1,0
+2020-08-15,"Portland","Memphis","Memphis",0.346409228152285,0.653590771847715,0.346409228152285,0,"Portland",1,0

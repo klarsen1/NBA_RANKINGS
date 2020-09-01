@@ -9,12 +9,11 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
   thisday$selected_team_travel <- 0
   thisday$opposing_team_rest <- 0
   thisday$selected_team_rest <- 0
-  #thisday$home_team_selected <- 0
   thisday$selected_team_win <- NA
   thisday$season <- thisseason
   thisday$opposing_team <- opposing_team
   thisday$selected_team <- selected_team
-  #thisday$home_team_selected <- order_preserved
+  thisday$home_team_selected <- order_preserved
   thisday$order_preserved <- order_preserved
   if (order_preserved==1){
      thisday$home_team_name <- selected_team
@@ -35,14 +34,12 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
   thisday$game_id <- paste0(date, vapply(stri_split_boundaries(cat, type = "character"), striHelper, ""))
   if (game %in% c(3,4,6)) {
     if (order_preserved==1){
-       #thisday$home_team_selected <- 0
-       thisday$home_team_selected <- 0.5
+       thisday$home_team_selected <- 0
        thisday$road_team_name <- selected_team
        thisday$home_team_name <- opposing_team
     }
     else{
-      #thisday$home_team_selected <- 1
-      thisday$home_team_selected <- 0.5
+      thisday$home_team_selected <- 1
       thisday$home_team_name <- selected_team
       thisday$road_team_name <- opposing_team
     }
@@ -51,7 +48,7 @@ create_fake_entry <- function(game, date, selected_team, opposing_team, thisseas
 }
 
 
-sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_perc2, datemap, runs=0, root, c, end_index, thisseason, last_date_in_season, seed){
+sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_perc2, datemap, runs=0, root, c, end_index, thisseason, last_date_in_season, seed, scores){
 
   set.seed(seed)
   
@@ -119,17 +116,38 @@ sim_playoff <- function(ranks, inwindow, playing_time_window, win_perc1, win_per
       loser <- "NONE"
       games=0
       while(games<7 & winner_declared==FALSE){
-         thisday <- create_fake_entry(games+1, DATE, selected, opposing, thisseason, matchup1, matchup2, order_preserved)
-         pred <- predict_game(c, filter(inwindow, DATE_INDEX>end_index-playing_time_window), win_perc1, win_perc2, thisday[1,"game_id"], runs, thisday, nclus, prior, posterior, paste0(root, "/rawdata/"), model_variables, 1, NULL, seed=seed)
-         decomps[[counter]] <- pred[[2]]
+        check_games <- 
+          filter(scores, 
+          playoffs==1 & season==thisseason & selected_team %in% c(selected, opposing) & opposing_team %in% c(selected, opposing)) %>%
+          distinct(game_id, .keep_all = TRUE) %>%
+          ungroup() %>%
+          filter(row_number()==matchup)
+        
+        print(check_games)
+        
+          if (nrow(check_games)>0) { #check if the game has already been played
+            winner <- 
+              mutate(check_games, 
+                     winner=if_else(selected_team_win==1, selected_team, opposing_team)) %>%
+              pull(winner)
+            
+            decomps[[counter]] <- 0
+            
+            if(winner==selected){d <- 1} else{d <- 0}
+         } else{
+            thisday <- create_fake_entry(games+1, DATE, selected, opposing, thisseason, matchup1, matchup2, order_preserved)
+            pred <- predict_game(c, filter(inwindow, DATE_INDEX>end_index-playing_time_window), win_perc1, win_perc2, thisday[1,"game_id"], runs, thisday, nclus, prior, posterior, paste0(root, "/rawdata/"), model_variables, 1, NULL, seed=seed)
+            decomps[[counter]] <- pred[[2]]
+            d <- pred[[1]]$prob_selected_team_win_d
+         }
          decomps[[counter]]$round <- i
          decomps[[counter]]$matchup <- j
          if (order_preserved==1){
-              w1 <- w1 + pred[[1]]$prob_selected_team_win_d
-              w2 <- w2 + 1-pred[[1]]$prob_selected_team_win_d 
+              w1 <- w1 + d
+              w2 <- w2 + 1-d
          } else{
-              w1 <- w1 + 1-pred[[1]]$prob_selected_team_win_d
-              w2 <- w2 + pred[[1]]$prob_selected_team_win_d
+              w1 <- w1 + 1-d
+              w2 <- w2 + d
          }
          if (w1>3.5){
            winner_declared <- TRUE

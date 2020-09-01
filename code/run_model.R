@@ -26,14 +26,17 @@ source(paste0(root, "/functions/combine.R"))
 
 ## Read the box scores
 box_scores <- readRDS(paste0(root, "/cleandata/box_scores.RDA")) %>%
-  filter(playoffs==0)
+  mutate(season=if_else(season==2020, 2019, season)) %>%
+  filter(!(season<2019 & playoffs==1))
 
 ### Global settings
 cutoff <- 8 # minutes per game. if a player plays less than this amount, he is excluded
 estimation_window <- 1000 # number of days used to estimate the model
-winstreak_window <- 91 # number of days used to calculate the weighted win %, for the short term effect
+#winstreak_window <- 91 # number of days used to calculate the weighted win %, for the short term effect
+winstreak_window <- 31 # number of days used to calculate the weighted win %, for the short term effect
 winstreak_window_s <- 31 # number of days used to calculate the weighted win %
-playing_time_window <- 91 # number of days used to estimate average playing time
+#playing_time_window <- 91 # number of days used to estimate average playing time
+playing_time_window <- 31 # number of days used to estimate average playing time
 cluster_window <- 91 # number of days used for cluster assignment
 #cluster_window <- 30 # number of days used for cluster assignment
 alpha <- 0 # for elastic net
@@ -45,7 +48,7 @@ current_season <- max(box_scores$season)
 # current_season <- 2019
 adjust_intercept_by_team <- 0
 buffer_days <- 10
-use_win_rates <- 0
+bubble <- 1
 
 
 ### Create a date-index
@@ -63,20 +66,31 @@ box_scores <- inner_join(box_scores, dplyr::select(datemap, DATE, DATE_INDEX, se
 
 ## Get model variables
 model_variables <- read.csv(paste0(root, "/modeldetails/model_variables.csv"), stringsAsFactors = FALSE)
-if (use_win_rates==0){
+if (bubble==1){
   model_variables <- filter(model_variables, 
-                            !(Variable %in% c("winrate_season_selected_team_adj",
-                                              "winrate_season_opposing_team_adj",
-                                              "winrate_season_selected_team",
-                                              "winrate_season_opposing_team",
-                                              "selected_team_matchup_wins",
-                                              "opposing_team_matchup_wins")))
+                            !(Variable %in% c("selected_team_matchup_wins",
+                                              "opposing_team_matchup_wins", 
+                                              "home_team_selected",
+                                              "opposing_team_travel",
+                                              "opposing_team_rest",
+                                              "selected_team_travel",
+                                              "selected_team_rest",
+                                              "winrate_season_selected_team_adj",
+                                              "winrate_season_opposing_team_adj")))
+  
 }
 
 
 ### When to start and end the forecasts
-start_date <- min(subset(box_scores, season==current_season)$DATE)
-end_date <- max(subset(box_scores, season==current_season & playoffs==0)$DATE)
+#start_date <- min(subset(box_scores, season==current_season)$DATE)
+start_date <- as.Date("2020-07-30")
+#end_date <- max(subset(box_scores, season==current_season & playoffs==0)$DATE)
+end_date <- max(box_scores$DATE)
+season_end_date <- max(subset(box_scores, season==current_season & playoffs==0)$DATE)
+season_start_date <- min(subset(box_scores, season==current_season)$DATE)
+
+playoff_start_date <- min(subset(box_scores, season==current_season & playoffs==1)$DATE)
+
 
 ### Cut off the box scores
 box_scores <- subset(box_scores, DATE<=end_date) %>%
@@ -108,17 +122,30 @@ index <- 1
 scores <- list()
 model_details <- list()
 model_parts <- list()
-max_real_date <- max(subset(box_scores_plus, future_game==0)$DATE_INDEX)
+max_real_date_index <- max(subset(box_scores_plus, future_game==0)$DATE_INDEX)
+max_real_date <- max(subset(box_scores_plus, future_game==0)$DATE)
 posterior <- 0.5 ## average probability of winning a game if all is perfect
 prior <- 0.5 ## expected average probability of winning a game
 cr <- 0 ## current rosters
+
+completed_games <- 
+  filter(box_scores_plus, between(DATE, season_start_date, start_date-1)) %>%
+  distinct(game_id, .keep_all = TRUE) %>%
+  dplyr::select(game_id, DATE, home_team_name, season,          
+                road_team_name, selected_team, opposing_team,           
+                future_game, selected_team_win, playoffs) %>%
+  mutate(prob_selected_team_win_d=selected_team_win, 
+         prob_selected_team_win_b=selected_team_win, 
+         current_season_data_used=1)
+
+
 for (i in start_index:end_index){
   
   ### ELO weight indicator
   w <- weighted_win_rates ## ELO weights
   
   ### Make sure we only use real data
-  j <- min(max_real_date, i)
+  j <- min(max_real_date_index, i)
   
   ### Check the dates
   print(subset(datemap, DATE_INDEX==i)$DATE)
@@ -128,19 +155,20 @@ for (i in start_index:end_index){
   inwindow <- filter(box_scores_plus, DATE_INDEX<j & DATE_INDEX>j-estimation_window) 
   
   ## fix the home team indicator for thee bubble
-  inwindow <- mutate(home_team_selected=if_else(date>=as.Date("2020-07-30"), 0.5, home_team_selected), 
-                     opposing_team_travel=if_else(date>=as.Date("2020-07-30"), 0, opposing_team_travel), 
-                     selected_team_travel=if_else(date>=as.Date("2020-07-30"), 0, selected_team_travel))
+  inwindow <- mutate(inwindow, 
+                     opposing_team_travel=if_else(DATE>=as.Date("2020-07-30"), 0, opposing_team_travel), 
+                     selected_team_travel=if_else(DATE>=as.Date("2020-07-30"), 0, selected_team_travel))
   
   ### Estimate the model unless we have run out of historical data
-  if (counter==1 | i <= max_real_date){
+  if (counter==1 | i <= max_real_date_index){
   
      ### Get game_id level data
      game_data <- distinct(inwindow, game_id, .keep_all=TRUE)
     
      ### Combine the data
      x <- get_surplus_variables(inwindow, nclus)  %>%
-       inner_join(game_data, by="game_id")
+       inner_join(game_data, by="game_id") %>%
+       filter(!(winrate_season_selected_team %in% c(1,0)) & !(winrate_season_opposing_team %in% c(1,0)))
      
      ## Estimate the model
      Y <- x$selected_team_win
@@ -172,7 +200,7 @@ for (i in start_index:end_index){
   
   ### Special case for the last observed day
   offsets_by_team <- NULL
-  if (i==max_real_date){
+  if (i==max_real_date_index){
     if (thisseason==current_season){
        cr <- use_current_rosters
     }
@@ -187,7 +215,7 @@ for (i in start_index:end_index){
     rm(ytd_scores)
     
     ### Get the latest data for forecasting
-    inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date & DATE_INDEX>max_real_date-playing_time_window+1)
+    inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date_index & DATE_INDEX>max_real_date_index-playing_time_window+1)
     win_perc1 <- winpercentages(inwindow, thisseason, w)
     win_perc2 <- winpercentages(inwindow, thisseason, w)
     
@@ -225,7 +253,8 @@ for (i in start_index:end_index){
   rm(inwindow)
 }
 
-scoresdf <- bind_rows(scores)
+scoresdf <- bind_rows(bind_rows(scores), completed_games) %>%
+  arrange(DATE)
 
 ### Remove teams of of the bubble
 in_the_bubble <- unique(c(pull(filter(scoresdf, DATE>=as.Date("2020-07-30")),home_team_name),
@@ -238,21 +267,18 @@ results <- manipulate_and_save_output(clusters_and_players, scores_bubble, model
 
 ### Run the playoffs
 
-#playoff_start_date <- max(box_scores$DATE)+1 ## faking it a bit here
-playoff_start_date <- as.Date("2020-08-15")
-
 runs <- 0
 
 rankings <- results[[2]] %>% filter(seed<9)
 
-inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date & DATE_INDEX>max_real_date-playing_time_window+1)
+inwindow <- filter(box_scores_plus, DATE_INDEX<=max_real_date_index & DATE_INDEX>max_real_date_index-playing_time_window+1)
 thisseason <- filter(inwindow, DATE==max(DATE))[1,"season"]
 win_perc1 <- winpercentages(inwindow, thisseason, w)
 win_perc2 <- win_perc1
 
 inwindow_active <- mutate(inwindow,
                           today=as.Date(end_date),                        
-                          injured=ifelse(is.na(injury_status), 0, ifelse(playoff_start_date>=injury_scrape_date & playoff_start_date<=return_date, 1, 0)))
+                          injured=ifelse(is.na(injury_status), 0, ifelse(return_date>max_real_date, 1, 0)))
 injured_players <- unique(subset(inwindow_active, injured==1)$PLAYER_FULL_NAME)
 if (length(injured_players)>0){
   print(sort(injured_players))
@@ -264,7 +290,7 @@ registerDoParallel(ncore)
 sims <- 1
 loopResult <- foreach(i=1:sims, .combine='combine', .multicombine=TRUE,
                       .init=list(list(), list(), list())) %dopar% {
-                        playoffs <- sim_playoff(rankings, inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, runs, root, c, max_real_date, thisseason, end_date, seed=1000*i + runif(1)*1000)
+                        playoffs <- sim_playoff(rankings, inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, runs, root, c, max_real_date_index, thisseason, end_date, seed=1000*i + runif(1)*1000, scoresdf)
                         playoffs[[2]]$sim <- i
                         return(list(playoffs[[2]], playoffs[[3]], data.frame(playoffs[[1]])))
                       }
@@ -274,6 +300,8 @@ r <- max(full_results$round)
 m <- max(full_results$matchup)
 
 playoff_decomps  <- data.frame(rbindlist(loopResult[[2]]))
+
+#playoffs <- sim_playoff(rankings, inwindow_active, playing_time_window, win_perc1, win_perc2, datemap, runs, root, c, max_real_date_index, thisseason, end_date, seed=1000 + runif(1)*1000)
 
 
 coin_flips <- list()
